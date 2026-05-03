@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masar Werbeagentur – Kreative Vision. Starke Wirkung.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --teal: #58d0bd;
+  --teal-dark: #3ab8a5;
+  --navy: #132e50;
+  --white: #ffffff;
+  --light: #f4f6f8;
+  --gray: #6b7280;
+  --dark: #1a1a2e;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--white); color:var(--dark); font-family:'Montserrat',sans-serif; }
+
+/* NAV */
+nav {
+  position:fixed; top:0; width:100%; z-index:1000;
+  padding:14px 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:2px solid var(--teal);
+  box-shadow:0 2px 20px rgba(0,0,0,0.08);
+}
+.nav-logo a { display:flex; align-items:center; text-decoration:none; }
+.nav-logo img { height:52px; object-fit:contain; }
+.nav-logo-text { font-family:'Bebas Neue',sans-serif; font-size:30px; color:var(--navy); letter-spacing:3px; }
+.nav-links { display:flex; gap:32px; list-style:none; align-items:center; }
+.nav-links a {
+  text-decoration:none; color:var(--navy);
+  font-size:13px; font-weight:600; letter-spacing:2px; text-transform:uppercase;
+  transition:color .3s; position:relative; padding-bottom:4px;
+}
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--teal); transition:width .3s; }
+.nav-links a:hover { color:var(--teal); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--teal) !important; color:var(--white) !important;
+  padding:12px 28px; border-radius:2px; font-weight:700 !important;
+}
+.nav-cta::after { display:none !important; }
+.nav-cta:hover { background:var(--teal-dark) !important; }
+
+/* HERO */
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:120px 60px 60px;
+  background:linear-gradient(135deg, var(--navy) 0%, #1e4275 60%, #0d2240 100%);
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 80% 50%, rgba(88,208,189,0.15) 0%, transparent 60%);
+}
+.hero-content { position:relative; z-index:2; max-width:650px; }
+.hero-tag {
+  display:inline-block; background:rgba(88,208,189,0.15);
+  border:1px solid var(--teal); color:var(--teal);
+  padding:8px 20px; font-size:12px; letter-spacing:4px; text-transform:uppercase;
+  margin-bottom:32px;
+}
+.hero-title {
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(80px,11vw,150px);
+  line-height:0.88; color:var(--white);
+  margin-bottom:32px;
+}
+.hero-title .teal { color:var(--teal); }
+.hero-subtitle {
+  font-size:18px; font-weight:400; color:rgba(255,255,255,0.85);
+  line-height:1.8; max-width:520px; margin-bottom:44px;
+}
+.hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+.btn-teal {
+  background:var(--teal); color:var(--navy);
+  padding:16px 40px; font-weight:700; font-size:13px;
+  letter-spacing:2px; text-transform:uppercase;
+  text-decoration:none; transition:all .3s; display:inline-block;
+  border:2px solid var(--teal);
+}
+.btn-teal:hover { background:var(--teal-dark); border-color:var(--teal-dark); transform:translateY(-2px); }
+.btn-white {
+  background:transparent; color:var(--white);
+  padding:16px 40px; font-weight:600; font-size:13px;
+  letter-spacing:2px; text-transform:uppercase;
+  text-decoration:none; transition:all .3s; display:inline-block;
+  border:2px solid rgba(255,255,255,0.5);
+}
+.btn-white:hover { border-color:var(--white); background:rgba(255,255,255,0.08); }
+.hero-logo {
+  position:absolute; right:80px; top:50%; transform:translateY(-50%);
+  z-index:2;
+}
+.hero-logo img {
+  width:320px; max-width:35vw;
+  filter:drop-shadow(0 0 40px rgba(88,208,189,0.3));
+}
+
+/* STATS */
+.stats {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  background:var(--navy);
+}
+.stat-item { padding:40px 30px; text-align:center; border-right:1px solid rgba(255,255,255,0.1); }
+.stat-item:last-child { border-right:none; }
+.stat-num { font-family:'Bebas Neue',sans-serif; font-size:58px; color:var(--teal); line-height:1; }
+.stat-label { font-size:11px; letter-spacing:3px; color:rgba(255,255,255,0.6); text-transform:uppercase; margin-top:8px; }
+
+/* SECTION STYLES */
+.section-wrap { padding:90px 60px; }
+.section-wrap.bg-light { background:var(--light); }
+.section-wrap.bg-white { background:var(--white); }
+.section-head { text-align:center; margin-bottom:60px; }
+.section-tag-sm { font-size:12px; letter-spacing:5px; color:var(--teal); text-transform:uppercase; margin-bottom:16px; display:block; }
+.section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,6vw,68px); color:var(--navy); line-height:1; }
+.section-title span { color:var(--teal); }
+.section-sub { font-size:16px; color:var(--gray); margin-top:16px; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.7; }
+
+/* SLIDER */
+.slider-wrap { position:relative; overflow:hidden; border-radius:4px; box-shadow:0 10px 40px rgba(0,0,0,0.12); }
+.slider-track { display:flex; transition:transform 0.5s ease; }
+.slide { min-width:100%; position:relative; }
+.slide img { width:100%; height:480px; object-fit:cover; display:block; }
+.slide-caption {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(to top, rgba(19,46,80,0.95), transparent);
+  padding:40px 40px 30px;
+  color:var(--white);
+}
+.slide-caption h3 { font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:2px; margin-bottom:6px; }
+.slide-caption p { font-size:15px; opacity:0.85; }
+.slider-btn {
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:50px; height:50px; background:var(--teal);
+  border:none; color:var(--white); font-size:18px;
+  cursor:pointer; display:flex; align-items:center; justify-content:center;
+  transition:background .3s; z-index:10;
+}
+.slider-btn:hover { background:var(--teal-dark); }
+.slider-prev { left:16px; }
+.slider-next { right:16px; }
+.slider-dots { display:flex; justify-content:center; gap:8px; margin-top:20px; }
+.slider-dot {
+  width:10px; height:10px; border-radius:50%;
+  background:var(--gray); opacity:0.4;
+  border:none; cursor:pointer; transition:all .3s;
+}
+.slider-dot.active { background:var(--teal); opacity:1; transform:scale(1.3); }
+
+/* SERVICES GRID */
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:50px; }
+.service-card {
+  background:var(--white); padding:36px 28px;
+  border:1px solid #e5e7eb; border-radius:4px;
+  transition:all .3s; position:relative; overflow:hidden;
+}
+.service-card::before {
+  content:''; position:absolute; top:0; left:0;
+  width:3px; height:0; background:var(--teal);
+  transition:height .4s;
+}
+.service-card:hover { box-shadow:0 8px 30px rgba(0,0,0,0.1); transform:translateY(-4px); border-color:var(--teal); }
+.service-card:hover::before { height:100%; }
+.service-num { font-family:'Bebas Neue',sans-serif; font-size:14px; color:var(--teal); letter-spacing:3px; margin-bottom:12px; }
+.service-name { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--navy); margin-bottom:10px; letter-spacing:1px; }
+.service-desc { font-size:14px; color:var(--gray); line-height:1.8; }
+
+/* ABOUT */
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.about-img-wrap { position:relative; }
+.about-img-box {
+  background:var(--light); border-radius:4px;
+  display:flex; align-items:center; justify-content:center;
+  padding:60px; border:1px solid #e5e7eb;
+  aspect-ratio:4/5;
+}
+.about-img-box img { width:80%; object-fit:contain; }
+.about-badge {
+  position:absolute; bottom:-20px; right:-20px;
+  background:var(--teal); color:var(--navy);
+  padding:20px 24px; text-align:center; border-radius:4px;
+}
+.about-badge strong { display:block; font-family:'Bebas Neue',sans-serif; font-size:42px; line-height:1; }
+.about-badge span { font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+.about-text { font-size:16px; color:var(--gray); line-height:2; margin-bottom:20px; }
+.about-quote {
+  font-size:20px; color:var(--navy); font-style:italic; font-weight:600;
+  border-left:3px solid var(--teal); padding-left:20px;
+  margin:32px 0; line-height:1.6;
+}
+
+/* CONTACT */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; }
+.contact-item { display:flex; gap:18px; padding:24px 0; border-bottom:1px solid #e5e7eb; }
+.contact-icon-box {
+  width:48px; height:48px; background:var(--teal);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; border-radius:2px;
+}
+.contact-icon-box i { color:var(--white); font-size:18px; }
+.contact-label { font-size:10px; letter-spacing:3px; color:var(--teal); text-transform:uppercase; margin-bottom:4px; font-weight:600; }
+.contact-val { font-size:16px; color:var(--navy); font-weight:600; }
+.contact-val a { color:inherit; text-decoration:none; }
+.form-group { margin-bottom:16px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-group input, .form-group textarea {
+  width:100%; background:var(--light);
+  border:2px solid #e5e7eb; color:var(--dark);
+  padding:14px 18px; font-family:'Montserrat',sans-serif;
+  font-size:14px; outline:none; transition:border-color .3s;
+  resize:none; border-radius:2px;
+}
+.form-group input:focus, .form-group textarea:focus { border-color:var(--teal); background:var(--white); }
+.form-group input::placeholder, .form-group textarea::placeholder { color:#9ca3af; }
+.form-group textarea { height:130px; }
+.form-btn {
+  width:100%; background:var(--navy); border:none;
+  color:var(--white); padding:16px;
+  font-family:'Montserrat',sans-serif; font-weight:700;
+  font-size:13px; letter-spacing:3px; text-transform:uppercase;
+  cursor:pointer; transition:background .3s; border-radius:2px;
+}
+.form-btn:hover { background:var(--teal); color:var(--navy); }
+
+/* FOOTER */
+footer {
+  background:var(--navy); padding:40px 60px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:24px;
+}
+.footer-logo { display:flex; align-items:center; gap:12px; }
+.footer-logo img { height:38px; object-fit:contain; }
+.footer-logo-text { font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--teal); letter-spacing:3px; }
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.5); }
+.footer-links { display:flex; gap:24px; }
+.footer-links a { font-size:12px; color:rgba(255,255,255,0.5); letter-spacing:2px; text-transform:uppercase; text-decoration:none; transition:color .3s; }
+.footer-links a:hover { color:var(--teal); }
+.footer-social { display:flex; gap:10px; }
+.footer-social a {
+  width:38px; height:38px; border:1px solid rgba(255,255,255,0.2);
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none; transition:all .3s; border-radius:2px;
+}
+.footer-social a i { color:rgba(255,255,255,0.5); font-size:15px; transition:color .3s; }
+.footer-social a:hover { border-color:var(--teal); background:rgba(88,208,189,0.1); }
+.footer-social a:hover i { color:var(--teal); }
+
+.reveal { opacity:0; transform:translateY(30px); transition:all .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:900px){
+  nav { padding:14px 20px; }
+  .nav-links { display:none; }
+  .hero { padding:100px 24px 60px; }
+  .hero-logo { display:none; }
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .section-wrap { padding:60px 24px; }
+  .services-grid { grid-template-columns:1fr; }
+  .about-grid { grid-template-columns:1fr; gap:40px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  footer { flex-direction:column; text-align:center; padding:32px 20px; }
+  .footer-links { justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="logo.png" alt="Masar" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-text" style="display:none">MASAR</span>
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="leistungen.html">Leistungen</a></li>
+    <li><a href="#ueber-uns">Über uns</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">✦ Kreative Vision. Starke Wirkung.</div>
+    <h1 class="hero-title">MASAR<br><span class="teal">WERBE</span><br>AGENTUR</h1>
+    <p class="hero-subtitle">Wir gestalten Ihre Marke mit Leidenschaft – von Grafikdesign und Druck bis zu Leuchtreklamen und Fahrzeugbeschriftung. Alles aus einer Hand, in Berlin.</p>
+    <div class="hero-btns">
+      <a href="leistungen.html" class="btn-teal">Unsere Leistungen</a>
+      <a href="#kontakt" class="btn-white">Jetzt anfragen</a>
+    </div>
+  </div>
+  <div class="hero-logo">
+    <img src="logo.png" alt="Masar Werbeagentur">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Zufriedene Kunden</div></div>
+  <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Projekte umgesetzt</div></div>
+  <div class="stat-item"><div class="stat-num">11+</div><div class="stat-label">Leistungsbereiche</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Qualitätsgarantie</div></div>
+</div>
+
+<!-- SLIDER -->
+<section class="section-wrap bg-light">
+  <div class="section-head reveal">
+    <span class="section-tag-sm">✦ Unsere Arbeiten</span>
+    <h2 class="section-title">UNSERE <span>LEISTUNGEN</span></h2>
+    <p class="section-sub">Von der Idee bis zur Umsetzung – kreativ, professionell und maßgeschneidert.</p>
+  </div>
+  <div class="reveal">
+    <div class="slider-wrap">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <img src="grafikdesign.png" alt="Grafikdesign" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Grafikdesign'">
+          <div class="slide-caption"><h3>Grafikdesign</h3><p>Logos, Illustrationen und Corporate Identity</p></div>
+        </div>
+        <div class="slide">
+          <img src="flyer.png" alt="Flyer & Visitenkarten" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Flyer+%26+Visitenkarten'">
+          <div class="slide-caption"><h3>Flyer & Visitenkarten</h3><p>Professionelle Drucksachen für Ihren Erfolg</p></div>
+        </div>
+        <div class="slide">
+          <img src="poster.png" alt="Plakate & Poster" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Plakate+%26+Poster'">
+          <div class="slide-caption"><h3>Plakate & Poster</h3><p>Wirkungsvolle Werbung im perfekten Format</p></div>
+        </div>
+        <div class="slide">
+          <img src="druck.png" alt="Druck & Verpackung" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Druck+%26+Verpackung'">
+          <div class="slide-caption"><h3>Druck & Verpackung</h3><p>Hochwertiger Druck für Ihren ersten Eindruck</p></div>
+        </div>
+        <div class="slide">
+          <img src="textil.png" alt="Textildruck" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Textildruck'">
+          <div class="slide-caption"><h3>Textildruck</h3><p>Ihr Logo auf Shirts, Hoodies und mehr</p></div>
+        </div>
+        <div class="slide">
+          <img src="fahrzeug.png" alt="Fahrzeugbeschriftung" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Fahrzeugbeschriftung'">
+          <div class="slide-caption"><h3>Fahrzeugbeschriftung</h3><p>Mobile Werbung, die täglich wirkt</p></div>
+        </div>
+        <div class="slide">
+          <img src="rollup.png" alt="Roll-ups & Displays" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Roll-ups+%26+Displays'">
+          <div class="slide-caption"><h3>Roll-ups & Displays</h3><p>Starker Auftritt bei jedem Event</p></div>
+        </div>
+        <div class="slide">
+          <img src="katalog.png" alt="Bücher & Kataloge" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=B%C3%BCcher+%26+Kataloge'">
+          <div class="slide-caption"><h3>Bücher & Kataloge</h3><p>Hochwertige Publikationen für Ihre Marke</p></div>
+        </div>
+        <div class="slide">
+          <img src="sticker.png" alt="Sticker & Aufkleber" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Sticker+%26+Aufkleber'">
+          <div class="slide-caption"><h3>Sticker & Aufkleber</h3><p>Wetterfest, langlebig und in jeder Form</p></div>
+        </div>
+        <div class="slide">
+          <img src="leuchtreklamen.png" alt="Leuchtreklamen" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Leuchtreklamen'">
+          <div class="slide-caption"><h3>Leuchtreklamen</h3><p>Lichtwerbung, die Tag und Nacht wirbt</p></div>
+        </div>
+        <div class="slide">
+          <img src="massnfertigung.png" alt="Maßanfertigung" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Ma%C3%9Fanfertigung'">
+          <div class="slide-caption"><h3>Maßanfertigung</h3><p>Individuelle Lösungen nach Ihren Wünschen</p></div>
+        </div>
+        <div class="slide">
+          <img src="banner.png" alt="Banner" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Banner'">
+          <div class="slide-caption"><h3>Banner & Werbebanner</h3><p>Auffällige Banner für jeden Einsatz</p></div>
+        </div>
+        <div class="slide">
+          <img src="webdesign.png" alt="Webdesign" onerror="this.src='https://via.placeholder.com/1200x480/132e50/58d0bd?text=Webdesign'">
+          <div class="slide-caption"><h3>Webdesign</h3><p>Professionelle Webseiten für Ihr Unternehmen</p></div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="slider-btn slider-next" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="slider-dots" id="sliderDots"></div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="leistungen.html" class="btn-teal">Alle Leistungen ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-wrap bg-white" id="ueber-uns">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <div class="about-img-box">
+        <img src="logo.png" alt="Masar Werbeagentur" onerror="this.style.display='none'">
+      </div>
+      <div class="about-badge"><strong>5+</strong><span>Jahre Erfahrung</span></div>
+    </div>
+    <div class="reveal">
+      <span class="section-tag-sm">✦ Über uns</span>
+      <h2 class="section-title">WER WIR <span>SIND</span></h2>
+      <div style="width:50px;height:3px;background:var(--teal);margin:20px 0 28px"></div>
+      <p class="about-text">Masar Werbeagentur steht für kreative Exzellenz und handwerkliche Präzision. Als Mediengestalter aus Berlin bieten wir ein vollständiges Spektrum an Designdienstleistungen – von der ersten Idee bis zur finalen Umsetzung.</p>
+      <p class="about-text">Unser Ansatz verbindet moderne Ästhetik mit strategischem Denken. Gutes Design muss nicht nur schön aussehen, sondern auch wirken.</p>
+      <div class="about-quote">„Wir gestalten nicht nur Designs – wir gestalten Ihren Erfolg."</div>
+      <a href="#kontakt" class="btn-teal">Projekt starten</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-wrap bg-light" id="kontakt">
+  <div class="section-head reveal">
+    <span class="section-tag-sm">✦ Kontakt</span>
+    <h2 class="section-title">LASSEN SIE UNS <span>REDEN</span></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="contact-item">
+        <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+        <div><div class="contact-label">Telefon</div><div class="contact-val"><a href="tel:01785143918">0178 514 3918</a></div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+        <div><div class="contact-label">Adresse</div><div class="contact-val">Bristolstraße 19HN, 19E<br>13349 Berlin</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box"><i class="fa-solid fa-clock"></i></div>
+        <div><div class="contact-label">Öffnungszeiten</div><div class="contact-val">Mo–Fr: 09:00 – 18:00 Uhr</div></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+        <div><div class="contact-label">WhatsApp</div><div class="contact-val"><a href="https://wa.me/4917851439180">0178 514 3918</a></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <form action="https://formsubmit.co/amjadbalili97@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="form-row">
+          <div class="form-group"><input type="text" name="name" placeholder="Ihr Name" required></div>
+          <div class="form-group"><input type="email" name="email" placeholder="Ihre E-Mail" required></div>
+        </div>
+        <div class="form-group"><input type="text" name="betreff" placeholder="Betreff" required></div>
+        <div class="form-group"><textarea name="nachricht" placeholder="Ihre Nachricht" required></textarea></div>
+        <button type="submit" class="form-btn">Nachricht senden →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+      <img src="logo.png" alt="Masar" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="footer-logo-text" style="display:none">MASAR</span>
+    </a>
+  </div>
+  <p class="footer-copy">© 2026 Masar Werbeagentur · Berlin</p>
+  <div class="footer-links">
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="agb.html">AGB</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://wa.me/4917851439180" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  </div>
+</footer>
+
+<script>
+// Slider
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+const total = slides.length;
+const track = document.getElementById('sliderTrack');
+const dotsContainer = document.getElementById('sliderDots');
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+  dot.onclick = () => goTo(i);
+  dotsContainer.appendChild(dot);
+});
+
+function goTo(n) {
+  current = (n + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+function changeSlide(dir) { goTo(current + dir); }
+setInterval(() => changeSlide(1), 5000);
+
+// Reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100); });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  const t = document.querySelector(a.getAttribute('href'));
+  if(t) t.scrollIntoView({behavior:'smooth'});
+}));
+</script>
+</body>
+</html>
