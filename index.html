@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Masar Werbeagentur Berlin – Ihr professioneller Partner für Grafikdesign, Druck, Fahrzeugbeschriftung, Leuchtreklamen und mehr. Kreative Vision. Digitale Lösungen.">
+<meta name="keywords" content="Werbeagentur Berlin, Grafikdesign, Druck, Fahrzeugbeschriftung, Leuchtreklamen, Webdesign, Textildruck">
+<title>Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #58d0bd;
+  --teal-dark: #3ab8a5;
+  --teal-deep: #0d8a78;
+  --navy: #132e50;
+  --navy-light: #1e4275;
+  --white: #ffffff;
+  --off-white: #f5f8f8;
+  --text: #1a2a2a;
+  --muted: #5a7070;
+  --border: #e2ecec;
+  --gray: #cfd2d2;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body { font-family:'Barlow',sans-serif; background:var(--white); color:var(--text); overflow-x:hidden; }
+img { max-width:100%; display:block; }
+a { text-decoration:none; }
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position:fixed; bottom:0; left:0; right:0; z-index:9999;
+  background:var(--navy); color:#fff;
+  padding:18px 32px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; flex-wrap:wrap;
+  border-top:2px solid var(--teal);
+  transform:translateY(100%);
+  transition:transform .4s ease;
+}
+.cookie-banner.show { transform:translateY(0); }
+.cookie-banner p { font-size:13px; color:rgba(255,255,255,.75); max-width:700px; line-height:1.6; }
+.cookie-banner a { color:var(--teal); }
+.cookie-btn {
+  background:var(--teal); color:var(--navy);
+  border:none; padding:10px 28px;
+  font-family:'Barlow',sans-serif; font-weight:700; font-size:13px;
+  cursor:pointer; white-space:nowrap;
+  transition:background .2s;
+}
+.cookie-btn:hover { background:var(--teal-dark); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  width:58px; height:58px; border-radius:50%;
+  background:#25d366;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s, box-shadow .2s;
+}
+.wa-float:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,.5); }
+.wa-float svg { width:30px; height:30px; fill:white; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; width:100%; z-index:500;
+  background:#ffffff;
+  backdrop-filter:blur(14px);
+  border-bottom:2px solid #58d0bd;
+  transition:box-shadow .3s;
+}
+nav.scrolled { box-shadow:0 4px 24px rgba(0,0,0,.25); }
+.nav-inner {
+  max-width:1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem; height:68px;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; }
+.nav-logo img { height:72px; object-fit:contain; }
+.nav-logo-fb {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:26px; color:#132e50;
+  letter-spacing:2px; display:none;
+}
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a {
+  color:#132e50; font-size:14px;
+  font-weight:500; letter-spacing:.5px;
+  transition:color .2s; padding:4px 0;
+  position:relative;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:-2px; left:0;
+  width:0; height:2px; background:var(--teal);
+  transition:width .3s;
+}
+.nav-links a:hover { color:var(--teal); }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--teal); color:var(--navy) !important;
+  padding:10px 24px; font-weight:700 !important;
+  border-radius:4px; transition:background .2s !important;
+}
+.nav-cta::after { display:none !important; }
+.nav-cta:hover { background:var(--teal-dark) !important; }
+.nav-hamburger {
+  display:none; flex-direction:column; gap:5px;
+  background:none; border:none; cursor:pointer; padding:4px;
+}
+.nav-hamburger span { width:24px; height:2px; background:#132e50; border-radius:2px; transition:all .3s; }
+.mobile-menu {
+  display:none; position:fixed; top:68px; left:0; right:0;
+  background:#ffffff; padding:20px;
+  border-bottom:2px solid #58d0bd;
+  z-index:499;
+}
+.mobile-menu.open { display:block; }
+.mobile-menu a {
+  display:block; padding:12px 16px;
+  color:#132e50; font-size:15px; font-weight:500;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  transition:color .2s;
+}
+.mobile-menu a:hover { color:var(--teal); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh; padding-top:68px;
+  background:linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%);
+  display:flex; align-items:center;
+  position:relative; overflow:hidden;
+}
+.hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at 75% 40%,rgba(88,208,189,.12) 0%,transparent 60%);
+}
+.hero-lines {
+  position:absolute; top:0; right:0; bottom:0; width:45%;
+  opacity:.05;
+  background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);
+}
+.hero-inner {
+  max-width:1200px; margin:0 auto;
+  padding:5rem 2rem;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:4rem; align-items:center;
+  position:relative; z-index:2;
+}
+.hero-label {
+  display:inline-block;
+  background:rgba(88,208,189,.12);
+  border:1px solid rgba(88,208,189,.35);
+  color:var(--teal); font-size:11px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  padding:6px 16px; border-radius:4px; margin-bottom:1.5rem;
+}
+.hero h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:clamp(3rem,6vw,5.5rem);
+  line-height:.9; color:white; text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+.hero h1 em { color:var(--teal); font-style:normal; }
+.hero-sub {
+  font-size:17px; color:rgba(255,255,255,.65);
+  line-height:1.75; margin-bottom:2.5rem; max-width:480px;
+}
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
+.btn-primary {
+  background:var(--teal); color:var(--navy);
+  padding:15px 36px; border-radius:4px;
+  font-weight:700; font-size:14px; letter-spacing:.5px;
+  transition:all .2s; display:inline-block;
+}
+.btn-primary:hover { background:var(--teal-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(88,208,189,.3); }
+.btn-ghost {
+  border:2px solid rgba(255,255,255,.3); color:white;
+  padding:13px 32px; border-radius:4px;
+  font-weight:600; font-size:14px;
+  transition:all .2s; display:inline-block;
+}
+.btn-ghost:hover { border-color:var(--teal); color:var(--teal); }
+.hero-stats {
+  display:flex; gap:2.5rem; margin-top:3rem;
+  padding-top:2rem; border-top:1px solid rgba(255,255,255,.1);
+}
+.stat-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:2.4rem; color:var(--teal); line-height:1;
+}
+.stat-lbl { font-size:12px; color:rgba(255,255,255,.5); margin-top:4px; }
+
+/* HERO SLIDER (square) */
+.hero-slider-wrap {
+  position:relative; border-radius:12px; overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,.4);
+  aspect-ratio:4/5;
+}
+.hero-slider-track { display:flex; transition:transform .6s cubic-bezier(.4,0,.2,1); height:100%; }
+.hero-slide { min-width:100%; height:100%; position:relative; }
+.hero-slide img { width:100%; height:100%; object-fit:cover; }
+.hero-slide-overlay {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(to top,rgba(19,46,80,.9) 0%,transparent 60%);
+  padding:28px 24px 22px;
+}
+.hero-slide-overlay h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:1.5rem; color:white;
+  text-transform:uppercase; letter-spacing:1px;
+}
+.hero-slide-overlay p { font-size:13px; color:rgba(255,255,255,.7); margin-top:4px; }
+.slider-nav {
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(19,46,80,.8); border:1px solid rgba(88,208,189,.4);
+  color:var(--teal); font-size:16px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .2s; z-index:10;
+}
+.slider-nav:hover { background:var(--teal); color:var(--navy); }
+.slider-prev { left:12px; }
+.slider-next { right:12px; }
+.slider-dots {
+  position:absolute; bottom:12px; left:50%; transform:translateX(-50%);
+  display:flex; gap:6px; z-index:10;
+}
+.sdot {
+  width:7px; height:7px; border-radius:50%;
+  background:rgba(255,255,255,.4); border:none; cursor:pointer;
+  transition:all .3s; padding:0;
+}
+.sdot.active { background:var(--teal); transform:scale(1.4); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  background:var(--navy);
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(88,208,189,.12);
+}
+.sbar-item {
+  padding:36px 24px; text-align:center;
+  border-right:1px solid rgba(255,255,255,.06);
+}
+.sbar-item:last-child { border-right:none; }
+.sbar-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:3rem; color:var(--teal); line-height:1;
+}
+.sbar-lbl { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); margin-top:6px; }
+
+/* ── SECTION COMMON ── */
+.section { padding:7rem 2rem; }
+.section.bg-off { background:var(--off-white); }
+.section.bg-navy { background:var(--navy); }
+.sec-inner { max-width:1200px; margin:0 auto; }
+.sec-tag {
+  display:inline-block;
+  background:rgba(88,208,189,.1); color:var(--teal-deep);
+  font-size:11px; font-weight:700; letter-spacing:2.5px;
+  text-transform:uppercase; padding:5px 14px; border-radius:4px;
+  margin-bottom:1rem;
+}
+.sec-tag.light { background:rgba(88,208,189,.15); color:var(--teal); }
+.sec-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:clamp(2.2rem,4.5vw,3.8rem);
+  text-transform:uppercase; line-height:.95;
+  color:var(--navy); margin-bottom:1rem;
+}
+.sec-title em { color:var(--teal); font-style:normal; }
+.sec-title.white { color:white; }
+.sec-sub { font-size:16px; color:var(--muted); line-height:1.7; max-width:540px; }
+.sec-sub.light { color:rgba(255,255,255,.55); }
+.sec-header { margin-bottom:4rem; }
+.sec-header.center { text-align:center; }
+.sec-header.center .sec-sub { margin:0 auto; }
+
+/* ── SERVICES ── */
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
+}
+.svc-card {
+  background:white; border:1px solid var(--border);
+  border-radius:12px; padding:2rem;
+  position:relative; overflow:hidden;
+  transition:all .3s; cursor:default;
+}
+.svc-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--teal-dark));
+  transform:scaleX(0); transform-origin:left; transition:transform .35s;
+}
+.svc-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(88,208,189,.12); border-color:rgba(88,208,189,.3); }
+.svc-card:hover::before { transform:scaleX(1); }
+.svc-img {
+  width:100%; aspect-ratio:4/5; object-fit:cover;
+  border-radius:8px; margin-bottom:1.2rem;
+}
+.svc-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:700; letter-spacing:3px;
+  color:var(--teal); opacity:.7; margin-bottom:8px;
+}
+.svc-card h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:1.3rem; text-transform:uppercase;
+  color:var(--navy); margin-bottom:.5rem; line-height:1.1;
+}
+.svc-short { font-size:14px; color:var(--muted); line-height:1.65; }
+.svc-long {
+  font-size:14px; color:var(--muted); line-height:1.65;
+  margin-top:10px; display:none;
+}
+.svc-long.open { display:block; }
+.svc-toggle {
+  display:inline-flex; align-items:center; gap:6px;
+  color:var(--teal); font-size:12px; font-weight:700;
+  letter-spacing:.5px; text-transform:uppercase;
+  background:none; border:none; cursor:pointer;
+  margin-top:1rem; padding:0; transition:gap .2s;
+}
+.svc-toggle:hover { gap:10px; }
+.svc-toggle svg { width:14px; height:14px; transition:transform .3s; }
+.svc-toggle.open svg { transform:rotate(180deg); }
+
+/* ── WHY US ── */
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.why-features { display:flex; flex-direction:column; gap:1rem; margin-top:2rem; }
+.why-feat {
+  display:flex; gap:14px; align-items:flex-start;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:10px; padding:16px 18px;
+  transition:all .3s;
+}
+.why-feat:hover { background:rgba(88,208,189,.08); border-color:rgba(88,208,189,.25); }
+.why-feat-icon {
+  width:36px; height:36px; flex-shrink:0;
+  background:rgba(88,208,189,.15); border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px;
+}
+.why-feat h4 { font-size:15px; font-weight:600; color:white; margin-bottom:3px; }
+.why-feat p { font-size:13px; color:rgba(255,255,255,.5); }
+.why-nums { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.wnum {
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px; padding:2rem; text-align:center;
+  transition:all .3s;
+}
+.wnum:hover { background:rgba(88,208,189,.1); border-color:rgba(88,208,189,.3); transform:scale(1.02); }
+.wnum-big {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:3.5rem; color:var(--teal); line-height:1;
+}
+.wnum-big span { color:#f5c000; }
+.wnum p { font-size:13px; color:rgba(255,255,255,.45); margin-top:8px; }
+
+/* ── PROCESS ── */
+.process-steps {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; margin-top:4rem; position:relative;
+}
+.process-steps::before {
+  content:''; position:absolute; top:40px; left:12%; right:12%;
+  height:2px; background:linear-gradient(90deg,var(--teal),rgba(88,208,189,.15));
+}
+.pstep { text-align:center; padding:0 1rem; }
+.pstep-num {
+  width:80px; height:80px; border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:2rem; color:white;
+  margin:0 auto 1.5rem; position:relative; z-index:2;
+  box-shadow:0 8px 28px rgba(88,208,189,.3);
+}
+.pstep h4 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:1.15rem; text-transform:uppercase;
+  color:var(--navy); margin-bottom:.5rem;
+}
+.pstep p { font-size:14px; color:var(--muted); line-height:1.6; }
+
+/* ── CONTACT ── */
+.contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; }
+.contact-info-item {
+  display:flex; gap:14px; align-items:flex-start;
+  padding:20px 0; border-bottom:1px solid var(--border);
+}
+.cinfo-icon {
+  width:46px; height:46px; background:var(--teal);
+  border-radius:6px; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; font-size:20px;
+}
+.cinfo-lbl { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); font-weight:700; margin-bottom:4px; }
+.cinfo-val { font-size:15px; color:var(--navy); font-weight:600; }
+.cinfo-val a { color:inherit; }
+.cform { background:white; border:1px solid var(--border); border-radius:12px; padding:2.5rem; box-shadow:0 8px 32px rgba(0,0,0,.06); }
+.cform h3 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.6rem; text-transform:uppercase; color:var(--navy); margin-bottom:1.5rem; }
+.fg { margin-bottom:1rem; }
+.fg label { display:block; font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.fg input, .fg textarea, .fg select {
+  width:100%; background:var(--off-white);
+  border:2px solid var(--border); color:var(--text);
+  padding:13px 16px; font-family:'Barlow',sans-serif; font-size:15px;
+  outline:none; transition:border-color .2s, background .2s;
+  border-radius:6px; -webkit-appearance:none;
+}
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color:var(--teal); background:white; }
+.fg textarea { height:120px; resize:none; }
+.fg-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.submit-btn {
+  width:100%; background:var(--navy); color:white;
+  border:none; padding:16px; border-radius:6px;
+  font-family:'Barlow',sans-serif; font-weight:700;
+  font-size:14px; letter-spacing:1px; text-transform:uppercase;
+  cursor:pointer; transition:background .2s;
+  margin-top:.5rem;
+}
+.submit-btn:hover { background:var(--teal); color:var(--navy); }
+.form-success {
+  display:none; background:rgba(88,208,189,.1);
+  border:1px solid var(--teal); border-radius:6px;
+  padding:16px; margin-top:1rem;
+  text-align:center; color:var(--teal-deep); font-weight:600;
+}
+
+/* ── FOOTER ── */
+footer {
+  background:#060e1a;
+  padding:4rem 2rem 2rem;
+  color:rgba(255,255,255,.45);
+}
+.foot-inner {
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:2fr 1fr 1fr;
+  gap:3rem; padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.foot-brand { }
+.foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
+.foot-logo img { height:72px; object-fit:contain; }
+.foot-logo-fb { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:24px; color:var(--teal); letter-spacing:2px; display:none; }
+.foot-brand p { font-size:14px; line-height:1.75; }
+.foot-social { display:flex; gap:.8rem; margin-top:1.5rem; }
+.fsoc {
+  width:38px; height:38px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.15);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; transition:all .2s;
+}
+.fsoc:hover { border-color:var(--teal); background:rgba(88,208,189,.1); transform:scale(1.1); }
+.foot-col h5 {
+  font-size:11px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; color:white; margin-bottom:1.2rem;
+}
+.foot-col a {
+  display:block; font-size:14px; color:rgba(255,255,255,.4);
+  margin-bottom:.6rem; transition:color .2s;
+}
+.foot-col a:hover { color:var(--teal); }
+.foot-bottom {
+  max-width:1200px; margin:2rem auto 0;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; flex-wrap:wrap; gap:1rem;
+}
+
+/* ── ANIMATIONS ── */
+.fade-up { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+.fade-up.vis { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner { grid-template-columns:1fr; }
+  .hero-slider-wrap { max-width:440px; margin:0 auto; }
+  .stats-bar { grid-template-columns:repeat(2,1fr); }
+  .services-grid { grid-template-columns:1fr 1fr; }
+  .why-grid { grid-template-columns:1fr; }
+  .process-steps { grid-template-columns:1fr 1fr; gap:2rem; }
+  .process-steps::before { display:none; }
+  .contact-grid { grid-template-columns:1fr; }
+  .foot-inner { grid-template-columns:1fr 1fr; }
+  .nav-links { display:none; }
+  .nav-hamburger { display:flex; }
+}
+@media(max-width:600px){
+  .services-grid { grid-template-columns:1fr; }
+  .hero-stats { flex-direction:column; gap:1rem; }
+  .fg-row { grid-template-columns:1fr; }
+  .foot-inner { grid-template-columns:1fr; }
+  .sbar-item { padding:24px 12px; }
+  .sbar-num { font-size:2.2rem; }
+}
+
+@media(max-width:600px){
+  .hero { background: linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%) !important; }
+  .hero-slider-wrap { aspect-ratio: 4/5 !important; max-width:100% !important; }
+  .hero-slide img { aspect-ratio: 4/5; object-fit:cover; }
+}
+
+@media(max-width:768px){
+  .hero { padding: 100px 24px 60px; min-height:auto; }
+  .hero-inner { grid-template-columns:1fr; gap:2rem; }
+  .hero-logo { display:none !important; }
+  .hero-slider-section { display:none !important; }
+  .hero > div:last-of-type { display:none; }
+  .hero-content { max-width:100%; }
+  .hero h1 { font-size: clamp(3rem,12vw,5rem); }
+  .hero-sub { font-size:16px; }
+  .hero-stats { flex-direction:row; flex-wrap:wrap; gap:1.5rem; }
+  .hero-btns { flex-direction:column; }
+  .hero-btns a { text-align:center; }
+  .sbar-item { padding:28px 16px; }
+  .sbar-num { font-size:2.2rem; }
+}
+
+@media(max-width:768px){
+  .hero-slider-section { display:none !important; }
+  .hero-logo { display:none !important; }
+  .hero-inner { grid-template-columns:1fr !important; }
+  .hero { padding:100px 24px 60px; }
+  .hero-btns { flex-direction:column; }
+  .hero-btns a { text-align:center; width:100%; box-sizing:border-box; }
+  .hero h1 { font-size:clamp(3rem,13vw,5rem); }
+  .hero-stats { flex-wrap:wrap; gap:1rem; }
+  .sbar-item { padding:24px 12px; }
+  .sbar-num { font-size:2.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Wir verwenden Cookies, um Ihnen die beste Nutzererfahrung zu bieten. Durch die weitere Nutzung stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
+  <button class="cookie-btn" onclick="acceptCookies()">Akzeptieren</button>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/491785143918" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/>
+  </svg>
+</a>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Masar Werbeagentur"
+        onerror="this.style.display='none';document.getElementById('navLogoFb').style.display='block'">
+      <span class="nav-logo-fb" id="navLogoFb">MASAR</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="#warum">Über uns</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="leistungen.html">Leistungen</a>
+  <a href="#warum">Über uns</a>
+  <a href="#ablauf">Ablauf</a>
+  <a href="#kontakt">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>Kreative<br>Vision.<br><em>Digitale</em><br>Lösungen.</h1>
+      <p class="hero-sub">Wir bringen Ihre Marke zum Leuchten – mit professionellem Design, hochwertiger Produktion und kreativen Ideen, die wirken.</p>
+      <div class="hero-btns">
+        <a href="leistungen.html" class="btn-primary">Unsere Leistungen</a>
+        <a href="#kontakt" class="btn-ghost">Jetzt anfragen</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">49</div><div class="stat-lbl">Projekte realisiert</div></div>
+        <div><div class="stat-num">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
+      </div>
+    </div>
+    <!-- HERO SLIDER -->
+    <div class="hero-slider-section">
+      <div class="hero-slider-wrap">
+        <div class="hero-slider-track" id="heroTrack">
+          <div class="hero-slide"><img src="grafikdesign.png" alt="Grafikdesign" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Grafikdesign'"><div class="hero-slide-overlay"><h3>Grafikdesign</h3><p>Logos & Corporate Identity</p></div></div>
+          <div class="hero-slide"><img src="flyer.png" alt="Flyer" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Flyer'"><div class="hero-slide-overlay"><h3>Flyer & Visitenkarten</h3><p>Professionelle Drucksachen</p></div></div>
+          <div class="hero-slide"><img src="poster.png" alt="Poster" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Poster'"><div class="hero-slide-overlay"><h3>Plakate & Poster</h3><p>Wirkungsvolle Werbung</p></div></div>
+          <div class="hero-slide"><img src="druck.png" alt="Druck" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Druck'"><div class="hero-slide-overlay"><h3>Druck & Verpackung</h3><p>Hochwertiger Druck</p></div></div>
+          <div class="hero-slide"><img src="textil.png" alt="Textil" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Textildruck'"><div class="hero-slide-overlay"><h3>Textildruck</h3><p>Ihr Logo auf Textilien</p></div></div>
+          <div class="hero-slide"><img src="fahrzeug.png" alt="Fahrzeug" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Fahrzeug'"><div class="hero-slide-overlay"><h3>Fahrzeugbeschriftung</h3><p>Mobile Werbung täglich</p></div></div>
+          <div class="hero-slide"><img src="rollup.png" alt="Rollup" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Roll-up'"><div class="hero-slide-overlay"><h3>Roll-ups & Displays</h3><p>Starker Messeauftritt</p></div></div>
+          <div class="hero-slide"><img src="katalog.png" alt="Katalog" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Katalog'"><div class="hero-slide-overlay"><h3>Bücher & Kataloge</h3><p>Hochwertige Publikationen</p></div></div>
+          <div class="hero-slide"><img src="sticker.png" alt="Sticker" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Sticker'"><div class="hero-slide-overlay"><h3>Sticker & Aufkleber</h3><p>In jeder Form möglich</p></div></div>
+          <div class="hero-slide"><img src="leuchtreklamen.png" alt="Leuchtreklamen" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Leuchtreklamen'"><div class="hero-slide-overlay"><h3>Leuchtreklamen</h3><p>Tag & Nacht sichtbar</p></div></div>
+          <div class="hero-slide"><img src="banner.png" alt="Banner" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Banner'"><div class="hero-slide-overlay"><h3>Banner & Werbebanner</h3><p>Auffällig & wetterfest</p></div></div>
+          <div class="hero-slide"><img src="webdesign.png" alt="Webdesign" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Webdesign'"><div class="hero-slide-overlay"><h3>Webdesign</h3><p>Neue Kunden gewinnen</p></div></div>
+          <div class="hero-slide"><img src="massnfertigung.png" alt="Maßanfertigung" onerror="this.src='https://via.placeholder.com/600x600/132e50/58d0bd?text=Massanfertigung'"><div class="hero-slide-overlay"><h3>Maßanfertigung</h3><p>Individuelle Lösungen</p></div></div>
+        </div>
+        <button class="slider-nav slider-prev" onclick="heroSlide(-1)">&#8249;</button>
+        <button class="slider-nav slider-next" onclick="heroSlide(1)">&#8250;</button>
+        <div class="slider-dots" id="heroDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="sbar-item"><div class="sbar-num">49</div><div class="sbar-lbl">Projekte umgesetzt</div></div>
+  <div class="sbar-item"><div class="sbar-num">10+</div><div class="sbar-lbl">Leistungsbereiche</div></div>
+  <div class="sbar-item"><div class="sbar-num">100%</div><div class="sbar-lbl">Qualitätsgarantie</div></div>
+  <div class="sbar-item"><div class="sbar-num">24h</div><div class="sbar-lbl">Express-Service</div></div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="section bg-off" id="leistungen">
+  <div class="sec-inner">
+    <div class="sec-header fade-up">
+      <div class="sec-tag">Unsere Leistungen</div>
+      <h2 class="sec-title">Was wir für Sie <em>tun</em></h2>
+      <p class="sec-sub">Vom kreativen Konzept bis zur fertigen Umsetzung – alles, was Ihre Marke sichtbar macht.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="grafikdesign.png" alt="Grafikdesign" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Grafikdesign'">
+        <div class="svc-num">01</div>
+        <h3>Grafikdesign</h3>
+        <p class="svc-short">Kreative Konzepte, die Ihre Vision sichtbar machen – Logos, CI und Illustrationen.</p>
+        <div class="svc-long">Wir entwickeln für Sie eine starke visuelle Identität: von der Logogestaltung über Corporate Design bis hin zu Illustrationen und Infografiken. Jedes Design wird individuell auf Ihre Marke und Ihre Zielgruppe abgestimmt.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="flyer.png" alt="Flyer" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Flyer'">
+        <div class="svc-num">02</div>
+        <h3>Flyer & Visitenkarten</h3>
+        <p class="svc-short">Ihr Design in der Tasche des Kunden – professionell und unvergesslich.</p>
+        <div class="svc-long">Bleiben Sie dauerhaft in Erinnerung: Wir gestalten und drucken hochwertige Flyer, Visitenkarten, Broschüren und Folder in allen Formaten und Auflagen – schnell, präzise und in erstklassiger Qualität.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="poster.png" alt="Poster" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Poster'">
+        <div class="svc-num">03</div>
+        <h3>Plakate & Poster</h3>
+        <p class="svc-short">Setzen Sie Akzente – von A3 bis Großformat, unübersehbar und wirkungsvoll.</p>
+        <div class="svc-long">Großformatige Plakate sind ein klassisches und hochwirksames Werbemittel. Wir übernehmen Gestaltung und Druck – von kleineren Formaten bis hin zu großflächiger Außenwerbung.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="druck.png" alt="Druck" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Druck'">
+        <div class="svc-num">04</div>
+        <h3>Druck & Verpackung</h3>
+        <p class="svc-short">Der erste Eindruck verkauft – hochwertiger CMYK-Druck auf allen Materialien.</p>
+        <div class="svc-long">Professioneller Offsetdruck und Digitaldruck für alle Druckprodukte. Individuelle Verpackungslösungen, die Ihre Marke stärken und beim Kunden einen bleibenden Eindruck hinterlassen.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="textil.png" alt="Textil" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Textildruck'">
+        <div class="svc-num">05</div>
+        <h3>Textildruck</h3>
+        <p class="svc-short">Ihr Logo wirbt jeden Tag für Sie – T-Shirts, Hoodies, Caps und mehr.</p>
+        <div class="svc-long">Hochwertiger Textildruck für Arbeitskleidung, Merchandise und Werbegeschenke. Siebdruck, Digitaldruck oder Stickerei – wir finden die optimale Technik für Ihr Produkt und Ihre Stückzahl.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+      <div class="svc-card fade-up">
+        <img class="svc-img" src="fahrzeug.png" alt="Fahrzeug" onerror="this.src='https://via.placeholder.com/600x600/e2ecec/132e50?text=Fahrzeug'">
+        <div class="svc-num">06</div>
+        <h3>Fahrzeugbeschriftung</h3>
+        <p class="svc-short">Ihre Fahrzeuge werden zur Werbung rund um die Uhr – mobil und wirkungsvoll.</p>
+        <div class="svc-long">Vom Kleintransporter bis zur Fahrzeugvollfolierung – wir beschriften alle Fahrzeugtypen professionell und langlebig. Ihre Marke ist täglich auf Berlins Straßen unterwegs.</div>
+        <button class="svc-toggle" onclick="toggleSvc(this)">
+          Mehr lesen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="leistungen.html" class="btn-primary">Alle 13 Leistungen ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section bg-navy" id="warum">
+  <div class="sec-inner">
+    <div class="why-grid">
+      <div>
+        <div class="sec-tag light">Warum Masar?</div>
+        <h2 class="sec-title white">Ihr Partner für <em>nachhaltigen</em> Erfolg</h2>
+        <p class="sec-sub light">Bei Masar erhalten Sie nicht nur Design – Sie erhalten einen strategischen Partner, der versteht, was Ihre Marke wirklich braucht.</p>
+        <div class="why-features">
+          <div class="why-feat fade-up">
+            <div class="why-feat-icon">⚡</div>
+            <div><h4>Schnelle Lieferung</h4><p>Kurze Produktionszeiten ohne Qualitätsverlust – auf Wunsch Express-Service</p></div>
+          </div>
+          <div class="why-feat fade-up">
+            <div class="why-feat-icon">🎯</div>
+            <div><h4>Full-Service aus einer Hand</h4><p>Von der Idee bis zum fertigen Produkt – alles bei Masar in Berlin</p></div>
+          </div>
+          <div class="why-feat fade-up">
+            <div class="why-feat-icon">💎</div>
+            <div><h4>Premiumqualität</h4><p>Hochwertige Materialien und professionelle Verarbeitung bei jedem Auftrag</p></div>
+          </div>
+          <div class="why-feat fade-up">
+            <div class="why-feat-icon">🤝</div>
+            <div><h4>Persönliche Beratung</h4><p>Individuelle Lösungen für Ihr Unternehmen – wir hören zu</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-nums fade-up">
+        <div class="wnum"><div class="wnum-big">49</div><p>Projekte erfolgreich abgeschlossen</p></div>
+        <div class="wnum"><div class="wnum-big">10<span>+</span></div><p>Leistungsbereiche unter einem Dach</p></div>
+        <div class="wnum"><div class="wnum-big">5<span>★</span></div><p>Bewertung unserer Kunden</p></div>
+        <div class="wnum"><div class="wnum-big">24<span>h</span></div><p>Express-Service auf Anfrage</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="ablauf">
+  <div class="sec-inner">
+    <div class="sec-header center fade-up">
+      <div class="sec-tag">So arbeiten wir</div>
+      <h2 class="sec-title">Einfach. <em>Schnell.</em> Professionell.</h2>
+      <p class="sec-sub">In nur 4 Schritten von der Idee zum fertigen Ergebnis.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep fade-up"><div class="pstep-num">1</div><h4>Beratung</h4><p>Sie kontaktieren uns und wir besprechen Ihre Anforderungen persönlich und kostenlos.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">2</div><h4>Konzept</h4><p>Unser Team entwickelt kreative Konzepte und Designs passend zu Ihrer Marke.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">3</div><h4>Freigabe</h4><p>Sie prüfen und geben das Design frei – mit Korrekturrunden bis zur Perfektion.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">4</div><h4>Lieferung</h4><p>Wir produzieren und liefern Ihr fertiges Produkt in erstklassiger Qualität.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section bg-off" id="kontakt">
+  <div class="sec-inner">
+    <div class="sec-header fade-up">
+      <div class="sec-tag">Kontakt</div>
+      <h2 class="sec-title">Ihr Projekt. <em>Unser Antrieb.</em></h2>
+      <p class="sec-sub">Wir melden uns innerhalb von 24 Stunden – kostenlose Erstberatung inklusive.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="contact-info-item">
+          <div class="cinfo-icon">📞</div>
+          <div><div class="cinfo-lbl">Telefon</div><div class="cinfo-val"><a href="tel:01785143918">0178 514 3918</a></div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon">💬</div>
+          <div><div class="cinfo-lbl">WhatsApp</div><div class="cinfo-val"><a href="https://wa.me/491785143918">0178 514 3918</a></div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon">📍</div>
+          <div><div class="cinfo-lbl">Adresse</div><div class="cinfo-val">Bristolstraße 19HN, 19E<br>13349 Berlin</div></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon">🕐</div>
+          <div><div class="cinfo-lbl">Öffnungszeiten</div><div class="cinfo-val">Mo–Fr: 09:00–18:00 Uhr</div></div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="cform">
+          <h3>Kostenlose Anfrage</h3>
+          <form action="https://formsubmit.co/amjadbalili97@gmail.com" method="POST" id="contactForm">
+            <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <div class="fg-row">
+              <div class="fg">
+                <label>Ihr Name *</label>
+                <input type="text" name="name" placeholder="Max Mustermann" required>
+              </div>
+              <div class="fg">
+                <label>Ihre E-Mail *</label>
+                <input type="email" name="email" placeholder="max@beispiel.de" required>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Gewünschte Leistung *</label>
+              <select name="leistung" required>
+                <option value="">Bitte wählen...</option>
+                <option>Grafikdesign</option>
+                <option>Flyer & Visitenkarten</option>
+                <option>Plakate & Poster</option>
+                <option>Druck & Verpackung</option>
+                <option>Textildruck</option>
+                <option>Fahrzeugbeschriftung</option>
+                <option>Roll-ups & Displays</option>
+                <option>Bücher & Kataloge</option>
+                <option>Sticker & Aufkleber</option>
+                <option>Leuchtreklamen</option>
+                <option>Banner & Werbebanner</option>
+                <option>Webdesign</option>
+                <option>Maßanfertigung</option>
+                <option>Mehrere Leistungen</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Projektbeschreibung</label>
+              <textarea name="nachricht" placeholder="Beschreiben Sie kurz Ihr Projekt..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Anfrage senden →</button>
+          </form>
+          <div class="form-success" id="formSuccess">✓ Vielen Dank! Wir melden uns in Kürze bei Ihnen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <img src="logo.png" alt="Masar" onerror="this.style.display='none';document.getElementById('footLogoFb').style.display='block'">
+        <span class="foot-logo-fb" id="footLogoFb">MASAR</span>
+      </div>
+      <p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin – professionelles Design und hochwertige Produktion aus einer Hand.</p>
+      <div class="foot-social">
+        <a href="https://instagram.com" target="_blank" class="fsoc" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://facebook.com" target="_blank" class="fsoc" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://wa.me/491785143918" target="_blank" class="fsoc" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.145-1.153l-.298-.177-3.066.912.913-3.066-.178-.298A8 8 0 1112 20z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Leistungen</h5>
+      <a href="leistungen.html">Grafikdesign</a>
+      <a href="leistungen.html">Flyer & Visitenkarten</a>
+      <a href="leistungen.html">Fahrzeugbeschriftung</a>
+      <a href="leistungen.html">Leuchtreklamen</a>
+      <a href="leistungen.html">Webdesign</a>
+      <a href="leistungen.html">Alle Leistungen →</a>
+    </div>
+    <div class="foot-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutzerklärung</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span>
+    <span>Steuernummer: 23/203/00524 · Finanzamt Wedding</span>
+  </div>
+</footer>
+
+<script>
+// Cookie
+function acceptCookies() {
+  localStorage.setItem('cookies','1');
+  document.getElementById('cookieBanner').classList.remove('show');
+}
+window.addEventListener('load', () => {
+  if (!localStorage.getItem('cookies')) {
+    setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 1500);
+  }
+});
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior:'smooth', block:'start' });
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+
+// Hero Slider
+let hCur = 0;
+const hTrack = document.getElementById('heroTrack');
+const hSlides = hTrack.children.length;
+const hDots = document.getElementById('heroDots');
+for (let i = 0; i < hSlides; i++) {
+  const d = document.createElement('button');
+  d.className = 'sdot' + (i === 0 ? ' active' : '');
+  d.setAttribute('aria-label', 'Slide ' + (i+1));
+  d.onclick = () => goHero(i);
+  hDots.appendChild(d);
+}
+function goHero(n) {
+  hCur = (n + hSlides) % hSlides;
+  hTrack.style.transform = `translateX(-${hCur * 100}%)`;
+  document.querySelectorAll('.sdot').forEach((d,i) => d.classList.toggle('active', i === hCur));
+}
+function heroSlide(dir) { goHero(hCur + dir); }
+const hAuto = setInterval(() => heroSlide(1), 4500);
+
+// Mehr lesen toggle
+function toggleSvc(btn) {
+  const long = btn.previousElementSibling;
+  const isOpen = long.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  btn.childNodes[0].textContent = isOpen ? 'Weniger anzeigen ' : 'Mehr lesen ';
+}
+
+// Fade up on scroll
+const fadeObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
