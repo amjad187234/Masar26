@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Masar Werbeagentur Berlin – Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign & Social Media Marketing. Professionell. Aus einer Hand.">
+<meta name="keywords" content="Werbeagentur Berlin, Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign, Social Media Marketing Berlin">
+<meta property="og:title" content="Masar Werbeagentur Berlin – Von der Leuchtreklame bis zum viralen Reel">
+<meta property="og:description" content="Professionelle Werbung aus einer Hand – Werbetechnik, Design, Druck, Web & Social Media.">
+<meta property="og:url" content="https://masar-werbeagentur.de/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://masar-werbeagentur.de/">
+<link rel="sitemap" href="/sitemap.xml">
+<title>Masar Werbeagentur Berlin – Leuchtreklamen, Design & Social Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Masar Werbeagentur","url":"https://masar-werbeagentur.de","telephone":"+491785143918","address":{"@type":"PostalAddress","streetAddress":"Bristolstraße 19HN, 19E","addressLocality":"Berlin","postalCode":"13349","addressCountry":"DE"},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"€€"}</script>
+<style>
+:root{
+  --teal:#58d0bd;--teal-dark:#3ab8a5;
+  --navy:#132e50;--navy2:#1e4275;
+  --white:#fff;--off:#f5f8f8;
+  --text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;
+  --purple:#7c3aed;--gold:#f5c000;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;}
+
+/* COOKIE */
+.cookie{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--navy);color:#fff;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:2px solid var(--teal);transform:translateY(100%);transition:transform .4s;}
+.cookie.show{transform:translateY(0);}
+.cookie p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.5;}
+.cookie a{color:var(--teal);}
+.cookie-btn{background:var(--teal);color:var(--navy);border:none;padding:9px 24px;font-family:'Barlow',sans-serif;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap;border-radius:4px;}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:24px;right:24px;z-index:998;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s;}
+.wa:hover{transform:scale(1.1);}
+.wa svg{width:28px;height:28px;fill:white;}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:500;background:#fff;border-bottom:2px solid var(--teal);box-shadow:0 2px 16px rgba(0,0,0,.07);}
+.nav-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:80px;}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo img{height:60px;object-fit:contain;}
+.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;color:var(--navy);letter-spacing:2px;display:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;position:relative;padding-bottom:4px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:10px 24px;border-radius:4px;font-weight:700!important;}
+.nav-cta::after{display:none!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{width:26px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
+.mob-menu{display:none;position:fixed;top:80px;left:0;right:0;background:#fff;padding:20px;border-bottom:2px solid var(--teal);z-index:499;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+.mob-menu.open{display:block;}
+.mob-menu a{display:block;padding:13px 16px;color:var(--navy);font-size:15px;font-weight:600;border-bottom:1px solid var(--border);text-decoration:none;transition:color .2s;}
+.mob-menu a:hover{color:var(--teal);}
+
+/* HERO — compact, fits screen */
+.hero{
+  padding-top:80px;
+  min-height:calc(100vh - 80px);
+  max-height:100vh;
+  display:flex;align-items:center;
+  background:linear-gradient(150deg,var(--navy) 0%,#1a3d6b 55%,#0d5a5a 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 45%,rgba(88,208,189,.12) 0%,transparent 60%);}
+.hero-inner{max-width:1280px;margin:0 auto;padding:2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:2;width:100%;}
+.hero-badge{display:inline-block;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.4);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:4px;margin-bottom:1rem;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.05;color:#fff;text-transform:uppercase;margin-bottom:1rem;}
+.hero h1 em{color:var(--teal);font-style:normal;display:block;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.7);line-height:1.75;margin-bottom:1.8rem;max-width:480px;}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;}
+.btn-teal{background:var(--teal);color:var(--navy);padding:13px 28px;font-weight:700;font-size:14px;text-decoration:none;border-radius:4px;transition:all .2s;display:inline-block;}
+.btn-teal:hover{background:var(--teal-dark);transform:translateY(-2px);}
+.btn-outline{border:2px solid rgba(255,255,255,.35);color:#fff;padding:11px 24px;font-weight:600;font-size:14px;text-decoration:none;border-radius:4px;transition:all .2s;display:inline-block;}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal);}
+.hero-logo-wrap{text-align:center;}
+.hero-logo-wrap img{width:100%;max-width:360px;filter:drop-shadow(0 0 50px rgba(88,208,189,.3));}
+
+/* STATS — once only */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--navy);border-top:1px solid rgba(88,208,189,.15);}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.06);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;color:var(--teal);line-height:1;}
+.stat-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:5px;}
+
+/* SECTION QUICK NAV */
+.quick-nav{padding:3.5rem 2rem;background:#fff;border-bottom:1px solid var(--border);}
+.qn-inner{max-width:1280px;margin:0 auto;}
+.qn-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--muted);letter-spacing:2px;margin-bottom:1.5rem;text-align:center;}
+.qn-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+.qn-card{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.5rem 1rem;border:2px solid var(--border);border-radius:10px;text-decoration:none;transition:all .3s;cursor:pointer;}
+.qn-card:hover{border-color:var(--teal);background:rgba(88,208,189,.04);transform:translateY(-3px);}
+.qn-icon{font-size:2rem;}
+.qn-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;color:var(--navy);text-align:center;}
+.qn-sub{font-size:11px;color:var(--muted);text-align:center;}
+
+/* SECTIONS */
+.section{padding:5rem 2rem;}
+.section.bg-off{background:var(--off);}
+.section.bg-navy{background:var(--navy);}
+.sec-inner{max-width:1280px;margin:0 auto;}
+.sec-tag{display:inline-block;background:rgba(88,208,189,.1);color:#0d8a78;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 14px;border-radius:4px;margin-bottom:.8rem;}
+.sec-tag.purple{background:rgba(124,58,237,.1);color:var(--purple);}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;}
+.sec-title em{color:var(--teal);font-style:normal;}
+.sec-title.white{color:#fff;}
+.sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:600px;margin-bottom:2.5rem;}
+.sec-sub.light{color:rgba(255,255,255,.65);}
+.sec-head{margin-bottom:2.5rem;}
+.sec-head.center{text-align:center;}
+.sec-head.center .sec-sub{margin:0 auto 2.5rem;}
+
+/* SERVICE GRID with images */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:all .3s;position:relative;}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .35s;z-index:1;}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(88,208,189,.12);border-color:rgba(88,208,189,.3);}
+.svc-card:hover::before{transform:scaleX(1);}
+.svc-card-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;transition:transform .4s;}
+.svc-card:hover .svc-card-img{transform:scale(1.04);}
+.svc-card-img-wrap{overflow:hidden;position:relative;}
+.svc-card-body{padding:1.5rem;}
+.svc-icon-box{width:52px;height:52px;background:rgba(88,208,189,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:.8rem;}
+.svc-card-num{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--teal);margin-bottom:.4rem;}
+.svc-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
+.svc-card-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* DESIGN & WEB — premium full-width blocks */
+.premium-block{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.1);margin-bottom:2rem;}
+.premium-block.reverse{direction:rtl;}
+.premium-block.reverse > *{direction:ltr;}
+.pb-img{position:relative;overflow:hidden;}
+.pb-img img{width:100%;height:100%;object-fit:cover;min-height:380px;transition:transform .5s;}
+.premium-block:hover .pb-img img{transform:scale(1.04);}
+.pb-content{padding:3rem;display:flex;flex-direction:column;justify-content:center;}
+.pb-content.dark{background:var(--navy);}
+.pb-content.light{background:#fff;}
+.pb-tag{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.pb-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;line-height:1;margin-bottom:.8rem;}
+.pb-content.dark .pb-title{color:#fff;}
+.pb-content.light .pb-title{color:var(--navy);}
+.pb-title em{color:var(--teal);font-style:normal;}
+.pb-desc{font-size:14px;line-height:1.8;margin-bottom:1.5rem;}
+.pb-content.dark .pb-desc{color:rgba(255,255,255,.65);}
+.pb-content.light .pb-desc{color:var(--muted);}
+.pb-features{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem;}
+.pb-feat{font-size:13px;display:flex;align-items:center;gap:.5rem;}
+.pb-content.dark .pb-feat{color:rgba(255,255,255,.8);}
+.pb-content.light .pb-feat{color:var(--text);}
+.pb-feat::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+
+/* SOCIAL MEDIA PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.price-card{background:#fff;border:2px solid var(--border);border-radius:12px;padding:2rem;position:relative;transition:all .3s;}
+.price-card.featured{border-color:var(--teal);box-shadow:0 16px 48px rgba(88,208,189,.15);}
+.price-card:hover{transform:translateY(-4px);}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--navy);font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap;}
+.price-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.3rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
+.price-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.2rem;color:var(--teal);line-height:1;}
+.price-period{font-size:12px;color:var(--muted);margin-bottom:1rem;}
+.price-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem;}
+.price-list li{font-size:13px;color:var(--text);list-style:none;display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.price-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.price-btn{display:block;text-align:center;background:var(--navy);color:#fff;padding:12px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none;transition:background .2s;}
+.price-card.featured .price-btn{background:var(--teal);color:var(--navy);}
+.price-btn:hover{background:var(--teal);color:var(--navy);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;}
+.cinfo-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--border);}
+.cinfo-icon{width:44px;height:44px;background:var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.cinfo-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:4px;}
+.cinfo-val{font-size:15px;color:var(--navy);font-weight:600;}
+.cinfo-val a{color:inherit;text-decoration:none;}
+.cform{background:#fff;border:1px solid var(--border);border-radius:12px;padding:2rem;box-shadow:0 8px 32px rgba(0,0,0,.06);}
+.cform h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;color:var(--navy);margin-bottom:1.2rem;}
+.fg{margin-bottom:.8rem;}
+.fg label{display:block;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--off);border:2px solid var(--border);color:var(--text);padding:12px 14px;font-family:'Barlow',sans-serif;font-size:14px;outline:none;transition:border-color .2s;border-radius:6px;-webkit-appearance:none;}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--teal);background:#fff;}
+.fg textarea{height:110px;resize:none;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.submit-btn{width:100%;background:var(--navy);color:#fff;border:none;padding:14px;border-radius:6px;font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background .2s;margin-top:.5rem;}
+.submit-btn:hover{background:var(--teal);color:var(--navy);}
+
+/* FOOTER */
+footer{background:#060e1a;padding:3.5rem 2rem 2rem;color:rgba(255,255,255,.45);}
+.foot-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:1rem;}
+.foot-logo img{height:56px;object-fit:contain;}
+.foot-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--teal);letter-spacing:2px;display:none;}
+.foot-brand p{font-size:13px;line-height:1.75;margin-bottom:1.2rem;}
+.foot-social{display:flex;gap:.7rem;}
+.fsoc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all .2s;}
+.fsoc:hover{border-color:var(--teal);background:rgba(88,208,189,.1);}
+.fsoc svg{width:16px;height:16px;fill:rgba(255,255,255,.5);transition:fill .2s;}
+.fsoc:hover svg{fill:var(--teal);}
+.foot-col h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:1rem;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:.5rem;text-decoration:none;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{max-width:1280px;margin:1.5rem auto 0;display:flex;justify-content:space-between;font-size:11px;flex-wrap:wrap;gap:1rem;}
+
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-up.vis{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:960px){
+  .nav-links{display:none;}.hamburger{display:flex;}
+  .hero-inner{grid-template-columns:1fr;gap:2rem;}
+  .hero-logo-wrap{display:none;}
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .qn-grid{grid-template-columns:repeat(3,1fr);}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .premium-block{grid-template-columns:1fr;}.premium-block.reverse{direction:ltr;}
+  .pb-img img{min-height:240px;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .foot-inner{grid-template-columns:1fr 1fr;}
+  .fg-row{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .nav-inner{height:72px;}.mob-menu{top:72px;}
+  .hero{min-height:auto;padding:80px 0 0;}
+  .hero-inner{padding:2rem 1.5rem 2.5rem;}
+  .hero h1{font-size:clamp(2rem,9vw,3rem);}
+  .qn-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-grid{grid-template-columns:1fr;}
+  .stat{padding:20px 10px;}.stat-num{font-size:2.2rem;}
+  .foot-inner{grid-template-columns:1fr;}
+  .section{padding:3.5rem 1.5rem;}
+  .quick-nav{padding:2.5rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="cookie" id="cookieBanner">
+  <p>Wir verwenden Cookies für die beste Erfahrung. <a href="datenschutz.html">Datenschutz</a></p>
+  <button class="cookie-btn" onclick="acceptCookies()">Akzeptieren</button>
+</div>
+
+<a href="https://wa.me/491785143918" class="wa" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Masar Werbeagentur Berlin" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-fb">MASAR</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="werbetechnik.html">Werbetechnik</a></li>
+      <li><a href="digital.html">Social Media</a></li>
+      <li><a href="print.html">Print & Design</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="index.html">Home</a>
+  <a href="leistungen.html">Alle Leistungen</a>
+  <a href="werbetechnik.html">Werbetechnik</a>
+  <a href="digital.html">Social Media</a>
+  <a href="print.html">Print & Design</a>
+  <a href="#kontakt">Kontakt</a>
+</div>
+
+<!-- HERO — compact -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">✦ Full-Service Werbeagentur · Berlin</div>
+      <h1>Von der Leuchtreklame<br>bis zum <em>viralen Reel.</em></h1>
+      <p class="hero-sub">Werbetechnik, Grafikdesign, Webdesign und Social Media – professionell, kreativ und aus einer Hand. Ihr Erfolg ist unser Handwerk.</p>
+      <div class="hero-btns">
+        <a href="#leistungen-nav" class="btn-teal">Unsere Leistungen</a>
+        <a href="#kontakt" class="btn-outline">Kostenlos anfragen</a>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="logo.png" alt="Masar Werbeagentur Berlin Logo">
+    </div>
+  </div>
+</section>
+
+<!-- STATS — once only -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">49</div><div class="stat-lbl">Projekte umgesetzt</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
+  <div class="stat"><div class="stat-num">24h</div><div class="stat-lbl">Express-Service</div></div>
+</div>
+
+<!-- QUICK NAV -->
+<div class="quick-nav" id="leistungen-nav">
+  <div class="qn-inner">
+    <div class="qn-title">Direkt zu Ihrem Thema</div>
+    <div class="qn-grid">
+      <a href="#werbetechnik" class="qn-card">
+        <span class="qn-icon">💡</span>
+        <span class="qn-name">Werbetechnik</span>
+        <span class="qn-sub">Leuchtreklamen & Außenwerbung</span>
+      </a>
+      <a href="#druck" class="qn-card">
+        <span class="qn-icon">🖨️</span>
+        <span class="qn-name">Druck & Print</span>
+        <span class="qn-sub">Flyer, Visitenkarten & mehr</span>
+      </a>
+      <a href="#design" class="qn-card">
+        <span class="qn-icon">✏️</span>
+        <span class="qn-name">Grafikdesign</span>
+        <span class="qn-sub">Branding & Corporate Identity</span>
+      </a>
+      <a href="#web" class="qn-card">
+        <span class="qn-icon">🌐</span>
+        <span class="qn-name">Webdesign</span>
+        <span class="qn-sub">Websites & Online-Präsenz</span>
+      </a>
+      <a href="#social" class="qn-card">
+        <span class="qn-icon">📱</span>
+        <span class="qn-name">Social Media</span>
+        <span class="qn-sub">Instagram, TikTok & Ads</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- WERBETECHNIK -->
+<section class="section" id="werbetechnik">
+  <div class="sec-inner">
+    <div class="sec-head fade-up">
+      <div class="sec-tag">💡 Werbetechnik & Außenwerbung</div>
+      <h2 class="sec-title">Sichtbar auf der <em>Straße</em> – rund um die Uhr</h2>
+      <p class="sec-sub">Leuchtreklamen, Fahrzeugbeschriftung und Außenwerbung, die Tag und Nacht für Ihr Unternehmen arbeiten.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="leuchtreklamen.png" alt="Leuchtreklamen Berlin – individuelle LED und Neon Schilder von Masar Werbeagentur" onerror="this.parentElement.innerHTML='<div style=\'background:var(--navy);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>💡</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">01 · HIGHLIGHT</div>
+          <div class="svc-card-title">Leuchtreklamen & LED</div>
+          <div class="svc-card-desc">Maßgeschneiderte Neon- und LED-Schilder, die Ihr Business unvergesslich machen. Energieeffizient, langlebig und individuell gestaltet.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="fahrzeug.png" alt="Fahrzeugbeschriftung Berlin von Masar Werbeagentur" onerror="this.parentElement.innerHTML='<div style=\'background:var(--navy-2);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>🚗</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">02</div>
+          <div class="svc-card-title">Fahrzeugbeschriftung</div>
+          <div class="svc-card-desc">Car Wrapping und Fahrzeugbranding für alle Fahrzeugtypen. Mobile Werbung, die täglich tausende Menschen in Berlin erreicht.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-body" style="padding:2rem;">
+          <div class="svc-icon-box">🪟</div>
+          <div class="svc-card-num">03</div>
+          <div class="svc-card-title">Schaufensterbeklebung</div>
+          <div class="svc-card-desc">Attraktive Folien und Displays für Ihr Ladengeschäft. Dekorativ, langlebig und professionell gestaltet.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="banner.png" alt="Banner und Außenwerbung Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#1a2a3a;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>🪧</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">04</div>
+          <div class="svc-card-title">Schilder & Banner</div>
+          <div class="svc-card-desc">Großformatige Außenwerbung, Bauplanen und Firmenschilder – wetterfest und in jeder Größe möglich.</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="werbetechnik.html" class="btn-teal">Alle Werbetechnik-Leistungen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DRUCK & PRINT -->
+<section class="section bg-off" id="druck">
+  <div class="sec-inner">
+    <div class="sec-head fade-up">
+      <div class="sec-tag">🖨️ Druck & Printmedien</div>
+      <h2 class="sec-title">Qualität, die man <em>anfassen</em> kann</h2>
+      <p class="sec-sub">Premium-Druck für alle Formate – von der Visitenkarte bis zum Katalog. Design immer inklusive.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="flyer.png" alt="Flyer und Visitenkarten drucken Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f5f0e8;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>📋</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">01</div>
+          <div class="svc-card-title">Flyer & Visitenkarten</div>
+          <div class="svc-card-desc">Professionelle Drucksachen, die bleibenden Eindruck hinterlassen. Alle Formate, alle Auflagen, Design inklusive.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="poster.png" alt="Plakate und Poster drucken Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f0f4f0;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>🖼️</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">02</div>
+          <div class="svc-card-title">Plakate & Poster</div>
+          <div class="svc-card-desc">Von A3 bis Großformat – auffällig, wirkungsvoll und in Premium-Qualität gedruckt.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="katalog.png" alt="Kataloge und Broschüren Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f8f0e8;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>📚</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">03</div>
+          <div class="svc-card-title">Kataloge & Broschüren</div>
+          <div class="svc-card-desc">Hochwertige Publikationen, die Ihre Marke präsentieren – gestaltet und gedruckt in Premiumqualität.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="druck.png" alt="Druck und Verpackung Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f0f0f8;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>📦</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">04</div>
+          <div class="svc-card-title">Druck & Verpackung</div>
+          <div class="svc-card-desc">CMYK-Druck und individuelle Verpackungslösungen, die Ihre Marke stärken und im Gedächtnis bleiben.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="sticker.png" alt="Sticker und Aufkleber Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f8f8f0;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>🏷️</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">05</div>
+          <div class="svc-card-title">Sticker & Aufkleber</div>
+          <div class="svc-card-desc">UV-beständig, wasserfest und in jeder Form – für Produkte, Fahrzeuge und Promotions.</div>
+        </div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-card-img-wrap">
+          <img class="svc-card-img" src="rollup.png" alt="Roll-ups und Displays Berlin" onerror="this.parentElement.innerHTML='<div style=\'background:#f0f8f8;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:5rem;\'>📋</div>'">
+        </div>
+        <div class="svc-card-body">
+          <div class="svc-card-num">06</div>
+          <div class="svc-card-title">Roll-ups & Textildruck</div>
+          <div class="svc-card-desc">Professionelle Displays und bedruckte Workwear – für Events, Messen und den täglichen Einsatz.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAFIKDESIGN — premium block -->
+<section class="section" id="design">
+  <div class="sec-inner">
+    <div class="sec-head fade-up">
+      <div class="sec-tag">✏️ Grafikdesign & Branding</div>
+      <h2 class="sec-title">Ihre Marke. <em>Unverwechselbar.</em></h2>
+    </div>
+    <div class="premium-block fade-up">
+      <div class="pb-img">
+        <img src="grafikdesign.png" alt="Grafikdesign Service Berlin – Logos und Corporate Identity von Masar Werbeagentur" onerror="this.style.background='var(--navy)';this.style.minHeight='380px';">
+      </div>
+      <div class="pb-content dark">
+        <div class="pb-tag">✦ Branding & Corporate Identity</div>
+        <h3 class="pb-title">Design, das <em>wirkt</em> – und verkauft.</h3>
+        <p class="pb-desc">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Ihre Zielgruppe ansprechen, Vertrauen aufbauen und sich von der Konkurrenz abheben – von der ersten Skizze bis zum finalen Styleguide.</p>
+        <div class="pb-features">
+          <div class="pb-feat">Logo-Design mit 3 Konzeptvarianten</div>
+          <div class="pb-feat">Komplette Corporate Identity & Styleguide</div>
+          <div class="pb-feat">Alle Dateiformate (AI, PDF, PNG, SVG)</div>
+          <div class="pb-feat">Visitenkarten, Briefpapier & Stempel</div>
+          <div class="pb-feat">Unbegrenzte Korrekturrunden</div>
+        </div>
+        <a href="#kontakt" class="btn-teal">Branding anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBDESIGN — premium block -->
+<section class="section bg-off" id="web">
+  <div class="sec-inner">
+    <div class="sec-head fade-up">
+      <div class="sec-tag">🌐 Webdesign & Entwicklung</div>
+      <h2 class="sec-title">Ihre Website. <em>Ihr Verkäufer.</em></h2>
+    </div>
+    <div class="premium-block reverse fade-up">
+      <div class="pb-img">
+        <img src="webdesign.png" alt="Webdesign Berlin – moderne Websites von Masar Werbeagentur" onerror="this.style.background='#1a3d6b';this.style.minHeight='380px';">
+      </div>
+      <div class="pb-content light">
+        <div class="pb-tag">✦ Moderne Websites & Online-Shops</div>
+        <h3 class="pb-title">Websites, die <em>Kunden gewinnen.</em></h3>
+        <p class="pb-desc">Eine professionelle Website ist heute kein Luxus – sie ist Ihr wichtigster Vertriebskanal. Wir gestalten schnelle, mobile-optimierte Websites, die Ihre Zielgruppe überzeugen und zu Kunden machen.</p>
+        <div class="pb-features">
+          <div class="pb-feat">Individuelles Design – kein Template</div>
+          <div class="pb-feat">Mobile-first & blitzschnell geladen</div>
+          <div class="pb-feat">SEO-optimiert von Anfang an</div>
+          <div class="pb-feat">Kontaktformulare & Buchungssysteme</div>
+          <div class="pb-feat">Schulung & Support nach Launch</div>
+        </div>
+        <a href="#kontakt" class="btn-teal">Website anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="section bg-navy" id="social">
+  <div class="sec-inner">
+    <div class="sec-head center fade-up">
+      <div class="sec-tag" style="background:rgba(88,208,189,.15);color:var(--teal);">📱 Social Media Marketing</div>
+      <h2 class="sec-title white">Viral auf dem <em>Smartphone.</em></h2>
+      <p class="sec-sub light">Professionelles Management auf Instagram, TikTok und Facebook – mit Content, Reels und gezielten Ads.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="price-name">Starter</div>
+        <div class="price-val">199€–249€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>8 Posts / Monat</li>
+          <li>2 Reels / Monat</li>
+          <li>1 Plattform</li>
+          <li>Design inklusive</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card featured fade-up">
+        <div class="price-badge">⭐ Empfehlung</div>
+        <div class="price-name">Business</div>
+        <div class="price-val">449€–599€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>12 Posts / Monat</li>
+          <li>4 Reels / Monat</li>
+          <li>2 Plattformen</li>
+          <li>Community Management</li>
+          <li>Stories & Highlights</li>
+          <li>Wöchentliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card fade-up">
+        <div class="price-name">Premium</div>
+        <div class="price-val">ab 899€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>Unbegrenzte Posts & Reels</li>
+          <li>Content Day vor Ort</li>
+          <li>Alle Plattformen</li>
+          <li>Meta Ads & Google Ads</li>
+          <li>Community Management</li>
+          <li>Strategie-Meeting monatlich</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.2rem;font-size:13px;color:rgba(255,255,255,.45);">Alle anderen Leistungen auf Anfrage – individuelle Preise je nach Umfang.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="kontakt">
+  <div class="sec-inner">
+    <div class="sec-head fade-up">
+      <div class="sec-tag">Kontakt</div>
+      <h2 class="sec-title">Ihr Projekt. <em>Unser Antrieb.</em></h2>
+      <p class="sec-sub">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-lbl">Telefon</div><div class="cinfo-val"><a href="tel:01785143918">0178 514 3918</a></div></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">💬</div><div><div class="cinfo-lbl">WhatsApp</div><div class="cinfo-val"><a href="https://wa.me/491785143918">0178 514 3918</a></div></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-lbl">Adresse</div><div class="cinfo-val">Bristolstraße 19HN, 19E<br>13349 Berlin</div></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div><div class="cinfo-lbl">Öffnungszeiten</div><div class="cinfo-val">Mo–Fr: 09:00 – 18:00 Uhr</div></div></div>
+      </div>
+      <div class="fade-up">
+        <div class="cform">
+          <h3>Kostenlose Anfrage</h3>
+          <form action="https://formsubmit.co/amjadbalili97@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <div class="fg-row">
+              <div class="fg"><label>Ihr Name *</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
+              <div class="fg"><label>E-Mail *</label><input type="email" name="email" placeholder="max@firma.de" required></div>
+            </div>
+            <div class="fg">
+              <label>Gewünschte Leistung *</label>
+              <select name="leistung" required>
+                <option value="">Bitte wählen...</option>
+                <optgroup label="💡 Werbetechnik">
+                  <option>Leuchtreklamen & LED-Schilder</option>
+                  <option>Fahrzeugbeschriftung</option>
+                  <option>Schaufensterbeklebung</option>
+                  <option>Schilder & Banner</option>
+                </optgroup>
+                <optgroup label="🖨️ Druck & Print">
+                  <option>Flyer & Visitenkarten</option>
+                  <option>Plakate & Poster</option>
+                  <option>Kataloge & Broschüren</option>
+                  <option>Sticker & Aufkleber</option>
+                </optgroup>
+                <optgroup label="✏️ Design & Web">
+                  <option>Grafikdesign & Branding</option>
+                  <option>Webdesign & Website</option>
+                </optgroup>
+                <optgroup label="📱 Social Media">
+                  <option>Social Media Starter (199–249€)</option>
+                  <option>Social Media Business (449–599€)</option>
+                  <option>Social Media Premium (ab 899€)</option>
+                </optgroup>
+                <option>Mehrere Leistungen</option>
+              </select>
+            </div>
+            <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
+            <button type="submit" class="submit-btn">Anfrage senden →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <div class="foot-logo">
+        <img src="logo.png" alt="Masar Werbeagentur Berlin" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <span class="foot-logo-fb">MASAR</span>
+      </div>
+      <p>Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Berlin.</p>
+      <div class="foot-social">
+        <a href="https://instagram.com" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="https://facebook.com" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://wa.me/491785143918" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h5>Leistungen</h5>
+      <a href="werbetechnik.html">Leuchtreklamen</a>
+      <a href="werbetechnik.html">Fahrzeugbeschriftung</a>
+      <a href="print.html">Grafikdesign</a>
+      <a href="print.html">Druck & Print</a>
+      <a href="digital.html">Social Media</a>
+    </div>
+    <div class="foot-col">
+      <h5>Seiten</h5>
+      <a href="leistungen.html">Alle Leistungen</a>
+      <a href="werbetechnik.html">Werbetechnik</a>
+      <a href="digital.html">Social Media</a>
+      <a href="print.html">Print & Design</a>
+    </div>
+    <div class="foot-col">
+      <h5>Rechtliches</h5>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span>
+    <span>Steuernummer: 23/203/00524 · Finanzamt Wedding</span>
+  </div>
+</footer>
+
+<script>
+function acceptCookies(){localStorage.setItem('cookies','1');document.getElementById('cookieBanner').classList.remove('show');}
+window.addEventListener('load',()=>{if(!localStorage.getItem('cookies'))setTimeout(()=>document.getElementById('cookieBanner').classList.add('show'),1800);});
+document.getElementById('hamburger').addEventListener('click',()=>{document.getElementById('mobMenu').classList.toggle('open');});
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const h=a.getAttribute('href');if(h==='#')return;
+  e.preventDefault();
+  const el=document.querySelector(h);
+  if(el){const offset=el.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top:offset,behavior:'smooth'});}
+  document.getElementById('mobMenu').classList.remove('open');
+}));
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*80);}),{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
