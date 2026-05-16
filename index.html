@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Masar Werbeagentur Berlin – Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign & Social Media. Premium Qualität aus einer Hand.">
+<meta property="og:title" content="Masar Werbeagentur Berlin – Premium Werbung & Design">
+<meta property="og:description" content="Von der Leuchtreklame bis zum viralen Reel – Ihr Erfolg ist unser Handwerk.">
+<meta property="og:url" content="https://masar-werbeagentur.de/">
+<link rel="canonical" href="https://masar-werbeagentur.de/">
+<title>Masar Werbeagentur Berlin – Leuchtreklamen, Design & Social Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Masar Werbeagentur","url":"https://masar-werbeagentur.de","telephone":"+491785143918","address":{"@type":"PostalAddress","streetAddress":"Bristolstraße 19HN, 19E","addressLocality":"Berlin","postalCode":"13349","addressCountry":"DE"},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"€€"}</script>
+<style>
+:root{
+  --teal:#58d0bd;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);
+  --navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;
+  --white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;
+  --purple:#7c3aed;--gold:#f5c000;
+  --nav-h:80px;
+  --radius:12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* UTILS */
+.container{max-width:1240px;margin:0 auto;padding:0 2rem;}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:var(--navy);padding:14px 30px;border-radius:6px;font-weight:700;font-size:14px;letter-spacing:.5px;transition:all .25s;border:2px solid var(--teal);}
+.btn-primary:hover{background:var(--teal-d);border-color:var(--teal-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(88,208,189,.3);}
+.btn-secondary{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;padding:12px 28px;border-radius:6px;font-weight:600;font-size:14px;border:2px solid rgba(255,255,255,.35);transition:all .25s;}
+.btn-secondary:hover{border-color:var(--teal);color:var(--teal);}
+.btn-dark{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:#fff;padding:14px 30px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;border:2px solid var(--navy);}
+.btn-dark:hover{background:var(--teal);color:var(--navy);border-color:var(--teal);transform:translateY(-2px);}
+.section{padding:6rem 0;}
+.section.bg-off{background:var(--off);}
+.section.bg-navy{background:var(--navy);}
+.section.bg-dark{background:var(--navy3);}
+.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.8rem;}
+.sec-title em{color:var(--teal);font-style:normal;}
+.sec-title.white{color:#fff;}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:580px;}
+.sec-sub.light{color:rgba(255,255,255,.6);}
+.sec-head{margin-bottom:3rem;}
+.sec-head.center{text-align:center;}
+.sec-head.center .sec-sub{margin:0 auto;}
+.tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;}
+.tag-teal{background:var(--teal-l);color:var(--teal-d);}
+.tag-purple{background:rgba(124,58,237,.1);color:var(--purple);}
+.tag-gold{background:rgba(245,192,0,.12);color:#8a6800;}
+.tag-navy{background:rgba(19,46,80,.08);color:var(--navy);}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.fade-up.vis{opacity:1;transform:translateY(0);}
+
+/* COOKIE */
+.cookie{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--navy3);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:2px solid var(--teal);transform:translateY(100%);transition:transform .4s;}
+.cookie.show{transform:translateY(0);}
+.cookie p{font-size:13px;color:rgba(255,255,255,.75);}
+.cookie a{color:var(--teal);}
+.cookie-btn{background:var(--teal);color:var(--navy);border:none;padding:8px 22px;font-weight:700;font-size:13px;cursor:pointer;border-radius:4px;font-family:inherit;}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:24px;right:24px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s;}
+.wa:hover{transform:scale(1.1);}
+.wa svg{width:26px;height:26px;fill:white;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-shadow:0 2px 16px rgba(0,0,0,.06);backdrop-filter:blur(12px);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:58px;object-fit:contain;}
+.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;color:var(--navy);letter-spacing:2px;display:none;}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--navy);font-size:13.5px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:9px 22px!important;border-radius:6px;font-weight:700!important;}
+.nav-cta::after{display:none!important;}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
+.mob-nav{display:none;position:fixed;inset:0;top:var(--nav-h);background:#fff;z-index:499;padding:2rem;overflow-y:auto;}
+.mob-nav.open{display:block;}
+.mob-nav a{display:block;padding:14px 0;color:var(--navy);font-size:18px;font-weight:600;border-bottom:1px solid var(--border);}
+.mob-nav a:hover{color:var(--teal);}
+.mob-cta{margin-top:1.5rem;display:block;background:var(--teal);color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;font-size:16px!important;border:none!important;}
+
+/* ── HERO ── */
+.hero{
+  padding-top:var(--nav-h);
+  min-height:100vh;
+  display:flex;align-items:center;
+  background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 50%,#0d4a4a 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 72% 45%,rgba(88,208,189,.13) 0%,transparent 58%);}
+.hero-lines{position:absolute;top:0;right:0;bottom:0;width:42%;opacity:.05;background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:2;padding:4rem 0;}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem;}
+.hero-tag::before{content:'✦';}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.8rem,5vw,4.4rem);line-height:1;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1 em{color:var(--teal);font-style:normal;display:block;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:2rem;max-width:480px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-trust{display:flex;align-items:center;gap:.8rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);}
+.hero-trust-txt{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;}
+.hero-stars{color:var(--gold);font-size:16px;letter-spacing:2px;}
+.hero-visual{position:relative;}
+.hero-logo-img{width:100%;max-width:420px;margin:0 auto;filter:drop-shadow(0 0 60px rgba(88,208,189,.28));}
+.hero-badge{position:absolute;bottom:1.5rem;left:0;background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(88,208,189,.2);border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;gap:.8rem;}
+.hero-badge-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--teal);line-height:1;}
+.hero-badge-txt{font-size:12px;color:rgba(255,255,255,.6);line-height:1.4;}
+
+/* ── STATS ── */
+.stats{background:var(--navy3);border-top:1px solid rgba(88,208,189,.12);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:2.2rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.06);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;color:var(--teal);line-height:1;}
+.stat-lbl{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:5px;}
+
+/* ── QUICK NAV ── */
+.quick-nav{padding:3rem 0;background:#fff;border-bottom:1px solid var(--border);}
+.qn-title{text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.qn-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;}
+.qn-card{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.4rem 1rem;border:2px solid var(--border);border-radius:var(--radius);transition:all .3s;cursor:pointer;}
+.qn-card:hover{border-color:var(--teal);background:var(--teal-l);transform:translateY(-3px);box-shadow:0 8px 24px rgba(88,208,189,.12);}
+.qn-icon{font-size:2rem;}
+.qn-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;text-transform:uppercase;color:var(--navy);text-align:center;}
+.qn-sub{font-size:11px;color:var(--muted);text-align:center;line-height:1.4;}
+
+/* ── SERVICE CARDS ── */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s;position:relative;}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(88,208,189,.13);border-color:rgba(88,208,189,.3);}
+.svc-card:hover::after{transform:scaleX(1);}
+.svc-img-wrap{overflow:hidden;}
+.svc-img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s;}
+.svc-card:hover .svc-img{transform:scale(1.05);}
+.svc-icon-only{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--off),#e0eeec);}
+.svc-body{padding:1.4rem;}
+.svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--teal);margin-bottom:.4rem;}
+.svc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
+.svc-desc{font-size:13px;color:var(--muted);line-height:1.7;}
+
+/* ── PREMIUM BLOCK ── */
+.pb{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);}
+.pb.rev{direction:rtl;}.pb.rev>*{direction:ltr;}
+.pb-img img{width:100%;height:100%;object-fit:cover;min-height:380px;display:block;transition:transform .5s;}
+.pb:hover .pb-img img{transform:scale(1.04);}
+.pb-content{padding:3rem;display:flex;flex-direction:column;justify-content:center;}
+.pb-content.dk{background:var(--navy);}
+.pb-content.lt{background:#fff;}
+.pb-ey{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.pb-t{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.6rem,2.8vw,2.4rem);text-transform:uppercase;line-height:1;margin-bottom:.8rem;}
+.pb-content.dk .pb-t{color:#fff;}.pb-content.lt .pb-t{color:var(--navy);}
+.pb-t em{color:var(--teal);font-style:normal;}
+.pb-d{font-size:14px;line-height:1.85;margin-bottom:1.2rem;}
+.pb-content.dk .pb-d{color:rgba(255,255,255,.65);}.pb-content.lt .pb-d{color:var(--muted);}
+.pb-feats{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.4rem;}
+.pb-feat{font-size:13px;display:flex;align-items:center;gap:.5rem;}
+.pb-content.dk .pb-feat{color:rgba(255,255,255,.8);}.pb-content.lt .pb-feat{color:var(--text);}
+.pb-feat::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+
+/* ── RESULTS ── */
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;}
+.result-card{background:rgba(255,255,255,.05);border:1px solid rgba(88,208,189,.15);border-radius:var(--radius);padding:2rem;text-align:center;transition:all .3s;}
+.result-card:hover{background:rgba(88,208,189,.07);border-color:rgba(88,208,189,.3);transform:translateY(-3px);}
+.result-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;color:var(--teal);line-height:1;}
+.result-lbl{font-size:13px;color:rgba(255,255,255,.55);margin-top:.5rem;line-height:1.5;}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.why-card{padding:2rem;border:1px solid var(--border);border-radius:var(--radius);background:#fff;transition:all .3s;position:relative;overflow:hidden;}
+.why-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--teal);transform:scaleY(0);transform-origin:bottom;transition:transform .35s;}
+.why-card:hover{box-shadow:0 12px 40px rgba(88,208,189,.1);border-color:rgba(88,208,189,.25);}
+.why-card:hover::before{transform:scaleY(1);}
+.why-icon{font-size:2.2rem;margin-bottom:1rem;}
+.why-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
+.why-desc{font-size:13px;color:var(--muted);line-height:1.75;}
+
+/* ── TESTIMONIALS ── */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem;transition:all .3s;}
+.testi-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px);}
+.testi-stars{color:var(--gold);font-size:16px;margin-bottom:1rem;}
+.testi-text{font-size:14px;color:var(--text);line-height:1.8;font-style:italic;margin-bottom:1.2rem;}
+.testi-name{font-weight:700;font-size:14px;color:var(--navy);}
+.testi-company{font-size:12px;color:var(--muted);}
+
+/* ── PROCESS ── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:2rem;}
+.process-steps::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,var(--teal),rgba(88,208,189,.15));}
+.pstep{text-align:center;padding:0 1rem;}
+.pstep-num{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-d));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:#fff;margin:0 auto 1.2rem;position:relative;z-index:2;box-shadow:0 8px 24px rgba(88,208,189,.3);}
+.pstep h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
+.pstep p{font-size:13px;color:var(--muted);line-height:1.65;}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;cursor:pointer;font-weight:600;font-size:15px;color:var(--navy);gap:1rem;}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--teal-l);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:18px;flex-shrink:0;transition:transform .3s;}
+.faq-icon.open{transform:rotate(45deg);}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.8;padding-bottom:1.2rem;display:none;}
+.faq-a.open{display:block;}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.price-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:2rem;position:relative;transition:all .3s;}
+.price-card.featured{border-color:var(--teal);box-shadow:0 20px 50px rgba(88,208,189,.15);}
+.price-card:hover{transform:translateY(-4px);}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--navy);font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;white-space:nowrap;}
+.price-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.3rem;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;}
+.price-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.2rem;color:var(--teal);line-height:1;}
+.price-period{font-size:12px;color:var(--muted);margin-bottom:1rem;}
+.price-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem;}
+.price-list li{font-size:13px;color:var(--text);list-style:none;display:flex;align-items:flex-start;gap:.5rem;}
+.price-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.price-btn{display:block;text-align:center;background:var(--navy);color:#fff;padding:12px;border-radius:6px;font-weight:700;font-size:13px;transition:background .2s;}
+.price-card.featured .price-btn{background:var(--teal);color:var(--navy);}
+.price-btn:hover{background:var(--teal);color:var(--navy);}
+
+/* ── FINAL CTA ── */
+.final-cta{background:linear-gradient(135deg,var(--navy3),var(--navy),#0d4a4a);padding:6rem 0;text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(88,208,189,.1) 0%,transparent 65%);}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,5vw,4rem);color:#fff;text-transform:uppercase;margin-bottom:1rem;line-height:1;position:relative;z-index:1;}
+.cta-title em{color:var(--teal);font-style:normal;}
+.cta-sub{font-size:17px;color:rgba(255,255,255,.65);margin-bottom:2.5rem;position:relative;z-index:1;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.cta-contact{display:flex;align-items:center;gap:2rem;justify-content:center;margin-top:2rem;flex-wrap:wrap;position:relative;z-index:1;}
+.cta-info{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.6);font-size:14px;}
+.cta-info strong{color:#fff;}
+
+/* ── FOOTER ── */
+footer{background:#060e1a;padding:4rem 0 2rem;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+.foot-logo img{height:56px;object-fit:contain;}
+.foot-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--teal);letter-spacing:2px;display:none;}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:1.2rem;}
+.foot-social{display:flex;gap:.7rem;}
+.fsoc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .25s;}
+.fsoc:hover{border-color:var(--teal);background:rgba(88,208,189,.1);}
+.fsoc svg{width:16px;height:16px;fill:rgba(255,255,255,.45);transition:fill .25s;}
+.fsoc:hover svg{fill:var(--teal);}
+.foot-col h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:1rem;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.38);margin-bottom:.5rem;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;font-size:11px;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:1rem;}
+.foot-legal{display:flex;gap:1.5rem;}
+.foot-legal a{color:rgba(255,255,255,.3);transition:color .2s;}
+.foot-legal a:hover{color:var(--teal);}
+
+/* ── MOBILE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .qn-grid{grid-template-columns:repeat(3,1fr);}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}
+  .pb-img img{min-height:260px;}
+  .results-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .testimonials-grid{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2rem;}
+  .process-steps::before{display:none;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+}
+@media(max-width:640px){
+  :root{--nav-h:68px;}
+  .hero{min-height:auto;padding:calc(var(--nav-h) + 2rem) 0 3rem;}
+  .qn-grid{grid-template-columns:repeat(2,1fr);}
+  .svc-grid{grid-template-columns:1fr;}
+  .results-grid{grid-template-columns:1fr 1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .foot-grid{grid-template-columns:1fr;}
+  .section{padding:4rem 0;}
+  .final-cta{padding:4rem 0;}
+}
+</style>
+</head>
+<body>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookieBanner">
+  <p>Wir verwenden Cookies für die beste Erfahrung. <a href="datenschutz.html">Datenschutz</a></p>
+  <button class="cookie-btn" onclick="acceptCookies()">Akzeptieren</button>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/491785143918" class="wa" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-fb">MASAR</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="werbetechnik.html">Werbetechnik</a></li>
+      <li><a href="digital.html">Social Media</a></li>
+      <li><a href="print.html">Print & Design</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="index.html">Home</a>
+  <a href="leistungen.html">Alle Leistungen</a>
+  <a href="werbetechnik.html">Werbetechnik & Leuchtreklamen</a>
+  <a href="digital.html">Social Media Marketing</a>
+  <a href="print.html">Print & Grafikdesign</a>
+  <a href="#kontakt" class="mob-cta" onclick="document.getElementById('mobNav').classList.remove('open')">Jetzt kostenlos anfragen →</a>
+</div>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-lines"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">Full-Service Werbeagentur · Berlin</div>
+        <h1>Von der Leucht&shy;reklame<br>bis zum <em>viralen Reel.</em></h1>
+        <p class="hero-sub">Werbetechnik, Grafikdesign, Webdesign und Social Media – professionell, kreativ und aus einer Hand. Ihr Erfolg ist unser Handwerk.</p>
+        <div class="hero-btns">
+          <a href="#leistungen" class="btn-primary">Leistungen entdecken ↓</a>
+          <a href="#kontakt" class="btn-secondary">Kostenlos anfragen</a>
+        </div>
+        <div class="hero-trust">
+          <span class="hero-trust-txt">Bewertet mit</span>
+          <span class="hero-stars">★★★★★</span>
+          <span class="hero-trust-txt">von unseren Kunden</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-logo-img" src="logo.png" alt="Masar Werbeagentur" loading="eager">
+        <div class="hero-badge">
+          <div class="hero-badge-num">49</div>
+          <div class="hero-badge-txt">Erfolgreiche<br>Projekte</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num">49</div><div class="stat-lbl">Projekte umgesetzt</div></div>
+      <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
+      <div class="stat"><div class="stat-num">24h</div><div class="stat-lbl">Express-Service</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK NAV -->
+<div class="quick-nav" id="leistungen">
+  <div class="container">
+    <div class="qn-title">Direkt zu Ihrem Thema</div>
+    <div class="qn-grid">
+      <a href="#werbetechnik" class="qn-card fade-up"><span class="qn-icon">💡</span><span class="qn-name">Werbetechnik</span><span class="qn-sub">Leuchtreklamen & Außenwerbung</span></a>
+      <a href="#druck" class="qn-card fade-up"><span class="qn-icon">🖨️</span><span class="qn-name">Druck & Print</span><span class="qn-sub">Flyer, Kataloge & mehr</span></a>
+      <a href="#design" class="qn-card fade-up"><span class="qn-icon">✏️</span><span class="qn-name">Grafikdesign</span><span class="qn-sub">Branding & Corporate Identity</span></a>
+      <a href="#web" class="qn-card fade-up"><span class="qn-icon">🌐</span><span class="qn-name">Webdesign</span><span class="qn-sub">Websites & Online-Shops</span></a>
+      <a href="#social" class="qn-card fade-up"><span class="qn-icon">📱</span><span class="qn-name">Social Media</span><span class="qn-sub">Instagram, TikTok & Ads</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- 3. SERVICES — WERBETECHNIK -->
+<section class="section" id="werbetechnik">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">💡 Werbetechnik & Außenwerbung</div>
+      <h2 class="sec-title">Sichtbar auf der <em>Straße</em> – rund um die Uhr</h2>
+      <p class="sec-sub">Leuchtreklamen und Fahrzeugbeschriftung, die Tag und Nacht für Ihr Unternehmen arbeiten.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="leuchtreklamen.png" alt="Leuchtreklamen Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>💡</div>'"></div>
+        <div class="svc-body"><div class="svc-num">01 · HIGHLIGHT</div><div class="svc-title">Leuchtreklamen & LED</div><div class="svc-desc">Maßgeschneiderte Neon- und LED-Schilder. Energieeffizient, langlebig und individuell gestaltet für maximale Aufmerksamkeit.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="fahrzeug.png" alt="Fahrzeugbeschriftung Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>🚗</div>'"></div>
+        <div class="svc-body"><div class="svc-num">02</div><div class="svc-title">Fahrzeugbeschriftung</div><div class="svc-desc">Car Wrapping und Fahrzeugbranding für alle Fahrzeugtypen. Mobile Werbung, die täglich tausende Menschen erreicht.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="banner.png" alt="Schilder und Banner Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>🪧</div>'"></div>
+        <div class="svc-body"><div class="svc-num">03</div><div class="svc-title">Schilder & Banner</div><div class="svc-desc">Großformatige Außenwerbung, Firmenschilder und Bauplanen – wetterfest und in jeder Größe.</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;" class="fade-up">
+      <a href="werbetechnik.html" class="btn-dark">Alle Werbetechnik-Leistungen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DRUCK & PRINT -->
+<section class="section bg-off" id="druck">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">🖨️ Druck & Printmedien</div>
+      <h2 class="sec-title">Qualität, die man <em>anfassen</em> kann</h2>
+      <p class="sec-sub">Premium-Druck für alle Formate – Design immer inklusive, Lieferung deutschlandweit.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="flyer.png" alt="Flyer und Visitenkarten Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>📋</div>'"></div>
+        <div class="svc-body"><div class="svc-num">01</div><div class="svc-title">Flyer & Visitenkarten</div><div class="svc-desc">Alle Formate, alle Auflagen. Design inklusive – professionell und unvergesslich.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="poster.png" alt="Plakate und Poster Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>🖼️</div>'"></div>
+        <div class="svc-body"><div class="svc-num">02</div><div class="svc-title">Plakate & Poster</div><div class="svc-desc">Von A3 bis Großformat – auffällig, wirkungsvoll und in Premium-Qualität.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="katalog.png" alt="Kataloge und Broschüren" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>📚</div>'"></div>
+        <div class="svc-body"><div class="svc-num">03</div><div class="svc-title">Kataloge & Broschüren</div><div class="svc-desc">Hochwertige Publikationen, die Ihre Marke professionell präsentieren.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="druck.png" alt="Druck und Verpackung" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>📦</div>'"></div>
+        <div class="svc-body"><div class="svc-num">04</div><div class="svc-title">Druck & Verpackung</div><div class="svc-desc">CMYK-Druck und individuelle Verpackungslösungen für Ihre Marke.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="sticker.png" alt="Sticker und Aufkleber" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>🏷️</div>'"></div>
+        <div class="svc-body"><div class="svc-num">05</div><div class="svc-title">Sticker & Aufkleber</div><div class="svc-desc">UV-beständig, wasserfest – in jeder Form und Größe möglich.</div></div>
+      </div>
+      <div class="svc-card fade-up">
+        <div class="svc-img-wrap"><img class="svc-img" src="rollup.png" alt="Roll-ups und Textildruck" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-only>🖥️</div>'"></div>
+        <div class="svc-body"><div class="svc-num">06</div><div class="svc-title">Roll-ups & Textildruck</div><div class="svc-desc">Displays für Events und bedruckte Workwear für Ihr Team.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRAFIKDESIGN -->
+<section class="section" id="design">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">✏️ Grafikdesign & Branding</div>
+      <h2 class="sec-title">Ihre Marke. <em>Unverwechselbar.</em></h2>
+    </div>
+    <div class="pb fade-up">
+      <div class="pb-img"><img src="grafikdesign.png" alt="Grafikdesign Service Berlin" loading="lazy" onerror="this.style.background='var(--navy)';this.style.minHeight='380px';"></div>
+      <div class="pb-content dk">
+        <div class="pb-ey">✦ Branding & Corporate Identity</div>
+        <h3 class="pb-t">Design, das <em>überzeugt</em> – und verkauft.</h3>
+        <p class="pb-d">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Vertrauen aufbauen, sich von der Konkurrenz abheben und bei Ihrer Zielgruppe ankommen – von der ersten Skizze bis zum finalen Styleguide.</p>
+        <div class="pb-feats">
+          <div class="pb-feat">Logo-Design mit 3 Konzeptvarianten</div>
+          <div class="pb-feat">Komplette Corporate Identity & Styleguide</div>
+          <div class="pb-feat">Alle Dateiformate (AI, PDF, PNG, SVG)</div>
+          <div class="pb-feat">Visitenkarten, Briefpapier & Stempel</div>
+          <div class="pb-feat">Unbegrenzte Korrekturrunden bis zur Perfektion</div>
+        </div>
+        <a href="#kontakt" class="btn-primary">Branding anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBDESIGN -->
+<section class="section bg-off" id="web">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">🌐 Webdesign & Entwicklung</div>
+      <h2 class="sec-title">Ihre Website. <em>Ihr bester Verkäufer.</em></h2>
+    </div>
+    <div class="pb rev fade-up">
+      <div class="pb-img"><img src="webdesign.png" alt="Webdesign Berlin" loading="lazy" onerror="this.style.background='var(--navy2)';this.style.minHeight='380px';"></div>
+      <div class="pb-content lt">
+        <div class="pb-ey">✦ Moderne Websites & Online-Shops</div>
+        <h3 class="pb-t">Websites, die <em>Kunden gewinnen.</em></h3>
+        <p class="pb-d">Eine professionelle Website ist heute Ihr wichtigster Vertriebskanal. Wir gestalten schnelle, mobile-optimierte Websites mit starker User Experience, die Ihre Zielgruppe überzeugen und echte Anfragen bringen.</p>
+        <div class="pb-feats">
+          <div class="pb-feat">100% individuelles Design – kein Template</div>
+          <div class="pb-feat">Mobile-first & blitzschnell (Lighthouse 90+)</div>
+          <div class="pb-feat">SEO-optimiert von Anfang an</div>
+          <div class="pb-feat">Kontaktformulare & Buchungssysteme</div>
+          <div class="pb-feat">Schulung & persönlicher Support nach Launch</div>
+        </div>
+        <a href="#kontakt" class="btn-primary">Website anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. RESULTS -->
+<section class="section bg-dark">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <div class="sec-eyebrow">Ergebnisse</div>
+      <h2 class="sec-title white">Was wir <em>erreichen</em></h2>
+      <p class="sec-sub light">Echte Resultate für echte Unternehmen – messbar, nachhaltig und wirkungsvoll.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card fade-up"><div class="result-num">49+</div><div class="result-lbl">Erfolgreiche Projekte abgeschlossen</div></div>
+      <div class="result-card fade-up"><div class="result-num">100%</div><div class="result-lbl">Qualitätsgarantie bei jedem Auftrag</div></div>
+      <div class="result-card fade-up"><div class="result-num">24h</div><div class="result-lbl">Express-Service auf Anfrage</div></div>
+      <div class="result-card fade-up"><div class="result-num">5★</div><div class="result-lbl">Kundenbewertung durchschnittlich</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHY CHOOSE US -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <div class="sec-eyebrow">Warum Masar?</div>
+      <h2 class="sec-title">Ihr Partner für <em>nachhaltigen</em> Erfolg</h2>
+      <p class="sec-sub">Wir sind mehr als eine Agentur – wir sind Ihr strategischer Partner für Wachstum.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Schnelle Lieferung</div>
+        <div class="why-desc">Kurze Produktionszeiten ohne Qualitätsverlust – auf Wunsch auch Express-Service innerhalb von 24 Stunden.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🎯</div>
+        <div class="why-title">Full-Service aus einer Hand</div>
+        <div class="why-desc">Von der Idee bis zur fertigen Umsetzung – Design, Druck, Web und Marketing bei einem Partner ohne Schnittstellen.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">💎</div>
+        <div class="why-title">Premium-Qualität</div>
+        <div class="why-desc">Hochwertige Materialien, professionelle Verarbeitung und sorgfältige Qualitätskontrolle bei jedem einzelnen Auftrag.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🤝</div>
+        <div class="why-title">Persönliche Beratung</div>
+        <div class="why-desc">Kein Call-Center, keine langen Wartezeiten. Sie sprechen direkt mit Ihrem persönlichen Ansprechpartner.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">📍</div>
+        <div class="why-title">Lokal in Berlin</div>
+        <div class="why-desc">Als Berliner Agentur kennen wir den lokalen Markt und liefern direkt vor Ort – persönlich und verlässlich.</div>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">♾️</div>
+        <div class="why-title">Unbegrenzte Korrekturen</div>
+        <div class="why-desc">Wir arbeiten so lange, bis Sie 100% zufrieden sind. Keine versteckten Kosten für Überarbeitungen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. TESTIMONIALS -->
+<section class="section bg-off">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <div class="sec-eyebrow">Kundenstimmen</div>
+      <h2 class="sec-title">Was unsere <em>Kunden sagen</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Masar hat unsere Leuchtreklame perfekt umgesetzt – genau nach unseren Vorstellungen und pünktlich geliefert. Absolut professionell!"</p>
+        <div class="testi-name">Michael K.</div>
+        <div class="testi-company">Restaurant Mitte, Berlin</div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Unsere Fahrzeugbeschriftung ist der Hit! Überall werde ich angesprochen. Die Qualität ist top und der Service war sehr angenehm."</p>
+        <div class="testi-name">Thomas B.</div>
+        <div class="testi-company">Handwerksbetrieb, Berlin</div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Das neue Logo und die Website haben unser Unternehmen komplett transformiert. Wir bekommen viel mehr Anfragen seitdem!"</p>
+        <div class="testi-name">Sandra M.</div>
+        <div class="testi-company">Beauty Studio, Berlin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SOCIAL MEDIA -->
+<section class="section bg-navy" id="social">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <div class="sec-eyebrow" style="color:var(--teal);">📱 Social Media Marketing</div>
+      <h2 class="sec-title white">Viral auf dem <em>Smartphone.</em></h2>
+      <p class="sec-sub light">Professionelles Management auf Instagram, TikTok und Facebook – mit Content, Reels und gezielten Ads.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <div class="price-name">Starter</div>
+        <div class="price-val">199€–249€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>8 professionelle Posts</li>
+          <li>2 Reels / Monat</li>
+          <li>1 Plattform (Instagram oder Facebook)</li>
+          <li>Design inklusive</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card featured fade-up">
+        <div class="price-badge">⭐ Empfehlung</div>
+        <div class="price-name">Business</div>
+        <div class="price-val">449€–599€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>12 Posts / Monat</li>
+          <li>4 Reels / Monat</li>
+          <li>2 Plattformen</li>
+          <li>Community Management</li>
+          <li>Stories & Highlights</li>
+          <li>Wöchentliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card fade-up">
+        <div class="price-name">Premium</div>
+        <div class="price-val">ab 899€</div>
+        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <ul class="price-list">
+          <li>Unbegrenzte Posts & Reels</li>
+          <li>Content Day vor Ort</li>
+          <li>Alle Plattformen</li>
+          <li>Meta Ads & Google Ads</li>
+          <li>Community Management</li>
+          <li>Monatliches Strategie-Meeting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.2rem;font-size:13px;color:rgba(255,255,255,.4);">Alle anderen Leistungen auf Anfrage – individuelle Preise je nach Umfang.</p>
+  </div>
+</section>
+
+<!-- 8. PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head center fade-up">
+      <div class="sec-eyebrow">So arbeiten wir</div>
+      <h2 class="sec-title">Einfach. <em>Schnell.</em> Professionell.</h2>
+      <p class="sec-sub">In nur 4 Schritten von der Idee zum fertigen Ergebnis.</p>
+    </div>
+    <div class="process-steps">
+      <div class="pstep fade-up"><div class="pstep-num">1</div><h4>Beratung</h4><p>Persönliches Gespräch über Ihre Wünsche, Ziele und Budget – kostenlos und unverbindlich.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">2</div><h4>Konzept</h4><p>Wir entwickeln kreative Konzepte und Designs passend zu Ihrer Marke und Zielgruppe.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">3</div><h4>Freigabe</h4><p>Sie prüfen und geben frei – mit unbegrenzten Korrekturrunden bis zur Perfektion.</p></div>
+      <div class="pstep fade-up"><div class="pstep-num">4</div><h4>Lieferung</h4><p>Pünktliche Lieferung in erstklassiger Qualität – mit persönlichem Support danach.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section bg-off">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">Häufige Fragen</div>
+      <h2 class="sec-title">Alles, was Sie <em>wissen</em> müssen</h2>
+    </div>
+    <div style="max-width:720px;" class="fade-up">
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Was kostet eine Leuchtreklame bei Masar? <span class="faq-icon">+</span></div><div class="faq-a">Die Kosten einer Leuchtreklame hängen von Größe, Material und Design ab. Wir bieten individuelle Preise je nach Anforderung – kontaktieren Sie uns für ein kostenloses Angebot.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Wie lange dauert die Produktion einer Fahrzeugbeschriftung? <span class="faq-icon">+</span></div><div class="faq-a">Die Produktion dauert in der Regel 5–10 Werktage. Auf Anfrage bieten wir auch Express-Service innerhalb von 24–48 Stunden an.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Ist das Grafikdesign immer inklusive? <span class="faq-icon">+</span></div><div class="faq-a">Ja! Bei allen unseren Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-icon">+</span></div><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-icon">+</span></div><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate. Wir setzen auf langfristigen, authentischen Aufbau.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CONTACT / FINAL CTA -->
+<div class="final-cta" id="kontakt">
+  <div class="container">
+    <div class="cta-title">Ihr Projekt. <em>Unser Antrieb.</em></div>
+    <p class="cta-sub">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
+    <div style="max-width:640px;margin:0 auto;background:rgba(255,255,255,.05);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:2.5rem;">
+      <form action="https://formsubmit.co/amjadbalili97@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;">Name *</label><input type="text" name="name" placeholder="Ihr Name" required style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);color:#fff;padding:12px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(88,208,189,.2)'"></div>
+          <div><label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;">E-Mail *</label><input type="email" name="email" placeholder="Ihre E-Mail" required style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);color:#fff;padding:12px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(88,208,189,.2)'"></div>
+        </div>
+        <div style="margin-bottom:1rem;"><label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;">Gewünschte Leistung *</label>
+          <select name="leistung" required style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);color:#fff;padding:12px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;-webkit-appearance:none;">
+            <option value="" style="color:#000;">Bitte wählen...</option>
+            <optgroup label="💡 Werbetechnik" style="color:#000;"><option style="color:#000;">Leuchtreklamen & LED-Schilder</option><option style="color:#000;">Fahrzeugbeschriftung</option><option style="color:#000;">Schilder & Banner</option></optgroup>
+            <optgroup label="🖨️ Druck & Print" style="color:#000;"><option style="color:#000;">Flyer & Visitenkarten</option><option style="color:#000;">Plakate & Poster</option><option style="color:#000;">Kataloge & Broschüren</option><option style="color:#000;">Sticker & Aufkleber</option></optgroup>
+            <optgroup label="✏️ Design & Web" style="color:#000;"><option style="color:#000;">Grafikdesign & Branding</option><option style="color:#000;">Webdesign & Website</option></optgroup>
+            <optgroup label="📱 Social Media" style="color:#000;"><option style="color:#000;">Social Media Starter (199–249€)</option><option style="color:#000;">Social Media Business (449–599€)</option><option style="color:#000;">Social Media Premium (ab 899€)</option></optgroup>
+            <option style="color:#000;">Mehrere Leistungen</option>
+          </select>
+        </div>
+        <div style="margin-bottom:1rem;"><label style="display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;">Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..." style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);color:#fff;padding:12px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;resize:none;height:100px;transition:border .2s;" onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(88,208,189,.2)'"></textarea></div>
+        <button type="submit" style="width:100%;background:var(--teal);color:var(--navy);border:none;padding:15px;border-radius:6px;font-family:inherit;font-weight:700;font-size:15px;letter-spacing:.5px;cursor:pointer;transition:background .2s;" onmouseover="this.style.background='var(--teal-d)'" onmouseout="this.style.background='var(--teal)'">Anfrage senden →</button>
+      </form>
+    </div>
+    <div class="cta-contact">
+      <div class="cta-info">📞 <strong><a href="tel:01785143918" style="color:#fff;">0178 514 3918</a></strong></div>
+      <div class="cta-info">💬 <strong><a href="https://wa.me/491785143918" style="color:#fff;" target="_blank">WhatsApp</a></strong></div>
+      <div class="cta-info">📍 <strong>Bristolstraße 19HN, 13349 Berlin</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- 11. FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="logo.png" alt="Masar Werbeagentur" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="foot-logo-fb">MASAR</span>
+        </div>
+        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>
+        <div class="foot-social">
+          <a href="https://instagram.com" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://facebook.com" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://wa.me/491785143918" target="_blank" class="fsoc"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Leistungen</h5>
+        <a href="werbetechnik.html">Leuchtreklamen</a>
+        <a href="werbetechnik.html">Fahrzeugbeschriftung</a>
+        <a href="print.html">Grafikdesign</a>
+        <a href="print.html">Druck & Print</a>
+        <a href="digital.html">Social Media</a>
+      </div>
+      <div class="foot-col">
+        <h5>Seiten</h5>
+        <a href="leistungen.html">Alle Leistungen</a>
+        <a href="werbetechnik.html">Werbetechnik</a>
+        <a href="digital.html">Social Media</a>
+        <a href="print.html">Print & Design</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontakt</h5>
+        <a href="tel:01785143918">0178 514 3918</a>
+        <a href="https://wa.me/491785143918">WhatsApp</a>
+        <a href="mailto:amjadbalili97@gmail.com">E-Mail</a>
+        <h5 style="margin-top:1.5rem;">Rechtliches</h5>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+      <div class="foot-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cookie
+function acceptCookies(){localStorage.setItem('c','1');document.getElementById('cookieBanner').classList.remove('show');}
+window.addEventListener('load',()=>{if(!localStorage.getItem('c'))setTimeout(()=>document.getElementById('cookieBanner').classList.add('show'),2000);});
+
+// Nav hamburger
+const ham=document.getElementById('hamburger'),mob=document.getElementById('mobNav');
+ham.addEventListener('click',()=>{mob.classList.toggle('open');ham.classList.toggle('active');});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+  const h=a.getAttribute('href');if(h==='#')return;
+  e.preventDefault();const el=document.querySelector(h);
+  if(el){const top=el.getBoundingClientRect().top+window.scrollY-90;window.scrollTo({top,behavior:'smooth'});}
+  mob.classList.remove('open');
+}));
+
+// FAQ
+function toggleFaq(el){
+  const a=el.nextElementSibling,ic=el.querySelector('.faq-icon');
+  const open=a.classList.toggle('open');
+  ic.classList.toggle('open',open);ic.textContent=open?'−':'+';
+}
+
+// Fade up
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
+  if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*70);
+}),{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
