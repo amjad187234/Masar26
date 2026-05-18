@@ -33,7 +33,7 @@
   --shadow-lg:0 20px 60px rgba(0,0,0,.12);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
+html { scroll-behavior:smooth; font-size:16px; overflow-x:hidden; }
 body { font-family:'Barlow',sans-serif; background:#fff; color:var(--text); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
 img { display:block; max-width:100%; }
 a { text-decoration:none; color:inherit; }
@@ -80,7 +80,7 @@ a { text-decoration:none; color:inherit; }
 .cookie-btn { background:var(--teal); color:var(--navy); border:none; padding:8px 22px; font-weight:700; font-size:13px; cursor:pointer; border-radius:4px; font-family:inherit; }
 
 /* ═══════════ WHATSAPP ═══════════ */
-.wa { position:fixed; bottom:28px; right:28px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
+.wa { position:fixed; bottom:90px; right:18px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
 .wa:hover { transform:scale(1.1); }
 .wa svg { width:28px; height:28px; fill:#fff; }
 
@@ -467,34 +467,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 <body>
 
 
-  <div class="cookie-settings" id="cookieSettings">
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Notwendige Cookies</strong>
-        <p>Technisch erforderlich für die Grundfunktionen der Website. Können nicht deaktiviert werden.</p>
-      </div>
-      <div class="cookie-toggle active disabled">AN</div>
-    </div>
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Analyse-Cookies</strong>
-        <p>Helfen uns zu verstehen, wie Besucher unsere Website nutzen (z.B. Google Analytics).</p>
-      </div>
-      <button class="cookie-toggle" id="analyticsToggle" onclick="toggleAnalytics(this)">AUS</button>
-    </div>
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Marketing-Cookies</strong>
-        <p>Werden für zielgerichtete Werbung verwendet (z.B. Meta Pixel).</p>
-      </div>
-      <button class="cookie-toggle" id="marketingToggle" onclick="toggleMarketing(this)">AUS</button>
-    </div>
-    <div style="margin-top:1rem;display:flex;gap:.8rem;justify-content:flex-end;">
-      <button class="cookie-btn-reject" onclick="saveSettings()">Auswahl speichern</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
-</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/491785143918" class="wa" target="_blank" aria-label="WhatsApp">
@@ -1116,19 +1088,6 @@ window.addEventListener('scroll',()=>{
     stickyCta.classList.remove('visible');
   }
 },{ passive:true });
-
-// Nav
-const ham=document.getElementById('hamburger'),mob=document.getElementById('mobNav');
-ham.addEventListener('click',()=>{mob.classList.toggle('open');});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  const h=a.getAttribute('href');if(h==='#')return;
-  e.preventDefault();
-  const el=document.querySelector(h);
-  if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:'smooth'});}
-  mob.classList.remove('open');
-}));
 
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
