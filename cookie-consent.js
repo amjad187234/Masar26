@@ -146,6 +146,9 @@
         '.mck-wrap{flex-direction:column;align-items:flex-start;}',
         '.mck-actions{width:100%;}',
         '.mck-btn{flex:1;min-width:0;}',
+        '.mck-save-row{justify-content:stretch;}',
+        '.mck-save-row .mck-btn{flex:1;min-width:0;}',
+        '.mck-setting{flex-direction:row;align-items:center;}',
       '}',
       '</style>',
 

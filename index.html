@@ -931,11 +931,11 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
       <h2 class="sec-title">Alles, was Sie <em>wissen</em> müssen</h2>
     </div>
     <div class="faq-list reveal">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Was kostet eine Leuchtreklame? <span class="faq-ic">+</span></button><div class="faq-a">Die Kosten hängen von Größe, Material und Design ab. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot innerhalb von 24 Stunden.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Wie lange dauert die Produktion? <span class="faq-ic">+</span></button><div class="faq-a">Standardproduktion: 5–10 Werktage. Express-Service: 1–3 Werktage. Leuchtreklamen und Werbetechnik: 2–4 Wochen je nach Komplexität.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
+      <div class="faq-item"><button class="faq-q">Was kostet eine Leuchtreklame? <span class="faq-ic">+</span></button><div class="faq-a">Die Kosten hängen von Größe, Material und Design ab. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot innerhalb von 24 Stunden.</div></div>
+      <div class="faq-item"><button class="faq-q">Wie lange dauert die Produktion? <span class="faq-ic">+</span></button><div class="faq-a">Standardproduktion: 5–10 Werktage. Express-Service: 1–3 Werktage. Leuchtreklamen und Werbetechnik: 2–4 Wochen je nach Komplexität.</div></div>
+      <div class="faq-item"><button class="faq-q">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
+      <div class="faq-item"><button class="faq-q">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
+      <div class="faq-item"><button class="faq-q">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
     </div>
   </div>
 </section>
@@ -1129,14 +1129,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:'smooth'});}
   mob.classList.remove('open');
 }));
-
-// FAQ
-function toggleFaq(btn){
-  const a=btn.nextElementSibling,ic=btn.querySelector('.faq-ic');
-  const open=a.classList.toggle('open');
-  ic.classList.toggle('open',open);
-  ic.textContent=open?'−':'+';
-}
 
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
