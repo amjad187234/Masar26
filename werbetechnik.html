@@ -142,9 +142,6 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 </head>
 <body>
 
-
-</div>
-
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-inner">
@@ -302,9 +299,6 @@ ham.addEventListener('click',()=>mob.classList.toggle('open'));
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const h=a.getAttribute('href');if(h==='#')return;e.preventDefault();const el=document.querySelector(h);if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-100,behavior:'smooth'});}mob.classList.remove('open');}));
 const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:.08});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-// ═══ COOKIE + STICKY ═══
-document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
 
 const _sc=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{if(window.scrollY>400)_sc.classList.add('visible');else _sc.classList.remove('visible');},{passive:true});
