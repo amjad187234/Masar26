@@ -7,6 +7,12 @@
   <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <!-- Self-hosted fonts CSS -->
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#58d0bd">
   <link rel="stylesheet" href="/fonts.css">
 <meta name="description" content="Premium Werbeagentur in Berlin ✓ Leuchtreklamen ✓ Fahrzeugbeschriftung ✓ Grafikdesign ✓ Webdesign ✓ Social Media Marketing. Jetzt kostenlos anfragen!">
   <!-- Performance & Security -->
@@ -33,7 +39,7 @@
   --shadow-lg:0 20px 60px rgba(0,0,0,.12);
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
+html { scroll-behavior:smooth; font-size:16px; overflow-x:hidden; }
 body { font-family:'Barlow',sans-serif; background:#fff; color:var(--text); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
 img { display:block; max-width:100%; }
 a { text-decoration:none; color:inherit; }
@@ -80,7 +86,7 @@ a { text-decoration:none; color:inherit; }
 .cookie-btn { background:var(--teal); color:var(--navy); border:none; padding:8px 22px; font-weight:700; font-size:13px; cursor:pointer; border-radius:4px; font-family:inherit; }
 
 /* ═══════════ WHATSAPP ═══════════ */
-.wa { position:fixed; bottom:28px; right:28px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
+.wa { position:fixed; bottom:90px; right:18px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
 .wa:hover { transform:scale(1.1); }
 .wa svg { width:28px; height:28px; fill:#fff; }
 
@@ -467,34 +473,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 <body>
 
 
-  <div class="cookie-settings" id="cookieSettings">
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Notwendige Cookies</strong>
-        <p>Technisch erforderlich für die Grundfunktionen der Website. Können nicht deaktiviert werden.</p>
-      </div>
-      <div class="cookie-toggle active disabled">AN</div>
-    </div>
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Analyse-Cookies</strong>
-        <p>Helfen uns zu verstehen, wie Besucher unsere Website nutzen (z.B. Google Analytics).</p>
-      </div>
-      <button class="cookie-toggle" id="analyticsToggle" onclick="toggleAnalytics(this)">AUS</button>
-    </div>
-    <div class="cookie-setting-item">
-      <div>
-        <strong>Marketing-Cookies</strong>
-        <p>Werden für zielgerichtete Werbung verwendet (z.B. Meta Pixel).</p>
-      </div>
-      <button class="cookie-toggle" id="marketingToggle" onclick="toggleMarketing(this)">AUS</button>
-    </div>
-    <div style="margin-top:1rem;display:flex;gap:.8rem;justify-content:flex-end;">
-      <button class="cookie-btn-reject" onclick="saveSettings()">Auswahl speichern</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
-</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/491785143918" class="wa" target="_blank" aria-label="WhatsApp">
@@ -932,11 +910,11 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
       <h2 class="sec-title">Alles, was Sie <em>wissen</em> müssen</h2>
     </div>
     <div class="faq-list reveal">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Was kostet eine Leuchtreklame? <span class="faq-ic">+</span></button><div class="faq-a">Die Kosten hängen von Größe, Material und Design ab. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot innerhalb von 24 Stunden.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Wie lange dauert die Produktion? <span class="faq-ic">+</span></button><div class="faq-a">Standardproduktion: 5–10 Werktage. Express-Service: 1–3 Werktage. Leuchtreklamen und Werbetechnik: 2–4 Wochen je nach Komplexität.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
+      <div class="faq-item"><button class="faq-q">Was kostet eine Leuchtreklame? <span class="faq-ic">+</span></button><div class="faq-a">Die Kosten hängen von Größe, Material und Design ab. Kontaktieren Sie uns für ein kostenloses, individuelles Angebot innerhalb von 24 Stunden.</div></div>
+      <div class="faq-item"><button class="faq-q">Wie lange dauert die Produktion? <span class="faq-ic">+</span></button><div class="faq-a">Standardproduktion: 5–10 Werktage. Express-Service: 1–3 Werktage. Leuchtreklamen und Werbetechnik: 2–4 Wochen je nach Komplexität.</div></div>
+      <div class="faq-item"><button class="faq-q">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
+      <div class="faq-item"><button class="faq-q">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
+      <div class="faq-item"><button class="faq-q">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
     </div>
   </div>
 </section>
@@ -1117,27 +1095,6 @@ window.addEventListener('scroll',()=>{
     stickyCta.classList.remove('visible');
   }
 },{ passive:true });
-
-// Nav
-const ham=document.getElementById('hamburger'),mob=document.getElementById('mobNav');
-ham.addEventListener('click',()=>{mob.classList.toggle('open');});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  const h=a.getAttribute('href');if(h==='#')return;
-  e.preventDefault();
-  const el=document.querySelector(h);
-  if(el){window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:'smooth'});}
-  mob.classList.remove('open');
-}));
-
-// FAQ
-function toggleFaq(btn){
-  const a=btn.nextElementSibling,ic=btn.querySelector('.faq-ic');
-  const open=a.classList.toggle('open');
-  ic.classList.toggle('open',open);
-  ic.textContent=open?'−':'+';
-}
 
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
