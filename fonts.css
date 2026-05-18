@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
-   SELF-HOSTED FONTS — DSGVO konform (LG München konform)
-   Keine Übertragung an Google-Server
-   Dateien liegen unter /fonts/ auf eigenem Server
+   SELF-HOSTED FONTS — DSGVO konform (kein US-Server)
+   Heruntergeladen von Google Fonts, gehostet auf eigenem Server
+   Nur WOFF2 — universelle Browser-Unterstützung seit 2015 (97%+)
 ═══════════════════════════════════════════════════════════ */
 
 /* Barlow — Light 300 */
@@ -11,8 +11,7 @@
   font-weight: 300;
   font-display: swap;
   src: local('Barlow Light'), local('Barlow-Light'),
-       url('/fonts/barlow-light.woff2') format('woff2'),
-       url('/fonts/barlow-light.woff') format('woff');
+       url('/fonts/barlow-light.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -23,8 +22,7 @@
   font-weight: 400;
   font-display: swap;
   src: local('Barlow Regular'), local('Barlow-Regular'),
-       url('/fonts/barlow-regular.woff2') format('woff2'),
-       url('/fonts/barlow-regular.woff') format('woff');
+       url('/fonts/barlow-regular.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -35,8 +33,7 @@
   font-weight: 500;
   font-display: swap;
   src: local('Barlow Medium'), local('Barlow-Medium'),
-       url('/fonts/barlow-medium.woff2') format('woff2'),
-       url('/fonts/barlow-medium.woff') format('woff');
+       url('/fonts/barlow-medium.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -47,8 +44,7 @@
   font-weight: 600;
   font-display: swap;
   src: local('Barlow SemiBold'), local('Barlow-SemiBold'),
-       url('/fonts/barlow-semibold.woff2') format('woff2'),
-       url('/fonts/barlow-semibold.woff') format('woff');
+       url('/fonts/barlow-semibold.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -59,8 +55,7 @@
   font-weight: 600;
   font-display: swap;
   src: local('Barlow Condensed SemiBold'), local('BarlowCondensed-SemiBold'),
-       url('/fonts/barlow-condensed-semibold.woff2') format('woff2'),
-       url('/fonts/barlow-condensed-semibold.woff') format('woff');
+       url('/fonts/barlow-condensed-semibold.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -71,8 +66,7 @@
   font-weight: 700;
   font-display: swap;
   src: local('Barlow Condensed Bold'), local('BarlowCondensed-Bold'),
-       url('/fonts/barlow-condensed-bold.woff2') format('woff2'),
-       url('/fonts/barlow-condensed-bold.woff') format('woff');
+       url('/fonts/barlow-condensed-bold.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -83,8 +77,7 @@
   font-weight: 900;
   font-display: swap;
   src: local('Barlow Condensed Black'), local('BarlowCondensed-Black'),
-       url('/fonts/barlow-condensed-black.woff2') format('woff2'),
-       url('/fonts/barlow-condensed-black.woff') format('woff');
+       url('/fonts/barlow-condensed-black.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -95,8 +88,7 @@
   font-weight: 900;
   font-display: swap;
   src: local('Barlow Condensed Black Italic'), local('BarlowCondensed-BlackItalic'),
-       url('/fonts/barlow-condensed-black-italic.woff2') format('woff2'),
-       url('/fonts/barlow-condensed-black-italic.woff') format('woff');
+       url('/fonts/barlow-condensed-black-italic.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
