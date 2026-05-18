@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
+  <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Self-hosted fonts CSS -->
+  <link rel="stylesheet" href="/fonts.css">
 <meta name="description" content="Datenschutzerklärung der Masar Werbeagentur Berlin gemäß DSGVO. Informationen zur Verarbeitung Ihrer personenbezogenen Daten.">
-<meta name="keywords" content="Datenschutz, DSGVO, Masar Werbeagentur Berlin">
+  <!-- Performance & Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="dns-prefetch" href="//formsubmit.co">
+  <meta name="keywords" content="Datenschutz, DSGVO, Masar Werbeagentur Berlin">
 <meta name="author" content="Masar Werbeagentur Berlin">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Datenschutzerklärung – Masar Werbeagentur Berlin">
@@ -15,7 +25,6 @@
 <link rel="canonical" href="https://masar-werbeagentur.de/datenschutz">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <title>Datenschutzerklärung – Masar Werbeagentur Berlin</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--teal:#58d0bd;--teal-dark:#3ab8a5;--navy:#132e50;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -140,20 +149,6 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 }
 
 
-/* ═══ COOKIE BANNER ═══ */
-.cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9998;}
-.cookie-overlay.show{display:block;}
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:3px solid var(--teal);box-shadow:0 -8px 40px rgba(0,0,0,.15);padding:1.2rem 2rem;}
-.cookie-banner.show{display:block;}
-.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-.cookie-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;}
-.cookie-text p{font-size:13px;color:var(--muted);line-height:1.5;}
-.cookie-text a{color:var(--teal);font-weight:600;}
-.cookie-actions{display:flex;gap:.8rem;flex-shrink:0;}
-.cookie-btn-reject{background:#fff;color:var(--navy);border:2px solid var(--border);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-reject:hover{border-color:var(--navy);}
-.cookie-btn-accept{background:var(--teal);color:var(--navy);border:2px solid var(--teal);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;}
-.cookie-btn-accept:hover{background:var(--teal-d);}
 /* ═══ STICKY CTA ═══ */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
 .sticky-cta.visible{transform:translateY(0);}
@@ -170,19 +165,7 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 </head>
 <body>
 
-<!-- COOKIE BANNER — DSGVO konform -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie-Einstellungen">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <div class="cookie-title">🍪 Wir respektieren Ihre Privatsphäre</div>
-      <p>Wir verwenden Cookies für die beste Erfahrung. <a href="datenschutz.html">Datenschutzerklärung</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn-reject" onclick="rejectCookies()">Ablehnen</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
+
 </div>
 
 <!-- STICKY CTA -->
@@ -201,7 +184,7 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 
 <a href="https://wa.me/491785143918" class="wa" target="_blank"><svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg></a>
 <nav><div class="nav-inner">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="nav-logo-fb">MASAR</span></a>
+  <a href="index.html" class="nav-logo"><img loading="eager" decoding="async" src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="nav-logo-fb">MASAR</span></a>
   <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="index.html#warum">Über uns</a></li>
       <li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li></ul>
   <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
@@ -289,17 +272,18 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 
 
 <footer><div class="fi">
-  <div class="fb"><div class="fl"><img src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="flfb">MASAR</span></div><p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p></div>
+  <div class="fb"><div class="fl"><img loading="eager" decoding="async" src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="flfb">MASAR</span></div><p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p></div>
   <div class="fc"><h5>Navigation</h5><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="index.html#kontakt">Kontakt</a></div>
   <div class="fc"><h5>Rechtliches</h5><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
 </div><div class="fbot"><span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span><span>Steuernummer: 23/203/00524</span></div></footer>
 <script>document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
 // ═══ COOKIE + STICKY ═══
-function acceptAllCookies(){localStorage.setItem('cookieConsent','all');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-function rejectCookies(){localStorage.setItem('cookieConsent','necessary');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-window.addEventListener('load',()=>{if(!localStorage.getItem('cookieConsent'))setTimeout(()=>{document.getElementById('cookieBanner').classList.add('show');document.getElementById('cookieOverlay').classList.add('show');},1500);});
+document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
+
 const _sc=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{if(window.scrollY>400)_sc.classList.add('visible');else _sc.classList.remove('visible');},{passive:true});
 
 </script>
+<script src="/cookie-consent.js" defer></script>
+<script src="/app.js" defer></script>
 </body></html>

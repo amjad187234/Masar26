@@ -2,11 +2,19 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="Werbeagentur Leistungen Berlin, Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign, Druck Berlin">
+  <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
+  <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Self-hosted fonts CSS -->
+  <link rel="stylesheet" href="/fonts.css">
+  <!-- Performance & Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="dns-prefetch" href="//formsubmit.co">
+  <meta name="keywords" content="Werbeagentur Leistungen Berlin, Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign, Druck Berlin">
 <meta name="description" content="Alle Leistungen von Masar Werbeagentur Berlin ✓ Leuchtreklamen ✓ Fahrzeugbeschriftung ✓ Grafikdesign ✓ Webdesign ✓ Social Media. Design immer inklusive!">
 <title>Alle Leistungen – Masar Werbeagentur Berlin | Werbung, Design & Marketing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--teal:#58d0bd;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--gold:#f5c000;--nav-h:80px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -132,20 +140,6 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 @media(max-width:1024px){.nav-links{display:none;}.nav-hamburger{display:flex;}.overview-grid{grid-template-columns:repeat(3,1fr);}.svc-grid{grid-template-columns:1fr 1fr;}.pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}.pricing-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.overview-grid{grid-template-columns:repeat(2,1fr);}.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}}
 
-/* ═══ COOKIE BANNER ═══ */
-.cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9998;}
-.cookie-overlay.show{display:block;}
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:3px solid var(--teal);box-shadow:0 -8px 40px rgba(0,0,0,.15);padding:1.2rem 2rem;}
-.cookie-banner.show{display:block;}
-.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-.cookie-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;}
-.cookie-text p{font-size:13px;color:var(--muted);line-height:1.5;}
-.cookie-text a{color:var(--teal);font-weight:600;}
-.cookie-actions{display:flex;gap:.8rem;flex-shrink:0;}
-.cookie-btn-reject{background:#fff;color:var(--navy);border:2px solid var(--border);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-reject:hover{border-color:var(--navy);}
-.cookie-btn-accept{background:var(--teal);color:var(--navy);border:2px solid var(--teal);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;}
-.cookie-btn-accept:hover{background:var(--teal-d);}
 /* ═══ STICKY CTA ═══ */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
 .sticky-cta.visible{transform:translateY(0);}
@@ -168,19 +162,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 </head>
 <body>
 
-<!-- COOKIE BANNER — DSGVO konform -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie-Einstellungen">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <div class="cookie-title">🍪 Wir respektieren Ihre Privatsphäre</div>
-      <p>Wir verwenden Cookies für die beste Erfahrung. <a href="datenschutz.html">Datenschutzerklärung</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn-reject" onclick="rejectCookies()">Ablehnen</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
+
 </div>
 
 <!-- STICKY CTA -->
@@ -305,11 +287,12 @@ const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setT
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 // ═══ COOKIE + STICKY ═══
-function acceptAllCookies(){localStorage.setItem('cookieConsent','all');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-function rejectCookies(){localStorage.setItem('cookieConsent','necessary');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-window.addEventListener('load',()=>{if(!localStorage.getItem('cookieConsent'))setTimeout(()=>{document.getElementById('cookieBanner').classList.add('show');document.getElementById('cookieOverlay').classList.add('show');},1500);});
+document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
+
 const _sc=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{if(window.scrollY>400)_sc.classList.add('visible');else _sc.classList.remove('visible');},{passive:true});
 
 </script>
+<script src="/cookie-consent.js" defer></script>
+<script src="/app.js" defer></script>
 </body></html>

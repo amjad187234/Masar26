@@ -3,19 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
+  <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Self-hosted fonts CSS -->
+  <link rel="stylesheet" href="/fonts.css">
 <meta name="description" content="Premium Werbeagentur in Berlin ✓ Leuchtreklamen ✓ Fahrzeugbeschriftung ✓ Grafikdesign ✓ Webdesign ✓ Social Media Marketing. Jetzt kostenlos anfragen!">
-<meta name="keywords" content="Werbeagentur Berlin, Leuchtreklamen Berlin, Fahrzeugbeschriftung Berlin, Grafikdesign Berlin, Social Media Marketing Berlin, Werbetechnik Berlin">
+  <!-- Performance & Security -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="dns-prefetch" href="//formsubmit.co">
+  <meta name="keywords" content="Werbeagentur Berlin, Leuchtreklamen Berlin, Fahrzeugbeschriftung Berlin, Grafikdesign Berlin, Social Media Marketing Berlin, Werbetechnik Berlin">
 <meta property="og:title" content="Masar Werbeagentur Berlin – Premium Werbung & Design">
 <meta property="og:description" content="Von der Leuchtreklame bis zum viralen Reel – Ihr Erfolg ist unser Handwerk.">
 <meta property="og:url" content="https://masar-werbeagentur.de/">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://masar-werbeagentur.de/">
 <title>Masar Werbeagentur Berlin – Leuchtreklamen, Fahrzeugbeschriftung & Social Media</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"Masar Werbeagentur","description":"Premium Werbeagentur in Berlin – Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign und Social Media Marketing.","url":"https://masar-werbeagentur.de","telephone":"+491785143918","address":{"@type":"PostalAddress","streetAddress":"Bristolstraße 19HN, 19E","addressLocality":"Berlin","postalCode":"13349","addressCountry":"DE"},"openingHours":"Mo-Fr 09:00-18:00","priceRange":"€€"}
-</script>
 <style>
 /* ═══════════ TOKENS ═══════════ */
 :root {
@@ -315,39 +320,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .hero-btns a { text-align:center; }
 }
 
-/* ═══ COOKIE BANNER — DSGVO ═══ */
-.cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9998;backdrop-filter:blur(4px);}
-.cookie-overlay.show{display:block;}
-.cookie-banner{
-  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;
-  background:#fff;border-top:3px solid var(--teal);
-  box-shadow:0 -8px 40px rgba(0,0,0,.15);
-  padding:1.5rem 2rem;
-  max-height:90vh;overflow-y:auto;
-}
-.cookie-banner.show{display:block;}
-.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-.cookie-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;color:var(--navy);margin-bottom:.4rem;}
-.cookie-text p{font-size:13px;color:var(--muted);line-height:1.6;max-width:680px;}
-.cookie-text a{color:var(--teal);font-weight:600;}
-.cookie-actions{display:flex;gap:.8rem;flex-wrap:wrap;flex-shrink:0;}
-.cookie-btn-reject{background:#fff;color:var(--navy);border:2px solid var(--border);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-reject:hover{border-color:var(--navy);background:var(--off);}
-.cookie-btn-settings{background:var(--off);color:var(--navy);border:2px solid var(--border);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-settings:hover{border-color:var(--teal);}
-.cookie-btn-accept{background:var(--teal);color:var(--navy);border:2px solid var(--teal);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-accept:hover{background:var(--teal-d);}
-.cookie-settings{display:none;margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1.5rem;}
-.cookie-settings.open{display:block;}
-.cookie-setting-item{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--border);}
-.cookie-setting-item:last-of-type{border-bottom:none;}
-.cookie-setting-item strong{font-size:14px;color:var(--navy);}
-.cookie-setting-item p{font-size:12px;color:var(--muted);margin-top:.2rem;line-height:1.5;}
-.cookie-toggle{background:#e2ecec;color:var(--muted);border:none;padding:5px 12px;border-radius:20px;font-weight:700;font-size:11px;cursor:pointer;transition:all .2s;white-space:nowrap;}
-.cookie-toggle.active{background:var(--teal);color:var(--navy);}
-.cookie-toggle.disabled{cursor:not-allowed;opacity:.7;}
-@media(max-width:768px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-settings,.cookie-btn-accept{flex:1;text-align:center;}}
-
 /* ═══ STICKY CTA ═══ */
 .sticky-cta{
   position:fixed;bottom:0;left:0;right:0;z-index:490;
@@ -374,24 +346,127 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .sticky-btn-main{width:100%;text-align:center;}
 }
 
+
+/* ═══ PRICE CALCULATOR ═══ */
+.fg-label{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.fg-input{width:100%;background:var(--off);border:2px solid var(--border);color:var(--text);padding:11px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;transition:border .2s;-webkit-appearance:none;}
+.fg-input:focus{border-color:var(--teal);background:#fff;}
+
+/* ═══ MULTI-STEP FORM ═══ */
+.form-step{display:none;}
+.form-step.active{display:block;}
+.form-progress-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:1.5rem;overflow:hidden;}
+.form-progress-fill{height:100%;background:var(--teal);border-radius:2px;transition:width .4s ease;}
+.field-error{border-color:#e53e3e!important;background:#fff5f5!important;}
+.form-notif{padding:.8rem 1rem;border-radius:6px;margin-bottom:1rem;font-size:14px;display:none;}
+.notif-error{background:#fff5f5;color:#c53030;border:1px solid #feb2b2;}
+.notif-success{background:#f0fff4;color:#276749;border:1px solid #9ae6b4;}
+.form-success{text-align:center;padding:2rem;}
+.form-success .success-icon{font-size:3.5rem;margin-bottom:1rem;}
+.form-success h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--navy);margin-bottom:.5rem;}
+
+/* ═══ FILE UPLOAD ZONE ═══ */
+.upload-zone{border:2px dashed var(--border);border-radius:var(--r);padding:2rem;text-align:center;cursor:pointer;transition:all .3s;background:var(--off);}
+.upload-zone:hover,.upload-zone.drag-over{border-color:var(--teal);background:var(--teal-l);}
+.upload-icon{font-size:2.5rem;margin-bottom:.5rem;}
+
+/* ═══ BEFORE/AFTER SLIDER ═══ */
+.ba-slider{position:relative;overflow:hidden;border-radius:var(--r);user-select:none;cursor:col-resize;}
+.ba-before,.ba-after{position:absolute;inset:0;}
+.ba-before img,.ba-after img{width:100%;height:100%;object-fit:cover;display:block;}
+.ba-after{width:50%;overflow:hidden;}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:white;transform:translateX(-50%);cursor:col-resize;z-index:10;}
+.ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:white;box-shadow:0 2px 12px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;}
+.ba-handle::after{content:'↔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:900;color:var(--navy);z-index:1;}
+
+/* ═══ TESTIMONIAL SLIDER ═══ */
+.testi-item{display:none;animation:fadeIn .4s ease;}
+.testi-item.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s;}
+.testi-dot.active{background:var(--teal);transform:scale(1.3);}
+.testi-nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
+.testi-nav:hover{border-color:var(--teal);}
+
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://masar-werbeagentur.de/#identity",
+  "name": "Masar Werbeagentur",
+  "legalName": "Masar Werbeagentur – Amjad Albill",
+  "description": "Full-Service Werbeagentur in Berlin-Wedding: Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign und Social Media Marketing.",
+  "url": "https://masar-werbeagentur.de",
+  "logo": "https://masar-werbeagentur.de/logo.png",
+  "image": "https://masar-werbeagentur.de/logo.png",
+  "telephone": "+4917851439180",
+  "email": "amjadbalili97@gmail.com",
+  "taxID": "23/203/00524",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bristolstraße 19HN, 19E",
+    "addressLocality": "Berlin",
+    "addressRegion": "Berlin",
+    "postalCode": "13349",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.54880,
+    "longitude": 13.34940
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Überweisung, Rechnung, Bar",
+  "areaServed": {
+    "@type": "City",
+    "name": "Berlin"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.5200,
+      "longitude": 13.4050
+    },
+    "geoRadius": "50000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Werbeleistungen",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leuchtreklamen & LED-Schilder"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fahrzeugbeschriftung & Car Wrapping"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Grafikdesign & Corporate Identity"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webdesign & Webentwicklung"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Marketing Berlin"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Druckprodukte & Textildruck"}}
+    ]
+  },
+  "sameAs": [
+    "https://masar-werbeagentur.de",
+    "https://wa.me/4917851439180"
+  ],
+  "founder": {
+    "@type": "Person",
+    "name": "Amjad Albill",
+    "jobTitle": "Mediengestalter & Geschäftsführer"
+  }
+}
+</script>
 </head>
 <body>
 
-<!-- COOKIE BANNER — DSGVO konform -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie-Einstellungen">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <div class="cookie-title">🍪 Wir respektieren Ihre Privatsphäre</div>
-      <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Einige sind technisch notwendig, andere helfen uns, unsere Website zu verbessern. Sie können Ihre Einstellungen jederzeit ändern. Mehr erfahren: <a href="datenschutz.html">Datenschutzerklärung</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn-reject" onclick="rejectCookies()">Ablehnen</button>
-      <button class="cookie-btn-settings" onclick="toggleCookieSettings()">Einstellungen</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
+
   <div class="cookie-settings" id="cookieSettings">
     <div class="cookie-setting-item">
       <div>
@@ -865,6 +940,60 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   </div>
 </section>
 
+
+<!-- PRICE ESTIMATOR -->
+<section class="section bg-off" id="rechner">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">💰 Preisrechner</span>
+      <h2 class="sec-title">Sofort-Kalkulation –<br><em>kostenlos & unverbindlich</em></h2>
+      <p class="sec-sub">Erhalten Sie eine erste Preisschätzung in Sekunden.</p>
+    </div>
+    <div style="max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:2.5rem;box-shadow:var(--shadow);" class="reveal">
+      <form id="priceCalc">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div>
+            <label class="fg-label">Leistungsbereich</label>
+            <select id="calcCategory" class="fg-input" onchange="MasarPrice.calculate()">
+              <option value="fahrzeug">🚗 Fahrzeugbeschriftung</option>
+              <option value="leuchtreklame">💡 Leuchtreklame</option>
+              <option value="print">🖨️ Druckprodukte</option>
+            </select>
+          </div>
+          <div>
+            <label class="fg-label">Variante</label>
+            <select id="calcVariant" class="fg-input" onchange="MasarPrice.calculate()">
+              <option value="klein">Kleinwagen</option>
+              <option value="transporter">Transporter</option>
+              <option value="vollfolierung">Vollfolierung</option>
+              <option value="lkw">LKW</option>
+            </select>
+          </div>
+        </div>
+        <div style="display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+          <label style="display:flex;align-items:center;gap:.5rem;font-size:14px;cursor:pointer;">
+            <input type="checkbox" id="calcExpress" onchange="MasarPrice.calculate()" style="accent-color:var(--teal);width:16px;height:16px;">
+            ⚡ Express-Lieferung (+25%)
+          </label>
+          <label style="display:flex;align-items:center;gap:.5rem;font-size:14px;cursor:pointer;">
+            <input type="checkbox" id="calcDesign" onchange="MasarPrice.calculate()" style="accent-color:var(--teal);width:16px;height:16px;">
+            ✏️ Design-Service (+80€)
+          </label>
+        </div>
+      </form>
+      <div style="background:var(--navy);border-radius:8px;padding:1.5rem;text-align:center;margin-bottom:1.5rem;">
+        <div style="font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.4rem;" id="priceLabel">Fahrzeugbeschriftung Kleinwagen</div>
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;color:var(--teal);line-height:1;" id="priceDisplay">ab 125 €</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:.4rem;">Unverbindliche Schätzung · inkl. MwSt.</div>
+      </div>
+      <button onclick="MasarPrice.requestOffer()" class="btn btn-teal" style="width:100%;justify-content:center;font-size:15px;">
+        Jetzt Angebot anfordern →
+      </button>
+      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">Kostenlos & unverbindlich · Antwort in 24h</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="cta-strip" id="kontakt">
   <div class="container" style="position:relative;z-index:1;">
@@ -978,61 +1107,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 </footer>
 
 <script>
-// ═══ COOKIE DSGVO ═══
-function showCookieBanner(){
-  document.getElementById('cookieBanner').classList.add('show');
-  document.getElementById('cookieOverlay').classList.add('show');
-}
-function hideCookieBanner(){
-  document.getElementById('cookieBanner').classList.remove('show');
-  document.getElementById('cookieOverlay').classList.remove('show');
-}
-function acceptAllCookies(){
-  localStorage.setItem('cookieConsent','all');
-  localStorage.setItem('cookieDate',new Date().toISOString());
-  hideCookieBanner();
-  loadAnalytics();
-}
-function rejectCookies(){
-  localStorage.setItem('cookieConsent','necessary');
-  localStorage.setItem('cookieDate',new Date().toISOString());
-  hideCookieBanner();
-}
-function saveSettings(){
-  const analytics=document.getElementById('analyticsToggle').classList.contains('active');
-  const marketing=document.getElementById('marketingToggle').classList.contains('active');
-  const consent={necessary:true,analytics,marketing};
-  localStorage.setItem('cookieConsent',JSON.stringify(consent));
-  localStorage.setItem('cookieDate',new Date().toISOString());
-  hideCookieBanner();
-  if(analytics) loadAnalytics();
-}
-function toggleCookieSettings(){
-  document.getElementById('cookieSettings').classList.toggle('open');
-}
-function toggleAnalytics(btn){
-  btn.classList.toggle('active');
-  btn.textContent=btn.classList.contains('active')?'AN':'AUS';
-}
-function toggleMarketing(btn){
-  btn.classList.toggle('active');
-  btn.textContent=btn.classList.contains('active')?'AN':'AUS';
-}
-function loadAnalytics(){
-  // Load Google Analytics or other tracking here when consent is given
-  // console.log('Analytics loaded after consent');
-}
-// Check consent on load
-window.addEventListener('load',()=>{
-  const consent=localStorage.getItem('cookieConsent');
-  if(!consent){
-    setTimeout(showCookieBanner, 1500);
-  } else {
-    const consentData = typeof consent === 'string' && consent.startsWith('{') ? JSON.parse(consent) : {analytics: consent==='all'};
-    if(consentData.analytics) loadAnalytics();
-  }
-});
-
 // ═══ STICKY CTA ═══
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{
@@ -1070,5 +1144,7 @@ const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 </script>
+<script src="/cookie-consent.js" defer></script>
+<script src="/app.js" defer></script>
 </body>
 </html>

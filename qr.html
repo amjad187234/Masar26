@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Masar Werbeagentur Berlin – Ihr Partner für Leuchtreklamen, Fahrzeugbeschriftung & mehr.">
+<meta name="robots" content="noindex, nofollow">
+<title>Masar Werbeagentur Berlin</title>
+<link rel="canonical" href="https://masar-werbeagentur.de/">
+<link rel="stylesheet" href="/fonts.css">
+
+<!-- Preload critical font -->
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<style>
+/* ═══ QR LANDING — Ultra lightweight, loads < 1s ═══ */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --teal:#58d0bd;--teal-d:#3ab8a5;
+  --navy:#132e50;--navy3:#0a1628;
+  --muted:#5a7070;
+}
+html{font-size:16px;-webkit-text-size-adjust:100%;}
+body{
+  font-family:'Barlow',system-ui,-apple-system,sans-serif;
+  background:var(--navy3);
+  color:#fff;
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:2rem 1.5rem;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* LOGO */
+.logo{
+  width:120px;height:auto;
+  margin-bottom:2rem;
+  filter:drop-shadow(0 0 20px rgba(88,208,189,.3));
+}
+.logo-fallback{
+  font-family:'Barlow Condensed','Arial Narrow',sans-serif;
+  font-weight:900;font-size:2.5rem;
+  color:var(--teal);letter-spacing:3px;
+  margin-bottom:2rem;
+}
+
+/* CARD */
+.card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(88,208,189,.2);
+  border-radius:16px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  max-width:420px;
+  width:100%;
+  backdrop-filter:blur(10px);
+}
+
+/* CAMPAIGN INFO */
+.campaign-badge{
+  display:inline-block;
+  background:rgba(88,208,189,.15);
+  border:1px solid rgba(88,208,189,.3);
+  color:var(--teal);
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+  margin-bottom:1.2rem;
+}
+.card h1{
+  font-family:'Barlow Condensed','Arial Narrow',sans-serif;
+  font-weight:900;font-size:clamp(1.8rem,6vw,2.5rem);
+  text-transform:uppercase;line-height:1;
+  margin-bottom:.8rem;color:#fff;
+}
+.card h1 em{color:var(--teal);font-style:normal;}
+.card p{
+  font-size:15px;color:rgba(255,255,255,.65);
+  line-height:1.7;margin-bottom:2rem;
+}
+
+/* ACTIONS */
+.actions{display:flex;flex-direction:column;gap:.8rem;}
+.btn-primary{
+  display:block;
+  background:var(--teal);color:var(--navy);
+  padding:15px 24px;border-radius:8px;
+  font-family:inherit;font-weight:700;font-size:16px;
+  text-decoration:none;text-align:center;
+  transition:background .2s;
+}
+.btn-primary:hover{background:var(--teal-d);}
+.btn-secondary{
+  display:block;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);
+  border:1px solid rgba(255,255,255,.2);
+  padding:13px 24px;border-radius:8px;
+  font-family:inherit;font-weight:600;font-size:15px;
+  text-decoration:none;text-align:center;
+  transition:all .2s;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.15);}
+
+/* TRUST */
+.trust{
+  margin-top:1.5rem;padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;gap:1.2rem;justify-content:center;
+  flex-wrap:wrap;
+}
+.trust-item{font-size:12px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:.3rem;}
+
+/* FOOTER */
+footer{
+  margin-top:2rem;
+  font-size:12px;color:rgba(255,255,255,.3);
+  text-align:center;
+}
+footer a{color:rgba(88,208,189,.6);}
+
+/* UTM DEBUG (hidden by default) */
+#utmDebug{display:none;margin-top:1rem;padding:.8rem;background:rgba(255,255,255,.05);border-radius:6px;font-size:11px;color:rgba(255,255,255,.4);text-align:left;}
+</style>
+</head>
+<body>
+
+<!-- LOGO -->
+<img class="logo" src="logo.png" alt="Masar Werbeagentur Berlin"
+     loading="eager" decoding="async"
+     onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'">
+<div id="logoFallback" class="logo-fallback" style="display:none;">MASAR</div>
+
+<!-- MAIN CARD -->
+<div class="card">
+  <div class="campaign-badge" id="campaignBadge">📍 Masar Werbeagentur Berlin</div>
+  
+  <h1>Ihr Partner für <em>professionelle</em> Werbung.</h1>
+  
+  <p id="campaignMsg">
+    Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign und Social Media aus einer Hand – in Berlin.
+  </p>
+  
+  <div class="actions">
+    <a href="tel:+4917851439180" class="btn-primary">📞 Jetzt kostenlos anrufen</a>
+    <a href="https://wa.me/4917851439180" class="btn-secondary" target="_blank" rel="noopener">💬 WhatsApp schreiben</a>
+    <a href="/" class="btn-secondary">🌐 Website besuchen</a>
+  </div>
+  
+  <div class="trust">
+    <div class="trust-item">⭐ 5-Sterne Bewertung</div>
+    <div class="trust-item">✓ Design inklusive</div>
+    <div class="trust-item">⚡ Antwort in 24h</div>
+  </div>
+  
+  <div id="utmDebug"></div>
+</div>
+
+<footer>
+  <a href="/impressum.html">Impressum</a> · 
+  <a href="/datenschutz.html">Datenschutz</a><br>
+  © 2026 Masar Werbeagentur · Berlin-Wedding
+</footer>
+
+<script>
+// ═══ UTM PARAMETER PARSING ═══
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var source   = params.get('utm_source')   || params.get('source')   || '';
+  var medium   = params.get('utm_medium')   || params.get('medium')   || '';
+  var campaign = params.get('utm_campaign') || params.get('campaign') || '';
+  var content  = params.get('utm_content')  || params.get('content')  || '';
+  var term     = params.get('utm_term')     || params.get('term')     || '';
+
+  // Update badge based on source
+  var badge = document.getElementById('campaignBadge');
+  var msg   = document.getElementById('campaignMsg');
+  
+  if(source === 'leuchtreklame' || medium === 'leuchtreklame'){
+    badge.textContent = '💡 Sie scannen unsere Leuchtreklame';
+    msg.textContent   = 'Wir freuen uns über Ihr Interesse! Kontaktieren Sie uns jetzt für ein kostenloses Angebot.';
+  } else if(source === 'fahrzeug' || medium === 'fahrzeug'){
+    badge.textContent = '🚗 Sie scannen unsere Fahrzeugbeschriftung';
+    msg.textContent   = 'Möchten Sie Ihr Fahrzeug auch beschriften? Wir erstellen Ihnen ein individuelles Angebot.';
+  } else if(source === 'schaufenster' || medium === 'schaufenster'){
+    badge.textContent = '🪟 Sie scannen unsere Schaufensterbeklebung';
+    msg.textContent   = 'Professionelle Werbung für Ihr Geschäft – kontaktieren Sie uns jetzt!';
+  } else if(source === 'visitenkarte' || medium === 'visitenkarte'){
+    badge.textContent = '📇 Masar Werbeagentur Berlin';
+    msg.textContent   = 'Vielen Dank für Ihr Interesse! Wir beraten Sie kostenlos zu all unseren Leistungen.';
+  } else if(campaign){
+    badge.textContent = '📍 Kampagne: ' + decodeURIComponent(campaign);
+  }
+
+  // ═══ GDPR-KONFORME TRACKING AKTIVIERUNG ═══
+  // Nur wenn Nutzer vorher zugestimmt hat (Cookie von Hauptseite)
+  var consent = localStorage.getItem('cookieConsent');
+  var hasAnalyticsConsent = consent === 'all' || 
+    (consent && consent.startsWith('{') && JSON.parse(consent).analytics === true);
+
+  if(hasAnalyticsConsent){
+    // Hier Analytics/Meta Pixel laden — nur nach Zustimmung
+    // trackConversion(source, medium, campaign);
+    console.log('[DSGVO] Analytics consent granted — tracking active');
+    console.log('[UTM]', {source, medium, campaign, content, term});
+  } else {
+    console.log('[DSGVO] No analytics consent — tracking blocked');
+  }
+
+  // Debug mode: ?debug=1
+  if(params.get('debug') === '1'){
+    var dbg = document.getElementById('utmDebug');
+    dbg.style.display = 'block';
+    dbg.innerHTML = 
+      '<strong>UTM Debug:</strong><br>' +
+      'source: '   + (source   || '—') + '<br>' +
+      'medium: '   + (medium   || '—') + '<br>' +
+      'campaign: ' + (campaign || '—') + '<br>' +
+      'content: '  + (content  || '—') + '<br>' +
+      'consent: '  + (consent  || 'nicht gesetzt');
+  }
+
+  // Store campaign data for form pre-fill
+  if(source || campaign){
+    sessionStorage.setItem('qrSource',   source);
+    sessionStorage.setItem('qrCampaign', campaign);
+    sessionStorage.setItem('qrMedium',   medium);
+  }
+})();
+</script>
+
+</body>
+</html>
