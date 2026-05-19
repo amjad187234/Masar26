@@ -148,7 +148,7 @@ const MasarForm = {
             <h3>Vielen Dank, ${document.getElementById('fieldName')?.value || ''}!</h3>
             <p>Wir haben Ihre Anfrage erhalten und melden uns innerhalb von <strong>24 Stunden</strong>.</p>
             <p style="margin-top:1rem;">
-              <a href="tel:+4917851439180" class="btn btn-teal">📞 0178 514 3918</a>
+              <a href="tel:+491785143918" class="btn btn-teal">📞 0178 514 3918</a>
             </p>
           </div>`;
       } else {

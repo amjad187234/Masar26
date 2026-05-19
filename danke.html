@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#58d0bd">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/fonts.css">
+<title>Vielen Dank! – Masar Werbeagentur Berlin</title>
+<style>
+:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:'Barlow',sans-serif;background:var(--navy3);color:#e8f0fb;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;}
+a{text-decoration:none;color:inherit}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:3rem 2.5rem;max-width:540px;width:100%;}
+.check{font-size:4rem;margin-bottom:1rem;animation:pop .5s ease;}
+@keyframes pop{0%{transform:scale(.5);opacity:0}80%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.4rem;color:#fff;text-transform:uppercase;margin-bottom:.8rem;line-height:1.05}
+h1 em{color:var(--teal);font-style:normal}
+p{color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:1.5rem;font-size:16px}
+.steps{display:flex;flex-direction:column;gap:.8rem;margin:1.8rem 0;text-align:left;}
+.step{display:flex;gap:.8rem;align-items:flex-start;background:rgba(88,208,189,.07);border:1px solid rgba(88,208,189,.15);border-radius:8px;padding:.9rem 1rem;}
+.step-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--teal);color:var(--navy);font-weight:900;font-size:.9rem;display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif}
+.step-txt{font-size:14px;color:rgba(255,255,255,.7);line-height:1.5}
+.step-txt strong{color:#fff}
+.btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s;cursor:pointer;font-family:'Barlow',sans-serif}
+.btn-teal{background:var(--teal);color:var(--navy)}
+.btn-teal:hover{background:#3db8a6;transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.2);color:#fff;background:transparent}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+.wa-hint{margin-top:1.5rem;font-size:13px;color:rgba(255,255,255,.35)}
+.logo{margin-bottom:2rem}
+.logo img{height:48px;width:auto;margin:0 auto}
+.logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--teal);letter-spacing:3px;margin-top:.3rem}
+</style>
+</head>
+<body>
+<div class="logo">
+  <img src="logo.png" alt="Masar Werbeagentur" onerror="this.style.display='none'">
+  <div class="logo-txt">MASAR</div>
+</div>
+<div class="card">
+  <div class="check">✅</div>
+  <h1>Vielen Dank!<br><em>Anfrage erhalten.</em></h1>
+  <p>Wir haben Ihre Nachricht erhalten und melden uns persönlich innerhalb von <strong style="color:var(--teal)">24 Stunden</strong> bei Ihnen.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-txt"><strong>Ihr Angebot wird vorbereitet</strong><br>Wir analysieren Ihre Anfrage und erstellen ein maßgeschneidertes Angebot.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-txt"><strong>Wir melden uns bei Ihnen</strong><br>Per E-Mail oder Telefon – ganz wie Sie bevorzugen.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-txt"><strong>Kostenloses Erstgespräch</strong><br>Wir klären alle Details und starten gemeinsam durch.</div>
+    </div>
+  </div>
+  <div class="btns">
+    <a href="index.html" class="btn btn-teal">← Zurück zur Startseite</a>
+    <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20gerade%20eine%20Anfrage%20gesendet." target="_blank" class="btn btn-ghost">💬 WhatsApp</a>
+  </div>
+  <p class="wa-hint">Dringlich? Rufen Sie uns direkt an: <a href="tel:01785143918" style="color:var(--teal);">0178 514 3918</a></p>
+</div>
+</body>
+</html>

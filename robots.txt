@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /
-
-User-agent: Googlebot
-Allow: /
+Disallow: /mail.php
 
 Sitemap: https://masar-werbeagentur.de/sitemap.xml

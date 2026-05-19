@@ -418,6 +418,19 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .testi-nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
 .testi-nav:hover{border-color:var(--teal);}
 
+/* ═══ SERVICE PICKER ═══ */
+.svc-picker{border:2px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;}
+.svc-pick-cat{border-bottom:1px solid var(--border);}
+.svc-pick-cat:last-child{border-bottom:none;}
+.svc-pick-cat-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 14px;background:var(--off);border-bottom:1px solid var(--border);}
+.svc-pick-opts{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
+.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
+.svc-pick-opt:hover{border-color:var(--teal);color:var(--teal);}
+.svc-pick-opt.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
+.svc-pick-other{display:block;margin:0 12px 12px;width:calc(100% - 24px);text-align:center;background:var(--off);}
+.svc-pick-other.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
+.svc-picked-lbl{font-size:12px;color:var(--teal);font-weight:700;margin-top:5px;padding:2px;}
+
 </style>
 <script type="application/ld+json">
 {
@@ -430,12 +443,12 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   "url": "https://masar-werbeagentur.de",
   "logo": "https://masar-werbeagentur.de/logo.png",
   "image": "https://masar-werbeagentur.de/logo.png",
-  "telephone": "+4917851439180",
+  "telephone": "+491785143918",
   "email": "info@masar-werbeagentur.de",
   "taxID": "23/203/00524",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Bristolstraße 19HN, 19E",
+    "streetAddress": "Bristolstraße 19HN",
     "addressLocality": "Berlin",
     "addressRegion": "Berlin",
     "postalCode": "13349",
@@ -496,7 +509,14 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 </head>
 <body>
 
-
+<!-- TOP INFO BAR -->
+<div style="background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;line-height:1.4;">
+  <span>📍 Masar Werbeagentur · Berlin-Wedding · Bristolstraße 19HN</span>
+  <span style="opacity:.5">|</span>
+  <span>🇩🇪 Deutsch &amp; 🇸🇦 عربي – نتكلم عربي</span>
+  <span style="opacity:.5">|</span>
+  <a href="tel:01785143918" style="color:var(--navy);text-decoration:none;">📞 0178 514 3918</a>
+</div>
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/491785143918" class="wa" target="_blank" aria-label="WhatsApp">
@@ -820,11 +840,11 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
       <p class="sec-sub">Wir sind mehr als eine Agentur – wir sind Ihr strategischer Partner für Wachstum und Sichtbarkeit.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Schnelle Lieferung</div><div class="why-desc">Kurze Produktionszeiten ohne Qualitätsverlust – auf Wunsch auch Express-Service innerhalb von 24 Stunden.</div></div>
-      <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Full-Service aus einer Hand</div><div class="why-desc">Von der Idee bis zur fertigen Umsetzung – Design, Druck, Web und Marketing ohne Schnittstellen.</div></div>
-      <div class="why-card reveal"><div class="why-icon">💎</div><div class="why-title">Premium-Qualität</div><div class="why-desc">Hochwertige Materialien, professionelle Verarbeitung und sorgfältige Qualitätskontrolle bei jedem Auftrag.</div></div>
-      <div class="why-card reveal"><div class="why-icon">🤝</div><div class="why-title">Persönliche Beratung</div><div class="why-desc">Kein Call-Center, keine langen Wartezeiten. Sie sprechen direkt mit Ihrem Ansprechpartner.</div></div>
-      <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Lokal in Berlin</div><div class="why-desc">Als Berliner Agentur kennen wir den lokalen Markt und liefern direkt vor Ort – persönlich und verlässlich.</div></div>
+      <div class="why-card reveal"><div class="why-icon">🇸🇦</div><div class="why-title">Deutsch & Arabisch</div><div class="why-desc">Einzige Werbeagentur in Berlin mit arabischsprachiger Beratung. Für die arabische Community in Berlin – كلامنا عربي.</div></div>
+      <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Angebot in 24 Stunden</div><div class="why-desc">Kein wochenlanger Warteaufwand: Sie erhalten Ihr individuelles Angebot garantiert am nächsten Werktag.</div></div>
+      <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Full-Service aus einer Hand</div><div class="why-desc">Design, Produktion, Montage und Marketing – ein Ansprechpartner, keine Schnittstellen, keine Überraschungen.</div></div>
+      <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Direkt vor Ort in Wedding</div><div class="why-desc">Unser Büro ist in Bristolstraße 19HN, Berlin-Wedding. Schnelle Reaktion, kurze Wege, persönlicher Kontakt.</div></div>
+      <div class="why-card reveal"><div class="why-icon">💎</div><div class="why-title">Grafikdesign inklusive</div><div class="why-desc">Kein eigenes Design? Kein Problem. Professionelles Grafikdesign ist bei allen Aufträgen immer inklusive.</div></div>
       <div class="why-card reveal"><div class="why-icon">♾️</div><div class="why-title">Unbegrenzte Korrekturen</div><div class="why-desc">Wir arbeiten so lange, bis Sie 100% zufrieden sind. Keine versteckten Kosten für Überarbeitungen.</div></div>
     </div>
   </div>
@@ -939,6 +959,9 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
       <div class="faq-item"><button class="faq-q">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
       <div class="faq-item"><button class="faq-q">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
       <div class="faq-item"><button class="faq-q">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
+      <div class="faq-item"><button class="faq-q">Bieten Sie Beratung auf Arabisch an? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Als arabischsprachige Agentur in Berlin bieten wir Beratung auf Deutsch und Arabisch an. Sprechen Sie uns auf WhatsApp an – wir antworten gerne على العربي.</div></div>
+      <div class="faq-item"><button class="faq-q">Brauche ich eine Genehmigung für Außenwerbung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Für Leuchtreklamen und größere Außenwerbeanlagen ist in Berlin eine Baugenehmigung beim Bezirksamt erforderlich. Wir übernehmen die gesamte Antragstellung für Sie – inklusive Planunterlagen.</div></div>
+      <div class="faq-item"><button class="faq-q">Was kostet eine Fahrzeugbeschriftung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Eine einfache Teilbeschriftung (Logo + Kontaktdaten) beginnt ab ca. 150 €. Eine Vollfolierung kostet je nach Fahrzeuggröße 800–2.500 €. Wir erstellen Ihnen ein kostenloses Angebot innerhalb von 24 Stunden.</div></div>
     </div>
   </div>
 </section>
@@ -1004,6 +1027,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
           <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
           <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden. – Masar Werbeagentur Berlin | Tel: 0178 514 3918">
           <div class="fg-row">
             <div class="fg"><label>Ihr Name *</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
@@ -1012,30 +1036,43 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
           <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0178 000 0000"></div>
           <div class="fg">
             <label>Gewünschte Leistung *</label>
-            <select name="leistung" required>
-              <option value="">Bitte wählen...</option>
-              <optgroup label="💡 Werbetechnik">
-                <option>Leuchtreklamen & LED-Schilder</option>
-                <option>Fahrzeugbeschriftung</option>
-                <option>Schilder & Banner</option>
-              </optgroup>
-              <optgroup label="🖨️ Druck & Print">
-                <option>Flyer & Visitenkarten</option>
-                <option>Plakate & Poster</option>
-                <option>Kataloge & Broschüren</option>
-                <option>Sticker & Aufkleber</option>
-              </optgroup>
-              <optgroup label="✏️ Design & Web">
-                <option>Grafikdesign & Branding</option>
-                <option>Webdesign & Website</option>
-              </optgroup>
-              <optgroup label="📱 Social Media">
-                <option>Social Media Starter (199–249€)</option>
-                <option>Social Media Business (449–599€)</option>
-                <option>Social Media Premium (ab 899€)</option>
-              </optgroup>
-              <option>Mehrere Leistungen / Sonstiges</option>
-            </select>
+            <input type="hidden" name="leistung" id="selectedService">
+            <div class="svc-picker">
+              <div class="svc-pick-cat">
+                <div class="svc-pick-cat-lbl">💡 Werbetechnik</div>
+                <div class="svc-pick-opts">
+                  <button type="button" class="svc-pick-opt" data-val="Leuchtreklamen &amp; LED-Schilder">💡 Leuchtreklame</button>
+                  <button type="button" class="svc-pick-opt" data-val="Fahrzeugbeschriftung">🚗 Fahrzeugbeschriftung</button>
+                  <button type="button" class="svc-pick-opt" data-val="Schilder &amp; Banner">🪧 Schilder &amp; Banner</button>
+                </div>
+              </div>
+              <div class="svc-pick-cat">
+                <div class="svc-pick-cat-lbl">🖨️ Druck &amp; Print</div>
+                <div class="svc-pick-opts">
+                  <button type="button" class="svc-pick-opt" data-val="Flyer &amp; Visitenkarten">📄 Flyer &amp; Visitenkarten</button>
+                  <button type="button" class="svc-pick-opt" data-val="Plakate &amp; Poster">🗺️ Plakate &amp; Poster</button>
+                  <button type="button" class="svc-pick-opt" data-val="Kataloge &amp; Broschüren">📚 Kataloge</button>
+                  <button type="button" class="svc-pick-opt" data-val="Sticker &amp; Aufkleber">🏷️ Sticker</button>
+                </div>
+              </div>
+              <div class="svc-pick-cat">
+                <div class="svc-pick-cat-lbl">✏️ Design &amp; Web</div>
+                <div class="svc-pick-opts">
+                  <button type="button" class="svc-pick-opt" data-val="Grafikdesign &amp; Branding">🎨 Grafikdesign</button>
+                  <button type="button" class="svc-pick-opt" data-val="Webdesign &amp; Website">🌐 Webdesign</button>
+                </div>
+              </div>
+              <div class="svc-pick-cat">
+                <div class="svc-pick-cat-lbl">📱 Social Media Marketing</div>
+                <div class="svc-pick-opts">
+                  <button type="button" class="svc-pick-opt" data-val="Social Media Starter">Starter</button>
+                  <button type="button" class="svc-pick-opt" data-val="Social Media Business">Business</button>
+                  <button type="button" class="svc-pick-opt" data-val="Social Media Premium">Premium</button>
+                </div>
+              </div>
+              <button type="button" class="svc-pick-opt svc-pick-other" data-val="Mehrere Leistungen / Sonstiges">➕ Mehrere Leistungen / Sonstiges</button>
+            </div>
+            <div class="svc-picked-lbl" id="svcPickedLbl" style="display:none"></div>
           </div>
           <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
           <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
@@ -1120,6 +1157,18 @@ const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
   if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// ═══ SERVICE PICKER ═══
+document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.svc-pick-opt').forEach(b=>b.classList.remove('picked'));
+    btn.classList.add('picked');
+    const hidden=document.getElementById('selectedService');
+    const lbl=document.getElementById('svcPickedLbl');
+    if(hidden) hidden.value=btn.dataset.val;
+    if(lbl){lbl.textContent='✓ Ausgewählt: '+btn.dataset.val;lbl.style.display='block';}
+  });
+});
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
