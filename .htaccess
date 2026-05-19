@@ -39,8 +39,8 @@ DirectoryIndex index.html index.php
   # HSTS — browsers remember HTTPS for 1 year (+ subdomains + preload)
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
 
-  # Clickjacking prevention
-  Header always set X-Frame-Options "SAMEORIGIN"
+  # Clickjacking prevention — DENY blocks all framing (including same origin)
+  Header always set X-Frame-Options "DENY"
 
   # MIME sniffing prevention
   Header always set X-Content-Type-Options "nosniff"
@@ -187,17 +187,27 @@ ErrorDocument 500 /index.html
   AddType application/manifest+json         .webmanifest
 </IfModule>
 
-# ─── ENVIRONMENT VARIABLES ─────────────────────────────────────
-# Add your Stripe keys manually on the Hostinger server — do NOT put
-# live secret keys in this file or commit them to the git repository.
+# ════════════════════════════════════════════════════════════════
+# STRIPE KEYS - TO BE ADDED MANUALLY ON SERVER
+# ════════════════════════════════════════════════════════════════
 #
-# Option A — hPanel: Hosting → PHP → Environment Variables
-#   STRIPE_SECRET_KEY  = sk_live_...
-#   STRIPE_WEBHOOK_SECRET = whsec_...
+# ⚠ NEVER commit live secret keys to the git repository.
+#    Add the lines below ONLY via Hostinger hPanel File Manager
+#    or SSH — directly on the production server.
 #
-# Option B — SSH / hPanel File Manager (private, not committed):
-#   Add these two lines to /public_html/.htaccess on the server only:
-#   SetEnv STRIPE_SECRET_KEY sk_live_...
-#   SetEnv STRIPE_WEBHOOK_SECRET whsec_...
+# ── HOW TO ADD (choose one method) ──────────────────────────────
 #
-# PHP reads both with: getenv('STRIPE_SECRET_KEY')
+# Method A — hPanel (recommended):
+#   Hosting → PHP → Environment Variables → Add variable
+#   Name : STRIPE_SECRET_KEY      Value: sk_live_...
+#   Name : STRIPE_WEBHOOK_SECRET  Value: whsec_...
+#
+# Method B — File Manager / SSH (append to this file on server):
+#   SetEnv STRIPE_SECRET_KEY      sk_live_...
+#   SetEnv STRIPE_WEBHOOK_SECRET  whsec_...
+#
+# ── USAGE IN PHP ────────────────────────────────────────────────
+#   $key    = getenv('STRIPE_SECRET_KEY');
+#   $secret = getenv('STRIPE_WEBHOOK_SECRET');
+#
+# ════════════════════════════════════════════════════════════════
