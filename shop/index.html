@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Druckshop – Masar Werbeagentur Berlin</title>
+<meta name="description" content="Professioneller Druckshop der Masar Werbeagentur Berlin. Flyer, Visitenkarten, Roll-ups, Plakate & mehr zu Reseller-Preisen. Druckdatei hochladen & bestellen.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<meta name="theme-color" content="#58d0bd">
+<link rel="stylesheet" href="/fonts.css">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+
+<style>
+/* ══════════════════════════════════════════════════════
+   TOKENS — shared with main site
+   ══════════════════════════════════════════════════════ */
+:root {
+  --teal:#58d0bd; --teal-d:#3ab8a5; --teal-l:rgba(88,208,189,.1);
+  --navy:#132e50; --navy2:#1e4275; --navy3:#0a1628;
+  --off:#f4f7f7; --text:#1a2a2a; --muted:#5a7070; --border:#e0eaea;
+  --nav-h:80px; --r:12px;
+  --shadow:0 8px 32px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.14);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; overflow-x:hidden; }
+body { font-family:'Barlow',sans-serif; background:#fff; color:var(--text); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+img  { display:block; max-width:100%; }
+a    { text-decoration:none; color:inherit; }
+.container { max-width:1240px; margin:0 auto; padding:0 2rem; }
+
+/* ══════════════════════════════════════════════════════
+   NAV — identical structure to main site
+   ══════════════════════════════════════════════════════ */
+nav {
+  position:fixed; top:0; width:100%; z-index:500;
+  background:rgba(255,255,255,.97);
+  border-bottom:2px solid var(--teal);
+  box-shadow:0 2px 20px rgba(0,0,0,.06);
+  backdrop-filter:blur(16px);
+}
+.nav-inner {
+  max-width:1240px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem; height:var(--nav-h);
+}
+.nav-logo { display:flex; align-items:center; gap:10px; }
+.nav-logo img { height:56px; object-fit:contain; }
+.nav-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:var(--navy); letter-spacing:2px; display:none; }
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a { color:var(--navy); font-size:13.5px; font-weight:600; transition:color .2s; position:relative; padding-bottom:4px; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--teal); transition:width .3s; }
+.nav-links a:hover, .nav-links a.active { color:var(--teal); }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+.nav-cta { background:var(--teal)!important; color:var(--navy)!important; padding:9px 22px!important; border-radius:6px; font-weight:700!important; }
+.nav-cta::after { display:none!important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+.hamburger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
+.mob-nav { display:none; position:fixed; inset:0; top:var(--nav-h); background:#fff; z-index:499; padding:2rem; overflow-y:auto; }
+.mob-nav.open { display:block; }
+.mob-nav a { display:block; padding:14px 0; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
+.mob-nav a:hover { color:var(--teal); }
+.mob-cta { margin-top:1.5rem; display:block; background:var(--teal); color:var(--navy)!important; text-align:center; padding:15px!important; border-radius:6px; font-weight:700!important; }
+
+/* ══════════════════════════════════════════════════════
+   HERO — compact shop hero
+   ══════════════════════════════════════════════════════ */
+.shop-hero {
+  padding-top:var(--nav-h);
+  background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 60%,#0d4a4a 100%);
+  padding-bottom:3.5rem;
+  position:relative;
+  overflow:hidden;
+}
+.shop-hero::before {
+  content:'';
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at 75% 50%,rgba(88,208,189,.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.shop-hero-lines {
+  position:absolute; top:0; right:0; bottom:0; width:35%; opacity:.04;
+  background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);
+  pointer-events:none;
+}
+.shop-hero-inner {
+  position:relative; z-index:2;
+  padding:3rem 0 2rem;
+}
+.shop-eyebrow {
+  font-size:11px; font-weight:700; letter-spacing:3px;
+  text-transform:uppercase; color:rgba(88,208,189,.8);
+  margin-bottom:.8rem; display:block;
+}
+.shop-hero h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:clamp(2.4rem,5vw,3.8rem);
+  line-height:1; color:#fff; text-transform:uppercase;
+  margin-bottom:.8rem;
+}
+.shop-hero h1 em { color:var(--teal); font-style:normal; }
+.shop-hero-sub {
+  font-size:16px; color:rgba(255,255,255,.6); line-height:1.75;
+  max-width:560px; margin-bottom:1.8rem;
+}
+.trust-badges {
+  display:flex; gap:1.2rem; flex-wrap:wrap;
+}
+.trust-badge {
+  display:inline-flex; align-items:center; gap:.4rem;
+  font-size:13px; font-weight:600;
+  color:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:30px;
+  padding:6px 14px;
+}
+.trust-badge span { color:var(--teal); }
+
+/* ══════════════════════════════════════════════════════
+   FILTER TABS
+   ══════════════════════════════════════════════════════ */
+.filter-bar {
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky; top:var(--nav-h); z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+.filter-bar-inner {
+  max-width:1240px; margin:0 auto;
+  padding:.8rem 2rem;
+  display:flex; gap:.5rem; flex-wrap:wrap; align-items:center;
+}
+.filter-btn {
+  padding:7px 16px;
+  border:1.5px solid var(--border);
+  border-radius:30px;
+  background:#fff; color:var(--muted);
+  font-family:'Barlow',sans-serif;
+  font-size:13px; font-weight:700;
+  cursor:pointer; transition:all .2s;
+  white-space:nowrap;
+}
+.filter-btn:hover { border-color:var(--teal); color:var(--navy); }
+.filter-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+
+/* ══════════════════════════════════════════════════════
+   CATALOG GRID
+   ══════════════════════════════════════════════════════ */
+.catalog-section { padding:3rem 0 6rem; background:var(--off); min-height:60vh; }
+.catalog-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+
+/* ── Product card ── */
+.prod-card {
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+}
+.prod-card:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-lg);
+  border-color:rgba(88,208,189,.3);
+}
+.prod-card-header {
+  background:linear-gradient(135deg,var(--navy3),var(--navy));
+  padding:1.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  position:relative; overflow:hidden;
+}
+.prod-card-header::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:var(--teal);
+}
+.prod-emoji { font-size:2.2rem; line-height:1; }
+.prod-cat {
+  font-size:10px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; color:rgba(88,208,189,.7);
+  background:rgba(88,208,189,.08);
+  border:1px solid rgba(88,208,189,.2);
+  padding:4px 10px; border-radius:4px;
+}
+.prod-card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; gap:.8rem; }
+.prod-name {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:1.3rem;
+  text-transform:uppercase; color:var(--navy); line-height:1.1;
+}
+.prod-desc { font-size:13px; color:var(--muted); line-height:1.6; }
+.prod-price-from { font-size:13px; color:var(--muted); }
+.prod-price-from strong { color:var(--teal); font-size:16px; font-weight:800; }
+
+/* ── Option buttons ── */
+.prod-opt-group { display:flex; flex-direction:column; gap:.4rem; }
+.prod-opt-lbl {
+  font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--muted);
+}
+.prod-opt-btns { display:flex; gap:.4rem; flex-wrap:wrap; }
+.opt-btn {
+  padding:5px 12px;
+  border:1.5px solid var(--border);
+  border-radius:6px;
+  background:#fff; color:var(--text);
+  font-family:'Barlow',sans-serif;
+  font-size:12px; font-weight:600;
+  cursor:pointer; transition:all .2s;
+  line-height:1.3;
+}
+.opt-btn:hover { border-color:var(--teal); color:var(--navy); }
+.opt-btn.active { background:var(--teal); color:var(--navy); border-color:var(--teal); font-weight:700; }
+
+/* ── Qty control ── */
+.prod-qty-row { display:flex; flex-direction:column; gap:.4rem; }
+.qty-ctrl { display:flex; align-items:center; gap:.4rem; }
+.qty-btn {
+  width:32px; height:32px;
+  border:1.5px solid var(--border);
+  border-radius:6px;
+  background:#fff; color:var(--navy);
+  font-size:18px; font-weight:700;
+  cursor:pointer; transition:all .2s;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.qty-btn:hover { border-color:var(--teal); background:var(--teal-l); }
+.qty-inp {
+  width:90px; text-align:center;
+  border:1.5px solid var(--border);
+  border-radius:6px;
+  padding:6px 8px;
+  font-family:'Barlow',sans-serif;
+  font-size:14px; font-weight:700;
+  color:var(--navy);
+  outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+}
+.qty-inp:focus { border-color:var(--teal); }
+.qty-inp::-webkit-inner-spin-button,
+.qty-inp::-webkit-outer-spin-button { opacity:1; }
+
+/* ── Live price ── */
+.prod-price-live {
+  background:var(--navy);
+  border-radius:8px;
+  padding:1rem 1.2rem;
+  margin-top:auto;
+}
+.price-unit {
+  font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
+  color:rgba(255,255,255,.45); margin-bottom:.3rem;
+}
+.price-total {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:1.6rem;
+  color:var(--teal); line-height:1;
+}
+
+/* ── Tier table ── */
+.tier-table-wrap {
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  font-size:13px;
+}
+.tier-table-wrap summary {
+  padding:8px 12px;
+  cursor:pointer;
+  font-size:12px; font-weight:700;
+  color:var(--muted);
+  background:var(--off);
+  user-select:none;
+  list-style:none;
+  display:flex; align-items:center; gap:.4rem;
+}
+.tier-table-wrap summary::before { content:'▸'; font-size:10px; transition:transform .2s; }
+.tier-table-wrap[open] summary::before { transform:rotate(90deg); }
+.tier-table { width:100%; border-collapse:collapse; }
+.tier-table th {
+  background:var(--navy); color:#fff;
+  padding:8px 10px; font-size:11px;
+  letter-spacing:1px; text-transform:uppercase;
+  text-align:left;
+}
+.tier-table td { padding:7px 10px; border-bottom:1px solid var(--border); color:var(--text); }
+.tier-table tr:last-child td { border-bottom:none; }
+.tier-table tr:nth-child(even) td { background:var(--off); }
+
+/* ── Add to cart button ── */
+.add-to-cart-btn {
+  width:100%;
+  background:var(--teal);
+  color:var(--navy);
+  border:none;
+  border-radius:8px;
+  padding:13px 16px;
+  font-family:'Barlow',sans-serif;
+  font-size:14px; font-weight:800;
+  cursor:pointer;
+  transition:background .2s, transform .2s, box-shadow .2s;
+  margin-top:.4rem;
+}
+.add-to-cart-btn:hover {
+  background:var(--teal-d);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(88,208,189,.35);
+}
+.add-to-cart-btn:active { transform:translateY(0); }
+
+/* ══════════════════════════════════════════════════════
+   CART BUTTON — sticky bottom-right
+   ══════════════════════════════════════════════════════ */
+.cart-fab {
+  position:fixed; bottom:2rem; right:2rem; z-index:400;
+  background:var(--navy);
+  color:#fff;
+  border:2px solid var(--teal);
+  border-radius:50px;
+  padding:12px 20px;
+  display:flex; align-items:center; gap:.5rem;
+  font-family:'Barlow',sans-serif;
+  font-size:15px; font-weight:700;
+  cursor:pointer;
+  box-shadow:0 8px 32px rgba(0,0,0,.25);
+  transition:all .25s;
+}
+.cart-fab:hover {
+  background:var(--teal);
+  color:var(--navy);
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(88,208,189,.4);
+}
+.cart-fab svg { width:20px; height:20px; fill:currentColor; flex-shrink:0; }
+.cart-badge {
+  background:var(--teal);
+  color:var(--navy);
+  font-size:11px; font-weight:900;
+  width:20px; height:20px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .25s, color .25s;
+}
+.cart-fab:hover .cart-badge { background:var(--navy); color:var(--teal); }
+
+/* Flash animation when item is added */
+@keyframes cartFlashAnim {
+  0%   { transform:scale(1); }
+  30%  { transform:scale(1.18); background:var(--teal); color:var(--navy); }
+  100% { transform:scale(1); }
+}
+.cart-flash { animation:cartFlashAnim .6s ease; }
+
+/* ══════════════════════════════════════════════════════
+   CART OVERLAY + DRAWER
+   ══════════════════════════════════════════════════════ */
+.cart-overlay {
+  position:fixed; inset:0; z-index:450;
+  background:rgba(10,22,40,.5);
+  backdrop-filter:blur(4px);
+  opacity:0; pointer-events:none;
+  transition:opacity .3s;
+}
+.cart-drawer.open ~ .cart-overlay,
+.cart-overlay.active { opacity:1; pointer-events:all; }
+
+.cart-drawer {
+  position:fixed; top:0; right:0; bottom:0;
+  width:min(420px, 100vw);
+  background:#fff;
+  z-index:500;
+  box-shadow:-8px 0 40px rgba(0,0,0,.2);
+  transform:translateX(100%);
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+.cart-drawer.open { transform:translateX(0); }
+
+.cart-drawer-header {
+  background:var(--navy3);
+  border-bottom:2px solid var(--teal);
+  padding:1.2rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-shrink:0;
+}
+.cart-drawer-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:1.2rem;
+  color:#fff; text-transform:uppercase; letter-spacing:1px;
+}
+.cart-close {
+  width:36px; height:36px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:8px;
+  color:#fff; font-size:20px;
+  cursor:pointer; transition:background .2s;
+  display:flex; align-items:center; justify-content:center;
+}
+.cart-close:hover { background:rgba(255,255,255,.15); }
+
+.cart-body {
+  flex:1; overflow-y:auto;
+  padding:1.2rem 1.5rem;
+}
+.cart-empty {
+  text-align:center; padding:3rem 1rem;
+  color:var(--muted); font-size:14px;
+}
+.cart-empty-icon { font-size:3rem; margin-bottom:.8rem; }
+
+.cart-item {
+  display:flex; align-items:flex-start;
+  justify-content:space-between; gap:.8rem;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--border);
+}
+.cart-item:last-child { border-bottom:none; }
+.cart-item-info { flex:1; min-width:0; }
+.cart-item-name {
+  display:block; font-weight:700; color:var(--navy);
+  font-size:14px; margin-bottom:.2rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.cart-item-opts { font-size:12px; color:var(--muted); }
+.cart-item-right {
+  display:flex; align-items:center; gap:.5rem;
+  flex-shrink:0;
+}
+.cart-item-price { font-weight:700; color:var(--navy); font-size:14px; white-space:nowrap; }
+.cart-item-del {
+  width:24px; height:24px;
+  background:none; border:1px solid var(--border);
+  border-radius:4px; color:var(--muted);
+  font-size:16px; cursor:pointer; transition:all .2s;
+  display:flex; align-items:center; justify-content:center;
+  padding:0; line-height:1;
+}
+.cart-item-del:hover { background:#fff5f5; border-color:#fc8181; color:#e53e3e; }
+
+.cart-footer {
+  border-top:2px solid var(--border);
+  padding:1.2rem 1.5rem;
+  background:var(--off);
+  flex-shrink:0;
+}
+.cart-total-row {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:1rem;
+}
+.cart-total-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+.cart-total-val { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.6rem; color:var(--navy); }
+.cart-checkout-btn {
+  width:100%;
+  background:var(--teal);
+  color:var(--navy);
+  border:none; border-radius:8px;
+  padding:14px 20px;
+  font-family:'Barlow',sans-serif;
+  font-size:15px; font-weight:800;
+  cursor:pointer; transition:all .2s;
+}
+.cart-checkout-btn:hover { background:var(--teal-d); transform:translateY(-2px); box-shadow:0 6px 24px rgba(88,208,189,.4); }
+.cart-checkout-btn:disabled { opacity:.4; cursor:not-allowed; transform:none; box-shadow:none; }
+.cart-shop-link { display:block; text-align:center; margin-top:.8rem; font-size:13px; color:var(--muted); cursor:pointer; }
+.cart-shop-link:hover { color:var(--teal); }
+
+/* ══════════════════════════════════════════════════════
+   FOOTER — matches main site
+   ══════════════════════════════════════════════════════ */
+footer {
+  background:var(--navy3);
+  border-top:1px solid rgba(88,208,189,.1);
+  padding:4rem 0 0;
+  color:rgba(255,255,255,.55);
+  font-size:14px;
+}
+.foot-grid {
+  display:grid; grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:3rem; margin-bottom:3rem;
+}
+.foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
+.foot-logo img { height:44px; object-fit:contain; }
+.foot-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; color:#fff; letter-spacing:3px; display:none; }
+.foot-desc { font-size:13px; color:rgba(255,255,255,.35); line-height:1.75; margin-bottom:1.2rem; }
+.foot-col h5 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:1rem; }
+.foot-col a { display:block; color:rgba(255,255,255,.45); font-size:13px; margin-bottom:.6rem; transition:color .2s; }
+.foot-col a:hover { color:#fff; }
+.foot-bottom {
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:1.5rem 0;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:1rem;
+  font-size:12px; color:rgba(255,255,255,.3);
+}
+.foot-legal { display:flex; gap:1.5rem; }
+.foot-legal a { color:rgba(255,255,255,.3); transition:color .2s; }
+.foot-legal a:hover { color:var(--teal); }
+.foot-social { display:flex; gap:.8rem; }
+.fsoc {
+  width:36px; height:36px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,.5);
+  transition:all .25s;
+}
+.fsoc:hover { background:var(--teal); color:var(--navy); border-color:var(--teal); }
+.fsoc svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* ══════════════════════════════════════════════════════
+   WHATSAPP FLOAT
+   ══════════════════════════════════════════════════════ */
+.wa {
+  position:fixed; bottom:90px; right:18px; z-index:399;
+  width:54px; height:54px; border-radius:50%;
+  background:#25d366;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 24px rgba(37,211,102,.45);
+  transition:transform .25s;
+}
+.wa:hover { transform:scale(1.1); }
+.wa svg { width:28px; height:28px; fill:#fff; }
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════ */
+@media(max-width:1024px) {
+  .catalog-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:768px) {
+  :root { --nav-h:68px; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .catalog-grid { grid-template-columns:1fr; gap:1rem; }
+  .catalog-section { padding:2rem 0 4rem; }
+  .foot-grid { grid-template-columns:1fr 1fr; gap:2rem; }
+  .shop-hero h1 { font-size:clamp(2rem,8vw,3rem); }
+  .trust-badges { flex-direction:column; gap:.5rem; }
+}
+@media(max-width:480px) {
+  .container { padding:0 1rem; }
+  .cart-fab { bottom:1rem; right:1rem; padding:10px 16px; font-size:14px; }
+  .filter-bar-inner { gap:.35rem; padding:.6rem 1rem; }
+  .filter-btn { font-size:12px; padding:6px 12px; }
+  .foot-grid { grid-template-columns:1fr; }
+  .foot-bottom { flex-direction:column; text-align:center; }
+  .foot-legal { flex-direction:column; align-items:center; gap:.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="Masar Werbeagentur Berlin" loading="eager"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-txt">MASAR</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/shop/" class="active">Shop</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-nav" id="mobNav">
+  <a href="/">Home</a>
+  <a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/shop/" style="color:var(--teal);">Print Shop</a>
+  <a href="/shop/checkout.html">Warenkorb / Kasse</a>
+  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+</div>
+
+<!-- HERO -->
+<section class="shop-hero">
+  <div class="shop-hero-lines"></div>
+  <div class="container">
+    <div class="shop-hero-inner">
+      <span class="shop-eyebrow">✦ Masar Werbeagentur Berlin · Print Shop</span>
+      <h1>Professioneller Druck –<br><em>zu Reseller-Preisen</em></h1>
+      <p class="shop-hero-sub">
+        Von Flyern über Visitenkarten bis zu Roll-ups und Standbodenbeuteln –
+        Druckprodukte in Profiqualität, direkt bestellt mit Ihrer Druckdatei.
+      </p>
+      <div class="trust-badges">
+        <span class="trust-badge"><span>✓</span> Druck ab 24–48h Lieferzeit</span>
+        <span class="trust-badge"><span>✓</span> Kostenlose Druckdatei-Prüfung</span>
+        <span class="trust-badge"><span>✓</span> Zahlung per Vorkasse oder PayPal</span>
+        <span class="trust-badge"><span>✓</span> Staffelpreise ab 1 Stück</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="filter-bar-inner">
+    <button class="filter-btn active" onclick="filterCatalog('all',this)">Alle</button>
+    <button class="filter-btn" onclick="filterCatalog('Flyer',this)">Flyer</button>
+    <button class="filter-btn" onclick="filterCatalog('Visitenkarten',this)">Visitenkarten</button>
+    <button class="filter-btn" onclick="filterCatalog('Aufkleber',this)">Aufkleber</button>
+    <button class="filter-btn" onclick="filterCatalog('Werbemittel',this)">Werbemittel</button>
+    <button class="filter-btn" onclick="filterCatalog('Plakate',this)">Plakate</button>
+    <button class="filter-btn" onclick="filterCatalog('Broschüren',this)">Broschüren</button>
+    <button class="filter-btn" onclick="filterCatalog('Verpackung',this)">Verpackung</button>
+    <button class="filter-btn" onclick="filterCatalog('Werbeartikel',this)">Werbeartikel</button>
+  </div>
+</div>
+
+<!-- CATALOG -->
+<section class="catalog-section">
+  <div class="container">
+    <div id="catalogGrid" class="catalog-grid">
+      <!-- Filled by shop.js -->
+    </div>
+  </div>
+</section>
+
+<!-- CART FAB (sticky bottom-right) -->
+<button class="cart-fab" id="cartBtn" onclick="cartToggle()" aria-label="Warenkorb öffnen">
+  <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+  Warenkorb
+  <span class="cart-badge" id="cartBadge">0</span>
+</button>
+
+<!-- CART OVERLAY (click to close) -->
+<div class="cart-overlay" id="cartOverlay" onclick="cartToggle()"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <span class="cart-drawer-title">🛒 Warenkorb</span>
+    <button class="cart-close" onclick="cartToggle()" aria-label="Schließen">×</button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty" style="display:block;">
+      <div class="cart-empty-icon">🛒</div>
+      <p>Ihr Warenkorb ist leer.</p>
+      <p style="font-size:12px;margin-top:.4rem;">Wählen Sie ein Produkt aus dem Katalog.</p>
+    </div>
+    <div id="cartItems"></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Gesamtbetrag</span>
+      <span class="cart-total-val" id="cartTotal">0,00 €</span>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckout" onclick="cartGoCheckout()" disabled>
+      Zur Kasse →
+    </button>
+    <span class="cart-shop-link" onclick="cartToggle()">← Weiter einkaufen</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="/logo.png" alt="Masar Werbeagentur" loading="lazy"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="foot-logo-txt">MASAR</span>
+        </div>
+        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/masar.werbeagentur/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/masarwerbeagentur/" target="_blank" rel="noopener" class="fsoc" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/491785143918" target="_blank" rel="noopener" class="fsoc" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Shop</h5>
+        <a href="/shop/">Alle Produkte</a>
+        <a href="/shop/?filter=Flyer">Flyer</a>
+        <a href="/shop/?filter=Visitenkarten">Visitenkarten</a>
+        <a href="/shop/?filter=Plakate">Plakate</a>
+        <a href="/shop/checkout.html">Warenkorb</a>
+      </div>
+      <div class="foot-col">
+        <h5>Leistungen</h5>
+        <a href="/leuchtreklame-berlin.html">Leuchtreklamen</a>
+        <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
+        <a href="/print.html">Grafikdesign & Print</a>
+        <a href="/digital.html">Social Media</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontakt</h5>
+        <a href="tel:01785143918">0178 514 3918</a>
+        <a href="https://wa.me/491785143918">WhatsApp</a>
+        <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
+        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+      <div class="foot-legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/shop/shop.js"></script>
+<script>
+// ── Sync overlay state with drawer ────────────────────────────
+(function(){
+  const drawer  = document.getElementById('cartDrawer');
+  const overlay = document.getElementById('cartOverlay');
+  const orig    = cartToggle;
+  window.cartToggle = function() {
+    orig();
+    if (overlay) overlay.classList.toggle('active', drawer.classList.contains('open'));
+  };
+})();
+
+// ── Hamburger ─────────────────────────────────────────────────
+document.getElementById('hamburger')?.addEventListener('click', function(){
+  document.getElementById('mobNav').classList.toggle('open');
+});
+</script>
+</body>
+</html>
