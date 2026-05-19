@@ -2,7 +2,7 @@
 // ═══ MASAR PRINT SHOP — ADMIN DASHBOARD ═══
 declare(strict_types=1);
 
-session_start();
+// Cookie params MUST be set before session_start()
 session_set_cookie_params([
     'lifetime' => 0,
     'path'     => '/',
@@ -10,12 +10,19 @@ session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Strict',
 ]);
+session_start();
 
 // ── Auth check ────────────────────────────────────────────────
 if (empty($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
     exit;
 }
+
+// ── CSRF token ────────────────────────────────────────────────
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+$csrfToken = $_SESSION['csrf_token'];
 
 // ── Load config ───────────────────────────────────────────────
 $configPath = dirname(__DIR__) . '/config.php';
@@ -39,6 +46,11 @@ $msg = '';
 
 // ── Handle POST actions ───────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // CSRF validation
+    $submittedCsrf = $_POST['csrf_token'] ?? '';
+    if (!hash_equals($csrfToken, $submittedCsrf)) {
+        $msg = 'Sicherheitsfehler: Ungültige Anfrage.';
+    } else {
     $action = $_POST['action'] ?? '';
 
     // ── Update order status ──────────────────────────────────
@@ -68,8 +80,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if (file_exists($fullPath)) {
                     $originalName = $row['file_original_name'] ?: basename($fullPath);
                     $mime = mime_content_type($fullPath) ?: 'application/octet-stream';
+                    // RFC 5987 filename encoding to support non-ASCII characters safely
+                    $asciiName   = preg_replace('/[^\x20-\x7E]/', '_', $originalName);
+                    $encodedName = rawurlencode($originalName);
                     header('Content-Type: ' . $mime);
-                    header('Content-Disposition: attachment; filename="' . addslashes($originalName) . '"');
+                    header('Content-Disposition: attachment; filename="' . str_replace('"', '\\"', $asciiName) . '"; filename*=UTF-8\'\'' . $encodedName);
                     header('Content-Length: ' . filesize($fullPath));
                     header('X-Content-Type-Options: nosniff');
                     readfile($fullPath);
@@ -87,13 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: login.php');
         exit;
     }
-}
-
-// ── Handle GET logout ─────────────────────────────────────────
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header('Location: login.php');
-    exit;
+    } // end CSRF else
 }
 
 // ── Fetch all orders ──────────────────────────────────────────
@@ -372,6 +381,7 @@ tbody td { padding:12px 14px; font-size:13px; vertical-align:middle; }
       <span class="adm-user">Angemeldet als <strong><?= htmlspecialchars($_SESSION['admin_user'] ?? '') ?></strong></span>
       <form method="POST" action="dashboard.php" style="margin:0;">
         <input type="hidden" name="action" value="logout">
+        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>">
         <button type="submit" class="btn-logout">Abmelden</button>
       </form>
     </div>
@@ -516,6 +526,7 @@ tbody td { padding:12px 14px; font-size:13px; vertical-align:middle; }
             <form method="POST" action="dashboard.php<?= $filterStatus !== 'all' ? '?filter='.urlencode($filterStatus) : '' ?>" class="status-form">
               <input type="hidden" name="action" value="update_status">
               <input type="hidden" name="order_id" value="<?= (int)$order['id'] ?>">
+              <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>">
               <select name="new_status" class="status-select">
                 <option value="Eingegangen"   <?= $order['order_status']==='Eingegangen'   ? 'selected':'' ?>>Eingegangen</option>
                 <option value="In Produktion" <?= $order['order_status']==='In Produktion' ? 'selected':'' ?>>In Produktion</option>
@@ -532,6 +543,7 @@ tbody td { padding:12px 14px; font-size:13px; vertical-align:middle; }
             <form method="POST" action="dashboard.php<?= $filterStatus !== 'all' ? '?filter='.urlencode($filterStatus) : '' ?>">
               <input type="hidden" name="action" value="download_file">
               <input type="hidden" name="order_id" value="<?= (int)$order['id'] ?>">
+              <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>">
               <button type="submit" class="btn-dl" title="<?= htmlspecialchars($order['file_original_name'] ?? '') ?>">
                 ↓ <?= htmlspecialchars(strlen($order['file_original_name'] ?? '') > 18 ? substr($order['file_original_name'], 0, 15).'...' : ($order['file_original_name'] ?? 'Download')) ?>
               </button>

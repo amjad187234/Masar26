@@ -2,7 +2,7 @@
 // ═══ MASAR PRINT SHOP — ADMIN LOGIN ═══
 declare(strict_types=1);
 
-session_start();
+// Cookie params MUST be set before session_start()
 session_set_cookie_params([
     'lifetime' => 0,
     'path'     => '/',
@@ -10,6 +10,7 @@ session_set_cookie_params([
     'httponly' => true,
     'samesite' => 'Strict',
 ]);
+session_start();
 
 // Load config
 $configPath = dirname(__DIR__) . '/config.php';

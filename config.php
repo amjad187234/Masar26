@@ -1,5 +1,6 @@
 <?php
 // ═══ MASAR PRINT SHOP — CENTRAL CONFIG ═══
+// IMPORTANT: This file contains secrets. Add config.php to .gitignore before deploying!
 // Run: php -r "echo password_hash('YourPassword', PASSWORD_BCRYPT);" to regenerate hash
 define('ADMIN_PASS_HASH', '$2y$12$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uHV1kz68W'); // default: "password" — CHANGE THIS
 define('ADMIN_USERNAME', 'masar-admin');

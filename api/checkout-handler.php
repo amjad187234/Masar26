@@ -62,6 +62,10 @@ $notes          = sanitize($_POST['notes'] ?? '');
 $paymentMethod  = sanitize($_POST['payment_method']);
 $paypalOrderId  = sanitize($_POST['paypal_order_id'] ?? '');
 
+// Strip CR/LF from fields used in email subjects or headers (prevent header injection)
+$name  = str_replace(["\r", "\n"], ' ', $name);
+$email = str_replace(["\r", "\n"], '',  $email);
+
 // Validate email
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     jsonError('Ungültige E-Mail-Adresse.');
@@ -108,10 +112,10 @@ if ($file['size'] > $maxBytes) {
 // Validate MIME type with finfo (not just extension)
 $allowedMimes = [
     'application/pdf',
-    'image/svg+xml',
     'image/webp',
     'image/png',
     'image/jpeg',
+    // SVG excluded: can contain embedded JavaScript (XSS risk)
 ];
 
 // Blocked / dangerous MIME types
@@ -142,7 +146,7 @@ if (in_array($mimeType, $blockedMimes, true)) {
 }
 
 if (!in_array($mimeType, $allowedMimes, true)) {
-    jsonError("Nicht unterstützter Dateityp: {$mimeType}. Erlaubt: PDF, SVG, WebP, PNG, JPEG.");
+    jsonError("Nicht unterstützter Dateityp: {$mimeType}. Erlaubt: PDF, WebP, PNG, JPEG.");
 }
 
 // Ensure UPLOAD_DIR exists
@@ -165,7 +169,6 @@ $extension    = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
 // Double-check extension against MIME
 $mimeExtMap = [
     'application/pdf'  => 'pdf',
-    'image/svg+xml'    => 'svg',
     'image/webp'       => 'webp',
     'image/png'        => 'png',
     'image/jpeg'       => 'jpg',
@@ -195,10 +198,11 @@ try {
 } catch (PDOException $e) {
     // Clean up uploaded file on DB error
     @unlink($destPath);
-    jsonError('Datenbankfehler: ' . $e->getMessage(), 500);
+    jsonError('Datenbankfehler. Bitte versuchen Sie es erneut.', 500);
 }
 
-$paymentStatus = ($paymentMethod === 'paypal' && $paypalOrderId !== '') ? 'paid' : 'pending';
+// Always pending — admin must verify payment; never trust client-supplied order IDs
+$paymentStatus = 'pending';
 
 try {
     $stmt = $pdo->prepare("
@@ -235,7 +239,7 @@ try {
     ]);
 } catch (PDOException $e) {
     @unlink($destPath);
-    jsonError('Bestellung konnte nicht gespeichert werden: ' . $e->getMessage(), 500);
+    jsonError('Bestellung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.', 500);
 }
 
 // ── Format price helper ───────────────────────────────────────
