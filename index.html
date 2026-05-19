@@ -419,18 +419,19 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .testi-nav:hover{border-color:var(--teal);}
 
 /* ═══ SERVICE PICKER ═══ */
-.svc-toggle{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:all .2s;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;}
-.svc-toggle:hover{border-color:var(--teal);}
+.svc-toggle{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:border-color .2s,color .2s,border-radius .15s;display:flex;justify-content:space-between;align-items:center;}
+.svc-toggle:hover{border-color:var(--teal);color:var(--text);}
 .svc-toggle.has-val{border-color:var(--teal);color:var(--text);}
-.svc-toggle-arrow{font-size:11px;transition:transform .25s;display:inline-block;color:var(--muted);}
+.svc-toggle.open{border-radius:8px 8px 0 0;border-color:var(--teal);}
+.svc-toggle-arrow{font-size:10px;transition:transform .2s;flex-shrink:0;}
 .svc-toggle.open .svc-toggle-arrow{transform:rotate(180deg);}
-.svc-picker{border:2px solid var(--border);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;background:#fff;display:none;}
+.svc-picker{border:2px solid var(--teal);border-top:none;border-radius:0 0 8px 8px;overflow:hidden;background:#fff;display:none;}
 .svc-picker.open{display:block;}
 .svc-pick-cat{border-bottom:1px solid var(--border);}
 .svc-pick-cat:last-child{border-bottom:none;}
 .svc-pick-cat-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 14px;background:var(--off);border-bottom:1px solid var(--border);}
 .svc-pick-opts{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
-.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:var(--off);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
+.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
 .svc-pick-opt:hover{border-color:var(--teal);color:var(--teal);background:#e8f8f5;}
 .svc-pick-opt.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
 .svc-pick-other{display:block;margin:0 12px 12px;width:calc(100% - 24px);text-align:center;background:var(--off);}
@@ -981,7 +982,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
       <h2 class="sec-title">Sofort-Kalkulation –<br><em>kostenlos & unverbindlich</em></h2>
       <p class="sec-sub">Erhalten Sie eine erste Preisschätzung in Sekunden.</p>
     </div>
-    <div class="price-calc-card reveal" id="priceCalc">
+    <div class="price-calc-card" id="priceCalc">
       <!-- VARIANT CHIPS -->
       <div class="calc-group">
         <span class="calc-lbl">Fahrzeug / Art der Beschriftung</span>
