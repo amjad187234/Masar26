@@ -178,22 +178,22 @@ const MasarForm = {
 const MasarPrice = {
   prices: {
     fahrzeug: {
-      klein:       { base: 125,  label: 'Kleinwagen Teilbeklebung' },
-      transporter: { base: 369,  label: 'Transporter Teilbeklebung' },
-      vollfolierung:{ base: 1500, label: 'Vollfolierung Transporter' },
-      lkw:         { base: 2500, label: 'LKW-Beschriftung' },
+      klein:        { base: 125,  chip: 'Kleinwagen',    label: 'Kleinwagen Teilbeklebung' },
+      transporter:  { base: 369,  chip: 'Transporter',   label: 'Transporter Teilbeklebung' },
+      vollfolierung:{ base: 1500, chip: 'Vollfolierung',  label: 'Vollfolierung Transporter' },
+      lkw:          { base: 2500, chip: 'LKW',           label: 'LKW-Beschriftung' },
     },
     leuchtreklame: {
-      small:   { base: 299,  label: 'Leuchtreklame bis 50cm' },
-      medium:  { base: 599,  label: 'Leuchtreklame bis 100cm' },
-      large:   { base: 1200, label: 'Leuchtreklame bis 200cm' },
-      custom:  { base: 2500, label: 'Individuelle Großanlage' },
+      small:  { base: 299,  chip: 'bis 50 cm',   label: 'Leuchtreklame bis 50 cm' },
+      medium: { base: 599,  chip: 'bis 100 cm',  label: 'Leuchtreklame bis 100 cm' },
+      large:  { base: 1200, chip: 'bis 200 cm',  label: 'Leuchtreklame bis 200 cm' },
+      custom: { base: 2500, chip: 'Großanlage',  label: 'Individuelle Großanlage' },
     },
     print: {
-      flyer:       { base: 49,  label: 'Flyer A5 (500 Stück)' },
-      visitenkarte:{ base: 39,  label: 'Visitenkarten (250 Stück)' },
-      broschure:   { base: 149, label: 'Broschüre A5 (100 Stück)' },
-      plakat:      { base: 79,  label: 'Plakate A3 (50 Stück)' },
+      flyer:       { base: 49,  chip: 'Flyer A5',     label: 'Flyer A5 (500 Stück)' },
+      visitenkarte:{ base: 39,  chip: 'Visitenkarte', label: 'Visitenkarten (250 Stück)' },
+      broschure:   { base: 149, chip: 'Broschüre',    label: 'Broschüre A5 (100 Stück)' },
+      plakat:      { base: 79,  chip: 'Plakat A3',    label: 'Plakate A3 (50 Stück)' },
     }
   },
 
@@ -202,57 +202,76 @@ const MasarPrice = {
   init() {
     const calc = document.getElementById('priceCalc');
     if (!calc) return;
-    calc.addEventListener('change', () => this.calculate());
+
+    // Category tab clicks
+    calc.querySelectorAll('.calc-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        calc.querySelectorAll('.calc-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.buildVariants(btn.dataset.val);
+        this.calculate();
+      });
+    });
+
+    // Checkbox changes
+    document.getElementById('calcExpress')?.addEventListener('change', () => this.calculate());
+    document.getElementById('calcDesign')?.addEventListener('change', () => this.calculate());
+
+    // Initialize with first category
+    this.buildVariants(Object.keys(this.prices)[0]);
     this.calculate();
   },
 
+  buildVariants(category) {
+    const container = document.getElementById('calcVariantChips');
+    const hidden    = document.getElementById('calcVariant');
+    if (!container || !hidden) return;
+
+    const opts = this.prices[category] || {};
+    const keys = Object.keys(opts);
+
+    container.innerHTML = keys.map((key, i) =>
+      `<button class="calc-chip${i === 0 ? ' active' : ''}" data-val="${key}" type="button">${opts[key].chip}</button>`
+    ).join('');
+
+    hidden.value = keys[0] || '';
+
+    container.querySelectorAll('.calc-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        container.querySelectorAll('.calc-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        hidden.value = chip.dataset.val;
+        this.calculate();
+      });
+    });
+  },
+
   calculate() {
-    const category = document.getElementById('calcCategory')?.value;
-    const variant  = document.getElementById('calcVariant')?.value;
-    const qty      = parseInt(document.getElementById('calcQty')?.value) || 1;
-    const express  = document.getElementById('calcExpress')?.checked;
-    const design   = document.getElementById('calcDesign')?.checked;
+    const activeTab = document.querySelector('#priceCalc .calc-tab.active');
+    const category  = activeTab?.dataset.val || Object.keys(this.prices)[0];
+    const variant   = document.getElementById('calcVariant')?.value;
+    const express   = document.getElementById('calcExpress')?.checked;
+    const design    = document.getElementById('calcDesign')?.checked;
 
-    if (!category || !variant) return;
-
+    if (!variant) return;
     const item = this.prices[category]?.[variant];
     if (!item) return;
 
     let price = item.base;
+    if (express) price = Math.round(price * 1.25);
+    if (design)  price += 80;
 
-    // Quantity discount for print
-    if (category === 'print' && qty > 1) {
-      price = price * Math.pow(0.92, Math.min(qty - 1, 5)); // max 40% discount
-    }
+    this.currentEstimate = price;
 
-    // Express surcharge
-    if (express) price *= 1.25;
-
-    // Design service add-on
-    if (design) price += 80;
-
-    this.currentEstimate = Math.round(price);
-
-    // Update display
     const display = document.getElementById('priceDisplay');
     const label   = document.getElementById('priceLabel');
-    if (display) display.textContent = `ab ${this.currentEstimate.toLocaleString('de-DE')} €`;
-    if (label)   label.textContent = item.label;
-
-    // Update variant options when category changes
-    this.updateVariants(category);
-  },
-
-  updateVariants(category) {
-    const sel = document.getElementById('calcVariant');
-    if (!sel) return;
-    const currentVal = sel.value;
-    const opts = this.prices[category] || {};
-
-    if (!opts[currentVal]) {
-      // Reset to first option of this category
-      sel.value = Object.keys(opts)[0] || '';
+    if (display) {
+      display.textContent = `ab ${price.toLocaleString('de-DE')} €`;
+      display.classList.remove('price-pop');
+      void display.offsetWidth;
+      display.classList.add('price-pop');
     }
+    if (label) label.textContent = item.label.toUpperCase();
   },
 
   getEstimate() {
@@ -261,20 +280,18 @@ const MasarPrice = {
       : 'Nicht berechnet';
   },
 
-  // Pre-fill form with estimate
   requestOffer() {
+    // Fill contact form service field if present
     const serviceField = document.getElementById('fieldService');
-    const estimateInfo = document.getElementById('estimateInfo');
-    const category = document.getElementById('calcCategory')?.value;
-    const variant  = document.getElementById('calcVariant')?.value;
-    const item = this.prices[category]?.[variant];
-
+    const activeTab    = document.querySelector('#priceCalc .calc-tab.active');
+    const category     = activeTab?.dataset.val || Object.keys(this.prices)[0];
+    const variant      = document.getElementById('calcVariant')?.value;
+    const item         = this.prices[category]?.[variant];
     if (serviceField && item) serviceField.value = item.label;
-    if (estimateInfo) estimateInfo.textContent = this.getEstimate();
 
-    // Scroll to form
-    const form = document.getElementById('masarForm');
-    if (form) form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Scroll to contact section
+    const target = document.getElementById('masarForm') || document.getElementById('kontakt');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
