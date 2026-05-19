@@ -138,6 +138,27 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
 .sticky-btn-main:hover{background:var(--teal-d);}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
+/* ═══ PRICE CALCULATOR ═══ */
+.price-calc-card{max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2.5rem;box-shadow:0 4px 24px rgba(0,0,0,.07);}
+.calc-group{margin-bottom:1.5rem;}
+.calc-lbl{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;}
+.calc-chips{display:flex;gap:.5rem;flex-wrap:wrap;}
+.calc-chip{padding:10px 16px;border:2px solid #c8d6d6;border-radius:8px;background:var(--off);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;}
+.calc-chip:hover:not(.active){border-color:var(--teal);color:var(--teal);background:#e8f8f5;}
+.calc-chip.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;}
+.calc-options{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
+.calc-check{display:flex;align-items:center;gap:.5rem;font-size:14px;cursor:pointer;user-select:none;}
+.calc-check input{accent-color:var(--teal);width:18px;height:18px;cursor:pointer;flex-shrink:0;}
+.calc-extra{color:var(--muted);font-size:12px;}
+.calc-result{background:var(--navy);border-radius:10px;padding:1.8rem;text-align:center;margin-bottom:1.5rem;}
+.calc-result-lbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem;}
+.calc-result-price{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.2rem;color:var(--teal);line-height:1;}
+@keyframes ppop{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1);opacity:1}}
+.calc-result-price.price-pop{animation:ppop .25s ease;}
+.calc-result-note{font-size:12px;color:rgba(255,255,255,.3);margin-top:.4rem;}
+.calc-cta-btn{width:100%;background:var(--teal);color:var(--navy);border:none;border-radius:8px;padding:15px;font-size:15px;font-weight:800;cursor:pointer;transition:.2s;font-family:'Barlow',sans-serif;display:block;text-align:center;text-decoration:none;}
+.calc-cta-btn:hover{background:var(--teal-d);transform:translateY(-2px);}
+.calc-foot{text-align:center;font-size:12px;color:var(--muted);margin-top:.5rem;}
 </style>
 <meta property="og:title" content="Leuchtreklamen & Fahrzeugbeschriftung Berlin – Masar Werbeagentur">
 <meta property="og:description" content="Professionelle Werbetechnik in Berlin ✓ Individuelle Leuchtreklamen & LED-Schilder ✓ Fahrzeugbeschriftung & Car Wrapping ✓ Schilder & Banner. Jetzt anfragen!">
@@ -305,6 +326,45 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
   </div>
 </section>
 
+<!-- PRICE ESTIMATOR -->
+<section class="section bg-off" id="rechner">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;" class="fade-up">
+      <div class="sec-eyebrow">🚗 Fahrzeugbeschriftung Rechner</div>
+      <h2 class="sec-title">Sofort-Kalkulation –<br><em>kostenlos & unverbindlich</em></h2>
+      <p style="color:var(--muted);font-size:15px;margin-top:.5rem;">Erhalten Sie eine erste Preisschätzung in Sekunden.</p>
+    </div>
+    <div class="price-calc-card fade-up" id="priceCalcWt">
+      <div class="calc-group">
+        <span class="calc-lbl">Fahrzeug / Art der Beschriftung</span>
+        <div class="calc-chips">
+          <button class="calc-chip active" data-base="125" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
+          <button class="calc-chip" data-base="369" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
+          <button class="calc-chip" data-base="1500" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
+          <button class="calc-chip" data-base="2500" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
+        </div>
+      </div>
+      <div class="calc-options">
+        <label class="calc-check">
+          <input type="checkbox" id="wtCalcExpress">
+          <span>⚡ Express-Lieferung <span class="calc-extra">(+25%)</span></span>
+        </label>
+        <label class="calc-check">
+          <input type="checkbox" id="wtCalcDesign">
+          <span>✏️ Design-Service <span class="calc-extra">(+80€)</span></span>
+        </label>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-lbl" id="wtPriceLabel">KLEINWAGEN TEILBEKLEBUNG</div>
+        <div class="calc-result-price" id="wtPriceDisplay">ab 125 €</div>
+        <div class="calc-result-note">Unverbindliche Schätzung · inkl. MwSt.</div>
+      </div>
+      <a href="index.html#kontakt" class="calc-cta-btn">Jetzt Angebot anfordern →</a>
+      <p class="calc-foot">Kostenlos & unverbindlich · Antwort in 24h</p>
+    </div>
+  </div>
+</section>
+
 <div class="cta-strip" style="position:relative;"><div class="container" style="position:relative;z-index:2;">
   <div class="cta-title">Bereit für Ihre <em>Leuchtreklame?</em></div>
   <p class="cta-sub">Kostenlose Beratung und unverbindliches Angebot innerhalb von 24 Stunden.</p>
@@ -324,6 +384,35 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:.08});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
+// ═══ FAHRZEUG CALCULATOR ═══
+(function(){
+  function wtCalcUpdate(){
+    const chip=document.querySelector('#priceCalcWt .calc-chip.active');
+    if(!chip)return;
+    let price=parseInt(chip.dataset.base);
+    const label=chip.dataset.label;
+    if(document.getElementById('wtCalcExpress')?.checked)price=Math.round(price*1.25);
+    if(document.getElementById('wtCalcDesign')?.checked)price+=80;
+    const display=document.getElementById('wtPriceDisplay');
+    const lbl=document.getElementById('wtPriceLabel');
+    if(display){
+      display.textContent='ab '+price.toLocaleString('de-DE')+' €';
+      display.classList.remove('price-pop');
+      void display.offsetWidth;
+      display.classList.add('price-pop');
+    }
+    if(lbl)lbl.textContent=label.toUpperCase();
+  }
+  document.querySelectorAll('#priceCalcWt .calc-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      document.querySelectorAll('#priceCalcWt .calc-chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      wtCalcUpdate();
+    });
+  });
+  document.getElementById('wtCalcExpress')?.addEventListener('change',wtCalcUpdate);
+  document.getElementById('wtCalcDesign')?.addEventListener('change',wtCalcUpdate);
+})();
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>

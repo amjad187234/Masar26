@@ -973,29 +973,24 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 </section>
 
 
-<!-- PRICE ESTIMATOR -->
+<!-- PRICE ESTIMATOR — Fahrzeugbeschriftung -->
 <section class="section bg-off" id="rechner">
   <div class="container">
     <div class="sec-head center reveal">
-      <span class="eyebrow">💰 Preisrechner</span>
+      <span class="eyebrow">🚗 Fahrzeugbeschriftung Rechner</span>
       <h2 class="sec-title">Sofort-Kalkulation –<br><em>kostenlos & unverbindlich</em></h2>
       <p class="sec-sub">Erhalten Sie eine erste Preisschätzung in Sekunden.</p>
     </div>
     <div class="price-calc-card reveal" id="priceCalc">
-      <!-- CATEGORY TABS -->
+      <!-- VARIANT CHIPS -->
       <div class="calc-group">
-        <span class="calc-lbl">Leistungsbereich</span>
-        <div class="calc-tabs">
-          <button class="calc-tab active" data-val="fahrzeug" type="button">🚗 Fahrzeugbeschriftung</button>
-          <button class="calc-tab" data-val="leuchtreklame" type="button">💡 Leuchtreklame</button>
-          <button class="calc-tab" data-val="print" type="button">🖨️ Druckprodukte</button>
+        <span class="calc-lbl">Fahrzeug / Art der Beschriftung</span>
+        <div class="calc-chips">
+          <button class="calc-chip active" data-base="125" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
+          <button class="calc-chip" data-base="369" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
+          <button class="calc-chip" data-base="1500" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
+          <button class="calc-chip" data-base="2500" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
         </div>
-      </div>
-      <!-- VARIANT CHIPS (rebuilt by JS) -->
-      <div class="calc-group">
-        <span class="calc-lbl">Variante</span>
-        <div class="calc-chips" id="calcVariantChips"></div>
-        <input type="hidden" id="calcVariant" value="">
       </div>
       <!-- OPTIONS -->
       <div class="calc-options">
@@ -1015,7 +1010,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
         <div class="calc-result-note">Unverbindliche Schätzung · inkl. MwSt.</div>
       </div>
       <!-- CTA -->
-      <button class="calc-cta-btn" onclick="MasarPrice.requestOffer()">Jetzt Angebot anfordern →</button>
+      <button class="calc-cta-btn" onclick="document.getElementById('kontakt')?.scrollIntoView({behavior:'smooth'})">Jetzt Angebot anfordern →</button>
       <p class="calc-foot">Kostenlos & unverbindlich · Antwort in 24h</p>
     </div>
   </div>
@@ -1167,6 +1162,37 @@ const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
   if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// ═══ FAHRZEUG CALCULATOR ═══
+(function(){
+  function calcUpdate(){
+    const chip=document.querySelector('#priceCalc .calc-chip.active');
+    if(!chip)return;
+    let price=parseInt(chip.dataset.base);
+    const label=chip.dataset.label;
+    if(document.getElementById('calcExpress')?.checked)price=Math.round(price*1.25);
+    if(document.getElementById('calcDesign')?.checked)price+=80;
+    const display=document.getElementById('priceDisplay');
+    const lbl=document.getElementById('priceLabel');
+    if(display){
+      display.textContent='ab '+price.toLocaleString('de-DE')+' €';
+      display.classList.remove('price-pop');
+      void display.offsetWidth;
+      display.classList.add('price-pop');
+    }
+    if(lbl)lbl.textContent=label.toUpperCase();
+  }
+  document.querySelectorAll('#priceCalc .calc-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      document.querySelectorAll('#priceCalc .calc-chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      calcUpdate();
+    });
+  });
+  document.getElementById('calcExpress')?.addEventListener('change',calcUpdate);
+  document.getElementById('calcDesign')?.addEventListener('change',calcUpdate);
+  calcUpdate();
+})();
 
 // ═══ SERVICE PICKER — collapsible + multi-select ═══
 (function(){
