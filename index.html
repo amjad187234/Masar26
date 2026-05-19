@@ -314,7 +314,8 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 }
 @media(max-width:640px) {
   :root { --nav-h:68px; }
-  .hero { min-height:auto; padding:calc(var(--nav-h) + 2rem) 0 3rem; }
+  .hero { min-height:auto; padding:calc(var(--nav-h) + 1rem) 0 2rem; }
+  .hero-inner { padding: 1rem 0 1.5rem; }
   .hero h1 { font-size:clamp(2.4rem,10vw,3.5rem); }
   .qn-grid { grid-template-columns:repeat(2,1fr); }
   .svc-grid-3, .svc-grid-2 { grid-template-columns:1fr; }
@@ -420,24 +421,11 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .testi-nav:hover{border-color:var(--teal);}
 
 /* ═══ SERVICE PICKER ═══ */
-.svc-toggle{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:border-color .2s,color .2s,border-radius .15s;display:flex;justify-content:space-between;align-items:center;}
-.svc-toggle:hover{border-color:var(--teal);color:var(--text);}
-.svc-toggle.has-val{border-color:var(--teal);color:var(--text);}
-.svc-toggle.open{border-radius:8px 8px 0 0;border-color:var(--teal);}
-.svc-toggle-arrow{font-size:10px;transition:transform .2s;flex-shrink:0;}
-.svc-toggle.open .svc-toggle-arrow{transform:rotate(180deg);}
-.svc-picker{border:2px solid var(--teal);border-top:none;border-radius:0 0 8px 8px;overflow:hidden;background:#fff;display:none;}
-.svc-picker.open{display:block;}
-.svc-pick-cat{border-bottom:1px solid var(--border);}
-.svc-pick-cat:last-child{border-bottom:none;}
-.svc-pick-cat-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 14px;background:var(--off);border-bottom:1px solid var(--border);}
-.svc-pick-opts{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
-.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
-.svc-pick-opt:hover{border-color:var(--teal);color:var(--teal);background:#e8f8f5;}
-.svc-pick-opt.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
-.svc-pick-other{display:block;margin:0 12px 12px;width:calc(100% - 24px);text-align:center;background:var(--off);}
-.svc-pick-other.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
-.svc-picked-lbl{font-size:12px;color:var(--teal);font-weight:700;margin-top:6px;padding:2px;}
+.form-select-svc{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--text);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2358d0bd' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;transition:border-color .2s;}
+.form-select-svc:focus{border-color:var(--teal);outline:none;}
+.form-select-svc:hover{border-color:var(--teal);}
+.svc-scroll-hint{display:inline-block;margin-top:7px;font-size:12px;font-weight:700;color:var(--teal);text-decoration:none;letter-spacing:.4px;transition:opacity .2s;}
+.svc-scroll-hint:hover{opacity:.75;text-decoration:underline;}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
    Replaces outline:none with a visible focus ring on all
@@ -628,7 +616,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         <div class="hero-btns">
           <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
           <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
-          <a href="#brand-visualizer" class="btn btn-outline" style="border-color:rgba(88,208,189,.4);color:var(--teal);">🎨 Brand testen →</a>
         </div>
         <div class="hero-trust">
           <span class="hero-trust-txt">Bewertet mit</span>
@@ -1210,48 +1197,32 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           </div>
           <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0178 000 0000"></div>
           <div class="fg">
-            <label>Gewünschte Leistung *</label>
-            <input type="hidden" name="leistung" id="selectedService">
-            <button type="button" class="svc-toggle" id="svcToggle">
-              <span class="svc-toggle-txt">Leistung auswählen...</span>
-              <span class="svc-toggle-arrow">▼</span>
-            </button>
-            <div class="svc-picker" id="svcPickerPanel">
-              <div class="svc-pick-cat">
-                <div class="svc-pick-cat-lbl">💡 Werbetechnik</div>
-                <div class="svc-pick-opts">
-                  <button type="button" class="svc-pick-opt" data-val="Leuchtreklamen &amp; LED-Schilder">💡 Leuchtreklame</button>
-                  <button type="button" class="svc-pick-opt" data-val="Fahrzeugbeschriftung">🚗 Fahrzeugbeschriftung</button>
-                  <button type="button" class="svc-pick-opt" data-val="Schilder &amp; Banner">🪧 Schilder &amp; Banner</button>
-                </div>
-              </div>
-              <div class="svc-pick-cat">
-                <div class="svc-pick-cat-lbl">🖨️ Druck &amp; Print</div>
-                <div class="svc-pick-opts">
-                  <button type="button" class="svc-pick-opt" data-val="Flyer &amp; Visitenkarten">📄 Flyer &amp; Visitenkarten</button>
-                  <button type="button" class="svc-pick-opt" data-val="Plakate &amp; Poster">🗺️ Plakate &amp; Poster</button>
-                  <button type="button" class="svc-pick-opt" data-val="Kataloge &amp; Broschüren">📚 Kataloge</button>
-                  <button type="button" class="svc-pick-opt" data-val="Sticker &amp; Aufkleber">🏷️ Sticker</button>
-                </div>
-              </div>
-              <div class="svc-pick-cat">
-                <div class="svc-pick-cat-lbl">✏️ Design &amp; Web</div>
-                <div class="svc-pick-opts">
-                  <button type="button" class="svc-pick-opt" data-val="Grafikdesign &amp; Branding">🎨 Grafikdesign</button>
-                  <button type="button" class="svc-pick-opt" data-val="Webdesign &amp; Website">🌐 Webdesign</button>
-                </div>
-              </div>
-              <div class="svc-pick-cat">
-                <div class="svc-pick-cat-lbl">📱 Social Media Marketing</div>
-                <div class="svc-pick-opts">
-                  <button type="button" class="svc-pick-opt" data-val="Social Media Starter">Starter</button>
-                  <button type="button" class="svc-pick-opt" data-val="Social Media Business">Business</button>
-                  <button type="button" class="svc-pick-opt" data-val="Social Media Premium">Premium</button>
-                </div>
-              </div>
-              <button type="button" class="svc-pick-opt svc-pick-other" data-val="Mehrere Leistungen / Sonstiges">➕ Mehrere Leistungen / Sonstiges</button>
-            </div>
-            <div class="svc-picked-lbl" id="svcPickedLbl" style="display:none"></div>
+            <label for="leistungSelect">Gewünschte Leistung</label>
+            <select name="leistung" id="leistungSelect" class="form-select-svc">
+              <option value="" disabled selected>Leistung auswählen...</option>
+              <optgroup label="💡 Werbetechnik">
+                <option value="Leuchtreklamen &amp; LED-Schilder">Leuchtreklame &amp; LED-Schilder</option>
+                <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
+                <option value="Schilder &amp; Banner">Schilder &amp; Banner</option>
+              </optgroup>
+              <optgroup label="🖨️ Druck &amp; Print">
+                <option value="Flyer &amp; Visitenkarten">Flyer &amp; Visitenkarten</option>
+                <option value="Plakate &amp; Poster">Plakate &amp; Poster</option>
+                <option value="Kataloge &amp; Broschüren">Kataloge &amp; Broschüren</option>
+                <option value="Sticker &amp; Aufkleber">Sticker &amp; Aufkleber</option>
+              </optgroup>
+              <optgroup label="✏️ Design &amp; Web">
+                <option value="Grafikdesign &amp; Branding">Grafikdesign &amp; Branding</option>
+                <option value="Webdesign &amp; Website">Webdesign &amp; Website</option>
+              </optgroup>
+              <optgroup label="📱 Social Media Marketing">
+                <option value="Social Media Starter">Social Media Starter</option>
+                <option value="Social Media Business">Social Media Business</option>
+                <option value="Social Media Premium">Social Media Premium</option>
+              </optgroup>
+              <option value="Mehrere Leistungen / Sonstiges">Mehrere Leistungen / Sonstiges</option>
+            </select>
+            <a href="#leistungen" class="svc-scroll-hint" onclick="document.getElementById('leistungen').scrollIntoView({behavior:'smooth'});return false;">Alle Leistungen ansehen ↓</a>
           </div>
           <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
           <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
@@ -1368,41 +1339,6 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe
   calcUpdate();
 })();
 
-// ═══ SERVICE PICKER — collapsible + multi-select ═══
-(function(){
-  const toggle=document.getElementById('svcToggle');
-  const panel=document.getElementById('svcPickerPanel');
-  const hidden=document.getElementById('selectedService');
-  const lbl=document.getElementById('svcPickedLbl');
-  const toggleTxt=toggle?.querySelector('.svc-toggle-txt');
-
-  toggle?.addEventListener('click',()=>{
-    const isOpen=panel.classList.contains('open');
-    panel.classList.toggle('open',!isOpen);
-    toggle.classList.toggle('open',!isOpen);
-  });
-
-  function updatePicked(){
-    const picked=[...document.querySelectorAll('.svc-pick-opt.picked')].map(b=>b.dataset.val);
-    if(hidden)hidden.value=picked.join(', ');
-    if(picked.length>0){
-      if(lbl){lbl.textContent='✓ '+picked.join(' · ');lbl.style.display='block';}
-      if(toggleTxt)toggleTxt.textContent=picked.length+' Leistung'+(picked.length>1?'en':'')+' gewählt';
-      toggle?.classList.add('has-val');
-    }else{
-      if(lbl)lbl.style.display='none';
-      if(toggleTxt)toggleTxt.textContent='Leistung auswählen...';
-      toggle?.classList.remove('has-val');
-    }
-  }
-
-  document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      btn.classList.toggle('picked');
-      updatePicked();
-    });
-  });
-})();
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
