@@ -1085,8 +1085,8 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <section id="brand-visualizer" aria-label="Brand Visualizer – Marken-Simulation">
   <div class="vis-header">
     <div class="vis-header-badge">✦ Interaktives Tool</div>
-    <h2 class="kinetic-heading">Sehen Sie Ihre <em>Marke</em><br>in Aktion.</h2>
-    <p>Tragen Sie Ihren Firmennamen ein – sofortige Simulation auf Fahrzeug oder Gebäudefassade.</p>
+    <h2>Sehen Sie Ihre <em>Marke</em> in Aktion.</h2>
+    <p>Firmennamen eingeben — sofortige Simulation auf Fahrzeug oder Gebäudefassade.</p>
   </div>
 
   <div class="vis-layout">
@@ -1133,6 +1133,18 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <button class="vis-swatch" data-color="#2ecc71" aria-label="Grün" aria-checked="false"
                   style="background:#2ecc71" role="radio"></button>
         </div>
+      </div>
+
+      <div>
+        <label for="visFont" class="vis-field-label">Schriftart</label>
+        <select id="visFont" class="vis-select" aria-label="Schriftart für die Simulation wählen">
+          <option value="barlow"   selected>Barlow Condensed — Modern</option>
+          <option value="impact"          >Impact — Klassisch Billboard</option>
+          <option value="arialblack"      >Arial Black — Stark & Clean</option>
+          <option value="georgia"         >Georgia — Elegant Serif</option>
+          <option value="trebuchet"       >Trebuchet — Humanistisch</option>
+          <option value="mono"            >Courier — Industrial Mono</option>
+        </select>
       </div>
 
       <div class="vis-toggle-row">

@@ -7,14 +7,25 @@
 (function () {
   'use strict';
 
+  /* ── Font map (free / system fonts only — DSGVO safe) ──────── */
+  var FONT_MAP = {
+    barlow:    "'Barlow Condensed','Arial Narrow',Impact,sans-serif",
+    impact:    "Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif",
+    arialblack:"'Arial Black','Arial Bold',Gadget,sans-serif",
+    georgia:   "Georgia,'Times New Roman',Times,serif",
+    trebuchet: "'Trebuchet MS',Helvetica,Arial,sans-serif",
+    mono:      "'Courier New',Courier,monospace",
+  };
+
   /* ── State ──────────────────────────────────────────────────── */
   var S = {
     name:     'IHRE FIRMA',
     logoImg:  null,
     template: 'van',
     color:    '#58d0bd',
+    font:     'barlow',
     night:    false,
-    mx: 0.5, my: 0.5,  // normalised mouse position inside canvas
+    mx: 0.5, my: 0.5,
   };
 
   var canvas, ctx, dpr = 1;
@@ -161,6 +172,16 @@
       renderNow(); announce('Markenname: ' + S.name);
     });
 
+    /* Font selector */
+    var fontSel = document.getElementById('visFont');
+    if (fontSel) {
+      fontSel.addEventListener('change', function () {
+        S.font = fontSel.value;
+        renderNow();
+        announce('Schriftart: ' + fontSel.options[fontSel.selectedIndex].text);
+      });
+    }
+
     /* Template buttons */
     document.querySelectorAll('.vis-tpl-btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -227,8 +248,12 @@
       S.logoImg = null;
       S.template= 'van';
       S.color   = '#58d0bd';
+      S.font    = 'barlow';
       S.night   = false;
       S.mx = 0.5; S.my = 0.5;
+
+      var fontSel2 = document.getElementById('visFont');
+      if (fontSel2) fontSel2.value = 'barlow';
 
       var inp = document.getElementById('visName');
       if (inp) inp.value = '';
@@ -270,21 +295,19 @@
     renderNow();
   }
 
-  /* ── Resize canvas with devicePixelRatio support ──────────── */
+  /* ── Resize canvas (dpr-aware, no style override) ─────────── */
   function resizeCanvas() {
     if (!canvas) return;
     dpr = window.devicePixelRatio || 1;
     var wrap = canvas.parentElement;
+    /* Use wrap's rendered size (CSS controls display dimensions) */
     var cssW = wrap.clientWidth  || 640;
-    var cssH = Math.round(cssW * 9 / 16);
-    /* Physical pixels */
+    var cssH = wrap.clientHeight || Math.round(cssW * 9 / 16);
+    /* Physical pixels — canvas.style.width/height left to CSS */
     canvas.width  = Math.round(cssW * dpr);
     canvas.height = Math.round(cssH * dpr);
-    /* CSS pixels */
-    canvas.style.width  = cssW + 'px';
-    canvas.style.height = cssH + 'px';
-    /* Scale all draw calls to match dpr */
-    ctx.scale(dpr, dpr);
+    /* Absolute transform reset (ctx.scale stacks on each call) */
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 
   /* ── Render dispatcher ─────────────────────────────────────── */
@@ -579,9 +602,11 @@
       ctx.drawImage(S.logoImg, cx - lW / 2, cy - lH / 2, lW, lH);
       if (N && isSign) ctx.restore();
     } else {
-      var name = S.name || 'IHRE FIRMA';
-      var fs   = Math.min(pw * 0.115, ph * 0.36, 64);
-      ctx.font         = '900 ' + fs + 'px "Barlow Condensed","Arial Narrow",Impact,sans-serif';
+      var name   = S.name || 'IHRE FIRMA';
+      var fs     = Math.min(pw * 0.115, ph * 0.36, 64);
+      var fStack = FONT_MAP[S.font] || FONT_MAP.barlow;
+      var fWeight= (S.font === 'georgia' || S.font === 'trebuchet') ? '700' : '900';
+      ctx.font         = fWeight + ' ' + fs + 'px ' + fStack;
       ctx.textAlign    = 'center';
       ctx.textBaseline = 'middle';
       var ty = cy - fs * 0.08;
