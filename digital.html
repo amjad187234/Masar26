@@ -150,6 +150,20 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
 .sticky-btn-main:hover{background:var(--teal-d);}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus:not(:focus-visible){outline:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(88,208,189,.25);
+}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
+  padding:10px 20px;font-weight:700;font-size:14px;
+  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+.skip-link:focus{top:0;}
 </style>
 <meta property="og:title" content="Social Media Marketing Berlin – Instagram, TikTok & Meta Ads | Masar">
 <meta property="og:description" content="Professionelles Social Media Marketing in Berlin ✓ Instagram & TikTok Management ✓ Content Creation & Reels ✓ Meta Ads & Google Ads. Ab 199€/Monat!">
@@ -180,6 +194,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">

@@ -438,15 +438,37 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .svc-pick-other.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
 .svc-picked-lbl{font-size:12px;color:var(--teal);font-weight:700;margin-top:6px;padding:2px;}
 
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
+   Replaces outline:none with a visible focus ring on all
+   interactive elements for keyboard and assistive technology users */
+*:focus { outline: 3px solid #58d0bd; outline-offset: 2px; }
+*:focus:not(:focus-visible) { outline: none; }
+*:focus-visible { outline: 3px solid #58d0bd; outline-offset: 2px; border-radius: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid #58d0bd;
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 5px rgba(88,208,189,.25);
+}
+/* Skip-to-content link for screen readers */
+.skip-link {
+  position: absolute; top: -999px; left: 0;
+  background: #58d0bd; color: #132e50;
+  padding: 10px 20px; font-weight: 700; font-size: 14px;
+  border-radius: 0 0 6px 0; z-index: 9999; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness","ProfessionalService","PrintShop"],
   "@id": "https://masar-werbeagentur.de/#identity",
   "name": "Masar Werbeagentur",
   "legalName": "Masar Werbeagentur – Amjad Albill",
-  "description": "Full-Service Werbeagentur in Berlin-Wedding: Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign und Social Media Marketing.",
+  "description": "B2B Druckerei & Full-Service Werbeagentur in Berlin-Wedding. Flyer, Visitenkarten, Roll-ups, Aufkleber ab 24h Lieferung. Leuchtreklamen, Fahrzeugbeschriftung, Webdesign & Social Media Marketing.",
   "url": "https://masar-werbeagentur.de",
   "logo": "https://masar-werbeagentur.de/logo.png",
   "image": "https://masar-werbeagentur.de/logo.png",
@@ -476,11 +498,12 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   ],
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
-  "paymentAccepted": "Überweisung, Rechnung, Bar",
-  "areaServed": {
-    "@type": "City",
-    "name": "Berlin"
-  },
+  "paymentAccepted": "Kreditkarte, Überweisung, Klarna",
+  "areaServed": [
+    {"@type": "City", "name": "Berlin"},
+    {"@type": "State", "name": "Brandenburg"},
+    {"@type": "Country", "name": "Germany"}
+  ],
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
@@ -492,14 +515,16 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Werbeleistungen",
+    "name": "Druck & Werbeprodukte",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leuchtreklamen & LED-Schilder"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fahrzeugbeschriftung & Car Wrapping"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Grafikdesign & Corporate Identity"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webdesign & Webentwicklung"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Flyer A5 250 Stück", "description": "Hochwertiger Offsetdruck, Glanz oder Matt", "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "31.85"}}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Visitenkarten 500 Stück", "description": "Standard 85×55mm, einseitig oder doppelseitig"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Roll-up Display 85×200cm", "description": "Inkl. Druck & Standfuß"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Aufkleber & Etiketten", "description": "Individuelle Formen, wasserfest"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leuchtreklamen & LED-Schilder Berlin"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fahrzeugbeschriftung Berlin"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Marketing Berlin"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Druckprodukte & Textildruck"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webdesign & Webentwicklung Berlin"}}
     ]
   },
   "sameAs": [
@@ -515,6 +540,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- TOP INFO BAR -->
 <div style="background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;line-height:1.4;">

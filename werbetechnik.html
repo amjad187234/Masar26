@@ -159,6 +159,20 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .calc-cta-btn{width:100%;background:var(--teal);color:var(--navy);border:none;border-radius:8px;padding:15px;font-size:15px;font-weight:800;cursor:pointer;transition:.2s;font-family:'Barlow',sans-serif;display:block;text-align:center;text-decoration:none;}
 .calc-cta-btn:hover{background:var(--teal-d);transform:translateY(-2px);}
 .calc-foot{text-align:center;font-size:12px;color:var(--muted);margin-top:.5rem;}
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus:not(:focus-visible){outline:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(88,208,189,.25);
+}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
+  padding:10px 20px;font-weight:700;font-size:14px;
+  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+.skip-link:focus{top:0;}
 </style>
 <meta property="og:title" content="Leuchtreklamen & Fahrzeugbeschriftung Berlin – Masar Werbeagentur">
 <meta property="og:description" content="Professionelle Werbetechnik in Berlin ✓ Individuelle Leuchtreklamen & LED-Schilder ✓ Fahrzeugbeschriftung & Car Wrapping ✓ Schilder & Banner. Jetzt anfragen!">
@@ -189,6 +203,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">

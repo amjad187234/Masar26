@@ -175,7 +175,7 @@ DirectoryIndex index.html index.php
 
 # ─── CUSTOM ERROR PAGES ────────────────────────────────────────
 ErrorDocument 403 /index.html
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html
 ErrorDocument 500 /index.html
 
 # ─── MIME TYPES ────────────────────────────────────────────────

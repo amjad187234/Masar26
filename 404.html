@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Diese Seite existiert nicht – zurück zur Startseite der Masar Werbeagentur Berlin.">
+<title>404 – Seite nicht gefunden | Masar Werbeagentur Berlin</title>
+<!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="stylesheet" href="/fonts.css">
+<!-- Favicon & PWA -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#58d0bd">
+<style>
+/* ═══════════ TOKENS ═══════════ */
+:root {
+  --teal: #58d0bd;
+  --teal-d: #3ab8a5;
+  --teal-l: rgba(88,208,189,.1);
+  --navy: #132e50;
+  --navy2: #1e4275;
+  --navy3: #0a1628;
+  --off: #f4f7f7;
+  --text: #1a2a2a;
+  --muted: #5a7070;
+  --border: #e0eaea;
+  --nav-h: 72px;
+  --r: 12px;
+  --focus-ring: 3px solid #58d0bd;
+  --focus-offset: 2px;
+}
+
+/* ═══════════ RESET ═══════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+body {
+  font-family: 'Barlow', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #fff;
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ═══════════ ACCESSIBILITY — FOCUS ═══════════ */
+*:focus { outline: none; }
+*:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+  border-radius: 4px;
+}
+
+/* ═══════════ NAV ═══════════ */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+  background: rgba(255,255,255,.97);
+  border-bottom: 2px solid var(--teal);
+  box-shadow: 0 2px 20px rgba(0,0,0,.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.nav-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: var(--nav-h);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo img {
+  height: 52px;
+  object-fit: contain;
+}
+.nav-logo-fb {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--navy);
+  letter-spacing: 2px;
+  display: none;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--navy);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: color .2s;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal);
+  transition: width .3s;
+}
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--teal);
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  background: var(--teal) !important;
+  color: var(--navy) !important;
+  padding: 9px 22px !important;
+  border-radius: 6px;
+  font-weight: 700 !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--teal-d) !important; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all .3s;
+  display: block;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav */
+.mob-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: var(--nav-h);
+  background: #fff;
+  z-index: 499;
+  padding: 2rem;
+  overflow-y: auto;
+  border-top: 1px solid var(--border);
+}
+.mob-nav.open { display: block; }
+.mob-nav a {
+  display: block;
+  padding: 14px 0;
+  color: var(--navy);
+  font-size: 17px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+}
+.mob-nav a:hover,
+.mob-nav a:focus-visible { color: var(--teal); }
+.mob-cta {
+  margin-top: 1.5rem;
+  display: block;
+  background: var(--teal);
+  color: var(--navy) !important;
+  text-align: center;
+  padding: 15px !important;
+  border-radius: 6px;
+  font-weight: 700 !important;
+  border-bottom: none !important;
+}
+.mob-cta:hover { background: var(--teal-d); }
+
+/* ═══════════ HERO / 404 ═══════════ */
+.hero-404 {
+  flex: 1;
+  padding-top: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, var(--navy3) 0%, var(--navy) 55%, #0d4a4a 100%);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5rem;
+}
+.hero-404::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(88,208,189,.13) 0%, transparent 58%);
+  pointer-events: none;
+}
+.hero-lines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 38%;
+  opacity: .04;
+  background: repeating-linear-gradient(
+    -20deg,
+    transparent,
+    transparent 28px,
+    rgba(88,208,189,1) 28px,
+    rgba(88,208,189,1) 29px
+  );
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 5rem 2rem 0;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.error-label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(88,208,189,.12);
+  border: 1px solid rgba(88,208,189,.3);
+  color: var(--teal);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+}
+.num-404 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(7rem, 20vw, 14rem);
+  line-height: .9;
+  color: var(--teal);
+  letter-spacing: -4px;
+  text-shadow: 0 0 80px rgba(88,208,189,.25);
+  user-select: none;
+}
+.hero-404 h1 {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.05;
+  margin: .4rem 0 1.2rem;
+}
+.hero-sub {
+  font-size: 16px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.85;
+  max-width: 520px;
+  margin: 0 auto 2.4rem;
+}
+.btn-home {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--teal);
+  color: var(--navy);
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all .25s;
+  border: none;
+  cursor: pointer;
+  letter-spacing: .3px;
+}
+.btn-home:hover {
+  background: var(--teal-d);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(88,208,189,.35);
+}
+
+/* ═══════════ QUICK LINKS ═══════════ */
+.quick-section {
+  background: var(--off);
+  padding: 5rem 0;
+}
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.section-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: .8rem;
+  text-align: center;
+}
+.section-title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.05;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-title em {
+  color: var(--teal);
+  font-style: normal;
+}
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+.quick-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border: 2px solid var(--border);
+  border-radius: var(--r);
+  text-decoration: none;
+  color: var(--text);
+  transition: all .3s;
+  text-align: center;
+}
+.quick-card:hover {
+  border-color: var(--teal);
+  background: var(--teal-l);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(88,208,189,.15);
+}
+.quick-card:focus-visible {
+  border-color: var(--teal);
+  background: var(--teal-l);
+}
+.qc-icon {
+  font-size: 2.25rem;
+  line-height: 1;
+}
+.qc-title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--navy);
+  line-height: 1.2;
+}
+.qc-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ═══════════ FOOTER ═══════════ */
+footer {
+  background: #060e1a;
+  padding: 3.5rem 2rem 2rem;
+  color: rgba(255,255,255,.45);
+  margin-top: auto;
+}
+.footer-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.footer-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.footer-brand-logo img {
+  height: 60px;
+  object-fit: contain;
+}
+.footer-brand-logo-fb {
+  font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff;
+  letter-spacing: 2px;
+  display: none;
+}
+.footer-brand p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.45);
+}
+.footer-col h5 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+.footer-col a {
+  display: block;
+  font-size: 13.5px;
+  color: rgba(255,255,255,.4);
+  margin-bottom: .6rem;
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-col a:hover,
+.footer-col a:focus-visible { color: var(--teal); }
+.footer-bot {
+  max-width: 1240px;
+  margin: 2rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: rgba(255,255,255,.35);
+}
+.footer-bot a {
+  color: rgba(255,255,255,.35);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-bot a:hover,
+.footer-bot a:focus-visible { color: var(--teal); }
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* ═══════════ RESPONSIVE ═══════════ */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .quick-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .quick-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .quick-card { padding: 1.5rem 1rem; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bot { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  .footer-legal-links { flex-direction: column; gap: .4rem; }
+  .hero-inner { padding: 4rem 1.5rem 0; }
+}
+
+@media (max-width: 380px) {
+  .quick-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Masar Werbeagentur Berlin – Startseite">
+      <img
+        loading="eager"
+        decoding="async"
+        src="/logo.png"
+        alt="Masar Werbeagentur Berlin"
+        width="120"
+        height="52"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+      >
+      <span class="nav-logo-fb" aria-hidden="true">MASAR</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/shop/">🛒 Print Shop</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+      aria-controls="mob-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<nav class="mob-nav" id="mob-nav" aria-label="Mobile Navigation" hidden>
+  <a href="/">Home</a>
+  <a href="/leistungen.html">Leistungen</a>
+  <a href="/shop/">🛒 Print Shop</a>
+  <a href="/#kontakt" class="mob-cta">Kontakt</a>
+</nav>
+
+<!-- ═══ HERO / 404 ═══ -->
+<main id="main-content">
+  <section class="hero-404" aria-labelledby="heading-404">
+    <div class="hero-lines" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <span class="error-label" aria-hidden="true">✦ Fehler 404</span>
+      <p class="num-404" aria-hidden="true">404</p>
+      <h1 id="heading-404">Seite nicht gefunden</h1>
+      <p class="hero-sub">
+        Die aufgerufene Seite existiert leider nicht (mehr) oder wurde verschoben.
+        Vielleicht hilft ein Blick auf unsere Startseite oder die Übersicht unserer Leistungen weiter.
+      </p>
+      <a href="/" class="btn-home">← Zurück zur Startseite</a>
+    </div>
+  </section>
+
+  <!-- ═══ QUICK LINKS ═══ -->
+  <section class="quick-section" aria-labelledby="quick-heading">
+    <div class="container">
+      <span class="section-eyebrow">Wohin möchten Sie?</span>
+      <h2 class="section-title" id="quick-heading">Vielleicht <em>hier entlang</em></h2>
+      <nav aria-label="Schnellnavigation" class="quick-grid">
+        <a href="/" class="quick-card">
+          <span class="qc-icon" aria-hidden="true">🏠</span>
+          <span class="qc-title">Home</span>
+          <span class="qc-desc">Zurück zur Startseite</span>
+        </a>
+        <a href="/leistungen.html" class="quick-card">
+          <span class="qc-icon" aria-hidden="true">✏️</span>
+          <span class="qc-title">Leistungen</span>
+          <span class="qc-desc">Alle Agenturleistungen im Überblick</span>
+        </a>
+        <a href="/shop/" class="quick-card">
+          <span class="qc-icon" aria-hidden="true">🛒</span>
+          <span class="qc-title">Print Shop</span>
+          <span class="qc-desc">Druckprodukte schnell &amp; günstig bestellen</span>
+        </a>
+        <a href="/impressum.html" class="quick-card">
+          <span class="qc-icon" aria-hidden="true">📄</span>
+          <span class="qc-title">Impressum</span>
+          <span class="qc-desc">Rechtliche Angaben &amp; Kontaktdaten</span>
+        </a>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-logo">
+        <img
+          loading="lazy"
+          src="/logo.png"
+          alt="Masar Werbeagentur Berlin"
+          width="120"
+          height="60"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+        >
+        <span class="footer-brand-logo-fb" aria-hidden="true">MASAR</span>
+      </div>
+      <p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <a href="/">Home</a>
+      <a href="/leistungen.html">Leistungen</a>
+      <a href="/shop/">Print Shop</a>
+      <a href="/#kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h5>Rechtliches</h5>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span>
+    <div class="footer-legal-links">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('hamburger');
+  var mob = document.getElementById('mob-nav');
+  if (!btn || !mob) return;
+
+  btn.addEventListener('click', function () {
+    var open = mob.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    if (open) {
+      mob.removeAttribute('hidden');
+    } else {
+      mob.setAttribute('hidden', '');
+    }
+  });
+
+  // Close mobile nav on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mob.classList.contains('open')) {
+      mob.classList.remove('open');
+      mob.setAttribute('hidden', '');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Menü öffnen');
+      btn.focus();
+    }
+  });
+}());
+</script>
+</body>
+</html>

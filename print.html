@@ -139,6 +139,20 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
 .sticky-btn-main:hover{background:var(--teal-d);}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus:not(:focus-visible){outline:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(88,208,189,.25);
+}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
+  padding:10px 20px;font-weight:700;font-size:14px;
+  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+.skip-link:focus{top:0;}
 </style>
 <meta property="og:title" content="Grafikdesign & Druck Berlin – Branding, Flyer, Visitenkarten | Masar">
 <meta property="og:description" content="Premium Grafikdesign & Druck in Berlin ✓ Logo & Corporate Identity ✓ Flyer & Visitenkarten ✓ Kataloge & Broschüren. Design immer inklusive!">
@@ -167,8 +181,65 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
   "sameAs": ["https://www.instagram.com/masar.werbeagentur/", "https://www.facebook.com/masarwerbeagentur/"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welche Druckdaten-Spezifikationen benötigt Masar für einen Druckauftrag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Druckdaten müssen im CMYK-Farbmodus vorliegen (kein RGB), mit einer Auflösung von mindestens 300 dpi im Endformat. Bitte legen Sie 3 mm Beschnitt (Anschnitt) an allen Seiten an und halten Sie einen Sicherheitsabstand von 3–5 mm vom Endformat für wichtige Texte und Logos ein. Bevorzugtes Dateiformat ist PDF/X-3 oder PDF/X-4 mit eingebetteten Schriften und ohne Transparenzen. Wir prüfen Ihre Druckdaten kostenlos und geben Ihnen Rückmeldung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet Beschnitt (Anschnitt) beim Drucken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beschnitt (auch Anschnitt oder Bleed genannt) ist ein Überstand von typischerweise 3 mm, den Hintergrundfarben und -bilder über das eigentliche Endformat hinaus haben müssen. Da Druckbogen nach dem Druck mit einer Schneidemaschine zugeschnitten werden und dabei kleine Abweichungen entstehen können, verhindert der Beschnitt unerwünschte weiße Ränder am Rand des fertigen Produkts. Ohne ausreichenden Beschnitt können unschöne helle Streifen am Rand erscheinen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum muss ich für den Druck CMYK statt RGB verwenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CMYK (Cyan, Magenta, Yellow, Key/Schwarz) ist das Farbmodell, das Offsetdruck- und Digitaldruckmaschinen verwenden. RGB (Rot, Grün, Blau) ist das Farbmodell von Bildschirmen und hat einen deutlich größeren Farbraum. Bei der Konvertierung von RGB zu CMYK können Farben – insbesondere kräftige Blau- und Orangetöne – dunkler oder stumpfer wirken als auf dem Monitor. Wir empfehlen daher, Dateien bereits in der Grafiksoftware im CMYK-Modus zu erstellen, oder wir übernehmen die farbverbindliche Konvertierung für Sie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Auflösung brauchen Bilder für den professionellen Druck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für professionellen Druck benötigen Rastergrafiken (Fotos, Bilder) mindestens 300 dpi (dots per inch) im tatsächlichen Endformat. Ein Bild, das am Bildschirm groß wirkt, kann für den Druck zu niedrig aufgelöst sein – Bildschirme zeigen nur 72–96 dpi. Für Großformatdruck (z. B. Banner, Plakate ab 1 m) reichen 100–150 dpi im Endformat aus, da diese Drucke aus größerer Distanz betrachtet werden. Vektorgrafiken (AI, SVG, EPS) sind auflösungsunabhängig und immer ideal für Logos und Texte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Liefert Masar Werbeagentur die fertigen Drucksachen nach Hause?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir liefern fertige Drucksachen deutschlandweit per Paketversand (DHL/DPD). Innerhalb Berlins bieten wir bei Bedarf auch eine direkte Zustellung an. Alternativ können Sie Ihren Auftrag nach Absprache in unserer Agentur in Berlin-Wedding, Bristolstraße 19HN, abholen. Die Versandkosten werden im Angebot transparent ausgewiesen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist bei jedem Druckauftrag auch ein Grafikdesign inklusive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – das ist unser wichtigstes Versprechen: Bei Masar Werbeagentur Berlin ist professionelles Grafikdesign bei jedem Druckauftrag ohne Aufpreis inklusive. Sie müssen keine fertige Druckvorlage liefern. Unser Designteam gestaltet Ihren Flyer, Ihre Visitenkarte, Ihren Katalog oder Ihr Poster nach Ihren Wünschen – kostenlos und ohne versteckte Gebühren. Sie erhalten außerdem alle Druckdaten und Quelldateien zur eigenen Nutzung."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
@@ -249,6 +320,71 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
   <p class="cta-sub">Design inklusive – kostenlose Erstberatung und schnelle Lieferung.</p>
   <a href="index.html#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
 </div></div>
+
+<!-- FAQ SECTION -->
+<section style="padding:5rem 0;background:var(--off);" id="faq" aria-labelledby="faq-heading-print">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:2.5rem;">
+      <div class="sec-eyebrow">❓ Häufige Fragen zu Print & Design</div>
+      <h2 class="sec-title" id="faq-heading-print">Druckdaten, Formate &amp; <em>Qualität</em></h2>
+      <p class="sec-sub">Technische Fragen zu Beschnitt, CMYK, Auflösung und Lieferung – klar und verständlich beantwortet.</p>
+    </div>
+    <style>
+      .faq-list{display:flex;flex-direction:column;gap:.75rem;max-width:860px;}
+      .faq-list details{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .25s;}
+      .faq-list details[open]{box-shadow:0 8px 32px rgba(88,208,189,.12);border-color:rgba(88,208,189,.4);}
+      .faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:var(--navy);user-select:none;}
+      .faq-list summary::-webkit-details-marker{display:none;}
+      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .25s;}
+      .faq-list details[open] summary::after{transform:rotate(45deg);}
+      .faq-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+      .faq-list summary:hover{color:var(--teal);}
+      .faq-answer{padding:0 1.5rem 1.2rem;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);}
+      .faq-answer p{margin-top:.8rem;}
+    </style>
+    <div class="faq-list fade-up">
+      <details>
+        <summary>Welche Druckdaten-Spezifikationen werden benötigt?</summary>
+        <div class="faq-answer">
+          <p>Druckdaten müssen im CMYK-Farbmodus vorliegen (kein RGB), mit einer Auflösung von mindestens 300 dpi im Endformat. Legen Sie 3 mm Beschnitt (Anschnitt) an allen Seiten an und halten Sie einen Sicherheitsabstand von 3–5 mm vom Endformat für Texte und Logos ein. Bevorzugtes Dateiformat ist PDF/X-3 oder PDF/X-4 mit eingebetteten Schriften. Wir prüfen Ihre Druckdaten kostenlos.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Was bedeutet Beschnitt (Anschnitt) beim Drucken?</summary>
+        <div class="faq-answer">
+          <p>Beschnitt (auch Anschnitt oder Bleed) ist ein Überstand von typischerweise 3 mm, den Hintergrundfarben und -bilder über das eigentliche Endformat hinaus haben müssen. Da Druckbogen nach dem Druck maschinell zugeschnitten werden und dabei kleine Abweichungen entstehen können, verhindert der Beschnitt unerwünschte weiße Ränder am fertigen Produkt. Ohne ausreichenden Beschnitt können unschöne helle Streifen am Rand erscheinen.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Warum muss ich CMYK statt RGB verwenden?</summary>
+        <div class="faq-answer">
+          <p>CMYK (Cyan, Magenta, Yellow, Key/Schwarz) ist das Farbmodell von Druckmaschinen. RGB (Rot, Grün, Blau) ist das Farbmodell von Bildschirmen mit einem deutlich größeren Farbraum. Bei der Konvertierung von RGB zu CMYK können Farben – besonders kräftige Blau- und Orangetöne – dunkler oder stumpfer wirken als auf dem Monitor. Erstellen Sie Dateien direkt im CMYK-Modus, oder wir übernehmen die farbverbindliche Konvertierung für Sie.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Welche Auflösung brauchen Bilder für den professionellen Druck?</summary>
+        <div class="faq-answer">
+          <p>Rastergrafiken (Fotos, Bilder) benötigen mindestens 300 dpi im tatsächlichen Endformat. Für Großformatdruck (Banner, Plakate ab 1 m) reichen 100–150 dpi aus, da diese aus größerer Distanz betrachtet werden. Vektorgrafiken (AI, SVG, EPS) sind auflösungsunabhängig und daher ideal für Logos und Texte – unabhängig vom Ausgabeformat.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Liefert Masar die fertigen Drucksachen nach Hause?</summary>
+        <div class="faq-answer">
+          <p>Ja, wir liefern fertige Drucksachen deutschlandweit per Paketversand (DHL/DPD). Innerhalb Berlins bieten wir bei Bedarf auch direkte Zustellung an. Alternativ können Sie Ihren Auftrag in unserer Agentur in Berlin-Wedding, Bristolstraße 19HN, nach Absprache abholen. Versandkosten werden im Angebot transparent ausgewiesen.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Ist bei jedem Druckauftrag Grafikdesign inklusive?</summary>
+        <div class="faq-answer">
+          <p>Ja – das ist unser wichtigstes Versprechen: Bei Masar Werbeagentur Berlin ist professionelles Grafikdesign bei jedem Druckauftrag ohne Aufpreis inklusive. Sie müssen keine fertige Druckvorlage liefern. Unser Designteam gestaltet Flyer, Visitenkarten, Kataloge oder Poster nach Ihren Wünschen – kostenlos und ohne versteckte Gebühren. Sie erhalten außerdem alle Druckdaten und Quelldateien zur eigenen Nutzung.</p>
+        </div>
+      </details>
+    </div>
+    <div class="fade-up" style="margin-top:2rem;">
+      <a href="index.html#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
+    </div>
+  </div>
+</section>
 
 <footer><div class="container">
   <div class="foot-grid">

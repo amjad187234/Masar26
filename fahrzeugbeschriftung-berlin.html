@@ -171,9 +171,24 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .svc-pick-opt:hover{border-color:var(--teal);color:#fff;background:rgba(88,208,189,.1);}
 .svc-pick-opt.picked{background:rgba(88,208,189,.2);border-color:var(--teal);color:var(--teal);}
 .svc-picked-lbl{font-size:13px;color:var(--teal);margin-top:.4rem;font-weight:600;}
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus:not(:focus-visible){outline:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(88,208,189,.25);
+}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
+  padding:10px 20px;font-weight:700;font-size:14px;
+  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+.skip-link:focus{top:0;}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <div id="stickyCta">
   <div class="scta-txt">🚗 <span>Fahrzeugbeschriftung Berlin</span> – Kostenloses Angebot innerhalb von 24h</div>

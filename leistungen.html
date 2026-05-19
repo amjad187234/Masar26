@@ -158,6 +158,20 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
 .sticky-btn-main:hover{background:var(--teal-d);}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus:not(:focus-visible){outline:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible{
+  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  box-shadow:0 0 0 5px rgba(88,208,189,.25);
+}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
+  padding:10px 20px;font-weight:700;font-size:14px;
+  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+.skip-link:focus{top:0;}
 </style>
 <meta property="og:title" content="Alle Leistungen – Masar Werbeagentur Berlin | Werbung, Design & Marketing">
 <meta property="og:description" content="Alle Leistungen von Masar Werbeagentur Berlin ✓ Leuchtreklamen ✓ Fahrzeugbeschriftung ✓ Grafikdesign ✓ Webdesign ✓ Social Media. Design immer inklusive!">
@@ -186,8 +200,65 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
   "sameAs": ["https://www.instagram.com/masar.werbeagentur/", "https://www.facebook.com/masarwerbeagentur/"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet ein professioneller Flyer bei Masar Werbeagentur Berlin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Flyer bei Masar Werbeagentur Berlin sind bereits ab ca. 49 € für 250 Stück erhältlich – inklusive professionellem Grafikdesign ohne Aufpreis. Der genaue Preis hängt von Auflage, Format (z. B. DIN A5 oder DIN lang), Papiergewicht und Veredelung (Glanz- oder Mattlaminierung) ab. Wir erstellen Ihnen gerne ein kostenloses Angebot innerhalb von 24 Stunden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Lieferung von Druckprodukten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Standard-Lieferzeit für Druckprodukte beträgt 3–5 Werktage nach Freigabe der Druckdaten. Bei Express-Aufträgen liefern wir in Berlin in der Regel innerhalb von 24–48 Stunden. Die genaue Lieferzeit hängt vom Produkt, der Auflage und der Veredelung ab. Abholung in unserer Agentur in Berlin-Wedding ist nach Absprache ebenfalls möglich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Dateiformate akzeptiert Masar Werbeagentur für Druckaufträge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir akzeptieren druckfertige Dateien bevorzugt als PDF/X-3 oder PDF/X-4 mit eingebetteten Schriften und CMYK-Farbprofil. Ebenfalls möglich sind AI (Adobe Illustrator), INDD (InDesign) und hochauflösende TIFF-Dateien (mindestens 300 dpi). Falls Sie keine druckfertigen Daten haben, übernimmt unser Team die professionelle Druckdatenaufbereitung inklusive Schnittmarken und Beschnitt (3 mm Anschnitt)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bieten Sie auch Expressdruck in Berlin an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Masar Werbeagentur bietet Expressdruck in Berlin an. Bei dringenden Aufträgen – z. B. für Messen, Events oder kurzfristige Kampagnen – können wir viele Produkte innerhalb von 24 bis 48 Stunden produzieren und liefern. Bitte kontaktieren Sie uns direkt telefonisch unter 0178 514 3918 oder per WhatsApp, damit wir die Machbarkeit sofort prüfen können."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Glanz- und Mattlaminierung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Glanzlaminierung verleiht Druckprodukten einen hochglänzenden, leuchtenden Effekt – ideal für lebendige Farbfotos und Produkte, die Aufmerksamkeit erregen sollen. Mattlaminierung erzeugt eine samtige, entspiegelte Oberfläche, die edel und hochwertig wirkt – besonders beliebt für Visitenkarten, Broschüren und Premiumprodukte. Beide Varianten schützen den Druck vor Abrieb und Feuchtigkeit. Auf Wunsch kombinieren wir auch Soft-Touch-Laminierung mit partieller UV-Lackierung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich als Privatperson bei Masar Werbeagentur bestellen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, wir arbeiten sowohl mit Unternehmen (B2B) als auch mit Privatpersonen (B2C). Privatkunden können genauso wie Geschäftskunden alle unsere Druckprodukte, Designleistungen und Werbetechnik-Services in Anspruch nehmen. Es gibt keine Mindestbestellmenge. Gewerbliche Kunden profitieren zusätzlich von Rahmenverträgen, Mengenrabatten und vorrangiger Bearbeitung bei regelmäßigen Aufträgen."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
@@ -293,6 +364,71 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
   <p class="cta-sub">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
   <a href="index.html#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
 </div></div>
+
+<!-- FAQ SECTION -->
+<section class="section bg-off" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <div class="sec-eyebrow">❓ Häufige Fragen</div>
+      <h2 class="sec-title" id="faq-heading">Ihre Fragen – <em>unsere Antworten</em></h2>
+      <p class="sec-sub">Alles Wichtige zu Preisen, Lieferzeiten, Dateiformaten und unseren Leistungen auf einen Blick.</p>
+    </div>
+    <style>
+      .faq-list{display:flex;flex-direction:column;gap:.75rem;max-width:860px;}
+      .faq-list details{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:box-shadow .25s;}
+      .faq-list details[open]{box-shadow:0 8px 32px rgba(88,208,189,.12);border-color:rgba(88,208,189,.4);}
+      .faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:var(--navy);user-select:none;}
+      .faq-list summary::-webkit-details-marker{display:none;}
+      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .25s;}
+      .faq-list details[open] summary::after{transform:rotate(45deg);}
+      .faq-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+      .faq-list summary:hover{color:var(--teal);}
+      .faq-answer{padding:0 1.5rem 1.2rem;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);}
+      .faq-answer p{margin-top:.8rem;}
+    </style>
+    <div class="faq-list fade-up">
+      <details>
+        <summary>Was kostet ein professioneller Flyer bei Masar Werbeagentur Berlin?</summary>
+        <div class="faq-answer">
+          <p>Flyer sind bereits ab ca. 49 € für 250 Stück erhältlich – inklusive professionellem Grafikdesign ohne Aufpreis. Der genaue Preis hängt von Auflage, Format (z. B. DIN A5 oder DIN lang), Papiergewicht und Veredelung ab. Wir erstellen Ihnen gerne ein kostenloses Angebot innerhalb von 24 Stunden.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Wie lange dauert die Lieferung von Druckprodukten?</summary>
+        <div class="faq-answer">
+          <p>Die Standard-Lieferzeit für Druckprodukte beträgt 3–5 Werktage nach Freigabe der Druckdaten. Bei Express-Aufträgen liefern wir in Berlin in der Regel innerhalb von 24–48 Stunden. Abholung in unserer Agentur in Berlin-Wedding ist nach Absprache ebenfalls möglich.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Welche Dateiformate akzeptieren Sie für Druckaufträge?</summary>
+        <div class="faq-answer">
+          <p>Wir akzeptieren druckfertige Dateien bevorzugt als PDF/X-3 oder PDF/X-4 mit eingebetteten Schriften und CMYK-Farbprofil. Ebenfalls möglich sind AI (Adobe Illustrator), INDD (InDesign) und hochauflösende TIFF-Dateien (mindestens 300 dpi). Falls Sie keine druckfertigen Daten haben, übernimmt unser Team die Druckdatenaufbereitung inklusive Schnittmarken und 3 mm Beschnitt.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Bieten Sie auch Expressdruck in Berlin an?</summary>
+        <div class="faq-answer">
+          <p>Ja, bei dringenden Aufträgen – z. B. für Messen, Events oder kurzfristige Kampagnen – können wir viele Produkte innerhalb von 24 bis 48 Stunden produzieren und liefern. Bitte kontaktieren Sie uns direkt telefonisch unter <a href="tel:01785143918" style="color:var(--teal);font-weight:600;">0178 514 3918</a> oder per WhatsApp, damit wir die Machbarkeit sofort prüfen können.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Was ist der Unterschied zwischen Glanz- und Mattlaminierung?</summary>
+        <div class="faq-answer">
+          <p>Glanzlaminierung verleiht Druckprodukten einen hochglänzenden, leuchtenden Effekt – ideal für lebendige Farbfotos und Produkte, die Aufmerksamkeit erregen sollen. Mattlaminierung erzeugt eine samtige, entspiegelte Oberfläche, die edel und hochwertig wirkt – besonders beliebt für Visitenkarten, Broschüren und Premiumprodukte. Auf Wunsch kombinieren wir auch Soft-Touch-Laminierung mit partieller UV-Lackierung.</p>
+        </div>
+      </details>
+      <details>
+        <summary>Kann ich als Privatperson bei Masar bestellen?</summary>
+        <div class="faq-answer">
+          <p>Ja, wir arbeiten sowohl mit Unternehmen (B2B) als auch mit Privatpersonen (B2C). Privatkunden können genauso alle Druckprodukte, Designleistungen und Werbetechnik-Services in Anspruch nehmen – es gibt keine Mindestbestellmenge. Gewerbliche Kunden profitieren zusätzlich von Rahmenverträgen, Mengenrabatten und vorrangiger Bearbeitung bei regelmäßigen Aufträgen.</p>
+        </div>
+      </details>
+    </div>
+    <div class="fade-up" style="margin-top:2rem;">
+      <a href="index.html#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
+    </div>
+  </div>
+</section>
 
 <footer><div class="container">
   <div class="foot-grid">
