@@ -10,6 +10,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <meta name="theme-color" content="#58d0bd">
 <link rel="stylesheet" href="/fonts.css">
+<link rel="stylesheet" href="/css/viral-ui.css">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
 <style>
@@ -497,6 +498,26 @@ footer a:hover { color:var(--teal); }
         </div>
       </div>
     </div>
+
+    <!-- PROGRESS STEPPER -->
+    <nav class="co-stepper" aria-label="Bestellfortschritt">
+      <div class="co-step done" aria-current="false">
+        <div class="co-step-icon" aria-hidden="true">✓</div>
+        <span class="co-step-lbl">Warenkorb</span>
+      </div>
+      <div class="co-step active" aria-current="step">
+        <div class="co-step-icon" aria-hidden="true">📋</div>
+        <span class="co-step-lbl">Ihre Daten</span>
+      </div>
+      <div class="co-step" aria-current="false">
+        <div class="co-step-icon" aria-hidden="true">💳</div>
+        <span class="co-step-lbl">Zahlung</span>
+      </div>
+      <div class="co-step" aria-current="false">
+        <div class="co-step-icon" aria-hidden="true">✅</div>
+        <span class="co-step-lbl">Bestätigung</span>
+      </div>
+    </nav>
 
     <!-- CHECKOUT GRID (hidden after successful order) -->
     <div class="checkout-grid" id="checkoutGrid">

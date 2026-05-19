@@ -14,6 +14,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#58d0bd">
   <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/css/viral-ui.css">
 <meta name="description" content="Premium Werbeagentur in Berlin ✓ Leuchtreklamen ✓ Fahrzeugbeschriftung ✓ Grafikdesign ✓ Webdesign ✓ Social Media Marketing. Jetzt kostenlos anfragen!">
   <!-- Performance & Security -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -542,6 +543,21 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
+<!-- EXIT INTENT OVERLAY -->
+<div id="exitOverlay" aria-modal="true" role="dialog" aria-label="Sonderangebot" aria-hidden="true">
+  <div class="exit-card">
+    <button class="exit-close" id="exitClose" aria-label="Schließen">✕</button>
+    <div class="exit-discount-badge" aria-hidden="true">15%</div>
+    <div class="exit-badge">✦ Exklusiv für Sie</div>
+    <h2 class="exit-headline">Warten Sie!<br><em>15 % Erstbestellrabatt</em></h2>
+    <p class="exit-sub">Erhalten Sie Ihre persönliche Brand-Simulation als PDF – kostenlos und unverbindlich. Plus 15 % Rabatt auf Ihre erste Bestellung.</p>
+    <a href="#kontakt" class="exit-cta" id="exitCta">Jetzt kostenlos anfragen →</a>
+    <button class="exit-dismiss" id="exitDismiss">Nein danke, kein Angebot nötig</button>
+  </div>
+</div>
+<!-- Toast -->
+<div id="visToast" role="status" aria-live="polite"></div>
+
 <!-- TOP INFO BAR -->
 <div style="background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;line-height:1.4;">
   <span>📍 Masar Werbeagentur · Berlin-Wedding · Bristolstraße 19HN</span>
@@ -612,6 +628,13 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         <div class="hero-btns">
           <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
           <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
+          <a href="#brand-visualizer" class="btn btn-outline" style="border-color:rgba(88,208,189,.4);color:var(--teal);">🎨 Brand testen →</a>
+        </div>
+        <!-- Live order ticker -->
+        <div class="order-ticker" id="orderTicker" aria-live="polite" aria-label="Live-Aktivitäten">
+          <span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-msg">Jemand aus Berlin-Mitte hat gerade eine Fahrzeugfolierung berechnet</span>
+          <span class="ticker-time">vor 2 Min.</span>
         </div>
         <div class="hero-trust">
           <span class="hero-trust-txt">Bewertet mit</span>
@@ -626,6 +649,26 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     </div>
   </div>
 </section>
+
+<!-- KINETIC MARQUEE -->
+<div class="kinetic-marquee-wrap" aria-hidden="true">
+  <div class="kinetic-marquee">
+    <span class="hi">Leuchtreklamen</span><span class="sep">✦</span>
+    Fahrzeugbeschriftung<span class="sep">✦</span>
+    <span class="hi">Grafikdesign</span><span class="sep">✦</span>
+    Webdesign<span class="sep">✦</span>
+    <span class="hi">Social Media</span><span class="sep">✦</span>
+    Print & Design<span class="sep">✦</span>
+    <span class="hi">Werbetechnik Berlin</span><span class="sep">✦</span>
+    Leuchtreklamen<span class="sep">✦</span>
+    Fahrzeugbeschriftung<span class="sep">✦</span>
+    <span class="hi">Grafikdesign</span><span class="sep">✦</span>
+    Webdesign<span class="sep">✦</span>
+    <span class="hi">Social Media</span><span class="sep">✦</span>
+    Print & Design<span class="sep">✦</span>
+    <span class="hi">Werbetechnik Berlin</span><span class="sep">✦</span>
+  </div>
+</div>
 
 <!-- STATS -->
 <div class="stats">
@@ -1044,6 +1087,97 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
+<!-- BRAND VISUALIZER -->
+<section id="brand-visualizer" aria-label="Brand Visualizer – Marken-Simulation">
+  <div class="vis-header">
+    <div class="vis-header-badge">✦ Interaktives Tool</div>
+    <h2 class="kinetic-heading">Sehen Sie Ihre <em>Marke</em><br>in Aktion.</h2>
+    <p>Tragen Sie Ihren Firmennamen ein – sofortige Simulation auf Fahrzeug oder Gebäudefassade.</p>
+  </div>
+
+  <div class="vis-layout">
+    <!-- Controls -->
+    <div class="vis-controls" role="group" aria-label="Visualizer-Einstellungen">
+      <div>
+        <label for="visName" class="vis-field-label">Firmenname</label>
+        <input id="visName" class="vis-input" type="text" maxlength="24"
+               placeholder="Ihre Firma GmbH" autocomplete="off"
+               aria-label="Firmenname für die Simulation">
+      </div>
+
+      <div>
+        <span class="vis-field-label" id="tplLabel">Vorlage</span>
+        <div class="vis-templates" role="group" aria-labelledby="tplLabel">
+          <button class="vis-tpl-btn active" data-tpl="van"
+                  aria-pressed="true" aria-label="Vorlage: Transporter">
+            🚐 Transporter
+          </button>
+          <button class="vis-tpl-btn" data-tpl="building"
+                  aria-pressed="false" aria-label="Vorlage: Gebäudefassade">
+            🏢 Fassade
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <span class="vis-field-label" id="colLabel">Markenfarbe</span>
+        <div class="vis-colors" role="group" aria-labelledby="colLabel">
+          <button class="vis-swatch active" data-color="#58d0bd" aria-label="Teal" aria-checked="true"
+                  style="background:#58d0bd" role="radio"></button>
+          <button class="vis-swatch" data-color="#ffffff" aria-label="Weiß" aria-checked="false"
+                  style="background:#fff;border-color:rgba(255,255,255,0.3)" role="radio"></button>
+          <button class="vis-swatch" data-color="#132e50" aria-label="Navy" aria-checked="false"
+                  style="background:#132e50" role="radio"></button>
+          <button class="vis-swatch" data-color="#e74c3c" aria-label="Rot" aria-checked="false"
+                  style="background:#e74c3c" role="radio"></button>
+          <button class="vis-swatch" data-color="#f5c000" aria-label="Gold" aria-checked="false"
+                  style="background:#f5c000" role="radio"></button>
+          <button class="vis-swatch" data-color="#3498db" aria-label="Blau" aria-checked="false"
+                  style="background:#3498db" role="radio"></button>
+          <button class="vis-swatch" data-color="#9b59b6" aria-label="Lila" aria-checked="false"
+                  style="background:#9b59b6" role="radio"></button>
+          <button class="vis-swatch" data-color="#2ecc71" aria-label="Grün" aria-checked="false"
+                  style="background:#2ecc71" role="radio"></button>
+        </div>
+      </div>
+
+      <div class="vis-toggle-row">
+        <span class="vis-toggle-lbl">☀️ / 🌙 Nachtmodus</span>
+        <button class="vis-toggle" id="nightToggle"
+                role="switch" aria-checked="false" aria-label="Nachtmodus: LED-Beleuchtung">
+          <span class="vis-toggle-knob"></span>
+        </button>
+      </div>
+
+      <div>
+        <span class="vis-field-label">Logo hochladen (optional)</span>
+        <label class="vis-upload" aria-label="Logo-Datei auswählen">
+          📁 PNG, JPG oder SVG auswählen
+          <input id="visLogo" type="file" accept="image/*" tabindex="-1">
+        </label>
+      </div>
+
+      <button class="vis-btn vis-btn-primary" id="visDownload"
+              aria-label="Simulation als PNG herunterladen">
+        ⬇ Simulation speichern
+      </button>
+      <button class="vis-btn vis-btn-secondary" id="visShare"
+              aria-label="Simulations-Link teilen">
+        🔗 Link kopieren & teilen
+      </button>
+    </div>
+
+    <!-- Canvas -->
+    <div class="vis-canvas-wrap">
+      <canvas id="visCanvas" role="img"
+              aria-label="Brand-Simulation: Ihre Marke auf dem Transporter"
+              tabindex="0"></canvas>
+      <div class="vis-mode-badge" id="modeBadge">☀️ Tag</div>
+      <div class="vis-aria-announce" id="visAnnounce" aria-live="polite" aria-atomic="true"></div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="cta-strip" id="kontakt">
   <div class="container" style="position:relative;z-index:1;">
@@ -1260,5 +1394,6 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
+<script src="/js/visualizer.js" defer></script>
 </body>
 </html>
