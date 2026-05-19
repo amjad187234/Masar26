@@ -630,12 +630,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
           <a href="#brand-visualizer" class="btn btn-outline" style="border-color:rgba(88,208,189,.4);color:var(--teal);">🎨 Brand testen →</a>
         </div>
-        <!-- Live order ticker -->
-        <div class="order-ticker" id="orderTicker" aria-live="polite" aria-label="Live-Aktivitäten">
-          <span class="ticker-dot" aria-hidden="true"></span>
-          <span class="ticker-msg">Jemand aus Berlin-Mitte hat gerade eine Fahrzeugfolierung berechnet</span>
-          <span class="ticker-time">vor 2 Min.</span>
-        </div>
         <div class="hero-trust">
           <span class="hero-trust-txt">Bewertet mit</span>
           <span class="hero-stars">★★★★★</span>
@@ -1164,6 +1158,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <button class="vis-btn vis-btn-secondary" id="visShare"
               aria-label="Simulations-Link teilen">
         🔗 Link kopieren & teilen
+      </button>
+      <button class="vis-btn vis-btn-danger" id="visReset"
+              aria-label="Visualizer zurücksetzen und neu beginnen">
+        ↺ Von vorne beginnen
       </button>
     </div>
 
