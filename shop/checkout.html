@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kasse – Masar Print Shop</title>
-<meta name="description" content="Sicher bestellen im Masar Print Shop. Zahlung per Vorkasse oder PayPal.">
+<meta name="description" content="Sicher bestellen im Masar Print Shop. Zahlung per Vorkasse oder Kreditkarte (Stripe).">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <meta name="theme-color" content="#58d0bd">
 <link rel="stylesheet" href="/fonts.css">
+<!-- Stripe.js loaded upfront for instant card element init -->
+<script src="https://js.stripe.com/v3/" async></script>
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
 <style>
@@ -233,10 +235,21 @@ nav {
 }
 .pay-card.selected .pay-card-check::after { content:'✓'; }
 
-/* PayPal button container */
-#paypalButtonContainer {
-  display:none;
-  margin-top:1rem;
+/* Stripe card container */
+#stripeContainer { display:none; margin-top:1rem; }
+.stripe-card-wrap {
+  background:var(--off);
+  border:1.5px solid var(--border);
+  border-radius:8px;
+  padding:12px 14px;
+  transition:border-color .2s;
+}
+.stripe-card-wrap.focused { border-color:var(--teal); background:#fff; }
+.stripe-card-wrap.invalid  { border-color:var(--red);  background:var(--red-l); }
+#stripeCardError {
+  display:none; color:var(--red); font-size:12px;
+  margin-top:.4rem; padding:.35rem .8rem;
+  background:var(--red-l); border:1px solid var(--red-border); border-radius:6px;
 }
 
 /* ── DSGVO checkbox ── */
@@ -471,11 +484,11 @@ footer a:hover { color:var(--teal); }
           </p>
         </div>
 
-        <!-- PayPal confirmation -->
-        <div class="bank-box" id="paypalDetails" style="display:none;border-left-color:#0070f3;">
-          <div class="bank-box-title">💳 Ihre PayPal-Zahlung wurde erfolgreich abgeschlossen.</div>
+        <!-- Stripe confirmation -->
+        <div class="bank-box" id="stripeDetails" style="display:none;">
+          <div class="bank-box-title">💳 Ihre Kartenzahlung wurde erfolgreich verarbeitet.</div>
           <p style="font-size:13px;color:var(--muted);">
-            Sie erhalten in Kürze eine Bestätigungs-E-Mail. Wir beginnen umgehend mit der Produktion.
+            Sie erhalten in Kürze eine Bestätigungs-E-Mail. Wir beginnen sofort mit der Produktion.
           </p>
         </div>
 
@@ -582,11 +595,11 @@ footer a:hover { color:var(--teal); }
             <div class="form-section-title">Druckdatei <span class="req">*</span></div>
             <div class="upload-zone" id="uploadZone">
               <input type="file" id="fileInput" name="print_file"
-                accept=".pdf,.svg,.webp,.png,.jpg,.jpeg" required>
+                accept=".pdf,.webp,.png,.jpg,.jpeg" required>
               <div id="uploadPlaceholder">
                 <div class="upload-icon">📁</div>
                 <div class="upload-title">Druckdatei hier ablegen oder klicken</div>
-                <div class="upload-sub">PDF, SVG, WebP, PNG, JPEG · max. 50 MB</div>
+                <div class="upload-sub">PDF, WebP, PNG, JPEG · max. 50 MB</div>
               </div>
               <div class="upload-file-name" id="uploadFileName">
                 <span id="uploadFileNameText"></span>
@@ -612,18 +625,23 @@ footer a:hover { color:var(--teal); }
                 <div class="pay-card-name">Vorkasse (Überweisung)</div>
                 <div class="pay-card-desc">Sicher & gebührenfrei. Bestellung startet nach Zahlungseingang.</div>
               </label>
-              <label class="pay-card" id="payCardPaypal" for="payPaypal">
-                <input type="radio" id="payPaypal" name="payment_method" value="paypal"
-                  onchange="selectPayment('paypal')">
+              <label class="pay-card" id="payCardStripe" for="payStripe">
+                <input type="radio" id="payStripe" name="payment_method" value="stripe"
+                  onchange="selectPayment('stripe')">
                 <div class="pay-card-check"></div>
                 <div class="pay-card-icon">💳</div>
-                <div class="pay-card-name">PayPal (Sofortzahlung)</div>
-                <div class="pay-card-desc">Schnell & sicher via PayPal. Sofortiger Produktionsstart.</div>
+                <div class="pay-card-name">Kreditkarte (Stripe)</div>
+                <div class="pay-card-desc">Visa, Mastercard & mehr. Sichere SSL-Zahlung über Stripe.</div>
               </label>
             </div>
 
-            <!-- PayPal button (shown when PayPal is selected) -->
-            <div id="paypalButtonContainer"></div>
+            <!-- Stripe card element (shown when Stripe is selected) -->
+            <div id="stripeContainer">
+              <div class="stripe-card-wrap" id="stripeCardWrap">
+                <div id="stripeCardElement"></div>
+              </div>
+              <div id="stripeCardError"></div>
+            </div>
 
             <!-- ── Notes ── -->
             <div class="form-section-title">Anmerkungen</div>
@@ -680,12 +698,16 @@ footer a:hover { color:var(--teal); }
 // ── Config (must match shop.js RESELLER_MARKUP) ───────────────
 const RESELLER_MARKUP = 1.30;
 
+// ── Stripe Public Key — replace with yours from dashboard.stripe.com ──
+// Use pk_test_... for testing, pk_live_... for production
+const STRIPE_PUBLIC_KEY = 'pk_REPLACE_WITH_YOUR_STRIPE_PUBLIC_KEY';
+
 // ── State ─────────────────────────────────────────────────────
 let checkoutCart  = [];
 let selectedFile  = null;
-let paypalLoaded  = false;
-let paypalApproved = false;
-let paypalOrderId = '';
+let stripeInstance = null;
+let stripeCard     = null;
+let stripeInited   = false;
 
 // ── Utility ───────────────────────────────────────────────────
 function fmtEur(n) {
@@ -750,22 +772,117 @@ function renderSummary() {
 
 // ── Payment method selection ───────────────────────────────────
 function selectPayment(method) {
-  const bankCard   = document.getElementById('payCardBank');
-  const paypalCard = document.getElementById('payCardPaypal');
-  const paypalBtn  = document.getElementById('paypalButtonContainer');
-  const submitBtn  = document.getElementById('submitBtn');
+  document.getElementById('payCardBank')?.classList.toggle('selected',   method === 'bank');
+  document.getElementById('payCardStripe')?.classList.toggle('selected', method === 'stripe');
 
-  bankCard.classList.toggle('selected',   method === 'bank');
-  paypalCard.classList.toggle('selected', method === 'paypal');
+  const stripeBox = document.getElementById('stripeContainer');
+  const submitLbl = document.getElementById('submitLabel');
 
-  if (method === 'paypal') {
-    paypalBtn.style.display = 'block';
-    submitBtn.style.display = 'none';
-    loadPayPalSDK();
+  if (method === 'stripe') {
+    stripeBox.style.display = 'block';
+    if (submitLbl) submitLbl.textContent = 'Jetzt mit Karte bezahlen →';
+    initStripeElement();
   } else {
-    paypalBtn.style.display = 'none';
-    submitBtn.style.display = 'flex';
+    stripeBox.style.display = 'none';
+    if (submitLbl) submitLbl.textContent = 'Bestellung kostenpflichtig absenden →';
   }
+}
+
+// ── Stripe: init card element (called once when Stripe is first selected) ──
+function initStripeElement() {
+  if (stripeInited) return;
+  stripeInited = true;
+
+  if (!window.Stripe) {
+    document.getElementById('stripeContainer').innerHTML =
+      '<p style="color:var(--red);font-size:13px;padding:.5rem 0;">⚠ Stripe konnte nicht geladen werden. Bitte Seite neu laden.</p>';
+    return;
+  }
+
+  stripeInstance = Stripe(STRIPE_PUBLIC_KEY);
+  const elements = stripeInstance.elements();
+
+  stripeCard = elements.create('card', {
+    style: {
+      base: {
+        fontFamily: '"Barlow","Segoe UI",sans-serif',
+        fontSize:   '15px',
+        color:      '#1a2a2a',
+        '::placeholder': { color: 'rgba(90,112,112,.45)' },
+      },
+      invalid: { color: '#e53e3e' },
+    },
+    hidePostalCode: true,
+  });
+
+  stripeCard.mount('#stripeCardElement');
+
+  const wrap = document.getElementById('stripeCardWrap');
+  stripeCard.on('focus', () => wrap?.classList.add('focused'));
+  stripeCard.on('blur',  () => wrap?.classList.remove('focused'));
+  stripeCard.on('change', ({ error }) => {
+    const errEl = document.getElementById('stripeCardError');
+    if (!errEl) return;
+    if (error) {
+      wrap?.classList.add('invalid');
+      errEl.textContent   = error.message;
+      errEl.style.display = 'block';
+    } else {
+      wrap?.classList.remove('invalid');
+      errEl.style.display = 'none';
+    }
+  });
+}
+
+// ── Stripe: create intent + confirm card payment ──────────────
+async function processStripePayment(totalEur) {
+  if (!stripeInstance || !stripeCard) {
+    showError('Kartenzahlung nicht bereit. Bitte Seite neu laden.');
+    return null;
+  }
+
+  // 1. Create PaymentIntent server-side
+  let clientSecret;
+  try {
+    const res  = await fetch('/api/create-payment-intent.php', {
+      method:      'POST',
+      headers:     { 'Content-Type': 'application/json' },
+      body:        JSON.stringify({ amount: totalEur }),
+      credentials: 'same-origin',
+    });
+    const data = await res.json();
+    if (!data.client_secret) {
+      showError(data.error || 'Zahlung konnte nicht gestartet werden.');
+      return null;
+    }
+    clientSecret = data.client_secret;
+  } catch(e) {
+    showError('Verbindungsfehler beim Initialisieren der Zahlung. Bitte erneut versuchen.');
+    return null;
+  }
+
+  // 2. Confirm card payment via Stripe.js
+  const { error, paymentIntent } = await stripeInstance.confirmCardPayment(clientSecret, {
+    payment_method: {
+      card: stripeCard,
+      billing_details: {
+        name:  document.getElementById('name')?.value.trim()  || '',
+        email: document.getElementById('email')?.value.trim() || '',
+      },
+    },
+  });
+
+  if (error) {
+    showError(error.message || 'Kartenzahlung fehlgeschlagen. Bitte erneut versuchen.');
+    return null;
+  }
+
+  if (paymentIntent.status !== 'succeeded') {
+    showError('Zahlung nicht abgeschlossen (Status: ' + paymentIntent.status + '). Bitte erneut versuchen.');
+    return null;
+  }
+
+  return paymentIntent.id;
 }
 
 // ── File drag & drop ──────────────────────────────────────────
@@ -815,10 +932,10 @@ function initFileUpload() {
       return;
     }
     // Allowed extensions
-    const allowed = ['.pdf','.svg','.webp','.png','.jpg','.jpeg'];
+    const allowed = ['.pdf','.webp','.png','.jpg','.jpeg'];
     const ext = '.' + file.name.split('.').pop().toLowerCase();
     if (!allowed.includes(ext)) {
-      showError('Nicht unterstütztes Dateiformat. Bitte PDF, SVG, WebP, PNG oder JPEG.');
+      showError('Nicht unterstütztes Dateiformat. Bitte PDF, WebP, PNG oder JPEG.');
       return;
     }
 
@@ -948,28 +1065,42 @@ document.getElementById('checkoutForm')?.addEventListener('submit', async functi
   if (spinner) spinner.style.display = 'inline-block';
 
   try {
-    const product  = getPrimaryProduct();
-    const totals   = getCartTotals();
-    const address  = buildAddress();
-    const optsStr  = buildProductOptionsStr();
-    const payMethod= document.querySelector('input[name="payment_method"]:checked')?.value || 'bank';
+    const product   = getPrimaryProduct();
+    const totals    = getCartTotals();
+    const address   = buildAddress();
+    const optsStr   = buildProductOptionsStr();
+    const payMethod = document.querySelector('input[name="payment_method"]:checked')?.value || 'bank';
+
+    // Stripe: process card payment before submitting order
+    let stripePaymentIntentId = '';
+    if (payMethod === 'stripe') {
+      const intentId = await processStripePayment(totals.total);
+      if (!intentId) {
+        submitBtn.disabled   = false;
+        if (label)   label.style.display   = 'inline';
+        if (spinner) spinner.style.display = 'none';
+        return;
+      }
+      stripePaymentIntentId = intentId;
+    }
 
     const formData = new FormData();
-    formData.append('name',           document.getElementById('name')?.value.trim()    || '');
-    formData.append('email',          document.getElementById('email')?.value.trim()   || '');
-    formData.append('company',        document.getElementById('company')?.value.trim() || '');
-    formData.append('phone',          document.getElementById('phone')?.value.trim()   || '');
-    formData.append('address',        address);
-    formData.append('vat',            document.getElementById('vat')?.value.trim()     || '');
-    formData.append('product_id',     product.id);
-    formData.append('product_name',   product.name);
-    formData.append('product_options',optsStr);
-    formData.append('quantity',       String(totals.qty));
-    formData.append('unit_price',     String(totals.unitPrice.toFixed(4)));
-    formData.append('total_price',    String(totals.total.toFixed(2)));
-    formData.append('payment_method', payMethod);
-    formData.append('notes',          document.getElementById('notes')?.value.trim()   || '');
-    formData.append('print_file',     selectedFile, selectedFile.name);
+    formData.append('name',                     document.getElementById('name')?.value.trim()    || '');
+    formData.append('email',                    document.getElementById('email')?.value.trim()   || '');
+    formData.append('company',                  document.getElementById('company')?.value.trim() || '');
+    formData.append('phone',                    document.getElementById('phone')?.value.trim()   || '');
+    formData.append('address',                  address);
+    formData.append('vat',                      document.getElementById('vat')?.value.trim()     || '');
+    formData.append('product_id',               product.id);
+    formData.append('product_name',             product.name);
+    formData.append('product_options',          optsStr);
+    formData.append('quantity',                 String(totals.qty));
+    formData.append('unit_price',               String(totals.unitPrice.toFixed(4)));
+    formData.append('total_price',              String(totals.total.toFixed(2)));
+    formData.append('payment_method',           payMethod);
+    if (stripePaymentIntentId) formData.append('stripe_payment_intent_id', stripePaymentIntentId);
+    formData.append('notes',                    document.getElementById('notes')?.value.trim()   || '');
+    formData.append('print_file',               selectedFile, selectedFile.name);
 
     // Animate progress bar
     const prog     = document.getElementById('uploadProgress');
@@ -1026,166 +1157,26 @@ function showThankYou(orderNumber, paymentMethod, totalPrice) {
   if (panel) panel.style.display = 'block';
   if (panel) panel.scrollIntoView({ behavior:'smooth', block:'start' });
 
-  const numEl   = document.getElementById('thankyouOrderNum');
-  const bankBox = document.getElementById('bankDetails');
-  const ppBox   = document.getElementById('paypalDetails');
-  const subEl   = document.getElementById('thankyouSub');
-  const bankRef = document.getElementById('bankRef');
-  const bankAmt = document.getElementById('bankAmount');
+  const numEl     = document.getElementById('thankyouOrderNum');
+  const bankBox   = document.getElementById('bankDetails');
+  const stripeBox = document.getElementById('stripeDetails');
+  const subEl     = document.getElementById('thankyouSub');
+  const bankRef   = document.getElementById('bankRef');
+  const bankAmt   = document.getElementById('bankAmount');
 
   if (numEl) numEl.textContent = orderNumber || '–';
 
   if (paymentMethod === 'bank') {
-    if (bankBox) bankBox.style.display = 'block';
-    if (ppBox)   ppBox.style.display   = 'none';
-    if (bankRef) bankRef.textContent   = orderNumber || '–';
-    if (bankAmt) bankAmt.textContent   = fmtEur(totalPrice);
-    if (subEl)   subEl.textContent     = 'Bitte überweisen Sie den Betrag mit der Bestellnummer als Verwendungszweck.';
+    if (bankBox)   bankBox.style.display   = 'block';
+    if (stripeBox) stripeBox.style.display = 'none';
+    if (bankRef)   bankRef.textContent     = orderNumber || '–';
+    if (bankAmt)   bankAmt.textContent     = fmtEur(totalPrice);
+    if (subEl)     subEl.textContent       = 'Bitte überweisen Sie den Betrag mit der Bestellnummer als Verwendungszweck.';
   } else {
-    if (bankBox) bankBox.style.display = 'none';
-    if (ppBox)   ppBox.style.display   = 'block';
-    if (subEl)   subEl.textContent     = 'Ihre PayPal-Zahlung wurde erfolgreich verarbeitet. Wir beginnen sofort mit der Produktion.';
+    if (bankBox)   bankBox.style.display   = 'none';
+    if (stripeBox) stripeBox.style.display = 'block';
+    if (subEl)     subEl.textContent       = 'Ihre Kartenzahlung wurde erfolgreich verarbeitet. Wir beginnen sofort mit der Produktion.';
   }
-}
-
-// ── PayPal SDK Integration ────────────────────────────────────
-function loadPayPalSDK() {
-  if (paypalLoaded) return;
-  paypalLoaded = true;
-
-  // PayPal Client ID — loaded from meta tag or hardcoded fallback
-  // In production, replace 'AW0f5CRqSampleSandboxClientIDReplaceMe' with your live ID
-  const clientId = 'AW0f5CRqSampleSandboxClientIDReplaceMe';
-
-  const script   = document.createElement('script');
-  script.src     = `https://www.paypal.com/sdk/js?client-id=${clientId}&currency=EUR&intent=capture&locale=de_DE`;
-  script.async   = true;
-  script.onload  = renderPayPalButton;
-  script.onerror = () => {
-    document.getElementById('paypalButtonContainer').innerHTML =
-      '<p style="color:var(--red);font-size:13px;margin-top:.5rem;">⚠ PayPal konnte nicht geladen werden. Bitte Vorkasse wählen oder Seite neu laden.</p>';
-  };
-  document.head.appendChild(script);
-}
-
-function renderPayPalButton() {
-  const container = document.getElementById('paypalButtonContainer');
-  if (!container || !window.paypal) return;
-
-  window.paypal.Buttons({
-    style: {
-      layout:  'vertical',
-      color:   'gold',
-      shape:   'rect',
-      label:   'pay',
-      height:  45,
-    },
-
-    // Called to set up transaction details before buyer approves
-    createOrder: function(data, actions) {
-      clearError();
-
-      // Validate form fields (except DSGVO — will check on approval)
-      const name    = document.getElementById('name')?.value.trim()    || '';
-      const email   = document.getElementById('email')?.value.trim()   || '';
-      const company = document.getElementById('company')?.value.trim() || '';
-      const street  = document.getElementById('street')?.value.trim()  || '';
-      const plz     = document.getElementById('plz')?.value.trim()     || '';
-      const city    = document.getElementById('city')?.value.trim()    || '';
-
-      if (!name || !email || !company || !street || !plz || !city) {
-        showError('Bitte füllen Sie alle Pflichtfelder aus bevor Sie mit PayPal zahlen.');
-        return Promise.reject(new Error('Validation'));
-      }
-      if (!selectedFile) {
-        showError('Bitte Druckdatei hochladen bevor Sie mit PayPal zahlen.');
-        return Promise.reject(new Error('No file'));
-      }
-      if (!document.getElementById('dsgvo')?.checked) {
-        showError('Bitte Datenschutzerklärung und AGB akzeptieren.');
-        return Promise.reject(new Error('DSGVO'));
-      }
-
-      const totals = getCartTotals();
-
-      return actions.order.create({
-        purchase_units: [{
-          amount: {
-            value:         totals.total.toFixed(2),
-            currency_code: 'EUR',
-          },
-          description: getPrimaryProduct().name,
-          soft_descriptor: 'Masar Print Shop',
-        }],
-        application_context: {
-          brand_name:          'Masar Print Shop',
-          user_action:         'PAY_NOW',
-          shipping_preference: 'NO_SHIPPING',
-        },
-      });
-    },
-
-    // Called when buyer approves payment on PayPal
-    onApprove: async function(data, actions) {
-      // Capture the order
-      const details = await actions.order.capture();
-      paypalOrderId = details.id;
-
-      // Now submit order to backend
-      try {
-        const product  = getPrimaryProduct();
-        const totals   = getCartTotals();
-        const address  = buildAddress();
-        const optsStr  = buildProductOptionsStr();
-
-        const formData = new FormData();
-        formData.append('name',            document.getElementById('name')?.value.trim()    || '');
-        formData.append('email',           document.getElementById('email')?.value.trim()   || '');
-        formData.append('company',         document.getElementById('company')?.value.trim() || '');
-        formData.append('phone',           document.getElementById('phone')?.value.trim()   || '');
-        formData.append('address',         address);
-        formData.append('vat',             document.getElementById('vat')?.value.trim()     || '');
-        formData.append('product_id',      product.id);
-        formData.append('product_name',    product.name);
-        formData.append('product_options', optsStr);
-        formData.append('quantity',        String(totals.qty));
-        formData.append('unit_price',      String(totals.unitPrice.toFixed(4)));
-        formData.append('total_price',     String(totals.total.toFixed(2)));
-        formData.append('payment_method',  'paypal');
-        formData.append('paypal_order_id', paypalOrderId);
-        formData.append('notes',           document.getElementById('notes')?.value.trim() || '');
-        formData.append('print_file',      selectedFile, selectedFile.name);
-
-        const response = await fetch('/api/checkout-handler.php', {
-          method:      'POST',
-          body:        formData,
-          credentials: 'same-origin',
-        });
-
-        const result = await response.json();
-
-        if (result.success) {
-          try { sessionStorage.removeItem('masarCheckoutCart'); } catch(e) {}
-          try { localStorage.removeItem('masarCart'); } catch(e) {}
-          showThankYou(result.order_number, 'paypal', totals.total);
-        } else {
-          showError('Zahlung erfolgt, aber Bestellung konnte nicht gespeichert werden: ' + (result.error || '') + ' Bitte kontaktieren Sie uns unter info@masar-werbeagentur.de mit Ihrer PayPal-Transaktions-ID: ' + paypalOrderId);
-        }
-
-      } catch(err) {
-        showError('Zahlung war erfolgreich (ID: ' + paypalOrderId + '), aber ein Fehler beim Speichern ist aufgetreten. Bitte kontaktieren Sie uns: info@masar-werbeagentur.de');
-      }
-    },
-
-    onError: function(err) {
-      console.error('PayPal error:', err);
-      showError('PayPal-Fehler aufgetreten. Bitte erneut versuchen oder Vorkasse wählen.');
-    },
-
-    onCancel: function() {
-      showError('PayPal-Zahlung abgebrochen. Sie können erneut versuchen oder Vorkasse wählen.');
-    },
-  }).render('#paypalButtonContainer');
 }
 
 // ── Init ──────────────────────────────────────────────────────

@@ -13,9 +13,11 @@ define('SHOP_URL',     SITE_URL . '/shop/');
 define('ADMIN_EMAIL',  'info@masar-werbeagentur.de');
 define('SHOP_NAME',    'Masar Print Shop');
 
-// PayPal Sandbox credentials (replace with live for production)
-define('PAYPAL_CLIENT_ID', 'AW0f5CRqSampleSandboxClientIDReplaceMe');
-define('PAYPAL_ENV',       'sandbox'); // 'sandbox' or 'live'
+// Stripe — get keys from dashboard.stripe.com → Developers → API keys
+// Use pk_test_ / sk_test_ while testing, pk_live_ / sk_live_ for production
+define('STRIPE_PUBLIC_KEY', 'pk_REPLACE_WITH_YOUR_STRIPE_PUBLIC_KEY');
+define('STRIPE_SECRET_KEY', 'sk_REPLACE_WITH_YOUR_STRIPE_SECRET_KEY');
+define('STRIPE_CURRENCY',   'eur');
 
 // Bank transfer details
 define('BANK_IBAN',    'DE89 3704 0044 0532 0130 00');

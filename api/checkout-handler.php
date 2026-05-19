@@ -60,11 +60,17 @@ $productName    = sanitize($_POST['product_name']);
 $productOptions = sanitize($_POST['product_options'] ?? '');
 $notes          = sanitize($_POST['notes'] ?? '');
 $paymentMethod  = sanitize($_POST['payment_method']);
-$paypalOrderId  = sanitize($_POST['paypal_order_id'] ?? '');
+$stripePaymentIntentId = sanitize($_POST['stripe_payment_intent_id'] ?? '');
 
 // Strip CR/LF from fields used in email subjects or headers (prevent header injection)
-$name  = str_replace(["\r", "\n"], ' ', $name);
-$email = str_replace(["\r", "\n"], '',  $email);
+$name                  = str_replace(["\r", "\n"], ' ', $name);
+$email                 = str_replace(["\r", "\n"], '',  $email);
+$stripePaymentIntentId = str_replace(["\r", "\n"], '',  $stripePaymentIntentId);
+
+// Validate Stripe PaymentIntent ID format if provided
+if ($stripePaymentIntentId !== '' && !preg_match('/^pi_[a-zA-Z0-9_]+$/', $stripePaymentIntentId)) {
+    jsonError('Ungültige Zahlungs-ID.');
+}
 
 // Validate email
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -72,7 +78,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Validate payment_method
-if (!in_array($paymentMethod, ['bank', 'paypal'], true)) {
+if (!in_array($paymentMethod, ['bank', 'stripe'], true)) {
     jsonError('Ungültige Zahlungsart.');
 }
 
@@ -201,8 +207,30 @@ try {
     jsonError('Datenbankfehler. Bitte versuchen Sie es erneut.', 500);
 }
 
-// Always pending — admin must verify payment; never trust client-supplied order IDs
+// Verify Stripe payment server-side before marking as paid
 $paymentStatus = 'pending';
+if ($paymentMethod === 'stripe' && $stripePaymentIntentId !== '') {
+    $paymentStatus = verifyStripePaymentIntent($stripePaymentIntentId) ? 'paid' : 'pending';
+}
+
+function verifyStripePaymentIntent(string $intentId): bool {
+    if (!defined('STRIPE_SECRET_KEY') || str_starts_with(STRIPE_SECRET_KEY, 'sk_REPLACE')) {
+        return false;
+    }
+    $ch = curl_init('https://api.stripe.com/v1/payment_intents/' . urlencode($intentId));
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_USERPWD        => STRIPE_SECRET_KEY . ':',
+        CURLOPT_TIMEOUT        => 10,
+        CURLOPT_HTTPHEADER     => ['Stripe-Version: 2024-11-20.acacia'],
+    ]);
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    if ($httpCode !== 200) return false;
+    $data = json_decode($response, true);
+    return ($data['status'] ?? '') === 'succeeded';
+}
 
 try {
     $stmt = $pdo->prepare("
@@ -218,6 +246,12 @@ try {
             'Eingegangen', :file_path, :file_original_name, :notes
         )
     ");
+
+    // Append Stripe reference to notes so it's visible in admin dashboard
+    $notesWithRef = $notes;
+    if ($stripePaymentIntentId !== '') {
+        $notesWithRef = trim('[Stripe: ' . $stripePaymentIntentId . ']' . ($notes ? "\n" . $notes : ''));
+    }
 
     $stmt->execute([
         ':order_number'       => $orderNumber,
@@ -235,7 +269,7 @@ try {
         ':payment_status'     => $paymentStatus,
         ':file_path'          => $storedName,
         ':file_original_name' => $originalName,
-        ':notes'              => $notes,
+        ':notes'              => $notesWithRef,
     ]);
 } catch (PDOException $e) {
     @unlink($destPath);
@@ -264,12 +298,12 @@ if ($paymentMethod === 'bank') {
 <p style='color:#5a7070;font-size:13px;'>Bitte geben Sie die Bestellnummer <strong>{$orderNumber}</strong> als Verwendungszweck an. Nach Zahlungseingang beginnen wir sofort mit der Produktion.</p>";
 }
 
-$paypalSection = '';
-if ($paymentMethod === 'paypal') {
-    $paypalSection = "
+$stripeSection = '';
+if ($paymentMethod === 'stripe') {
+    $stripeSection = "
 <div style='background:#f0f7f5;border-left:4px solid #58d0bd;padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0;'>
-  <strong style='color:#132e50;'>Ihre PayPal-Zahlung wurde erfolgreich verarbeitet.</strong><br>
-  <span style='color:#5a7070;font-size:14px;'>PayPal-Transaktions-ID: " . htmlspecialchars($paypalOrderId) . "</span>
+  <strong style='color:#132e50;'>Ihre Kartenzahlung wurde erfolgreich verarbeitet.</strong><br>
+  <span style='color:#5a7070;font-size:14px;'>Zahlungs-Referenz: " . htmlspecialchars($stripePaymentIntentId) . "</span>
 </div>";
 }
 
@@ -311,7 +345,7 @@ $customerEmailHtml = "<!DOCTYPE html>
       </tr>
     </table>
 
-    {$bankSection}{$paypalSection}
+    {$bankSection}{$stripeSection}
 
     <div style='border:1px solid #e0eaea;border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;'>
       <strong style='color:#132e50;display:block;margin-bottom:.8rem;'>Lieferdetails</strong>
@@ -352,7 +386,7 @@ $adminEmailHtml = "<!DOCTYPE html>
       <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Optionen</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>{$productOptions}</td></tr>
       <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Menge</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>{$quantity} Stück</td></tr>
       <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Gesamtbetrag</td><td style='padding:8px 0;border-top:1px solid #e0eaea;font-size:18px;font-weight:900;color:#58d0bd;'>" . fmtEur($totalPrice) . "</td></tr>
-      <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Zahlung</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>" . ($paymentMethod === 'bank' ? '🏦 Vorkasse (Überweisung)' : '💳 PayPal') . "</td></tr>
+      <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Zahlung</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>" . ($paymentMethod === 'bank' ? '🏦 Vorkasse (Überweisung)' : '💳 Kreditkarte (Stripe)') . "</td></tr>
       <tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Druckdatei</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>{$originalName}<br><span style='font-size:12px;color:#5a7070;'>Gespeichert als: {$storedName}</span></td></tr>
       " . ($notes ? "<tr><td style='padding:8px 0;color:#5a7070;border-top:1px solid #e0eaea;'>Anmerkungen</td><td style='padding:8px 0;border-top:1px solid #e0eaea;'>{$notes}</td></tr>" : '') . "
     </table>
