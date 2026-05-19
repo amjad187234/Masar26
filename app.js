@@ -491,7 +491,7 @@ const FAQ = {
 // ═══════════════════════════════════════════════════════════
 // INIT ALL MODULES
 // ═══════════════════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
+function initAll() {
   Nav.init();
   Reveal.init();
   StickyCta.init();
@@ -500,7 +500,12 @@ document.addEventListener('DOMContentLoaded', () => {
   MasarPrice.init();
   BeforeAfterSlider.init();
   TestiSlider.init();
-});
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
+}
 
 // Export for use in HTML
 window.MasarForm  = MasarForm;

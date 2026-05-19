@@ -361,10 +361,10 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .calc-tab{padding:9px 14px;border:2px solid var(--border);border-radius:8px;background:#fff;color:var(--text);font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.2;}
 .calc-tab:hover{border-color:var(--teal);color:var(--navy);}
 .calc-tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
-.calc-chips{display:flex;gap:.45rem;flex-wrap:wrap;min-height:36px;}
-.calc-chip{padding:7px 13px;border:1.5px solid var(--border);border-radius:6px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;}
-.calc-chip:hover:not(.active){border-color:var(--teal);color:var(--teal);}
-.calc-chip.active{background:var(--teal);color:var(--navy);border-color:var(--teal);font-weight:800;}
+.calc-chips{display:flex;gap:.5rem;flex-wrap:wrap;min-height:40px;padding:.2rem 0;}
+.calc-chip{padding:9px 16px;border:2px solid #c8d6d6;border-radius:8px;background:var(--off);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;}
+.calc-chip:hover:not(.active){border-color:var(--teal);color:var(--teal);background:#e8f8f5;}
+.calc-chip.active{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:800;}
 .calc-options{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap;}
 .calc-check{display:flex;align-items:center;gap:.5rem;font-size:14px;cursor:pointer;user-select:none;}
 .calc-check input{accent-color:var(--teal);width:18px;height:18px;cursor:pointer;flex-shrink:0;}
@@ -419,17 +419,23 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .testi-nav:hover{border-color:var(--teal);}
 
 /* ═══ SERVICE PICKER ═══ */
-.svc-picker{border:2px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;}
+.svc-toggle{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:all .2s;display:flex;justify-content:space-between;align-items:center;margin-bottom:0;}
+.svc-toggle:hover{border-color:var(--teal);}
+.svc-toggle.has-val{border-color:var(--teal);color:var(--text);}
+.svc-toggle-arrow{font-size:11px;transition:transform .25s;display:inline-block;color:var(--muted);}
+.svc-toggle.open .svc-toggle-arrow{transform:rotate(180deg);}
+.svc-picker{border:2px solid var(--border);border-top:none;border-radius:0 0 10px 10px;overflow:hidden;background:#fff;display:none;}
+.svc-picker.open{display:block;}
 .svc-pick-cat{border-bottom:1px solid var(--border);}
 .svc-pick-cat:last-child{border-bottom:none;}
 .svc-pick-cat-lbl{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:8px 14px;background:var(--off);border-bottom:1px solid var(--border);}
 .svc-pick-opts{display:flex;flex-wrap:wrap;gap:6px;padding:10px 12px;}
-.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:#fff;color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
-.svc-pick-opt:hover{border-color:var(--teal);color:var(--teal);}
+.svc-pick-opt{padding:8px 13px;border:1.5px solid var(--border);border-radius:6px;background:var(--off);color:var(--text);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif;line-height:1.3;}
+.svc-pick-opt:hover{border-color:var(--teal);color:var(--teal);background:#e8f8f5;}
 .svc-pick-opt.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
 .svc-pick-other{display:block;margin:0 12px 12px;width:calc(100% - 24px);text-align:center;background:var(--off);}
 .svc-pick-other.picked{background:var(--navy);color:#fff;border-color:var(--navy);}
-.svc-picked-lbl{font-size:12px;color:var(--teal);font-weight:700;margin-top:5px;padding:2px;}
+.svc-picked-lbl{font-size:12px;color:var(--teal);font-weight:700;margin-top:6px;padding:2px;}
 
 </style>
 <script type="application/ld+json">
@@ -1037,7 +1043,11 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
           <div class="fg">
             <label>Gewünschte Leistung *</label>
             <input type="hidden" name="leistung" id="selectedService">
-            <div class="svc-picker">
+            <button type="button" class="svc-toggle" id="svcToggle">
+              <span class="svc-toggle-txt">Leistung auswählen...</span>
+              <span class="svc-toggle-arrow">▼</span>
+            </button>
+            <div class="svc-picker" id="svcPickerPanel">
               <div class="svc-pick-cat">
                 <div class="svc-pick-cat-lbl">💡 Werbetechnik</div>
                 <div class="svc-pick-opts">
@@ -1158,17 +1168,41 @@ const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
-// ═══ SERVICE PICKER ═══
-document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.svc-pick-opt').forEach(b=>b.classList.remove('picked'));
-    btn.classList.add('picked');
-    const hidden=document.getElementById('selectedService');
-    const lbl=document.getElementById('svcPickedLbl');
-    if(hidden) hidden.value=btn.dataset.val;
-    if(lbl){lbl.textContent='✓ Ausgewählt: '+btn.dataset.val;lbl.style.display='block';}
+// ═══ SERVICE PICKER — collapsible + multi-select ═══
+(function(){
+  const toggle=document.getElementById('svcToggle');
+  const panel=document.getElementById('svcPickerPanel');
+  const hidden=document.getElementById('selectedService');
+  const lbl=document.getElementById('svcPickedLbl');
+  const toggleTxt=toggle?.querySelector('.svc-toggle-txt');
+
+  toggle?.addEventListener('click',()=>{
+    const isOpen=panel.classList.contains('open');
+    panel.classList.toggle('open',!isOpen);
+    toggle.classList.toggle('open',!isOpen);
   });
-});
+
+  function updatePicked(){
+    const picked=[...document.querySelectorAll('.svc-pick-opt.picked')].map(b=>b.dataset.val);
+    if(hidden)hidden.value=picked.join(', ');
+    if(picked.length>0){
+      if(lbl){lbl.textContent='✓ '+picked.join(' · ');lbl.style.display='block';}
+      if(toggleTxt)toggleTxt.textContent=picked.length+' Leistung'+(picked.length>1?'en':'')+' gewählt';
+      toggle?.classList.add('has-val');
+    }else{
+      if(lbl)lbl.style.display='none';
+      if(toggleTxt)toggleTxt.textContent='Leistung auswählen...';
+      toggle?.classList.remove('has-val');
+    }
+  }
+
+  document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.classList.toggle('picked');
+      updatePicked();
+    });
+  });
+})();
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>

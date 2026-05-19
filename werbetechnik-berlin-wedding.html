@@ -168,10 +168,15 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .bg-alt{background:rgba(255,255,255,.015)}
 @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.svc-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.area-grid{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr}.area-grid{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}#stickyCta{flex-direction:column;text-align:center}}
-.svc-picker{display:flex;flex-wrap:wrap;gap:.5rem;padding:.4rem 0;}
+.svc-toggle{width:100%;background:rgba(255,255,255,.07);border:1.5px solid rgba(88,208,189,.3);border-radius:8px;padding:12px 14px;color:rgba(255,255,255,.55);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;text-align:left;transition:all .2s;display:flex;justify-content:space-between;align-items:center;}
+.svc-toggle:hover,.svc-toggle.has-val{border-color:var(--teal);color:#fff;}
+.svc-toggle-arrow{font-size:11px;transition:transform .25s;display:inline-block;opacity:.6;}
+.svc-toggle.open .svc-toggle-arrow{transform:rotate(180deg);}
+.svc-picker{display:none;flex-wrap:wrap;gap:.5rem;padding:.6rem 0;}
+.svc-picker.open{display:flex;}
 .svc-pick-opt{background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);border-radius:8px;padding:9px 14px;color:rgba(255,255,255,.75);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;text-align:left;}
 .svc-pick-opt:hover{border-color:var(--teal);color:#fff;background:rgba(88,208,189,.1);}
-.svc-pick-opt.picked{background:var(--navy);border-color:var(--teal);color:var(--teal);}
+.svc-pick-opt.picked{background:rgba(88,208,189,.2);border-color:var(--teal);color:var(--teal);}
 .svc-picked-lbl{font-size:13px;color:var(--teal);margin-top:.4rem;font-weight:600;}
 </style>
 </head>
@@ -447,7 +452,11 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
         <div class="fg">
           <label>Leistung gewünscht</label>
           <input type="hidden" name="leistung" id="selectedService">
-          <div class="svc-picker">
+          <button type="button" class="svc-toggle" id="svcToggle">
+            <span class="svc-toggle-txt">Leistung auswählen...</span>
+            <span class="svc-toggle-arrow">▼</span>
+          </button>
+          <div class="svc-picker" id="svcPickerPanel">
             <button type="button" class="svc-pick-opt" data-val="Leuchtreklame / Lichtwerbung">💡 Leuchtreklame</button>
             <button type="button" class="svc-pick-opt" data-val="Fahrzeugbeschriftung">🚗 Fahrzeugbeschriftung</button>
             <button type="button" class="svc-pick-opt" data-val="Schild / Banner / Außenwerbung">🪧 Schild / Banner</button>
@@ -529,16 +538,33 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(!isOpen)btn.classList.add('open');
   });
 });
-document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.svc-pick-opt').forEach(b=>b.classList.remove('picked'));
-    btn.classList.add('picked');
-    const hidden=document.getElementById('selectedService');
-    const lbl=document.getElementById('svcPickedLbl');
-    if(hidden)hidden.value=btn.dataset.val;
-    if(lbl){lbl.textContent='✓ Ausgewählt: '+btn.dataset.val;lbl.style.display='block';}
+(function(){
+  const toggle=document.getElementById('svcToggle');
+  const panel=document.getElementById('svcPickerPanel');
+  const hidden=document.getElementById('selectedService');
+  const lbl=document.getElementById('svcPickedLbl');
+  const toggleTxt=toggle?.querySelector('.svc-toggle-txt');
+  toggle?.addEventListener('click',()=>{
+    panel.classList.toggle('open');
+    toggle.classList.toggle('open');
   });
-});
+  document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btn.classList.toggle('picked');
+      const picked=[...document.querySelectorAll('.svc-pick-opt.picked')].map(b=>b.dataset.val);
+      if(hidden)hidden.value=picked.join(', ');
+      if(picked.length>0){
+        if(lbl){lbl.textContent='✓ '+picked.join(' · ');lbl.style.display='block';}
+        if(toggleTxt)toggleTxt.textContent=picked.length+' gewählt';
+        toggle?.classList.add('has-val');
+      }else{
+        if(lbl)lbl.style.display='none';
+        if(toggleTxt)toggleTxt.textContent='Leistung auswählen...';
+        toggle?.classList.remove('has-val');
+      }
+    });
+  });
+})();
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
