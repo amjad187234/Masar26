@@ -295,18 +295,23 @@
     renderNow();
   }
 
-  /* ── Resize canvas (dpr-aware, no style override) ─────────── */
+  /* ── Resize canvas ─────────────────────────────────────────── */
+  /*  Canvas elements display at their intrinsic pixel size unless  */
+  /*  style.width/height are explicitly forced in JS.               */
   function resizeCanvas() {
     if (!canvas) return;
     dpr = window.devicePixelRatio || 1;
     var wrap = canvas.parentElement;
-    /* Use wrap's rendered size (CSS controls display dimensions) */
-    var cssW = wrap.clientWidth  || 640;
-    var cssH = wrap.clientHeight || Math.round(cssW * 9 / 16);
-    /* Physical pixels — canvas.style.width/height left to CSS */
-    canvas.width  = Math.round(cssW * dpr);
-    canvas.height = Math.round(cssH * dpr);
-    /* Absolute transform reset (ctx.scale stacks on each call) */
+    /* clientWidth is reliable; always derive height from width */
+    var cssW = Math.round(wrap.clientWidth) || 640;
+    var cssH = Math.round(cssW * 9 / 16);
+    /* Force CSS display size (overrides canvas intrinsic dimensions) */
+    canvas.style.width  = cssW + 'px';
+    canvas.style.height = cssH + 'px';
+    /* Physical resolution (sharp on retina / high-dpr mobile) */
+    canvas.width  = cssW * dpr;
+    canvas.height = cssH * dpr;
+    /* Reset transform to absolute scale (prevent stacking) */
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
 

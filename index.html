@@ -1163,18 +1163,20 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         </label>
       </div>
 
-      <button class="vis-btn vis-btn-primary" id="visDownload"
-              aria-label="Simulation als PNG herunterladen">
-        ⬇ Simulation speichern
-      </button>
-      <button class="vis-btn vis-btn-secondary" id="visShare"
-              aria-label="Simulations-Link teilen">
-        🔗 Link kopieren & teilen
-      </button>
-      <button class="vis-btn vis-btn-danger" id="visReset"
-              aria-label="Visualizer zurücksetzen und neu beginnen">
-        ↺ Von vorne beginnen
-      </button>
+      <div class="vis-btn-group">
+        <button class="vis-btn vis-btn-primary" id="visDownload"
+                aria-label="Simulation als PNG herunterladen">
+          ⬇ Speichern
+        </button>
+        <button class="vis-btn vis-btn-secondary" id="visShare"
+                aria-label="Simulations-Link teilen">
+          🔗 Link teilen
+        </button>
+        <button class="vis-btn vis-btn-danger" id="visReset"
+                aria-label="Visualizer zurücksetzen">
+          ↺ Von vorne beginnen
+        </button>
+      </div>
     </div>
 
     <!-- Canvas -->
