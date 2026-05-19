@@ -10,8 +10,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <meta name="theme-color" content="#58d0bd">
 <link rel="stylesheet" href="/fonts.css">
-<!-- Stripe.js loaded upfront for instant card element init -->
-<script src="https://js.stripe.com/v3/" async></script>
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
 <style>
@@ -235,22 +233,19 @@ nav {
 }
 .pay-card.selected .pay-card-check::after { content:'✓'; }
 
-/* Stripe card container */
+/* Stripe redirect info box */
 #stripeContainer { display:none; margin-top:1rem; }
-.stripe-card-wrap {
-  background:var(--off);
-  border:1.5px solid var(--border);
+.stripe-info-box {
+  background:var(--teal-l);
+  border:1.5px solid var(--teal);
   border-radius:8px;
-  padding:12px 14px;
-  transition:border-color .2s;
+  padding:1rem 1.2rem;
+  font-size:13px; color:var(--navy);
+  display:flex; align-items:flex-start; gap:.7rem;
 }
-.stripe-card-wrap.focused { border-color:var(--teal); background:#fff; }
-.stripe-card-wrap.invalid  { border-color:var(--red);  background:var(--red-l); }
-#stripeCardError {
-  display:none; color:var(--red); font-size:12px;
-  margin-top:.4rem; padding:.35rem .8rem;
-  background:var(--red-l); border:1px solid var(--red-border); border-radius:6px;
-}
+.stripe-info-box .sib-icon { font-size:1.4rem; flex-shrink:0; margin-top:.05rem; }
+.stripe-info-box strong { display:block; margin-bottom:.2rem; }
+.stripe-info-box span { color:var(--muted); font-size:12px; }
 
 /* ── DSGVO checkbox ── */
 .dsgvo-row {
@@ -630,17 +625,20 @@ footer a:hover { color:var(--teal); }
                   onchange="selectPayment('stripe')">
                 <div class="pay-card-check"></div>
                 <div class="pay-card-icon">💳</div>
-                <div class="pay-card-name">Kreditkarte (Stripe)</div>
-                <div class="pay-card-desc">Visa, Mastercard & mehr. Sichere SSL-Zahlung über Stripe.</div>
+                <div class="pay-card-name">Online bezahlen (Stripe)</div>
+                <div class="pay-card-desc">Kreditkarte, Klarna, PayPal & mehr. Sicher über Stripe.</div>
               </label>
             </div>
 
-            <!-- Stripe card element (shown when Stripe is selected) -->
+            <!-- Stripe redirect info (shown when Stripe is selected) -->
             <div id="stripeContainer">
-              <div class="stripe-card-wrap" id="stripeCardWrap">
-                <div id="stripeCardElement"></div>
+              <div class="stripe-info-box">
+                <div class="sib-icon">🔒</div>
+                <div>
+                  <strong>Sichere Zahlung über Stripe</strong>
+                  <span>Sie werden nach dem Klick auf "Weiter zur Zahlung" zu Stripe weitergeleitet. Akzeptierte Zahlungsmethoden: Kreditkarte, Klarna, PayPal und mehr.</span>
+                </div>
               </div>
-              <div id="stripeCardError"></div>
             </div>
 
             <!-- ── Notes ── -->
@@ -695,19 +693,9 @@ footer a:hover { color:var(--teal); }
 <script>
 'use strict';
 
-// ── Config (must match shop.js RESELLER_MARKUP) ───────────────
-const RESELLER_MARKUP = 1.30;
-
-// ── Stripe Public Key — replace with yours from dashboard.stripe.com ──
-// Use pk_test_... for testing, pk_live_... for production
-const STRIPE_PUBLIC_KEY = 'pk_REPLACE_WITH_YOUR_STRIPE_PUBLIC_KEY';
-
 // ── State ─────────────────────────────────────────────────────
-let checkoutCart  = [];
-let selectedFile  = null;
-let stripeInstance = null;
-let stripeCard     = null;
-let stripeInited   = false;
+let checkoutCart = [];
+let selectedFile = null;
 
 // ── Utility ───────────────────────────────────────────────────
 function fmtEur(n) {
@@ -779,110 +767,12 @@ function selectPayment(method) {
   const submitLbl = document.getElementById('submitLabel');
 
   if (method === 'stripe') {
-    stripeBox.style.display = 'block';
-    if (submitLbl) submitLbl.textContent = 'Jetzt mit Karte bezahlen →';
-    initStripeElement();
+    if (stripeBox) stripeBox.style.display = 'block';
+    if (submitLbl) submitLbl.textContent = 'Weiter zur sicheren Zahlung →';
   } else {
-    stripeBox.style.display = 'none';
+    if (stripeBox) stripeBox.style.display = 'none';
     if (submitLbl) submitLbl.textContent = 'Bestellung kostenpflichtig absenden →';
   }
-}
-
-// ── Stripe: init card element (called once when Stripe is first selected) ──
-function initStripeElement() {
-  if (stripeInited) return;
-  stripeInited = true;
-
-  if (!window.Stripe) {
-    document.getElementById('stripeContainer').innerHTML =
-      '<p style="color:var(--red);font-size:13px;padding:.5rem 0;">⚠ Stripe konnte nicht geladen werden. Bitte Seite neu laden.</p>';
-    return;
-  }
-
-  stripeInstance = Stripe(STRIPE_PUBLIC_KEY);
-  const elements = stripeInstance.elements();
-
-  stripeCard = elements.create('card', {
-    style: {
-      base: {
-        fontFamily: '"Barlow","Segoe UI",sans-serif',
-        fontSize:   '15px',
-        color:      '#1a2a2a',
-        '::placeholder': { color: 'rgba(90,112,112,.45)' },
-      },
-      invalid: { color: '#e53e3e' },
-    },
-    hidePostalCode: true,
-  });
-
-  stripeCard.mount('#stripeCardElement');
-
-  const wrap = document.getElementById('stripeCardWrap');
-  stripeCard.on('focus', () => wrap?.classList.add('focused'));
-  stripeCard.on('blur',  () => wrap?.classList.remove('focused'));
-  stripeCard.on('change', ({ error }) => {
-    const errEl = document.getElementById('stripeCardError');
-    if (!errEl) return;
-    if (error) {
-      wrap?.classList.add('invalid');
-      errEl.textContent   = error.message;
-      errEl.style.display = 'block';
-    } else {
-      wrap?.classList.remove('invalid');
-      errEl.style.display = 'none';
-    }
-  });
-}
-
-// ── Stripe: create intent + confirm card payment ──────────────
-async function processStripePayment(totalEur) {
-  if (!stripeInstance || !stripeCard) {
-    showError('Kartenzahlung nicht bereit. Bitte Seite neu laden.');
-    return null;
-  }
-
-  // 1. Create PaymentIntent server-side
-  let clientSecret;
-  try {
-    const res  = await fetch('/api/create-payment-intent.php', {
-      method:      'POST',
-      headers:     { 'Content-Type': 'application/json' },
-      body:        JSON.stringify({ amount: totalEur }),
-      credentials: 'same-origin',
-    });
-    const data = await res.json();
-    if (!data.client_secret) {
-      showError(data.error || 'Zahlung konnte nicht gestartet werden.');
-      return null;
-    }
-    clientSecret = data.client_secret;
-  } catch(e) {
-    showError('Verbindungsfehler beim Initialisieren der Zahlung. Bitte erneut versuchen.');
-    return null;
-  }
-
-  // 2. Confirm card payment via Stripe.js
-  const { error, paymentIntent } = await stripeInstance.confirmCardPayment(clientSecret, {
-    payment_method: {
-      card: stripeCard,
-      billing_details: {
-        name:  document.getElementById('name')?.value.trim()  || '',
-        email: document.getElementById('email')?.value.trim() || '',
-      },
-    },
-  });
-
-  if (error) {
-    showError(error.message || 'Kartenzahlung fehlgeschlagen. Bitte erneut versuchen.');
-    return null;
-  }
-
-  if (paymentIntent.status !== 'succeeded') {
-    showError('Zahlung nicht abgeschlossen (Status: ' + paymentIntent.status + '). Bitte erneut versuchen.');
-    return null;
-  }
-
-  return paymentIntent.id;
 }
 
 // ── File drag & drop ──────────────────────────────────────────
@@ -896,7 +786,6 @@ function initFileUpload() {
 
   if (!zone || !input) return;
 
-  // Drag events on the zone
   zone.addEventListener('dragover', e => {
     e.preventDefault();
     zone.classList.add('drag-over');
@@ -926,12 +815,10 @@ function initFileUpload() {
   });
 
   function handleFile(file) {
-    // Client-side validation: max 50MB
     if (file.size > 50 * 1024 * 1024) {
       showError('Datei ist zu groß. Maximum: 50 MB.');
       return;
     }
-    // Allowed extensions
     const allowed = ['.pdf','.webp','.png','.jpg','.jpeg'];
     const ext = '.' + file.name.split('.').pop().toLowerCase();
     if (!allowed.includes(ext)) {
@@ -949,7 +836,7 @@ function initFileUpload() {
 
 // ── Form validation ───────────────────────────────────────────
 function validateForm() {
-  let ok  = true;
+  let ok = true;
   const errors = [];
 
   function need(id, label) {
@@ -968,14 +855,12 @@ function validateForm() {
   need('plz',     'PLZ');
   need('city',    'Stadt');
 
-  // Email format
   const emailEl = document.getElementById('email');
   if (emailEl && emailEl.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
     emailEl.classList.add('error');
     ok = false; errors.push('E-Mail-Adresse ungültig.');
   }
 
-  // File
   if (!selectedFile) {
     ok = false; errors.push('Druckdatei fehlt.');
     document.getElementById('uploadZone').style.borderColor = 'var(--red)';
@@ -983,7 +868,6 @@ function validateForm() {
     document.getElementById('uploadZone').style.borderColor = '';
   }
 
-  // DSGVO
   if (!document.getElementById('dsgvo')?.checked) {
     ok = false; errors.push('Bitte Datenschutzerklärung und AGB akzeptieren.');
   }
@@ -1014,37 +898,15 @@ function buildAddress() {
   return `${street}\n${plz} ${city}`;
 }
 
-// ── Build product_options string from cart ────────────────────
-function buildProductOptionsStr() {
-  // Summarize all cart items' options into one string
-  return checkoutCart.map(item => {
-    const opts = Object.values(item.opts || {}).join(', ');
-    return `${item.name}${opts ? ' (' + opts + ')' : ''} × ${item.qty}`;
-  }).join(' | ');
-}
-
-// ── Get primary product info from cart (first item) ───────────
-function getPrimaryProduct() {
-  if (checkoutCart.length === 0) return { id:'', name:'' };
-  const first = checkoutCart[0];
-  return {
-    id:   first.id   || '',
-    name: checkoutCart.length === 1 ? first.name : `${first.name} + ${checkoutCart.length - 1} weitere`,
-  };
-}
-
 // ── Get totals from cart ──────────────────────────────────────
 function getCartTotals() {
-  const qty        = checkoutCart.reduce((s,i) => s + i.qty, 0);
-  const total      = checkoutCart.reduce((s,i) => s + i.clientTotal, 0);
-  // Weighted average unit price
-  const unitPrice  = checkoutCart.length === 1
-    ? checkoutCart[0].clientUnit
-    : (total / qty);
+  const qty       = checkoutCart.reduce((s,i) => s + i.qty, 0);
+  const total     = checkoutCart.reduce((s,i) => s + i.clientTotal, 0);
+  const unitPrice = checkoutCart.length === 1 ? checkoutCart[0].clientUnit : (total / qty);
   return { qty, total, unitPrice };
 }
 
-// ── Submit non-PayPal order ───────────────────────────────────
+// ── Submit handler ────────────────────────────────────────────
 document.getElementById('checkoutForm')?.addEventListener('submit', async function(e) {
   e.preventDefault();
   clearError();
@@ -1059,124 +921,152 @@ document.getElementById('checkoutForm')?.addEventListener('submit', async functi
   const label     = document.getElementById('submitLabel');
   const spinner   = document.getElementById('submitSpinner');
 
-  // Loading state
   submitBtn.disabled   = true;
   if (label)   label.style.display   = 'none';
   if (spinner) spinner.style.display = 'inline-block';
 
-  try {
-    const product   = getPrimaryProduct();
-    const totals    = getCartTotals();
-    const address   = buildAddress();
-    const optsStr   = buildProductOptionsStr();
-    const payMethod = document.querySelector('input[name="payment_method"]:checked')?.value || 'bank';
+  const payMethod = document.querySelector('input[name="payment_method"]:checked')?.value || 'bank';
+  const address   = buildAddress();
+  const totals    = getCartTotals();
 
-    // Stripe: process card payment before submitting order
-    let stripePaymentIntentId = '';
-    if (payMethod === 'stripe') {
-      const intentId = await processStripePayment(totals.total);
-      if (!intentId) {
-        submitBtn.disabled   = false;
-        if (label)   label.style.display   = 'inline';
-        if (spinner) spinner.style.display = 'none';
-        return;
-      }
-      stripePaymentIntentId = intentId;
-    }
+  // Cart JSON for server-side price verification (Stripe flow)
+  const cartJson = JSON.stringify(checkoutCart.map(item => ({
+    id:   item.id,
+    qty:  item.qty,
+    opts: item.opts || {},
+  })));
 
-    const formData = new FormData();
-    formData.append('name',                     document.getElementById('name')?.value.trim()    || '');
-    formData.append('email',                    document.getElementById('email')?.value.trim()   || '');
-    formData.append('company',                  document.getElementById('company')?.value.trim() || '');
-    formData.append('phone',                    document.getElementById('phone')?.value.trim()   || '');
-    formData.append('address',                  address);
-    formData.append('vat',                      document.getElementById('vat')?.value.trim()     || '');
-    formData.append('product_id',               product.id);
-    formData.append('product_name',             product.name);
-    formData.append('product_options',          optsStr);
-    formData.append('quantity',                 String(totals.qty));
-    formData.append('unit_price',               String(totals.unitPrice.toFixed(4)));
-    formData.append('total_price',              String(totals.total.toFixed(2)));
-    formData.append('payment_method',           payMethod);
-    if (stripePaymentIntentId) formData.append('stripe_payment_intent_id', stripePaymentIntentId);
-    formData.append('notes',                    document.getElementById('notes')?.value.trim()   || '');
-    formData.append('print_file',               selectedFile, selectedFile.name);
+  // ── Progress bar animation ────────────────────────────────
+  const prog     = document.getElementById('uploadProgress');
+  const progFill = document.getElementById('uploadProgressFill');
+  if (prog)     prog.style.display = 'block';
+  if (progFill) progFill.style.width = '0%';
+  let fakeProgress = 0;
+  const ticker = setInterval(() => {
+    fakeProgress = Math.min(fakeProgress + 6, 80);
+    if (progFill) progFill.style.width = fakeProgress + '%';
+  }, 200);
 
-    // Animate progress bar
-    const prog     = document.getElementById('uploadProgress');
-    const progFill = document.getElementById('uploadProgressFill');
-    if (prog)     prog.style.display = 'block';
-    if (progFill) progFill.style.width = '0%';
-    let fakeProgress = 0;
-    const ticker = setInterval(() => {
-      fakeProgress = Math.min(fakeProgress + 8, 85);
-      if (progFill) progFill.style.width = fakeProgress + '%';
-    }, 200);
-
-    const response = await fetch('/api/checkout-handler.php', {
-      method:      'POST',
-      body:        formData,
-      credentials: 'same-origin',
-    });
-
+  const resetBtn = () => {
     clearInterval(ticker);
-    if (progFill) progFill.style.width = '100%';
+    submitBtn.disabled   = false;
+    if (label)   label.style.display   = 'inline';
+    if (spinner) spinner.style.display = 'none';
+    if (prog)    prog.style.display    = 'none';
+  };
 
-    const data = await response.json();
+  try {
+    if (payMethod === 'stripe') {
+      // ── Stripe hosted checkout ────────────────────────────
+      const formData = new FormData();
+      formData.append('name',      document.getElementById('name')?.value.trim()    || '');
+      formData.append('email',     document.getElementById('email')?.value.trim()   || '');
+      formData.append('company',   document.getElementById('company')?.value.trim() || '');
+      formData.append('phone',     document.getElementById('phone')?.value.trim()   || '');
+      formData.append('address',   address);
+      formData.append('vat',       document.getElementById('vat')?.value.trim()     || '');
+      formData.append('notes',     document.getElementById('notes')?.value.trim()   || '');
+      formData.append('cart_json', cartJson);
+      formData.append('print_file', selectedFile, selectedFile.name);
 
-    if (data.success) {
-      // Clear cart
-      try { sessionStorage.removeItem('masarCheckoutCart'); } catch(e) {}
-      try { localStorage.removeItem('masarCart'); } catch(e) {}
+      const res  = await fetch('/api/create-checkout-session.php', {
+        method:      'POST',
+        body:        formData,
+        credentials: 'same-origin',
+      });
+      clearInterval(ticker);
+      if (progFill) progFill.style.width = '100%';
 
-      // Show thank you
-      showThankYou(data.order_number, data.payment_method, totals.total);
+      const data = await res.json();
+
+      if (data.success && data.url) {
+        // Clear cart before redirect
+        try { sessionStorage.removeItem('masarCheckoutCart'); } catch(_) {}
+        try { localStorage.removeItem('masarCart'); } catch(_) {}
+        window.location.href = data.url;
+      } else {
+        showError(data.error || 'Checkout konnte nicht gestartet werden. Bitte erneut versuchen.');
+        resetBtn();
+      }
+
     } else {
-      showError(data.error || 'Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
-      submitBtn.disabled   = false;
-      if (label)   label.style.display   = 'inline';
-      if (spinner) spinner.style.display = 'none';
-      if (prog)    prog.style.display    = 'none';
+      // ── Bank transfer via checkout-handler.php ────────────
+      const product = checkoutCart.length > 0 ? checkoutCart[0] : {};
+      const productName = checkoutCart.length === 1
+        ? product.name
+        : `${product.name} + ${checkoutCart.length - 1} weitere`;
+      const optsStr = checkoutCart.map(item => {
+        const opts = Object.values(item.opts || {}).join(', ');
+        return `${item.name}${opts ? ' (' + opts + ')' : ''} × ${item.qty}`;
+      }).join(' | ');
+
+      const formData = new FormData();
+      formData.append('name',             document.getElementById('name')?.value.trim()    || '');
+      formData.append('email',            document.getElementById('email')?.value.trim()   || '');
+      formData.append('company',          document.getElementById('company')?.value.trim() || '');
+      formData.append('phone',            document.getElementById('phone')?.value.trim()   || '');
+      formData.append('address',          address);
+      formData.append('vat',              document.getElementById('vat')?.value.trim()     || '');
+      formData.append('product_id',       product.id || '');
+      formData.append('product_name',     productName);
+      formData.append('product_options',  optsStr);
+      formData.append('quantity',         String(totals.qty));
+      formData.append('unit_price',       String(totals.unitPrice.toFixed(4)));
+      formData.append('total_price',      String(totals.total.toFixed(2)));
+      formData.append('payment_method',   'bank');
+      formData.append('notes',            document.getElementById('notes')?.value.trim() || '');
+      formData.append('print_file',       selectedFile, selectedFile.name);
+
+      const res  = await fetch('/api/checkout-handler.php', {
+        method:      'POST',
+        body:        formData,
+        credentials: 'same-origin',
+      });
+      clearInterval(ticker);
+      if (progFill) progFill.style.width = '100%';
+
+      const data = await res.json();
+
+      if (data.success) {
+        try { sessionStorage.removeItem('masarCheckoutCart'); } catch(_) {}
+        try { localStorage.removeItem('masarCart'); } catch(_) {}
+        showThankYou(data.order_number, totals.total);
+      } else {
+        showError(data.error || 'Ein unbekannter Fehler ist aufgetreten. Bitte erneut versuchen.');
+        resetBtn();
+      }
     }
 
   } catch(err) {
     console.error('Checkout error:', err);
     showError('Verbindungsfehler. Bitte Seite neu laden und erneut versuchen.');
-    submitBtn.disabled   = false;
-    if (label)   label.style.display   = 'inline';
-    if (spinner) spinner.style.display = 'none';
+    resetBtn();
   }
 });
 
-// ── Show Thank-You state ───────────────────────────────────────
-function showThankYou(orderNumber, paymentMethod, totalPrice) {
-  const grid    = document.getElementById('checkoutGrid');
-  const panel   = document.getElementById('thankyouPanel');
+// ── Show bank-transfer thank-you state ────────────────────────
+function showThankYou(orderNumber, totalPrice) {
+  const grid  = document.getElementById('checkoutGrid');
+  const panel = document.getElementById('thankyouPanel');
 
   if (grid)  grid.style.display  = 'none';
   if (panel) panel.style.display = 'block';
   if (panel) panel.scrollIntoView({ behavior:'smooth', block:'start' });
 
-  const numEl     = document.getElementById('thankyouOrderNum');
-  const bankBox   = document.getElementById('bankDetails');
+  const numEl   = document.getElementById('thankyouOrderNum');
+  const bankBox = document.getElementById('bankDetails');
+  const subEl   = document.getElementById('thankyouSub');
+  const bankRef = document.getElementById('bankRef');
+  const bankAmt = document.getElementById('bankAmount');
+
+  if (numEl)   numEl.textContent   = orderNumber || '–';
+  if (bankBox) bankBox.style.display = 'block';
+  if (bankRef) bankRef.textContent  = orderNumber || '–';
+  if (bankAmt) bankAmt.textContent  = fmtEur(totalPrice);
+  if (subEl)   subEl.textContent    = 'Bitte überweisen Sie den Betrag mit der Bestellnummer als Verwendungszweck.';
+
   const stripeBox = document.getElementById('stripeDetails');
-  const subEl     = document.getElementById('thankyouSub');
-  const bankRef   = document.getElementById('bankRef');
-  const bankAmt   = document.getElementById('bankAmount');
-
-  if (numEl) numEl.textContent = orderNumber || '–';
-
-  if (paymentMethod === 'bank') {
-    if (bankBox)   bankBox.style.display   = 'block';
-    if (stripeBox) stripeBox.style.display = 'none';
-    if (bankRef)   bankRef.textContent     = orderNumber || '–';
-    if (bankAmt)   bankAmt.textContent     = fmtEur(totalPrice);
-    if (subEl)     subEl.textContent       = 'Bitte überweisen Sie den Betrag mit der Bestellnummer als Verwendungszweck.';
-  } else {
-    if (bankBox)   bankBox.style.display   = 'none';
-    if (stripeBox) stripeBox.style.display = 'block';
-    if (subEl)     subEl.textContent       = 'Ihre Kartenzahlung wurde erfolgreich verarbeitet. Wir beginnen sofort mit der Produktion.';
-  }
+  if (stripeBox) stripeBox.style.display = 'none';
 }
 
 // ── Init ──────────────────────────────────────────────────────
@@ -1184,12 +1074,10 @@ document.addEventListener('DOMContentLoaded', () => {
   loadCart();
   initFileUpload();
 
-  // Hamburger
   document.getElementById('hamburger')?.addEventListener('click', () => {
     document.getElementById('mobNav')?.classList.toggle('open');
   });
 
-  // If cart is empty on load, show message
   if (checkoutCart.length === 0) {
     const form = document.getElementById('checkoutForm');
     if (form) {

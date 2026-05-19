@@ -55,7 +55,8 @@ DirectoryIndex index.html index.php
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
 
   # Content Security Policy
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self';"
+  # stripe.com sources required for Stripe Hosted Checkout redirect
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.stripe.com https://formsubmit.co; form-action 'self' https://checkout.stripe.com https://formsubmit.co; frame-src https://js.stripe.com https://hooks.stripe.com; frame-ancestors 'none'; base-uri 'self';"
 
   # Remove server signature headers
   Header always unset X-Powered-By
@@ -151,14 +152,25 @@ DirectoryIndex index.html index.php
   </IfModule>
 </FilesMatch>
 
+# Block direct access to SQLite databases and log files
+<FilesMatch "\.(db|sqlite|sqlite3|log|bak|sql)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
 # ─── PHP SECURITY (Hostinger PHP 8.x) ─────────────────────────
 <IfModule mod_php.c>
   php_flag display_errors Off
   php_flag log_errors On
-  php_value upload_max_filesize 6M
-  php_value post_max_size 8M
-  php_value max_execution_time 30
-  php_value max_input_time 30
+  php_value upload_max_filesize 52M
+  php_value post_max_size 55M
+  php_value max_execution_time 60
+  php_value max_input_time 60
 </IfModule>
 
 # ─── CUSTOM ERROR PAGES ────────────────────────────────────────
@@ -174,3 +186,18 @@ ErrorDocument 500 /index.html
   AddType image/avif                        .avif
   AddType application/manifest+json         .webmanifest
 </IfModule>
+
+# ─── ENVIRONMENT VARIABLES ─────────────────────────────────────
+# Add your Stripe keys manually on the Hostinger server — do NOT put
+# live secret keys in this file or commit them to the git repository.
+#
+# Option A — hPanel: Hosting → PHP → Environment Variables
+#   STRIPE_SECRET_KEY  = sk_live_...
+#   STRIPE_WEBHOOK_SECRET = whsec_...
+#
+# Option B — SSH / hPanel File Manager (private, not committed):
+#   Add these two lines to /public_html/.htaccess on the server only:
+#   SetEnv STRIPE_SECRET_KEY sk_live_...
+#   SetEnv STRIPE_WEBHOOK_SECRET whsec_...
+#
+# PHP reads both with: getenv('STRIPE_SECRET_KEY')

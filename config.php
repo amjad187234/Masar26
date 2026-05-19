@@ -13,11 +13,14 @@ define('SHOP_URL',     SITE_URL . '/shop/');
 define('ADMIN_EMAIL',  'info@masar-werbeagentur.de');
 define('SHOP_NAME',    'Masar Print Shop');
 
-// Stripe — get keys from dashboard.stripe.com → Developers → API keys
-// Use pk_test_ / sk_test_ while testing, pk_live_ / sk_live_ for production
-define('STRIPE_PUBLIC_KEY', 'pk_REPLACE_WITH_YOUR_STRIPE_PUBLIC_KEY');
-define('STRIPE_SECRET_KEY', 'sk_REPLACE_WITH_YOUR_STRIPE_SECRET_KEY');
-define('STRIPE_CURRENCY',   'eur');
+// Stripe — Publishable key is safe in source code (frontend-visible by design).
+// SECRET KEY: NEVER commit. Set on Hostinger → Hosting → PHP → Environment Variables:
+//   STRIPE_SECRET_KEY    = sk_live_...
+//   STRIPE_WEBHOOK_SECRET = whsec_...  (Stripe Dashboard → Webhooks → signing secret)
+define('STRIPE_PUBLIC_KEY',     'pk_live_51TUTo5PDPRRzGXEAAu5ic8j1k5EaDR4XZSwt2IsIrRhSBu83pei1jcHtYdCqJ64q01eEBNcqC8NklCCqOPLAeQh200iecJmJDq');
+define('STRIPE_SECRET_KEY',     getenv('STRIPE_SECRET_KEY')     ?: '');
+define('STRIPE_WEBHOOK_SECRET', getenv('STRIPE_WEBHOOK_SECRET') ?: '');
+define('STRIPE_CURRENCY',       'eur');
 
 // Bank transfer details
 define('BANK_IBAN',    'DE89 3704 0044 0532 0130 00');
