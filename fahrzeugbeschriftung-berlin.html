@@ -161,6 +161,11 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .bg-alt{background:rgba(255,255,255,.015)}
 @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.svc-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}#stickyCta{flex-direction:column;text-align:center}}
+.svc-picker{display:flex;flex-wrap:wrap;gap:.5rem;padding:.4rem 0;}
+.svc-pick-opt{background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);border-radius:8px;padding:9px 14px;color:rgba(255,255,255,.75);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;text-align:left;}
+.svc-pick-opt:hover{border-color:var(--teal);color:#fff;background:rgba(88,208,189,.1);}
+.svc-pick-opt.picked{background:var(--navy);border-color:var(--teal);color:var(--teal);}
+.svc-picked-lbl{font-size:13px;color:var(--teal);margin-top:.4rem;font-weight:600;}
 </style>
 </head>
 <body>
@@ -387,14 +392,16 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
         <div class="fg"><label>E-Mail *</label><input type="email" name="email" placeholder="ihre@email.de" required></div>
         <div class="fg">
           <label>Art der Beschriftung</label>
-          <select name="leistung">
-            <option>Teilverklebung (Logo / Schriftzug)</option>
-            <option>Vollverklebung (Full Wrap)</option>
-            <option>Transporter / Sprinter</option>
-            <option>Flottenbeklebung</option>
-            <option>Heckscheiben-Folie</option>
-            <option>Sonstiges</option>
-          </select>
+          <input type="hidden" name="leistung" id="selectedService">
+          <div class="svc-picker">
+            <button type="button" class="svc-pick-opt" data-val="Teilverklebung (Logo / Schriftzug)">🚗 Teilverklebung</button>
+            <button type="button" class="svc-pick-opt" data-val="Vollverklebung (Full Wrap)">🎨 Vollverklebung</button>
+            <button type="button" class="svc-pick-opt" data-val="Transporter / Sprinter">🚐 Transporter</button>
+            <button type="button" class="svc-pick-opt" data-val="Flottenbeklebung">🚛 Flottenbeklebung</button>
+            <button type="button" class="svc-pick-opt" data-val="Heckscheiben-Folie">🔲 Heckscheibe</button>
+            <button type="button" class="svc-pick-opt" data-val="Sonstiges">➕ Sonstiges</button>
+          </div>
+          <div class="svc-picked-lbl" id="svcPickedLbl" style="display:none"></div>
         </div>
         <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung: Fahrzeugtyp, Anzahl der Fahrzeuge, Wunschtermin..."></textarea></div>
         <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
@@ -465,6 +472,16 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     const isOpen=btn.classList.contains('open');
     document.querySelectorAll('.faq-q').forEach(b=>b.classList.remove('open'));
     if(!isOpen)btn.classList.add('open');
+  });
+});
+document.querySelectorAll('.svc-pick-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.svc-pick-opt').forEach(b=>b.classList.remove('picked'));
+    btn.classList.add('picked');
+    const hidden=document.getElementById('selectedService');
+    const lbl=document.getElementById('svcPickedLbl');
+    if(hidden)hidden.value=btn.dataset.val;
+    if(lbl){lbl.textContent='✓ Ausgewählt: '+btn.dataset.val;lbl.style.display='block';}
   });
 });
 </script>
