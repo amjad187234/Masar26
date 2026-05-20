@@ -3,273 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon & PWA -->
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#58d0bd">
-<meta name="description" content="Allgemeine Geschäftsbedingungen der Masar Werbeagentur Berlin. Gültig für alle Aufträge und Dienstleistungen.">
-<meta name="keywords" content="AGB, Geschäftsbedingungen, Masar Werbeagentur Berlin">
-<meta name="author" content="Masar Werbeagentur Berlin">
+<link rel="stylesheet" href="/fonts.css">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="AGB – Allgemeine Geschäftsbedingungen | Masar Werbeagentur Berlin">
-<meta property="og:description" content="Allgemeine Geschäftsbedingungen der Masar Werbeagentur Berlin. Gültig für alle Aufträge und Dienstleistungen.">
-<meta property="og:url" content="https://masar-werbeagentur.de/agb">
+<meta name="description" content="Allgemeine Geschäftsbedingungen der Masar Werbeagentur Berlin – B2B-Druckprodukte, Werbetechnik und Mediengestaltung.">
+<meta property="og:title" content="AGB – Masar Werbeagentur Berlin">
+<meta property="og:url" content="https://masar-werbeagentur.de/agb.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<link rel="canonical" href="https://masar-werbeagentur.de/agb">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<title>AGB – Allgemeine Geschäftsbedingungen | Masar Werbeagentur Berlin</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://masar-werbeagentur.de/agb.html">
+<title>AGB – Masar Werbeagentur Berlin</title>
 <style>
-:root{--teal:#58d0bd;--teal-dark:#3ab8a5;--navy:#132e50;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;}
+:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0a1628;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--r:8px;--nav-h:68px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);}
-nav{position:fixed;top:0;width:100%;z-index:500;background:#ffffff;backdrop-filter:blur(14px);border-bottom:2px solid #58d0bd;}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:68px;}
+/* Nav */
+nav{position:fixed;top:0;width:100%;z-index:500;background:#fff;border-bottom:2px solid var(--teal);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{height:72px;object-fit:contain;}
-.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#132e50;letter-spacing:2px;display:none;}
+.nav-logo img{height:56px;object-fit:contain;}
+.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--navy);letter-spacing:2px;display:none;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:#132e50;font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:#58d0bd;}
-.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:10px 24px;font-weight:700!important;border-radius:4px;}
+.nav-links a{color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:9px 22px;font-weight:700!important;border-radius:4px;}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
-.hbg span{width:24px;height:2px;background:#132e50;border-radius:2px;}
-.mob{display:none;position:fixed;top:68px;left:0;right:0;background:#ffffff;padding:20px;z-index:499;}
+.hbg span{width:24px;height:2px;background:var(--navy);border-radius:2px;}
+.mob{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;padding:20px;z-index:499;border-bottom:1px solid var(--border);}
 .mob.open{display:block;}
-.mob a{display:block;padding:12px 16px;color:#132e50;font-size:15px;border-bottom:1px solid rgba(255,255,255,.05);text-decoration:none;}
-.wa{position:fixed;bottom:90px;right:18px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;}
-.wa svg{width:30px;height:30px;fill:white;}
-.ph{padding:140px 2rem 80px;background:linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%);}
+.mob a{display:block;padding:12px 0;color:var(--navy);font-size:15px;border-bottom:1px solid var(--border);text-decoration:none;}
+/* Page header */
+.ph{padding:calc(var(--nav-h) + 4rem) 2rem 4rem;background:linear-gradient(155deg,var(--navy3) 0%,var(--navy) 55%,#0d5a5a 100%);}
 .phi{max-width:1200px;margin:0 auto;}
-.plbl{display:inline-block;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:4px;margin-bottom:1.2rem;}
-.ph h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.8rem,6vw,5rem);line-height:.92;color:white;text-transform:uppercase;}
+.plbl{display:inline-block;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:4px;margin-bottom:1.2rem;}
+.ph h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.8rem,7vw,5rem);line-height:.92;color:#fff;text-transform:uppercase;}
 .ph h1 em{color:var(--teal);font-style:normal;}
-.ph p{font-size:14px;color:rgba(255,255,255,.5);margin-top:.8rem;}
-.cw{max-width:900px;margin:0 auto;padding:5rem 2rem;}
+/* Content */
+.cw{max-width:900px;margin:0 auto;padding:4rem 2rem 6rem;}
 .ls{margin-bottom:3rem;}
-.ls h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;padding-bottom:.8rem;border-bottom:2px solid var(--teal);}
-.ls h3{font-size:15px;font-weight:600;color:var(--navy);margin:1.2rem 0 .5rem;}
+.ls h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.45rem;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:2px solid var(--teal);}
+.ls h3{font-size:15px;font-weight:700;color:var(--navy);margin:1.4rem 0 .5rem;}
 .ls p{font-size:14.5px;color:var(--muted);line-height:1.9;margin-bottom:.8rem;}
-.ls ul{margin:.5rem 0 1rem 1.5rem;}
-.ls ul li{font-size:14.5px;color:var(--muted);line-height:1.9;margin-bottom:.3rem;}
-.ib{background:var(--off);border:1px solid var(--border);border-left:3px solid var(--teal);padding:1.5rem 2rem;margin:1rem 0;border-radius:0 8px 8px 0;}
-.ib p{margin-bottom:.4rem;font-size:14.5px;color:var(--muted);line-height:1.8;}
+.ls a{color:var(--teal);word-break:break-word;}
+.ls a:hover{text-decoration:underline;}
+.ls ol,.ls ul{padding-left:1.4rem;margin-bottom:.8rem;}
+.ls ol li,.ls ul li{font-size:14.5px;color:var(--muted);line-height:1.9;margin-bottom:.4rem;}
+.ib{background:var(--off);border:1px solid var(--border);border-left:4px solid var(--teal);padding:1.4rem 1.8rem;margin:1rem 0;border-radius:0 var(--r) var(--r) 0;}
+.ib p{margin-bottom:.4rem;font-size:14.5px;color:var(--muted);line-height:1.85;}
+.ib strong{color:var(--navy);}
+.notice-box{background:rgba(88,208,189,.07);border:1px solid rgba(88,208,189,.3);border-radius:var(--r);padding:1.2rem 1.6rem;margin:1rem 0;}
+.notice-box p{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0;}
+.warn-box{background:rgba(220,60,60,.05);border:1px solid rgba(220,60,60,.25);border-radius:var(--r);padding:1.2rem 1.6rem;margin:1rem 0;}
+.warn-box p{font-size:13.5px;color:#7a3030;line-height:1.8;margin:0;}
+.toc{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 2rem;margin-bottom:3rem;}
+.toc h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:1rem;}
+.toc ol{padding-left:1.4rem;}
+.toc li{font-size:13.5px;line-height:1.9;}
+.toc a{color:var(--teal);text-decoration:none;}
+.toc a:hover{text-decoration:underline;}
+/* Footer */
 footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 .fi{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
 .fl{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
-.fl img{height:72px;object-fit:contain;}
-.flfb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;color:#132e50;letter-spacing:2px;display:none;}
-.fb p{font-size:14px;line-height:1.75;}
-.fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:white;margin-bottom:1.2rem;}
-.fc a{display:block;font-size:14px;color:rgba(255,255,255,.4);margin-bottom:.6rem;text-decoration:none;transition:color .2s;}
+.fl img{height:52px;object-fit:contain;}
+.fb p{font-size:13.5px;line-height:1.75;}
+.fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:1.2rem;}
+.fc a{display:block;font-size:13.5px;color:rgba(255,255,255,.4);margin-bottom:.6rem;text-decoration:none;transition:color .2s;}
 .fc a:hover{color:var(--teal);}
 .fbot{max-width:1200px;margin:2rem auto 0;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:1rem;}
-@media(max-width:960px){.nav-links{display:none;}.hbg{display:flex;}.fi{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.fi{grid-template-columns:1fr;}}
-
-@media(max-width:600px){
-  .hero { background: linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%) !important; }
-  .hero-slider-wrap { aspect-ratio: 4/5 !important; max-width:100% !important; }
-  .hero-slide img { aspect-ratio: 4/5; object-fit:cover; }
-}
-/* MOBILE OVERRIDE */
-@media(max-width:768px){
-  body { background:#ffffff !important; color:#132e50 !important; }
-  
-  /* Nav */
-  nav { background:#ffffff !important; border-bottom:2px solid #58d0bd !important; }
-  .nav-logo-fb { color:#132e50 !important; }
-  .nav-hamburger span, .hbg span { background:#132e50 !important; }
-  .mob, .mobile-menu { background:#ffffff !important; border-bottom:1px solid #e2ecec !important; }
-  .mob a, .mobile-menu a { color:#132e50 !important; border-bottom:1px solid #e2ecec !important; }
-  
-  /* Hero */
-  .hero { background:#ffffff !important; padding:100px 24px 60px; }
-  .hero h1 { color:#132e50 !important; font-size:clamp(2.8rem,13vw,4.5rem); }
-  .hero h1 em { color:#58d0bd !important; }
-  .hero-sub { color:#5a7070 !important; }
-  .hero-label { color:#58d0bd !important; border-color:rgba(88,208,189,.4) !important; background:rgba(88,208,189,.08) !important; }
-  .hero-lines { display:none; }
-  .btn-ghost { border-color:#132e50 !important; color:#132e50 !important; }
-  .hero-slider-section { display:none !important; }
-  .hero-logo { display:none !important; }
-  .hero-inner { grid-template-columns:1fr !important; }
-  .hero-btns { flex-direction:column; }
-  .hero-btns a { text-align:center; width:100%; box-sizing:border-box; }
-  .stat-num { color:#58d0bd !important; }
-  .stat-lbl { color:#5a7070 !important; }
-  
-  /* Stats bar */
-  .stats-bar { background:#132e50 !important; }
-  .sbar-item { padding:24px 12px; }
-  .sbar-num { font-size:2.2rem; }
-  
-  /* Services */
-  .services-preview, section, .section { background:#ffffff !important; }
-  .sec-title { color:#132e50 !important; }
-  .sec-sub { color:#5a7070 !important; }
-  .svc-card { background:#ffffff !important; border:1px solid #e2ecec !important; }
-  .svc-card h3 { color:#132e50 !important; }
-  .svc-short, .svc-long { color:#5a7070 !important; }
-  
-  /* Why section (navy bg) */
-  .section.bg-navy { background:#132e50 !important; }
-  .section.bg-navy .sec-title { color:#ffffff !important; }
-  .section.bg-navy .sec-sub { color:rgba(255,255,255,.65) !important; }
-  
-  /* Process */
-  .pstep h4 { color:#132e50 !important; }
-  .pstep p { color:#5a7070 !important; }
-  
-  /* Contact */
-  .section.bg-off, .contact-strip { background:#f5f8f8 !important; }
-  .cinfo-val { color:#132e50 !important; }
-  .cinfo-lbl { color:#58d0bd !important; }
-  .fg input, .fg textarea, .fg select { background:#f5f8f8 !important; border-color:#e2ecec !important; color:#132e50 !important; }
-  .fg label { color:#5a7070 !important; }
-  
-  /* Legal pages */
-  .ph { background:linear-gradient(155deg,#132e50 0%,#1a3d6b 100%) !important; }
-  .ls h2 { color:#132e50 !important; }
-  .ls p, .ls li { color:#5a7070 !important; }
-  .ib { background:#f5f8f8 !important; }
-  .cw { background:#ffffff !important; }
-  
-  /* Footer stays dark */
-  footer { background:#060e1a !important; }
-  
-  /* Page hero stays navy */
-  .page-hero { background:linear-gradient(155deg,#132e50 0%,#1a3d6b 100%) !important; }
-}
-
-
-/* ═══ COOKIE BANNER ═══ */
-.cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9998;}
-.cookie-overlay.show{display:block;}
-.cookie-banner{display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#fff;border-top:3px solid var(--teal);box-shadow:0 -8px 40px rgba(0,0,0,.15);padding:1.2rem 2rem;}
-.cookie-banner.show{display:block;}
-.cookie-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
-.cookie-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;}
-.cookie-text p{font-size:13px;color:var(--muted);line-height:1.5;}
-.cookie-text a{color:var(--teal);font-weight:600;}
-.cookie-actions{display:flex;gap:.8rem;flex-shrink:0;}
-.cookie-btn-reject{background:#fff;color:var(--navy);border:2px solid var(--border);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:13px;cursor:pointer;transition:all .2s;}
-.cookie-btn-reject:hover{border-color:var(--navy);}
-.cookie-btn-accept{background:var(--teal);color:var(--navy);border:2px solid var(--teal);padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;}
-.cookie-btn-accept:hover{background:var(--teal-d);}
-/* ═══ STICKY CTA ═══ */
+.fbot a{color:rgba(255,255,255,.35);text-decoration:none;margin-left:1rem;}
+.fbot a:hover{color:var(--teal);}
+/* WhatsApp FAB */
+.wa{position:fixed;bottom:90px;right:18px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;}
+.wa svg{width:28px;height:28px;fill:#fff;}
+/* Sticky CTA */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
 .sticky-cta.visible{transform:translateY(0);}
 .sticky-cta-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .sticky-cta-text strong{color:#fff;font-size:14px;display:block;}
 .sticky-cta-text span{color:rgba(255,255,255,.5);font-size:12px;}
 .sticky-cta-actions{display:flex;gap:.8rem;}
-.sticky-btn-phone{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap;transition:all .2s;}
-.sticky-btn-phone:hover{background:rgba(255,255,255,.2);}
-.sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
-.sticky-btn-main:hover{background:var(--teal-d);}
-@media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
-
-/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+.sticky-btn-phone{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap;text-decoration:none;}
+.sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;text-decoration:none;}
+/* BFSG / WCAG 2.1 AA */
 *:focus{outline:3px solid #58d0bd;outline-offset:2px;}
 *:focus:not(:focus-visible){outline:none;}
-*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
-a:focus-visible,button:focus-visible,input:focus-visible,
-select:focus-visible,textarea:focus-visible{
-  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
-  box-shadow:0 0 0 5px rgba(88,208,189,.25);
-}
-.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
-  padding:10px 20px;font-weight:700;font-size:14px;
-  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;box-shadow:0 0 0 5px rgba(88,208,189,.2);}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;padding:10px 20px;font-weight:700;font-size:14px;border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
 .skip-link:focus{top:0;}
+/* Responsive */
+@media(max-width:960px){.nav-links{display:none;}.hbg{display:flex;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}.cw{padding:3rem 1rem 5rem;}.sticky-cta{padding:.7rem 1rem;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<!-- COOKIE BANNER — DSGVO konform -->
-<div class="cookie-overlay" id="cookieOverlay"></div>
-<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie-Einstellungen">
-  <div class="cookie-inner">
-    <div class="cookie-text">
-      <div class="cookie-title">🍪 Wir respektieren Ihre Privatsphäre</div>
-      <p>Wir verwenden Cookies für die beste Erfahrung. <a href="datenschutz.html">Datenschutzerklärung</a></p>
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn-reject" onclick="rejectCookies()">Ablehnen</button>
-      <button class="cookie-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
-    </div>
-  </div>
-</div>
-
-<!-- STICKY CTA -->
-<div class="sticky-cta" id="stickyCta">
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta-inner">
     <div class="sticky-cta-text">
       <strong>Kostenlose Erstberatung</strong>
       <span>Antwort innerhalb 24 Stunden</span>
     </div>
     <div class="sticky-cta-actions">
-      <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="index.html#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="tel:01785143918" class="sticky-btn-phone">&#128222; 0178 514 3918</a>
+      <a href="/index.html#kontakt" class="sticky-btn-main">Jetzt anfragen &#8594;</a>
     </div>
   </div>
 </div>
 
-<a href="https://wa.me/491785143918" class="wa" target="_blank"><svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg></a>
-<nav><div class="nav-inner">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="nav-logo-fb">MASAR</span></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="index.html#warum">Über uns</a></li>
-      <li><a href="/shop/">🛒 Print Shop</a></li><li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li></ul>
-  <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
-</div></nav>
-<div class="mob" id="mob"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="index.html#kontakt">Kontakt</a></div>
+<a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp kontaktieren">
+  <svg viewBox="0 0 32 32" role="img" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
 
-<div class="ph"><div class="phi">
-  <div class="plbl">✦ Rechtliches</div>
-  <h1>Allgemeine <em>Geschäfts-<br>bedingungen</em></h1>
-  <p>Stand: Januar 2026 · Masar Werbeagentur, Amjad Albill, Berlin</p>
-</div></div>
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo" aria-label="Masar Werbeagentur &#8211; Startseite">
+      <img loading="eager" src="/logo.png" alt="Masar Werbeagentur Berlin Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-fb" aria-hidden="true">MASAR</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/shop/">&#128722; Print Shop</a></li>
+      <li><a href="/index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hbg" id="hbg" aria-label="Men&#252; &#246;ffnen" aria-expanded="false" aria-controls="mob">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob" id="mob" aria-hidden="true">
+  <a href="/index.html">Home</a>
+  <a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/shop/">Print Shop</a>
+  <a href="/index.html#kontakt">Kontakt</a>
+</div>
 
-<div class="cw">
-  <div class="ls"><h2>§ 1 Geltungsbereich</h2><p>Diese AGB gelten für alle Geschäftsbeziehungen zwischen Amjad Albill (Masar Werbeagentur), Bristolstraße 19HN, 19E, 13349 Berlin und dem Auftraggeber. Abweichende AGB des Auftraggebers werden nicht Vertragsbestandteil.</p></div>
-  <div class="ls"><h2>§ 2 Vertragsschluss</h2><p>Angebote sind freibleibend. Ein Vertrag kommt durch schriftliche Auftragsbestätigung oder Beginn der Leistungserbringung zustande. Der Auftraggeber ist 14 Tage an seine Bestellung gebunden.</p></div>
-  <div class="ls"><h2>§ 3 Leistungsumfang</h2><p>Der Umfang ergibt sich aus dem Angebot. Änderungen bedürfen der Schriftform.</p>
-    <ul><li>Grafikdesign und Corporate Identity</li><li>Druck und Druckvorstufe</li><li>Textildruck und Merchandise</li><li>Fahrzeugbeschriftung</li><li>Roll-ups, Displays und Messeausstattung</li><li>Leuchtreklamen und Lichtwerbung</li><li>Bücher, Kataloge und Publikationen</li><li>Sticker und Aufkleber</li><li>Banner und Werbebanner</li><li>Webdesign</li><li>Maßanfertigungen</li></ul>
-  </div>
-  <div class="ls"><h2>§ 4 Preise und Zahlung</h2><p>Alle Preise in Euro zzgl. gesetzlicher MwSt. Rechnungen sind innerhalb von 14 Tagen fällig. Bei Aufträgen über 500,– € kann eine Anzahlung von bis zu 50 % verlangt werden.</p>
-    <div class="ib"><p><strong>Zahlungsverzug:</strong> Verzugszinsen 5 Prozentpunkte über dem Basiszinssatz. Weitergehender Verzugsschaden vorbehalten.</p></div>
-  </div>
-  <div class="ls"><h2>§ 5 Mitwirkungspflichten</h2><p>Der Auftraggeber stellt alle notwendigen Unterlagen rechtzeitig zur Verfügung und versichert, über alle Rechte an bereitgestellten Materialien zu verfügen. Er stellt den Auftragnehmer von Ansprüchen Dritter frei.</p></div>
-  <div class="ls"><h2>§ 6 Urheberrecht und Nutzungsrechte</h2><p>Alle erstellten Werke unterliegen dem Urheberrecht des Auftragnehmers. Mit vollständiger Bezahlung erhält der Auftraggeber ein einfaches Nutzungsrecht für den vereinbarten Zweck. Jede weitere Nutzung bedarf schriftlicher Zustimmung.</p></div>
-  <div class="ls"><h2>§ 7 Lieferung und Abnahme</h2><p>Liefertermine sind unverbindlich, sofern nicht ausdrücklich als verbindlich vereinbart. Digitale Leistungen gelten als abgenommen, wenn nicht innerhalb von 5 Werktagen schriftlich Mängel gerügt werden.</p></div>
-  <div class="ls"><h2>§ 8 Gewährleistung und Haftung</h2><p>Mängelansprüche verjähren in 12 Monaten. Mängel sind innerhalb von 5 Werktagen nach Entdeckung schriftlich zu rügen.</p>
-    <div class="ib"><p><strong>Haftungsbegrenzung:</strong> Die Haftung ist auf den Auftragswert begrenzt, außer bei Vorsatz oder grober Fahrlässigkeit. Haftung für entgangenen Gewinn ist ausgeschlossen.</p></div>
-  </div>
-  <div class="ls"><h2>§ 9 Stornierung</h2>
-    <ul><li>Bis 7 Tage vor Leistungsbeginn: 25 % des Auftragswertes</li><li>Bis 3 Tage vor Leistungsbeginn: 50 % des Auftragswertes</li><li>Weniger als 3 Tage: 75 % des Auftragswertes</li><li>Nach Leistungsbeginn: 100 % des Auftragswertes</li></ul>
-  </div>
-  <div class="ls"><h2>§ 10 Schlussbestimmungen</h2><p>Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist Berlin. Sollten einzelne Bestimmungen unwirksam sein, berührt dies die Wirksamkeit der übrigen nicht.</p>
-    <div class="ib"><p>Stand: Januar 2026 · Masar Werbeagentur · Amjad Albill · Bristolstraße 19HN, 13349 Berlin</p></div>
+<div class="ph" role="banner">
+  <div class="phi">
+    <div class="plbl" aria-hidden="true">&#10022; Rechtliches</div>
+    <h1>Allgemeine Gesch&#228;fts<em>bedingungen</em></h1>
   </div>
 </div>
 
-<footer><div class="fi">
-  <div class="fb"><div class="fl"><img src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="flfb">MASAR</span></div><p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p></div>
-  <div class="fc"><h5>Navigation</h5><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="index.html#kontakt">Kontakt</a></div>
-  <div class="fc"><h5>Rechtliches</h5><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
-</div><div class="fbot"><span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span><span>Steuernummer: 23/203/00524</span></div></footer>
-<script>document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
-// ═══ COOKIE + STICKY ═══
-function acceptAllCookies(){localStorage.setItem('cookieConsent','all');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-function rejectCookies(){localStorage.setItem('cookieConsent','necessary');localStorage.setItem('cookieDate',new Date().toISOString());document.getElementById('cookieBanner').classList.remove('show');document.getElementById('cookieOverlay').classList.remove('show');}
-window.addEventListener('load',()=>{if(!localStorage.getItem('cookieConsent'))setTimeout(()=>{document.getElementById('cookieBanner').classList.add('show');document.getElementById('cookieOverlay').classList.add('show');},1500);});
-const _sc=document.getElementById('stickyCta');
-window.addEventListener('scroll',()=>{if(window.scrollY>400)_sc.classList.add('visible');else _sc.classList.remove('visible');},{passive:true});
+<main id="main-content">
+<div class="cw">
 
+  <nav class="toc" aria-label="Inhaltsverzeichnis">
+    <h2>Inhaltsverzeichnis</h2>
+    <ol>
+      <li><a href="#sec-geltung">Geltungsbereich und B2B-Klausel</a></li>
+      <li><a href="#sec-vertragsschluss">Vertragsschluss</a></li>
+      <li><a href="#sec-leistungen">Leistungsgegenstand und Druckvermittlung</a></li>
+      <li><a href="#sec-preise">Preise und Mehrwertsteuer</a></li>
+      <li><a href="#sec-zahlung">Zahlungsbedingungen</a></li>
+      <li><a href="#sec-druckdaten">Druckdaten und Dateianforderungen</a></li>
+      <li><a href="#sec-produktion">Produktions- und Lieferzeiten</a></li>
+      <li><a href="#sec-widerruf">Ausschluss des Widerrufsrechts</a></li>
+      <li><a href="#sec-eigentum">Eigentumsvorbehalt</a></li>
+      <li><a href="#sec-maengel">M&#228;ngelr&#252;ge und Gew&#228;hrleistung</a></li>
+      <li><a href="#sec-haftung">Haftungsbeschr&#228;nkung</a></li>
+      <li><a href="#sec-datenschutz">Datenschutz</a></li>
+      <li><a href="#sec-schluss">Schlussbestimmungen</a></li>
+    </ol>
+  </nav>
+
+  <!-- §1 -->
+  <section class="ls" aria-labelledby="sec-geltung">
+    <h2 id="sec-geltung">&#167; 1 &#8211; Geltungsbereich und B2B-Klausel</h2>
+    <p>Diese Allgemeinen Gesch&#228;ftsbedingungen (nachfolgend &#8222;AGB&#8220;) der Masar Werbeagentur, Amjad Albill, Bristol&#173;stra&#223;e 19HN, 13349 Berlin (nachfolgend &#8222;Anbieter&#8220;) gelten f&#252;r alle Vertr&#228;ge &#252;ber die Lieferung von Druckprodukten, Werbetechnik und Mediengestaltungsleistungen, die &#252;ber den Online-Shop (<a href="https://masar-werbeagentur.de/shop/" rel="noopener">masar-werbeagentur.de/shop</a>) oder auf direktem Wege mit dem Anbieter abgeschlossen werden.</p>
+    <div class="warn-box">
+      <p><strong>Ausschlie&#223;lich B2B:</strong> Das Angebot richtet sich ausschlie&#223;lich an Unternehmer im Sinne des &#167; 14 BGB, d.&#8239;h. an nat&#252;rliche oder juristische Personen oder rechtsf&#228;hige Personengesellschaften, die bei Abschluss des Rechtsgesch&#228;fts in Aus&#252;bung ihrer gewerblichen oder selbst&#228;ndigen beruflichen T&#228;tigkeit handeln. Verbraucher im Sinne des &#167; 13 BGB sind von der Nutzung des Shops ausgeschlossen. Mit der Bestellung best&#228;tigt der Auftraggeber, Unternehmer i.&#8239;S.&#8239;d. &#167; 14 BGB zu sein.</p>
+    </div>
+    <p>Entgegenstehende oder abweichende Bedingungen des Auftraggebers werden nicht anerkannt, sofern der Anbieter ihrer Geltung nicht ausdr&#252;cklich schriftlich zugestimmt hat. Diese AGB gelten auch dann, wenn der Anbieter in Kenntnis entgegenstehender Bedingungen des Auftraggebers die Leistung vorbehaltlos ausf&#252;hrt.</p>
+  </section>
+
+  <!-- §2 -->
+  <section class="ls" aria-labelledby="sec-vertragsschluss">
+    <h2 id="sec-vertragsschluss">&#167; 2 &#8211; Vertragsschluss</h2>
+    <p>Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern eine Aufforderung zur Abgabe eines Angebots (invitatio ad offerendum) dar.</p>
+    <p>Durch Absenden der Bestellung (Klick auf &#8222;Kostenpflichtig bestellen&#8220; bzw. Abschluss des Zahlungsvorgangs) gibt der Auftraggeber ein verbindliches Angebot auf Abschluss eines Kaufvertrags ab. Der Anbieter best&#228;tigt den Eingang der Bestellung per E-Mail (Eingangsbestätigung). Diese Eingangsbestätigung stellt noch keine Annahme des Angebots dar.</p>
+    <p>Der Vertrag kommt erst zustande, wenn der Anbieter die Bestellung ausdr&#252;cklich per separater Auftragsbestätigung annimmt oder mit der Ausf&#252;hrung der Leistung beginnt. Bei Vorkasse (Banküberweisug) beginnt die Produktionsplanung erst nach vollst&#228;ndigem Zahlungseingang auf dem Konto des Anbieters.</p>
+    <p>Der Auftraggeber ist an sein Angebot f&#252;r die Dauer von 5 Werktagen gebunden. Reagiert der Anbieter nicht innerhalb dieser Frist, gilt das Angebot als abgelehnt.</p>
+  </section>
+
+  <!-- §3 -->
+  <section class="ls" aria-labelledby="sec-leistungen">
+    <h2 id="sec-leistungen">&#167; 3 &#8211; Leistungsgegenstand und Druckvermittlung</h2>
+    <h3>3.1 Leistungsumfang</h3>
+    <p>Der Anbieter erbringt Leistungen in den Bereichen Druckprodukte (Visitenkarten, Flyer, Plakate, Banner, Aufkleber u.&#8239;&#196;.), Werbetechnik (LED-Schilder, Beschriftungen, Displays) sowie Mediengestaltung (Grafikdesign, Corporate Identity, Social-Media-Grafiken).</p>
+    <h3>3.2 Rolle als Druckvermittler</h3>
+    <div class="notice-box">
+      <p>F&#252;r bestimmte Druckprodukte fungiert der Anbieter als <strong>Druckvermittler</strong> und beauftragt Dritte (Druckereien) im eigenen Namen mit der Herstellung. Gegen&#252;ber dem Auftraggeber bleibt der Anbieter stets alleiniger Vertragspartner und tr&#228;gt die volle Verantwortung f&#252;r die vertragsm&#228;&#223;ige Lieferung.</p>
+    </div>
+    <h3>3.3 Individualisierung</h3>
+    <p>S&#228;mtliche Druckprodukte werden nach Kundenvorgaben individuell gefertigt. Es handelt sich um nach Kundenspezifikation gefertigte Waren, die aufgrund ihrer Beschaffenheit nicht f&#252;r eine R&#252;cksendung geeignet sind (vgl. &#167; 8 dieser AGB).</p>
+  </section>
+
+  <!-- §4 -->
+  <section class="ls" aria-labelledby="sec-preise">
+    <h2 id="sec-preise">&#167; 4 &#8211; Preise und Mehrwertsteuer</h2>
+    <p>Alle im Online-Shop ausgewiesenen Preise sind Nettopreise in Euro (&#8364;).</p>
+    <div class="notice-box">
+      <p><strong>Kleinunternehmerregelung (&#167; 19 UStG):</strong> Der Anbieter nimmt die Kleinunternehmerregelung gem&#228;&#223; &#167; 19 UStG in Anspruch. Es wird daher keine Umsatzsteuer erhoben und ausgewiesen. Eine R&#252;ckforderung von Vorsteuer durch den Auftraggeber auf Basis dieser Rechnungen ist nicht m&#246;glich.</p>
+    </div>
+    <p>Auipreise f&#252;r Express-Produktionszeiten (Next-Day +25&#8239;%, Same-Day +50&#8239;%) werden im Bestellprozess transparent ausgewiesen. Versand- und Frachtkosten werden, sofern zutreffend, separat im Bestellprozess ausgewiesen.</p>
+    <p>Angebote au&#223;erhalb des Online-Shops (z.&#8239;B. individuelle Projekte) sind 14 Kalendertage g&#252;ltig, sofern kein anderes Datum schriftlich vereinbart wurde.</p>
+  </section>
+
+  <!-- §5 -->
+  <section class="ls" aria-labelledby="sec-zahlung">
+    <h2 id="sec-zahlung">&#167; 5 &#8211; Zahlungsbedingungen</h2>
+    <h3>5.1 F&#228;lligkeit und Vorauszahlung</h3>
+    <div class="warn-box">
+      <p><strong>Vorkasse-Prinzip:</strong> Alle Bestellungen sind zu 100&#8239;% im Voraus zu bezahlen. Die Produktion wird erst nach vollst&#228;ndigem Zahlungseingang beim Anbieter begonnen. Bis zum Zahlungseingang besteht kein Anspruch auf Produktionsbeginn oder Lieferung.</p>
+    </div>
+    <h3>5.2 Zahlungsarten</h3>
+    <p>Es stehen folgende Zahlungsarten zur Verf&#252;gung:</p>
+    <ul>
+      <li><strong>Kreditkarte / Debitkarte</strong> &#8211; &#252;ber Stripe Payments Europe, Ltd. (PCI-DSS Level 1). Belastung sofort bei Bestellabschluss.</li>
+      <li><strong>Klarna (Sofort&#252;berweisung / Ratenkauf)</strong> &#8211; &#252;ber Stripe / Klarna Bank AB. Es gelten zus&#228;tzlich die Nutzungsbedingungen von Klarna.</li>
+      <li><strong>Banküberwei&#173;sung (Vorkasse)</strong> &#8211; Zahlungsdaten (IBAN, BIC, Verwendungszweck) werden in der Bestellbestätigung per E-Mail mitgeteilt. Die Bestellung bleibt 10 Werktage reserviert; bei Nichtzahlung innerhalb dieser Frist wird die Bestellung storniert.</li>
+    </ul>
+    <h3>5.3 Zahlungsverzug</h3>
+    <p>Bei Zahlungsverzug (&#167;&#167; 286, 288 BGB) kann der Anbieter Verzugszinsen in H&#246;he von 9 Prozentpunkten &#252;ber dem Basiszinssatz p.&#8239;a. sowie eine Mahnpauschale von 40,00&#8239;&#8364; gem&#228;&#223; &#167; 288 Abs. 5 BGB berechnen. Die Geltendmachung eines weiteren Verzugsschadens bleibt vorbehalten.</p>
+    <h3>5.4 Aufrechnung und Zur&#252;ckbehaltung</h3>
+    <p>Ein Aufrechnungsrecht des Auftraggebers besteht nur, soweit seine Gegenfor&#173;derungen rechtskr&#228;ftig festgestellt, unbestritten oder vom Anbieter anerkannt sind. Ein Zur&#252;ckbehaltungsrecht kann der Auftraggeber nur aus&#252;ben, soweit sein Gegenanspruch auf demselben Vertragsverh&#228;ltnis beruht.</p>
+  </section>
+
+  <!-- §6 -->
+  <section class="ls" aria-labelledby="sec-druckdaten">
+    <h2 id="sec-druckdaten">&#167; 6 &#8211; Druckdaten und Dateianforderungen</h2>
+    <h3>6.1 Technische Mindestanforderungen</h3>
+    <p>Der Auftraggeber ist f&#252;r die &#220;bermittlung druckf&#228;higer Dateien verantwortlich. Folgende technische Mindestanforderungen sind einzuhalten:</p>
+    <ul>
+      <li><strong>Aufl&#246;sung:</strong> Mindestens 300 DPI (dots per inch) bei Endformat. Bildschirmaufl&#246;sungen (72&#8211;96 DPI) sind nicht druckf&#228;hig.</li>
+      <li><strong>Farbmodus:</strong> CMYK-Farbprofil (ISO Coated v2 300&#8239;% oder &#228;hnlich). RGB-Dateien werden nach bestem Erm&#228;&#223;en konvertiert; der Anbieter &#252;bernimmt keine Haftung f&#252;r Farbabweichungen durch automatische Konvertierung.</li>
+      <li><strong>Beschnittrand (Bleed):</strong> Mindestens 2&#8239;mm umlaufend &#252;ber das Endformat hinaus. Wichtige Inhalte (Text, Logos) sind mindestens 3&#8239;mm vom Endformat-Rand zu halten (Sicherheitsabstand).</li>
+      <li><strong>Schriften:</strong> Alle Schriften sind einzubetten oder in Pfade/Kurven zu konvertieren.</li>
+      <li><strong>Dateiformate:</strong> PDF/X-3 oder PDF/X-4 (bevorzugt), hochwertiges JPEG (mind. 300 DPI), TIFF, EPS oder AI. F&#252;r Vektordaten: SVG, AI, EPS.</li>
+      <li><strong>Dateigr&#246;&#223;e:</strong> Maximal 50&#8239;MB pro Datei &#252;ber das Bestellformular. Gr&#246;&#223;ere Dateien auf Anfrage per WeTransfer oder vergleichbaren Diensten.</li>
+    </ul>
+    <h3>6.2 Haftung f&#252;r fehlerhafte Druckdaten</h3>
+    <div class="warn-box">
+      <p>Der Anbieter f&#252;hrt <strong>keine inhaltliche oder gestalterische Pr&#252;fung</strong> der Druckdaten durch. F&#252;r Fehler in vom Auftraggeber angelieferten Druckdaten (Schreibfehler, Falschanga&#173;ben, fehlerhafte Layouts, Urheberrechtsverletzungen, Farbab&#173;weichungen durch falsches Farbprofil, unzureichende Aufl&#246;sung usw.) &#252;bernimmt der Anbieter keine Haftung. Ein Anspruch auf Neuproduktion oder Erstattung besteht in diesem Fall nicht.</p>
+    </div>
+    <h3>6.3 Technische Pr&#252;fung (Preflight)</h3>
+    <p>Der Anbieter oder seine Druckpartner f&#252;hren eine technische Vorpr&#252;fung (Preflight) der Druckdaten durch. Werden dabei drucktechnische Probleme festgestellt, wird der Auftraggeber informiert. Die Korrektur und erneute &#220;bermittlung liegt in der Verantwortung des Auftraggebers; Lieferzeiten beginnen erst nach Freigabe der korrigierten Daten neu zu laufen.</p>
+    <h3>6.4 Rechte an Druckdaten</h3>
+    <p>Der Auftraggeber best&#228;tigt mit &#220;bermittlung der Druckdaten, dass er &#252;ber alle erforderlichen Rechte (Urheberrechte, Markenrechte, Bildrechte) an den &#252;bermittelten Inhalten verf&#252;gt und der Anbieter zur Vervielf&#228;ltigung f&#252;r Zwecke der Auftragsausf&#252;hrung berechtigt ist. Der Auftraggeber stellt den Anbieter von s&#228;mtlichen Anspr&#252;chen Dritter infolge einer Rechtsverletzung durch die Druckdaten frei.</p>
+  </section>
+
+  <!-- §7 -->
+  <section class="ls" aria-labelledby="sec-produktion">
+    <h2 id="sec-produktion">&#167; 7 &#8211; Produktions- und Lieferzeiten</h2>
+    <h3>7.1 Produktionsbeginn</h3>
+    <p>Die Produktionszeit beginnt erst nach Erf&#252;llung aller folgenden Voraussetzungen:</p>
+    <ol>
+      <li>Vollst&#228;ndiger Zahlungseingang beim Anbieter.</li>
+      <li>Vorlage druckf&#228;higer, fehlerfreier Druckdaten gem&#228;&#223; &#167; 6.</li>
+      <li>Schriftliche Freigabe des Auftrags durch den Auftraggeber (bei individuell gestalteten Produkten).</li>
+    </ol>
+    <h3>7.2 Lieferzeitkategorien</h3>
+    <div class="ib">
+      <p><strong>Standard (3&#8211;5 Werktage):</strong> Produktionsbeginn am n&#228;chsten Werktag nach Auftragsfreigabe. Versand innerhalb von 3&#8211;5 Werktagen ab Produktionsbeginn.</p>
+      <p><strong>Next-Day Service:</strong> Lieferung am n&#228;chsten Werktag bei Auftragseingang und Zahlungseingang bis 11:00 Uhr (Mo&#8211;Fr, au&#223;er gesetzliche Feiertage in Berlin). Aufpreis +25&#8239;% auf den Produktionspreis.</p>
+      <p><strong>Same-Day Service:</strong> Lieferung noch am selben Werktag bei Auftragseingang und Zahlungseingang bis 11:00 Uhr (Mo&#8211;Fr, au&#223;er gesetzliche Feiertage in Berlin). Aufpreis +50&#8239;% auf den Produktionspreis. Verf&#252;gbarkeit auf Anfrage.</p>
+    </div>
+    <h3>7.3 Lieferverz&#246;gerungen</h3>
+    <p>Lieferzeitenangaben sind unverbindliche Richtwerte, sofern keine ausdr&#252;ckliche schriftliche Fixterminvereinbarung getroffen wurde. Der Anbieter haftet f&#252;r Lieferverz&#246;gerungen nur bei Vorsatz oder grober Fahrl&#228;ssigkeit sowie bei der Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Anspr&#252;che wegen Lieferverzugs sind auf den vertragstypischen, vorhersehbaren Schaden begrenzt.</p>
+    <p>H&#246;here Gewalt (Streik, Naturkatastrophen, Lieferengp&#228;sse bei Papier/Materialien, beh&#246;rdliche Ma&#223;nahmen) befreit den Anbieter f&#252;r die Dauer der St&#246;rung von der Leistungspflicht. Der Anbieter informiert den Auftraggeber unverz&#252;glich.</p>
+    <h3>7.4 Versand und Gefahr</h3>
+    <p>Der Versand erfolgt auf Gefahr und Kosten des Auftraggebers. Mit &#220;bergabe an das Transportunternehmen geht die Gefahr des zuf&#228;lligen Untergangs und der zuf&#228;lligen Verschlechterung auf den Auftraggeber &#252;ber (&#167; 447 BGB).</p>
+  </section>
+
+  <!-- §8 -->
+  <section class="ls" aria-labelledby="sec-widerruf">
+    <h2 id="sec-widerruf">&#167; 8 &#8211; Ausschluss des Widerrufsrechts</h2>
+    <div class="warn-box">
+      <p><strong>Kein Widerrufsrecht:</strong> Da sich diese AGB ausschlie&#223;lich an Unternehmer i.&#8239;S.&#8239;d. &#167; 14 BGB richten, findet das gesetzliche Widerrufsrecht gem&#228;&#223; &#167;&#167; 355&#8239;ff. BGB keine Anwendung.</p>
+    </div>
+    <p>Dar&#252;ber hinaus gilt: Selbst soweit im Einzelfall Verbraucherrecht Anwendung finden sollte, ist das Widerrufsrecht gem&#228;&#223; <strong>&#167; 312g Abs. 2 Nr. 1 BGB</strong> ausgeschlossen, da s&#228;mtliche Druckprodukte nach Kundenspezifikation individuell gefertigt werden und aufgrund ihrer Beschaffenheit nicht f&#252;r eine R&#252;cksendung geeignet sind.</p>
+    <p>Stornierungen sind ausschlie&#223;lich vor Produktionsbeginn und nur nach schriftlicher Zustimmung des Anbieters m&#246;glich. Bereits entstandene Kosten (Druckplatten, Materialkosten, Designaufwand) werden in Rechnung gestellt. Nach Produktionsbeginn sind Stornierungen grunds&#228;tzlich ausgeschlossen.</p>
+  </section>
+
+  <!-- §9 -->
+  <section class="ls" aria-labelledby="sec-eigentum">
+    <h2 id="sec-eigentum">&#167; 9 &#8211; Eigentumsvorbehalt</h2>
+    <p>Die gelieferte Ware bleibt bis zur vollst&#228;ndigen Bezahlung aller Forderungen aus der Gesch&#228;ftsbeziehung mit dem Auftraggeber Eigentum des Anbieters (Vorbehaltsware).</p>
+    <p>Der Auftraggeber ist berechtigt, die Vorbehaltsware im ordnungsgem&#228;&#223;en Gesch&#228;ftsbetrieb weiterzuver&#228;u&#223;ern. Er tritt dem Anbieter jedoch bereits jetzt alle Forderungen in H&#246;he des Rechnungsbetrags ab, die ihm aus der Weiterverau&#223;erung gegen einen Abnehmer erwachsen. Der Anbieter nimmt die Abtretung an. Der Auftraggeber ist weiterhin zur Einziehung der Forderung erm&#228;chtigt, solange er seinen Zahlungsverpflichtungen nachkommt.</p>
+    <p>Pf&#228;ndungen oder sonstige Eingriffe Dritter in die Vorbehaltsware hat der Auftraggeber dem Anbieter unverz&#252;glich schriftlich anzuzeigen.</p>
+  </section>
+
+  <!-- §10 -->
+  <section class="ls" aria-labelledby="sec-maengel">
+    <h2 id="sec-maengel">&#167; 10 &#8211; M&#228;ngelr&#252;ge und Gew&#228;hrleistung</h2>
+    <h3>10.1 R&#252;gepflicht (&#167; 377 HGB)</h3>
+    <p>Da es sich bei den Vertragsparteien um Kaufleute handelt, hat der Auftraggeber die gelieferte Ware unverz&#252;glich nach Erhalt auf offensichtliche M&#228;ngel zu untersuchen und etwaige M&#228;ngel unverz&#252;glich &#8211; sp&#228;testens innerhalb von <strong>5 Werktagen</strong> nach Lieferung &#8211; schriftlich (E-Mail gen&#252;gt) gegen&#252;ber dem Anbieter anzuzeigen. Bei verdeckten M&#228;ngeln beginnt die R&#252;gefrist mit Entdeckung des Mangels. Unterbleibt die rechtzeitige M&#228;ngelr&#252;ge, gilt die Ware als genehmigt und Gew&#228;hrleistungsanspr&#252;che sind ausgeschlossen (&#167; 377 HGB).</p>
+    <h3>10.2 Farbabweichungen und Drucktoleranzen</h3>
+    <p>Farbabweichungen und Drucktoleranzen, die den Bereich anerkannter Drucknormen (DIN ISO 12647-2) nicht &#252;berschreiten, stellen keinen Mangel dar. Gleiches gilt f&#252;r geringf&#252;gige Abweichungen in Format, Grammatur und Schnitt im Rahmen &#252;blicher Produktionstoleranzen (&#177;2&#8239;mm Format, &#177;5&#8239;% Grammatur).</p>
+    <h3>10.3 Nacherfüllung</h3>
+    <p>Bei berechtigter M&#228;ngelr&#252;ge hat der Anbieter das Recht zur Nacherfüllung, entweder durch Nachbesserung oder Neulieferung. Schl&#228;gt die Nacherfüllung zweimal fehl oder verweigert der Anbieter sie, kann der Auftraggeber Minderung oder R&#252;cktritt verlangen.</p>
+    <h3>10.4 Verj&#228;hrung</h3>
+    <p>Die Verj&#228;hrungsfrist f&#252;r Gew&#228;hrleistungsanspr&#252;che betr&#228;gt <strong>1 Jahr</strong> ab Lieferung. &#167; 479 BGB (R&#252;ckgriff) bleibt unber&#252;hrt.</p>
+  </section>
+
+  <!-- §11 -->
+  <section class="ls" aria-labelledby="sec-haftung">
+    <h2 id="sec-haftung">&#167; 11 &#8211; Haftungsbeschr&#228;nkung</h2>
+    <h3>11.1 Unbeschr&#228;nkte Haftung</h3>
+    <p>Der Anbieter haftet unbeschr&#228;nkt f&#252;r Vorsatz und grobe Fahrl&#228;ssigkeit sowie f&#252;r Sch&#228;den aus der Verletzung des Lebens, des K&#246;rpers oder der Gesundheit und im Rahmen einer &#252;bernommenen Garantie.</p>
+    <h3>11.2 Beschr&#228;nkte Haftung</h3>
+    <p>Bei leichter Fahrl&#228;ssigkeit haftet der Anbieter nur, wenn eine wesentliche Vertragspflicht (Kardinalpflicht) verletzt wurde. In diesen F&#228;llen ist die Haftung auf den vertragstypischen, bei Vertragsschluss vorhersehbaren Schaden begrenzt, maximal jedoch auf den Auftragswert der konkreten Bestellung. Weitergehende Anspr&#252;che &#8211; insbesondere auf entgangenen Gewinn, Folgesch&#228;den oder immaterielle Sch&#228;den &#8211; sind ausgeschlossen, soweit gesetzlich zul&#228;ssig.</p>
+    <h3>11.3 Inhalt und Rechte</h3>
+    <p>F&#252;r die inhaltliche Richtigkeit, Vollst&#228;ndigkeit und Aktualit&#228;t der vom Auftraggeber gelieferten Texte, Bilder und sonstigen Inhalte &#252;bernimmt der Anbieter keine Haftung. Der Auftraggeber tr&#228;gt die alleinige Verantwortung f&#252;r die rechtliche Zul&#228;ssigkeit der beauftragten Werbemittel (Wettbewerbsrecht, Markenrecht, Urheberrecht, Presserecht, DSGVO).</p>
+  </section>
+
+  <!-- §12 -->
+  <section class="ls" aria-labelledby="sec-datenschutz">
+    <h2 id="sec-datenschutz">&#167; 12 &#8211; Datenschutz</h2>
+    <p>Die Erhebung, Verarbeitung und Nutzung personenbezogener Daten erfolgt ausschlie&#223;lich zur Vertragserf&#252;llung und entsprechend den gesetzlichen Vorgaben (DSGVO, BDSG). Einzelheiten entnehmen Sie bitte der <a href="/datenschutz.html">Datenschutzerkl&#228;rung</a> des Anbieters.</p>
+    <p>Druckdaten und sonstige vom Auftraggeber &#252;bermittelte Dateien werden nach vollst&#228;ndiger Abwicklung des Auftrags und Ablauf der gesetzlichen Aufbewahrungsfristen (in der Regel 6 Monate) gel&#246;scht, sofern keine l&#228;ngere Aufbewahrung vereinbart wurde oder gesetzlich vorgeschrieben ist.</p>
+  </section>
+
+  <!-- §13 -->
+  <section class="ls" aria-labelledby="sec-schluss">
+    <h2 id="sec-schluss">&#167; 13 &#8211; Schlussbestimmungen</h2>
+    <h3>13.1 Anwendbares Recht</h3>
+    <p>Es gilt ausschlie&#223;lich das Recht der Bundesrepublik Deutschland. Die Anwendung des UN-Kaufrechts (CISG) ist ausgeschlossen.</p>
+    <h3>13.2 Gerichtsstand</h3>
+    <p>Ausschlie&#223;licher Gerichtsstand f&#252;r alle Streitigkeiten aus und im Zusammenhang mit diesem Vertrag ist <strong>Berlin</strong>, sofern der Auftraggeber Kaufmann, juristische Person des &#246;ffentlichen Rechts oder &#246;ffentlich-rechtliches Sonderverm&#246;gen ist (&#167; 38 ZPO). Der Anbieter ist auch berechtigt, am allgemeinen Gerichtsstand des Auftraggebers zu klagen.</p>
+    <h3>13.3 Streitbeilegung</h3>
+    <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr/</a>. Der Anbieter nimmt an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle nicht teil und ist hierzu auch nicht verpflichtet (&#167; 36 VSBG), da er ausschlie&#223;lich mit Unternehmern kontrahiert.</p>
+    <h3>13.4 Salvatorische Klausel</h3>
+    <p>Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchf&#252;hrbar sein oder werden, ber&#252;hrt dies die Wirksamkeit der &#252;brigen Bestimmungen nicht. An die Stelle der unwirksamen Bestimmung tritt die gesetzliche Regelung, die dem wirtschaftlichen Zweck der unwirksamen Bestimmung am n&#228;chsten kommt.</p>
+    <h3>13.5 Schriftform</h3>
+    <p>&#196;nderungen und Erg&#228;nzungen dieser AGB sowie aller aus dem Vertragsverh&#228;ltnis resultierenden Vereinbarungen bed&#252;rfen der Schriftform (E-Mail gen&#252;gt). M&#252;ndliche Nebenabreden bestehen nicht.</p>
+    <div class="ib">
+      <p><strong>Stand:</strong> Mai 2026</p>
+      <p><strong>Anbieter:</strong> Amjad Albill &#183; Masar Werbeagentur &#183; Bristol&#173;stra&#223;e 19HN &#183; 13349 Berlin</p>
+      <p><strong>E-Mail:</strong> <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="fi">
+    <div class="fb">
+      <div class="fl">
+        <img src="/logo.png" alt="Masar Werbeagentur Logo" onerror="this.style.display='none'">
+      </div>
+      <p>Professionelle Werbetechnik, Druckprodukte und Mediengestaltung f&#252;r Unternehmen in Berlin und bundesweit.</p>
+    </div>
+    <div class="fc">
+      <h5>Leistungen</h5>
+      <a href="/leistungen.html">Werbetechnik</a>
+      <a href="/leistungen.html">Print &amp; Druck</a>
+      <a href="/shop/">Print Shop</a>
+      <a href="/leistungen.html">Social Media</a>
+    </div>
+    <div class="fc">
+      <h5>Rechtliches</h5>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html" aria-current="page">AGB</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>&#169; 2026 Masar Werbeagentur &#183; Berlin-Wedding</span>
+    <span>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hbg = document.getElementById('hbg');
+  var mob = document.getElementById('mob');
+  if(hbg && mob){
+    hbg.addEventListener('click', function(){
+      var open = mob.classList.toggle('open');
+      hbg.setAttribute('aria-expanded', open);
+      mob.setAttribute('aria-hidden', !open);
+    });
+  }
+  var cta = document.getElementById('stickyCta');
+  if(cta){
+    window.addEventListener('scroll', function(){
+      var show = window.scrollY > 500;
+      cta.classList.toggle('visible', show);
+      cta.setAttribute('aria-hidden', !show);
+    }, {passive:true});
+  }
+})();
 </script>
-</body></html>
+</body>
+</html>

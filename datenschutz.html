@@ -3,305 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
-  <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <!-- Self-hosted fonts CSS -->
-  <!-- Favicon & PWA -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#58d0bd">
-  <link rel="stylesheet" href="/fonts.css">
-<meta name="description" content="Datenschutzerklärung der Masar Werbeagentur Berlin gemäß DSGVO. Informationen zur Verarbeitung Ihrer personenbezogenen Daten.">
-  <!-- Performance & Security -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="dns-prefetch" href="//formsubmit.co">
-  <meta name="keywords" content="Datenschutz, DSGVO, Masar Werbeagentur Berlin">
-<meta name="author" content="Masar Werbeagentur Berlin">
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#58d0bd">
+<link rel="stylesheet" href="/fonts.css">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow">
+<meta name="description" content="Datenschutzerklärung der Masar Werbeagentur Berlin – DSGVO- und TDDDG-konform.">
 <meta property="og:title" content="Datenschutzerklärung – Masar Werbeagentur Berlin">
-<meta property="og:description" content="Datenschutzerklärung der Masar Werbeagentur Berlin gemäß DSGVO. Informationen zur Verarbeitung Ihrer personenbezogenen Daten.">
-<meta property="og:url" content="https://masar-werbeagentur.de/datenschutz">
+<meta property="og:url" content="https://masar-werbeagentur.de/datenschutz.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<link rel="canonical" href="https://masar-werbeagentur.de/datenschutz">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="canonical" href="https://masar-werbeagentur.de/datenschutz.html">
 <title>Datenschutzerklärung – Masar Werbeagentur Berlin</title>
 <style>
-:root{--teal:#58d0bd;--teal-dark:#3ab8a5;--navy:#132e50;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;}
+:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0a1628;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--r:8px;--nav-h:68px;}
 *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--text);}
-nav{position:fixed;top:0;width:100%;z-index:500;background:#ffffff;backdrop-filter:blur(14px);border-bottom:2px solid #58d0bd;}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:68px;}
+nav{position:fixed;top:0;width:100%;z-index:500;background:#fff;border-bottom:2px solid var(--teal);}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo img{height:72px;object-fit:contain;}
-.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:#132e50;letter-spacing:2px;display:none;}
+.nav-logo img{height:56px;object-fit:contain;}
+.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--navy);letter-spacing:2px;display:none;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{color:#132e50;font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:#58d0bd;}
-.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:10px 24px;font-weight:700!important;border-radius:4px;}
+.nav-links a{color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:9px 22px;font-weight:700!important;border-radius:4px;}
 .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;}
-.hbg span{width:24px;height:2px;background:#132e50;border-radius:2px;}
-.mob{display:none;position:fixed;top:68px;left:0;right:0;background:#ffffff;padding:20px;z-index:499;}
+.hbg span{width:24px;height:2px;background:var(--navy);border-radius:2px;}
+.mob{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;padding:20px;z-index:499;border-bottom:1px solid var(--border);}
 .mob.open{display:block;}
-.mob a{display:block;padding:12px 16px;color:#132e50;font-size:15px;border-bottom:1px solid rgba(255,255,255,.05);text-decoration:none;}
-.wa{position:fixed;bottom:90px;right:18px;z-index:999;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;}
-.wa svg{width:30px;height:30px;fill:white;}
-.ph{padding:140px 2rem 80px;background:linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%);}
+.mob a{display:block;padding:12px 0;color:var(--navy);font-size:15px;border-bottom:1px solid var(--border);text-decoration:none;}
+.ph{padding:calc(var(--nav-h) + 4rem) 2rem 4rem;background:linear-gradient(155deg,var(--navy3) 0%,var(--navy) 55%,#0d5a5a 100%);}
 .phi{max-width:1200px;margin:0 auto;}
-.plbl{display:inline-block;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:4px;margin-bottom:1.2rem;}
-.ph h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,4.5rem);line-height:.92;color:white;text-transform:uppercase;}
+.plbl{display:inline-block;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 16px;border-radius:4px;margin-bottom:1.2rem;}
+.ph h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,6vw,4.5rem);line-height:.92;color:#fff;text-transform:uppercase;}
 .ph h1 em{color:var(--teal);font-style:normal;}
-.cw{max-width:900px;margin:0 auto;padding:5rem 2rem;}
+.cw{max-width:900px;margin:0 auto;padding:4rem 2rem 6rem;}
+.toc{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem 2rem;margin-bottom:3rem;}
+.toc h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;}
+.toc ol{margin-left:1.2rem;}
+.toc li{font-size:13.5px;color:var(--muted);line-height:2;}
+.toc a{color:var(--teal);text-decoration:none;}
+.toc a:hover{text-decoration:underline;}
 .ls{margin-bottom:3rem;}
-.ls h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;padding-bottom:.8rem;border-bottom:2px solid var(--teal);}
-.ls h3{font-size:15px;font-weight:600;color:var(--navy);margin:1.2rem 0 .5rem;}
+.ls h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;text-transform:uppercase;color:var(--navy);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:2px solid var(--teal);}
+.ls h3{font-size:15px;font-weight:700;color:var(--navy);margin:1.4rem 0 .5rem;}
 .ls p{font-size:14.5px;color:var(--muted);line-height:1.9;margin-bottom:.8rem;}
-.ls ul{margin:.5rem 0 1rem 1.5rem;}
-.ls ul li{font-size:14.5px;color:var(--muted);line-height:1.9;margin-bottom:.3rem;}
-.ls a{color:var(--teal);}
-.ib{background:var(--off);border:1px solid var(--border);border-left:3px solid var(--teal);padding:1.5rem 2rem;margin:1rem 0;border-radius:0 8px 8px 0;}
-.ib p{margin-bottom:.4rem;font-size:14.5px;color:var(--muted);line-height:1.8;}
+.ls ul,.ls ol{margin:.5rem 0 1rem 1.6rem;}
+.ls li{font-size:14.5px;color:var(--muted);line-height:1.85;margin-bottom:.35rem;}
+.ls a{color:var(--teal);word-break:break-word;}
+.ls a:hover{text-decoration:underline;}
+.ib{background:var(--off);border:1px solid var(--border);border-left:4px solid var(--teal);padding:1.4rem 1.8rem;margin:1rem 0;border-radius:0 var(--r) var(--r) 0;}
+.ib p{margin-bottom:.4rem;font-size:14.5px;color:var(--muted);line-height:1.85;}
+.ib strong{color:var(--navy);}
+.notice-box{background:rgba(88,208,189,.07);border:1px solid rgba(88,208,189,.3);border-radius:var(--r);padding:1.2rem 1.6rem;margin:1rem 0;}
+.notice-box p{font-size:13.5px;color:var(--muted);line-height:1.8;margin:0;}
+.art-badge{display:inline-block;background:var(--navy);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:3px;margin:0 2px;font-family:'Barlow Condensed',sans-serif;white-space:nowrap;}
 footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 .fi{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
 .fl{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
-.fl img{height:72px;object-fit:contain;}
-.flfb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;color:#132e50;letter-spacing:2px;display:none;}
-.fb p{font-size:14px;line-height:1.75;}
-.fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:white;margin-bottom:1.2rem;}
-.fc a{display:block;font-size:14px;color:rgba(255,255,255,.4);margin-bottom:.6rem;text-decoration:none;transition:color .2s;}
+.fl img{height:52px;object-fit:contain;}
+.fb p{font-size:13.5px;line-height:1.75;}
+.fc h5{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:1.2rem;}
+.fc a{display:block;font-size:13.5px;color:rgba(255,255,255,.4);margin-bottom:.6rem;text-decoration:none;transition:color .2s;}
 .fc a:hover{color:var(--teal);}
 .fbot{max-width:1200px;margin:2rem auto 0;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:1rem;}
-@media(max-width:960px){.nav-links{display:none;}.hbg{display:flex;}.fi{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.fi{grid-template-columns:1fr;}}
-
-@media(max-width:600px){
-  .hero { background: linear-gradient(155deg,var(--navy) 0%,#1a3d6b 50%,#0d5a5a 100%) !important; }
-  .hero-slider-wrap { aspect-ratio: 4/5 !important; max-width:100% !important; }
-  .hero-slide img { aspect-ratio: 4/5; object-fit:cover; }
-}
-/* MOBILE OVERRIDE */
-@media(max-width:768px){
-  body { background:#ffffff !important; color:#132e50 !important; }
-  
-  /* Nav */
-  nav { background:#ffffff !important; border-bottom:2px solid #58d0bd !important; }
-  .nav-logo-fb { color:#132e50 !important; }
-  .nav-hamburger span, .hbg span { background:#132e50 !important; }
-  .mob, .mobile-menu { background:#ffffff !important; border-bottom:1px solid #e2ecec !important; }
-  .mob a, .mobile-menu a { color:#132e50 !important; border-bottom:1px solid #e2ecec !important; }
-  
-  /* Hero */
-  .hero { background:#ffffff !important; padding:100px 24px 60px; }
-  .hero h1 { color:#132e50 !important; font-size:clamp(2.8rem,13vw,4.5rem); }
-  .hero h1 em { color:#58d0bd !important; }
-  .hero-sub { color:#5a7070 !important; }
-  .hero-label { color:#58d0bd !important; border-color:rgba(88,208,189,.4) !important; background:rgba(88,208,189,.08) !important; }
-  .hero-lines { display:none; }
-  .btn-ghost { border-color:#132e50 !important; color:#132e50 !important; }
-  .hero-slider-section { display:none !important; }
-  .hero-logo { display:none !important; }
-  .hero-inner { grid-template-columns:1fr !important; }
-  .hero-btns { flex-direction:column; }
-  .hero-btns a { text-align:center; width:100%; box-sizing:border-box; }
-  .stat-num { color:#58d0bd !important; }
-  .stat-lbl { color:#5a7070 !important; }
-  
-  /* Stats bar */
-  .stats-bar { background:#132e50 !important; }
-  .sbar-item { padding:24px 12px; }
-  .sbar-num { font-size:2.2rem; }
-  
-  /* Services */
-  .services-preview, section, .section { background:#ffffff !important; }
-  .sec-title { color:#132e50 !important; }
-  .sec-sub { color:#5a7070 !important; }
-  .svc-card { background:#ffffff !important; border:1px solid #e2ecec !important; }
-  .svc-card h3 { color:#132e50 !important; }
-  .svc-short, .svc-long { color:#5a7070 !important; }
-  
-  /* Why section (navy bg) */
-  .section.bg-navy { background:#132e50 !important; }
-  .section.bg-navy .sec-title { color:#ffffff !important; }
-  .section.bg-navy .sec-sub { color:rgba(255,255,255,.65) !important; }
-  
-  /* Process */
-  .pstep h4 { color:#132e50 !important; }
-  .pstep p { color:#5a7070 !important; }
-  
-  /* Contact */
-  .section.bg-off, .contact-strip { background:#f5f8f8 !important; }
-  .cinfo-val { color:#132e50 !important; }
-  .cinfo-lbl { color:#58d0bd !important; }
-  .fg input, .fg textarea, .fg select { background:#f5f8f8 !important; border-color:#e2ecec !important; color:#132e50 !important; }
-  .fg label { color:#5a7070 !important; }
-  
-  /* Legal pages */
-  .ph { background:linear-gradient(155deg,#132e50 0%,#1a3d6b 100%) !important; }
-  .ls h2 { color:#132e50 !important; }
-  .ls p, .ls li { color:#5a7070 !important; }
-  .ib { background:#f5f8f8 !important; }
-  .cw { background:#ffffff !important; }
-  
-  /* Footer stays dark */
-  footer { background:#060e1a !important; }
-  
-  /* Page hero stays navy */
-  .page-hero { background:linear-gradient(155deg,#132e50 0%,#1a3d6b 100%) !important; }
-}
-
-
-/* ═══ STICKY CTA ═══ */
+.fbot a{color:rgba(255,255,255,.35);text-decoration:none;margin-left:1rem;}
+.fbot a:hover{color:var(--teal);}
+.wa{position:fixed;bottom:90px;right:18px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;}
+.wa svg{width:28px;height:28px;fill:#fff;}
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
 .sticky-cta.visible{transform:translateY(0);}
 .sticky-cta-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
 .sticky-cta-text strong{color:#fff;font-size:14px;display:block;}
 .sticky-cta-text span{color:rgba(255,255,255,.5);font-size:12px;}
 .sticky-cta-actions{display:flex;gap:.8rem;}
-.sticky-btn-phone{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap;transition:all .2s;}
-.sticky-btn-phone:hover{background:rgba(255,255,255,.2);}
-.sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;}
-.sticky-btn-main:hover{background:var(--teal-d);}
-@media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
-
-/* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
+.sticky-btn-phone{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap;text-decoration:none;}
+.sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;text-decoration:none;}
 *:focus{outline:3px solid #58d0bd;outline-offset:2px;}
 *:focus:not(:focus-visible){outline:none;}
-*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
-a:focus-visible,button:focus-visible,input:focus-visible,
-select:focus-visible,textarea:focus-visible{
-  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
-  box-shadow:0 0 0 5px rgba(88,208,189,.25);
-}
-.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
-  padding:10px 20px;font-weight:700;font-size:14px;
-  border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
+*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;box-shadow:0 0 0 5px rgba(88,208,189,.2);}
+.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;padding:10px 20px;font-weight:700;font-size:14px;border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
 .skip-link:focus{top:0;}
+@media(max-width:960px){.nav-links{display:none;}.hbg{display:flex;}.fi{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.fi{grid-template-columns:1fr;}.cw{padding:3rem 1rem 5rem;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
-
-
-</div>
-
-<!-- STICKY CTA -->
-<div class="sticky-cta" id="stickyCta">
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
   <div class="sticky-cta-inner">
-    <div class="sticky-cta-text">
-      <strong>Kostenlose Erstberatung</strong>
-      <span>Antwort innerhalb 24 Stunden</span>
-    </div>
+    <div class="sticky-cta-text"><strong>Kostenlose Erstberatung</strong><span>Antwort innerhalb 24 Stunden</span></div>
     <div class="sticky-cta-actions">
       <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="index.html#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="/index.html#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
     </div>
   </div>
 </div>
-
-<a href="https://wa.me/491785143918" class="wa" target="_blank"><svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg></a>
-<nav><div class="nav-inner">
-  <a href="index.html" class="nav-logo"><img loading="eager" decoding="async" src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="nav-logo-fb">MASAR</span></a>
-  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="leistungen.html">Leistungen</a></li><li><a href="index.html#warum">Über uns</a></li>
-      <li><a href="/shop/">🛒 Print Shop</a></li><li><a href="index.html#kontakt" class="nav-cta">Kontakt</a></li></ul>
-  <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
-</div></nav>
-<div class="mob" id="mob"><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="index.html#kontakt">Kontakt</a></div>
-
-<div class="ph"><div class="phi"><div class="plbl">✦ Datenschutz</div><h1>Datenschutz-<em>erklärung</em></h1></div></div>
-
-<div class="cw">
-  <div class="ls"><h2>1. Datenschutz auf einen Blick</h2>
-    <h3>Allgemeine Hinweise</h3>
-    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-    <h3>Datenerfassung auf dieser Website</h3>
-    <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten finden Sie im Impressum dieser Website.</p>
-    <p>Wir erheben Ihre Daten zum einen, wenn Sie uns diese mitteilen (z.B. im Kontaktformular). Andere Daten werden automatisch beim Besuch der Website erfasst (technische Daten wie Browser, Betriebssystem, Uhrzeit).</p>
+<a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp kontaktieren">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
+      <img loading="eager" src="/logo.png" alt="Masar Werbeagentur Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-fb" aria-hidden="true">MASAR</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/shop/">🛒 Print Shop</a></li>
+      <li><a href="/index.html#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hbg" id="hbg" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mob"><span></span><span></span><span></span></button>
   </div>
-  <div class="ls"><h2>2. Verantwortliche Stelle</h2>
-    <div class="ib"><p><strong>Amjad Albill</strong></p><p>Bristolstraße 19HN, 19E · 13349 Berlin</p><p>Telefon: <a href="tel:01785143918">0178 514 3918</a></p><p>E-Mail: <a href="mailto:amjadbalili97@gmail.com">amjadbalili97@gmail.com</a></p></div>
-  </div>
-  <div class="ls"><h2>3. Hosting</h2>
-    <p>Diese Website wird bei Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Zypern gehostet. Details: <a href="https://www.hostinger.de/datenschutzrichtlinie" target="_blank">hostinger.de/datenschutzrichtlinie</a></p>
-    <p>Die Verwendung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an zuverlässiger Darstellung der Website).</p>
-  </div>
-  <div class="ls"><h2>4. Ihre Rechte</h2>
-    <h3>Auskunft, Berichtigung und Löschung</h3>
-    <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Zweck sowie das Recht auf Berichtigung oder Löschung.</p>
-    <h3>Recht auf Einschränkung der Verarbeitung</h3>
-    <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</p>
-    <h3>Recht auf Datenübertragbarkeit</h3>
-    <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung verarbeiten, in einem maschinenlesbaren Format zu erhalten.</p>
-    <h3>Widerspruch gegen Werbe-E-Mails</h3>
-    <p>Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung wird hiermit widersprochen.</p>
-  </div>
-  <div class="ls"><h2>5. Datenerfassung auf dieser Website</h2>
-    <h3>Kontaktformular</h3>
-    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.</p>
-    <h3>Server-Log-Dateien</h3>
-    <p>Der Provider erhebt automatisch Informationen in Server-Log-Dateien:</p>
-    <ul><li>Browsertyp und -version</li><li>Betriebssystem</li><li>Referrer URL</li><li>Hostname des zugreifenden Rechners</li><li>Uhrzeit der Serveranfrage</li><li>IP-Adresse</li></ul>
-    <p>Die Erfassung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
-    <h3>Cookies</h3>
-    <p>Diese Website verwendet Cookies zur Verbesserung der Nutzererfahrung. Sie können Cookies in Ihren Browsereinstellungen deaktivieren.</p>
-  </div>
-  <div class="ls"><h2>6. Google Fonts</h2>
-    <p>Diese Seite nutzt Google Fonts zur einheitlichen Darstellung von Schriftarten. Details: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-  </div>
-  <div class="ls"><h2>7. Speicherdauer</h2>
-    <p>Personenbezogene Daten werden bei uns gespeichert, bis der Zweck für die Datenverarbeitung entfällt oder Sie uns zur Löschung auffordern, sofern keine gesetzlichen Aufbewahrungsfristen entgegenstehen.</p>
+</nav>
+<div class="mob" id="mob" aria-hidden="true">
+  <a href="/index.html">Home</a><a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/shop/">Print Shop</a><a href="/index.html#kontakt">Kontakt</a>
+</div>
+<div class="ph" role="banner">
+  <div class="phi">
+    <div class="plbl" aria-hidden="true">✦ DSGVO &amp; TDDDG § 25</div>
+    <h1>Daten<em>schutz</em></h1>
   </div>
 </div>
+<main id="main-content">
+<div class="cw">
 
+  <nav class="toc" aria-label="Inhaltsverzeichnis Datenschutzerklärung">
+    <h3>Inhaltsverzeichnis</h3>
+    <ol>
+      <li><a href="#s1">Verantwortlicher</a></li>
+      <li><a href="#s2">Grundsätze der Datenverarbeitung</a></li>
+      <li><a href="#s3">Rechtsgrundlagen (Art. 6 DSGVO)</a></li>
+      <li><a href="#s4">Server-Logfiles</a></li>
+      <li><a href="#s5">Kontaktformular &amp; E-Mail-Anfragen</a></li>
+      <li><a href="#s6">Stripe-Zahlungsabwicklung</a></li>
+      <li><a href="#s7">Cookies, LocalStorage &amp; TDDDG § 25</a></li>
+      <li><a href="#s8">Lokale Schriftarten (Barlow)</a></li>
+      <li><a href="#s9">Hosting (Hostinger)</a></li>
+      <li><a href="#s10">Rechte der betroffenen Personen</a></li>
+      <li><a href="#s11">Datenweitergabe an Dritte</a></li>
+      <li><a href="#s12">Datensicherheit (TLS/SSL)</a></li>
+      <li><a href="#s13">Änderungen dieser Erklärung</a></li>
+    </ol>
+  </nav>
 
-<h2>5. Kontaktformular</h2>
-<p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-<p>Wir nutzen den Dienst <strong>FormSubmit.co</strong> zur Verarbeitung von Kontaktformularen. Ihre Daten werden dabei an Server von FormSubmit.co übertragen. Weitere Informationen finden Sie unter: <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener">FormSubmit Datenschutzerklärung</a>.</p>
-<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) und Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).</p>
+  <section class="ls" id="s1" aria-labelledby="h1">
+    <h2 id="h1">1. Verantwortlicher</h2>
+    <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und des Telekommunikation-Digitale-Dienste-Datenschutz-Gesetzes (TDDDG) ist:</p>
+    <div class="ib">
+      <p><strong>Amjad Albill</strong></p>
+      <p>Masar Werbeagentur</p>
+      <p>Bristolstraße 19HN · 13349 Berlin</p>
+      <p><strong>Telefon:</strong> <a href="tel:+4901785143918">0178 514 3918</a></p>
+      <p><strong>E-Mail:</strong> <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></p>
+    </div>
+  </section>
 
-<h2>6. Cookies</h2>
-<p>Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden.</p>
-<h3>Technisch notwendige Cookies</h3>
-<p>Diese Cookies sind für den Betrieb der Website erforderlich und können nicht deaktiviert werden. Sie speichern keine personenbezogenen Daten (z.B. Cookie-Einwilligung).</p>
-<h3>Ihre Cookie-Einstellungen</h3>
-<p>Sie können Ihre Cookie-Einstellungen jederzeit über unser Cookie-Banner anpassen. Rechtsgrundlage für notwendige Cookies: Art. 6 Abs. 1 lit. f DSGVO.</p>
+  <section class="ls" id="s2" aria-labelledby="h2">
+    <h2 id="h2">2. Grundsätze der Datenverarbeitung</h2>
+    <p>Wir verarbeiten personenbezogene Daten grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Eine regelmäßige Verarbeitung personenbezogener Daten erfolgt nur, sofern eine Rechtsgrundlage nach Art. 6 DSGVO vorliegt oder eine ausdrückliche Einwilligung der betroffenen Person gegeben wurde.</p>
+    <p>Wir halten uns an die Grundsätze der Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO), der Zweckbindung (Art. 5 Abs. 1 lit. b DSGVO) und der Speicherbegrenzung (Art. 5 Abs. 1 lit. e DSGVO).</p>
+  </section>
 
-<h2>7. WhatsApp-Kommunikation</h2>
-<p>Wenn Sie uns über WhatsApp kontaktieren, werden Ihre Nachrichten durch WhatsApp Inc. verarbeitet. WhatsApp ist ein Dienst von Meta Platforms Inc. Informationen zu deren Datenschutz: <a href="https://www.whatsapp.com/legal/privacy-policy-eea" target="_blank" rel="noopener">WhatsApp Datenschutzrichtlinie</a>. Wir empfehlen die Nutzung unseres Kontaktformulars als datenschutzfreundliche Alternative.</p>
+  <section class="ls" id="s3" aria-labelledby="h3">
+    <h2 id="h3">3. Rechtsgrundlagen (Art. 6 Abs. 1 DSGVO)</h2>
+    <p>Die Verarbeitung personenbezogener Daten erfolgt auf folgenden Rechtsgrundlagen:</p>
+    <ul>
+      <li><span class="art-badge">Art. 6 Abs. 1 lit. a DSGVO</span> – Einwilligung der betroffenen Person (z. B. Cookie-Einwilligung)</li>
+      <li><span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> – Vertragserfüllung oder vorvertragliche Maßnahmen (z. B. Bestellabwicklung, Kontaktanfragen)</li>
+      <li><span class="art-badge">Art. 6 Abs. 1 lit. c DSGVO</span> – Erfüllung gesetzlicher Pflichten (z. B. steuerliche Aufbewahrungspflichten)</li>
+      <li><span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span> – Berechtigtes Interesse (z. B. IT-Sicherheit, Server-Logs)</li>
+    </ul>
+  </section>
 
-<h2>8. Ihre Rechte</h2>
-<p>Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden personenbezogenen Daten:</p>
-<ul>
-<li>Recht auf Auskunft (Art. 15 DSGVO)</li>
-<li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
-<li>Recht auf Löschung (Art. 17 DSGVO)</li>
-<li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-<li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
-<li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
-</ul>
-<p>Sie können sich außerdem bei der zuständigen Datenschutz-Aufsichtsbehörde beschweren. Die zuständige Behörde in Berlin ist: <strong>Berliner Beauftragte für Datenschutz und Informationsfreiheit</strong>, Friedrichstr. 219, 10969 Berlin.</p>
+  <section class="ls" id="s4" aria-labelledby="h4">
+    <h2 id="h4">4. Server-Logfiles</h2>
+    <p>Der Hosting-Anbieter dieser Website erfasst und speichert automatisch Informationen in sog. Server-Logfiles, die Ihr Browser beim Seitenaufruf automatisch übermittelt. Dabei werden folgende Daten erhoben:</p>
+    <ul>
+      <li>Browsertyp und Browserversion</li>
+      <li>Verwendetes Betriebssystem</li>
+      <li>Referrer-URL (die zuvor besuchte Seite)</li>
+      <li>Hostname des zugreifenden Rechners</li>
+      <li>Datum und Uhrzeit der Serveranfrage</li>
+      <li>IP-Adresse (wird nach 7 Tagen anonymisiert)</li>
+      <li>Übertragene Datenmenge und HTTP-Statuscode</li>
+    </ul>
+    <p>Diese Daten werden nicht mit anderen Datenquellen zusammengeführt und nicht zu Marketing-Zwecken ausgewertet. Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span> (berechtigtes Interesse an der technischen Sicherheit und dem störungsfreien Betrieb). Die Daten werden spätestens nach 30 Tagen automatisch gelöscht.</p>
+  </section>
 
-<h2>9. Hosting</h2>
-<p>Diese Website wird bei <strong>Hostinger</strong> gehostet. Anbieter ist die Hostinger International Ltd., 61 Lordou Vironos Street, 6023 Larnaca, Zypern. Beim Besuch unserer Website erfasst Hostinger automatisch Log-Dateien (IP-Adresse, Browsertyp, Betriebssystem, Datum/Uhrzeit). Weitere Informationen: <a href="https://www.hostinger.de/datenschutzrichtlinie" target="_blank" rel="noopener">Hostinger Datenschutzrichtlinie</a>.</p>
-<p>Die Nutzung von Hostinger erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem zuverlässigen Betrieb unserer Website).</p>
+  <section class="ls" id="s5" aria-labelledby="h5">
+    <h2 id="h5">5. Kontaktformular &amp; E-Mail-Anfragen</h2>
+    <p>Wenn Sie uns über unser Kontaktformular oder per E-Mail kontaktieren, werden die übermittelten Daten zur Bearbeitung Ihrer Anfrage verarbeitet und gespeichert. Diese Daten werden ohne Ihre ausdrückliche Einwilligung nicht an Dritte weitergegeben.</p>
+    <h3>Verarbeitete Datenkategorien</h3>
+    <ul>
+      <li>Vor- und Nachname sowie ggf. Unternehmensname</li>
+      <li>E-Mail-Adresse (Pflichtfeld)</li>
+      <li>Telefonnummer (freiwillig)</li>
+      <li>Gewünschte Leistung und Nachrichteninhalt</li>
+      <li>Zeitpunkt der Anfrage</li>
+    </ul>
+    <h3>Formularversand über FormSubmit</h3>
+    <p>Für die technische Übermittlung von Formulareinträgen nutzen wir den Dienst <strong>FormSubmit</strong> (formsubmit.co). Dabei werden die von Ihnen eingegebenen Daten verschlüsselt (HTTPS) an die Server von FormSubmit weitergeleitet und dort an unsere E-Mail-Adresse zugestellt. FormSubmit speichert die Formulardaten nicht dauerhaft auf eigenen Servern. Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> (vorvertragliche Maßnahmen) und <span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span> (berechtigtes Interesse).</p>
+    <p>Speicherdauer: Anfragedaten werden nach abschließender Bearbeitung gelöscht, spätestens nach 6 Monaten.</p>
+  </section>
 
-<p style="margin-top:2rem;font-size:13px;color:var(--muted);">Stand: Mai 2026</p>
+  <section class="ls" id="s6" aria-labelledby="h6">
+    <h2 id="h6">6. Stripe-Zahlungsabwicklung</h2>
+    <p>In unserem Print Shop verwenden wir für die Zahlungsabwicklung den Dienstleister <strong>Stripe</strong> (Stripe Payments Europe, Limited, 1 Grand Canal Street Lower, Grand Canal Dock, Dublin D02 H210, Irland – einer Tochtergesellschaft der Stripe, Inc., 354 Oyster Point Blvd, South San Francisco, CA 94080, USA).</p>
+    <p>Wenn Sie eine Zahlung per Kreditkarte, Klarna oder Sofortüberweisung vornehmen, werden Sie auf die gesicherte Checkout-Seite von Stripe weitergeleitet (<em>Stripe Hosted Checkout</em>). Ihre sensiblen Zahlungsdaten (Kreditkartennummer, CVC, Ablaufdatum) werden dabei <strong>direkt und ausschließlich auf den PCI-DSS-Level-1-zertifizierten Servern von Stripe</strong> verarbeitet und gelangen zu keinem Zeitpunkt auf unsere Server.</p>
+    <h3>Von Stripe verarbeitete Daten</h3>
+    <ul>
+      <li>Name des Zahlungsinhabers und Rechnungsadresse</li>
+      <li>E-Mail-Adresse für die Zahlungsbestätigung</li>
+      <li>Zahlungsbetrag und Währung</li>
+      <li>Gewählte Zahlungsmethode (technische Kennung)</li>
+      <li>IP-Adresse und Geräteinformationen (Betrugserkennungszwecke durch Stripe)</li>
+    </ul>
+    <p>Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> (Vertragserfüllung). Beim Einsatz von Klarna kann Stripe Daten zur Bonitätsprüfung an Klarna übermitteln. Die Datenschutzerklärung von Stripe finden Sie unter: <a href="https://stripe.com/de/privacy" target="_blank" rel="noopener noreferrer">stripe.com/de/privacy</a>.</p>
+    <p>Speicherdauer: entsprechend gesetzlicher Aufbewahrungsfristen (§ 147 AO: 10 Jahre für Geschäftsdokumente).</p>
+  </section>
 
+  <section class="ls" id="s7" aria-labelledby="h7">
+    <h2 id="h7">7. Cookies, LocalStorage &amp; TDDDG § 25</h2>
+    <h3>Technisch notwendige Speicherung (§ 25 Abs. 2 Nr. 2 TDDDG)</h3>
+    <p>Die folgenden Speichertechnologien werden ohne Einwilligung eingesetzt, da sie für den Betrieb der Website zwingend erforderlich sind:</p>
+    <ul>
+      <li><strong>LocalStorage – Warenkorb:</strong> Ihr Warenkorb im Print Shop wird ausschließlich lokal in Ihrem Browser (LocalStorage) gespeichert. Es werden nur Produktdaten (Produkt-ID, Menge, Optionen) gespeichert – keine personenbezogenen Daten. Die Daten verlassen Ihr Endgerät nicht und werden nicht an unsere Server übertragen. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG (technische Notwendigkeit).</li>
+      <li><strong>Session-Storage – Bestelldaten:</strong> Beim Übergang zum Checkout werden Bestelldaten temporär im SessionStorage Ihres Browsers gehalten. Diese werden beim Schließen des Browser-Tabs automatisch gelöscht.</li>
+      <li><strong>Consent-Cookie:</strong> Unser Cookie-Einwilligungs-Banner speichert Ihren Einwilligungsstatus (akzeptiert/abgelehnt) in einem Cookie. Dieser enthält ausschließlich Ihre Entscheidung, keine persönlichen Daten. Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG i.V.m. <span class="art-badge">Art. 6 Abs. 1 lit. c DSGVO</span>.</li>
+    </ul>
+    <div class="notice-box">
+      <p><strong>Keine Tracking-Cookies:</strong> Wir setzen keinerlei Analyse-, Tracking- oder Werbe-Cookies und laden keine entsprechenden externen Skripte (z. B. Google Analytics, Meta Pixel, Hotjar). Dies gilt sowohl vor als auch nach einer etwaigen Einwilligung. Besucher werden nicht über Websites hinweg verfolgt.</p>
+    </div>
+    <h3>Cookie-Einstellungen im Browser</h3>
+    <p>Sie können Ihren Browser so konfigurieren, dass Sie über das Setzen von Cookies informiert werden, Cookies nur im Einzelfall erlauben oder Cookies generell ablehnen. Bei vollständiger Deaktivierung kann die Funktionalität einzelner Website-Bereiche eingeschränkt sein.</p>
+  </section>
 
-<footer><div class="fi">
-  <div class="fb"><div class="fl"><img loading="eager" decoding="async" src="logo.png" alt="Masar Werbeagentur Berlin – Kreative Vision. Digitale Lösungen." onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="flfb">MASAR</span></div><p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p></div>
-  <div class="fc"><h5>Navigation</h5><a href="index.html">Home</a><a href="leistungen.html">Leistungen</a><a href="index.html#kontakt">Kontakt</a></div>
-  <div class="fc"><h5>Rechtliches</h5><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
-</div><div class="fbot"><span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span><span>Steuernummer: 23/203/00524</span></div></footer>
-<script>document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
-const _sc=document.getElementById('stickyCta');
-window.addEventListener('scroll',()=>{if(window.scrollY>400)_sc.classList.add('visible');else _sc.classList.remove('visible');},{passive:true});
+  <section class="ls" id="s8" aria-labelledby="h8">
+    <h2 id="h8">8. Lokale Schriftarten (Barlow &amp; Barlow Condensed)</h2>
+    <div class="notice-box">
+      <p><strong>Keine Google Fonts CDN – vollständig lokal gehostet:</strong> Diese Website verwendet die Open-Source-Schriftarten <em>Barlow</em> und <em>Barlow Condensed</em>. Diese Schriftdateien werden ausschließlich auf unseren eigenen Servern in Deutschland / der EU gehostet und über die lokale Datei <code>/fonts.css</code> eingebunden. Es werden <strong>keinerlei Anfragen an externe Server</strong> gestellt, insbesondere nicht an Google-Server in den USA. Ihre IP-Adresse wird beim Laden der Schriftarten zu keinem Zeitpunkt an Google LLC oder andere Dritte übermittelt.</p>
+    </div>
+    <p>Diese Maßnahme entspricht den Anforderungen des LG München I (Urteil v. 20.01.2022, Az. 3 O 17493/20) und der DSGVO zur datenschutzkonformen Einbindung von Webfonts. Ein Einwilligungserfordernis nach § 25 Abs. 1 TDDDG besteht daher nicht.</p>
+  </section>
 
+  <section class="ls" id="s9" aria-labelledby="h9">
+    <h2 id="h9">9. Hosting (Hostinger)</h2>
+    <p>Diese Website wird auf Servern der <strong>Hostinger International Ltd.</strong> (61 Lordou Vironos Street, 6023 Larnaca, Zypern) betrieben. Die von uns genutzten Server befinden sich in der Europäischen Union (EU). Mit Hostinger besteht ein Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO.</p>
+    <p>Im Rahmen des Hostings verarbeitet Hostinger technisch notwendige Verbindungsdaten (Server-Logs, s. Abschnitt 4). Datenschutzinformationen: <a href="https://www.hostinger.com/privacy-policy" target="_blank" rel="noopener noreferrer">hostinger.com/privacy-policy</a>. Rechtsgrundlage: <span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span>.</p>
+  </section>
+
+  <section class="ls" id="s10" aria-labelledby="h10">
+    <h2 id="h10">10. Rechte der betroffenen Personen</h2>
+    <p>Gemäß der DSGVO stehen Ihnen folgende Rechte zu. Zur Geltendmachung wenden Sie sich bitte an: <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></p>
+    <h3>Auskunftsrecht – Art. 15 DSGVO</h3>
+    <p>Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden. Ist dies der Fall, steht Ihnen ein Auskunftsanspruch über diese Daten und die in Art. 15 Abs. 1 DSGVO genannten Informationen zu.</p>
+    <h3>Recht auf Berichtigung – Art. 16 DSGVO</h3>
+    <p>Sie haben das Recht, die unverzügliche Berichtigung unrichtiger personenbezogener Daten sowie die Vervollständigung unvollständiger Daten zu verlangen.</p>
+    <h3>Recht auf Löschung – Art. 17 DSGVO</h3>
+    <p>Sie haben das Recht, die Löschung Sie betreffender personenbezogener Daten zu verlangen, sofern keine gesetzlichen Aufbewahrungspflichten oder andere Verarbeitungsgründe nach Art. 17 Abs. 3 DSGVO entgegenstehen.</p>
+    <h3>Recht auf Einschränkung der Verarbeitung – Art. 18 DSGVO</h3>
+    <p>Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen, wenn eine der in Art. 18 Abs. 1 DSGVO genannten Voraussetzungen erfüllt ist.</p>
+    <h3>Datenübertragbarkeit – Art. 20 DSGVO</h3>
+    <p>Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten und diese einem anderen Verantwortlichen zu übermitteln.</p>
+    <h3>Widerspruchsrecht – Art. 21 DSGVO</h3>
+    <p>Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die auf <span class="art-badge">Art. 6 Abs. 1 lit. e oder f DSGVO</span> gestützte Verarbeitung Widerspruch einzulegen. Wir verarbeiten die Daten danach nicht mehr, es sei denn, wir können zwingende schutzwürdige Gründe nachweisen.</p>
+    <h3>Widerruf einer Einwilligung – Art. 7 Abs. 3 DSGVO</h3>
+    <p>Sofern die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung wird dadurch nicht berührt.</p>
+    <h3>Beschwerderecht – Art. 77 DSGVO</h3>
+    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:</p>
+    <div class="ib">
+      <p><strong>Berliner Beauftragte für Datenschutz und Informationsfreiheit</strong></p>
+      <p>Friedrichstraße 219, 10969 Berlin</p>
+      <p>Telefon: <a href="tel:+493013889-0">+49 30 13889-0</a></p>
+      <p>E-Mail: <a href="mailto:mailbox@datenschutz-berlin.de">mailbox@datenschutz-berlin.de</a></p>
+      <p>Website: <a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener noreferrer">datenschutz-berlin.de</a></p>
+    </div>
+  </section>
+
+  <section class="ls" id="s11" aria-labelledby="h11">
+    <h2 id="h11">11. Datenweitergabe an Dritte</h2>
+    <p>Eine Weitergabe Ihrer personenbezogenen Daten an Dritte findet grundsätzlich nicht statt, außer in folgenden Fällen:</p>
+    <ul>
+      <li>Sie haben ausdrücklich eingewilligt (<span class="art-badge">Art. 6 Abs. 1 lit. a DSGVO</span>).</li>
+      <li>Die Weitergabe ist zur Vertragserfüllung erforderlich (<span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span>), z. B. Übermittlung der Zahlungsdaten an Stripe.</li>
+      <li>Es besteht eine gesetzliche Verpflichtung (<span class="art-badge">Art. 6 Abs. 1 lit. c DSGVO</span>).</li>
+    </ul>
+    <p>Als Druckbroker werden für die Produktionsabwicklung ausschließlich anonymisierte technische Spezifikationen (Format, Auflage, Papierspezifikation) an unseren Produktionspartner übermittelt. Personenbezogene Kundendaten werden dabei nicht weitergegeben.</p>
+  </section>
+
+  <section class="ls" id="s12" aria-labelledby="h12">
+    <h2 id="h12">12. Datensicherheit (TLS/SSL)</h2>
+    <p>Diese Website verwendet eine TLS/SSL-Verschlüsselung (Transport Layer Security) für alle Datenübertragungen. Sie erkennen eine gesicherte Verbindung an dem „https://" in der Adressleiste und dem Schloss-Symbol in Ihrem Browser.</p>
+    <p>Darüber hinaus treffen wir nach Maßgabe von Art. 32 DSGVO geeignete technische und organisatorische Maßnahmen zum Schutz Ihrer Daten, insbesondere gegen unbefugten Zugriff, Verlust oder unbeabsichtigte Vernichtung.</p>
+  </section>
+
+  <section class="ls" id="s13" aria-labelledby="h13">
+    <h2 id="h13">13. Änderungen dieser Datenschutzerklärung</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie stets den aktuellen rechtlichen Anforderungen sowie etwaigen Änderungen unserer Leistungen anzupassen. Die jeweils aktuelle Version dieser Datenschutzerklärung ist jederzeit auf dieser Seite abrufbar. Bei wesentlichen Änderungen werden wir Sie gesondert informieren, sofern wir über Ihre Kontaktdaten verfügen.</p>
+  </section>
+
+  <p style="margin-top:1.5rem;font-size:12.5px;color:var(--muted);">Stand: Mai 2026 · Gilt zusammen mit unserem <a href="/impressum.html">Impressum</a> und unseren <a href="/agb.html">AGB</a>.</p>
+</div>
+</main>
+
+<footer aria-label="Seitenfu&szlig;">
+  <div class="fi">
+    <div class="fb">
+      <div class="fl"><img loading="lazy" src="/logo.png" alt="Masar Logo" onerror="this.style.display='none'"></div>
+      <p>Full-Service Werbeagentur Berlin-Wedding.<br>Werbetechnik, Print, Design &amp; Social Media.</p>
+    </div>
+    <div class="fc">
+      <h5>Navigation</h5>
+      <a href="/index.html">Home</a><a href="/leistungen.html">Leistungen</a>
+      <a href="/shop/">Print Shop</a><a href="/index.html#kontakt">Kontakt</a>
+    </div>
+    <div class="fc">
+      <h5>Rechtliches</h5>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html" aria-current="page">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+    <span><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
+  hbg.addEventListener('click',function(){var o=mob.classList.toggle('open');hbg.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);});
+  var sc=document.getElementById('stickyCta');
+  window.addEventListener('scroll',function(){sc.classList.toggle('visible',window.scrollY>500);sc.setAttribute('aria-hidden',window.scrollY<=500);},{passive:true});
+})();
 </script>
 <script src="/cookie-consent.js" defer></script>
-<script src="/app.js" defer></script>
-</body></html>
+</body>
+</html>
