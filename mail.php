@@ -8,7 +8,7 @@
 declare(strict_types=1);
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
-const RECIPIENT_EMAIL  = 'amjadbalili97@gmail.com';
+const RECIPIENT_EMAIL  = 'info@masar-werbeagentur.de';
 const RECIPIENT_NAME   = 'Masar Werbeagentur';
 const FROM_EMAIL       = 'noreply@masar-werbeagentur.de';
 const FROM_NAME        = 'Masar Werbeagentur Kontaktformular';
@@ -231,27 +231,198 @@ if (!$sent) {
 }
 
 // ─── AUTO-REPLY ───────────────────────────────────────────────────────────────
-$ar_subject = '=?UTF-8?B?' . base64_encode('Ihre Anfrage bei Masar Werbeagentur Berlin') . '?=';
-$ar_headers  = "From: =?UTF-8?B?" . base64_encode(RECIPIENT_NAME) . "?= <" . FROM_EMAIL . ">\r\n";
+$ar_subject = '=?UTF-8?B?' . base64_encode('✔ Anfrage erhalten – Masar Werbeagentur Berlin') . '?=';
+$ar_headers  = "From: =?UTF-8?B?" . base64_encode('Masar Werbeagentur Berlin') . "?= <" . FROM_EMAIL . ">\r\n";
+$ar_headers .= "Reply-To: info@masar-werbeagentur.de\r\n";
 $ar_headers .= "MIME-Version: 1.0\r\n";
 $ar_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-$ar_body = '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>'
-    . '<div style="max-width:580px;margin:0 auto;font-family:Arial,sans-serif;">'
-    . '<div style="background:#132e50;padding:24px 28px;border-radius:8px 8px 0 0;">'
-    . '<h1 style="color:#58d0bd;margin:0;font-size:20px;">MASAR WERBEAGENTUR</h1>'
-    . '</div>'
-    . '<div style="padding:28px;border:1px solid #e2ecec;border-top:none;background:#fff;">'
-    . "<p style='color:#132e50;font-size:16px;'>Hallo {$name},</p>"
-    . '<p style="color:#5a7070;line-height:1.8;">vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und werden uns <strong>innerhalb von 24 Stunden (Mo–Fr)</strong> bei Ihnen melden.</p>'
-    . '<p style="color:#5a7070;line-height:1.8;">Individuelle Angebote sind ab Ausstellungsdatum <strong>14 Kalendertage gültig</strong>.</p>'
-    . '<p style="color:#5a7070;line-height:1.8;">Bei dringenden Fragen erreichen Sie uns direkt:</p>'
-    . '<p style="margin:20px 0;">'
-    . '<a href="tel:01785143918" style="background:#58d0bd;color:#132e50;padding:12px 24px;border-radius:6px;font-weight:700;text-decoration:none;display:inline-block;">📞 0178 514 3918</a>'
-    . '</p>'
-    . '<p style="color:#9a9a9a;font-size:13px;margin-top:24px;">Mit freundlichen Grüßen<br><strong style="color:#132e50;">Amjad Albill</strong><br>Masar Werbeagentur · Berlin-Wedding</p>'
-    . '</div>'
-    . '<div style="padding:12px;text-align:center;font-size:11px;color:#bbb;">© 2026 Masar Werbeagentur · masar-werbeagentur.de</div>'
-    . '</div></body></html>';
+$ar_headers .= "Content-Transfer-Encoding: 8bit\r\n";
+
+$service_esc = htmlspecialchars($service, ENT_QUOTES, 'UTF-8');
+$name_esc    = htmlspecialchars($name,    ENT_QUOTES, 'UTF-8');
+$date_fmt    = date('d.m.Y');
+
+$ar_body = <<<HTML
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Anfrage erhalten</title>
+</head>
+<body style="margin:0;padding:0;background:#f0f4f8;font-family:Arial,Helvetica,sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#f0f4f8;padding:40px 16px;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+
+  <!-- HEADER -->
+  <tr>
+    <td style="background:linear-gradient(135deg,#0a1628 0%,#132e50 60%,#0d4a4a 100%);border-radius:12px 12px 0 0;padding:36px 40px 28px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <div style="font-family:Arial Black,Arial,sans-serif;font-weight:900;font-size:26px;color:#fff;letter-spacing:4px;">
+              M<span style="color:#58d0bd;">A</span>SAR
+            </div>
+            <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(88,208,189,.65);margin-top:4px;">
+              Werbeagentur · Berlin
+            </div>
+          </td>
+          <td align="right">
+            <div style="background:rgba(88,208,189,.15);border:1px solid rgba(88,208,189,.35);border-radius:20px;padding:6px 16px;display:inline-block;font-size:12px;color:#58d0bd;font-weight:700;">
+              ✔ Anfrage eingegangen
+            </div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- GREEN BAR -->
+  <tr>
+    <td style="background:#58d0bd;height:4px;line-height:4px;font-size:4px;">&nbsp;</td>
+  </tr>
+
+  <!-- BODY -->
+  <tr>
+    <td style="background:#ffffff;padding:40px 40px 32px;border-left:1px solid #e2ecec;border-right:1px solid #e2ecec;">
+
+      <p style="margin:0 0 8px;font-size:22px;font-weight:700;color:#0a1628;">Hallo {$name_esc},</p>
+      <p style="margin:0 0 24px;font-size:15px;color:#5a7070;line-height:1.7;">
+        vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und ein Mitarbeiter wird sich <strong style="color:#132e50;">innerhalb von 24 Stunden (Mo–Fr)</strong> persönlich bei Ihnen melden.
+      </p>
+
+      <!-- SUMMARY BOX -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fbfb;border:1px solid #e2ecec;border-left:4px solid #58d0bd;border-radius:0 8px 8px 0;margin-bottom:28px;">
+        <tr>
+          <td style="padding:20px 24px;">
+            <p style="margin:0 0 12px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#58d0bd;">Ihre Anfrage im Überblick</p>
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding:5px 0;font-size:13px;color:#9aafaf;width:130px;">Gewünschte Leistung</td>
+                <td style="padding:5px 0;font-size:13px;font-weight:700;color:#132e50;">{$service_esc}</td>
+              </tr>
+              <tr>
+                <td style="padding:5px 0;font-size:13px;color:#9aafaf;">Eingangsdatum</td>
+                <td style="padding:5px 0;font-size:13px;font-weight:700;color:#132e50;">{$date_fmt}</td>
+              </tr>
+              <tr>
+                <td style="padding:5px 0;font-size:13px;color:#9aafaf;">Bearbeitungszeit</td>
+                <td style="padding:5px 0;font-size:13px;font-weight:700;color:#132e50;">bis zu 24 Stunden (Mo–Fr)</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- NEXT STEPS -->
+      <p style="margin:0 0 16px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#132e50;">Was passiert als Nächstes?</p>
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+        <tr>
+          <td style="padding:8px 0;vertical-align:top;">
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width:32px;height:32px;background:#132e50;border-radius:50%;text-align:center;vertical-align:middle;font-size:13px;font-weight:700;color:#58d0bd;">1</td>
+                <td style="padding-left:14px;font-size:14px;color:#3a5050;line-height:1.6;">Wir prüfen Ihre Anfrage und bereiten ein <strong>individuelles Angebot</strong> vor.</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 0;vertical-align:top;">
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width:32px;height:32px;background:#132e50;border-radius:50%;text-align:center;vertical-align:middle;font-size:13px;font-weight:700;color:#58d0bd;">2</td>
+                <td style="padding-left:14px;font-size:14px;color:#3a5050;line-height:1.6;">Ein Berater meldet sich per <strong>E-Mail oder Telefon</strong> bei Ihnen.</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px 0;vertical-align:top;">
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width:32px;height:32px;background:#132e50;border-radius:50%;text-align:center;vertical-align:middle;font-size:13px;font-weight:700;color:#58d0bd;">3</td>
+                <td style="padding-left:14px;font-size:14px;color:#3a5050;line-height:1.6;">Nach Freigabe starten wir umgehend mit der <strong>Umsetzung</strong>.</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+      <!-- URGENT -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="background:#0a1628;border-radius:10px;margin-bottom:8px;">
+        <tr>
+          <td style="padding:22px 28px;">
+            <p style="margin:0 0 14px;font-size:13px;color:rgba(255,255,255,.55);font-weight:700;letter-spacing:1px;text-transform:uppercase;">Dringende Anfrage? Rufen Sie uns direkt an:</p>
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding-right:12px;">
+                  <a href="tel:01785143918" style="display:inline-block;background:#58d0bd;color:#0a1628;padding:12px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;">
+                    📞 &nbsp;0178 514 3918
+                  </a>
+                </td>
+                <td>
+                  <a href="https://wa.me/491785143918" style="display:inline-block;background:#25d366;color:#fff;padding:12px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;">
+                    💬 &nbsp;WhatsApp
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+
+  <!-- SIGNATURE -->
+  <tr>
+    <td style="background:#f8fbfb;border:1px solid #e2ecec;border-top:none;border-radius:0 0 12px 12px;padding:24px 40px;">
+      <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            <p style="margin:0;font-size:14px;color:#5a7070;line-height:1.8;">
+              Mit freundlichen Grüßen,<br>
+              <strong style="color:#132e50;font-size:15px;">Amjad Albill</strong><br>
+              <span style="color:#58d0bd;font-size:12px;">Masar Werbeagentur · Bristolstraße 19HN · 13349 Berlin</span>
+            </p>
+          </td>
+          <td align="right" style="vertical-align:top;">
+            <a href="https://masar-werbeagentur.de" style="font-family:Arial Black,Arial,sans-serif;font-weight:900;font-size:18px;color:#132e50;text-decoration:none;letter-spacing:3px;">
+              M<span style="color:#58d0bd;">A</span>SAR
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- FOOTER -->
+  <tr>
+    <td style="padding:20px 0;text-align:center;">
+      <p style="margin:0 0 8px;font-size:11px;color:#9aafaf;">
+        <a href="https://masar-werbeagentur.de" style="color:#58d0bd;text-decoration:none;">masar-werbeagentur.de</a>
+        &nbsp;·&nbsp;
+        <a href="mailto:info@masar-werbeagentur.de" style="color:#9aafaf;text-decoration:none;">info@masar-werbeagentur.de</a>
+        &nbsp;·&nbsp;
+        <a href="tel:01785143918" style="color:#9aafaf;text-decoration:none;">0178 514 3918</a>
+      </p>
+      <p style="margin:0;font-size:10px;color:#c0c8c8;">
+        © 2026 Masar Werbeagentur · Amjad Albill · Berlin-Wedding<br>
+        Diese E-Mail wurde automatisch versandt. Bitte antworten Sie direkt auf diese E-Mail.
+      </p>
+    </td>
+  </tr>
+
+</table>
+</td></tr>
+</table>
+
+</body>
+</html>
+HTML;
 
 mail($email, $ar_subject, $ar_body, $ar_headers);
 
