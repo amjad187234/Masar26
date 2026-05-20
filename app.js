@@ -508,31 +508,30 @@ const SvcDropdown = {
 
     this.opts = Array.from(this.panel.querySelectorAll('.svc-opt'));
 
-    this.trigger.addEventListener('click', () => {
+    this.trigger.addEventListener('click', e => {
+      e.stopPropagation();
       this.panel.classList.contains('open') ? this.close() : this.open();
     });
 
     this.trigger.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.open(); }
-      if (e.key === 'ArrowDown') { e.preventDefault(); this.open(); this.focusable(0)?.focus(); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); this.open(); setTimeout(() => this.focusable(0)?.focus(), 20); }
       if (e.key === 'Escape')   this.close();
     });
 
     this.opts.forEach((opt, i) => {
       opt.setAttribute('tabindex', '-1');
-      opt.addEventListener('click',   () => this.select(opt));
+      opt.addEventListener('click', e => { e.stopPropagation(); this.select(opt); });
       opt.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.select(opt); }
         if (e.key === 'ArrowDown') { e.preventDefault(); this.focusable(i + 1)?.focus(); }
-        if (e.key === 'ArrowUp')   { e.preventDefault(); (i > 0 ? this.focusable(i - 1) : null)?.focus() || this.trigger.focus(); }
-        if (e.key === 'Escape')    { e.preventDefault(); this.close(); }
+        if (e.key === 'ArrowUp')   { e.preventDefault(); (i > 0 ? this.focusable(i - 1) : this.trigger)?.focus(); }
+        if (e.key === 'Escape')    { e.preventDefault(); this.close(); this.trigger.focus(); }
         if (e.key === 'Tab')       this.close();
       });
     });
 
-    document.addEventListener('click', e => {
-      if (!this.trigger.contains(e.target) && !this.panel.contains(e.target)) this.close();
-    });
+    document.addEventListener('click', () => this.close());
   },
 
   focusable(i) {
@@ -542,8 +541,6 @@ const SvcDropdown = {
   open() {
     this.panel.classList.add('open');
     this.trigger.setAttribute('aria-expanded', 'true');
-    const sel = this.opts.find(o => o.getAttribute('aria-selected') === 'true');
-    (sel || this.opts[0])?.focus();
   },
 
   close() {
