@@ -28,10 +28,24 @@ if (!empty($_SESSION['admin_logged_in'])) {
 $error        = '';
 $loginAttempt = false;
 
+// Generate CSRF token on first visit
+if (empty($_SESSION['login_csrf'])) {
+    $_SESSION['login_csrf'] = bin2hex(random_bytes(32));
+}
+$csrfToken = $_SESSION['login_csrf'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $loginAttempt = true;
-    $username     = trim($_POST['username'] ?? '');
-    $password     = $_POST['password'] ?? '';
+
+    // CSRF validation
+    $submittedCsrf = $_POST['csrf_token'] ?? '';
+    if (!hash_equals($csrfToken, $submittedCsrf)) {
+        $error = 'Ungültige Anfrage. Bitte laden Sie die Seite neu.';
+        goto renderPage;
+    }
+
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
 
     // Basic brute-force protection via session counter
     if (!isset($_SESSION['fail_count'])) {
@@ -97,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+renderPage:
 ?><!DOCTYPE html>
 <html lang="de">
 <head>
@@ -259,6 +274,7 @@ body::before {
   <?php endif; ?>
 
   <form method="POST" action="login.php" autocomplete="off" novalidate>
+    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrfToken) ?>">
     <div class="form-group">
       <label class="form-label" for="username">Benutzername</label>
       <input

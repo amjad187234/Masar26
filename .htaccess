@@ -45,9 +45,6 @@ DirectoryIndex index.html index.php
   # MIME sniffing prevention
   Header always set X-Content-Type-Options "nosniff"
 
-  # XSS filter (legacy browsers)
-  Header always set X-XSS-Protection "1; mode=block"
-
   # Referrer policy
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
@@ -56,7 +53,7 @@ DirectoryIndex index.html index.php
 
   # Content Security Policy
   # stripe.com sources required for Stripe Hosted Checkout redirect
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://js.stripe.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.stripe.com https://formsubmit.co; form-action 'self' https://checkout.stripe.com https://formsubmit.co; frame-src https://js.stripe.com https://hooks.stripe.com; frame-ancestors 'none'; base-uri 'self';"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self';"
 
   # Remove server signature headers
   Header always unset X-Powered-By
