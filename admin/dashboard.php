@@ -79,7 +79,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $fullPath = UPLOAD_DIR . basename($row['file_path']); // basename prevents path traversal
                 if (file_exists($fullPath)) {
                     $originalName = $row['file_original_name'] ?: basename($fullPath);
-                    $mime = mime_content_type($fullPath) ?: 'application/octet-stream';
+                    $finfo = new finfo(FILEINFO_MIME_TYPE);
+                    $mime  = $finfo->file($fullPath) ?: 'application/octet-stream';
                     // RFC 5987 filename encoding to support non-ASCII characters safely
                     $asciiName   = preg_replace('/[^\x20-\x7E]/', '_', $originalName);
                     $encodedName = rawurlencode($originalName);

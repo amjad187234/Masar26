@@ -13,7 +13,7 @@ const RECIPIENT_NAME   = 'Masar Werbeagentur';
 const FROM_EMAIL       = 'noreply@masar-werbeagentur.de';
 const FROM_NAME        = 'Masar Werbeagentur Kontaktformular';
 const MAX_UPLOAD_BYTES = 5 * 1024 * 1024; // 5 MB
-const ALLOWED_TYPES    = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf', 'image/svg+xml'];
+const ALLOWED_TYPES    = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'];
 const RATE_LIMIT_FILE  = '/tmp/masar_rl_';
 const RATE_LIMIT_MAX   = 5;   // max submissions per window
 const RATE_LIMIT_WIN   = 300; // 5-minute window (seconds)
@@ -69,7 +69,9 @@ if (count($hits) >= RATE_LIMIT_MAX) {
 }
 
 $hits[] = $now;
-@file_put_contents($rl_file, json_encode(array_values($hits)));
+if (file_put_contents($rl_file, json_encode(array_values($hits))) === false) {
+    error_log('[Masar] Rate-limit write failed for IP hash: ' . substr($ip_hash, 0, 16));
+}
 
 // ─── HONEYPOT ─────────────────────────────────────────────────────────────────
 if (!empty($_POST['website'])) {
@@ -117,7 +119,7 @@ if (!empty($_FILES['attachment']) && $_FILES['attachment']['error'] !== UPLOAD_E
     $detected = $finfo->file($file['tmp_name']);
 
     if (!in_array($detected, ALLOWED_TYPES, true)) {
-        json_out('error', 'Dateityp nicht erlaubt. Erlaubt: JPG, PNG, GIF, WebP, PDF, SVG.');
+        json_out('error', 'Dateityp nicht erlaubt. Erlaubt: JPG, PNG, GIF, WebP, PDF.');
     }
 
     $attachment_data = chunk_split(base64_encode(file_get_contents($file['tmp_name'])));
@@ -240,7 +242,8 @@ $ar_body = '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>'
     . '</div>'
     . '<div style="padding:28px;border:1px solid #e2ecec;border-top:none;background:#fff;">'
     . "<p style='color:#132e50;font-size:16px;'>Hallo {$name},</p>"
-    . '<p style="color:#5a7070;line-height:1.8;">vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und werden uns <strong>innerhalb von 24 Stunden</strong> bei Ihnen melden.</p>'
+    . '<p style="color:#5a7070;line-height:1.8;">vielen Dank für Ihre Anfrage! Wir haben Ihre Nachricht erhalten und werden uns <strong>innerhalb von 24 Stunden (Mo–Fr)</strong> bei Ihnen melden.</p>'
+    . '<p style="color:#5a7070;line-height:1.8;">Individuelle Angebote sind ab Ausstellungsdatum <strong>14 Kalendertage gültig</strong>.</p>'
     . '<p style="color:#5a7070;line-height:1.8;">Bei dringenden Fragen erreichen Sie uns direkt:</p>'
     . '<p style="margin:20px 0;">'
     . '<a href="tel:01785143918" style="background:#58d0bd;color:#132e50;padding:12px 24px;border-radius:6px;font-weight:700;text-decoration:none;display:inline-block;">📞 0178 514 3918</a>'
@@ -250,6 +253,6 @@ $ar_body = '<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>'
     . '<div style="padding:12px;text-align:center;font-size:11px;color:#bbb;">© 2026 Masar Werbeagentur · masar-werbeagentur.de</div>'
     . '</div></body></html>';
 
-@mail($email, $ar_subject, $ar_body, $ar_headers);
+mail($email, $ar_subject, $ar_body, $ar_headers);
 
 json_out('success', 'Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden!');

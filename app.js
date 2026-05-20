@@ -420,6 +420,10 @@ const StickyCta = {
     window.addEventListener('scroll', () => {
       el.classList.toggle('visible', window.scrollY > 500);
     }, { passive: true });
+    // Hide banner when CTA button clicked
+    document.getElementById('stickyCtaBtn')?.addEventListener('click', () => {
+      el.style.display = 'none';
+    });
   }
 };
 

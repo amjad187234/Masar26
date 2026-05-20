@@ -7,6 +7,7 @@ define('ADMIN_PASS_HASH', getenv('ADMIN_PASS_HASH') ?: '$2y$12$DeiKE9EbzDGlL4jov
 define('ADMIN_USERNAME',  getenv('ADMIN_USERNAME')  ?: 'masar-admin');
 
 define('DB_PATH',    __DIR__ . '/data/orders.db');
+define('UPLOAD_DIR', __DIR__ . '/uploads/print-files/');
 define('SITE_URL',   'https://masar-werbeagentur.de');
 define('ADMIN_EMAIL','info@masar-werbeagentur.de');
 
