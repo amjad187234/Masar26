@@ -149,176 +149,209 @@ nav {
 .filter-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
 
 /* ══════════════════════════════════════════════════════
-   CATALOG GRID
+   CATALOG — configurator cards
    ══════════════════════════════════════════════════════ */
-.catalog-section { padding:3rem 0 6rem; background:var(--off); min-height:60vh; }
-.catalog-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-}
+.catalog-section { padding:2.5rem 0 6rem; background:var(--off); min-height:60vh; }
+.catalog-grid { display:flex; flex-direction:column; gap:2rem; }
 
-/* ── Product card ── */
-.prod-card {
+/* ── Configurator card ── */
+.cfg-card {
   background:#fff;
   border:1px solid var(--border);
-  border-radius:var(--r);
-  box-shadow:var(--shadow);
+  border-radius:16px;
+  box-shadow:0 4px 24px rgba(0,0,0,.07);
   overflow:hidden;
-  display:flex; flex-direction:column;
-  transition:transform .3s, box-shadow .3s, border-color .3s;
 }
-.prod-card:hover {
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-lg);
-  border-color:rgba(88,208,189,.3);
-}
-.prod-card-header {
+.cfg-header {
   background:linear-gradient(135deg,var(--navy3),var(--navy));
-  padding:1.5rem;
+  padding:1.4rem 2rem;
   display:flex; align-items:center; justify-content:space-between;
-  position:relative; overflow:hidden;
+  gap:1rem; border-bottom:3px solid var(--teal);
 }
-.prod-card-header::after {
-  content:'';
-  position:absolute; bottom:0; left:0; right:0; height:3px;
-  background:var(--teal);
-}
-.prod-emoji { font-size:2.2rem; line-height:1; }
-.prod-cat {
-  font-size:10px; font-weight:700; letter-spacing:2px;
-  text-transform:uppercase; color:rgba(88,208,189,.7);
-  background:rgba(88,208,189,.08);
-  border:1px solid rgba(88,208,189,.2);
-  padding:4px 10px; border-radius:4px;
-}
-.prod-card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; gap:.8rem; }
-.prod-name {
+.cfg-header-info { flex:1; min-width:0; }
+.cfg-name {
   font-family:'Barlow Condensed',sans-serif;
-  font-weight:900; font-size:1.3rem;
-  text-transform:uppercase; color:var(--navy); line-height:1.1;
+  font-weight:900; font-size:1.6rem;
+  text-transform:uppercase; color:#fff; line-height:1;
+  margin-bottom:.3rem;
 }
-.prod-desc { font-size:13px; color:var(--muted); line-height:1.6; }
-.prod-price-from { font-size:13px; color:var(--muted); }
-.prod-price-from strong { color:var(--teal); font-size:16px; font-weight:800; }
+.cfg-desc { font-size:13px; color:rgba(255,255,255,.55); line-height:1.5; }
+.cfg-header-from {
+  text-align:right; flex-shrink:0;
+  font-size:12px; color:rgba(255,255,255,.45);
+  white-space:nowrap;
+}
+.cfg-header-from strong { display:block; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.6rem; color:var(--teal); line-height:1; }
 
-/* ── Option buttons ── */
-.prod-opt-group { display:flex; flex-direction:column; gap:.4rem; }
-.prod-opt-lbl {
-  font-size:10px; font-weight:700; letter-spacing:1.5px;
-  text-transform:uppercase; color:var(--muted);
+/* ── Body: steps left, price right ── */
+.cfg-body {
+  display:grid;
+  grid-template-columns:1fr 280px;
 }
-.prod-opt-btns { display:flex; gap:.4rem; flex-wrap:wrap; }
-.opt-btn {
-  padding:5px 12px;
+.cfg-steps-col {
+  padding:1.8rem 2rem;
+  border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:1.6rem;
+}
+.cfg-price-col {
+  padding:1.8rem 1.6rem;
+  background:#fafcfc;
+  display:flex; flex-direction:column; gap:1rem;
+}
+
+/* ── Steps ── */
+.cfg-step-head {
+  display:flex; align-items:center; gap:.7rem;
+  margin-bottom:.8rem;
+}
+.cfg-step-num {
+  width:26px; height:26px; border-radius:50%;
+  background:var(--navy); color:#fff;
+  font-size:12px; font-weight:800;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.cfg-step-label {
+  font-size:11px; font-weight:800;
+  letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--navy);
+}
+
+/* ── Chips ── */
+.cfg-chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+.cfg-chip {
+  padding:7px 13px;
   border:1.5px solid var(--border);
-  border-radius:6px;
-  background:#fff; color:var(--text);
+  border-radius:8px;
+  background:#fff; cursor:pointer;
   font-family:'Barlow',sans-serif;
-  font-size:12px; font-weight:600;
-  cursor:pointer; transition:all .2s;
-  line-height:1.3;
+  font-size:13px; font-weight:600;
+  color:var(--text);
+  transition:all .18s;
+  display:flex; flex-direction:column;
+  align-items:flex-start; gap:2px;
+  position:relative;
+  text-align:left;
 }
-.opt-btn:hover { border-color:var(--teal); color:var(--navy); }
-.opt-btn.active { background:var(--teal); color:var(--navy); border-color:var(--teal); font-weight:700; }
+.cfg-chip:hover { border-color:var(--teal); color:var(--navy); }
+.cfg-chip.active {
+  border-color:var(--teal); background:rgba(88,208,189,.1);
+  color:var(--navy); font-weight:700;
+  box-shadow:0 0 0 2px rgba(88,208,189,.25);
+}
+.cfg-chip-label { line-height:1.2; }
+.cfg-chip-sub { font-size:11px; color:var(--muted); font-weight:500; line-height:1.2; }
+.cfg-chip.active .cfg-chip-sub { color:var(--teal); }
+.cfg-chip-badge {
+  position:absolute; top:-7px; right:6px;
+  background:var(--teal); color:var(--navy);
+  font-size:9px; font-weight:900;
+  padding:2px 6px; border-radius:4px;
+  letter-spacing:.5px;
+}
 
-/* ── Qty control ── */
-.prod-qty-row { display:flex; flex-direction:column; gap:.4rem; }
-.qty-ctrl { display:flex; align-items:center; gap:.4rem; }
-.qty-btn {
-  width:32px; height:32px;
+/* ── Banner size grid ── */
+.cfg-size-grid { display:flex; flex-wrap:wrap; gap:.45rem; }
+.cfg-size-chip {
+  padding:7px 12px;
   border:1.5px solid var(--border);
-  border-radius:6px;
+  border-radius:8px;
+  background:#fff; cursor:pointer;
+  font-family:'Barlow',sans-serif;
+  font-size:12.5px; font-weight:700;
+  color:var(--text);
+  transition:all .18s;
+  white-space:nowrap;
+}
+.cfg-size-chip:hover { border-color:var(--teal); color:var(--navy); }
+.cfg-size-chip.active {
+  border-color:var(--teal); background:rgba(88,208,189,.1);
+  color:var(--navy); box-shadow:0 0 0 2px rgba(88,208,189,.25);
+}
+.cfg-size-custom {
+  display:flex; align-items:center; gap:.5rem;
+  margin-top:.8rem; flex-wrap:wrap;
+}
+.cfg-custom-size label { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
+.cfg-custom-inp {
+  width:80px; padding:7px 10px;
+  border:1.5px solid var(--border); border-radius:6px;
+  font-family:'Barlow',sans-serif; font-size:14px; font-weight:700;
+  color:var(--navy); outline:none; text-align:center;
+  transition:border-color .2s; -webkit-appearance:none;
+}
+.cfg-custom-inp:focus { border-color:var(--teal); }
+.cfg-custom-x { font-size:18px; font-weight:700; color:var(--muted); }
+.cfg-custom-unit { font-size:13px; font-weight:700; color:var(--muted); }
+
+/* ── Quantity ── */
+.cfg-qty-row { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.cfg-qty-btn {
+  width:36px; height:36px;
+  border:1.5px solid var(--border); border-radius:8px;
   background:#fff; color:var(--navy);
-  font-size:18px; font-weight:700;
+  font-size:20px; font-weight:700;
   cursor:pointer; transition:all .2s;
   display:flex; align-items:center; justify-content:center;
   flex-shrink:0;
 }
-.qty-btn:hover { border-color:var(--teal); background:var(--teal-l); }
-.qty-inp {
+.cfg-qty-btn:hover { border-color:var(--teal); background:var(--teal-l); }
+.cfg-qty-inp {
   width:90px; text-align:center;
-  border:1.5px solid var(--border);
-  border-radius:6px;
-  padding:6px 8px;
-  font-family:'Barlow',sans-serif;
-  font-size:14px; font-weight:700;
-  color:var(--navy);
-  outline:none;
-  transition:border-color .2s;
-  -webkit-appearance:none;
+  border:1.5px solid var(--border); border-radius:8px;
+  padding:7px 8px;
+  font-family:'Barlow',sans-serif; font-size:15px; font-weight:700;
+  color:var(--navy); outline:none;
+  transition:border-color .2s; -webkit-appearance:none;
 }
-.qty-inp:focus { border-color:var(--teal); }
-.qty-inp::-webkit-inner-spin-button,
-.qty-inp::-webkit-outer-spin-button { opacity:1; }
+.cfg-qty-inp:focus { border-color:var(--teal); }
+.cfg-qty-hint { font-size:12px; color:var(--muted); }
 
-/* ── Live price ── */
-.prod-price-live {
+/* ── Price panel ── */
+.cfg-price-box {
   background:var(--navy);
-  border-radius:8px;
-  padding:1rem 1.2rem;
-  margin-top:auto;
+  border-radius:12px;
+  padding:1.2rem 1.4rem;
+  display:flex; flex-direction:column; gap:.8rem;
 }
-.price-unit {
-  font-size:11px; letter-spacing:1.5px; text-transform:uppercase;
-  color:rgba(255,255,255,.45); margin-bottom:.3rem;
-}
-.price-total {
-  font-family:'Barlow Condensed',sans-serif;
-  font-weight:900; font-size:1.6rem;
-  color:var(--teal); line-height:1;
-}
+.cfg-banner-area-row,
+.cfg-price-unit-row { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; }
+.cfg-price-total-row { display:flex; justify-content:space-between; align-items:baseline; gap:.5rem; border-top:1px solid rgba(255,255,255,.1); padding-top:.8rem; }
+.cfg-price-unit-lbl { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:rgba(255,255,255,.45); }
+.cfg-price-unit-val { font-size:14px; font-weight:700; color:#fff; }
+.cfg-price-total-lbl { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:rgba(88,208,189,.7); }
+.cfg-price-total-val { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.7rem; color:var(--teal); line-height:1; }
 
 /* ── Tier table ── */
-.tier-table-wrap {
-  border:1px solid var(--border);
-  border-radius:8px;
-  overflow:hidden;
-  font-size:13px;
+.cfg-tiers {
+  border:1px solid var(--border); border-radius:8px; overflow:hidden; font-size:13px;
 }
-.tier-table-wrap summary {
-  padding:8px 12px;
-  cursor:pointer;
-  font-size:12px; font-weight:700;
-  color:var(--muted);
-  background:var(--off);
-  user-select:none;
-  list-style:none;
-  display:flex; align-items:center; gap:.4rem;
+.cfg-tiers summary {
+  padding:8px 12px; cursor:pointer;
+  font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--muted); background:var(--off); user-select:none;
+  list-style:none; display:flex; align-items:center; gap:.4rem;
 }
-.tier-table-wrap summary::before { content:'▸'; font-size:10px; transition:transform .2s; }
-.tier-table-wrap[open] summary::before { transform:rotate(90deg); }
-.tier-table { width:100%; border-collapse:collapse; }
-.tier-table th {
-  background:var(--navy); color:#fff;
-  padding:8px 10px; font-size:11px;
-  letter-spacing:1px; text-transform:uppercase;
-  text-align:left;
-}
-.tier-table td { padding:7px 10px; border-bottom:1px solid var(--border); color:var(--text); }
-.tier-table tr:last-child td { border-bottom:none; }
-.tier-table tr:nth-child(even) td { background:var(--off); }
+.cfg-tiers summary::before { content:'▸'; font-size:10px; transition:transform .2s; }
+.cfg-tiers[open] summary::before { transform:rotate(90deg); }
+.cfg-tier-table { width:100%; border-collapse:collapse; }
+.cfg-tier-table th { background:var(--navy); color:#fff; padding:7px 10px; font-size:10px; letter-spacing:1px; text-transform:uppercase; text-align:left; }
+.cfg-tier-table td { padding:6px 10px; border-bottom:1px solid var(--border); color:var(--text); font-size:12px; }
+.cfg-tier-table tr:last-child td { border-bottom:none; }
+.cfg-tier-table tr:nth-child(even) td { background:var(--off); }
 
-/* ── Add to cart button ── */
-.add-to-cart-btn {
-  width:100%;
-  background:var(--teal);
-  color:var(--navy);
-  border:none;
-  border-radius:8px;
-  padding:13px 16px;
-  font-family:'Barlow',sans-serif;
-  font-size:14px; font-weight:800;
-  cursor:pointer;
-  transition:background .2s, transform .2s, box-shadow .2s;
-  margin-top:.4rem;
+/* ── Banner info ── */
+.cfg-banner-info p { font-size:12px; color:var(--muted); line-height:1.9; }
+
+/* ── Cart button ── */
+.cfg-cart-btn {
+  width:100%; background:var(--teal); color:var(--navy);
+  border:none; border-radius:10px; padding:13px 16px;
+  font-family:'Barlow',sans-serif; font-size:14px; font-weight:800;
+  cursor:pointer; transition:all .2s; margin-top:auto;
 }
-.add-to-cart-btn:hover {
-  background:var(--teal-d);
-  transform:translateY(-2px);
-  box-shadow:0 6px 20px rgba(88,208,189,.35);
-}
-.add-to-cart-btn:active { transform:translateY(0); }
+.cfg-cart-btn:hover { background:var(--teal-d); transform:translateY(-2px); box-shadow:0 6px 20px rgba(88,208,189,.4); }
+.cfg-cart-btn:active { transform:translateY(0); }
 
 /* ══════════════════════════════════════════════════════
    CART BUTTON — sticky bottom-right
@@ -542,19 +575,6 @@ footer {
 .paper-sel{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:6px;padding:8px 10px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;transition:border-color .2s;}
 .paper-sel:focus{border-color:var(--teal);outline:none;}
 .paper-sel:hover{border-color:var(--teal);}
-.speed-selector-wrap{background:#fff;border-bottom:2px solid var(--border);padding:.75rem 0;}
-.speed-selector{display:flex;align-items:center;gap:.5rem;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-.speed-selector::-webkit-scrollbar{display:none;}
-.speed-lbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);white-space:nowrap;flex-shrink:0;margin-right:.2rem;}
-.speed-btn{padding:8px 12px;border:2px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;align-items:flex-start;transition:all .2s;flex-shrink:0;white-space:nowrap;}
-.speed-btn:hover{border-color:var(--teal);}
-.speed-btn.active{border-color:var(--navy);background:var(--navy);}
-.speed-btn-title{font-size:13px;font-weight:800;color:var(--navy);line-height:1.2;}
-.speed-btn.active .speed-btn-title{color:#fff;}
-.speed-btn-sub{font-size:11px;color:var(--muted);font-weight:500;line-height:1.3;margin-top:1px;}
-.speed-btn.active .speed-btn-sub{color:rgba(255,255,255,.65);}
-.speed-badge{font-size:11px;font-weight:800;color:var(--teal);margin-top:2px;line-height:1;}
-.speed-btn.active .speed-badge{color:#58d0bd;}
 
 /* ══════════════════════════════════════════════════════
    RESPONSIVE
@@ -566,11 +586,19 @@ footer {
   :root { --nav-h:68px; }
   .nav-links { display:none; }
   .hamburger { display:flex; }
-  .catalog-grid { grid-template-columns:1fr; gap:1rem; }
+  .catalog-grid { gap:1rem; }
   .catalog-section { padding:2rem 0 4rem; }
   .foot-grid { grid-template-columns:1fr 1fr; gap:2rem; }
   .shop-hero h1 { font-size:clamp(2rem,8vw,3rem); }
   .trust-badges { flex-direction:column; gap:.5rem; }
+  /* Configurator: stack steps and price panel vertically */
+  .cfg-body { grid-template-columns:1fr; }
+  .cfg-steps-col { border-right:none; border-bottom:1px solid var(--border); padding:1.4rem 1.2rem; }
+  .cfg-price-col { padding:1.4rem 1.2rem; }
+  .cfg-header { flex-direction:column; align-items:flex-start; gap:.5rem; }
+  .cfg-header-from { text-align:left; }
+  .cfg-size-grid { gap:.35rem; }
+  .cfg-size-chip { font-size:12px; padding:6px 10px; }
 }
 @media(max-width:480px) {
   .container { padding:0 1rem; }
@@ -627,7 +655,7 @@ footer {
       <span class="shop-eyebrow">✦ Masar Werbeagentur Berlin · Print Shop</span>
       <h1>Professioneller Druck –<br><em>zu Reseller-Preisen</em></h1>
       <p class="shop-hero-sub">
-        Von Flyern über Visitenkarten bis zu Roll-ups und Standbodenbeuteln –
+        Visitenkarten, Flyer und PVC-Planen/Banner auf Maß –
         Druckprodukte in Profiqualität, direkt bestellt mit Ihrer Druckdatei.
       </p>
       <div class="trust-badges">
@@ -644,38 +672,9 @@ footer {
 <div class="filter-bar">
   <div class="filter-bar-inner">
     <button class="filter-btn active" onclick="filterCatalog('all',this)">Alle</button>
-    <button class="filter-btn" onclick="filterCatalog('Flyer',this)">Flyer</button>
     <button class="filter-btn" onclick="filterCatalog('Visitenkarten',this)">Visitenkarten</button>
-    <button class="filter-btn" onclick="filterCatalog('Aufkleber',this)">Aufkleber</button>
-    <button class="filter-btn" onclick="filterCatalog('Werbemittel',this)">Werbemittel</button>
-    <button class="filter-btn" onclick="filterCatalog('Plakate',this)">Plakate</button>
-    <button class="filter-btn" onclick="filterCatalog('Broschüren',this)">Broschüren</button>
-    <button class="filter-btn" onclick="filterCatalog('Verpackung',this)">Verpackung</button>
-    <button class="filter-btn" onclick="filterCatalog('Werbeartikel',this)">Werbeartikel</button>
-  </div>
-</div>
-
-<!-- SPEED SELECTOR -->
-<div class="speed-selector-wrap">
-  <div class="container">
-    <div class="speed-selector">
-      <div class="speed-lbl">⚡ Lieferzeit:</div>
-      <button class="speed-btn active" data-speed="standard" onclick="setSpeed('standard',this)" type="button">
-        <span class="speed-btn-title">Standard</span>
-        <span class="speed-btn-sub">3–5 Werktage</span>
-        <span class="speed-badge">&nbsp;</span>
-      </button>
-      <button class="speed-btn" data-speed="next-day" onclick="setSpeed('next-day',this)" type="button">
-        <span class="speed-btn-title">Next-Day</span>
-        <span class="speed-btn-sub">Nächster Werktag</span>
-        <span class="speed-badge">+25%</span>
-      </button>
-      <button class="speed-btn" data-speed="same-day" onclick="setSpeed('same-day',this)" type="button">
-        <span class="speed-btn-title">Same-Day</span>
-        <span class="speed-btn-sub">Bis 11:00 Uhr bestellen</span>
-        <span class="speed-badge">+50%</span>
-      </button>
-    </div>
+    <button class="filter-btn" onclick="filterCatalog('Flyer',this)">Flyer</button>
+    <button class="filter-btn" onclick="filterCatalog('Planen',this)">Planen &amp; Banner</button>
   </div>
 </div>
 
@@ -750,9 +749,9 @@ footer {
       <div class="foot-col">
         <h5>Shop</h5>
         <a href="/shop/">Alle Produkte</a>
-        <a href="/shop/?filter=Flyer">Flyer</a>
         <a href="/shop/?filter=Visitenkarten">Visitenkarten</a>
-        <a href="/shop/?filter=Plakate">Plakate</a>
+        <a href="/shop/?filter=Flyer">Flyer</a>
+        <a href="/shop/?filter=Planen">Planen &amp; Banner</a>
         <a href="/shop/checkout.html">Warenkorb</a>
       </div>
       <div class="foot-col">
