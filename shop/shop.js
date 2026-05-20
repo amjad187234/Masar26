@@ -22,6 +22,18 @@
 const RESELLER_MARKUP = 1.30;
 
 // ───────────────────────────────────────────────────────────────────────────────
+// SPEED SURCHARGES
+// ─────────────────────────────────────────────────────────────────────────────
+// Formula: Client Price = (wsUnit * optMult * RESELLER_MARKUP * qty) * (1 + surcharge)
+// ───────────────────────────────────────────────────────────────────────────────
+const SPEED_SURCHARGES = {
+  standard:  { label: 'Standard (3–5 Werktage)',               surcharge: 0.00 },
+  'next-day':{ label: 'Next-Day Service (nächster Werktag)',    surcharge: 0.25 },
+  'same-day':{ label: 'Same-Day Service (Bestellung bis 11 Uhr)', surcharge: 0.50 },
+};
+let activeSurcharge = 0.0;
+
+// ───────────────────────────────────────────────────────────────────────────────
 // PRODUCT CATALOG
 // ─────────────────────────────────────────────────────────────────────────────
 // Each product has:
@@ -37,10 +49,15 @@ const RESELLER_MARKUP = 1.30;
 const CATALOG = [
   {
     id: 'flyer-a5', name: 'Flyer A5', emoji: '📄', category: 'Flyer',
-    desc: 'Einseitig & doppelseitig, glänzend oder matt, 135g/m²',
+    desc: 'Einseitig & doppelseitig – Papier und Grammatur frei wählbar',
     options: {
-      finish: [{label:'Glanz',mult:1.0},{label:'Matt',mult:1.06}],
-      sides:  [{label:'Einseitig',mult:1.0},{label:'Doppelseitig',mult:1.35}]
+      sides: [{label:'Einseitig',mult:1.0},{label:'Doppelseitig',mult:1.35}]
+    },
+    paperMatrix: {
+      'Bilderdruck matt':      { mult:1.00, grammages:[{label:'100g',mult:0.85},{label:'135g',mult:1.00},{label:'170g',mult:1.12},{label:'250g',mult:1.28},{label:'300g',mult:1.38},{label:'350g',mult:1.48}] },
+      'Bilderdruck glänzend':  { mult:1.05, grammages:[{label:'100g',mult:0.85},{label:'135g',mult:1.00},{label:'170g',mult:1.12},{label:'250g',mult:1.28},{label:'300g',mult:1.38}] },
+      'Naturpapier':           { mult:1.12, grammages:[{label:'300g',mult:1.38}] },
+      'Recycling Bilderdruck': { mult:0.95, grammages:[{label:'135g',mult:1.00},{label:'300g',mult:1.38}] },
     },
     tiers: [
       {qty:250,  ws:18.50},
@@ -53,10 +70,15 @@ const CATALOG = [
   },
   {
     id: 'flyer-a4', name: 'Flyer A4', emoji: '📰', category: 'Flyer',
-    desc: 'DIN A4, 135g/m², glänzend oder matt',
+    desc: 'DIN A4 – Papier und Grammatur frei wählbar',
     options: {
-      finish: [{label:'Glanz',mult:1.0},{label:'Matt',mult:1.06}],
-      sides:  [{label:'Einseitig',mult:1.0},{label:'Doppelseitig',mult:1.35}]
+      sides: [{label:'Einseitig',mult:1.0},{label:'Doppelseitig',mult:1.35}]
+    },
+    paperMatrix: {
+      'Bilderdruck matt':      { mult:1.00, grammages:[{label:'100g',mult:0.85},{label:'135g',mult:1.00},{label:'170g',mult:1.12},{label:'250g',mult:1.28},{label:'300g',mult:1.38},{label:'350g',mult:1.48}] },
+      'Bilderdruck glänzend':  { mult:1.05, grammages:[{label:'100g',mult:0.85},{label:'135g',mult:1.00},{label:'170g',mult:1.12},{label:'250g',mult:1.28},{label:'300g',mult:1.38}] },
+      'Naturpapier':           { mult:1.12, grammages:[{label:'300g',mult:1.38}] },
+      'Recycling Bilderdruck': { mult:0.95, grammages:[{label:'135g',mult:1.00},{label:'300g',mult:1.38}] },
     },
     tiers: [
       {qty:250,  ws:22.00},
@@ -68,9 +90,14 @@ const CATALOG = [
   },
   {
     id: 'visitenkarten', name: 'Visitenkarten', emoji: '📇', category: 'Visitenkarten',
-    desc: '85×55mm, 350g/m² Chromokarton, beidseitig 4/4-farbig',
-    options: {
-      finish: [{label:'Standard Glanz',mult:1.0},{label:'Premium Soft-Touch',mult:1.32}]
+    desc: '85×55mm, beidseitig 4/4-farbig – Papier und Grammatur frei wählbar',
+    options: {},
+    paperMatrix: {
+      'Bilderdruck matt':          { mult:1.00, grammages:[{label:'300g',mult:1.00},{label:'350g',mult:1.08}] },
+      'Bilderdruck glänzend':      { mult:1.05, grammages:[{label:'300g',mult:1.00}] },
+      'Naturpapier':               { mult:1.12, grammages:[{label:'300g',mult:1.00}] },
+      'Premium Multiloft Rough':   { mult:1.45, grammages:[{label:'750g (3-fach, Farbkern)',mult:1.00},{label:'1020g (4-fach, Farbkern)',mult:1.28}] },
+      'Premium Multiloft Smooth':  { mult:1.52, grammages:[{label:'810g (3-fach, Farbkern)',mult:1.00},{label:'1080g (4-fach, Farbkern)',mult:1.28}] },
     },
     tiers: [
       {qty:100,  ws:12.00},
@@ -229,10 +256,11 @@ function calcPrice(product, qty, selectedOpts) {
   // Per-unit wholesale cost at this tier
   const wsUnit = tier.ws / tier.qty;
 
-  // Stack option multipliers
+  // Stack standard option multipliers (button groups)
   let optMult = 1.0;
   if (selectedOpts) {
     for (const key of Object.keys(selectedOpts)) {
+      if (key === 'papier' || key === 'grammatur') continue; // handled below
       const optGroup = product.options?.[key];
       if (!optGroup) continue;
       const chosen = optGroup.find(o => o.label === selectedOpts[key]);
@@ -240,9 +268,21 @@ function calcPrice(product, qty, selectedOpts) {
     }
   }
 
-  // Final client prices
+  // Paper matrix multipliers (paper type × grammage)
+  if (product.paperMatrix && selectedOpts?.papier) {
+    const paperCfg = product.paperMatrix[selectedOpts.papier];
+    if (paperCfg) {
+      optMult *= paperCfg.mult;
+      if (selectedOpts.grammatur) {
+        const gramCfg = paperCfg.grammages.find(g => g.label === selectedOpts.grammatur);
+        if (gramCfg) optMult *= gramCfg.mult;
+      }
+    }
+  }
+
+  // Apply reseller markup, then speed surcharge on total
   const clientUnitPrice = wsUnit * optMult * RESELLER_MARKUP;
-  const clientTotal     = clientUnitPrice * qty;
+  const clientTotal     = clientUnitPrice * qty * (1 + activeSurcharge);
 
   return {
     wsUnit:       wsUnit,
@@ -251,6 +291,7 @@ function calcPrice(product, qty, selectedOpts) {
     displayUnit:  formatEur(clientUnitPrice),
     displayTotal: formatEur(clientTotal),
     markup:       RESELLER_MARKUP,
+    surcharge:    activeSurcharge,
   };
 }
 
@@ -452,6 +493,32 @@ function renderProductCard(p) {
       </div>`;
   }).join('');
 
+  // Paper & Grammage dependent selectors (for products with paperMatrix)
+  let paperHtml = '';
+  if (p.paperMatrix) {
+    const papers       = Object.keys(p.paperMatrix);
+    const firstGrams   = p.paperMatrix[papers[0]]?.grammages || [];
+    const paperOpts    = papers.map((paper, i) =>
+      `<option value="${escapeAttr(paper)}"${i === 0 ? ' selected' : ''}>${escapeHtml(paper)}</option>`
+    ).join('');
+    const grammageOpts = firstGrams.map((g, i) =>
+      `<option value="${escapeAttr(g.label)}"${i === 0 ? ' selected' : ''}>${escapeHtml(g.label)}</option>`
+    ).join('');
+    paperHtml = `
+      <div class="prod-opt-group">
+        <label class="prod-opt-lbl" for="paper-${p.id}">Papiersorte</label>
+        <select class="paper-sel" id="paper-${p.id}" onchange="paperChange('${p.id}')" aria-label="Papiersorte wählen">
+          ${paperOpts}
+        </select>
+      </div>
+      <div class="prod-opt-group">
+        <label class="prod-opt-lbl" for="grammage-${p.id}">Grammatur</label>
+        <select class="paper-sel" id="grammage-${p.id}" onchange="updateLivePrice('${p.id}')" aria-label="Grammatur wählen">
+          ${grammageOpts}
+        </select>
+      </div>`;
+  }
+
   // Tier table rows
   const tierRows = p.tiers.map(t => {
     const up = (t.ws / t.qty) * RESELLER_MARKUP;
@@ -477,6 +544,7 @@ function renderProductCard(p) {
       <div class="prod-price-from">ab <strong>${formatEur(basePrice)}</strong>/Stk.</div>
 
       ${optGroupsHtml}
+      ${paperHtml}
 
       <div class="prod-qty-row">
         <label class="prod-opt-lbl">Menge</label>
@@ -546,7 +614,39 @@ function getSelectedOpts(productId) {
     const active = grp.querySelector('.opt-btn.active');
     if (active) opts[grp.dataset.key] = active.dataset.val;
   });
+  // Paper matrix selects
+  const paperSel   = document.getElementById(`paper-${productId}`);
+  const grammSel   = document.getElementById(`grammage-${productId}`);
+  if (paperSel) opts.papier    = paperSel.value;
+  if (grammSel) opts.grammatur = grammSel.value;
   return opts;
+}
+
+/**
+ * Called when the paper <select> changes — repopulates grammage options
+ * then refreshes the live price.
+ */
+function paperChange(productId) {
+  const product = CATALOG.find(p => p.id === productId);
+  if (!product?.paperMatrix) return;
+  const paperSel = document.getElementById(`paper-${productId}`);
+  const grammSel = document.getElementById(`grammage-${productId}`);
+  if (!paperSel || !grammSel) return;
+  const grammages = product.paperMatrix[paperSel.value]?.grammages || [];
+  grammSel.innerHTML = grammages.map(g =>
+    `<option value="${escapeAttr(g.label)}">${escapeHtml(g.label)}</option>`
+  ).join('');
+  updateLivePrice(productId);
+}
+
+/**
+ * Set active speed surcharge and refresh all visible live prices.
+ */
+function setSpeed(speed, el) {
+  activeSurcharge = SPEED_SURCHARGES[speed]?.surcharge ?? 0;
+  document.querySelectorAll('.speed-btn').forEach(b => b.classList.remove('active'));
+  if (el) el.classList.add('active');
+  CATALOG.forEach(p => { if (document.getElementById(`price-${p.id}`)) updateLivePrice(p.id); });
 }
 
 /**

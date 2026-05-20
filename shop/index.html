@@ -537,6 +537,25 @@ footer {
 .wa svg { width:28px; height:28px; fill:#fff; }
 
 /* ══════════════════════════════════════════════════════
+   PAPER SELECT + SPEED SELECTOR
+   ══════════════════════════════════════════════════════ */
+.paper-sel{width:100%;background:var(--off);border:1.5px solid var(--border);border-radius:6px;padding:8px 10px;font-family:'Barlow',sans-serif;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;transition:border-color .2s;}
+.paper-sel:focus{border-color:var(--teal);outline:none;}
+.paper-sel:hover{border-color:var(--teal);}
+.speed-selector-wrap{background:#fff;border-bottom:2px solid var(--border);padding:.75rem 0;}
+.speed-selector{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.speed-lbl{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);white-space:nowrap;margin-right:.2rem;}
+.speed-btn{padding:8px 14px;border:2px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-family:'Barlow',sans-serif;display:flex;flex-direction:column;align-items:flex-start;transition:all .2s;min-width:110px;}
+.speed-btn:hover{border-color:var(--teal);}
+.speed-btn.active{border-color:var(--navy);background:var(--navy);}
+.speed-btn-title{font-size:13px;font-weight:800;color:var(--navy);line-height:1.2;}
+.speed-btn.active .speed-btn-title{color:#fff;}
+.speed-btn-sub{font-size:11px;color:var(--muted);font-weight:500;line-height:1.3;margin-top:1px;}
+.speed-btn.active .speed-btn-sub{color:rgba(255,255,255,.65);}
+.speed-badge{font-size:11px;font-weight:800;color:var(--teal);margin-top:2px;line-height:1;}
+.speed-btn.active .speed-badge{color:#58d0bd;}
+
+/* ══════════════════════════════════════════════════════
    RESPONSIVE
    ══════════════════════════════════════════════════════ */
 @media(max-width:1024px) {
@@ -613,7 +632,7 @@ footer {
       <div class="trust-badges">
         <span class="trust-badge"><span>✓</span> Druck ab 24–48h Lieferzeit</span>
         <span class="trust-badge"><span>✓</span> Kostenlose Druckdatei-Prüfung</span>
-        <span class="trust-badge"><span>✓</span> Zahlung per Vorkasse oder PayPal</span>
+        <span class="trust-badge"><span>✓</span> Zahlung per Karte, Klarna oder Vorkasse</span>
         <span class="trust-badge"><span>✓</span> Staffelpreise ab 1 Stück</span>
       </div>
     </div>
@@ -632,6 +651,30 @@ footer {
     <button class="filter-btn" onclick="filterCatalog('Broschüren',this)">Broschüren</button>
     <button class="filter-btn" onclick="filterCatalog('Verpackung',this)">Verpackung</button>
     <button class="filter-btn" onclick="filterCatalog('Werbeartikel',this)">Werbeartikel</button>
+  </div>
+</div>
+
+<!-- SPEED SELECTOR -->
+<div class="speed-selector-wrap">
+  <div class="container">
+    <div class="speed-selector">
+      <div class="speed-lbl">⚡ Lieferzeit:</div>
+      <button class="speed-btn active" data-speed="standard" onclick="setSpeed('standard',this)" type="button">
+        <span class="speed-btn-title">Standard</span>
+        <span class="speed-btn-sub">3–5 Werktage</span>
+        <span class="speed-badge">&nbsp;</span>
+      </button>
+      <button class="speed-btn" data-speed="next-day" onclick="setSpeed('next-day',this)" type="button">
+        <span class="speed-btn-title">Next-Day</span>
+        <span class="speed-btn-sub">Nächster Werktag</span>
+        <span class="speed-badge">+25%</span>
+      </button>
+      <button class="speed-btn" data-speed="same-day" onclick="setSpeed('same-day',this)" type="button">
+        <span class="speed-btn-title">Same-Day</span>
+        <span class="speed-btn-sub">Bis 11:00 Uhr bestellen</span>
+        <span class="speed-badge">+50%</span>
+      </button>
+    </div>
   </div>
 </div>
 

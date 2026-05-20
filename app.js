@@ -489,6 +489,81 @@ const FAQ = {
 
 
 // ═══════════════════════════════════════════════════════════
+// 9. CUSTOM SERVICE DROPDOWN — BFSG / WCAG 2.1 AA
+//    Glassmorphism floating menu, full keyboard navigation
+// ═══════════════════════════════════════════════════════════
+const SvcDropdown = {
+  trigger: null,
+  panel:   null,
+  hidden:  null,
+  span:    null,
+  opts:    [],
+
+  init() {
+    this.trigger = document.getElementById('svcTrigger');
+    this.panel   = document.getElementById('svcPanel');
+    this.hidden  = document.getElementById('svcHiddenInput');
+    this.span    = document.getElementById('svcTriggerSpan');
+    if (!this.trigger || !this.panel) return;
+
+    this.opts = Array.from(this.panel.querySelectorAll('.svc-opt'));
+
+    this.trigger.addEventListener('click', () => {
+      this.panel.classList.contains('open') ? this.close() : this.open();
+    });
+
+    this.trigger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.open(); }
+      if (e.key === 'ArrowDown') { e.preventDefault(); this.open(); this.focusable(0)?.focus(); }
+      if (e.key === 'Escape')   this.close();
+    });
+
+    this.opts.forEach((opt, i) => {
+      opt.setAttribute('tabindex', '-1');
+      opt.addEventListener('click',   () => this.select(opt));
+      opt.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.select(opt); }
+        if (e.key === 'ArrowDown') { e.preventDefault(); this.focusable(i + 1)?.focus(); }
+        if (e.key === 'ArrowUp')   { e.preventDefault(); (i > 0 ? this.focusable(i - 1) : null)?.focus() || this.trigger.focus(); }
+        if (e.key === 'Escape')    { e.preventDefault(); this.close(); }
+        if (e.key === 'Tab')       this.close();
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!this.trigger.contains(e.target) && !this.panel.contains(e.target)) this.close();
+    });
+  },
+
+  focusable(i) {
+    return this.opts[Math.max(0, Math.min(i, this.opts.length - 1))];
+  },
+
+  open() {
+    this.panel.classList.add('open');
+    this.trigger.setAttribute('aria-expanded', 'true');
+    const sel = this.opts.find(o => o.getAttribute('aria-selected') === 'true');
+    (sel || this.opts[0])?.focus();
+  },
+
+  close() {
+    this.panel.classList.remove('open');
+    this.trigger.setAttribute('aria-expanded', 'false');
+  },
+
+  select(opt) {
+    this.opts.forEach(o => o.setAttribute('aria-selected', 'false'));
+    opt.setAttribute('aria-selected', 'true');
+    const val = opt.dataset.val || opt.textContent.trim();
+    if (this.hidden) this.hidden.value = val;
+    if (this.span)   this.span.textContent = opt.textContent.trim();
+    this.trigger.classList.add('has-val');
+    this.close();
+    this.trigger.focus();
+  }
+};
+
+// ═══════════════════════════════════════════════════════════
 // INIT ALL MODULES
 // ═══════════════════════════════════════════════════════════
 function initAll() {
@@ -496,6 +571,7 @@ function initAll() {
   Reveal.init();
   StickyCta.init();
   FAQ.init();
+  SvcDropdown.init();
   MasarForm.init();
   MasarPrice.init();
   BeforeAfterSlider.init();

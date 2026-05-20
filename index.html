@@ -425,10 +425,22 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .testi-nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
 .testi-nav:hover{border-color:var(--teal);}
 
-/* ═══ SERVICE PICKER ═══ */
-.form-select-svc{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--text);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2358d0bd' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;transition:border-color .2s;}
-.form-select-svc:focus{border-color:var(--teal);outline:none;}
-.form-select-svc:hover{border-color:var(--teal);}
+/* ═══ CUSTOM SERVICE DROPDOWN — Glassmorphism + BFSG/WCAG 2.1 AA ═══ */
+.svc-dd-wrap{position:relative;}
+.svc-dd-trigger{width:100%;background:var(--off);border:2px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;font-weight:600;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px;transition:border-color .2s,color .2s;}
+.svc-dd-trigger:hover,.svc-dd-trigger[aria-expanded="true"]{border-color:var(--teal);color:var(--text);}
+.svc-dd-trigger.has-val{border-color:var(--teal);color:var(--text);}
+.svc-dd-chevron{flex-shrink:0;transition:transform .2s;color:var(--teal);}
+.svc-dd-trigger[aria-expanded="true"] .svc-dd-chevron{transform:rotate(180deg);}
+.svc-dd-panel{position:absolute;top:calc(100% + 6px);left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1.5px solid rgba(88,208,189,.35);border-radius:10px;box-shadow:0 8px 40px rgba(19,46,80,.14);z-index:999;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .18s,transform .18s,visibility 0s .18s;max-height:320px;overflow-y:auto;}
+.svc-dd-panel.open{opacity:1;visibility:visible;transform:translateY(0);transition:opacity .18s,transform .18s,visibility 0s 0s;}
+.svc-cat-lbl{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:10px 14px 5px;display:flex;align-items:center;gap:6px;background:rgba(19,46,80,.025);border-top:1px solid var(--border);}
+.svc-cat-lbl:first-child{border-top:none;padding-top:8px;}
+.svc-opt{width:100%;text-align:left;padding:9px 14px 9px 30px;background:none;border:none;font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .12s,color .12s;}
+.svc-opt:hover{background:rgba(88,208,189,.1);color:var(--navy);}
+.svc-opt[aria-selected="true"]{background:rgba(88,208,189,.13);color:var(--navy);}
+.svc-check{width:14px;height:14px;min-width:14px;flex-shrink:0;opacity:0;transition:opacity .12s;}
+.svc-opt[aria-selected="true"] .svc-check{opacity:1;}
 .svc-scroll-hint{display:inline-block;margin-top:7px;font-size:12px;font-weight:700;color:var(--teal);text-decoration:none;letter-spacing:.4px;transition:opacity .2s;}
 .svc-scroll-hint:hover{opacity:.75;text-decoration:underline;}
 
@@ -1079,31 +1091,72 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           </div>
           <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0178 000 0000"></div>
           <div class="fg">
-            <label for="leistungSelect">Gewünschte Leistung</label>
-            <select name="leistung" id="leistungSelect" class="form-select-svc">
-              <option value="" disabled selected>Leistung auswählen...</option>
-              <optgroup label="💡 Werbetechnik">
-                <option value="Leuchtreklamen &amp; LED-Schilder">Leuchtreklame &amp; LED-Schilder</option>
-                <option value="Fahrzeugbeschriftung">Fahrzeugbeschriftung</option>
-                <option value="Schilder &amp; Banner">Schilder &amp; Banner</option>
-              </optgroup>
-              <optgroup label="🖨️ Druck &amp; Print">
-                <option value="Flyer &amp; Visitenkarten">Flyer &amp; Visitenkarten</option>
-                <option value="Plakate &amp; Poster">Plakate &amp; Poster</option>
-                <option value="Kataloge &amp; Broschüren">Kataloge &amp; Broschüren</option>
-                <option value="Sticker &amp; Aufkleber">Sticker &amp; Aufkleber</option>
-              </optgroup>
-              <optgroup label="✏️ Design &amp; Web">
-                <option value="Grafikdesign &amp; Branding">Grafikdesign &amp; Branding</option>
-                <option value="Webdesign &amp; Website">Webdesign &amp; Website</option>
-              </optgroup>
-              <optgroup label="📱 Social Media Marketing">
-                <option value="Social Media Starter">Social Media Starter</option>
-                <option value="Social Media Business">Social Media Business</option>
-                <option value="Social Media Premium">Social Media Premium</option>
-              </optgroup>
-              <option value="Mehrere Leistungen / Sonstiges">Mehrere Leistungen / Sonstiges</option>
-            </select>
+            <label id="svcLabel">Gewünschte Leistung</label>
+            <input type="hidden" name="leistung" id="svcHiddenInput">
+            <div class="svc-dd-wrap">
+              <button type="button" class="svc-dd-trigger" id="svcTrigger"
+                      aria-haspopup="listbox" aria-expanded="false"
+                      aria-labelledby="svcLabel svcTriggerSpan">
+                <span id="svcTriggerSpan">Leistung auswählen...</span>
+                <svg class="svc-dd-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="svc-dd-panel" id="svcPanel" role="listbox" aria-labelledby="svcLabel">
+                <div class="svc-cat-lbl" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+                  Werbetechnik
+                </div>
+                <button type="button" class="svc-opt" role="option" data-val="Leuchtreklamen &amp; LED-Schilder" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Leuchtreklamen &amp; LED-Schilder
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Fahrzeugbeschriftung" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Fahrzeugbeschriftung
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Schilder &amp; Banner" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Schilder &amp; Banner
+                </button>
+                <div class="svc-cat-lbl" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M8 4v16"/></svg>
+                  Druck &amp; Print
+                </div>
+                <button type="button" class="svc-opt" role="option" data-val="Flyer &amp; Visitenkarten" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Flyer &amp; Visitenkarten
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Plakate &amp; Poster" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Plakate &amp; Poster
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Kataloge &amp; Broschüren" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Kataloge &amp; Broschüren
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Sticker &amp; Aufkleber" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Sticker &amp; Aufkleber
+                </button>
+                <div class="svc-cat-lbl" aria-hidden="true">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                  Design &amp; Web
+                </div>
+                <button type="button" class="svc-opt" role="option" data-val="Grafikdesign &amp; Branding" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Grafikdesign &amp; Branding
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Webdesign &amp; Development" aria-selected="false" tabindex="-1">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Webdesign &amp; Development
+                </button>
+                <button type="button" class="svc-opt" role="option" data-val="Social Media Marketing" aria-selected="false" tabindex="-1" style="padding-bottom:10px;">
+                  <svg class="svc-check" viewBox="0 0 14 14" fill="none"><path d="M2 7.5l3.5 3.5 6.5-7" stroke="#58d0bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Social Media Marketing
+                </button>
+              </div>
+            </div>
             <a href="#leistungen" class="svc-scroll-hint" onclick="document.getElementById('leistungen').scrollIntoView({behavior:'smooth'});return false;">Alle Leistungen ansehen ↓</a>
           </div>
           <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
