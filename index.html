@@ -241,6 +241,28 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .price-card.featured .price-btn { background:var(--teal); color:var(--navy); }
 .price-btn:hover { background:var(--teal); color:var(--navy); }
 
+/* ═══════════ PROZESS ═══════════ */
+.prozess-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+.prozess-step { text-align:center; position:relative; padding:0 .5rem; }
+.prozess-step:not(:last-child)::after { content:''; position:absolute; top:28px; right:-16%; width:32%; height:2px; background:linear-gradient(90deg,var(--teal),rgba(88,208,189,.15)); }
+.prozess-num { width:56px; height:56px; border-radius:50%; background:var(--teal); color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.4rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; position:relative; z-index:1; }
+.prozess-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.05rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
+.prozess-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+@media(max-width:768px){ .prozess-grid { grid-template-columns:repeat(2,1fr); } .prozess-step:not(:last-child)::after { display:none; } }
+@media(max-width:480px){ .prozess-grid { grid-template-columns:1fr; } }
+
+/* ═══════════ CONTACT EXTRAS ═══════════ */
+.contact-extras { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:2rem; max-width:640px; margin-left:auto; margin-right:auto; }
+.hours-box { background:rgba(255,255,255,.06); border:1px solid rgba(88,208,189,.2); border-radius:var(--r); padding:1.4rem 1.6rem; }
+.hours-box-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:.9rem; }
+.hours-row { display:flex; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.55); padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
+.hours-row:last-child { border-bottom:none; }
+.hours-row .day { color:rgba(255,255,255,.85); }
+.gmap-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.6rem; background:rgba(88,208,189,.08); border:1px solid rgba(88,208,189,.22); border-radius:var(--r); padding:1.4rem; color:var(--teal); font-weight:700; font-size:14px; text-decoration:none; transition:all .25s; text-align:center; }
+.gmap-btn span { font-size:2rem; }
+.gmap-btn:hover { background:rgba(88,208,189,.15); transform:translateY(-2px); }
+@media(max-width:500px){ .contact-extras { grid-template-columns:1fr; } }
+
 /* ═══════════ FAQ ═══════════ */
 .faq-list { display:flex; flex-direction:column; max-width:720px; }
 .faq-item { border-bottom:1px solid var(--border); }
@@ -481,6 +503,12 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
       "opens": "09:00",
       "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00",
+      "closes": "14:00"
     }
   ],
   "priceRange": "€€",
@@ -899,6 +927,39 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
+<!-- PROZESS -->
+<section class="section bg-off">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Unser Ablauf</span>
+      <h2 class="sec-title">In <em>4 Schritten</em> zu Ihrer Werbung</h2>
+      <p class="sec-sub">Von der ersten Idee bis zur fertigen Umsetzung – transparent, schnell und ohne Überraschungen.</p>
+    </div>
+    <div class="prozess-grid">
+      <div class="prozess-step reveal">
+        <div class="prozess-num">1</div>
+        <div class="prozess-title">Kostenlose Beratung</div>
+        <div class="prozess-desc">Sie schildern Ihr Projekt – per Telefon, WhatsApp oder Formular. Antwort garantiert in 24 Stunden.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">2</div>
+        <div class="prozess-title">Angebot & Design</div>
+        <div class="prozess-desc">Wir erstellen ein maßgeschneidertes Angebot inkl. erstem Design-Entwurf – kostenlos und unverbindlich.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">3</div>
+        <div class="prozess-title">Produktion</div>
+        <div class="prozess-desc">Nach Ihrer Freigabe starten wir sofort. Standard: 5–10 Werktage. Express-Service auf Anfrage möglich.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">4</div>
+        <div class="prozess-title">Lieferung & Montage</div>
+        <div class="prozess-desc">Wir liefern und montieren direkt vor Ort – in ganz Berlin. Alles aus einer Hand, kein Aufwand für Sie.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS -->
 <section class="section bg-off">
   <div class="container">
@@ -925,6 +986,11 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         <div class="testi-name">Sandra M.</div>
         <div class="testi-co">Beauty Studio, Berlin</div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="https://www.google.com/search?q=Masar+Werbeagentur+Berlin" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:2px solid var(--border);color:var(--navy);padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.06);">
+        <span style="color:#f5b800;font-size:16px;">★★★★★</span> Alle echten Bewertungen auf Google ansehen →
+      </a>
     </div>
   </div>
 </section>
@@ -1011,6 +1077,8 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="faq-item"><button class="faq-q">Bieten Sie Beratung auf Arabisch an? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Als arabischsprachige Agentur in Berlin bieten wir Beratung auf Deutsch und Arabisch an. Sprechen Sie uns auf WhatsApp an – wir antworten gerne على العربي.</div></div>
       <div class="faq-item"><button class="faq-q">Brauche ich eine Genehmigung für Außenwerbung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Für Leuchtreklamen und größere Außenwerbeanlagen ist in Berlin eine Baugenehmigung beim Bezirksamt erforderlich. Wir übernehmen die gesamte Antragstellung für Sie – inklusive Planunterlagen.</div></div>
       <div class="faq-item"><button class="faq-q">Was kostet eine Fahrzeugbeschriftung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Eine einfache Teilbeschriftung (Logo + Kontaktdaten) beginnt ab ca. 150 €. Eine Vollfolierung kostet je nach Fahrzeuggröße 800–2.500 €. Wir erstellen Ihnen ein kostenloses Angebot innerhalb von 24 Stunden.</div></div>
+      <div class="faq-item"><button class="faq-q">Machen Sie auch Schaufensterbeschriftung und Firmenschilder? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Schaufensterfolien, Firmenschilder, Aufkleber, Fassadenbeschriftung und Außenwerbung jeder Art gehören zu unserem Kerngeschäft. Sprechen Sie uns an – wir unterbreiten Ihnen ein individuelles Angebot innerhalb von 24 Stunden.</div></div>
+      <div class="faq-item"><button class="faq-q">Welche Zahlungsmöglichkeiten bieten Sie an? <span class="faq-ic">+</span></button><div class="faq-a">Wir akzeptieren Banküberweisung und Barzahlung bei Abholung. Im Online-Print-Shop zahlen Sie sicher per Kreditkarte. Für größere Projekte ist Teilzahlung auf Anfrage möglich.</div></div>
     </div>
   </div>
 </section>
@@ -1088,6 +1156,18 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="cta-info">📞 <strong><a href="tel:01785143918" style="color:#fff;">0178 514 3918</a></strong></div>
       <div class="cta-info">💬 <strong><a href="https://wa.me/491785143918" style="color:#fff;" target="_blank" rel="noopener noreferrer">WhatsApp</a></strong></div>
       <div class="cta-info">📍 <strong>Bristolstraße 19HN, 13349 Berlin</strong></div>
+    </div>
+    <div class="contact-extras reveal">
+      <div class="hours-box">
+        <div class="hours-box-title">⏰ Öffnungszeiten</div>
+        <div class="hours-row"><span class="day">Mo – Fr</span><span>09:00 – 18:00 Uhr</span></div>
+        <div class="hours-row"><span class="day">Samstag</span><span>10:00 – 14:00 Uhr</span></div>
+        <div class="hours-row"><span class="day">Sonntag</span><span>Geschlossen</span></div>
+      </div>
+      <a href="https://www.google.com/maps/search/Bristolstraße+19HN+13349+Berlin" target="_blank" rel="noopener noreferrer" class="gmap-btn">
+        <span>📍</span>
+        Auf Google Maps<br>öffnen →
+      </a>
     </div>
   </div>
 </div>
