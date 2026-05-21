@@ -1079,31 +1079,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
             <div class="fg"><label>E-Mail *</label><input type="email" name="email" placeholder="max@firma.de" required></div>
           </div>
           <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0178 000 0000"></div>
-          <div class="fg">
-            <label for="leistungSelect">Gewünschte Leistung</label>
-            <div class="svc-select-wrap">
-              <select name="leistung" id="leistungSelect" required>
-                <option value="" disabled selected>Leistung auswählen...</option>
-                <optgroup label="Werbetechnik">
-                  <option>Leuchtreklamen &amp; LED-Schilder</option>
-                  <option>Fahrzeugbeschriftung</option>
-                  <option>Schilder &amp; Banner</option>
-                </optgroup>
-                <optgroup label="Druck &amp; Print">
-                  <option>Flyer &amp; Visitenkarten</option>
-                  <option>Plakate &amp; Poster</option>
-                  <option>Kataloge &amp; Broschüren</option>
-                  <option>Sticker &amp; Aufkleber</option>
-                </optgroup>
-                <optgroup label="Design &amp; Web">
-                  <option>Grafikdesign &amp; Branding</option>
-                  <option>Webdesign &amp; Development</option>
-                  <option>Social Media Marketing</option>
-                </optgroup>
-              </select>
-            </div>
-            <a href="#leistungen" class="svc-scroll-hint" onclick="document.getElementById('leistungen').scrollIntoView({behavior:'smooth'});return false;">Alle Leistungen ansehen ↓</a>
-          </div>
+          <div class="fg"><label for="betreffInput">Betreff *</label><input type="text" name="betreff" id="betreffInput" placeholder="z. B. Fahrzeugbeschriftung für 3 Transporter" required></div>
           <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
           <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
           <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">🔒 Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
