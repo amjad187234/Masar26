@@ -497,27 +497,6 @@ select:focus-visible,textarea:focus-visible{
 </footer>
 
 <script>
-(function(){
-  var ham=document.getElementById('hamburger');
-  var mob=document.getElementById('mobNav');
-  if(!ham||!mob)return;
-  ham.addEventListener('click',function(){
-    var open=mob.classList.toggle('open');
-    ham.setAttribute('aria-expanded',open?'true':'false');
-    ham.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&mob.classList.contains('open')){
-      mob.classList.remove('open');
-      ham.setAttribute('aria-expanded','false');
-      ham.setAttribute('aria-label','Menü öffnen');
-      ham.focus();
-    }
-  });
-  mob.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');});
-  });
-})();
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in')}}),{threshold:.1});
