@@ -651,40 +651,37 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 </div>
 
 <!-- NAV -->
-<nav>
+<nav aria-label="Hauptnavigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
+      <img src="/logo.png" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="nav-logo-txt">MASAR</span>
     </a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="leistungen.html">Leistungen</a></li>
-      <li><a href="werbetechnik.html">Werbetechnik</a></li>
-      <li><a href="digital.html">Social Media</a></li>
-      <li><a href="print.html">Print & Design</a></li>
+    <ul class="nav-links" role="list">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/werbetechnik.html">Werbetechnik</a></li>
+      <li><a href="/digital.html">Social Media</a></li>
+      <li><a href="/print.html">Print &amp; Design</a></li>
       <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
-      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="mob-nav" id="mobNav">
-  <a href="index.html">Home</a>
-  <a href="leistungen.html">Alle Leistungen</a>
-  <a href="werbetechnik.html">Werbetechnik & Leuchtreklamen</a>
-  <a href="digital.html">Social Media Marketing</a>
-  <a href="print.html">Print & Grafikdesign</a>
-  
-    <a href="/angebote/">Branchen-Angebote</a>
-  
-    <a href="/ki-loesungen/">KI-Lösungen</a>
-  
-  <a href="#kontakt" class="mob-cta" onclick="document.getElementById('mobNav').classList.remove('open')">Jetzt kostenlos anfragen →</a>
-</div>
+<nav class="mob-nav" id="mobNav" aria-label="Mobile Navigation">
+  <a href="/">Home</a>
+  <a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/werbetechnik.html">Werbetechnik &amp; Leuchtreklamen</a>
+  <a href="/digital.html">Social Media Marketing</a>
+  <a href="/print.html">Print &amp; Grafikdesign</a>
+  <a href="/angebote/">Branchen-Angebote</a>
+  <a href="/ki-loesungen/">KI-Lösungen</a>
+  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+</nav>
 
 <main id="main-content">
 <!-- HERO -->
