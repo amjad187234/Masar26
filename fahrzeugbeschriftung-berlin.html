@@ -222,12 +222,12 @@ select:focus-visible,textarea:focus-visible{
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-<div class="mob-nav" id="mobNav">
+<nav class="mob-nav" id="mobNav" aria-label="Mobile Navigation">
   <a href="index.html">Home</a>
   <a href="leistungen.html">Alle Leistungen</a>
   <a href="werbetechnik.html">Werbetechnik & Leuchtreklamen</a>
@@ -235,8 +235,8 @@ select:focus-visible,textarea:focus-visible{
   <a href="print.html">Print & Grafikdesign</a>
     <a href="/angebote/">Branchen-Angebote</a>
     <a href="/ki-loesungen/">KI-Lösungen</a>
-  <a href="#kontakt" class="mob-cta" onclick="document.getElementById('mobNav').classList.remove('open')">Jetzt kostenlos anfragen →</a>
-</div>
+  <a href="#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+</nav>
 
 <section class="hero">
   <div class="hero-lines"></div>
@@ -497,6 +497,27 @@ select:focus-visible,textarea:focus-visible{
 </footer>
 
 <script>
+(function(){
+  var ham=document.getElementById('hamburger');
+  var mob=document.getElementById('mobNav');
+  if(!ham||!mob)return;
+  ham.addEventListener('click',function(){
+    var open=mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded',open?'true':'false');
+    ham.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&mob.classList.contains('open')){
+      mob.classList.remove('open');
+      ham.setAttribute('aria-expanded','false');
+      ham.setAttribute('aria-label','Menü öffnen');
+      ham.focus();
+    }
+  });
+  mob.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');});
+  });
+})();
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in')}}),{threshold:.1});
