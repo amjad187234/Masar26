@@ -10,6 +10,7 @@ define('DB_PATH',    __DIR__ . '/data/orders.db');
 define('UPLOAD_DIR', __DIR__ . '/uploads/print-files/');
 define('SITE_URL',   'https://masar-werbeagentur.de');
 define('ADMIN_EMAIL','info@masar-werbeagentur.de');
+define('SHOP_NAME',  'Masar Werbeagentur Berlin');
 
 define('SMTP_HOST', 'smtp.hostinger.com');
 define('SMTP_PORT', 587);
