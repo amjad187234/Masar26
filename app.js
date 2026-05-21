@@ -436,7 +436,10 @@ const Nav = {
     // Hamburger
     const ham = document.getElementById('hamburger');
     const mob = document.getElementById('mobNav');
-    ham?.addEventListener('click', () => mob?.classList.toggle('open'));
+    ham?.addEventListener('click', () => {
+      const isOpen = mob?.classList.toggle('open');
+      ham.setAttribute('aria-expanded', String(!!isOpen));
+    });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
