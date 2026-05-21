@@ -144,7 +144,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 /* ═══════════ QUICK NAV ═══════════ */
 .quick-nav { padding:3rem 0; background:#fff; border-bottom:1px solid var(--border); }
 .qn-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; }
-.qn-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; }
+.qn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
 .qn-card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.5rem 1rem; border:2px solid var(--border); border-radius:var(--r); transition:all .3s; cursor:pointer; }
 .qn-card:hover { border-color:var(--teal); background:var(--teal-l); transform:translateY(-3px); box-shadow:0 8px 24px rgba(88,208,189,.12); }
 .qn-icon { font-size:2rem; }
@@ -287,6 +287,10 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .fg input:focus, .fg textarea:focus, .fg select:focus { border-color:var(--teal); background:#fff; }
 .fg textarea { height:110px; resize:none; }
 .fg-row { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.consent-row { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:1rem; margin-top:.5rem; }
+.consent-row input[type="checkbox"] { width:18px; height:18px; flex-shrink:0; margin-top:2px; accent-color:var(--teal); cursor:pointer; }
+.consent-row label { font-size:12px; color:var(--muted); line-height:1.65; cursor:pointer; }
+.consent-row a { color:var(--teal); text-decoration:underline; }
 .submit-btn { width:100%; background:var(--teal); color:var(--navy); border:none; padding:15px; border-radius:6px; font-family:'Barlow',sans-serif; font-weight:700; font-size:15px; letter-spacing:.5px; cursor:pointer; transition:all .25s; margin-top:.5rem; }
 .submit-btn:hover { background:var(--teal-d); transform:translateY(-1px); }
 
@@ -626,8 +630,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <div style="background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;line-height:1.4;">
   <span>📍 Masar Werbeagentur · Berlin-Wedding · Bristolstraße 19HN</span>
   <span style="opacity:.5">|</span>
-  <span>🇩🇪 Deutsch &amp; 🇸🇦 عربي – نتكلم عربي</span>
-  <span style="opacity:.5">|</span>
   <a href="tel:01785143918" style="color:var(--navy);text-decoration:none;">📞 0178 514 3918</a>
 </div>
 
@@ -701,7 +703,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <span class="hero-trust-txt">Bewertet mit</span>
           <span class="hero-stars">★★★★★</span>
           <span class="hero-trust-txt">von unseren Kunden</span>
-          <span class="hero-trust-txt" style="margin-right:auto;margin-left:1rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);padding:4px 10px;border-radius:4px;font-size:11px;letter-spacing:1px;">🇩🇪 Deutsch &nbsp;|&nbsp; 🇸🇦 عربي</span>
         </div>
       </div>
       <div class="hero-visual">
@@ -772,6 +773,11 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         <span class="qn-icon">📱</span>
         <span class="qn-name">Social Media</span>
         <span class="qn-sub">Instagram, TikTok & Ads</span>
+      </a>
+      <a href="/ki-loesungen/" class="qn-card reveal">
+        <span class="qn-icon">🤖</span>
+        <span class="qn-name">KI-Lösungen</span>
+        <span class="qn-sub">Automatisierung & KI-Agenten</span>
       </a>
     </div>
   </div>
@@ -978,7 +984,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <p class="sec-sub">Wir sind mehr als eine Agentur – wir sind Ihr strategischer Partner für Wachstum und Sichtbarkeit.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon">🇸🇦</div><div class="why-title">Deutsch & Arabisch</div><div class="why-desc">Einzige Werbeagentur in Berlin mit arabischsprachiger Beratung. Für die arabische Community in Berlin – كلامنا عربي.</div></div>
+      <div class="why-card reveal"><div class="why-icon">🤖</div><div class="why-title">KI-gestützte Lösungen</div><div class="why-desc">Wir setzen modernste KI-Technologie ein – für smarte Automatisierung, schnellere Ergebnisse und mehr Effizienz für Ihr Business.</div></div>
       <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Angebot in 24 Stunden</div><div class="why-desc">Kein wochenlanger Warteaufwand: Sie erhalten Ihr individuelles Angebot garantiert am nächsten Werktag.</div></div>
       <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Full-Service aus einer Hand</div><div class="why-desc">Design, Produktion, Montage und Marketing – ein Ansprechpartner, keine Schnittstellen, keine Überraschungen.</div></div>
       <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Direkt vor Ort in Wedding</div><div class="why-desc">Unser Büro ist in Bristolstraße 19HN, Berlin-Wedding. Schnelle Reaktion, kurze Wege, persönlicher Kontakt.</div></div>
@@ -1021,40 +1027,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section bg-off">
-  <div class="container">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Kundenstimmen</span>
-      <h2 class="sec-title">Was unsere <em>Kunden sagen</em></h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Masar hat unsere Leuchtreklame perfekt umgesetzt – genau nach unseren Vorstellungen und pünktlich geliefert. Absolut professionell!"</p>
-        <div class="testi-name">Michael K.</div>
-        <div class="testi-co">Restaurant Mitte, Berlin</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Unsere Fahrzeugbeschriftung ist der Hit! Überall werde ich angesprochen. Die Qualität ist top und der Service war sehr angenehm."</p>
-        <div class="testi-name">Thomas B.</div>
-        <div class="testi-co">Handwerksbetrieb, Berlin</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Das neue Logo und die Website haben unser Unternehmen komplett transformiert. Wir bekommen viel mehr Anfragen seitdem!"</p>
-        <div class="testi-name">Sandra M.</div>
-        <div class="testi-co">Beauty Studio, Berlin</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
-      <a href="https://www.google.com/search?q=Masar+Werbeagentur+Berlin" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:2px solid var(--border);color:var(--navy);padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.06);">
-        <span style="color:#f5b800;font-size:16px;">★★★★★</span> Alle echten Bewertungen auf Google ansehen →
-      </a>
-    </div>
-  </div>
-</section>
 
 <!-- SOCIAL MEDIA -->
 <section class="section bg-navy" id="social">
@@ -1135,7 +1107,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="faq-item"><button class="faq-q">Ist Grafikdesign immer inklusive? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Bei allen Druck- und Werbetechnik-Leistungen ist professionelles Grafikdesign inklusive. Keine versteckten Kosten – alles aus einer Hand.</div></div>
       <div class="faq-item"><button class="faq-q">In welchen Bereichen Berlins sind Sie tätig? <span class="faq-ic">+</span></button><div class="faq-a">Wir sind in ganz Berlin tätig und liefern auch deutschlandweit. Unser Büro befindet sich in Berlin-Wedding, Bristolstraße 19HN.</div></div>
       <div class="faq-item"><button class="faq-q">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
-      <div class="faq-item"><button class="faq-q">Bieten Sie Beratung auf Arabisch an? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Als arabischsprachige Agentur in Berlin bieten wir Beratung auf Deutsch und Arabisch an. Sprechen Sie uns auf WhatsApp an – wir antworten gerne على العربي.</div></div>
+      <div class="faq-item"><button class="faq-q">Bieten Sie auch KI-Lösungen an? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Neben klassischer Werbetechnik und Design bieten wir maßgeschneiderte KI-Lösungen an: von autonomen Agenten bis zu DSGVO-konformen Wissensdatenbanken. Mehr Infos unter <a href="/ki-loesungen/" style="color:var(--teal)">KI-Lösungen</a>.</div></div>
       <div class="faq-item"><button class="faq-q">Brauche ich eine Genehmigung für Außenwerbung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Für Leuchtreklamen und größere Außenwerbeanlagen ist in Berlin eine Baugenehmigung beim Bezirksamt erforderlich. Wir übernehmen die gesamte Antragstellung für Sie – inklusive Planunterlagen.</div></div>
       <div class="faq-item"><button class="faq-q">Was kostet eine Fahrzeugbeschriftung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Eine einfache Teilbeschriftung (Logo + Kontaktdaten) beginnt ab ca. 150 €. Eine Vollfolierung kostet je nach Fahrzeuggröße 800–2.500 €. Wir erstellen Ihnen ein kostenloses Angebot innerhalb von 24 Stunden.</div></div>
       <div class="faq-item"><button class="faq-q">Machen Sie auch Schaufensterbeschriftung und Firmenschilder? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Schaufensterfolien, Firmenschilder, Aufkleber, Fassadenbeschriftung und Außenwerbung jeder Art gehören zu unserem Kerngeschäft. Sprechen Sie uns an – wir unterbreiten Ihnen ein individuelles Angebot innerhalb von 24 Stunden.</div></div>
@@ -1208,6 +1180,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="fg"><label>Telefon</label><input type="tel" name="telefon" placeholder="0178 000 0000"></div>
           <div class="fg"><label for="betreffInput">Betreff *</label><input type="text" name="betreff" id="betreffInput" placeholder="z. B. Fahrzeugbeschriftung für 3 Transporter" required></div>
           <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Ich stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden. Die Daten werden ausschließlich für die Beantwortung dieser Anfrage verwendet und <strong>nicht an Dritte weitergegeben</strong>. Diese Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. b DSGVO. Weitere Informationen finden Sie in unserer <a href="/datenschutz.html">Datenschutzerklärung</a>. *</label>
+          </div>
           <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
           <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">🔒 Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
         </form>
@@ -1278,7 +1254,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524 · Alle Rechte vorbehalten.</span>
       <div class="foot-legal">
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>

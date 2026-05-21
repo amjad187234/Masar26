@@ -29,6 +29,22 @@ ServerSignature Off
   RewriteRule ^\.env$              - [F,L]
   RewriteRule ^\.git(/|$)          - [F,L]
   RewriteRule ^composer\.(json|lock)$ - [F,L]
+
+  # Block common attack probes (WordPress, phpMyAdmin, shell uploads, scanners)
+  RewriteRule ^wp-admin(/|$)       - [F,L]
+  RewriteRule ^wp-login\.php$      - [F,L]
+  RewriteRule ^wp-config\.php$     - [F,L]
+  RewriteRule ^xmlrpc\.php$        - [F,L]
+  RewriteRule ^phpmyadmin(/|$)     - [F,L]
+  RewriteRule ^pma(/|$)            - [F,L]
+  RewriteRule ^admin(/|$)          - [F,L]
+  RewriteRule ^shell\.php$         - [F,L]
+  RewriteRule ^eval-stdin\.php$    - [F,L]
+  RewriteRule ^setup\.php$         - [F,L]
+  RewriteRule ^install\.php$       - [F,L]
+  RewriteRule ^config\.php$        - [F,L]
+  RewriteRule ^backup(/|$)         - [F,L]
+  RewriteRule \.(bak|backup|old|orig|save|swp|tmp)$ - [F,L]
 </IfModule>
 
 # ─── DIRECTORY INDEX ───────────────────────────────────────────
@@ -181,6 +197,24 @@ ErrorDocument 500 /index.html
   AddType image/webp                        .webp
   AddType image/avif                        .avif
   AddType application/manifest+json         .webmanifest
+</IfModule>
+
+# ─── BAD BOT & SCANNER BLOCKING ───────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_USER_AGENT} (sqlmap|nikto|masscan|acunetix|nessus|havij|w3af|nmap|zgrab|dirbuster|nuclei|python-requests\/2\.[0-2]) [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# Block requests with no User-Agent (most scanners)
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP_USER_AGENT} ^-?$
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ─── QUERY STRING ATTACK BLOCKING ─────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteCond %{QUERY_STRING} (union.*select|insert.*into|drop.*table|script.*alert|base64_encode|eval\(|<script) [NC]
+  RewriteRule .* - [F,L]
 </IfModule>
 
 # ════════════════════════════════════════════════════════════════
