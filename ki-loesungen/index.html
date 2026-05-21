@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#58d0bd">
+<link rel="stylesheet" href="/fonts.css">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="KI-Automatisierung für den Mittelstand – DSGVO-konforme KI-Agenten, RAG-Wissensdatenbanken & autonome Workflows auf EU-Servern. Jetzt Einsparpotenzial berechnen.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="KI-Lösungen für den Mittelstand – Masar Werbeagentur Berlin">
+<meta property="og:description" content="Maßgeschneiderte KI-Automatisierung: Autonome Agenten, DSGVO-konforme Wissensdatenbanken & smarter Kundenservice – Made in Berlin.">
+<meta property="og:url" content="https://masar-werbeagentur.de/ki-loesungen/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://masar-werbeagentur.de/ki-loesungen/">
+<title>KI-Lösungen für den Mittelstand – Masar Werbeagentur Berlin</title>
+<style>
+/* ═══ TOKENS ═══ */
+:root {
+  --teal:#58d0bd; --teal-d:#3ab8a5; --teal-l:rgba(88,208,189,.1); --teal-g:rgba(88,208,189,.06);
+  --navy:#132e50; --navy2:#1e4275; --navy3:#0a1628;
+  --off:#f4f7f7; --text:#1a2a2a; --muted:#5a7070; --border:#e0eaea;
+  --gold:#f5c000; --nav-h:80px; --r:12px;
+  --shadow:0 8px 32px rgba(0,0,0,.08); --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+  --spring:cubic-bezier(0.34,1.56,0.64,1);
+  --neon-sm:0 0 12px rgba(88,208,189,.5),0 0 24px rgba(88,208,189,.25);
+  --neon-md:0 0 20px rgba(88,208,189,.65),0 0 40px rgba(88,208,189,.35),0 0 70px rgba(88,208,189,.15);
+  --neon-lg:0 0 30px rgba(88,208,189,.9),0 0 60px rgba(88,208,189,.5),0 0 100px rgba(88,208,189,.2);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden;}
+body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ═══ UTILS ═══ */
+.container{max-width:1240px;margin:0 auto;padding:0 2rem;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:14px 30px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;border:none;cursor:pointer;font-family:inherit;letter-spacing:.3px;}
+.btn-teal{background:var(--teal);color:var(--navy);}
+.btn-teal:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(88,208,189,.35);}
+.btn-teal:focus-visible{outline:3px solid var(--navy);outline-offset:2px;}
+.btn-outline-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35);padding:12px 26px;border-radius:6px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;font-family:inherit;transition:all .25s;}
+.btn-outline-light:hover{border-color:var(--teal);color:var(--teal);}
+.btn-outline-light:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+.section{padding:6rem 0;}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;display:block;}
+.eyebrow.light{color:rgba(88,208,189,.8);}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.7rem;}
+.sec-title em{color:var(--teal);font-style:normal;}
+.sec-title.white{color:#fff;}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.75;max-width:640px;}
+.sec-sub.light{color:rgba(255,255,255,.6);}
+.sec-head{margin-bottom:3rem;}
+.sec-head.center{text-align:center;}
+.sec-head.center .sec-sub{margin:0 auto;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ═══ SKIP / A11Y ═══ */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+.skip-link:focus{position:fixed;top:0;left:0;z-index:9999;width:auto;height:auto;padding:12px 20px;background:var(--teal);color:var(--navy);font-weight:700;font-size:14px;border-radius:0 0 6px 0;}
+
+/* ═══ COOKIE ═══ */
+.cookie{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--navy3);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:2px solid var(--teal);transform:translateY(100%);transition:transform .4s;}
+.cookie.show{transform:translateY(0);}
+.cookie p{font-size:13px;color:rgba(255,255,255,.7);}
+.cookie a{color:var(--teal);}
+.cookie-btn{background:var(--teal);color:var(--navy);border:none;padding:8px 22px;font-weight:700;font-size:13px;cursor:pointer;border-radius:4px;font-family:inherit;}
+
+/* ═══ WA ═══ */
+.wa{position:fixed;bottom:24px;right:18px;z-index:998;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,.45);transition:transform .25s;}
+.wa:hover{transform:scale(1.1);}
+.wa:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+.wa svg{width:28px;height:28px;fill:#fff;}
+
+/* ═══ NAV ═══ */
+nav.main-nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-shadow:0 2px 20px rgba(0,0,0,.06);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
+.nav-logo{display:flex;align-items:center;gap:10px;}
+.nav-logo img{height:56px;object-fit:contain;}
+.nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--navy);letter-spacing:2px;display:none;}
+.nav-links{display:flex;gap:1.4rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--navy);font-size:13px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:2px;}
+.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px!important;border-radius:6px;font-weight:700!important;}
+.nav-cta::after{display:none!important;}
+.nav-cta:focus-visible{outline:3px solid var(--navy)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;display:block;}
+.hamburger:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px;}
+.mob-nav{display:none;position:fixed;inset:0;top:var(--nav-h);background:#fff;z-index:499;padding:2rem;overflow-y:auto;}
+.mob-nav.open{display:block;}
+.mob-nav a{display:block;padding:14px 0;color:var(--navy);font-size:17px;font-weight:600;border-bottom:1px solid var(--border);}
+.mob-nav a:hover,.mob-nav a:focus-visible{color:var(--teal);}
+.mob-cta{margin-top:1.5rem;display:block;background:var(--teal);color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;}
+
+/* ═══ HERO ═══ */
+.hero{padding-top:var(--nav-h);min-height:62vh;display:flex;align-items:center;background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 50%,#0d3d3d 100%);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 80% 40%,rgba(88,208,189,.1) 0%,transparent 65%);pointer-events:none;}
+.hero-grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(88,208,189,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(88,208,189,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.hero-inner{padding:4rem 0;position:relative;z-index:2;max-width:760px;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem;}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.8rem,5.5vw,4.8rem);line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:.5rem;}
+.hero h1 em{color:var(--teal);font-style:normal;display:block;}
+.hero-tagline{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.65);margin-bottom:1.2rem;}
+.hero-sub{font-size:17px;color:rgba(255,255,255,.62);line-height:1.85;margin-bottom:2rem;max-width:560px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hero-proof{display:flex;gap:2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;}
+.proof-item{display:flex;flex-direction:column;gap:2px;}
+.proof-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--teal);line-height:1;}
+.proof-lbl{font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.5px;}
+
+/* ═══ CALCULATOR ═══ */
+.calc-section{background:linear-gradient(180deg,var(--navy3) 0%,#0c1e38 100%);padding:5rem 0;position:relative;overflow:hidden;}
+.calc-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 40%,rgba(88,208,189,.06) 0%,transparent 65%);pointer-events:none;}
+.calc-inner{position:relative;z-index:1;}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-top:2.5rem;}
+.calc-card{background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.12);border-radius:16px;padding:2rem;}
+.calc-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.7);display:block;margin-bottom:.5rem;}
+.calc-value-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;}
+.calc-field-name{font-size:14px;color:rgba(255,255,255,.75);font-weight:600;}
+.calc-cur-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;color:var(--teal);line-height:1;}
+.calc-unit{font-size:13px;color:rgba(88,208,189,.6);margin-left:2px;}
+.calc-slider-wrap{position:relative;margin-bottom:1.5rem;}
+input[type="range"]{-webkit-appearance:none;appearance:none;width:100%;height:5px;background:rgba(88,208,189,.18);border-radius:3px;outline:none;cursor:pointer;display:block;}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:var(--neon-sm);transition:box-shadow .2s,transform .2s;}
+input[type="range"]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:var(--neon-sm);border:none;}
+input[type="range"]:hover::-webkit-slider-thumb{box-shadow:var(--neon-md);transform:scale(1.15);}
+input[type="range"]:focus-visible{outline:none;}
+input[type="range"]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 3px var(--navy3),0 0 0 5px var(--teal),var(--neon-sm);}
+input[type="range"]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 3px var(--navy3),0 0 0 5px var(--teal);}
+.calc-track-labels{display:flex;justify-content:space-between;margin-top:4px;}
+.calc-track-labels span{font-size:10px;color:rgba(255,255,255,.28);font-weight:600;}
+
+/* Output card */
+.calc-output-card{background:linear-gradient(145deg,#0e2240 0%,var(--navy3) 100%);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:2.2rem;display:flex;flex-direction:column;gap:1.4rem;}
+.calc-output-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(88,208,189,.6);}
+.savings-display{text-align:center;padding:1.5rem 0 1rem;}
+.savings-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,5.5rem);color:var(--teal);line-height:1;text-shadow:var(--neon-md);display:block;}
+.savings-currency{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.6rem;color:var(--teal);opacity:.7;margin-right:.2rem;}
+.savings-year{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.4rem;display:block;}
+@keyframes neonPulse{0%,100%{text-shadow:var(--neon-md);}50%{text-shadow:var(--neon-lg);}}
+.savings-num.pulsing{animation:neonPulse 2.2s ease-in-out infinite;}
+.calc-breakdown{display:flex;flex-direction:column;gap:.6rem;border-top:1px solid rgba(255,255,255,.06);padding-top:1.2rem;}
+.calc-breakdown-row{display:flex;justify-content:space-between;align-items:center;}
+.calc-breakdown-lbl{font-size:13px;color:rgba(255,255,255,.45);}
+.calc-breakdown-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:rgba(88,208,189,.85);}
+.calc-disclaimer{font-size:11px;color:rgba(255,255,255,.22);line-height:1.6;border-top:1px solid rgba(255,255,255,.05);padding-top:1rem;}
+.calc-cta{display:block;width:100%;background:var(--teal);color:var(--navy);padding:15px 20px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;letter-spacing:.3px;text-transform:uppercase;text-align:center;border:none;cursor:pointer;transition:background .2s,transform .3s var(--spring),box-shadow .3s;text-decoration:none;}
+.calc-cta:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 8px 28px rgba(88,208,189,.4);}
+.calc-cta:focus-visible{outline:3px solid #fff;outline-offset:2px;}
+
+/* ═══ SERVICE SECTIONS ═══ */
+.svc-dark{background:linear-gradient(150deg,var(--navy) 0%,var(--navy3) 100%);padding:5rem 0;}
+.svc-light{background:var(--off);padding:5rem 0;}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.svc-grid.rev{direction:rtl;}
+.svc-grid.rev>*{direction:ltr;}
+.svc-icon-wrap{width:64px;height:64px;border-radius:16px;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.2);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1.4rem;flex-shrink:0;}
+.svc-icon-wrap.solid{background:rgba(88,208,189,.15);}
+.svc-tag{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;display:block;}
+.svc-h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;line-height:1.05;margin-bottom:1rem;}
+.svc-dark .svc-h2{color:#fff;}
+.svc-light .svc-h2{color:var(--navy);}
+.svc-h2 em{color:var(--teal);font-style:normal;}
+.svc-desc{font-size:15px;line-height:1.85;margin-bottom:1.6rem;}
+.svc-dark .svc-desc{color:rgba(255,255,255,.58);}
+.svc-light .svc-desc{color:var(--muted);}
+.feat-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.8rem;}
+.feat-item{display:flex;gap:.75rem;align-items:flex-start;font-size:14px;line-height:1.55;}
+.svc-dark .feat-item{color:rgba(255,255,255,.75);}
+.svc-light .feat-item{color:var(--text);}
+.feat-check{width:20px;height:20px;min-width:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;flex-shrink:0;margin-top:2px;}
+.svc-dark .feat-check{background:rgba(88,208,189,.15);color:var(--teal);border:1.5px solid rgba(88,208,189,.3);}
+.svc-light .feat-check{background:rgba(88,208,189,.12);color:var(--teal);border:1.5px solid rgba(88,208,189,.25);}
+.feat-item strong{display:block;font-weight:700;}
+.svc-visual{border-radius:16px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.1);}
+.svc-visual-inner{padding:2.5rem;display:flex;flex-direction:column;gap:1rem;}
+.svc-chip{display:inline-flex;align-items:center;gap:.5rem;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid;}
+.svc-dark .svc-chip{background:rgba(88,208,189,.08);border-color:rgba(88,208,189,.2);color:var(--teal);}
+.svc-light .svc-chip{background:rgba(19,46,80,.07);border-color:rgba(19,46,80,.15);color:var(--navy);}
+.flow-steps{display:flex;flex-direction:column;gap:0;}
+.flow-step{display:flex;gap:1rem;align-items:flex-start;padding:.8rem 0;}
+.flow-step:not(:last-child){border-bottom:1px solid rgba(255,255,255,.06);}
+.svc-light .flow-step:not(:last-child){border-bottom-color:rgba(19,46,80,.08);}
+.flow-dot{width:32px;height:32px;min-width:32px;border-radius:50%;background:rgba(88,208,189,.12);border:1.5px solid rgba(88,208,189,.25);display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:.95rem;color:var(--teal);margin-top:2px;}
+.flow-text{font-size:13px;line-height:1.6;}
+.svc-dark .flow-text{color:rgba(255,255,255,.65);}
+.svc-light .flow-text{color:var(--muted);}
+.flow-text strong{font-weight:700;display:block;margin-bottom:2px;}
+.svc-dark .flow-text strong{color:#fff;}
+.svc-light .flow-text strong{color:var(--navy);}
+
+/* DSGVO compliance card */
+.compliance-card{background:linear-gradient(145deg,var(--navy) 0%,var(--navy3) 100%);border-radius:16px;padding:2.2rem;border:1px solid rgba(88,208,189,.15);}
+.compliance-badge{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;border-radius:8px;margin-bottom:.7rem;}
+.compliance-badge.green{background:rgba(88,208,189,.08);border:1px solid rgba(88,208,189,.18);}
+.compliance-badge.gold{background:rgba(245,192,0,.06);border:1px solid rgba(245,192,0,.15);}
+.compliance-badge.blue{background:rgba(30,66,117,.5);border:1px solid rgba(88,208,189,.1);}
+.cb-icon{font-size:1.4rem;}
+.cb-text strong{font-size:13px;font-weight:700;color:#fff;display:block;}
+.cb-text span{font-size:11px;color:rgba(255,255,255,.4);}
+
+/* PROCESS STEPS ═══ */
+.process-section{padding:5rem 0;background:#fff;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+.pstep{text-align:center;padding:2rem 1.5rem;border:1px solid var(--border);border-radius:var(--r);position:relative;transition:all .3s;}
+.pstep::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .35s;border-radius:var(--r) var(--r) 0 0;}
+.pstep:hover{box-shadow:var(--shadow);border-color:rgba(88,208,189,.3);}
+.pstep:hover::before{transform:scaleX(1);}
+.pstep-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-d));display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);margin:0 auto 1.2rem;box-shadow:0 6px 20px rgba(88,208,189,.3);}
+.pstep h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
+.pstep p{font-size:13px;color:var(--muted);line-height:1.65;}
+
+/* TRUST STRIP ═══ */
+.trust-strip{background:var(--navy3);padding:3rem 0;border-top:1px solid rgba(88,208,189,.08);border-bottom:1px solid rgba(88,208,189,.08);}
+.trust-strip-inner{display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;align-items:center;}
+.trust-badge{display:flex;flex-direction:column;align-items:center;gap:.4rem;text-align:center;}
+.tb-icon{font-size:2rem;}
+.tb-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(88,208,189,.6);}
+.tb-sub{font-size:10px;color:rgba(255,255,255,.25);}
+
+/* CTA ═══ */
+.cta-strip{background:linear-gradient(135deg,var(--navy) 0%,var(--navy3) 100%);padding:5.5rem 0;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 50% 50%,rgba(88,208,189,.07) 0%,transparent 65%);pointer-events:none;}
+.cta-strip>.container{position:relative;z-index:1;}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4.5vw,3.5rem);text-transform:uppercase;color:#fff;line-height:1;margin-bottom:.8rem;}
+.cta-title em{color:var(--teal);font-style:normal;}
+.cta-sub{font-size:16px;color:rgba(255,255,255,.52);margin-bottom:2.5rem;line-height:1.75;max-width:580px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta-info-row{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);}
+.cta-info{font-size:14px;color:rgba(255,255,255,.45);}
+.cta-info a{color:rgba(255,255,255,.78);transition:color .2s;}
+.cta-info a:hover{color:var(--teal);}
+.cta-info strong{color:#fff;}
+
+/* FOOTER ═══ */
+footer{background:#060e1a;padding:4rem 0 2rem;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
+.foot-logo img{height:48px;object-fit:contain;}
+.foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#fff;letter-spacing:2px;}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.75;margin-bottom:1.5rem;}
+.foot-social{display:flex;gap:.8rem;}
+.fsoc{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);transition:all .25s;}
+.fsoc:hover{background:rgba(88,208,189,.12);color:var(--teal);}
+.fsoc svg{width:17px;height:17px;fill:currentColor;stroke:none;}
+.foot-col h5{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.35);margin-bottom:1rem;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);margin-bottom:.55rem;transition:color .2s;}
+.foot-col a:hover{color:var(--teal);}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;}
+.foot-bottom span{font-size:12px;color:rgba(255,255,255,.2);}
+.foot-legal{display:flex;gap:1.5rem;}
+.foot-legal a{font-size:12px;color:rgba(255,255,255,.25);transition:color .2s;}
+.foot-legal a:hover{color:var(--teal);}
+
+/* RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .calc-grid{grid-template-columns:1fr;gap:2rem;}
+  .svc-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .svc-grid.rev{direction:ltr;}
+  .process-grid{grid-template-columns:1fr 1fr;gap:1.2rem;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-inner{padding:3rem 0;}
+  .hero h1{font-size:2.5rem;}
+  .hero-proof{gap:1.5rem;}
+  .trust-strip-inner{gap:2rem;}
+  .cta-info-row{gap:1.2rem;}
+}
+@media(max-width:480px){
+  .process-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+  .cta-btns{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<!-- Cookie -->
+<div class="cookie" id="cookie" role="alert" aria-live="polite">
+  <p>Wir nutzen technisch notwendige Cookies. <a href="/datenschutz.html">Datenschutzerklärung</a></p>
+  <button class="cookie-btn" onclick="document.getElementById('cookie').classList.remove('show');localStorage.setItem('ck','1')">OK</button>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp – Masar Werbeagentur Berlin">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav class="main-nav" aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
+      <img src="/logo.png" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-txt">MASAR</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/werbetechnik.html">Werbetechnik</a></li>
+      <li><a href="/digital.html">Social Media</a></li>
+      <li><a href="/print.html">Print &amp; Design</a></li>
+      <li><a href="/angebote/">Angebote</a></li>
+      <li><a href="/ki-loesungen/" class="active" aria-current="page">KI-Lösungen</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<nav class="mob-nav" id="mobNav" aria-label="Mobile Navigation">
+  <a href="/">Home</a>
+  <a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/werbetechnik.html">Werbetechnik &amp; Leuchtreklamen</a>
+  <a href="/digital.html">Social Media Marketing</a>
+  <a href="/print.html">Print &amp; Grafikdesign</a>
+  <a href="/angebote/">Branchen-Angebote</a>
+  <a href="/ki-loesungen/" aria-current="page">KI-Lösungen</a>
+  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<header class="hero" id="main-content" aria-labelledby="hero-heading">
+  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge" aria-hidden="true">✦ KI-Automatisierung · Berlin · Made in EU</div>
+      <h1 id="hero-heading">KI-Automatisierung<br>für den<br><em>Mittelstand.</em></h1>
+      <p class="hero-tagline">DSGVO-konform · EU-Server · Sofort einsatzbereit</p>
+      <p class="hero-sub">Wir eliminieren manuelle Prozesse mit maßgeschneiderten KI-Agenten und intelligenten Wissenssystemen – messbar, sicher und vollständig konform mit deutschem Datenschutzrecht.</p>
+      <div class="hero-btns">
+        <a href="#ki-rechner" class="btn btn-teal">Einsparpotenzial berechnen ↓</a>
+        <a href="/#kontakt" class="btn-outline-light">Gratis Beratungsgespräch</a>
+      </div>
+      <div class="hero-proof" role="list" aria-label="Kennzahlen">
+        <div class="proof-item" role="listitem">
+          <span class="proof-num">80 %</span>
+          <span class="proof-lbl">weniger Routineaufwand</span>
+        </div>
+        <div class="proof-item" role="listitem">
+          <span class="proof-num">24/7</span>
+          <span class="proof-lbl">Agenten im Einsatz</span>
+        </div>
+        <div class="proof-item" role="listitem">
+          <span class="proof-num">EU</span>
+          <span class="proof-lbl">Server-Standort</span>
+        </div>
+        <div class="proof-item" role="listitem">
+          <span class="proof-num">100 %</span>
+          <span class="proof-lbl">DSGVO-konform</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ KI-POTENZIAL-RECHNER ═══════════════════ -->
+<section class="calc-section" id="ki-rechner" aria-labelledby="calc-heading">
+  <div class="container calc-inner">
+    <div class="sec-head center">
+      <span class="eyebrow light">KI-Potenzial-Rechner</span>
+      <h2 class="sec-title white" id="calc-heading">Wie viel kostet Sie manuelle Arbeit <em>wirklich?</em></h2>
+      <p class="sec-sub light" style="margin:0 auto;">Berechnen Sie Ihr jährliches Einsparpotenzial durch KI-Automatisierung – in unter 30 Sekunden.</p>
+    </div>
+
+    <div class="calc-grid">
+      <!-- Sliders -->
+      <div class="calc-card" role="group" aria-labelledby="sliders-heading">
+        <h3 id="sliders-heading" class="calc-label" style="font-size:12px;margin-bottom:1.4rem;">Ihr Unternehmen</h3>
+
+        <!-- Slider 1: Mitarbeiter -->
+        <div class="calc-slider-wrap">
+          <div class="calc-value-row">
+            <label for="sl-emp" class="calc-field-name">Mitarbeiteranzahl</label>
+            <span class="calc-cur-val" id="val-emp" aria-live="polite">20<span class="calc-unit"> Pers.</span></span>
+          </div>
+          <input type="range" id="sl-emp" name="mitarbeiter"
+                 min="1" max="500" value="20" step="1"
+                 aria-label="Mitarbeiteranzahl"
+                 aria-valuemin="1" aria-valuemax="500" aria-valuenow="20">
+          <div class="calc-track-labels" aria-hidden="true"><span>1</span><span>500</span></div>
+        </div>
+
+        <!-- Slider 2: Stundenlohn -->
+        <div class="calc-slider-wrap">
+          <div class="calc-value-row">
+            <label for="sl-wage" class="calc-field-name">Ø-Stundenlohn</label>
+            <span class="calc-cur-val" id="val-wage" aria-live="polite"><span class="calc-unit">€ </span>35</span>
+          </div>
+          <input type="range" id="sl-wage" name="stundenlohn"
+                 min="15" max="100" value="35" step="1"
+                 aria-label="Durchschnittlicher Stundenlohn in Euro"
+                 aria-valuemin="15" aria-valuemax="100" aria-valuenow="35">
+          <div class="calc-track-labels" aria-hidden="true"><span>€ 15</span><span>€ 100</span></div>
+        </div>
+
+        <!-- Slider 3: Admin-Stunden -->
+        <div class="calc-slider-wrap">
+          <div class="calc-value-row">
+            <label for="sl-hrs" class="calc-field-name">Admin-Stunden / Tag / Mitarbeiter</label>
+            <span class="calc-cur-val" id="val-hrs" aria-live="polite">3<span class="calc-unit"> h</span></span>
+          </div>
+          <input type="range" id="sl-hrs" name="admin-stunden"
+                 min="1" max="8" value="3" step="0.5"
+                 aria-label="Tägliche Admin-Stunden pro Mitarbeiter"
+                 aria-valuemin="1" aria-valuemax="8" aria-valuenow="3">
+          <div class="calc-track-labels" aria-hidden="true"><span>1 h</span><span>8 h</span></div>
+        </div>
+
+        <p style="font-size:12px;color:rgba(255,255,255,.28);line-height:1.7;margin-top:.5rem;">
+          Admin-Zeit umfasst: E-Mail-Bearbeitung, CRM-Eingaben, Datenpflege, Rechnungsverarbeitung und Reporting.
+        </p>
+      </div>
+
+      <!-- Output -->
+      <div class="calc-output-card" role="region" aria-label="Berechnetes Einsparpotenzial" aria-live="polite" aria-atomic="true">
+        <span class="calc-output-label">Ihr KI-Einsparpotenzial</span>
+
+        <div class="savings-display">
+          <span class="savings-currency" aria-hidden="true">€</span>
+          <span class="savings-num pulsing" id="savings-num" aria-label="Jährliche Einsparung in Euro">420.000</span>
+          <span class="savings-year" aria-hidden="true">Jährliche Einsparung</span>
+        </div>
+
+        <div class="calc-breakdown" aria-label="Aufschlüsselung der Einsparung">
+          <div class="calc-breakdown-row">
+            <span class="calc-breakdown-lbl">Monatliche Einsparung</span>
+            <span class="calc-breakdown-val" id="savings-monthly">€ 35.000</span>
+          </div>
+          <div class="calc-breakdown-row">
+            <span class="calc-breakdown-lbl">Eingesparte Vollzeit-Stellen (äquiv.)</span>
+            <span class="calc-breakdown-val" id="savings-fte">3,0 FTE</span>
+          </div>
+          <div class="calc-breakdown-row">
+            <span class="calc-breakdown-lbl">Automatisierungsgrad</span>
+            <span class="calc-breakdown-val">80 % der Admin-Arbeit</span>
+          </div>
+        </div>
+
+        <a href="/#kontakt" class="calc-cta">
+          Jetzt kostenlose Potenzialanalyse anfordern →
+        </a>
+
+        <p class="calc-disclaimer">
+          * Schätzung basierend auf 250 Arbeitstagen/Jahr und 80 % Effizienzgewinn durch KI-Automatisierung. Tatsächliche Einsparungen hängen vom konkreten Prozessumfeld ab.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE A: Autonome KI-Agenten ═══ -->
+<section class="svc-dark" id="ki-agenten" aria-labelledby="agenten-heading">
+  <div class="container">
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="svc-icon-wrap"><span aria-hidden="true">🤖</span></div>
+        <span class="svc-tag">Service 01 · Prozessautomatisierung</span>
+        <h2 class="svc-h2" id="agenten-heading">Autonome KI-Agenten für <em>Ihre Prozesse</em></h2>
+        <p class="svc-desc">Unsere maßgeschneiderten KI-Agenten lesen eingehende E-Mails, qualifizieren B2B-Leads, verarbeiten Eingangsrechnungen und führen Folgeaktionen direkt aus – rund um die Uhr, ohne menschliches Eingreifen. Sie integrieren nahtlos in Ihr bestehendes CRM oder ERP-System.</p>
+        <ul class="feat-list" role="list">
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>E-Mail-Triage &amp; automatische Antworten</strong>Der Agent kategorisiert eingehende Nachrichten, beantwortet Standardanfragen und leitet komplexe Fälle gezielt weiter.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Automatische Lead-Qualifizierung</strong>Neue Kontakte werden nach BANT-Kriterien bewertet und direkt in HubSpot, Salesforce oder Ihr CRM eingetragen – ohne manuelle Dateneingabe.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Rechnungsverarbeitung &amp; ERP-Anbindung</strong>Eingangsrechnungen werden ausgelesen, validiert und direkt in SAP, DATEV oder Ihre Buchhaltungssoftware übertragen.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>24/7 Betrieb ohne Mehrkosten</strong>Kein Urlaub, keine Krankentage – Ihre Prozesse laufen durch, auch außerhalb der Geschäftszeiten.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal svc-visual">
+        <div class="svc-visual-inner">
+          <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.5);margin-bottom:.4rem;">Agent · Aktivität</p>
+          <div class="flow-steps" role="list" aria-label="Beispiel-Workflow KI-Agent">
+            <div class="flow-step" role="listitem">
+              <div class="flow-dot" aria-hidden="true">1</div>
+              <div class="flow-text"><strong>E-Mail eingetroffen: „Angebot für 50 Einheiten"</strong>Agent erkennt: B2B-Anfrage, hoher Auftragswert, Entscheider.</div>
+            </div>
+            <div class="flow-step" role="listitem">
+              <div class="flow-dot" aria-hidden="true">2</div>
+              <div class="flow-text"><strong>CRM automatisch aktualisiert</strong>Kontakt angelegt, Lead-Score 87/100, Deal-Stage: „Qualifiziert".</div>
+            </div>
+            <div class="flow-step" role="listitem">
+              <div class="flow-dot" aria-hidden="true">3</div>
+              <div class="flow-text"><strong>Personalisierte Antwort in 4 Sekunden</strong>Agent sendet professionelles Erstangebot mit Terminvorschlag.</div>
+            </div>
+            <div class="flow-step" role="listitem">
+              <div class="flow-dot" aria-hidden="true">4</div>
+              <div class="flow-text"><strong>Vertriebsteam benachrichtigt</strong>Slack-Ping: „Heißer Lead – Erstgespräch für Dienstag bestätigt."</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem;">
+            <span class="svc-chip">HubSpot</span>
+            <span class="svc-chip">Salesforce</span>
+            <span class="svc-chip">SAP</span>
+            <span class="svc-chip">DATEV</span>
+            <span class="svc-chip">Slack</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE B: DSGVO & EU AI Act ═══ -->
+<section class="svc-light" id="dsgvo-ki" aria-labelledby="dsgvo-heading">
+  <div class="container">
+    <div class="svc-grid rev">
+      <div class="reveal">
+        <div class="svc-icon-wrap solid"><span aria-hidden="true">🛡️</span></div>
+        <span class="svc-tag">Service 02 · Datensouveränität</span>
+        <h2 class="svc-h2" id="dsgvo-heading">100 % DSGVO &amp; EU AI Act – <em>Ihre Daten verlassen nie die EU</em></h2>
+        <p class="svc-desc">Der größte Vorbehalt deutscher Unternehmen gegenüber KI: Datenschutz. Zu Recht. Wir setzen auf eine Zero-Trust-Architektur mit closed enterprise-grade APIs und lokal betriebenen Open-Source-Modellen auf EU-Servern – damit keine Kunden- oder Geschäftsdaten an US-Anbieter übertragen werden.</p>
+        <ul class="feat-list" role="list">
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Lokale LLM-Modelle (Llama 3 / Mistral)</strong>Wir hosten leistungsstarke Open-Source-Sprachmodelle auf gesicherten EU-Servern in Deutschland – kein Datentransfer in die USA.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Zero-Trust-Architektur</strong>Verschlüsselung auf Transport- und Speicherebene, rollenbasierte Zugriffskontrolle, vollständige Audit-Logs aller KI-Aktionen.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>EU AI Act Konformität</strong>Alle Systeme werden gemäß Risikoklassifizierung des EU AI Acts entwickelt und dokumentiert – prüfungsbereit für interne und externe Audits.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>AVV &amp; DSGVO-Dokumentation inklusive</strong>Auftragsverarbeitungsvertrag, technische Sicherheitsmaßnahmen (TOM) und Datenschutz-Folgeabschätzung auf Anfrage.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="compliance-card">
+          <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.5);margin-bottom:1rem;">Compliance-Status</p>
+          <div class="compliance-badge green">
+            <span class="cb-icon" aria-hidden="true">✅</span>
+            <div class="cb-text">
+              <strong>DSGVO Art. 28 konform</strong>
+              <span>Auftragsverarbeitungsvertrag (AVV) vorhanden</span>
+            </div>
+          </div>
+          <div class="compliance-badge green">
+            <span class="cb-icon" aria-hidden="true">🇪🇺</span>
+            <div class="cb-text">
+              <strong>Server-Standort: Deutschland / EU</strong>
+              <span>Kein Datentransfer in Drittstaaten (Art. 46 DSGVO)</span>
+            </div>
+          </div>
+          <div class="compliance-badge green">
+            <span class="cb-icon" aria-hidden="true">🔒</span>
+            <div class="cb-text">
+              <strong>Zero-Trust-Architektur</strong>
+              <span>End-to-End-Verschlüsselung · Audit-Logs · RBAC</span>
+            </div>
+          </div>
+          <div class="compliance-badge gold">
+            <span class="cb-icon" aria-hidden="true">⚖️</span>
+            <div class="cb-text">
+              <strong>EU AI Act – Risikobewertung</strong>
+              <span>Klassifizierung, Dokumentation &amp; Transparenzpflichten</span>
+            </div>
+          </div>
+          <div class="compliance-badge blue">
+            <span class="cb-icon" aria-hidden="true">🤖</span>
+            <div class="cb-text">
+              <strong>Lokale Modelle: Llama 3 · Mistral · Phi-3</strong>
+              <span>Open Source · Keine US-Cloud-Abhängigkeit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE C: RAG-Wissensdatenbanken ═══ -->
+<section class="svc-dark" id="rag-wissen" aria-labelledby="rag-heading">
+  <div class="container">
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="svc-icon-wrap"><span aria-hidden="true">🧠</span></div>
+        <span class="svc-tag">Service 03 · Wissensmanagement</span>
+        <h2 class="svc-h2" id="rag-heading">Intelligente Wissensdatenbanken – <em>Ihr Team chattet mit Ihren Dokumenten</em></h2>
+        <p class="svc-desc">Stunden verschwendet mit der Suche nach dem richtigen Paragraphen, dem aktuellen Vertrag oder der internen Richtlinie? Mit unseren RAG-Systemen (Retrieval-Augmented Generation) können Ihre Mitarbeiter sicher mit Tausenden interner Dokumente chatten – in Sekunden, präzise und quellenverweisend.</p>
+        <ul class="feat-list" role="list">
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Chat mit internen PDFs, Verträgen &amp; Handbüchern</strong>Stellen Sie Fragen wie „Was steht in §7 unseres Rahmenvertrags mit Lieferant X?" – Antwort in Echtzeit mit Quellenangabe.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Interne Compliance-Recherche beschleunigt</strong>Rechtliche Prüfungen, Unternehmensrichtlinien, ISO-Dokumentationen – alles sofort abrufbar ohne Expertenwissen.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Onboarding neuer Mitarbeiter in Stunden statt Wochen</strong>Neue Teammitglieder finden alle Antworten selbst – vollständig kontrolliert in Ihrer privaten Unternehmensumgebung.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Keine Halluzinationen durch verankerte Quellen</strong>Jede Antwort wird mit dem Originaldokument &amp; Seitenzahl belegt – keine erfundenen Fakten.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal svc-visual">
+        <div class="svc-visual-inner">
+          <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.5);margin-bottom:.4rem;">RAG-System · Live-Demo</p>
+          <div style="background:rgba(0,0,0,.25);border-radius:8px;padding:1rem;margin-bottom:.8rem;font-size:13px;">
+            <p style="color:rgba(255,255,255,.4);margin-bottom:.5rem;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">Mitarbeiter fragt:</p>
+            <p style="color:rgba(255,255,255,.82);font-style:italic;">"Was ist die Kündigungsfrist in unserem Lieferantenvertrag mit Müller GmbH?"</p>
+          </div>
+          <div style="background:rgba(88,208,189,.07);border:1px solid rgba(88,208,189,.18);border-radius:8px;padding:1rem;font-size:13px;">
+            <p style="color:rgba(88,208,189,.7);margin-bottom:.5rem;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">KI-Assistent antwortet:</p>
+            <p style="color:rgba(255,255,255,.75);line-height:1.65;">Gemäß <strong style="color:var(--teal);">§8 Abs. 2</strong> des Lieferantenvertrags vom 12.03.2024 beträgt die Kündigungsfrist <strong style="color:var(--teal);">90 Tage zum Quartalsende.</strong></p>
+            <p style="color:rgba(88,208,189,.5);font-size:11px;margin-top:.5rem;">📄 Quelle: Vertrag_Müller_GmbH_2024.pdf · Seite 4</p>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem;">
+            <span class="svc-chip">PDFs</span>
+            <span class="svc-chip">Word / Excel</span>
+            <span class="svc-chip">SharePoint</span>
+            <span class="svc-chip">Confluence</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE D: KI-Kundenservice ═══ -->
+<section class="svc-light" id="ki-support" aria-labelledby="support-heading">
+  <div class="container">
+    <div class="svc-grid rev">
+      <div class="reveal">
+        <div class="svc-icon-wrap solid"><span aria-hidden="true">💬</span></div>
+        <span class="svc-tag">Service 04 · Kundenservice &amp; Support</span>
+        <h2 class="svc-h2" id="support-heading">KI-Kundenservice – <em>80 % der Anfragen sofort gelöst</em></h2>
+        <p class="svc-desc">Unsere intelligenten Support-Agenten analysieren eingehende Anfragen, erkennen den Kontext, den Tonfall und die dringlichkeit – und lösen bis zu 80 % aller Standard-Tickets in Echtzeit. Komplexe Fälle werden nahtlos und kontextuell an Ihr menschliches Team übergeben.</p>
+        <ul class="feat-list" role="list">
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Sofortantwort rund um die Uhr</strong>Kunden erhalten innerhalb von Sekunden eine präzise, empathische Antwort – auch am Wochenende und nachts.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Markenspezifischer Ton &amp; Persönlichkeit</strong>Der Agent spricht in Ihrer Corporate Voice: förmlich oder locker, präzise oder warmherzig – genau so wie Ihre Marke kommuniziert.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Intelligente Eskalation mit vollem Kontext</strong>Bei komplexen Anliegen wird das Human-Team mit vollständiger Gesprächshistorie, Kundenprofil und empfohlener Lösung benachrichtigt.</div>
+          </li>
+          <li class="feat-item" role="listitem">
+            <div class="feat-check" aria-hidden="true">✓</div>
+            <div><strong>Nahtlose Integration in bestehende Systeme</strong>Zendesk, Freshdesk, HubSpot Service Hub, oder Ihre eigene Lösung – wir verbinden den Agenten mit Ihrem Ticketsystem.</div>
+          </li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div style="background:linear-gradient(145deg,var(--navy) 0%,var(--navy3) 100%);border-radius:16px;padding:2.2rem;border:1px solid rgba(88,208,189,.12);">
+          <p style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(88,208,189,.5);margin-bottom:1.2rem;">Support-Performance</p>
+          <div style="display:flex;flex-direction:column;gap:1.2rem;">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:.4rem;">
+                <span style="font-size:13px;color:rgba(255,255,255,.55);">Automatisch gelöst</span>
+                <span style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--teal);">80 %</span>
+              </div>
+              <div style="height:6px;background:rgba(88,208,189,.1);border-radius:3px;overflow:hidden;" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="80% automatisch gelöst">
+                <div style="width:80%;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-d));border-radius:3px;box-shadow:var(--neon-sm);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:.4rem;">
+                <span style="font-size:13px;color:rgba(255,255,255,.55);">Ø Antwortzeit</span>
+                <span style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--teal);">&lt; 5 Sek.</span>
+              </div>
+              <div style="height:6px;background:rgba(88,208,189,.1);border-radius:3px;overflow:hidden;" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" aria-label="Antwortzeit unter 5 Sekunden">
+                <div style="width:97%;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-d));border-radius:3px;box-shadow:var(--neon-sm);"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:.4rem;">
+                <span style="font-size:13px;color:rgba(255,255,255,.55);">Kundenzufriedenheit</span>
+                <span style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--teal);">93 %</span>
+              </div>
+              <div style="height:6px;background:rgba(88,208,189,.1);border-radius:3px;overflow:hidden;" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" aria-label="93% Kundenzufriedenheit">
+                <div style="width:93%;height:100%;background:linear-gradient(90deg,var(--teal),var(--teal-d));border-radius:3px;box-shadow:var(--neon-sm);"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.4rem;">
+            <span class="svc-chip">Zendesk</span>
+            <span class="svc-chip">Freshdesk</span>
+            <span class="svc-chip">HubSpot</span>
+            <span class="svc-chip">WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section class="process-section" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Unser Vorgehen</span>
+      <h2 class="sec-title" id="process-heading">Von der Idee zur <em>laufenden KI-Lösung</em></h2>
+      <p class="sec-sub" style="margin:0 auto;">Vier strukturierte Phasen – transparent, termingebunden und mit messbarem Ergebnis.</p>
+    </div>
+    <div class="process-grid" role="list" aria-label="Entwicklungsprozess">
+      <div class="pstep reveal" role="listitem">
+        <div class="pstep-num" aria-hidden="true">01</div>
+        <h4>Analyse</h4>
+        <p>Wir kartieren Ihre manuellen Prozesse und identifizieren die drei Bereiche mit dem höchsten Automatisierungspotenzial.</p>
+      </div>
+      <div class="pstep reveal" role="listitem">
+        <div class="pstep-num" aria-hidden="true">02</div>
+        <h4>Entwicklung</h4>
+        <p>Maßgeschneidertes Training und Konfiguration der KI-Modelle auf Basis Ihrer Daten und Ihrer Corporate Voice.</p>
+      </div>
+      <div class="pstep reveal" role="listitem">
+        <div class="pstep-num" aria-hidden="true">03</div>
+        <h4>Integration</h4>
+        <p>Anbindung an Ihre bestehenden Systeme (CRM, ERP, Ticketsysteme) mit vollständigen Tests und DSGVO-Dokumentation.</p>
+      </div>
+      <div class="pstep reveal" role="listitem">
+        <div class="pstep-num" aria-hidden="true">04</div>
+        <h4>Optimierung</h4>
+        <p>Laufendes Monitoring, Feedback-Loops und kontinuierliche Modell-Updates für stetig wachsende Genauigkeit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══ -->
+<div class="trust-strip" aria-label="Compliance und Technologie-Standards">
+  <div class="container">
+    <div class="trust-strip-inner" role="list">
+      <div class="trust-badge" role="listitem">
+        <span class="tb-icon" aria-hidden="true">🇩🇪</span>
+        <span class="tb-label">Entwickelt in Berlin</span>
+        <span class="tb-sub">Made in Germany</span>
+      </div>
+      <div class="trust-badge" role="listitem">
+        <span class="tb-icon" aria-hidden="true">🔒</span>
+        <span class="tb-label">DSGVO-konform</span>
+        <span class="tb-sub">Art. 5 &amp; Art. 28</span>
+      </div>
+      <div class="trust-badge" role="listitem">
+        <span class="tb-icon" aria-hidden="true">⚖️</span>
+        <span class="tb-label">EU AI Act</span>
+        <span class="tb-sub">Konform 2026</span>
+      </div>
+      <div class="trust-badge" role="listitem">
+        <span class="tb-icon" aria-hidden="true">🌍</span>
+        <span class="tb-label">EU-Server</span>
+        <span class="tb-sub">Kein US-Datentransfer</span>
+      </div>
+      <div class="trust-badge" role="listitem">
+        <span class="tb-icon" aria-hidden="true">🤖</span>
+        <span class="tb-label">Open-Source LLMs</span>
+        <span class="tb-sub">Llama 3 · Mistral</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CTA ═══ -->
+<div class="cta-strip">
+  <div class="container">
+    <span class="eyebrow light" style="display:block;margin-bottom:.8rem;">Gratis &amp; Unverbindlich</span>
+    <h2 class="cta-title">Bereit für Ihre <em>KI-Transformation?</em></h2>
+    <p class="cta-sub">In einem 45-minütigen Erstgespräch analysieren wir kostenlos Ihre manuellen Prozesse und zeigen Ihnen, wo KI innerhalb von 60 Tagen messbar wirkt.</p>
+    <div class="cta-btns">
+      <a href="/#kontakt" class="btn btn-teal" style="font-size:15px;padding:16px 32px;">Jetzt kostenlose Potenzialanalyse anfordern</a>
+      <a href="tel:01785143918" class="btn-outline-light" style="font-size:15px;padding:14px 30px;">📞 0178 514 3918</a>
+    </div>
+    <div class="cta-info-row">
+      <div class="cta-info">📍 <strong>Bristolstraße 19HN, 13349 Berlin</strong></div>
+      <div class="cta-info">⏱ Antwort innerhalb <strong>24 Stunden</strong></div>
+      <div class="cta-info">💬 <a href="https://wa.me/491785143918" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+      <div class="cta-info">✉ <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="/logo.png" alt="Masar Werbeagentur" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="foot-logo-txt">MASAR</span>
+        </div>
+        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zur KI-Automatisierung – Ihre Full-Service Werbeagentur in Berlin.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/masar.werbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.facebook.com/masarwerbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://wa.me/491785143918" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Leistungen</h5>
+        <a href="/leuchtreklame-berlin.html">Leuchtreklamen Berlin</a>
+        <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
+        <a href="/werbetechnik-berlin-wedding.html">Werbetechnik Wedding</a>
+        <a href="/print.html">Grafikdesign &amp; Print</a>
+        <a href="/digital.html">Social Media</a>
+        <a href="/ki-loesungen/">KI-Lösungen</a>
+      </div>
+      <div class="foot-col">
+        <h5>Seiten</h5>
+        <a href="/leistungen.html">Alle Leistungen</a>
+        <a href="/angebote/">Branchen-Angebote</a>
+        <a href="/ki-loesungen/">KI-Lösungen</a>
+        <a href="/digital.html">Social Media</a>
+        <a href="/print.html">Print &amp; Design</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontakt</h5>
+        <a href="tel:01785143918">0178 514 3918</a>
+        <a href="https://wa.me/491785143918" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
+        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+      <div class="foot-legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* Cookie */
+  if(!localStorage.getItem('ck')){
+    setTimeout(function(){ document.getElementById('cookie').classList.add('show'); }, 800);
+  }
+
+  /* Hamburger */
+  var ham = document.getElementById('hamburger');
+  var mob = document.getElementById('mobNav');
+  ham.addEventListener('click', function(){
+    var open = mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded', open);
+    ham.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  mob.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mob.classList.remove('open');
+      ham.setAttribute('aria-expanded','false');
+      ham.setAttribute('aria-label','Menü öffnen');
+    });
+  });
+
+  /* Reveal on scroll */
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ═══ KI-POTENZIAL-RECHNER ═══ */
+  var slEmp   = document.getElementById('sl-emp');
+  var slWage  = document.getElementById('sl-wage');
+  var slHrs   = document.getElementById('sl-hrs');
+  var valEmp  = document.getElementById('val-emp');
+  var valWage = document.getElementById('val-wage');
+  var valHrs  = document.getElementById('val-hrs');
+  var savNum  = document.getElementById('savings-num');
+  var savMon  = document.getElementById('savings-monthly');
+  var savFte  = document.getElementById('savings-fte');
+
+  var currentSavings = 420000;
+  var rafId = null;
+
+  function formatNum(n){
+    return n.toLocaleString('de-DE');
+  }
+
+  function animateCounter(from, to){
+    if(rafId) cancelAnimationFrame(rafId);
+    var start = null;
+    var duration = 550;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var cur = Math.round(from + (to - from) * ease);
+      savNum.textContent = formatNum(cur);
+      savNum.setAttribute('aria-label', 'Jährliche Einsparung: ' + formatNum(cur) + ' Euro');
+      if(progress < 1){ rafId = requestAnimationFrame(step); }
+      else { currentSavings = to; }
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  function calcSavings(){
+    var emp   = parseInt(slEmp.value, 10);
+    var wage  = parseInt(slWage.value, 10);
+    var hrs   = parseFloat(slHrs.value);
+    var yearly = Math.round(emp * hrs * wage * 250 * 0.80);
+    var monthly = Math.round(yearly / 12);
+    var fte = (emp * hrs / 8 * 0.80).toFixed(1);
+
+    /* update live labels */
+    valEmp.innerHTML  = emp + '<span class="calc-unit"> Pers.</span>';
+    valWage.innerHTML = '<span class="calc-unit">€ </span>' + wage;
+    valHrs.innerHTML  = (Number.isInteger(hrs) ? hrs : hrs.toFixed(1)) + '<span class="calc-unit"> h</span>';
+
+    /* update aria-valuenow */
+    slEmp.setAttribute('aria-valuenow', emp);
+    slWage.setAttribute('aria-valuenow', wage);
+    slHrs.setAttribute('aria-valuenow', hrs);
+
+    animateCounter(currentSavings, yearly);
+    savMon.textContent = '€ ' + formatNum(monthly);
+    savFte.textContent = fte + ' FTE';
+  }
+
+  [slEmp, slWage, slHrs].forEach(function(sl){
+    sl.addEventListener('input', calcSavings);
+  });
+
+  /* Initial render */
+  calcSavings();
+})();
+</script>
+</body>
+</html>
