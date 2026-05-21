@@ -491,6 +491,26 @@ footer {
 @media (max-width: 380px) {
   .quick-grid { grid-template-columns: 1fr; }
 }
+
+/* ═══ Standard footer classes ═══ */
+.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.06); }
+.foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
+.foot-logo img { height:54px; object-fit:contain; }
+.foot-logo-fb { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; color:var(--teal); letter-spacing:2px; display:none; }
+.foot-desc { font-size:13px; color:rgba(255,255,255,.38); line-height:1.85; margin-bottom:1.2rem; }
+.foot-social { display:flex; gap:.7rem; }
+.fsoc { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.5); transition:all .25s; }
+.fsoc svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.5; }
+.fsoc:hover { background:var(--teal); color:var(--navy); }
+.foot-col h5 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; margin-bottom:1rem; }
+.foot-col a { display:block; font-size:13px; color:rgba(255,255,255,.38); margin-bottom:.5rem; transition:color .2s; text-decoration:none; }
+.foot-col a:hover { color:var(--teal); }
+.foot-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1.5rem; font-size:11px; color:rgba(255,255,255,.28); flex-wrap:wrap; gap:1rem; }
+.foot-legal { display:flex; gap:1.5rem; }
+.foot-legal a { color:rgba(255,255,255,.28); transition:color .2s; text-decoration:none; }
+.foot-legal a:hover { color:var(--teal); }
+@media (max-width: 960px) { .foot-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width: 600px) { .foot-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -498,48 +518,34 @@ footer {
 <!-- ═══ NAV ═══ -->
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="Masar Werbeagentur Berlin – Startseite">
-      <img
-        loading="eager"
-        decoding="async"
-        src="/logo.png"
-        alt="Masar Werbeagentur Berlin"
-        width="120"
-        height="52"
-        onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-      >
-      <span class="nav-logo-fb" aria-hidden="true">MASAR</span>
+    <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
+      <img src="/logo.png" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="nav-logo-fb">MASAR</span>
     </a>
     <ul class="nav-links" role="list">
       <li><a href="/">Home</a></li>
       <li><a href="/leistungen.html">Leistungen</a></li>
+      <li><a href="/werbetechnik.html">Werbetechnik</a></li>
+      <li><a href="/digital.html">Social Media</a></li>
+      <li><a href="/print.html">Print &amp; Design</a></li>
       <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
-      
       <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
-    <button
-      class="hamburger"
-      id="hamburger"
-      aria-label="Menü öffnen"
-      aria-expanded="false"
-      aria-controls="mob-nav"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
+      <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
-
-<!-- Mobile nav -->
-<nav class="mob-nav" id="mob-nav" aria-label="Mobile Navigation" hidden>
+<nav class="mob-nav" id="mobNav" aria-label="Mobile Navigation">
   <a href="/">Home</a>
-  <a href="/leistungen.html">Leistungen</a>
+  <a href="/leistungen.html">Alle Leistungen</a>
+  <a href="/werbetechnik.html">Werbetechnik &amp; Leuchtreklamen</a>
+  <a href="/digital.html">Social Media Marketing</a>
+  <a href="/print.html">Print &amp; Grafikdesign</a>
   <a href="/angebote/">Branchen-Angebote</a>
   <a href="/ki-loesungen/">KI-Lösungen</a>
-  
-  <a href="/#kontakt" class="mob-cta">Kontakt</a>
+  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
 
 <!-- ═══ HERO / 404 ═══ -->
@@ -586,73 +592,75 @@ footer {
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-brand-logo">
-        <img
-          loading="lazy"
-          src="/logo.png"
-          alt="Masar Werbeagentur Berlin"
-          width="120"
-          height="60"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
-        >
-        <span class="footer-brand-logo-fb" aria-hidden="true">MASAR</span>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="/logo.png" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <span class="foot-logo-fb">MASAR</span>
+        </div>
+        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/masar.werbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.facebook.com/masarwerbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://wa.me/491785143918" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg></a>
+        </div>
       </div>
-      <p>Kreative Vision. Digitale Lösungen.<br>Ihre Full-Service Werbeagentur in Berlin.</p>
+      <div class="foot-col">
+        <h5>Leistungen</h5>
+        <a href="/leuchtreklame-berlin.html">Leuchtreklamen Berlin</a>
+        <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
+        <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
+        <a href="/print.html">Grafikdesign &amp; Print</a>
+        <a href="/digital.html">Social Media</a>
+      </div>
+      <div class="foot-col">
+        <h5>Seiten</h5>
+        <a href="/leistungen.html">Alle Leistungen</a>
+        <a href="/werbetechnik.html">Werbetechnik</a>
+        <a href="/angebote/">Branchen-Angebote</a>
+        <a href="/ki-loesungen/">KI-Lösungen</a>
+        <a href="/print.html">Print &amp; Design</a>
+      </div>
+      <div class="foot-col">
+        <h5>Kontakt</h5>
+        <a href="tel:01785143918">0178 514 3918</a>
+        <a href="https://wa.me/491785143918">WhatsApp</a>
+        <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
+        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h5>Navigation</h5>
-      <a href="/">Home</a>
-      <a href="/leistungen.html">Leistungen</a>
-      <a href="/angebote/">Angebote</a>
-      <a href="/ki-loesungen/">KI-Lösungen</a>
-      <a href="/#kontakt">Kontakt</a>
-    </div>
-    <div class="footer-col">
-      <h5>Rechtliches</h5>
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
-      <a href="/agb.html">AGB</a>
-    </div>
-  </div>
-  <div class="footer-bot">
-    <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin</span>
-    <div class="footer-legal-links">
-      <a href="/impressum.html">Impressum</a>
-      <a href="/datenschutz.html">Datenschutz</a>
+    <div class="foot-bottom">
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524</span>
+      <div class="foot-legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
-(function () {
-  var btn = document.getElementById('hamburger');
-  var mob = document.getElementById('mob-nav');
-  if (!btn || !mob) return;
-
-  btn.addEventListener('click', function () {
-    var open = mob.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-    if (open) {
-      mob.removeAttribute('hidden');
-    } else {
-      mob.setAttribute('hidden', '');
+(function(){
+  var ham=document.getElementById('hamburger');
+  var mob=document.getElementById('mobNav');
+  if(!ham||!mob)return;
+  ham.addEventListener('click',function(){
+    var open=mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded',open?'true':'false');
+    ham.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&mob.classList.contains('open')){
+      mob.classList.remove('open');ham.setAttribute('aria-expanded','false');ham.setAttribute('aria-label','Menü öffnen');ham.focus();
     }
   });
-
-  // Close mobile nav on Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mob.classList.contains('open')) {
-      mob.classList.remove('open');
-      mob.setAttribute('hidden', '');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', 'Menü öffnen');
-      btn.focus();
-    }
-  });
-}());
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mob.classList.remove('open');ham.setAttribute('aria-expanded','false');});});
+})();
 </script>
 </body>
 </html>
