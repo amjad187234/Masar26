@@ -165,7 +165,7 @@ footer a{color:rgba(88,208,189,.6);}
 <footer>
   <a href="/impressum.html">Impressum</a> · 
   <a href="/datenschutz.html">Datenschutz</a><br>
-  © 2026 Masar Werbeagentur · Berlin-Wedding
+  © 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524 · Alle Rechte vorbehalten.
 </footer>
 
 <script>
@@ -217,13 +217,14 @@ footer a{color:rgba(88,208,189,.6);}
   if(params.get('debug') === '1'){
     var dbg = document.getElementById('utmDebug');
     dbg.style.display = 'block';
-    dbg.innerHTML = 
+    function esc(s){ return s.replace(/[<>&"]/g,function(c){return({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]);}); }
+    dbg.innerHTML =
       '<strong>UTM Debug:</strong><br>' +
-      'source: '   + (source   || '—') + '<br>' +
-      'medium: '   + (medium   || '—') + '<br>' +
-      'campaign: ' + (campaign || '—') + '<br>' +
-      'content: '  + (content  || '—') + '<br>' +
-      'consent: '  + (consent  || 'nicht gesetzt');
+      'source: '   + esc(source   || '—') + '<br>' +
+      'medium: '   + esc(medium   || '—') + '<br>' +
+      'campaign: ' + esc(campaign || '—') + '<br>' +
+      'content: '  + esc(content  || '—') + '<br>' +
+      'consent: '  + esc(consent  || 'nicht gesetzt');
   }
 
   // Store campaign data for form pre-fill

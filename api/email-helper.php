@@ -123,7 +123,7 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
     $headers  = "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
     $headers .= "From: " . SHOP_NAME . " <" . SMTP_USER . ">\r\n";
-    $headers .= "X-Mailer: PHP/" . PHP_VERSION . "\r\n";
+    $headers .= "X-Mailer: Masar-Mailer/1.0\r\n";
 
     $cleanName  = str_replace(["\r", "\n"], ' ', $custName);
     $cleanEmail = str_replace(["\r", "\n"], '',  $custEmail);

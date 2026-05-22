@@ -369,49 +369,7 @@ const BeforeAfterSlider = {
 
 
 // ═══════════════════════════════════════════════════════════
-// 4. TESTIMONIAL SLIDER
-// ═══════════════════════════════════════════════════════════
-const TestiSlider = {
-  current: 0,
-  auto: null,
-
-  init() {
-    const slider = document.querySelector('.testi-slider');
-    if (!slider) return;
-
-    const items = slider.querySelectorAll('.testi-item');
-    const dots  = slider.querySelectorAll('.testi-dot');
-    if (!items.length) return;
-
-    const show = (idx) => {
-      items.forEach((el, i) => el.classList.toggle('active', i === idx));
-      dots.forEach((el, i)  => el.classList.toggle('active', i === idx));
-      this.current = idx;
-    };
-
-    dots.forEach((dot, i) => dot.addEventListener('click', () => {
-      clearInterval(this.auto);
-      show(i);
-    }));
-
-    slider.querySelector('.testi-prev')?.addEventListener('click', () => {
-      clearInterval(this.auto);
-      show((this.current - 1 + items.length) % items.length);
-    });
-
-    slider.querySelector('.testi-next')?.addEventListener('click', () => {
-      clearInterval(this.auto);
-      show((this.current + 1) % items.length);
-    });
-
-    show(0);
-    this.auto = setInterval(() => show((this.current + 1) % items.length), 5000);
-  }
-};
-
-
-// ═══════════════════════════════════════════════════════════
-// 5. STICKY CTA
+// 4. STICKY CTA
 // ═══════════════════════════════════════════════════════════
 const StickyCta = {
   init() {
@@ -507,7 +465,6 @@ function initAll() {
   MasarForm.init();
   MasarPrice.init();
   BeforeAfterSlider.init();
-  TestiSlider.init();
 }
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initAll);

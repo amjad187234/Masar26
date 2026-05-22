@@ -37,7 +37,8 @@ ServerSignature Off
   RewriteRule ^xmlrpc\.php$        - [F,L]
   RewriteRule ^phpmyadmin(/|$)     - [F,L]
   RewriteRule ^pma(/|$)            - [F,L]
-  RewriteRule ^admin(/|$)          - [F,L]
+  # Note: /admin/ is intentionally NOT blocked here — it has PHP session auth + CSRF.
+  # To restrict by IP, add an .htaccess inside /admin/ with: Require ip YOUR_IP
   RewriteRule ^shell\.php$         - [F,L]
   RewriteRule ^eval-stdin\.php$    - [F,L]
   RewriteRule ^setup\.php$         - [F,L]
