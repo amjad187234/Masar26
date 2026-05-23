@@ -27,16 +27,23 @@
     decided: false
   };
 
+  // ─── localStorage AVAILABILITY CHECK ─────────────────────
+  var storageOk = (function() {
+    try { localStorage.setItem('__t', '1'); localStorage.removeItem('__t'); return true; }
+    catch(e) { return false; }
+  })();
+
   // ─── LOAD SAVED CONSENT ──────────────────────────────────
   function loadConsent() {
+    if (!storageOk) return null; // localStorage disabled → always show banner
     var saved = localStorage.getItem(CONSENT_KEY);
     if (!saved) return null;
-    
+
     try {
       var parsed = JSON.parse(saved);
       var savedDate = new Date(localStorage.getItem(DATE_KEY) || 0);
       var expiryDate = new Date(savedDate.getTime() + EXPIRY_DAYS * 86400000);
-      
+
       if (new Date() > expiryDate) {
         localStorage.removeItem(CONSENT_KEY);
         localStorage.removeItem(DATE_KEY);
@@ -51,6 +58,7 @@
   // ─── SAVE CONSENT ─────────────────────────────────────────
   function saveConsent(state) {
     consentState = Object.assign({}, state, { decided: true });
+    if (!storageOk) return; // gracefully skip if storage unavailable
     localStorage.setItem(CONSENT_KEY, JSON.stringify(consentState));
     localStorage.setItem(DATE_KEY, new Date().toISOString());
   }
@@ -65,7 +73,6 @@
     // s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
     // s.async = true;
     // document.head.appendChild(s);
-    console.log('[DSGVO] Analytics geladen nach Einwilligung');
   }
 
   function loadMarketing() {
@@ -73,7 +80,6 @@
     // !function(f,b,e,v,n,t,s){...}
     // fbq('init', 'XXXXXXXXXXXXXXXXX');
     // fbq('track', 'PageView');
-    console.log('[DSGVO] Marketing geladen nach Einwilligung');
   }
 
   function applyConsent(state) {

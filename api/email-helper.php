@@ -125,8 +125,13 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
     $headers .= "From: " . SHOP_NAME . " <" . SMTP_USER . ">\r\n";
     $headers .= "X-Mailer: Masar-Mailer/1.0\r\n";
 
-    $cleanName  = str_replace(["\r", "\n"], ' ', $custName);
-    $cleanEmail = str_replace(["\r", "\n"], '',  $custEmail);
+    $cleanName  = str_replace(["\r", "\n", "\0"], ' ', $custName);
+    $cleanEmail = str_replace(["\r", "\n", "\0"], '',  $custEmail);
+
+    if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL)) {
+        error_log('[Masar Email] Invalid customer email for order ' . $orderNumber . ': ' . $cleanEmail);
+        return false;
+    }
 
     $subjectCustomer = "Bestellbestätigung {$orderNumber} – " . SHOP_NAME;
     $subjectAdmin    = "Neue Bestellung: {$orderNumber} – {$cleanName}";
@@ -137,8 +142,12 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
     $customerHeaders  = $headers;
     $customerHeaders .= "Reply-To: " . SMTP_USER . "\r\n";
 
-    @mail($cleanEmail, $subjectCustomer, $customerBody, $customerHeaders);
-    @mail(ADMIN_EMAIL, $subjectAdmin,    $adminBody,    $adminHeaders);
+    if (!mail($cleanEmail, $subjectCustomer, $customerBody, $customerHeaders)) {
+        error_log('[Masar Email] Customer confirmation failed for order ' . $orderNumber . ' → ' . $cleanEmail);
+    }
+    if (!mail(ADMIN_EMAIL, $subjectAdmin, $adminBody, $adminHeaders)) {
+        error_log('[Masar Email] Admin notification failed for order ' . $orderNumber);
+    }
 
     return true;
 }

@@ -61,27 +61,42 @@ if ($origin !== '') {
     }
 }
 
-// ─── RATE LIMITING (IP-based, file-based) ─────────────────────────────────────
+// ─── RATE LIMITING (IP-based, file-based with flock) ──────────────────────────
 $ip_hash = hash('sha256', ($_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR']));
 $rl_file = RATE_LIMIT_FILE . $ip_hash;
 $now     = time();
-$hits    = [];
 
-if (file_exists($rl_file)) {
-    $hits = array_filter(
-        (array) json_decode(file_get_contents($rl_file), true),
-        fn($t) => ($now - $t) < RATE_LIMIT_WIN
-    );
+// Periodic old-file cleanup (1% chance to avoid overhead)
+if (random_int(1, 100) === 1) {
+    foreach (glob(RATE_LIMIT_FILE . '*') ?: [] as $f) {
+        if (filemtime($f) < $now - 86400) @unlink($f);
+    }
 }
 
-if (count($hits) >= RATE_LIMIT_MAX) {
-    http_response_code(429);
-    json_out('error', 'Zu viele Anfragen. Bitte warten Sie einige Minuten.');
-}
+$fh = fopen($rl_file, 'c+');
+if ($fh && flock($fh, LOCK_EX)) {
+    fseek($fh, 0);
+    $raw  = stream_get_contents($fh);
+    $hits = array_values(array_filter(
+        (array) json_decode($raw, true),
+        fn($t) => is_int($t) && ($now - $t) < RATE_LIMIT_WIN
+    ));
 
-$hits[] = $now;
-if (file_put_contents($rl_file, json_encode(array_values($hits))) === false) {
-    error_log('[Masar] Rate-limit write failed for IP hash: ' . substr($ip_hash, 0, 16));
+    if (count($hits) >= RATE_LIMIT_MAX) {
+        flock($fh, LOCK_UN);
+        fclose($fh);
+        http_response_code(429);
+        json_out('error', 'Zu viele Anfragen. Bitte warten Sie einige Minuten.');
+    }
+
+    $hits[] = $now;
+    ftruncate($fh, 0);
+    fseek($fh, 0);
+    fwrite($fh, json_encode($hits));
+    flock($fh, LOCK_UN);
+    fclose($fh);
+} else {
+    error_log('[Masar] Rate-limit flock failed for IP hash: ' . substr($ip_hash, 0, 16));
 }
 
 // ─── HONEYPOT ─────────────────────────────────────────────────────────────────
@@ -91,7 +106,7 @@ if (!empty($_POST['website'])) {
 
 // ─── READ & VALIDATE FIELDS ───────────────────────────────────────────────────
 $name     = str_replace(["\r", "\n", "\0"], ' ', sanitize($_POST['name'] ?? $_POST['fieldName'] ?? ''));
-$email    = sanitize($_POST['email']    ?? '', 254);
+$email    = str_replace(["\r", "\n", "\0"], '', sanitize($_POST['email'] ?? '', 254));
 $phone    = sanitize($_POST['telefon']  ?? $_POST['phone'] ?? '', 50);
 $service  = sanitize($_POST['leistung'] ?? $_POST['fieldService'] ?? $_POST['service'] ?? '');
 $message  = sanitize($_POST['nachricht'] ?? $_POST['message'] ?? '', 2000);

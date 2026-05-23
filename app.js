@@ -106,7 +106,7 @@ const MasarForm = {
 
   handleFile(file) {
     const MAX = 5 * 1024 * 1024;
-    const allowed = ['image/jpeg','image/png','image/gif','application/pdf','image/svg+xml'];
+    const allowed = ['image/jpeg','image/png','image/gif','image/webp','application/pdf'];
     if (file.size > MAX) {
       this.showNotif('Datei zu groß (max. 5MB)', 'error');
       return;
