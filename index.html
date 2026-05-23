@@ -1042,7 +1042,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="price-card reveal">
         <div class="price-name">Starter</div>
         <div class="price-val">199€–249€</div>
-        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <div class="price-period">/ Monat · gem. § 19 UStG</div>
         <ul class="price-list">
           <li>8 professionelle Posts</li><li>2 Reels / Monat</li>
           <li>1 Plattform</li><li>Design inklusive</li>
@@ -1054,7 +1054,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         <div class="price-badge">⭐ Empfehlung</div>
         <div class="price-name">Business</div>
         <div class="price-val">449€–599€</div>
-        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <div class="price-period">/ Monat · gem. § 19 UStG</div>
         <ul class="price-list">
           <li>12 Posts / Monat</li><li>4 Reels / Monat</li>
           <li>2 Plattformen</li><li>Community Management</li>
@@ -1065,7 +1065,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="price-card reveal">
         <div class="price-name">Premium</div>
         <div class="price-val">ab 899€</div>
-        <div class="price-period">/ Monat · inkl. MwSt.</div>
+        <div class="price-period">/ Monat · gem. § 19 UStG</div>
         <ul class="price-list">
           <li>Unbegrenzte Posts & Reels</li>
           <li>Content Day vor Ort</li><li>Alle Plattformen</li>
@@ -1152,7 +1152,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="calc-result">
         <div class="calc-result-lbl" id="priceLabel">KLEINWAGEN TEILBEKLEBUNG</div>
         <div class="calc-result-price" id="priceDisplay">ab 125 €</div>
-        <div class="calc-result-note">Unverbindliche Schätzung · inkl. MwSt.</div>
+        <div class="calc-result-note">Unverbindliche Schätzung · Nettopreis gem. § 19 UStG</div>
       </div>
       <!-- CTA -->
       <button class="calc-cta-btn" onclick="document.getElementById('kontakt')?.scrollIntoView({behavior:'smooth'})">Jetzt Angebot anfordern →</button>
@@ -1169,6 +1169,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     <div style="max-width:640px;margin:0 auto;" class="reveal">
       <div class="cform">
         <h3>Kostenlose Anfrage</h3>
+        <div style="background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.2rem;font-size:13px;color:var(--muted,#94a3b8);display:flex;gap:.5rem;align-items:flex-start;">
+          <span style="font-size:16px;line-height:1.4;">🔒</span>
+          <span>Ihre Daten werden gemäß unserer <a href="/datenschutz.html" style="color:var(--teal,#58d0bd);">Datenschutzerklärung</a> verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage genutzt (Art. 6 Abs. 1 lit. b DSGVO).</span>
+        </div>
         <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
           <input type="hidden" name="_subject" value="Neue Anfrage – Masar Werbeagentur">
           <input type="hidden" name="_captcha" value="false">

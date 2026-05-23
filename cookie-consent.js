@@ -302,8 +302,8 @@
       // Consent already given — apply & hide banner
       applyConsent(saved);
     } else {
-      // No consent yet — show banner after 1.5s
-      setTimeout(showBanner, 1500);
+      // No consent yet — show immediately (TDDDG §25: consent required before non-essential cookies)
+      showBanner();
     }
   }
 

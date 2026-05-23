@@ -1,0 +1,41 @@
+# ─── Secrets & credentials ────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+
+# ─── Database files ────────────────────────────────────────────
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+*.db
+*.sqlite
+
+# ─── Upload folder contents (user files) ──────────────────────
+uploads/print-files/*
+!uploads/print-files/.htaccess
+!uploads/.htaccess
+
+# ─── Logs ──────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── Backup & temp files ───────────────────────────────────────
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+*.swp
+*~
+
+# ─── OS / editor files ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-workspace
+
+# ─── Node / package managers ───────────────────────────────────
+node_modules/
+npm-debug.log*

@@ -12,10 +12,23 @@ session_set_cookie_params([
 ]);
 session_start();
 
+header('X-Robots-Tag: noindex, nofollow');
+
 // ── Auth check ────────────────────────────────────────────────
 if (empty($_SESSION['admin_logged_in'])) {
     header('Location: login.php');
     exit;
+}
+
+// ── Session IP pinning (session hijacking protection) ─────────
+if (!empty($_SESSION['session_ip'])) {
+    $currentIp = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
+    if ($_SESSION['session_ip'] !== $currentIp) {
+        error_log('[Masar Dashboard] Session IP mismatch — possible hijack. User: ' . ($_SESSION['admin_user'] ?? 'unknown'));
+        session_destroy();
+        header('Location: login.php');
+        exit;
+    }
 }
 
 // ── CSRF token ────────────────────────────────────────────────
@@ -39,7 +52,8 @@ try {
     ]);
     $pdo->exec('PRAGMA journal_mode=WAL;');
 } catch (PDOException $e) {
-    die('<p style="color:red;padding:2rem;">Datenbankfehler: ' . htmlspecialchars($e->getMessage()) . '</p>');
+    error_log('[Masar Dashboard] DB error: ' . $e->getMessage());
+    die('<p style="color:red;padding:2rem;">Datenbankfehler. Bitte kontaktieren Sie den Administrator.</p>');
 }
 
 $msg = '';

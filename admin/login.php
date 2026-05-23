@@ -2,6 +2,8 @@
 // ═══ MASAR PRINT SHOP — ADMIN LOGIN ═══
 declare(strict_types=1);
 
+header('X-Robots-Tag: noindex, nofollow');
+
 // Cookie params MUST be set before session_start()
 session_set_cookie_params([
     'lifetime' => 0,
@@ -100,6 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_user']      = $username;
             $_SESSION['fail_count']      = 0;
+            $_SESSION['session_ip']      = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
             header('Location: dashboard.php');
             exit;
         } else {

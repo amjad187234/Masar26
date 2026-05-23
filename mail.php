@@ -44,10 +44,21 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // ─── ORIGIN CHECK ─────────────────────────────────────────────────────────────
 $allowed_origins = ['https://masar-werbeagentur.de', 'https://www.masar-werbeagentur.de'];
-$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-if ($origin && !in_array($origin, $allowed_origins, true)) {
-    http_response_code(403);
-    json_out('error', 'Nicht erlaubter Ursprung.');
+$allowed_hosts   = ['masar-werbeagentur.de', 'www.masar-werbeagentur.de'];
+$origin  = $_SERVER['HTTP_ORIGIN']  ?? '';
+$referer = $_SERVER['HTTP_REFERER'] ?? '';
+
+if ($origin !== '') {
+    if (!in_array($origin, $allowed_origins, true)) {
+        http_response_code(403);
+        json_out('error', 'Nicht erlaubter Ursprung.');
+    }
+} elseif ($referer !== '') {
+    $refHost = parse_url($referer, PHP_URL_HOST);
+    if (!in_array($refHost, $allowed_hosts, true)) {
+        http_response_code(403);
+        json_out('error', 'Nicht erlaubter Ursprung.');
+    }
 }
 
 // ─── RATE LIMITING (IP-based, file-based) ─────────────────────────────────────
@@ -79,7 +90,7 @@ if (!empty($_POST['website'])) {
 }
 
 // ─── READ & VALIDATE FIELDS ───────────────────────────────────────────────────
-$name     = sanitize($_POST['name']     ?? $_POST['fieldName'] ?? '');
+$name     = str_replace(["\r", "\n", "\0"], ' ', sanitize($_POST['name'] ?? $_POST['fieldName'] ?? ''));
 $email    = sanitize($_POST['email']    ?? '', 254);
 $phone    = sanitize($_POST['telefon']  ?? $_POST['phone'] ?? '', 50);
 $service  = sanitize($_POST['leistung'] ?? $_POST['fieldService'] ?? $_POST['service'] ?? '');

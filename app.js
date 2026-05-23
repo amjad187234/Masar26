@@ -142,15 +142,16 @@ const MasarForm = {
       const json = await res.json();
 
       if (json.status === 'success') {
-        e.target.innerHTML = `
-          <div class="form-success">
-            <div class="success-icon">✅</div>
-            <h3>Vielen Dank, ${document.getElementById('fieldName')?.value || ''}!</h3>
-            <p>Wir haben Ihre Anfrage erhalten und melden uns innerhalb von <strong>24 Stunden</strong>.</p>
-            <p style="margin-top:1rem;">
-              <a href="tel:+491785143918" class="btn btn-teal">📞 0178 514 3918</a>
-            </p>
-          </div>`;
+        const successDiv = document.createElement('div');
+        successDiv.className = 'form-success';
+        successDiv.innerHTML =
+          '<div class="success-icon">✅</div>' +
+          '<h3>Vielen Dank, <span id="_sn"></span>!</h3>' +
+          '<p>Wir haben Ihre Anfrage erhalten und melden uns innerhalb von <strong>24 Stunden</strong>.</p>' +
+          '<p style="margin-top:1rem;"><a href="tel:+491785143918" class="btn btn-teal">📞 0178 514 3918</a></p>';
+        const nameNode = document.createTextNode(document.getElementById('fieldName')?.value || '');
+        successDiv.querySelector('#_sn').replaceWith(nameNode);
+        e.target.replaceWith(successDiv);
       } else {
         this.showNotif(json.message || 'Fehler beim Senden', 'error');
         if (btn) { btn.disabled = false; btn.textContent = 'Anfrage senden'; }

@@ -69,7 +69,7 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
         <td style='padding:12px;text-align:right;font-weight:700;color:#132e50;'>{$totalFmt}</td>
       </tr>
       <tr style='background:#f4f7f7;'>
-        <td colspan='2' style='padding:12px;font-weight:700;color:#132e50;'>Gesamtbetrag (inkl. MwSt.)</td>
+        <td colspan='2' style='padding:12px;font-weight:700;color:#132e50;'>Gesamtbetrag (gem. § 19 UStG)</td>
         <td style='padding:12px;text-align:right;font-size:18px;font-weight:900;color:#58d0bd;'>{$totalFmt}</td>
       </tr>
     </table>
