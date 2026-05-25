@@ -36,36 +36,55 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Masar Werbeagentur Berlin",
-  "description": "Schaufensterbeschriftung, Schaufensterfolie und Fensterbeklebung in Berlin – Design, Druck und Montage aus einer Hand.",
-  "url": "https://masar-werbeagentur.de",
-  "telephone": "+491785143918",
-  "email": "info@masar-werbeagentur.de",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Bristolstraße 19HN",
-    "addressLocality": "Berlin",
-    "postalCode": "13349",
-    "addressCountry": "DE"
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://masar-werbeagentur.de/"},
+    {"@type":"ListItem","position":2,"name":"Werbetechnik","item":"https://masar-werbeagentur.de/werbetechnik.html"},
+    {"@type":"ListItem","position":3,"name":"Schaufensterbeschriftung","item":"https://masar-werbeagentur.de/schaufensterbeschriftung-berlin.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Schaufensterbeschriftung Berlin – Folie, Shopbeschriftung & Ladenbeklebung",
+  "description": "Professionelle Schaufensterbeschriftung in Berlin. Schaufensterfolie, Shopbeschriftung, Ladenbeklebung und Milchglasfolie – Design, Druck und Montage aus einer Hand. Direkt aus Berlin-Wedding.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Masar Werbeagentur Berlin",
+    "url": "https://masar-werbeagentur.de",
+    "telephone": "+491785143918",
+    "email": "info@masar-werbeagentur.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bristolstraße 19HN",
+      "addressLocality": "Berlin",
+      "postalCode": "13349",
+      "addressCountry": "DE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 52.54880, "longitude": 13.34940 },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}
+    ],
+    "sameAs": ["https://www.instagram.com/masar.werbeagentur/","https://www.facebook.com/masarwerbeagentur/"]
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 52.54880, "longitude": 13.34940 },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},
-    {"@type": "OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}
-  ],
+  "areaServed": {"@type":"City","name":"Berlin"},
+  "serviceType": "Schaufensterbeschriftung & Schaufensterfolie",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Schaufensterbeschriftung Berlin",
+    "name": "Schaufensterbeschriftung Berlin – Leistungen & Preise",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Schaufensterbeklebung mit Logo & Text","offers":{"@type":"Offer","priceCurrency":"EUR","price":"59"}}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Schaufensterbeklebung Berlin"},"priceSpecification":{"@type":"PriceSpecification","priceCurrency":"EUR","price":"59","valueAddedTaxIncluded":false}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Schaufensterfolie Berlin"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Shopbeschriftung Berlin"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Ladenbeklebung Berlin"}},
       {"@type":"Offer","itemOffered":{"@type":"Service","name":"Milchglasfolie Berlin"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lochfolie / Sichtschutzfolie"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Vollfolierung Schaufenster"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Deko-Folie & Saisonbeklebung"}}
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Lochfolie / Sichtschutzfolie Berlin"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Vollfolierung Schaufenster Berlin"}}
     ]
-  },
-  "sameAs": ["https://www.instagram.com/masar.werbeagentur/","https://www.facebook.com/masarwerbeagentur/"]
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -76,27 +95,22 @@
     {
       "@type": "Question",
       "name": "Was kostet eine Schaufensterbeschriftung in Berlin?",
-      "acceptedAnswer": {"@type":"Answer","text":"Eine einfache Schaufensterbeschriftung (Logo + Öffnungszeiten + Kontakt) beginnt ab ca. 59 €. Größere Gestaltungen, Vollfolierungen oder Milchglasfolie liegen je nach Fläche bei 150–800 €. Kostenlose Anfrage innerhalb von 24 Stunden."}
+      "acceptedAnswer": {"@type":"Answer","text":"Eine einfache Schaufensterbeschriftung Berlin (Logo + Öffnungszeiten + Kontakt) beginnt ab 59 € gem. § 19 UStG. Shopbeschriftung mit komplexem Design, Vollfolierungen oder Milchglasfolie liegen je nach Fläche bei 150–800 €. Alle Preise gem. § 19 UStG. Kostenloses Angebot innerhalb von 24 Stunden."}
     },
     {
       "@type": "Question",
-      "name": "Wie lange hält eine Schaufensterfolie?",
-      "acceptedAnswer": {"@type":"Answer","text":"Hochwertige Innenraumfolien halten 3–5 Jahre, Außenfolien 5–7 Jahre. Alle unsere Folien sind UV-beständig, lichtecht und rückstandslos entfernbar."}
+      "name": "Wie lange hält eine Schaufensterfolie in Berlin?",
+      "acceptedAnswer": {"@type":"Answer","text":"Hochwertige Schaufensterfolie Berlin für den Innenbereich hält 3–5 Jahre, Außenfolien für die Ladenbeklebung 5–7 Jahre. Alle unsere Folien sind UV-beständig, lichtecht und rückstandslos entfernbar – ideal für Mieter in Berlin."}
     },
     {
       "@type": "Question",
-      "name": "Kann ich die Schaufensterfolie später wieder entfernen?",
-      "acceptedAnswer": {"@type":"Answer","text":"Ja! Alle unsere Qualitätsfolien lassen sich rückstandslos entfernen – ideal für Mieter oder bei saisonalen Aktionen."}
+      "name": "In welchen Berliner Stadtteilen macht ihr Schaufensterbeschriftung?",
+      "acceptedAnswer": {"@type":"Answer","text":"Wir montieren Schaufensterbeschriftung und Ladenbeklebung in ganz Berlin: Berlin-Wedding, Mitte, Charlottenburg, Prenzlauer Berg, Kreuzberg, Friedrichshain, Neukölln, Spandau, Tempelhof, Schöneberg und allen anderen Berliner Bezirken. Montage direkt vor Ort."}
     },
     {
       "@type": "Question",
-      "name": "Macht ihr auch Milchglasfolie und Sichtschutzfolien?",
-      "acceptedAnswer": {"@type":"Answer","text":"Ja, wir bieten Milchglasfolie, Sandstrahlfolie, Lochfolie und Sichtschutzfolien in allen Varianten an – von der diskreten Teilbeklebung bis zur vollflächigen Glasgestaltung."}
-    },
-    {
-      "@type": "Question",
-      "name": "Kommt ihr zur Montage nach Hause oder in den Laden?",
-      "acceptedAnswer": {"@type":"Answer","text":"Ja! Wir montieren direkt vor Ort in ganz Berlin. Von Wedding bis Mitte, Charlottenburg bis Kreuzberg – wir kommen zu Ihnen."}
+      "name": "Macht ihr auch Shopbeschriftung und Ladenbeklebung in Berlin?",
+      "acceptedAnswer": {"@type":"Answer","text":"Ja! Neben der klassischen Schaufensterbeschriftung Berlin bieten wir auch vollständige Shopbeschriftung und Ladenbeklebung an: Türbeschriftung, Glasflächen, Fassadenbeschriftung und komplette Ladengestaltung. Alles aus einer Hand – Design, Druck und Montage."}
     }
   ]
 }
@@ -262,9 +276,9 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
   <div class="hero-lines" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-badge" aria-hidden="true">🪟 Schaufensterbeschriftung · Berlin · Design inklusive</div>
-      <h1 id="hero-heading">Schaufenster<em>beschriftung Berlin.</em></h1>
-      <p class="hero-sub">Professionelle Schaufensterfolie, Beklebung und Gestaltung für Geschäfte, Restaurants und Büros in ganz Berlin – Design, Druck und Montage aus einer Hand.</p>
+      <div class="hero-badge" aria-hidden="true">🪟 Schaufensterbeschriftung · Shopbeschriftung · Berlin</div>
+      <h1 id="hero-heading">Schaufenster<em>beschriftung Berlin</em> – Design &amp; Montage inklusive.</h1>
+      <p class="hero-sub">Professionelle Schaufensterfolie, Shopbeschriftung und Ladenbeklebung für Geschäfte, Restaurants und Büros in ganz Berlin – Design, Druck und Montage aus einer Hand. Direkt aus Berlin-Wedding.</p>
       <div class="hero-btns">
         <a href="#kontakt" class="btn btn-teal">Kostenloses Angebot anfordern</a>
         <a href="tel:01785143918" class="btn btn-outline">📞 0178 514 3918</a>
