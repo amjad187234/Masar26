@@ -147,7 +147,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .foot-legal{display:flex;gap:1.5rem;}
 .foot-legal a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
 .foot-legal a:hover{color:var(--teal);}
-@media(max-width:1024px){.nav-links{display:none;}.nav-hamburger{display:flex;}.hamburger{display:flex;}.overview-grid{grid-template-columns:repeat(3,1fr);}.svc-grid{grid-template-columns:1fr 1fr;}.pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}.pricing-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:1024px){.nav-links{display:none;}.nav-hamburger{display:flex;}.hamburger{display:flex;}.overview-grid{grid-template-columns:repeat(3,1fr);}.svc-grid{grid-template-columns:1fr 1fr;}.pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}.pricing-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr 1fr;}.nav-phone{display:none;}}
 @media(max-width:640px){.overview-grid{grid-template-columns:repeat(2,1fr);}.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}}
 
 /* ═══ STICKY CTA ═══ */
@@ -176,6 +176,12 @@ select:focus-visible,textarea:focus-visible{
   padding:10px 20px;font-weight:700;font-size:14px;
   border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
 .skip-link:focus{top:0;}
+.nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
+.nav-phone:hover { color:#58d0bd; }
+.nav-phone svg { width:15px; height:15px; flex-shrink:0; }
+.mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
+.mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
+.mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
 </style>
 <meta property="og:title" content="Leistungen – Werbeagentur Berlin | Masar Werbeagentur">
 <meta property="og:description" content="Werbeagentur Berlin Leistungen: Werbetechnik, Grafikdesign & Druckerei. Leuchtreklamen, Fahrzeugbeschriftung, Webdesign und Social Media – alles aus einer Hand.">
@@ -385,6 +391,10 @@ select:focus-visible,textarea:focus-visible{
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
+    <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0178 514 3918
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
@@ -398,6 +408,10 @@ select:focus-visible,textarea:focus-visible{
   <a href="/print.html">Print &amp; Grafikdesign</a>
   <a href="/angebote/">Branchen-Angebote</a>
   <a href="/ki-loesungen/">KI-Lösungen</a>
+  <div class="mob-contact-row">
+    <a href="tel:01785143918" class="mob-call-btn">📞 Anrufen</a>
+    <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  </div>
   <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
 
