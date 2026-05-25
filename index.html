@@ -114,11 +114,17 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .nav-cta::after { display:none!important; }
 .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
 .hamburger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
+.nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
+.nav-phone:hover { color:var(--teal); }
+.nav-phone svg { width:15px; height:15px; flex-shrink:0; }
 .mob-nav { display:none; position:fixed; inset:0; top:var(--nav-h); background:#fff; z-index:499; padding:2rem; overflow-y:auto; }
 .mob-nav.open { display:block; }
 .mob-nav a { display:block; padding:14px 0; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
 .mob-nav a:hover { color:var(--teal); }
-.mob-cta { margin-top:1.5rem; display:block; background:var(--teal); color:var(--navy)!important; text-align:center; padding:15px!important; border-radius:6px; font-weight:700!important; }
+.mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
+.mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:var(--teal); color:var(--navy); font-size:14px; font-weight:700; text-decoration:none; }
+.mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+.mob-cta { margin-top:.5rem; display:block; background:var(--teal); color:var(--navy)!important; text-align:center; padding:15px!important; border-radius:6px; font-weight:700!important; }
 
 /* ═══════════ HERO ═══════════ */
 .hero { padding-top:var(--nav-h); min-height:100vh; display:flex; align-items:center; background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 55%,#0d4a4a 100%); position:relative; overflow:hidden; }
@@ -169,6 +175,8 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .svc-num { font-size:10px; font-weight:700; letter-spacing:3px; color:var(--teal); margin-bottom:.4rem; }
 .svc-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
 .svc-desc { font-size:13px; color:var(--muted); line-height:1.75; }
+.svc-link { display:inline-flex; align-items:center; gap:.3rem; color:var(--teal); font-size:12px; font-weight:700; text-decoration:none; margin-top:.75rem; letter-spacing:.3px; transition:gap .2s; }
+.svc-link:hover { gap:.6rem; }
 
 /* ═══════════ PREMIUM BLOCK ═══════════ */
 .pb { display:grid; grid-template-columns:1fr 1fr; border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); }
@@ -329,7 +337,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 
 /* ═══════════ MOBILE ═══════════ */
 @media(max-width:1024px) {
-  .nav-links { display:none; } .hamburger { display:flex; }
+  .nav-links { display:none; } .hamburger { display:flex; } .nav-phone { display:none; }
   .hero-inner { grid-template-columns:1fr; } .hero-visual { display:none; }
   .qn-grid { grid-template-columns:repeat(3,1fr); }
   .svc-grid-3 { grid-template-columns:1fr 1fr; }
@@ -629,13 +637,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<!-- TOP INFO BAR -->
-<div style="background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;text-align:center;padding:7px 16px;letter-spacing:.5px;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;line-height:1.4;">
-  <span>📍 Masar Werbeagentur · Berlin-Wedding · Bristolstraße 19HN</span>
-  <span style="opacity:.5">|</span>
-  <a href="tel:01785143918" style="color:var(--navy);text-decoration:none;">📞 0178 514 3918</a>
-</div>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
@@ -672,6 +673,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
+    <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0178 514 3918
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
@@ -685,6 +690,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   <a href="/print.html">Print &amp; Grafikdesign</a>
   <a href="/angebote/">Branchen-Angebote</a>
   <a href="/ki-loesungen/">KI-Lösungen</a>
+  <div class="mob-contact-row">
+    <a href="tel:01785143918" class="mob-call-btn">📞 Anrufen</a>
+    <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+  </div>
   <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
 
@@ -739,10 +748,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <div class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat"><div class="stat-num">120+</div><div class="stat-lbl">Projekte umgesetzt</div></div>
-      <div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
-      <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
-      <div class="stat"><div class="stat-num">24h</div><div class="stat-lbl">Angebot per E-Mail</div></div>
+      <div class="stat"><div class="stat-num" data-count="120" data-suffix="+">120+</div><div class="stat-lbl">Projekte umgesetzt</div></div>
+      <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
+      <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
+      <div class="stat"><div class="stat-num" data-count="24" data-suffix="h">24h</div><div class="stat-lbl">Angebot per E-Mail</div></div>
     </div>
   </div>
 </div>
@@ -803,6 +812,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">01 · HIGHLIGHT</div>
           <div class="svc-title">Leuchtreklamen & LED</div>
           <div class="svc-desc">Maßgeschneiderte Neon- und LED-Schilder. Energieeffizient, langlebig und individuell gestaltet für maximale Aufmerksamkeit.</div>
+          <a href="leuchtreklame-berlin.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -813,6 +823,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">02</div>
           <div class="svc-title">Fahrzeugbeschriftung</div>
           <div class="svc-desc">Car Wrapping und Fahrzeugbranding für alle Fahrzeugtypen. Mobile Werbung, die täglich tausende Menschen erreicht.</div>
+          <a href="werbetechnik.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -823,6 +834,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">03</div>
           <div class="svc-title">Schilder & Banner</div>
           <div class="svc-desc">Großformatige Außenwerbung, Firmenschilder und Bauplanen – wetterfest und in jeder Größe.</div>
+          <a href="werbetechnik.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
     </div>
@@ -849,6 +861,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">01</div>
           <div class="svc-title">Flyer & Visitenkarten</div>
           <div class="svc-desc">Alle Formate, alle Auflagen. Design inklusive – professionell und unvergesslich.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -859,6 +872,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">02</div>
           <div class="svc-title">Plakate & Poster</div>
           <div class="svc-desc">Von A3 bis Großformat – auffällig, wirkungsvoll und in Premium-Qualität gedruckt.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -869,6 +883,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">03</div>
           <div class="svc-title">Kataloge & Broschüren</div>
           <div class="svc-desc">Hochwertige Publikationen – gestaltet und gedruckt in Premiumqualität.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -879,6 +894,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">04</div>
           <div class="svc-title">Druck & Verpackung</div>
           <div class="svc-desc">CMYK-Druck und individuelle Verpackungslösungen für Ihre Marke.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -889,6 +905,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">05</div>
           <div class="svc-title">Sticker & Aufkleber</div>
           <div class="svc-desc">UV-beständig, wasserfest – in jeder Form und Größe möglich.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -899,6 +916,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="svc-num">06</div>
           <div class="svc-title">Roll-ups & Textildruck</div>
           <div class="svc-desc">Displays für Events und bedruckte Workwear für Ihr Team.</div>
+          <a href="print.html" class="svc-link">Mehr erfahren →</a>
         </div>
       </div>
     </div>
@@ -997,8 +1015,38 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
-<!-- PROZESS -->
+<!-- TESTIMONIALS -->
 <section class="section bg-off">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Was unsere Kunden sagen</span>
+      <h2 class="sec-title">Echte Ergebnisse. <em>Echte Stimmen.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Die Leuchtreklame sieht unglaublich aus – genau wie besprochen. Schnelle Umsetzung, top Qualität und super freundliches Team. Klare Empfehlung!"</p>
+        <div class="testi-name">Mehmet K.</div>
+        <div class="testi-co">Restaurant-Besitzer · Berlin-Kreuzberg</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Unsere drei Transporter wurden professionell beschriftet – pünktlich, sauber und genau nach unseren Vorstellungen. Das Marketing wirkt bereits."</p>
+        <div class="testi-name">Thomas B.</div>
+        <div class="testi-co">Handwerksbetrieb · Berlin-Spandau</div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">„Social Media war für uns neu – Masar hat alles übernommen. Innerhalb von 6 Wochen hatten wir dreimal mehr Anfragen über Instagram. Einfach klasse!"</p>
+        <div class="testi-name">Sandra L.</div>
+        <div class="testi-co">Boutique-Inhaberin · Berlin-Mitte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROZESS -->
+<section class="section">
   <div class="container">
     <div class="sec-head center reveal">
       <span class="eyebrow">Unser Ablauf</span>
@@ -1288,6 +1336,31 @@ const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
   if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// ═══ STATS COUNT-UP ═══
+(function(){
+  const counters = document.querySelectorAll('.stat-num[data-count]');
+  if(!counters.length) return;
+  const statsObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      statsObs.unobserve(entry.target);
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => statsObs.observe(el));
+})();
 
 // ═══ FAHRZEUG CALCULATOR ═══
 (function(){
