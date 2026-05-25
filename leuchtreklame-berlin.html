@@ -25,6 +25,7 @@
 <meta property="og:image" content="https://masar-werbeagentur.de/img/leuchtreklame-berlin-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Leuchtreklame Berlin – LED & Neonreklame von Masar Werbeagentur">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Masar Werbeagentur Berlin">
 <link rel="canonical" href="https://masar-werbeagentur.de/leuchtreklame-berlin.html">
@@ -589,7 +590,7 @@ select:focus-visible,textarea:focus-visible{
     <div class="faq-wrap">
       <div class="faq-item">
         <button class="faq-q">Was kostet eine Leuchtreklame in Berlin?</button>
-        <div class="faq-a"><p>Die Kosten hängen von Größe, Ausführung und Material ab. Einfache LED-Leuchtbuchstaben beginnen ab ca. 300–500 €, größere Fassadenanlagen können mehrere tausend Euro kosten. Wir erstellen Ihnen ein kostenloses, maßgeschneidertes Angebot innerhalb von 24 Stunden.</p></div>
+        <div class="faq-a"><p>Die Kosten hängen von Größe, Ausführung und Material ab. Einfache LED-Leuchtbuchstaben beginnen ab ca. 300–500 € gem. § 19 UStG, größere Fassadenanlagen können mehrere tausend Euro kosten. Wir erstellen Ihnen ein kostenloses, maßgeschneidertes Angebot innerhalb von 24 Stunden.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Brauche ich eine Genehmigung für eine Leuchtreklame in Berlin?</button>
@@ -749,6 +750,13 @@ select:focus-visible,textarea:focus-visible{
 <script>
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
+
+const ham=document.getElementById('hamburger');
+const mob=document.getElementById('mobNav');
+ham?.addEventListener('click',()=>{
+  const open=mob.classList.toggle('open');
+  ham.setAttribute('aria-expanded',open);
+});
 
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in')}}),{threshold:.1});
 document.querySelectorAll('.svc-card,.why-item,.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
