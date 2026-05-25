@@ -227,14 +227,6 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .why-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.2rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
 .why-desc { font-size:13px; color:var(--muted); line-height:1.75; }
 
-/* ═══════════ TESTIMONIALS ═══════════ */
-.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-.testi-card { background:#fff; border:1px solid var(--border); border-radius:var(--r); padding:2rem; transition:all .3s; }
-.testi-card:hover { box-shadow:var(--shadow); transform:translateY(-4px); }
-.testi-stars { color:var(--gold); font-size:16px; margin-bottom:1rem; letter-spacing:2px; }
-.testi-text { font-size:14px; color:var(--text); line-height:1.85; font-style:italic; margin-bottom:1.2rem; }
-.testi-name { font-weight:700; font-size:14px; color:var(--navy); }
-.testi-co { font-size:12px; color:var(--muted); }
 
 /* ═══════════ PROCESS ═══════════ */
 .process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:2rem; }
@@ -353,7 +345,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .pb-img img { min-height:260px; }
   .results-grid { grid-template-columns:repeat(2,1fr); }
   .why-grid { grid-template-columns:1fr 1fr; }
-  .testi-grid { grid-template-columns:1fr 1fr; }
   .process-steps { grid-template-columns:1fr 1fr; gap:2rem; }
   .process-steps::before { display:none; }
   .pricing-grid { grid-template-columns:1fr; }
@@ -369,7 +360,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .hero h1 { font-size:clamp(2.4rem,10vw,3.5rem); }
   .qn-grid { grid-template-columns:repeat(2,1fr); }
   .svc-grid-3, .svc-grid-2 { grid-template-columns:1fr; }
-  .why-grid, .testi-grid { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; }
   .process-steps { grid-template-columns:1fr; }
   .foot-grid { grid-template-columns:1fr; }
   .results-grid { grid-template-columns:1fr 1fr; }
@@ -461,14 +452,6 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .ba-handle::after{content:'↔';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:16px;font-weight:900;color:var(--navy);z-index:1;}
 
 /* ═══ TESTIMONIAL SLIDER ═══ */
-.testi-item{display:none;animation:fadeIn .4s ease;}
-.testi-item.active{display:block;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .2s;}
-.testi-dot.active{background:var(--teal);transform:scale(1.3);}
-.testi-nav{width:36px;height:36px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;}
-.testi-nav:hover{border-color:var(--teal);}
-
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
    Replaces outline:none with a visible focus ring on all
@@ -570,12 +553,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     "https://www.facebook.com/masarwerbeagentur/",
     "https://wa.me/491785143918"
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "47",
-    "bestRating": "5"
-  },
   "founder": {
     "@type": "Person",
     "name": "Amjad Albill",
@@ -1054,35 +1031,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section bg-off">
-  <div class="container">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Was unsere Kunden sagen</span>
-      <h2 class="sec-title">Echte Ergebnisse. <em>Echte Stimmen.</em></h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Die Leuchtreklame sieht unglaublich aus – genau wie besprochen. Schnelle Umsetzung, top Qualität und super freundliches Team. Klare Empfehlung!"</p>
-        <div class="testi-name">Mehmet K.</div>
-        <div class="testi-co">Restaurant-Besitzer · Berlin-Kreuzberg</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Unsere drei Transporter wurden professionell beschriftet – pünktlich, sauber und genau nach unseren Vorstellungen. Das Marketing wirkt bereits."</p>
-        <div class="testi-name">Thomas B.</div>
-        <div class="testi-co">Handwerksbetrieb · Berlin-Spandau</div>
-      </div>
-      <div class="testi-card reveal">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">„Social Media war für uns neu – Masar hat alles übernommen. Innerhalb von 6 Wochen hatten wir dreimal mehr Anfragen über Instagram. Einfach klasse!"</p>
-        <div class="testi-name">Sandra L.</div>
-        <div class="testi-co">Boutique-Inhaberin · Berlin-Mitte</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PROZESS -->
 <section class="section">
