@@ -645,10 +645,10 @@ select:focus-visible,textarea:focus-visible{
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
         <div class="form-grid">
-          <div class="fg"><label>Ihr Name *</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
-          <div class="fg"><label>Telefon / WhatsApp</label><input type="tel" name="telefon" placeholder="+49 ..."></div>
+          <div class="fg"><label for="cf-name">Ihr Name *</label><input type="text" id="cf-name" name="name" placeholder="Max Mustermann" required></div>
+          <div class="fg"><label for="cf-telefon">Telefon / WhatsApp</label><input type="tel" id="cf-telefon" name="telefon" placeholder="+49 ..."></div>
         </div>
-        <div class="fg"><label>E-Mail *</label><input type="email" name="email" placeholder="ihre@email.de" required></div>
+        <div class="fg"><label for="cf-email">E-Mail *</label><input type="email" id="cf-email" name="email" placeholder="ihre@email.de" required></div>
         <div class="fg">
           <label>Art der Beschriftung</label>
           <input type="hidden" name="leistung" id="selectedService">
@@ -667,7 +667,7 @@ select:focus-visible,textarea:focus-visible{
           </div>
           <div class="svc-picked-lbl" id="svcPickedLbl" style="display:none"></div>
         </div>
-        <div class="fg"><label>Ihre Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung: Fahrzeugtyp, Anzahl der Fahrzeuge, Wunschtermin..."></textarea></div>
+        <div class="fg"><label for="cf-nachricht">Ihre Nachricht</label><textarea id="cf-nachricht" name="nachricht" placeholder="Kurze Beschreibung: Fahrzeugtyp, Anzahl der Fahrzeuge, Wunschtermin..."></textarea></div>
         <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos &amp; unverbindlich</button>
         <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">🔒 Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
       </form>
