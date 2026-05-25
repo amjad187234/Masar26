@@ -1,7 +1,8 @@
 {
   "name": "Masar Werbeagentur Berlin",
   "short_name": "Masar",
-  "description": "Full-Service Werbeagentur Berlin – Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign & Social Media",
+  "description": "Full-Service Werbeagentur in Berlin-Wedding",
+  "lang": "de",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#132e50",

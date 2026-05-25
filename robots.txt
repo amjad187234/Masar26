@@ -1,8 +1,25 @@
 User-agent: *
 Allow: /
+Allow: /css/
+Allow: /fonts/
+Allow: /js/
 Disallow: /admin/
 Disallow: /api/
 Disallow: /data/
 Disallow: /uploads/
+Disallow: /danke.html
+Disallow: /qr/
+Disallow: /qr.html
+Crawl-delay: 1
+
+# AI-Crawler blockieren
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
 
 Sitemap: https://masar-werbeagentur.de/sitemap.xml
