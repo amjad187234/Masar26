@@ -389,8 +389,13 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 @media (max-width:480px) {
   .hero h1 { font-size:2.4rem; }
   .foot-grid { grid-template-columns:1fr; }
+  .foot-bottom { flex-direction:column; text-align:center; }
+  .foot-legal { justify-content:center; }
   .cta-info-row { flex-direction:column; align-items:center; }
   .hero-trust { gap:1.2rem; }
+  input, select, textarea { font-size:16px !important; }
+  .hero-btns { flex-direction:column; }
+  .hero-btns .btn { width:100%; text-align:center; }
 }
 .nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
 .nav-phone:hover { color:#58d0bd; }

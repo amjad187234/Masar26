@@ -148,7 +148,13 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .foot-legal a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
 .foot-legal a:hover{color:var(--teal);}
 @media(max-width:1024px){.nav-links{display:none;}.nav-hamburger{display:flex;}.hamburger{display:flex;}.overview-grid{grid-template-columns:repeat(3,1fr);}.svc-grid{grid-template-columns:1fr 1fr;}.pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}.pricing-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr 1fr;}.nav-phone{display:none;}}
-@media(max-width:640px){.overview-grid{grid-template-columns:repeat(2,1fr);}.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}}
+@media(max-width:768px){
+  .svc-grid,.svc-grid-3{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){.overview-grid{grid-template-columns:repeat(2,1fr);}.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}input,select,textarea{font-size:16px!important;}.hero-btns{flex-direction:column;}.hero-btns .btn{width:100%;text-align:center;}.foot-bottom{flex-direction:column;text-align:center;}.foot-legal{justify-content:center;}}
 
 /* ═══ STICKY CTA ═══ */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
@@ -374,7 +380,7 @@ select:focus-visible,textarea:focus-visible{
     </div>
     <div class="sticky-cta-actions">
       <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="index.html#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="/#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
     </div>
   </div>
 </div>
@@ -473,7 +479,7 @@ select:focus-visible,textarea:focus-visible{
   <h2 class="sec-title fade-up">Ihre Marke. <em>Unverwechselbar.</em></h2>
   <div class="pb fade-up" style="margin-top:1.5rem;">
     <div class="pb-img"><img src="grafikdesign.png" alt="Grafikdesign Berlin – Logo und Corporate Identity von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy)';this.style.minHeight='300px';"></div>
-    <div class="pb-content dk"><div class="pb-ey">✦ Branding & Corporate Identity</div><h3 class="pb-t">Design, das <em>überzeugt</em> – und verkauft.</h3><p class="pb-d">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Vertrauen aufbauen und sich abheben.</p><div class="pb-feats"><div class="pb-feat">Logo-Design mit 3 Konzepten</div><div class="pb-feat">Corporate Identity & Styleguide</div><div class="pb-feat">Alle Dateiformate inklusive</div><div class="pb-feat">Unbegrenzte Korrekturrunden</div></div><a href="index.html#kontakt" class="btn-primary">Branding anfragen →</a></div>
+    <div class="pb-content dk"><div class="pb-ey">✦ Branding & Corporate Identity</div><h3 class="pb-t">Design, das <em>überzeugt</em> – und verkauft.</h3><p class="pb-d">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Vertrauen aufbauen und sich abheben.</p><div class="pb-feats"><div class="pb-feat">Logo-Design mit 3 Konzepten</div><div class="pb-feat">Corporate Identity & Styleguide</div><div class="pb-feat">Alle Dateiformate inklusive</div><div class="pb-feat">Unbegrenzte Korrekturrunden</div></div><a href="/#kontakt" class="btn-primary">Branding anfragen →</a></div>
   </div>
 </div>
 <hr class="divider">
@@ -483,7 +489,7 @@ select:focus-visible,textarea:focus-visible{
   <h2 class="sec-title fade-up">Ihre Website. <em>Ihr bester Verkäufer.</em></h2>
   <div class="pb rev fade-up" style="margin-top:1.5rem;">
     <div class="pb-img"><img src="webdesign.png" alt="Webdesign Berlin – SEO-optimierte Websites von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy2)';this.style.minHeight='300px';"></div>
-    <div class="pb-content lt"><div class="pb-ey">✦ Moderne Websites & Online-Shops</div><h3 class="pb-t">Websites, die <em>Kunden gewinnen.</em></h3><p class="pb-d">Schnell, mobil-optimiert und SEO-ready. Wir gestalten Websites, die Anfragen bringen.</p><div class="pb-feats"><div class="pb-feat">100% individuelles Design</div><div class="pb-feat">Mobile-first & blitzschnell</div><div class="pb-feat">SEO-optimiert von Anfang an</div><div class="pb-feat">Support nach Launch inklusive</div></div><a href="index.html#kontakt" class="btn-primary">Website anfragen →</a></div>
+    <div class="pb-content lt"><div class="pb-ey">✦ Moderne Websites & Online-Shops</div><h3 class="pb-t">Websites, die <em>Kunden gewinnen.</em></h3><p class="pb-d">Schnell, mobil-optimiert und SEO-ready. Wir gestalten Websites, die Anfragen bringen.</p><div class="pb-feats"><div class="pb-feat">100% individuelles Design</div><div class="pb-feat">Mobile-first & blitzschnell</div><div class="pb-feat">SEO-optimiert von Anfang an</div><div class="pb-feat">Support nach Launch inklusive</div></div><a href="/#kontakt" class="btn-primary">Website anfragen →</a></div>
   </div>
 </div>
 <hr class="divider">
@@ -493,9 +499,9 @@ select:focus-visible,textarea:focus-visible{
   <h2 class="sec-title fade-up">Viral auf dem <em>Smartphone.</em></h2>
   <p class="sec-sub fade-up">Professionelles Management – inkl. Design, Reels und Reporting.</p>
   <div class="pricing-grid">
-    <div class="price-card fade-up"><div class="price-name">Starter</div><div class="price-val">199€–249€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>8 Posts / Monat</li><li>2 Reels</li><li>1 Plattform</li><li>Design inklusive</li></ul><a href="index.html#kontakt" class="price-btn">Anfragen</a></div>
-    <div class="price-card featured fade-up"><div class="price-badge">⭐ Empfehlung</div><div class="price-name">Business</div><div class="price-val">449€–599€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>12 Posts / Monat</li><li>4 Reels</li><li>2 Plattformen</li><li>Community Management</li><li>Stories & Highlights</li></ul><a href="index.html#kontakt" class="price-btn">Anfragen</a></div>
-    <div class="price-card fade-up"><div class="price-name">Premium</div><div class="price-val">ab 899€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>Unbegrenzte Posts & Reels</li><li>Content Day vor Ort</li><li>Alle Plattformen</li><li>Meta Ads & Google Ads</li></ul><a href="index.html#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card fade-up"><div class="price-name">Starter</div><div class="price-val">199€–249€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>8 Posts / Monat</li><li>2 Reels</li><li>1 Plattform</li><li>Design inklusive</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card featured fade-up"><div class="price-badge">⭐ Empfehlung</div><div class="price-name">Business</div><div class="price-val">449€–599€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>12 Posts / Monat</li><li>4 Reels</li><li>2 Plattformen</li><li>Community Management</li><li>Stories & Highlights</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card fade-up"><div class="price-name">Premium</div><div class="price-val">ab 899€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>Unbegrenzte Posts & Reels</li><li>Content Day vor Ort</li><li>Alle Plattformen</li><li>Meta Ads & Google Ads</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
   </div>
   <div style="text-align:center;margin-top:1.5rem;" class="fade-up"><a href="digital.html" class="btn-dark">Mehr zu Social Media →</a></div>
 </div>
@@ -504,7 +510,7 @@ select:focus-visible,textarea:focus-visible{
 <div class="cta-strip" style="position:relative;"><div class="container" style="position:relative;z-index:2;">
   <div class="cta-title">Bereit für Ihr nächstes <em>Projekt?</em></div>
   <p class="cta-sub">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
-  <a href="index.html#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
+  <a href="/#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
 </div></div>
 
 <!-- FAQ SECTION -->
@@ -567,7 +573,7 @@ select:focus-visible,textarea:focus-visible{
       </details>
     </div>
     <div class="fade-up" style="margin-top:2rem;">
-      <a href="index.html#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
+      <a href="/#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
     </div>
   </div>
 </section>

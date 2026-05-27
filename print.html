@@ -129,7 +129,13 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .foot-legal a{color:rgba(255,255,255,.3);text-decoration:none;}
 .foot-legal a:hover{color:var(--teal);}
 @media(max-width:1024px){.nav-links{display:none;}.nav-hamburger{display:flex;}.hamburger{display:flex;}.ph-inner{grid-template-columns:1fr;}.ph-icons-grid{display:none;}.pb{grid-template-columns:1fr;}.pb.rev{direction:ltr;}.svc-grid{grid-template-columns:1fr 1fr;}.design-banner{flex-direction:column;text-align:center;}.foot-grid{grid-template-columns:1fr 1fr;}.nav-phone{display:none;}}
-@media(max-width:640px){.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}}
+@media(max-width:768px){
+  .svc-grid,.svc-grid-3{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){.svc-grid{grid-template-columns:1fr;}.foot-grid{grid-template-columns:1fr;}.section{padding:3.5rem 0;}.page-hero{padding:calc(var(--nav-h) + 2rem) 0 3rem;}input,select,textarea{font-size:16px!important;}.hero-btns{flex-direction:column;}.hero-btns .btn{width:100%;text-align:center;}.foot-bottom{flex-direction:column;text-align:center;}.foot-legal{justify-content:center;}}
 
 /* ═══ STICKY CTA ═══ */
 .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:490;background:var(--navy);border-top:2px solid var(--teal);padding:.8rem 2rem;transform:translateY(100%);transition:transform .35s ease;}
@@ -296,7 +302,7 @@ select:focus-visible,textarea:focus-visible{
     </div>
     <div class="sticky-cta-actions">
       <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="index.html#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="/#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
     </div>
   </div>
 </div>
@@ -348,7 +354,7 @@ select:focus-visible,textarea:focus-visible{
     <h1 class="ph-title">Druckerei Berlin –<br><em>Design inklusive.</em></h1>
     <p class="ph-sub">Flyer drucken, Visitenkarten, Plakate & Printdesign in Berlin – professionell gestaltet, schnell geliefert. Ihre Druckerei in Berlin-Wedding.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="index.html#kontakt" class="btn-gold">Jetzt anfragen</a>
+      <a href="/#kontakt" class="btn-gold">Jetzt anfragen</a>
     </div>
   </div>
   <div class="ph-icons-grid">
@@ -388,7 +394,7 @@ select:focus-visible,textarea:focus-visible{
       <h3 class="pb-t">Design, das <em>überzeugt</em> – und verkauft.</h3>
       <p class="pb-d">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Vertrauen aufbauen und sich von der Konkurrenz abheben.</p>
       <div class="pb-feats"><div class="pb-feat">Logo-Design mit 3 Konzeptvarianten</div><div class="pb-feat">Corporate Identity & Styleguide</div><div class="pb-feat">Alle Dateiformate (AI, PDF, PNG, SVG)</div><div class="pb-feat">Visitenkarten, Briefpapier & Stempel</div><div class="pb-feat">Unbegrenzte Korrekturrunden</div></div>
-      <a href="index.html#kontakt" class="btn-primary">Branding anfragen →</a>
+      <a href="/#kontakt" class="btn-primary">Branding anfragen →</a>
     </div>
   </div>
 
@@ -407,7 +413,7 @@ select:focus-visible,textarea:focus-visible{
 <div class="cta-strip" style="position:relative;"><div class="container" style="position:relative;z-index:2;">
   <div class="cta-title">Qualität, die <em>überzeugt.</em></div>
   <p class="cta-sub">Design inklusive – kostenlose Erstberatung und schnelle Lieferung.</p>
-  <a href="index.html#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
+  <a href="/#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
 </div></div>
 
 <!-- FAQ SECTION -->
@@ -470,7 +476,7 @@ select:focus-visible,textarea:focus-visible{
       </details>
     </div>
     <div class="fade-up" style="margin-top:2rem;">
-      <a href="index.html#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
+      <a href="/#kontakt" class="btn-primary">Weitere Fragen? Jetzt anfragen →</a>
     </div>
   </div>
 </section>

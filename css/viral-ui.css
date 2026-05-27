@@ -8,16 +8,33 @@
   --vis-radius: 16px;
 }
 
+/* ─── Anchor offset for fixed nav ─────────────────────────────── */
+:target { scroll-margin-top: 90px; }
+[id]    { scroll-margin-top: 90px; }
+
+/* ─── Page-level fade-in ───────────────────────────────────────── */
+@keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
+body { animation: pageFadeIn .3s ease both; }
+@media (prefers-reduced-motion: reduce) { body { animation: none; } }
+
 /* ─── Spring hover — cards & CTAs ─────────────────────────────── */
 .service-card,
 .card-item,
-.price-card {
+.price-card,
+.svc-card,
+.why-card,
+.qn-card,
+.result-card {
   transition: transform 0.45s var(--spring), box-shadow 0.45s var(--spring);
   will-change: transform;
 }
 .service-card:hover,
 .card-item:hover,
-.price-card:hover {
+.price-card:hover,
+.svc-card:hover,
+.why-card:hover,
+.qn-card:hover,
+.result-card:hover {
   transform: translateY(-6px) scale(1.016);
   box-shadow: 0 20px 56px rgba(88,208,189,.18);
 }
@@ -68,6 +85,12 @@
 .kinetic-heading { transition: letter-spacing .3s var(--ease-out); }
 .kinetic-heading.is-scrolling { letter-spacing: .12em; }
 
+/* ─── Smooth focus transitions ─────────────────────────────────── */
+a, button, input, select, textarea, [tabindex] {
+  transition-property: outline, outline-offset, box-shadow;
+  transition-duration: .15s;
+}
+
 /* ─── Live order ticker ───────────────────────────────────────── */
 .order-ticker {
   display: inline-flex;
@@ -82,6 +105,11 @@
   margin-top: 1.2rem;
   max-width: min(420px, 100%);
   overflow: hidden;
+  animation: tickerAppear .6s var(--ease-out) .3s both;
+}
+@keyframes tickerAppear {
+  from { opacity:0; transform:translateY(8px); }
+  to   { opacity:1; transform:translateY(0); }
 }
 .ticker-dot {
   width: 7px; height: 7px;
@@ -102,6 +130,12 @@
   to   { opacity:1; transform:translateY(0); }
 }
 .ticker-time { color:rgba(88,208,189,.65); font-size:10px; white-space:nowrap; margin-left:auto; padding-left:6px; }
+
+/* ─── Nav scroll effect ────────────────────────────────────────── */
+nav.scrolled {
+  background: rgba(255,255,255,.98) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,.1) !important;
+}
 
 /* ─── Exit-Intent Overlay ────────────────────────────────────── */
 /*  Use opacity+visibility (NOT display) so pointer events are   */
@@ -208,6 +242,26 @@
   transition: color .2s;
 }
 .exit-dismiss:hover { color: rgba(255,255,255,.6); }
+
+/* ─── Featured price card ───────────────────────────────────────── */
+.price-card.featured {
+  border: 2px solid var(--teal, #58d0bd) !important;
+  position: relative;
+}
+.price-card.featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(88,208,189,.04);
+  pointer-events: none;
+}
+
+/* ─── Responsive utilities ─────────────────────────────────────── */
+.img-cover   { width:100%; height:100%; object-fit:cover;    display:block; }
+.img-contain { width:100%; height:100%; object-fit:contain;  display:block; }
+.aspect-16-9 { aspect-ratio: 16/9; overflow: hidden; border-radius: 8px; }
+.aspect-4-3  { aspect-ratio: 4/3;  overflow: hidden; border-radius: 8px; }
 
 /* ─── Brand Visualizer ───────────────────────────────────────── */
 #brand-visualizer {
@@ -482,7 +536,30 @@
 }
 .co-step.active .co-step-lbl { color: #58d0bd; }
 .co-step.done   .co-step-lbl { color: rgba(88,208,189,.8); }
+@media (max-width: 768px) {
+  .co-stepper    { flex-wrap: nowrap; overflow-x: auto; }
+  .exit-card     { padding: 2rem 1.5rem 1.5rem; }
+  .exit-headline { font-size: clamp(1.5rem, 5vw, 2rem); }
+}
 @media (max-width: 480px) {
   .co-step-lbl { display: none; }
   .co-stepper  { padding: .9rem; }
+}
+
+/* ─── Touch feedback ───────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .service-card:active,
+  .card-item:active,
+  .price-card:active,
+  .svc-card:active,
+  .why-card:active,
+  .qn-card:active {
+    transform: scale(.98);
+    transition: transform .1s;
+  }
+  .btn:active,
+  .price-btn:active {
+    transform: scale(.96) !important;
+    transition: transform .1s !important;
+  }
 }

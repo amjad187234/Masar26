@@ -103,7 +103,7 @@ a { text-decoration:none; color:inherit; }
 .cookie-btn { background:var(--teal); color:var(--navy); border:none; padding:8px 22px; font-weight:700; font-size:13px; cursor:pointer; border-radius:4px; font-family:inherit; }
 
 /* ═══════════ WHATSAPP ═══════════ */
-.wa { position:fixed; bottom:90px; right:18px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
+.wa { position:fixed; bottom:100px; right:18px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
 .wa:hover { transform:scale(1.1); }
 .wa svg { width:28px; height:28px; fill:#fff; }
 
@@ -127,7 +127,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .nav-phone svg { width:15px; height:15px; flex-shrink:0; }
 .mob-nav { display:none; position:fixed; inset:0; top:var(--nav-h); background:#fff; z-index:499; padding:2rem; overflow-y:auto; }
 .mob-nav.open { display:block; }
-.mob-nav a { display:block; padding:14px 0; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
+.mob-nav a { display:block; padding:1rem 1.5rem; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
 .mob-nav a:hover { color:var(--teal); }
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:var(--teal); color:var(--navy); font-size:14px; font-weight:700; text-decoration:none; }
@@ -155,7 +155,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); }
 .stat { padding:2.5rem 1.5rem; text-align:center; border-right:1px solid rgba(255,255,255,.05); }
 .stat:last-child { border-right:none; }
-.stat-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:3rem; color:var(--teal); line-height:1; }
+.stat-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); color:var(--teal); line-height:1; }
 .stat-lbl { font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.38); margin-top:6px; }
 
 /* ═══════════ QUICK NAV ═══════════ */
@@ -228,13 +228,6 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .why-desc { font-size:13px; color:var(--muted); line-height:1.75; }
 
 
-/* ═══════════ PROCESS ═══════════ */
-.process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:2rem; }
-.process-steps::before { content:''; position:absolute; top:36px; left:12%; right:12%; height:2px; background:linear-gradient(90deg,var(--teal),rgba(88,208,189,.1)); }
-.pstep { text-align:center; padding:0 1rem; }
-.pstep-num { width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--teal-d)); display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.8rem; color:#fff; margin:0 auto 1.2rem; position:relative; z-index:2; box-shadow:0 8px 24px rgba(88,208,189,.3); }
-.pstep h3, .pstep h4 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.1rem; text-transform:uppercase; color:var(--navy); margin-bottom:.4rem; }
-.pstep p { font-size:13px; color:var(--muted); line-height:1.65; }
 
 /* ═══════════ PRICING ═══════════ */
 .pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
@@ -345,13 +338,23 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .pb-img img { min-height:260px; }
   .results-grid { grid-template-columns:repeat(2,1fr); }
   .why-grid { grid-template-columns:1fr 1fr; }
-  .process-steps { grid-template-columns:1fr 1fr; gap:2rem; }
-  .process-steps::before { display:none; }
   .pricing-grid { grid-template-columns:1fr; }
   .contact-grid { grid-template-columns:1fr; }
   .foot-grid { grid-template-columns:1fr 1fr; }
   .fg-row { grid-template-columns:1fr; }
   .stats-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:768px) {
+  .qn-grid { grid-template-columns: repeat(2,1fr); }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .prozess-grid { grid-template-columns: repeat(2,1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: repeat(2,1fr); }
+  .pb { grid-template-columns: 1fr; }
+  .pb.rev { direction: ltr; }
+  .pb-img img { min-height: 220px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
 }
 @media(max-width:640px) {
   :root { --nav-h:68px; }
@@ -361,12 +364,21 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .qn-grid { grid-template-columns:repeat(2,1fr); }
   .svc-grid-3, .svc-grid-2 { grid-template-columns:1fr; }
   .why-grid { grid-template-columns:1fr; }
-  .process-steps { grid-template-columns:1fr; }
   .foot-grid { grid-template-columns:1fr; }
   .results-grid { grid-template-columns:1fr 1fr; }
   .section { padding:4rem 0; }
   .hero-btns { flex-direction:column; }
   .hero-btns a { text-align:center; }
+  .hero-btns a { width:100%; justify-content:center; }
+  .hero-trust { gap:.5rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 1.2rem .8rem; }
+  .stat-num { font-size: 2rem; }
+  .qn-grid { grid-template-columns: repeat(2,1fr); gap:.7rem; }
+  .qn-card { padding: .8rem; }
+  .qn-icon { font-size: 1.6rem; }
+  .qn-name { font-size: 13px; }
+  .qn-sub { font-size: 11px; }
 }
 
 /* ═══ STICKY CTA ═══ */
@@ -393,6 +405,8 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .sticky-cta-text span{display:none;}
   .sticky-btn-phone{display:none;}
   .sticky-btn-main{width:100%;text-align:center;}
+  .wa { bottom: 80px; right: 14px; width: 48px; height: 48px; }
+  .wa svg { width: 24px; height: 24px; }
 }
 
 /* ═══ PRICE CALCULATOR ═══ */
@@ -474,6 +488,8 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   border-radius: 0 0 6px 0; z-index: 9999; text-decoration: none;
 }
 .skip-link:focus { top: 0; }
+
+@keyframes heroScroll { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(5px);opacity:.8} }
 
 </style>
 <script type="application/ld+json">
@@ -731,6 +747,12 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <span class="hero-trust-txt">Bewertet mit</span>
           <span class="hero-stars">★★★★★</span>
           <span class="hero-trust-txt">von unseren Kunden</span>
+        </div>
+        <div style="text-align:center;padding-top:2rem;" class="hero-scroll">
+          <a href="#leistungen" aria-label="Scrollen" style="display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .2s;text-decoration:none;" onmouseover="this.style.color='rgba(88,208,189,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">
+            Entdecken
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:heroScroll 2s ease-in-out infinite;"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
         </div>
       </div>
       <div class="hero-visual">
@@ -1021,12 +1043,12 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <p class="sec-sub">Wir sind mehr als eine Agentur – wir sind Ihr strategischer Partner für Wachstum und Sichtbarkeit.</p>
     </div>
     <div class="why-grid">
-      <div class="why-card reveal"><div class="why-icon">🤖</div><div class="why-title">KI-gestützte Lösungen</div><div class="why-desc">Wir setzen modernste KI-Technologie ein – für smarte Automatisierung, schnellere Ergebnisse und mehr Effizienz für Ihr Business.</div></div>
-      <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Angebot in 24 Stunden</div><div class="why-desc">Kein wochenlanger Warteaufwand: Sie erhalten Ihr individuelles Angebot garantiert am nächsten Werktag.</div></div>
+      <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Angebot in 24 Stunden</div><div class="why-desc">Keine wochenlange Wartezeit: Sie erhalten Ihr individuelles Angebot garantiert am nächsten Werktag.</div></div>
       <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Full-Service aus einer Hand</div><div class="why-desc">Design, Produktion, Montage und Marketing – ein Ansprechpartner, keine Schnittstellen, keine Überraschungen.</div></div>
       <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Direkt vor Ort in Wedding</div><div class="why-desc">Unser Büro ist in Bristolstraße 19HN, Berlin-Wedding. Schnelle Reaktion, kurze Wege, persönlicher Kontakt.</div></div>
       <div class="why-card reveal"><div class="why-icon">💎</div><div class="why-title">Grafikdesign inklusive</div><div class="why-desc">Kein eigenes Design? Kein Problem. Professionelles Grafikdesign ist bei allen Aufträgen immer inklusive.</div></div>
       <div class="why-card reveal"><div class="why-icon">♾️</div><div class="why-title">Unbegrenzte Korrekturen</div><div class="why-desc">Wir arbeiten so lange, bis Sie 100% zufrieden sind. Keine versteckten Kosten für Überarbeitungen.</div></div>
+      <div class="why-card reveal"><div class="why-icon">🤖</div><div class="why-title">KI-gestützte Lösungen</div><div class="why-desc">Wir setzen modernste KI-Technologie ein – für smarte Automatisierung, schnellere Ergebnisse und mehr Effizienz für Ihr Business.</div></div>
     </div>
   </div>
 </section>
@@ -1115,23 +1137,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section">
-  <div class="container">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">So arbeiten wir</span>
-      <h2 class="sec-title">Einfach. <em>Schnell.</em> Professionell.</h2>
-      <p class="sec-sub">In nur 4 Schritten von der Idee zum fertigen Ergebnis.</p>
-    </div>
-    <div class="process-steps">
-      <div class="pstep reveal"><div class="pstep-num">1</div><h3>Beratung</h3><p>Persönliches Gespräch über Ihre Wünsche, Ziele und Budget – kostenlos.</p></div>
-      <div class="pstep reveal"><div class="pstep-num">2</div><h3>Konzept</h3><p>Wir entwickeln kreative Konzepte passend zu Ihrer Marke und Zielgruppe.</p></div>
-      <div class="pstep reveal"><div class="pstep-num">3</div><h3>Freigabe</h3><p>Sie prüfen und geben frei – mit unbegrenzten Korrekturrunden.</p></div>
-      <div class="pstep reveal"><div class="pstep-num">4</div><h3>Lieferung</h3><p>Pünktliche Lieferung in erstklassiger Qualität mit persönlichem Support.</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="section bg-off">
   <div class="container">
@@ -1216,6 +1221,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
           <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden. – Masar Werbeagentur Berlin | Tel: 0178 514 3918">
+          <div class="fg"><label for="cf-firma">Firmenname</label><input type="text" id="cf-firma" name="firma" class="fg-input" placeholder="Muster GmbH"></div>
           <div class="fg-row">
             <div class="fg"><label for="cf-name">Ihr Name *</label><input type="text" id="cf-name" name="name" placeholder="Max Mustermann" required></div>
             <div class="fg"><label for="cf-email">E-Mail *</label><input type="email" id="cf-email" name="email" placeholder="max@firma.de" required></div>
@@ -1225,7 +1231,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <div class="fg"><label for="cf-nachricht">Ihre Nachricht</label><textarea id="cf-nachricht" name="nachricht" placeholder="Kurze Beschreibung Ihres Projekts..."></textarea></div>
           <div class="consent-row">
             <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und bestätige, dass meine Angaben ausschließlich zur Bearbeitung meiner Anfrage verarbeitet werden (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). Die Daten werden <strong>nicht an Dritte weitergegeben</strong>. *</label>
+            <label for="consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und bestätige, dass meine Angaben ausschließlich zur Bearbeitung meiner Anfrage verarbeitet werden (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). Technischer Versanddienstleister: FormSubmit.co. Details: <a href="/datenschutz.html">Datenschutzerklärung</a>. *</label>
           </div>
           <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
           <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">🔒 Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>

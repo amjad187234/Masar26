@@ -224,7 +224,24 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 *:focus:not(:focus-visible){outline:none}
 *:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px}
 @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.svc-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.steps-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.svc-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}.steps-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .svc-grid { grid-template-columns: repeat(2,1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .hero-inner { padding: 2rem 0; }
+}
+@media(max-width:600px){
+  .svc-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr;gap:2rem}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .foot-legal{justify-content:center;flex-wrap:wrap}
+  .steps-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{width:100%;text-align:center;justify-content:center}
+  .btns{flex-direction:column;align-items:center}
+  .btns .btn{width:100%;max-width:360px;text-align:center}
+  .fg input,.fg select,.fg textarea{font-size:16px}
+}
 .nav-phone { display:flex; align-items:center; gap:.4rem; color:inherit; font-size:13px; font-weight:700; text-decoration:none; transition:opacity .2s; margin-left:.8rem; white-space:nowrap; }
 .nav-phone:hover { opacity:.8; }
 .nav-phone svg { width:15px; height:15px; flex-shrink:0; }
@@ -284,6 +301,28 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 </nav>
 
 <main id="main-content">
+
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" style="background:rgba(0,0,0,.03);border-bottom:1px solid rgba(88,208,189,.12);padding:.7rem 0;">
+  <div class="container">
+    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/" itemprop="item" style="color:var(--teal);"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+      </li>
+      <li style="opacity:.4;">/</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/werbetechnik.html" itemprop="item" style="color:var(--teal);"><span itemprop="name">Werbetechnik</span></a>
+        <meta itemprop="position" content="2">
+      </li>
+      <li style="opacity:.4;">/</li>
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" style="color:var(--navy);font-weight:600;">Schaufensterbeschriftung Berlin</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </div>
+</nav>
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-heading">
