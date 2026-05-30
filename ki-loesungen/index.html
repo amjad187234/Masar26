@@ -429,9 +429,12 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <!-- Cookie -->
-<div class="cookie" id="cookie" role="alert" aria-live="polite">
-  <p>Wir nutzen technisch notwendige Cookies. <a href="/datenschutz.html">Datenschutzerklärung</a></p>
-  <button class="cookie-btn" onclick="document.getElementById('cookie').classList.remove('show');localStorage.setItem('ck','1')">OK</button>
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite">
+  <p>Wir nutzen ausschließlich technisch notwendige Cookies (§ 25 Abs. 2 Nr. 2 TDDDG). <a href="/datenschutz.html">Datenschutzerklärung</a></p>
+  <div style="display:flex;gap:.6rem;flex-shrink:0;">
+    <button class="cookie-btn" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);" onclick="document.getElementById('cookie').classList.remove('show');localStorage.setItem('ck','1')">Nur notwendige</button>
+    <button class="cookie-btn" onclick="document.getElementById('cookie').classList.remove('show');localStorage.setItem('ck','1')">OK, verstanden</button>
+  </div>
 </div>
 
 <!-- WhatsApp -->

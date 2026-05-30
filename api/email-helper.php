@@ -12,7 +12,8 @@ declare(strict_types=1);
  */
 function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
 {
-    $orderNumber  = $order['order_number'] ?? '–';
+    $orderNumber     = $order['order_number'] ?? '–';
+    $orderNumberHtml = htmlspecialchars($orderNumber, ENT_QUOTES, 'UTF-8');
     $custName     = $order['customer_name'] ?? '';
     $custEmail    = $order['customer_email'] ?? '';
     $company      = $order['customer_company'] ?? '';
@@ -47,11 +48,11 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
     $customerBody = $emailHeader . "
   <div style='padding:2rem;'>
     <h2 style='color:#132e50;font-size:20px;margin:0 0 .5rem;'>Vielen Dank für Ihre Bestellung!</h2>
-    <p style='color:#5a7070;margin:0 0 1.5rem;'>Hallo <strong style='color:#132e50;'>{$custName}</strong>, Ihre Zahlung wurde erfolgreich bestätigt. Wir beginnen sofort mit der Produktion.</p>
+    <p style='color:#5a7070;margin:0 0 1.5rem;'>Hallo <strong style='color:#132e50;'>{$cleanNameHtml}</strong>, Ihre Zahlung wurde erfolgreich bestätigt. Wir beginnen sofort mit der Produktion.</p>
 
     <div style='background:#f4f7f7;border-radius:8px;padding:1.2rem 1.5rem;margin-bottom:1.5rem;text-align:center;'>
       <div style='font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5a7070;margin-bottom:.4rem;'>Bestellnummer</div>
-      <div style='font-size:24px;font-weight:900;color:#132e50;letter-spacing:2px;'>{$orderNumber}</div>
+      <div style='font-size:24px;font-weight:900;color:#132e50;letter-spacing:2px;'>{$orderNumberHtml}</div>
     </div>
 
     <table style='width:100%;border-collapse:collapse;font-size:14px;margin-bottom:1.5rem;'>
@@ -98,7 +99,7 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
     $adminBody = $emailHeader . "
   <div style='background:#132e50;padding:1.5rem 2rem;'>
     <div style='font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#58d0bd;'>Neue Bestellung — Zahlung bestätigt</div>
-    <div style='font-size:22px;font-weight:900;color:#fff;letter-spacing:2px;margin-top:.3rem;'>{$orderNumber}</div>
+    <div style='font-size:22px;font-weight:900;color:#fff;letter-spacing:2px;margin-top:.3rem;'>{$orderNumberHtml}</div>
   </div>
   <div style='padding:2rem;'>
     <table style='width:100%;border-collapse:collapse;font-size:14px;'>
@@ -127,6 +128,7 @@ function sendOrderEmails(array $order, string $stripeSessionId = ''): bool
 
     $cleanName  = str_replace(["\r", "\n", "\0"], ' ', $custName);
     $cleanEmail = str_replace(["\r", "\n", "\0"], '',  $custEmail);
+    $cleanNameHtml = htmlspecialchars($cleanName, ENT_QUOTES, 'UTF-8');
 
     if (!filter_var($cleanEmail, FILTER_VALIDATE_EMAIL)) {
         error_log('[Masar Email] Invalid customer email for order ' . $orderNumber . ': ' . $cleanEmail);

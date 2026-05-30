@@ -231,20 +231,24 @@ const MasarPrice = {
     const opts = this.prices[category] || {};
     const keys = Object.keys(opts);
 
-    container.innerHTML = keys.map((key, i) =>
-      `<button class="calc-chip${i === 0 ? ' active' : ''}" data-val="${key}" type="button">${opts[key].chip}</button>`
-    ).join('');
-
-    hidden.value = keys[0] || '';
-
-    container.querySelectorAll('.calc-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
+    // Use DOM methods instead of innerHTML to avoid XSS risk when chip labels change
+    container.textContent = '';
+    keys.forEach((key, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'calc-chip' + (i === 0 ? ' active' : '');
+      btn.dataset.val = key;
+      btn.textContent = opts[key].chip;
+      btn.addEventListener('click', () => {
         container.querySelectorAll('.calc-chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        hidden.value = chip.dataset.val;
+        btn.classList.add('active');
+        hidden.value = key;
         this.calculate();
       });
+      container.appendChild(btn);
     });
+
+    hidden.value = keys[0] || '';
   },
 
   calculate() {

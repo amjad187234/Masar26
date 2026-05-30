@@ -252,7 +252,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 </head>
 <body>
 
-<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Zum Inhalt springen</a>
+<a href="#main-content" class="skip-link" style="position:absolute;left:-9999px;top:auto;">Zum Inhalt springen</a>
 
 <!-- WhatsApp -->
 <a href="https://wa.me/491785143918" class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp – Masar Werbeagentur Berlin">
@@ -602,6 +602,10 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
         </div>
         <div class="fg"><label for="tel">Telefon</label><input type="tel" id="tel" name="telefon" placeholder="0178 000 0000"></div>
         <div class="fg"><label for="beschreibung">Was benötigen Sie? *</label><textarea id="beschreibung" name="beschreibung" placeholder="z. B. Schaufensterfolie für mein Restaurant in Mitte – ca. 3m × 1,5m, Logo + Öffnungszeiten..." required></textarea></div>
+        <div style="display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;">
+          <input type="checkbox" id="sf-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
+          <label for="sf-consent" style="font-size:12px;color:var(--muted);line-height:1.65;">Ich habe die <a href="/datenschutz.html" style="color:var(--teal);">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>
+        </div>
         <button type="submit" class="submit-btn">✓ Kostenloses Angebot anfordern – Antwort in 24h</button>
         <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.7rem;">🔒 Kein Spam. Kostenlos & unverbindlich.</p>
       </form>

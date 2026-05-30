@@ -8,7 +8,11 @@
 // set via the environment, the fallback hash exposes a known credential in source control.
 // Run: php -r "echo password_hash('YourPassword', PASSWORD_BCRYPT);" to generate a new hash,
 // then set it exclusively via the environment variable and remove the fallback value.
-define('ADMIN_PASS_HASH', getenv('ADMIN_PASS_HASH') ?: '$2y$12$DeiKE9EbzDGlL4jovtU.LeFdmHKcBRzW6PKYUfOWNDMC7CEBGG8QK'); // SECURITY: Remove hardcoded fallback hash — set ADMIN_PASS_HASH env var only
+// SECURITY: Move this to environment variable — NEVER commit a real bcrypt hash to source control.
+// The fallback below is intentionally an INVALID placeholder that will never match any password.
+// Set ADMIN_PASS_HASH via Hostinger → Hosting → PHP → Environment Variables.
+// Generate a new hash with: php -r "echo password_hash('YourStrongPassword', PASSWORD_BCRYPT);"
+define('ADMIN_PASS_HASH', getenv('ADMIN_PASS_HASH') ?: '$2y$12$INVALID_PLACEHOLDER_REPLACE_ME_00000000000000000000000000'); // SECURITY: fallback is intentionally invalid — set env var
 define('ADMIN_USERNAME',  getenv('ADMIN_USERNAME')  ?: 'masar-admin');
 
 define('DB_PATH',    __DIR__ . '/data/orders.db');
