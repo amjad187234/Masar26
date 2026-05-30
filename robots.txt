@@ -7,6 +7,8 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /data/
 Disallow: /uploads/
+Disallow: /config.php
+Disallow: /mail.php
 Disallow: /danke.html
 Disallow: /qr/
 Disallow: /qr.html

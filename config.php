@@ -3,7 +3,12 @@
 // Secrets (SMTP_PASS) must be set via Hostinger → Hosting → PHP → Environment Variables.
 // Run: php -r "echo password_hash('YourPassword', PASSWORD_BCRYPT);" to regenerate admin hash.
 // Admin hash is a fallback — change the password in the admins DB table first.
-define('ADMIN_PASS_HASH', getenv('ADMIN_PASS_HASH') ?: '$2y$12$DeiKE9EbzDGlL4jovtU.LeFdmHKcBRzW6PKYUfOWNDMC7CEBGG8QK');
+// SECURITY: Move this to environment variable (Hostinger → PHP → Environment Variables).
+// The hardcoded bcrypt hash below is a fallback-only credential. If ADMIN_PASS_HASH is not
+// set via the environment, the fallback hash exposes a known credential in source control.
+// Run: php -r "echo password_hash('YourPassword', PASSWORD_BCRYPT);" to generate a new hash,
+// then set it exclusively via the environment variable and remove the fallback value.
+define('ADMIN_PASS_HASH', getenv('ADMIN_PASS_HASH') ?: '$2y$12$DeiKE9EbzDGlL4jovtU.LeFdmHKcBRzW6PKYUfOWNDMC7CEBGG8QK'); // SECURITY: Remove hardcoded fallback hash — set ADMIN_PASS_HASH env var only
 define('ADMIN_USERNAME',  getenv('ADMIN_USERNAME')  ?: 'masar-admin');
 
 define('DB_PATH',    __DIR__ . '/data/orders.db');
