@@ -42,22 +42,34 @@
   "description": "Maßgefertigte Leuchtreklamen, LED-Leuchtbuchstaben, Leuchtkästen und Neonreklame in Berlin für Unternehmen – Planung, Fertigung und Montage aus einer Hand durch Masar Werbeagentur.",
   "url": "https://masar-werbeagentur.de/leuchtreklame-berlin.html",
   "provider": {
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "Masar Werbeagentur",
     "url": "https://masar-werbeagentur.de",
-    "telephone": "+491785143918",
+    "telephone": "+49 178 514 3918",
     "email": "info@masar-werbeagentur.de",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Bristolstraße 19HN",
       "addressLocality": "Berlin",
+      "addressRegion": "Berlin",
       "postalCode": "13349",
       "addressCountry": "DE"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 52.54880, "longitude": 13.34940 },
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "image": "https://masar-werbeagentur.de/logo.png",
-    "priceRange": "€€"
+    "geo": { "@type": "GeoCoordinates", "latitude": 52.5503, "longitude": 13.3396 },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "€€",
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Überweisung, PayPal, Stripe",
+    "areaServed": { "@type": "City", "name": "Berlin" },
+    "hasMap": "https://maps.google.com/?q=Bristolstraße+19HN,+13349+Berlin",
+    "image": "https://masar-werbeagentur.de/logo.png"
   },
   "areaServed": {
     "@type": "City",
