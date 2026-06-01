@@ -207,22 +207,44 @@ select:focus-visible,textarea:focus-visible{
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Masar Werbeagentur Berlin",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "name": "Masar Werbeagentur",
   "url": "https://masar-werbeagentur.de",
-  "telephone": "+491785143918",
+  "telephone": "+49 178 514 3918",
   "email": "info@masar-werbeagentur.de",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Bristolstraße 19HN",
     "addressLocality": "Berlin",
+    "addressRegion": "Berlin",
     "postalCode": "13349",
     "addressCountry": "DE"
   },
-  "geo": { "@type": "GeoCoordinates", "latitude": 52.5488, "longitude": 13.3494 },
-  "openingHours": "Mo-Fr 09:00-18:00",
+  "geo": { "@type": "GeoCoordinates", "latitude": 52.5503, "longitude": 13.3396 },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
   "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Überweisung, PayPal, Stripe",
+  "areaServed": { "@type": "City", "name": "Berlin" },
+  "hasMap": "https://maps.google.com/?q=Bristolstraße+19HN,+13349+Berlin",
   "sameAs": ["https://www.instagram.com/masar.werbeagentur/", "https://www.facebook.com/masarwerbeagentur/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://masar-werbeagentur.de/"},
+    {"@type": "ListItem", "position": 2, "name": "Leistungen", "item": "https://masar-werbeagentur.de/leistungen.html"}
+  ]
 }
 </script>
 <script type="application/ld+json">

@@ -18,6 +18,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="dns-prefetch" href="//formsubmit.co">
 <meta name="description" content="Werbe-Angebote für Berliner Unternehmen: Gastronomie, Handwerk, Arztpraxen & Start-ups. Maßgeschneiderte Werbepakete – jetzt unverbindlich anfragen!">
+<meta name="keywords" content="Werbeagentur Berlin Angebote, Werbepakete Berlin, Werbung Gastronomie Berlin, Werbung Handwerk Berlin, Werbung Arztpraxis Berlin, Werbung Startups Berlin, Masar Werbeagentur Berlin">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Werbe-Angebote für Berliner Unternehmen | Masar Werbeagentur">
 <meta property="og:description" content="Branchenspezifische Werbepakete für Berliner Unternehmen: Gastronomie, Arztpraxen, Handwerk, Start-ups &amp; Pflegedienste. Kostenlose Erstberatung in Berlin-Wedding.">
@@ -95,10 +96,11 @@
       ]
     },
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "name": "Masar Werbeagentur",
       "url": "https://masar-werbeagentur.de",
-      "telephone": "+4901785143918",
+      "telephone": "+49 178 514 3918",
+      "email": "info@masar-werbeagentur.de",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bristolstraße 19HN",
@@ -107,7 +109,20 @@
         "addressRegion": "Berlin",
         "addressCountry": "DE"
       },
-      "areaServed": "Berlin"
+      "geo": { "@type": "GeoCoordinates", "latitude": 52.5503, "longitude": 13.3396 },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Überweisung, PayPal, Stripe",
+      "areaServed": { "@type": "City", "name": "Berlin" },
+      "hasMap": "https://maps.google.com/?q=Bristolstraße+19HN,+13349+Berlin"
     }
   ]
 }
