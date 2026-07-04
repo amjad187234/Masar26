@@ -77,6 +77,21 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- SEO-Landingpages -->
+  <url>
+    <loc>https://masar-werbeagentur.de/grafikdesign-berlin.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/schilder-berlin.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Rechtliche Seiten (niedrige Priorität) -->
   <url>
     <loc>https://masar-werbeagentur.de/impressum.html</loc>
