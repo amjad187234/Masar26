@@ -6,6 +6,7 @@
   <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
   <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/fonts/barlow-semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" as="image" href="/logo.png" fetchpriority="high">
   <!-- Self-hosted fonts CSS -->
   <!-- Favicon & PWA -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -21,7 +22,7 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <link rel="dns-prefetch" href="//formsubmit.co">
+  <link rel="preconnect" href="https://formsubmit.co">
   <meta name="keywords" content="Werbeagentur Berlin, Leuchtreklamen Berlin, Fahrzeugbeschriftung Berlin, Grafikdesign Berlin, Social Media Marketing Berlin, Werbetechnik Berlin">
 <meta property="og:title" content="Werbeagentur Berlin | Werbetechnik, Design & Print – Masar">
 <meta property="og:description" content="Full-Service Werbeagentur in Berlin-Wedding. Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign & Social Media. Jetzt kostenlos anfragen!">
@@ -37,6 +38,8 @@
 <meta name="twitter:description" content="Full-Service Werbeagentur in Berlin-Wedding. Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign & Social Media. Jetzt anfragen!">
 <meta name="twitter:image" content="https://masar-werbeagentur.de/logo.png">
 <link rel="canonical" href="https://masar-werbeagentur.de/">
+<link rel="alternate" hreflang="de" href="https://masar-werbeagentur.de/">
+<link rel="alternate" hreflang="x-default" href="https://masar-werbeagentur.de/">
 <title>Werbeagentur Berlin | Werbetechnik, Design & Print – Masar</title>
 <style>
 /* ═══════════ TOKENS ═══════════ */
@@ -503,7 +506,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   "url": "https://masar-werbeagentur.de",
   "logo": "https://masar-werbeagentur.de/logo.png",
   "image": "https://masar-werbeagentur.de/logo.png",
-  "telephone": "+491785143918",
+  "telephone": "+49 178 514 3918",
   "email": "info@masar-werbeagentur.de",
   "taxID": "23/203/00524",
   "address": {
@@ -664,6 +667,18 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://masar-werbeagentur.de/#website",
+  "url": "https://masar-werbeagentur.de",
+  "name": "Masar Werbeagentur Berlin",
+  "description": "Full-Service Werbeagentur Berlin – Werbetechnik, Grafikdesign, Druck & Social Media",
+  "publisher": { "@id": "https://masar-werbeagentur.de/#identity" },
+  "inLanguage": "de-DE"
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -736,7 +751,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     <div class="hero-inner">
       <div>
         <div class="hero-badge">✦ Full-Service Werbeagentur · Berlin-Wedding · Für Unternehmen jeder Größe</div>
-        <h1>Werbeagentur Berlin –<br><em>Von der Leuchtreklame bis zum viralen Reel.</em></h1>
+        <h1>Werbeagentur Berlin – <br><em>Von der Leuchtreklame bis zum viralen Reel.</em></h1>
         <p class="hero-sub">Werbetechnik, Grafikdesign, Webdesign und Social Media – professionell, kreativ und aus einer Hand. Ihr Erfolg ist unser Handwerk.</p>
         <div class="hero-btns">
           <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
@@ -756,7 +771,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-logo-img" src="logo.png" alt="Masar Werbeagentur Berlin – Full-Service Agentur" loading="eager">
+        <img class="hero-logo-img" src="logo.png" alt="Masar Werbeagentur Berlin – Full-Service Agentur" loading="eager" fetchpriority="high" width="400" height="400">
       </div>
     </div>
   </div>
