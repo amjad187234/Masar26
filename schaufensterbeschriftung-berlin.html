@@ -687,11 +687,6 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 (function(){
   var ham = document.getElementById('hamburger');
   var mob = document.getElementById('mobNav');
-  ham.addEventListener('click', function(){
-    var open = mob.classList.toggle('open');
-    ham.setAttribute('aria-expanded', open ? 'true' : 'false');
-    ham.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-  });
   document.addEventListener('keydown', function(e){
     if(e.key==='Escape' && mob.classList.contains('open')){
       mob.classList.remove('open');

@@ -62,6 +62,20 @@
     <priority>0.85</priority>
   </url>
 
+  <url>
+    <loc>https://masar-werbeagentur.de/grafikdesign-berlin.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/schilder-berlin.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>

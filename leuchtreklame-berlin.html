@@ -779,13 +779,6 @@ select:focus-visible,textarea:focus-visible{
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
 
-const ham=document.getElementById('hamburger');
-const mob=document.getElementById('mobNav');
-ham?.addEventListener('click',()=>{
-  const open=mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded',open);
-});
-
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in')}}),{threshold:.1});
 document.querySelectorAll('.svc-card,.why-item,.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
