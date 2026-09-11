@@ -91,6 +91,20 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/fahrzeugbeschriftung-tipps.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/aussenwerbung-berlin-ratgeber.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Service-Seiten -->
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik.html</loc>
