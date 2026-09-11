@@ -185,6 +185,8 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
   <a href="/">Home</a>
   <a href="/leistungen.html">Alle Leistungen</a>
   <a href="/werbetechnik.html">Werbetechnik</a>
+  <a href="/digital.html">Social Media</a>
+  <a href="/grafikdesign-berlin.html">Grafikdesign</a>
   <a href="/blog/">Blog &amp; Tipps</a>
   <div class="mob-contact-row">
     <a href="tel:01785143918" class="mob-call-btn">📞 Anrufen</a>
@@ -406,29 +408,12 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Masar Werbeagentur Berlin</span>
-      <div class="foot-legal">
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-      </div>
+      <span>© 2026 Masar Werbeagentur · Amjad Albill · Berlin · Steuernummer: 23/203/00524 · Alle Rechte vorbehalten.</span>
+      <div class="foot-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div>
     </div>
   </div>
 </footer>
-
-<script>
-const ham = document.getElementById('hamburger');
-const mob = document.getElementById('mobNav');
-ham.addEventListener('click', () => {
-  const open = mob.classList.toggle('open');
-  ham.setAttribute('aria-expanded', open);
-  ham.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
-});
-document.addEventListener('click', e => {
-  if (!ham.contains(e.target) && !mob.contains(e.target)) {
-    mob.classList.remove('open');
-    ham.setAttribute('aria-expanded', 'false');
-  }
-});
-</script>
+<script src="/cookie-consent.js" defer></script>
+<script src="/app.js" defer></script>
 </body>
 </html>
