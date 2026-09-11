@@ -179,16 +179,16 @@ const MasarForm = {
 const MasarPrice = {
   prices: {
     fahrzeug: {
-      klein:        { base: 125,  chip: 'Kleinwagen',    label: 'Kleinwagen Teilbeklebung' },
-      transporter:  { base: 369,  chip: 'Transporter',   label: 'Transporter Teilbeklebung' },
-      vollfolierung:{ base: 1500, chip: 'Vollfolierung',  label: 'Vollfolierung Transporter' },
-      lkw:          { base: 2500, chip: 'LKW',           label: 'LKW-Beschriftung' },
+      klein:        { base: 149,  chip: 'Kleinwagen',    label: 'Kleinwagen Teilbeklebung' },
+      transporter:  { base: 299,  chip: 'Transporter',   label: 'Transporter Teilbeklebung' },
+      vollfolierung:{ base: 1290, chip: 'Vollfolierung',  label: 'Vollfolierung Transporter' },
+      lkw:          { base: 2190, chip: 'LKW',           label: 'LKW-Beschriftung' },
     },
     leuchtreklame: {
-      small:  { base: 299,  chip: 'bis 50 cm',   label: 'Leuchtreklame bis 50 cm' },
-      medium: { base: 599,  chip: 'bis 100 cm',  label: 'Leuchtreklame bis 100 cm' },
-      large:  { base: 1200, chip: 'bis 200 cm',  label: 'Leuchtreklame bis 200 cm' },
-      custom: { base: 2500, chip: 'Großanlage',  label: 'Individuelle Großanlage' },
+      small:  { base: 690,  chip: 'bis 50 cm',   label: 'Leuchtreklame bis 50 cm' },
+      medium: { base: 1290, chip: 'bis 100 cm',  label: 'Leuchtreklame bis 100 cm' },
+      large:  { base: 2490, chip: 'bis 200 cm',  label: 'Leuchtreklame bis 200 cm' },
+      custom: { base: 4900, chip: 'Großanlage',  label: 'Individuelle Großanlage' },
     },
     print: {
       flyer:       { base: 49,  chip: 'Flyer A5',     label: 'Flyer A5 (500 Stück)' },
