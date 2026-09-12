@@ -177,124 +177,13 @@ const MasarForm = {
 // 2. INTERACTIVE PRICE ESTIMATOR
 // ═══════════════════════════════════════════════════════════
 const MasarPrice = {
-  prices: {
-    fahrzeug: {
-      klein:        { base: 149,  chip: 'Kleinwagen',    label: 'Kleinwagen Teilbeklebung' },
-      transporter:  { base: 299,  chip: 'Transporter',   label: 'Transporter Teilbeklebung' },
-      vollfolierung:{ base: 1290, chip: 'Vollfolierung',  label: 'Vollfolierung Transporter' },
-      lkw:          { base: 2190, chip: 'LKW',           label: 'LKW-Beschriftung' },
-    },
-    leuchtreklame: {
-      small:  { base: 690,  chip: 'bis 50 cm',   label: 'Leuchtreklame bis 50 cm' },
-      medium: { base: 1290, chip: 'bis 100 cm',  label: 'Leuchtreklame bis 100 cm' },
-      large:  { base: 2490, chip: 'bis 200 cm',  label: 'Leuchtreklame bis 200 cm' },
-      custom: { base: 4900, chip: 'Großanlage',  label: 'Individuelle Großanlage' },
-    },
-    print: {
-      flyer:       { base: 49,  chip: 'Flyer A5',     label: 'Flyer A5 (500 Stück)' },
-      visitenkarte:{ base: 39,  chip: 'Visitenkarte', label: 'Visitenkarten (250 Stück)' },
-      broschure:   { base: 149, chip: 'Broschüre',    label: 'Broschüre A5 (100 Stück)' },
-      plakat:      { base: 79,  chip: 'Plakat A3',    label: 'Plakate A3 (50 Stück)' },
-    }
-  },
-
+  // Preisrechner deaktiviert (Stand 2026-09-12).
+  // Es liegen keine verbindlichen Listenpreise vor; ein berechneter Betrag
+  // wäre gegenüber Kundinnen und Kunden ein unverbindlicher Fantasiewert.
   currentEstimate: 0,
-
-  init() {
-    const calc = document.getElementById('priceCalc');
-    if (!calc) return;
-
-    // Category tab clicks
-    calc.querySelectorAll('.calc-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        calc.querySelectorAll('.calc-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        this.buildVariants(btn.dataset.val);
-        this.calculate();
-      });
-    });
-
-    // Checkbox changes
-    document.getElementById('calcExpress')?.addEventListener('change', () => this.calculate());
-    document.getElementById('calcDesign')?.addEventListener('change', () => this.calculate());
-
-    // Initialize with first category
-    this.buildVariants(Object.keys(this.prices)[0]);
-    this.calculate();
-  },
-
-  buildVariants(category) {
-    const container = document.getElementById('calcVariantChips');
-    const hidden    = document.getElementById('calcVariant');
-    if (!container || !hidden) return;
-
-    const opts = this.prices[category] || {};
-    const keys = Object.keys(opts);
-
-    // Use DOM methods instead of innerHTML to avoid XSS risk when chip labels change
-    container.textContent = '';
-    keys.forEach((key, i) => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'calc-chip' + (i === 0 ? ' active' : '');
-      btn.dataset.val = key;
-      btn.textContent = opts[key].chip;
-      btn.addEventListener('click', () => {
-        container.querySelectorAll('.calc-chip').forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        hidden.value = key;
-        this.calculate();
-      });
-      container.appendChild(btn);
-    });
-
-    hidden.value = keys[0] || '';
-  },
-
-  calculate() {
-    const activeTab = document.querySelector('#priceCalc .calc-tab.active');
-    const category  = activeTab?.dataset.val || Object.keys(this.prices)[0];
-    const variant   = document.getElementById('calcVariant')?.value;
-    const express   = document.getElementById('calcExpress')?.checked;
-    const design    = document.getElementById('calcDesign')?.checked;
-
-    if (!variant) return;
-    const item = this.prices[category]?.[variant];
-    if (!item) return;
-
-    let price = item.base;
-    if (express) price = Math.round(price * 1.25);
-    if (design)  price += 80;
-
-    this.currentEstimate = price;
-
-    const display = document.getElementById('priceDisplay');
-    const label   = document.getElementById('priceLabel');
-    if (display) {
-      display.textContent = `ab ${price.toLocaleString('de-DE')} €`;
-      display.classList.remove('price-pop');
-      void display.offsetWidth;
-      display.classList.add('price-pop');
-    }
-    if (label) label.textContent = item.label.toUpperCase();
-  },
-
-  getEstimate() {
-    return this.currentEstimate > 0
-      ? `ab ${this.currentEstimate.toLocaleString('de-DE')} € (unverbindlich)`
-      : 'Nicht berechnet';
-  },
-
+  init() { /* bewusst leer */ },
+  getEstimate() { return 'Nicht berechnet'; },
   requestOffer() {
-    // Fill contact form service field if present
-    const serviceField = document.getElementById('fieldService');
-    const activeTab    = document.querySelector('#priceCalc .calc-tab.active');
-    const category     = activeTab?.dataset.val || Object.keys(this.prices)[0];
-    const variant      = document.getElementById('calcVariant')?.value;
-    const item         = this.prices[category]?.[variant];
-    if (serviceField && item) serviceField.value = item.label;
-
-    // Scroll to contact section
     const target = document.getElementById('masarForm') || document.getElementById('kontakt');
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
