@@ -209,6 +209,32 @@ select:focus-visible,textarea:focus-visible{
 .faq-ic.open{transform:rotate(45deg)}
 .faq-a{display:none;font-size:15px;color:var(--muted);line-height:1.85;padding:0 0 1.3rem}
 .faq-a.open{display:block}
+
+/* Kontaktsektion (eigenständig, kollisionsfrei) */
+.mk-contact{background:var(--off,#f5f8f8);padding:5rem 0;border-top:1px solid rgba(88,208,189,.2)}
+.mk-inner{max-width:680px;margin:0 auto;padding:0 24px}
+.mk-head{text-align:center;margin-bottom:2.2rem}
+.mk-ey{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#177567;margin-bottom:.7rem}
+.mk-head h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,4.5vw,2.6rem);text-transform:uppercase;color:#132e50;line-height:1.05;margin:0 0 .6rem}
+.mk-head p{font-size:15.5px;color:#5a7070;line-height:1.75;margin:0}
+.mk-fast{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem}
+.mk-btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:8px;font-size:14.5px;font-weight:700;text-decoration:none}
+.mk-tel{background:#58d0bd;color:#132e50}
+.mk-wa{background:#25d366;color:#fff}
+.mk-form{background:#fff;border:1px solid #e2ecec;border-radius:12px;padding:1.8rem;box-shadow:0 2px 14px rgba(19,46,80,.05)}
+.mk-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.mk-fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.mk-fg label{font-size:13px;font-weight:600;color:#5a7070;letter-spacing:.4px}
+.mk-fg input,.mk-fg select,.mk-fg textarea{border:1px solid #e2ecec;border-radius:8px;padding:12px 14px;font-family:'Barlow',sans-serif;font-size:15px;color:#1a2a2a;background:#fff;width:100%}
+.mk-fg input:focus,.mk-fg select:focus,.mk-fg textarea:focus{outline:none;border-color:#58d0bd;box-shadow:0 0 0 3px rgba(88,208,189,.18)}
+.mk-fg textarea{min-height:110px;resize:vertical}
+.mk-consent{display:flex;gap:.7rem;align-items:flex-start;margin:.4rem 0 1.2rem;font-size:13px;color:#5a7070;line-height:1.6}
+.mk-consent input{margin-top:3px;flex-shrink:0;width:17px;height:17px}
+.mk-consent a{color:#177567;font-weight:600}
+.mk-submit{width:100%;background:#58d0bd;color:#132e50;border:none;border-radius:8px;padding:15px;font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;cursor:pointer}
+.mk-submit:hover{background:#3db8a6}
+.mk-note{text-align:center;font-size:12px;color:#5a7070;margin:.7rem 0 0}
+@media(max-width:600px){.mk-row{grid-template-columns:1fr}.mk-fg input,.mk-fg select,.mk-fg textarea{font-size:16px}}
 </style>
 <meta property="og:title" content="Werbetechnik Berlin – Leuchtreklamen & Beschriftung | Masar">
 <meta property="og:description" content="Werbetechnik Berlin für Unternehmen: Leuchtreklame, Fahrzeugbeschriftung & Schilder aus Berlin-Wedding. Außenwerbung die Tag und Nacht wirkt – Masar Werbeagentur. Anfragen!">
@@ -317,26 +343,7 @@ select:focus-visible,textarea:focus-visible{
   ]
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://masar-werbeagentur.de/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Werbetechnik Berlin",
-      "item": "https://masar-werbeagentur.de/werbetechnik.html"
-    }
-  ]
-}
-</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -409,7 +416,7 @@ select:focus-visible,textarea:focus-visible{
     </div>
     <div class="sticky-cta-actions">
       <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="/#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
     </div>
   </div>
 </div>
@@ -429,7 +436,7 @@ select:focus-visible,textarea:focus-visible{
       <li><a href="/print.html">Print &amp; Design</a></li>
       <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
-      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
@@ -452,8 +459,18 @@ select:focus-visible,textarea:focus-visible{
     <a href="tel:01785143918" class="mob-call-btn">📞 Anrufen</a>
     <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
   </div>
-  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+  <a href="#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
+<nav aria-label="Breadcrumb" style="background:rgba(0,0,0,.03);border-bottom:1px solid rgba(88,208,189,.12);padding:.7rem 0;">
+  <div class="container">
+    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:var(--muted);margin:0;padding:0;">
+        <li><a href="/" style="color:var(--teal-ink);font-weight:600;">Home</a></li>
+        <li style="opacity:.4;" aria-hidden="true">/</li>
+        <li aria-current="page">Werbetechnik Berlin</li>
+    </ol>
+  </div>
+</nav>
+
 
 <div class="page-hero" id="main-content"><div class="container"><div class="ph-inner">
   <div>
@@ -461,7 +478,7 @@ select:focus-visible,textarea:focus-visible{
     <h1 class="ph-title"><em>Werbetechnik Berlin</em> – Außenwerbung, die Tag und Nacht wirkt.</h1>
     <p class="ph-sub">Von der maßgeschneiderten Leuchtreklame bis zur professionellen Fahrzeugbeschriftung – wir machen Ihr Unternehmen unübersehbar in Berlin. Ihr Partner für Außenwerbung in Berlin-Wedding und ganz Berlin.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="/#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt anfragen</a>
+      <a href="#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt anfragen</a>
       <a href="#leuchtreklamen" style="display:inline-flex;align-items:center;gap:.5rem;border:2px solid rgba(255,255,255,.3);color:#fff;padding:11px 24px;border-radius:6px;font-weight:600;font-size:14px;transition:all .25s;" onmouseover="this.style.borderColor='var(--teal)';this.style.color='var(--teal)'" onmouseout="this.style.borderColor='rgba(255,255,255,.3)';this.style.color='#fff'">Leuchtreklamen ↓</a>
     </div>
   </div>
@@ -489,7 +506,7 @@ select:focus-visible,textarea:focus-visible{
           <div class="hb-feat">Professionelle Montage & Installation</div>
           <div class="hb-feat">Wartungs- und Reparatur-Service</div>
         </div>
-        <a href="/#kontakt" class="btn-primary" style="position:relative;z-index:10;">Leuchtreklame anfragen →</a>
+        <a href="#kontakt" class="btn-primary" style="position:relative;z-index:10;">Leuchtreklame anfragen →</a>
       </div>
       <div class="hb-visual">
         <img src="leuchtreklamen.webp" alt="Leuchtreklame Berlin – individuelle LED-Schilder und Neonreklamen von Masar Werbeagentur Berlin-Wedding" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="1080" height="1350">
@@ -621,7 +638,7 @@ select:focus-visible,textarea:focus-visible{
         <div class="calc-result-price" id="wtPriceDisplay">ab 149 €</div>
         <div class="calc-result-note">Unverbindliche Schätzung · Nettopreis gem. § 19 UStG</div>
       </div>
-      <a href="/#kontakt" class="calc-cta-btn">Jetzt Angebot anfordern →</a>
+      <a href="#kontakt" class="calc-cta-btn">Jetzt Angebot anfordern →</a>
       <p class="calc-foot">Kostenlos & unverbindlich · Antwort in 24h</p>
     </div>
   </div>
@@ -630,7 +647,7 @@ select:focus-visible,textarea:focus-visible{
 <div class="cta-strip" style="position:relative;"><div class="container" style="position:relative;z-index:2;">
   <div class="cta-title">Bereit für Ihre <em>Leuchtreklame?</em></div>
   <p class="cta-sub">Kostenlose Beratung und unverbindliches Angebot innerhalb von 24 Stunden.</p>
-  <a href="/#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
+  <a href="#kontakt" class="btn-primary" style="position:relative;z-index:10;">Jetzt kostenlos anfragen →</a>
 </div></div>
 
 
@@ -662,6 +679,55 @@ select:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+
+<!-- KONTAKT -->
+<section class="mk-contact" id="kontakt" aria-labelledby="wt-kontakt-h">
+  <div class="mk-inner">
+    <div class="mk-head">
+      <span class="mk-ey">Kontakt</span>
+      <h2 id="wt-kontakt-h">Werbetechnik-Projekt <em style="color:#177567;font-style:normal;">anfragen</em></h2>
+      <p>Leuchtreklame, Fahrzeugbeschriftung, Schilder oder Fassade – schildern Sie kurz Ihr Vorhaben. Wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
+    </div>
+    <div class="mk-fast">
+      <a href="tel:01785143918" class="mk-btn mk-tel">📞 0178 5143918</a>
+      <a href="https://wa.me/491785143918" class="mk-btn mk-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    </div>
+    <form class="mk-form" action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+      <input type="hidden" name="_subject" value="Werbetechnik Berlin – Anfrage">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
+      <div class="mk-row">
+        <div class="mk-fg"><label for="wt-firma">Firmenname *</label><input type="text" id="wt-firma" name="firma" placeholder="Musterfirma GmbH" required></div>
+        <div class="mk-fg"><label for="wt-name">Ansprechpartner *</label><input type="text" id="wt-name" name="name" placeholder="Max Mustermann" required></div>
+      </div>
+      <div class="mk-row">
+        <div class="mk-fg"><label for="wt-email">E-Mail *</label><input type="email" id="wt-email" name="email" placeholder="info@ihre-firma.de" required></div>
+        <div class="mk-fg"><label for="wt-tel">Telefon / WhatsApp</label><input type="tel" id="wt-tel" name="telefon" placeholder="+49 ..."></div>
+      </div>
+      <div class="mk-fg">
+        <label for="wt-thema">Worum geht es?</label>
+        <select id="wt-thema" name="thema">
+            <option value="">Bitte wählen...</option>
+            <option>Leuchtreklame / LED-Anlage</option>
+            <option>Fahrzeugbeschriftung</option>
+            <option>Schilder & Firmenschild</option>
+            <option>Schaufensterbeschriftung</option>
+            <option>Fassadenbeschriftung</option>
+            <option>Messebau & Displays</option>
+            <option>Noch nicht entschieden</option>
+        </select>
+      </div>
+      <div class="mk-fg"><label for="wt-nachricht">Ihr Anliegen</label><textarea id="wt-nachricht" name="nachricht" placeholder="Maße, Stückzahl, Standort, Zeitrahmen – je konkreter, desto genauer das Angebot."></textarea></div>
+      <div class="mk-consent">
+        <input type="checkbox" id="wt-consent" name="consent" required>
+        <label for="wt-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>
+      </div>
+      <button type="submit" class="mk-submit">Anfrage senden – kostenlos &amp; unverbindlich</button>
+      <p class="mk-note">Kein Spam. Antwort innerhalb von 24 Stunden.</p>
+    </form>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="foot-grid">

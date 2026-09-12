@@ -180,6 +180,32 @@ select:focus-visible,textarea:focus-visible{
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+
+/* Kontaktsektion (eigenständig, kollisionsfrei) */
+.mk-contact{background:var(--off,#f5f8f8);padding:5rem 0;border-top:1px solid rgba(88,208,189,.2)}
+.mk-inner{max-width:680px;margin:0 auto;padding:0 24px}
+.mk-head{text-align:center;margin-bottom:2.2rem}
+.mk-ey{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#177567;margin-bottom:.7rem}
+.mk-head h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,4.5vw,2.6rem);text-transform:uppercase;color:#132e50;line-height:1.05;margin:0 0 .6rem}
+.mk-head p{font-size:15.5px;color:#5a7070;line-height:1.75;margin:0}
+.mk-fast{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem}
+.mk-btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:8px;font-size:14.5px;font-weight:700;text-decoration:none}
+.mk-tel{background:#58d0bd;color:#132e50}
+.mk-wa{background:#25d366;color:#fff}
+.mk-form{background:#fff;border:1px solid #e2ecec;border-radius:12px;padding:1.8rem;box-shadow:0 2px 14px rgba(19,46,80,.05)}
+.mk-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.mk-fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.mk-fg label{font-size:13px;font-weight:600;color:#5a7070;letter-spacing:.4px}
+.mk-fg input,.mk-fg select,.mk-fg textarea{border:1px solid #e2ecec;border-radius:8px;padding:12px 14px;font-family:'Barlow',sans-serif;font-size:15px;color:#1a2a2a;background:#fff;width:100%}
+.mk-fg input:focus,.mk-fg select:focus,.mk-fg textarea:focus{outline:none;border-color:#58d0bd;box-shadow:0 0 0 3px rgba(88,208,189,.18)}
+.mk-fg textarea{min-height:110px;resize:vertical}
+.mk-consent{display:flex;gap:.7rem;align-items:flex-start;margin:.4rem 0 1.2rem;font-size:13px;color:#5a7070;line-height:1.6}
+.mk-consent input{margin-top:3px;flex-shrink:0;width:17px;height:17px}
+.mk-consent a{color:#177567;font-weight:600}
+.mk-submit{width:100%;background:#58d0bd;color:#132e50;border:none;border-radius:8px;padding:15px;font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;cursor:pointer}
+.mk-submit:hover{background:#3db8a6}
+.mk-note{text-align:center;font-size:12px;color:#5a7070;margin:.7rem 0 0}
+@media(max-width:600px){.mk-row{grid-template-columns:1fr}.mk-fg input,.mk-fg select,.mk-fg textarea{font-size:16px}}
 </style>
 <meta property="og:title" content="Social Media Agentur Berlin – Instagram & TikTok | Masar">
 <meta property="og:description" content="Social Media Agentur Berlin für Unternehmen – Instagram & TikTok Management, Reels, Meta Ads, monatliches Paket ab 449 €. gem. § 19 UStG. Masar Berlin-Wedding.">
@@ -352,7 +378,7 @@ select:focus-visible,textarea:focus-visible{
     </div>
     <div class="sticky-cta-actions">
       <a href="tel:01785143918" class="sticky-btn-phone">📞 0178 514 3918</a>
-      <a href="/#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
+      <a href="#kontakt" class="sticky-btn-main">Jetzt anfragen →</a>
     </div>
   </div>
 </div>
@@ -372,7 +398,7 @@ select:focus-visible,textarea:focus-visible{
       <li><a href="/print.html">Print &amp; Design</a></li>
       <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
-      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
+      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
@@ -395,8 +421,18 @@ select:focus-visible,textarea:focus-visible{
     <a href="tel:01785143918" class="mob-call-btn">📞 Anrufen</a>
     <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
   </div>
-  <a href="/#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
+  <a href="#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
+<nav aria-label="Breadcrumb" style="background:rgba(0,0,0,.03);border-bottom:1px solid rgba(88,208,189,.12);padding:.7rem 0;">
+  <div class="container">
+    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:var(--muted);margin:0;padding:0;">
+        <li><a href="/" style="color:var(--teal-ink);font-weight:600;">Home</a></li>
+        <li style="opacity:.4;" aria-hidden="true">/</li>
+        <li aria-current="page">Social Media Berlin</li>
+    </ol>
+  </div>
+</nav>
+
 
 <div class="page-hero" id="main-content"><div class="container"><div class="ph-inner">
   <div>
@@ -404,7 +440,7 @@ select:focus-visible,textarea:focus-visible{
     <h1 class="ph-title">Social Media Agentur <em>Berlin</em> – Instagram & TikTok.</h1>
     <p class="ph-sub">Von professionellem Social Media Marketing bis zu datengetriebenen Werbekampagnen – für Unternehmen in Berlin bringt Ihre Social Media Agentur Ihre Marke dorthin, wo Ihre Kunden sind.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
-      <a href="/#kontakt" class="btn-primary">Jetzt anfragen</a>
+      <a href="#kontakt" class="btn-primary">Jetzt anfragen</a>
     </div>
     <div class="ph-stats">
       <div><div class="ph-stat-num">3</div><div class="ph-stat-lbl">Plattformen</div></div>
@@ -437,7 +473,7 @@ select:focus-visible,textarea:focus-visible{
         <div class="svc-feat">Community Management & Interaktion</div>
         <div class="svc-feat">Monatliches Performance-Reporting</div>
       </div>
-      <a href="/#kontakt" class="btn-primary">Jetzt anfragen →</a>
+      <a href="#kontakt" class="btn-primary">Jetzt anfragen →</a>
     </div>
     <div class="svc-visual"><div style="font-size:8rem;">📊</div><p style="color:var(--muted);font-size:14px;margin-top:1rem;">Professionelles Social Media Management</p></div>
   </div>
@@ -454,7 +490,7 @@ select:focus-visible,textarea:focus-visible{
         <div class="svc-feat">Schnitt, Musik und Untertitel inklusive</div>
         <div class="svc-feat">Optimiert für Instagram, TikTok & Facebook</div>
       </div>
-      <a href="/#kontakt" class="btn-primary">Jetzt anfragen →</a>
+      <a href="#kontakt" class="btn-primary">Jetzt anfragen →</a>
     </div>
     <div class="svc-visual"><div style="font-size:8rem;">🎬</div><p style="color:var(--muted);font-size:14px;margin-top:1rem;">Content Creation & Reels</p></div>
   </div>
@@ -471,7 +507,7 @@ select:focus-visible,textarea:focus-visible{
         <div class="svc-feat">A/B-Testing für maximale Performance</div>
         <div class="svc-feat">Transparente Berichte & Optimierung</div>
       </div>
-      <a href="/#kontakt" class="btn-primary">Jetzt anfragen →</a>
+      <a href="#kontakt" class="btn-primary">Jetzt anfragen →</a>
     </div>
     <div class="svc-visual"><div style="font-size:8rem;">🎯</div><p style="color:var(--muted);font-size:14px;margin-top:1rem;">Performance Marketing & Ads</p></div>
   </div>
@@ -513,9 +549,9 @@ select:focus-visible,textarea:focus-visible{
     <p class="sec-sub" style="margin:0 auto;">Alle Pakete inklusive professionellem Design. Keine versteckten Kosten.</p>
   </div>
   <div class="pricing-grid">
-    <div class="price-card fade-up"><div class="price-name">Starter</div><div class="price-val">449€–549€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>8 Posts / Monat</li><li>2 Reels</li><li>1 Plattform</li><li>Design inklusive</li><li>Monatliches Reporting</li><li>E-Mail Support</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
-    <div class="price-card featured fade-up"><div class="price-badge">⭐ Empfehlung</div><div class="price-name">Business</div><div class="price-val">699€–899€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>12 Posts / Monat</li><li>4 Reels</li><li>2 Plattformen</li><li>Community Management</li><li>Stories & Highlights</li><li>Wöchentliches Reporting</li><li>WhatsApp Support</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
-    <div class="price-card fade-up"><div class="price-name">Premium</div><div class="price-val">ab 1.299€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>Unbegrenzte Posts & Reels</li><li>Content Day vor Ort</li><li>Alle Plattformen</li><li>Meta Ads & Google Ads</li><li>Community Management</li><li>Strategie-Meeting monatlich</li></ul><a href="/#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card fade-up"><div class="price-name">Starter</div><div class="price-val">449€–549€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>8 Posts / Monat</li><li>2 Reels</li><li>1 Plattform</li><li>Design inklusive</li><li>Monatliches Reporting</li><li>E-Mail Support</li></ul><a href="#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card featured fade-up"><div class="price-badge">⭐ Empfehlung</div><div class="price-name">Business</div><div class="price-val">699€–899€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>12 Posts / Monat</li><li>4 Reels</li><li>2 Plattformen</li><li>Community Management</li><li>Stories & Highlights</li><li>Wöchentliches Reporting</li><li>WhatsApp Support</li></ul><a href="#kontakt" class="price-btn">Anfragen</a></div>
+    <div class="price-card fade-up"><div class="price-name">Premium</div><div class="price-val">ab 1.299€</div><div class="price-period">/ Monat · gem. § 19 UStG</div><ul class="price-list"><li>Unbegrenzte Posts & Reels</li><li>Content Day vor Ort</li><li>Alle Plattformen</li><li>Meta Ads & Google Ads</li><li>Community Management</li><li>Strategie-Meeting monatlich</li></ul><a href="#kontakt" class="price-btn">Anfragen</a></div>
   </div>
 </div></section>
 
@@ -536,7 +572,7 @@ select:focus-visible,textarea:focus-visible{
 <div class="cta-strip" style="position:relative;"><div class="container" style="position:relative;z-index:2;">
   <div class="cta-title">Bereit für <em>mehr Reichweite?</em></div>
   <p class="cta-sub">Kostenlose Erstberatung – wir analysieren Ihre aktuelle Präsenz.</p>
-  <a href="/#kontakt" class="btn-purple">Jetzt kostenlos beraten lassen →</a>
+  <a href="#kontakt" class="btn-purple">Jetzt kostenlos beraten lassen →</a>
 </div></div>
 
 
@@ -568,6 +604,54 @@ select:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+
+<!-- KONTAKT -->
+<section class="mk-contact" id="kontakt" aria-labelledby="dg-kontakt-h">
+  <div class="mk-inner">
+    <div class="mk-head">
+      <span class="mk-ey">Kontakt</span>
+      <h2 id="dg-kontakt-h">Social Media <em style="color:#177567;font-style:normal;">anfragen</em></h2>
+      <p>Erzählen Sie kurz, wo Ihr Unternehmen heute steht und was Sie erreichen wollen. Wir melden uns innerhalb von 24 Stunden.</p>
+    </div>
+    <div class="mk-fast">
+      <a href="tel:01785143918" class="mk-btn mk-tel">📞 0178 5143918</a>
+      <a href="https://wa.me/491785143918" class="mk-btn mk-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    </div>
+    <form class="mk-form" action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+      <input type="hidden" name="_subject" value="Social Media Berlin – Anfrage">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
+      <div class="mk-row">
+        <div class="mk-fg"><label for="dg-firma">Firmenname *</label><input type="text" id="dg-firma" name="firma" placeholder="Musterfirma GmbH" required></div>
+        <div class="mk-fg"><label for="dg-name">Ansprechpartner *</label><input type="text" id="dg-name" name="name" placeholder="Max Mustermann" required></div>
+      </div>
+      <div class="mk-row">
+        <div class="mk-fg"><label for="dg-email">E-Mail *</label><input type="email" id="dg-email" name="email" placeholder="info@ihre-firma.de" required></div>
+        <div class="mk-fg"><label for="dg-tel">Telefon / WhatsApp</label><input type="tel" id="dg-tel" name="telefon" placeholder="+49 ..."></div>
+      </div>
+      <div class="mk-fg">
+        <label for="dg-thema">Worum geht es?</label>
+        <select id="dg-thema" name="thema">
+            <option value="">Bitte wählen...</option>
+            <option>Instagram-Betreuung</option>
+            <option>TikTok / Reels</option>
+            <option>Content-Produktion vor Ort</option>
+            <option>Social-Media-Design</option>
+            <option>Komplettbetreuung</option>
+            <option>Noch nicht entschieden</option>
+        </select>
+      </div>
+      <div class="mk-fg"><label for="dg-nachricht">Ihr Anliegen</label><textarea id="dg-nachricht" name="nachricht" placeholder="Maße, Stückzahl, Standort, Zeitrahmen – je konkreter, desto genauer das Angebot."></textarea></div>
+      <div class="mk-consent">
+        <input type="checkbox" id="dg-consent" name="consent" required>
+        <label for="dg-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>
+      </div>
+      <button type="submit" class="mk-submit">Anfrage senden – kostenlos &amp; unverbindlich</button>
+      <p class="mk-note">Kein Spam. Antwort innerhalb von 24 Stunden.</p>
+    </form>
+  </div>
+</section>
 <footer>
   <div class="container">
     <div class="foot-grid">
