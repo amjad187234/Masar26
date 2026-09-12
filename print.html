@@ -203,7 +203,10 @@ select:focus-visible,textarea:focus-visible{
   "name": "Druckerei Berlin – Flyer, Visitenkarten & Printdesign",
   "description": "Professionelle Druckerei in Berlin für Unternehmen. Flyer drucken, Visitenkarten, Plakate und Printdesign – Design immer inklusive, schnelle Lieferung, direkt aus Berlin-Wedding.",
   "provider": {
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": [
+      "LocalBusiness",
+      "ProfessionalService"
+    ],
     "name": "Masar Werbeagentur",
     "url": "https://masar-werbeagentur.de",
     "telephone": "+49 178 514 3918",
@@ -216,33 +219,83 @@ select:focus-visible,textarea:focus-visible{
       "postalCode": "13349",
       "addressCountry": "DE"
     },
-    "geo": { "@type": "GeoCoordinates", "latitude": 52.5503, "longitude": 13.3396 },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.5503,
+      "longitude": 13.3396
+    },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
       }
     ],
     "priceRange": "€€",
     "currenciesAccepted": "EUR",
     "paymentAccepted": "Überweisung, PayPal, Stripe",
-    "areaServed": { "@type": "City", "name": "Berlin" },
+    "areaServed": {
+      "@type": "City",
+      "name": "Berlin"
+    },
     "hasMap": "https://maps.google.com/?q=Bristolstraße+19HN,+13349+Berlin",
-    "sameAs": ["https://www.instagram.com/masar.werbeagentur/", "https://www.facebook.com/masarwerbeagentur/"]
+    "sameAs": [
+      "https://www.instagram.com/masar.werbeagentur/",
+      "https://www.facebook.com/masarwerbeagentur/"
+    ]
   },
-  "areaServed": {"@type":"City","name":"Berlin"},
+  "areaServed": {
+    "@type": "City",
+    "name": "Berlin"
+  },
   "serviceType": "Druckerei & Printdesign",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Druckerei Berlin – Leistungen",
     "itemListElement": [
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Flyer drucken Berlin"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Visitenkarten Berlin"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Plakate Berlin"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Kataloge & Broschüren Berlin"}},
-      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Printdesign Berlin"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Flyer drucken Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Visitenkarten Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plakate Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kataloge & Broschüren Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Printdesign Berlin"
+        }
+      }
     ]
   }
 }

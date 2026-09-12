@@ -497,7 +497,11 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness","ProfessionalService","PrintShop"],
+  "@type": [
+    "LocalBusiness",
+    "ProfessionalService",
+    "PrintShop"
+  ],
   "@id": "https://masar-werbeagentur.de/#identity",
   "name": "Masar Werbeagentur",
   "legalName": "Masar Werbeagentur – Amjad Albill",
@@ -524,15 +528,16 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "10:00",
-      "closes": "14:00"
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
     }
   ],
   "priceRange": "€€",
@@ -540,16 +545,25 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   "paymentAccepted": "Überweisung, PayPal, Stripe",
   "hasMap": "https://maps.google.com/?q=Bristolstraße+19HN,+13349+Berlin",
   "areaServed": [
-    {"@type": "City", "name": "Berlin"},
-    {"@type": "State", "name": "Brandenburg"},
-    {"@type": "Country", "name": "Germany"}
+    {
+      "@type": "City",
+      "name": "Berlin"
+    },
+    {
+      "@type": "State",
+      "name": "Brandenburg"
+    },
+    {
+      "@type": "Country",
+      "name": "Germany"
+    }
   ],
   "serviceArea": {
     "@type": "GeoCircle",
     "geoMidpoint": {
       "@type": "GeoCoordinates",
-      "latitude": 52.5200,
-      "longitude": 13.4050
+      "latitude": 52.52,
+      "longitude": 13.405
     },
     "geoRadius": "50000"
   },
@@ -557,14 +571,71 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     "@type": "OfferCatalog",
     "name": "Druck & Werbeprodukte",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Flyer A5 250 Stück", "description": "Hochwertiger Offsetdruck, Glanz oder Matt", "offers": {"@type": "Offer", "priceCurrency": "EUR", "price": "31.85"}}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Visitenkarten 500 Stück", "description": "Standard 85×55mm, einseitig oder doppelseitig"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Roll-up Display 85×200cm", "description": "Inkl. Druck & Standfuß"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Aufkleber & Etiketten", "description": "Individuelle Formen, wasserfest"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Leuchtreklamen & LED-Schilder Berlin"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fahrzeugbeschriftung Berlin"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Marketing Berlin"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webdesign & Webentwicklung Berlin"}}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Flyer A5 250 Stück",
+          "description": "Hochwertiger Offsetdruck, Glanz oder Matt",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "31.85"
+          }
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Visitenkarten 500 Stück",
+          "description": "Standard 85×55mm, einseitig oder doppelseitig"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Roll-up Display 85×200cm",
+          "description": "Inkl. Druck & Standfuß"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Product",
+          "name": "Aufkleber & Etiketten",
+          "description": "Individuelle Formen, wasserfest"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Leuchtreklamen & LED-Schilder Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Fahrzeugbeschriftung Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media Marketing Berlin"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Webdesign & Webentwicklung Berlin"
+        }
+      }
     ]
   },
   "sameAs": [
@@ -1249,8 +1320,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
     <div class="contact-extras reveal">
       <div class="hours-box">
         <div class="hours-box-title">⏰ Öffnungszeiten</div>
-        <div class="hours-row"><span class="day">Mo – Fr</span><span>09:00 – 18:00 Uhr</span></div>
-        <div class="hours-row"><span class="day">Samstag</span><span>10:00 – 14:00 Uhr</span></div>
+        <div class="hours-row"><span class="day">Mo – Sa</span><span>08:00 – 20:00 Uhr</span></div>
         <div class="hours-row"><span class="day">Sonntag</span><span>Geschlossen</span></div>
       </div>
       <a href="https://www.google.com/maps/search/Bristolstraße+19HN+13349+Berlin" target="_blank" rel="noopener noreferrer" class="gmap-btn">
