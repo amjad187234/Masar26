@@ -173,7 +173,7 @@
 }
 </script>
 <style>
-:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--muted:#8fa4c0;--r:10px;--nav-h:72px}
+:root{--teal:#58d0bd;--teal-ink:#177567;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--muted:#8fa4c0;--r:10px;--nav-h:72px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
 body{font-family:'Barlow',sans-serif;background:var(--navy3);color:#e8f0fb;line-height:1.65;overflow-x:hidden}
@@ -189,14 +189,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px;border-radius:6px;font-weight:700!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;transition:.3s}
 .mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--navy3);z-index:800;padding:1rem 0;border-bottom:2px solid var(--teal);flex-direction:column}
 .mob-nav.open{display:flex}
 .mob-nav a{padding:1rem 24px;font-weight:600;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.06)}
-.mob-nav a:hover{color:var(--teal)}
+.mob-nav a:hover{color:var(--teal-ink)}
 .mob-cta{background:var(--teal)!important;color:var(--navy)!important;text-align:center;margin:1rem 24px;border-radius:8px;border:none!important}
 
 /* HERO */
@@ -223,9 +223,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 /* SECTION */
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.05;margin-bottom:1rem;text-transform:uppercase}
-.sec-title em{color:var(--teal);font-style:normal}
+.sec-title em{color:var(--teal-ink);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 
 /* CARDS */
@@ -249,7 +249,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:#fff;font-family:'Barlow',sans-serif;font-size:15px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);transition:.2s;flex-shrink:0}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
 .faq-a p{padding:0 0 1.2rem;font-size:14px;color:var(--muted);line-height:1.75}

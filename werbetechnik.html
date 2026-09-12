@@ -24,16 +24,16 @@
 <meta name="description" content="Werbetechnik Berlin für Unternehmen: Leuchtreklame, Fahrzeugbeschriftung & Schilder aus Berlin-Wedding. Außenwerbung die Tag und Nacht wirkt – Masar Werbeagentur. Anfragen!">
 <title>Werbetechnik Berlin – Leuchtreklamen & Schilder | Masar</title>
 <style>
-:root{--teal:#58d0bd;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--nav-h:80px;--radius:12px;}
+:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--nav-h:80px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:var(--navy);padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;border:2px solid var(--teal);}
 .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
-.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;}
-.sec-title em{color:var(--teal);font-style:normal;}
+.sec-title em{color:var(--teal-ink);font-style:normal;}
 .sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
@@ -47,7 +47,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;}
 .nav-links a{color:var(--navy);font-size:13px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;text-decoration:none;}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
-.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink);}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:9px 22px!important;border-radius:6px;font-weight:700!important;}
 .nav-cta::after{display:none!important;}
@@ -279,7 +279,7 @@ select:focus-visible,textarea:focus-visible{
     {
       "@type": "Question",
       "name": "Was kostet eine Fahrzeugbeschriftung in Berlin?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Eine Fahrzeugbeschriftung beginnt ab 180 € für einfache Schriftzüge. Eine Teilbeklebung kostet ab 350 €, eine Vollverklebung (Full Wrap) ab 1.200 €. Alle Preise inklusive Design und Montage." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Eine Teilbeschriftung (Logo, Schriftzug, Kontaktdaten) beginnt ab 149 € gem. § 19 UStG. Eine Vollverklebung (Car Wrapping) kostet je nach Fahrzeuggröße ab 790 € gem. § 19 UStG. Alle Preise inklusive Design und Montage." }
     },
     {
       "@type": "Question",
@@ -572,10 +572,10 @@ select:focus-visible,textarea:focus-visible{
       <div class="calc-group">
         <span class="calc-lbl">Fahrzeug / Art der Beschriftung</span>
         <div class="calc-chips">
-          <button class="calc-chip active" data-base="125" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
-          <button class="calc-chip" data-base="369" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
-          <button class="calc-chip" data-base="1500" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
-          <button class="calc-chip" data-base="2500" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
+          <button class="calc-chip active" data-base="149" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
+          <button class="calc-chip" data-base="299" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
+          <button class="calc-chip" data-base="1290" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
+          <button class="calc-chip" data-base="2190" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
         </div>
       </div>
       <div class="calc-options">
@@ -590,7 +590,7 @@ select:focus-visible,textarea:focus-visible{
       </div>
       <div class="calc-result">
         <div class="calc-result-lbl" id="wtPriceLabel">KLEINWAGEN TEILBEKLEBUNG</div>
-        <div class="calc-result-price" id="wtPriceDisplay">ab 125 €</div>
+        <div class="calc-result-price" id="wtPriceDisplay">ab 149 €</div>
         <div class="calc-result-note">Unverbindliche Schätzung · Nettopreis gem. § 19 UStG</div>
       </div>
       <a href="/#kontakt" class="calc-cta-btn">Jetzt Angebot anfordern →</a>

@@ -43,7 +43,7 @@
 <style>
 /* ═══════════ TOKENS ═══════════ */
 :root {
-  --teal:#58d0bd; --teal-d:#3ab8a5; --teal-l:rgba(88,208,189,.1);
+  --teal:#58d0bd;--teal-ink:#177567; --teal-d:#3ab8a5; --teal-l:rgba(88,208,189,.1);
   --navy:#132e50; --navy2:#1e4275; --navy3:#0a1628;
   --off:#f4f7f7; --text:#1a2a2a; --muted:#5a7070; --border:#e0eaea;
   --gold:#f5c000; --purple:#7c3aed;
@@ -78,10 +78,10 @@ a { text-decoration:none; color:inherit; }
 .section.bg-navy { background:var(--navy); }
 .section.bg-dark { background:var(--navy3); }
 
-.eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:.8rem; display:block; }
+.eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal-ink); margin-bottom:.8rem; display:block; }
 .eyebrow.light { color:rgba(88,208,189,.8); }
 .sec-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; color:var(--navy); line-height:1; margin-bottom:.7rem; }
-.sec-title em { color:var(--teal); font-style:normal; }
+.sec-title em { color:var(--teal-ink); font-style:normal; }
 .sec-title.white { color:#fff; }
 .sec-sub { font-size:16px; color:var(--muted); line-height:1.75; max-width:580px; }
 .sec-sub.light { color:rgba(255,255,255,.6); }
@@ -118,19 +118,19 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .nav-links { display:flex; gap:1.1rem; list-style:none; align-items:center; }
 .nav-links a { color:var(--navy); font-size:13px; font-weight:600; transition:color .2s; position:relative; padding-bottom:4px; }
 .nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--teal); transition:width .3s; }
-.nav-links a:hover, .nav-links a.active { color:var(--teal); }
+.nav-links a:hover, .nav-links a.active { color:var(--teal-ink); }
 .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
 .nav-cta { background:var(--teal)!important; color:var(--navy)!important; padding:9px 22px!important; border-radius:6px; font-weight:700!important; }
 .nav-cta::after { display:none!important; }
 .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
 .hamburger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
 .nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
-.nav-phone:hover { color:var(--teal); }
+.nav-phone:hover { color:var(--teal-ink); }
 .nav-phone svg { width:15px; height:15px; flex-shrink:0; }
 .mob-nav { display:none; position:fixed; inset:0; top:var(--nav-h); background:#fff; z-index:499; padding:2rem; overflow-y:auto; }
 .mob-nav.open { display:block; }
 .mob-nav a { display:block; padding:1rem 1.5rem; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
-.mob-nav a:hover { color:var(--teal); }
+.mob-nav a:hover { color:var(--teal-ink); }
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:var(--teal); color:var(--navy); font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
@@ -1175,10 +1175,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="calc-group">
         <span class="calc-lbl">Fahrzeug / Art der Beschriftung</span>
         <div class="calc-chips">
-          <button class="calc-chip active" data-base="125" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
-          <button class="calc-chip" data-base="369" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
-          <button class="calc-chip" data-base="1500" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
-          <button class="calc-chip" data-base="2500" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
+          <button class="calc-chip active" data-base="149" data-label="Kleinwagen Teilbeklebung" type="button">🚗 Kleinwagen</button>
+          <button class="calc-chip" data-base="299" data-label="Transporter Teilbeklebung" type="button">🚐 Transporter</button>
+          <button class="calc-chip" data-base="1290" data-label="Vollfolierung Transporter" type="button">🎨 Vollfolierung</button>
+          <button class="calc-chip" data-base="2190" data-label="LKW-Beschriftung" type="button">🚛 LKW</button>
         </div>
       </div>
       <!-- OPTIONS -->
@@ -1195,7 +1195,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <!-- PRICE DISPLAY -->
       <div class="calc-result">
         <div class="calc-result-lbl" id="priceLabel">KLEINWAGEN TEILBEKLEBUNG</div>
-        <div class="calc-result-price" id="priceDisplay">ab 125 €</div>
+        <div class="calc-result-price" id="priceDisplay">ab 149 €</div>
         <div class="calc-result-note">Unverbindliche Schätzung · Nettopreis gem. § 19 UStG</div>
       </div>
       <!-- CTA -->

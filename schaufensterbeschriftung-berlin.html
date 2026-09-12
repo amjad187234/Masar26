@@ -124,7 +124,7 @@
 }
 </script>
 <style>
-:root{--teal:#58d0bd;--teal-d:#3ab8a5;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#f5b800;--r:10px;--nav-h:72px}
+:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#f5b800;--r:10px;--nav-h:72px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
 body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
@@ -139,7 +139,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px;border-radius:6px;font-weight:700!important}
 .nav-cta::after{display:none!important}
@@ -148,7 +148,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;z-index:800;padding:1.5rem 24px;overflow-y:auto;border-top:1px solid var(--border);flex-direction:column}
 .mob-nav.open{display:flex}
 .mob-nav a{padding:14px 0;font-weight:600;font-size:17px;color:var(--navy);border-bottom:1px solid var(--border)}
-.mob-nav a:hover{color:var(--teal)}
+.mob-nav a:hover{color:var(--teal-ink)}
 .mob-cta{margin-top:1.5rem;background:var(--teal)!important;color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;border:none!important}
 .hero{padding-top:var(--nav-h);min-height:90vh;display:flex;align-items:center;background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 55%,#0d4a4a 100%);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 72% 45%,rgba(88,208,189,.13) 0%,transparent 58%);pointer-events:none}
@@ -172,9 +172,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .section{padding:5rem 0}
 .bg-alt{background:var(--off)}
 .sec-head{text-align:center;margin-bottom:3rem}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy);line-height:1.05;margin-bottom:1rem;text-transform:uppercase}
-.sec-title em{color:var(--teal);font-style:normal}
+.sec-title em{color:var(--teal-ink);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
 .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
@@ -195,7 +195,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid var(--border)}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:15px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);transition:.2s;flex-shrink:0}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
 .faq-a p{padding:0 0 1.2rem;font-size:14px;color:var(--muted);line-height:1.75}

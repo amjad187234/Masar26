@@ -24,7 +24,7 @@
 <meta name="description" content="Werbeagentur Berlin für Unternehmen: Werbetechnik, Grafikdesign & Druckerei. Leuchtreklamen, Fahrzeugbeschriftung, Webdesign und Social Media aus einer Hand.">
 <title>Leistungen – Werbeagentur Berlin | Masar Werbeagentur</title>
 <style>
-:root{--teal:#58d0bd;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--gold:#f5c000;--nav-h:80px;--radius:12px;}
+:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--gold:#f5c000;--nav-h:80px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
@@ -33,9 +33,9 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .btn-dark{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:#fff;padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;}
 .btn-dark:hover{background:var(--teal);color:var(--navy);transform:translateY(-2px);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
-.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;}
-.sec-title em{color:var(--teal);font-style:normal;}
+.sec-title em{color:var(--teal-ink);font-style:normal;}
 .sec-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
 .sec-head{margin-bottom:2.5rem;}
 .divider{border:none;border-top:2px solid var(--border);margin:3.5rem 0;}
@@ -51,7 +51,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;}
 .nav-links a{color:var(--navy);font-size:13px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;text-decoration:none;}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
-.nav-links a:hover,.nav-links a.active{color:var(--teal);}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink);}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:9px 22px!important;border-radius:6px;font-weight:700!important;}
 .nav-cta::after{display:none!important;}
@@ -62,7 +62,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .mob-nav{display:none;position:fixed;inset:0;top:var(--nav-h);background:#fff;z-index:499;padding:2rem;overflow-y:auto;}
 .mob-nav.open{display:block;}
 .mob-nav a{display:block;padding:14px 0;color:var(--navy);font-size:18px;font-weight:600;border-bottom:1px solid var(--border);text-decoration:none;}
-.mob-nav a:hover{color:var(--teal);}
+.mob-nav a:hover{color:var(--teal-ink);}
 .mob-cta{margin-top:1.5rem;display:block;background:var(--teal);color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;}
 .page-hero{padding:calc(var(--nav-h) + 4rem) 0 4rem;background:linear-gradient(150deg,var(--navy3),var(--navy),#0d4a4a);position:relative;overflow:hidden;}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 45%,rgba(88,208,189,.12),transparent 58%);pointer-events:none;pointer-events:none;}
@@ -183,7 +183,7 @@ select:focus-visible,textarea:focus-visible{
   border-radius:0 0 6px 0;z-index:9999;text-decoration:none;}
 .skip-link:focus{top:0;}
 .nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
-.nav-phone:hover { color:#58d0bd; }
+.nav-phone:hover { color:var(--teal-ink); }
 .nav-phone svg { width:15px; height:15px; flex-shrink:0; }
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
