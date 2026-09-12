@@ -221,12 +221,60 @@
         "@type": "Answer",
         "text": "Wir sind in ganz Berlin tätig: Mitte, Wedding, Prenzlauer Berg, Neukölln, Kreuzberg, Charlottenburg, Spandau, Lichtenberg und alle weiteren Bezirke. Auch Brandenburg und Umland möglich."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Leuchtreklame, Lichtwerbung und Lichtreklame?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Praktisch keiner – es sind drei Wörter für dieselbe Sache: beleuchtete Außenwerbung. „Lichtwerbung\" ist der Begriff, den die Branche selbst am häufigsten benutzt, „Leuchtreklame\" der geläufigste im Alltag. Uns ist egal, wie Sie es nennen: Gemeint sind Leuchtbuchstaben, Leuchtkästen, Ausleger und beleuchtete Fassadenschriften."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was kosten LED-Einzelbuchstaben pro Buchstabe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Frontleuchtende Einzelbuchstaben beginnen bei 169 € pro Buchstabe gem. § 19 UStG, hinterleuchtete bei 199 €. Der Preis hängt an der Buchstabenhöhe, am Material der Zarge und an der Montagehöhe. Bei einem sechsbuchstabigen Firmennamen landen Sie damit typischerweise zwischen 1.000 und 1.600 € inklusive Montage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was verbraucht eine Leuchtreklame an Strom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine mittlere LED-Buchstabenanlage zieht 60–120 Watt. Bei zehn Betriebsstunden am Tag und rund 30 ct/kWh sind das etwa 65 bis 130 € im Jahr. Klassisches Neon läge beim Drei- bis Vierfachen. Mit Dämmerungsschalter oder Zeitschaltuhr sinkt der Verbrauch weiter, und die Anlage hält länger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bauen Sie noch echtes Neon mit Glasröhren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auf ausdrücklichen Wunsch ja, wir empfehlen es aber selten. Echtes Neon ist mundgeblasenes Glas unter Hochspannung: bruchempfindlich und im Verbrauch ein Vielfaches. LED in Neon-Optik erreicht heute nahezu denselben Look, hält 50.000 Betriebsstunden und lässt sich dimmen. Gerade im Innenbereich, wo der Neon-Look am häufigsten gefragt ist, ist das die haltbarere Lösung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert bei einem denkmalgeschützten Gebäude?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dann kommt zusätzlich zur Baugenehmigung die Denkmalschutzbehörde ins Spiel, und es gelten Auflagen zu Größe, Farbe und Befestigung. Oft sind nur Einzelbuchstaben zulässig und keine Leuchtkästen, und die Montage muss reversibel sein. Das ist machbar – es dauert nur länger. Sprechen Sie uns früh an, dann prüfen wir die Zulässigkeit, bevor Geld in die Fertigung fließt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warten Sie auch Anlagen, die nicht von Ihnen stammen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir reinigen, prüfen auf Dichtigkeit, tauschen defekte Netzteile und LED-Module – unabhängig davon, wer die Anlage ursprünglich gebaut hat. In den meisten Fällen fällt nicht die LED aus, sondern das Netzteil, und das ist mit überschaubarem Aufwand zu ersetzen."
+      }
     }
   ]
 }
 </script>
 <style>
-:root{--teal:#58d0bd;--teal-ink:#177567;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--muted:#8fa4c0;--r:10px;--nav-h:72px}
+:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--muted:#8fa4c0;--r:10px;--nav-h:72px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
 body{font-family:'Barlow',sans-serif;background:var(--navy3);color:#e8f0fb;line-height:1.65;overflow-x:hidden}
@@ -242,14 +290,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px;border-radius:6px;font-weight:700!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;transition:.3s}
 .mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--navy3);z-index:800;padding:1rem 0;border-bottom:2px solid var(--teal);flex-direction:column}
 .mob-nav.open{display:flex}
 .mob-nav a{padding:1rem 24px;font-weight:600;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.06)}
-.mob-nav a:hover{color:var(--teal-ink)}
+.mob-nav a:hover{color:var(--teal)}
 .mob-cta{background:var(--teal)!important;color:var(--navy)!important;text-align:center;margin:1rem 24px;border-radius:8px;border:none!important}
 
 /* HERO */
@@ -276,9 +324,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 /* SECTION */
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.05;margin-bottom:1rem;text-transform:uppercase}
-.sec-title em{color:var(--teal-ink);font-style:normal}
+.sec-title em{color:var(--teal);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 
 /* CARDS */
@@ -302,11 +350,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:#fff;font-family:'Barlow',sans-serif;font-size:15px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
 .faq-a p{padding:0 0 1.2rem;font-size:14px;color:var(--muted);line-height:1.75}
-.faq-q.open+.faq-a{max-height:400px}
+.faq-q.open+.faq-a{max-height:1200px}
+.lw-wrap{overflow-x:auto;margin-top:2.5rem;border:1px solid rgba(88,208,189,.18);border-radius:var(--r)}
+.lw-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px}
+.lw-table th{background:rgba(88,208,189,.1);color:var(--teal);padding:13px 16px;text-align:left;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.lw-table td{padding:13px 16px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);vertical-align:top}
+.lw-table td:first-child{color:#fff;font-weight:700}
+.lw-table td.num{color:var(--teal);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lw-prose{max-width:780px;margin:2.5rem auto 0;font-size:15.5px;line-height:1.85;color:var(--muted)}
+.lw-prose p{margin-bottom:1.1rem}
+.lw-prose h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;text-transform:uppercase;margin:2.1rem 0 .8rem;letter-spacing:.5px}
+.lw-prose strong{color:#fff}
+.lw-prose a{color:var(--teal);font-weight:600}
+.lw-steps{list-style:none;counter-reset:s;margin-top:2.2rem;display:grid;gap:.9rem;max-width:780px;margin-left:auto;margin-right:auto}
+.lw-steps li{counter-increment:s;position:relative;padding:1.1rem 1.4rem 1.1rem 3.4rem;background:rgba(255,255,255,.035);border:1px solid rgba(88,208,189,.14);border-radius:var(--r);font-size:15px;line-height:1.75;color:var(--muted)}
+.lw-steps li::before{content:counter(s);position:absolute;left:1.3rem;top:1.15rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.15rem;color:var(--teal)}
+.lw-steps strong{display:block;color:#fff;margin-bottom:.15rem}
 
 /* CTA BAND */
 .cta-band{background:linear-gradient(135deg,rgba(88,208,189,.15) 0%,rgba(88,208,189,.05) 100%);border-top:1px solid rgba(88,208,189,.2);border-bottom:1px solid rgba(88,208,189,.2);padding:3.5rem 0;text-align:center}
@@ -658,6 +721,111 @@ select:focus-visible,textarea:focus-visible{
   </div>
 </section>
 
+<!-- BAUFORMEN -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">💡 Bauformen</span>
+      <h2 class="sec-title">Welche <em>Lichtwerbung</em> passt an Ihre Fassade?</h2>
+      <p class="sec-sub">Lichtreklame ist nicht gleich Lichtreklame. Bauform und Leuchtrichtung entscheiden über Wirkung, Preis und Genehmigungsaufwand.</p>
+    </div>
+
+    <div class="lw-wrap">
+      <table class="lw-table">
+        <thead>
+          <tr>
+            <th scope="col">Bauform</th>
+            <th scope="col">Wirkung</th>
+            <th scope="col">Typisch für</th>
+            <th scope="col">Ab</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Einzelbuchstaben, frontleuchtend</td>
+            <td>Klare, direkte Leuchtschrift – der Klassiker</td>
+            <td>Ladengeschäft, Praxis, Kanzlei</td>
+            <td class="num">169 €/Buchst.</td>
+          </tr>
+          <tr>
+            <td>Einzelbuchstaben, hinterleuchtet</td>
+            <td>Weicher Lichtkranz an der Wand, sehr edel</td>
+            <td>Hotel, Agentur, Showroom</td>
+            <td class="num">199 €/Buchst.</td>
+          </tr>
+          <tr>
+            <td>Leuchtkasten</td>
+            <td>Große Fläche, maximale Fernwirkung</td>
+            <td>Supermarkt, Werkstatt, Imbiss</td>
+            <td class="num">890 €</td>
+          </tr>
+          <tr>
+            <td>Leuchttransparent / Lightbox</td>
+            <td>Flach, gleichmäßig ausgeleuchtet, austauschbares Motiv</td>
+            <td>Apotheke, Filiale mit Aktionswechsel</td>
+            <td class="num">1.190 €</td>
+          </tr>
+          <tr>
+            <td>Ausleger (Nasenschild)</td>
+            <td>Sichtbar längs der Straße, nicht nur frontal</td>
+            <td>Enge Straßen, Passagen, Altbau</td>
+            <td class="num">1.490 €</td>
+          </tr>
+          <tr>
+            <td>Neon-Optik in LED</td>
+            <td>Der Neon-Look ohne Gas, Hochspannung und Bruchgefahr</td>
+            <td>Bar, Café, Friseur, Innenraum</td>
+            <td class="num">auf Anfrage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="lw-prose">
+      <p>Alle Preise gem. § 19 UStG. Bei Einzelbuchstaben rechnet sich der Preis pro Buchstabe – ein sechsbuchstabiger Firmenname liegt also anders als ein zwölfbuchstabiger. Was den Preis daneben bewegt: Bauhöhe der Buchstaben, Material der Zarge (Alu ist teurer und langlebiger als Kunststoff), Montagehöhe und ob ein Hubsteiger nötig ist.</p>
+
+      <h3>Warum wir kein echtes Neon mehr verbauen</h3>
+      <p>Echte Neonröhren sind mundgeblasenes Glas unter Hochspannung. Sie sehen fantastisch aus und haben zwei harte Nachteile: Sie brechen, und sie ziehen ein Vielfaches an Strom. Eine LED-Anlage in Neon-Optik erreicht heute praktisch denselben Look, hält 50.000 Betriebsstunden und lässt sich dimmen. Für den Innenbereich, wo der Neon-Look am häufigsten gewünscht wird, ist das die vernünftigere Wahl – wer echtes Glas möchte, bekommt es von uns auf ausdrücklichen Wunsch.</p>
+
+      <h3>Was Licht im Jahr kostet</h3>
+      <p>Eine mittlere LED-Buchstabenanlage zieht etwa 60–120 Watt. Bei zehn Stunden Betrieb täglich und einem Gewerbestrompreis um 30 ct/kWh landen Sie bei rund <strong>65 bis 130 € Stromkosten im Jahr</strong>. Dieselbe Anlage in klassischem Neon läge beim Drei- bis Vierfachen. Ein Dämmerungsschalter oder eine Zeitschaltuhr senkt das noch einmal spürbar und verlängert nebenbei die Lebensdauer – wir bauen beides auf Wunsch mit ein.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GENEHMIGUNG -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">📋 Genehmigung</span>
+      <h2 class="sec-title">Leuchtwerbung in Berlin – <em>was das Amt verlangt</em></h2>
+      <p class="sec-sub">Der Punkt, an dem die meisten Projekte hängen bleiben. Wir übernehmen den Antrag – hier trotzdem, was dahintersteckt.</p>
+    </div>
+
+    <div class="lw-prose">
+      <p>In Berlin gilt eine beleuchtete Werbeanlage als bauliche Anlage. Nach der Bauordnung für Berlin ist sie damit grundsätzlich <strong>genehmigungspflichtig</strong>, und zuständig ist das Bauamt des jeweiligen Bezirks – nicht eine zentrale Stelle. Mitte, Neukölln und Pankow entscheiden also getrennt voneinander, und die Bearbeitungszeiten unterscheiden sich entsprechend.</p>
+      <p>Genehmigungsfrei bleibt in der Regel nur Kleines: unbeleuchtete Schilder unter etwa einem Quadratmeter an der Stätte der Leistung. Sobald Licht dazukommt oder die Anlage über die Fassadenflucht ragt – wie bei einem Ausleger – ist der Antrag fällig.</p>
+    </div>
+
+    <ol class="lw-steps">
+      <li><strong>Bestandsaufnahme</strong>Wir messen die Fassade auf und fotografieren den Standort. Daraus entsteht eine maßstäbliche Ansicht mit der geplanten Anlage.</li>
+      <li><strong>Antrag beim Bezirksamt</strong>Bauantrag mit Lageplan, Fassadenansicht, technischer Beschreibung und Leuchtdichteangabe. Wir reichen ein und führen den Schriftverkehr.</li>
+      <li><strong>Zustimmung des Eigentümers</strong>Als Mieter brauchen Sie die schriftliche Zustimmung des Vermieters – das Amt fragt sie ab. Am besten früh einholen, hier entsteht der meiste Verzug.</li>
+      <li><strong>Bearbeitung</strong>Je nach Bezirk vier bis zwölf Wochen. Wir fertigen erst nach Bescheid, damit keine Anlage entsteht, die nicht hängen darf.</li>
+      <li><strong>Fertigung und Montage</strong>Zwei bis vier Wochen Produktion, die Montage selbst meist an einem Tag.</li>
+    </ol>
+
+    <div class="lw-prose">
+      <h3>Wann es aufwendiger wird</h3>
+      <p>Drei Fälle verlängern das Verfahren regelmäßig. <strong>Denkmalgeschützte Gebäude</strong> – davon hat Berlin reichlich – brauchen zusätzlich die Denkmalschutzbehörde, und dort gelten Auflagen zu Größe, Farbe und Befestigungsart. <strong>Erhaltungsgebiete</strong> mit Gestaltungssatzung schreiben teils vor, dass nur Einzelbuchstaben zulässig sind und Leuchtkästen nicht. Und an <strong>Kreuzungen oder Ampeln</strong> prüft das Amt, ob die Anlage blenden oder mit einem Verkehrssignal verwechselt werden kann – rote und grüne Dauerlichter sind dort heikel.</p>
+      <p>Wer ohne Genehmigung montiert, riskiert eine Rückbauanordnung und ein Bußgeld. Das ist kein theoretisches Risiko: Bei Nachbarschaftsbeschwerden schaut das Amt sehr wohl hin. Sprechen Sie uns früh an, dann klären wir die Zulässigkeit, bevor Geld in die Fertigung fließt.</p>
+
+      <h3>Wartung und Lebensdauer</h3>
+      <p>LED-Module halten rund 50.000 Betriebsstunden – bei zehn Stunden täglich sind das gut dreizehn Jahre. Was vorher ausfällt, ist fast immer das Netzteil, nicht die LED selbst. Deshalb setzen wir Netzteile so, dass sie ohne Demontage der ganzen Anlage tauschbar sind. Einmal jährlich sollte das Gehäuse gereinigt und auf Dichtigkeit geprüft werden; eindringende Feuchtigkeit ist die zweithäufigste Ausfallursache. Wir übernehmen Wartung und Reparatur auch für Anlagen, die nicht von uns stammen. Passend dazu: unsere Seite zur <a href="/aussenwerbung-berlin.html">Außenwerbung in Berlin</a> und zu unbeleuchteten <a href="/schilder-berlin.html">Schildern</a>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section class="section">
   <div class="container">
@@ -685,6 +853,30 @@ select:focus-visible,textarea:focus-visible{
       <div class="faq-item">
         <button class="faq-q">In welchen Berliner Bezirken sind Sie tätig?</button>
         <div class="faq-a"><p>Wir sind in ganz Berlin tätig: Mitte, Wedding, Prenzlauer Berg, Neukölln, Kreuzberg, Charlottenburg, Spandau, Lichtenberg und alle weiteren Bezirke. Auch Brandenburg und Umland möglich.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was ist der Unterschied zwischen Leuchtreklame, Lichtwerbung und Lichtreklame?</button>
+        <div class="faq-a"><p>Praktisch keiner – es sind drei Wörter für dieselbe Sache: beleuchtete Außenwerbung. „Lichtwerbung" ist der Begriff, den die Branche selbst am häufigsten benutzt, „Leuchtreklame" der geläufigste im Alltag. Uns ist egal, wie Sie es nennen: Gemeint sind Leuchtbuchstaben, Leuchtkästen, Ausleger und beleuchtete Fassadenschriften.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was kosten LED-Einzelbuchstaben pro Buchstabe?</button>
+        <div class="faq-a"><p>Frontleuchtende Einzelbuchstaben beginnen bei 169 € pro Buchstabe gem. § 19 UStG, hinterleuchtete bei 199 €. Der Preis hängt an der Buchstabenhöhe, am Material der Zarge und an der Montagehöhe. Bei einem sechsbuchstabigen Firmennamen landen Sie damit typischerweise zwischen 1.000 und 1.600 € inklusive Montage.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was verbraucht eine Leuchtreklame an Strom?</button>
+        <div class="faq-a"><p>Eine mittlere LED-Buchstabenanlage zieht 60–120 Watt. Bei zehn Betriebsstunden am Tag und rund 30 ct/kWh sind das etwa 65 bis 130 € im Jahr. Klassisches Neon läge beim Drei- bis Vierfachen. Mit Dämmerungsschalter oder Zeitschaltuhr sinkt der Verbrauch weiter, und die Anlage hält länger.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Bauen Sie noch echtes Neon mit Glasröhren?</button>
+        <div class="faq-a"><p>Auf ausdrücklichen Wunsch ja, wir empfehlen es aber selten. Echtes Neon ist mundgeblasenes Glas unter Hochspannung: bruchempfindlich und im Verbrauch ein Vielfaches. LED in Neon-Optik erreicht heute nahezu denselben Look, hält 50.000 Betriebsstunden und lässt sich dimmen. Gerade im Innenbereich, wo der Neon-Look am häufigsten gefragt ist, ist das die haltbarere Lösung.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was passiert bei einem denkmalgeschützten Gebäude?</button>
+        <div class="faq-a"><p>Dann kommt zusätzlich zur Baugenehmigung die Denkmalschutzbehörde ins Spiel, und es gelten Auflagen zu Größe, Farbe und Befestigung. Oft sind nur Einzelbuchstaben zulässig und keine Leuchtkästen, und die Montage muss reversibel sein. Das ist machbar – es dauert nur länger. Sprechen Sie uns früh an, dann prüfen wir die Zulässigkeit, bevor Geld in die Fertigung fließt.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Warten Sie auch Anlagen, die nicht von Ihnen stammen?</button>
+        <div class="faq-a"><p>Ja. Wir reinigen, prüfen auf Dichtigkeit, tauschen defekte Netzteile und LED-Module – unabhängig davon, wer die Anlage ursprünglich gebaut hat. In den meisten Fällen fällt nicht die LED aus, sondern das Netzteil, und das ist mit überschaubarem Aufwand zu ersetzen.</p></div>
       </div>
     </div>
   </div>
