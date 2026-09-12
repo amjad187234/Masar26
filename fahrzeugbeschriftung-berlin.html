@@ -184,6 +184,62 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Ist Autobeschriftung dasselbe wie Fahrzeugbeschriftung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, gemeint ist dasselbe. „Autobeschriftung\" wird meist gesagt, wenn es um PKW geht, „Fahrzeugbeschriftung\" ist der Oberbegriff und schließt Transporter, Sprinter, LKW und Anhänger mit ein. Wir beschriften alles davon – vom Kleinwagen der Pflegekraft bis zum Sprinter des Handwerksbetriebs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich eine Fahrzeugfolierung bei der Zulassungsstelle melden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nur bei einer Farbänderung. Wird das Fahrzeug vollflächig in einer anderen Farbe foliert, stimmt die eingetragene Farbe im Fahrzeugschein nicht mehr – das ist der Zulassungsstelle zu melden und wird in die Papiere eingetragen. Es ist eine reine Meldung, keine Abnahme, und kostet wenige Euro. Bei einer Teilbeschriftung mit Logo und Schriftzug auf der Wagenfarbe ändert sich nichts, denn die Grundfarbe bleibt bestehen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Darf ein beklebtes Fahrzeug in die Waschanlage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Textilwäsche ja, ältere Bürstenanlagen besser nicht – sie greifen an den Folienkanten an und können sie mit der Zeit anheben. Beim Hochdruckreiniger mindestens 30 cm Abstand halten, nicht flach auf die Kante zielen und unter 60 °C bleiben. Handwäsche ist am schonendsten. Insektenreste und Vogelkot zeitnah entfernen, Politur und Scheuermittel gehören nicht auf Folie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange steht mein Fahrzeug während der Beschriftung still?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine Teilbeschriftung erledigen wir an einem Tag, meist in wenigen Stunden. Eine Vollverklebung dauert je nach Fahrzeuggröße zwei bis vier Tage, weil jedes Bauteil einzeln bezogen wird. Bei Flotten stimmen wir die Reihenfolge so ab, dass nie mehr als ein Fahrzeug gleichzeitig ausfällt. Die Montage erfolgt in geschlossener Halle bei kontrollierter Temperatur – Verklebung im Freien führt zu Blasen und Kantenablösung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lohnt sich Vollverklebung oder reicht eine Teilbeschriftung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für die meisten Betriebe reicht die Teilbeschriftung. Ein sauber gesetzter Schriftzug auf einem weißen Transporter wird im Verkehr genauso gelesen wie eine Vollfolierung, kostet aber einen Bruchteil und ist beim Wiederverkauf unproblematischer. Zur Vollverklebung raten wir, wenn die Fahrzeugfarbe nicht zur Marke passt oder das Fahrzeug selbst Teil des Auftritts sein soll."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was gehört auf das Fahrzeug – und was nicht?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Drei Dinge: was Sie machen, wie man Sie erreicht, und ein Name, den man sich merkt. Leistungsauflistungen, mehrere Rufnummern und kleine QR-Codes werden im Vorbeifahren nicht gelesen. Die Telefonnummer gehört groß aufs Heck – dort steht der Interessent im Stau hinter Ihnen und hat Zeit, sie zu notieren."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Übernehmen Sie auch das Entfernen alter Beschriftung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir lösen alte Folie rückstandslos ab, auch wenn sie nicht von uns stammt, und bereiten den Lack für die neue Beschriftung vor. Bei sehr alter oder spröder Folie steigt der Aufwand – wir sehen uns das Fahrzeug vorher an und nennen den Preis, bevor wir anfangen."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Was kostet eine Fahrzeugbeschriftung für ein Unternehmen in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -395,6 +451,23 @@ select:focus-visible,textarea:focus-visible{
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+
+.fz-wrap{overflow-x:auto;margin-top:2rem;border:1px solid var(--border);border-radius:var(--r);background:#fff}
+.fz-table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px}
+.fz-table th{background:var(--navy);color:#fff;padding:12px 15px;text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.fz-table td{padding:12px 15px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:top}
+.fz-table tr:last-child td{border-bottom:none}
+.fz-table tr:nth-child(even) td{background:var(--off)}
+.fz-table td:first-child{font-weight:700;color:var(--navy)}
+.fz-table td.n{color:var(--teal-ink);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fz-prose{max-width:780px;margin:2.2rem auto 0;font-size:15.5px;line-height:1.85;color:var(--muted)}
+.fz-prose p{margin-bottom:1.1rem}
+.fz-prose h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 .8rem;letter-spacing:.4px}
+.fz-prose strong{color:var(--navy)}
+.fz-prose a{color:var(--teal-ink);font-weight:600}
+.fz-note{background:rgba(88,208,189,.08);border:1px solid rgba(88,208,189,.3);border-radius:var(--r);padding:1.2rem 1.5rem;margin:1.5rem auto 0;max-width:780px}
+.fz-note p{margin:0;font-size:15px;line-height:1.8;color:var(--muted)}
+.fz-note strong{color:var(--navy)}
 </style>
 </head>
 <body>
@@ -473,6 +546,34 @@ select:focus-visible,textarea:focus-visible{
           <span class="hero-stars">★★★★★</span>
           <span class="hero-trust-txt">· Design + Druck + Montage aus einer Hand</span>
         </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Ist Autobeschriftung dasselbe wie Fahrzeugbeschriftung?</button>
+        <div class="faq-a"><p>Ja, gemeint ist dasselbe. „Autobeschriftung" wird meist gesagt, wenn es um PKW geht, „Fahrzeugbeschriftung" ist der Oberbegriff und schließt Transporter, Sprinter, LKW und Anhänger mit ein. Wir beschriften alles davon – vom Kleinwagen der Pflegekraft bis zum Sprinter des Handwerksbetriebs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Muss ich eine Fahrzeugfolierung bei der Zulassungsstelle melden?</button>
+        <div class="faq-a"><p>Nur bei einer Farbänderung. Wird das Fahrzeug vollflächig in einer anderen Farbe foliert, stimmt die eingetragene Farbe im Fahrzeugschein nicht mehr – das ist der Zulassungsstelle zu melden und wird in die Papiere eingetragen. Es ist eine reine Meldung, keine Abnahme, und kostet wenige Euro. Bei einer Teilbeschriftung mit Logo und Schriftzug auf der Wagenfarbe ändert sich nichts, denn die Grundfarbe bleibt bestehen.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Darf ein beklebtes Fahrzeug in die Waschanlage?</button>
+        <div class="faq-a"><p>Textilwäsche ja, ältere Bürstenanlagen besser nicht – sie greifen an den Folienkanten an und können sie mit der Zeit anheben. Beim Hochdruckreiniger mindestens 30 cm Abstand halten, nicht flach auf die Kante zielen und unter 60 °C bleiben. Handwäsche ist am schonendsten. Insektenreste und Vogelkot zeitnah entfernen, Politur und Scheuermittel gehören nicht auf Folie.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wie lange steht mein Fahrzeug während der Beschriftung still?</button>
+        <div class="faq-a"><p>Eine Teilbeschriftung erledigen wir an einem Tag, meist in wenigen Stunden. Eine Vollverklebung dauert je nach Fahrzeuggröße zwei bis vier Tage, weil jedes Bauteil einzeln bezogen wird. Bei Flotten stimmen wir die Reihenfolge so ab, dass nie mehr als ein Fahrzeug gleichzeitig ausfällt. Die Montage erfolgt in geschlossener Halle bei kontrollierter Temperatur – Verklebung im Freien führt zu Blasen und Kantenablösung.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Lohnt sich Vollverklebung oder reicht eine Teilbeschriftung?</button>
+        <div class="faq-a"><p>Für die meisten Betriebe reicht die Teilbeschriftung. Ein sauber gesetzter Schriftzug auf einem weißen Transporter wird im Verkehr genauso gelesen wie eine Vollfolierung, kostet aber einen Bruchteil und ist beim Wiederverkauf unproblematischer. Zur Vollverklebung raten wir, wenn die Fahrzeugfarbe nicht zur Marke passt oder das Fahrzeug selbst Teil des Auftritts sein soll.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was gehört auf das Fahrzeug – und was nicht?</button>
+        <div class="faq-a"><p>Drei Dinge: was Sie machen, wie man Sie erreicht, und ein Name, den man sich merkt. Leistungsauflistungen, mehrere Rufnummern und kleine QR-Codes werden im Vorbeifahren nicht gelesen. Die Telefonnummer gehört groß aufs Heck – dort steht der Interessent im Stau hinter Ihnen und hat Zeit, sie zu notieren.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Übernehmen Sie auch das Entfernen alter Beschriftung?</button>
+        <div class="faq-a"><p>Ja. Wir lösen alte Folie rückstandslos ab, auch wenn sie nicht von uns stammt, und bereiten den Lack für die neue Beschriftung vor. Bei sehr alter oder spröder Folie steigt der Aufwand – wir sehen uns das Fahrzeug vorher an und nennen den Preis, bevor wir anfangen.</p></div>
       </div>
       <div class="hero-visual">
         <img class="hero-logo-img" src="/logo.webp" alt="Fahrzeugbeschriftung Berlin – Car Wrapping & Auto Folieren von Masar Werbeagentur" loading="eager" width="800" height="800">
@@ -667,6 +768,105 @@ select:focus-visible,textarea:focus-visible{
           <p>Für arabischsprachige Unternehmer in Berlin: Beratung und Abstimmung auf Arabisch möglich – كلامنا عربي.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ENTSCHEIDUNGSHILFE -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">🧭 Entscheidungshilfe</span>
+      <h2 class="sec-title">Teilbeschriftung oder <em>Vollverklebung</em>?</h2>
+      <p class="sec-sub">Die häufigste Frage vor dem Auftrag – und die, bei der am meisten Geld falsch ausgegeben wird.</p>
+    </div>
+
+    <div class="fz-wrap">
+      <table class="fz-table">
+        <thead>
+          <tr>
+            <th scope="col">Umfang</th>
+            <th scope="col">Was drauf kommt</th>
+            <th scope="col">Sinnvoll wenn</th>
+            <th scope="col">Standzeit</th>
+            <th scope="col">Ab</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Teilbeschriftung</td>
+            <td>Logo, Schriftzug, Telefon, Website</td>
+            <td>Fahrzeug bleibt in Wagenfarbe, Budget zählt</td>
+            <td>1 Tag</td>
+            <td class="n">149 €</td>
+          </tr>
+          <tr>
+            <td>Erweiterte Teilbeklebung</td>
+            <td>Zusätzlich Seitenflächen, Heck, Grafikelemente</td>
+            <td>Mehr Fernwirkung ohne Farbwechsel</td>
+            <td>1–2 Tage</td>
+            <td class="n">390 €</td>
+          </tr>
+          <tr>
+            <td>Vollverklebung / Car Wrapping</td>
+            <td>Komplette Karosserie in Wunschfarbe oder Motiv</td>
+            <td>Markenauftritt zählt mehr als Kosten</td>
+            <td>2–4 Tage</td>
+            <td class="n">790 €</td>
+          </tr>
+          <tr>
+            <td>Flottenbeschriftung</td>
+            <td>Einheitliches Layout über alle Fahrzeuge</td>
+            <td>Ab 3 Fahrzeugen – mit Mengenrabatt</td>
+            <td>nach Absprache</td>
+            <td class="n">auf Anfrage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fz-prose">
+      <p>Alle Preise gem. § 19 UStG. Unsere ehrliche Empfehlung für die meisten Berliner Betriebe: <strong>Teilbeschriftung schlägt Vollverklebung</strong>. Ein sauber gesetzter Schriftzug auf weißem Transporter wird im Straßenverkehr genauso gelesen wie eine vollflächige Folierung – kostet aber einen Bruchteil, ist schneller montiert und beim Wiederverkauf unproblematischer. Zur Vollverklebung raten wir, wenn die Fahrzeugfarbe nicht zur Marke passt oder das Fahrzeug selbst Teil des Auftritts ist.</p>
+
+      <h3>Was Ihre Beschriftung tatsächlich leistet</h3>
+      <p>Ein Handwerksfahrzeug in Berlin steht und fährt an einem Werktag an sehr vielen Menschen vorbei – auf der Müllerstraße, an der Seestraße, beim Kunden im Hof. Der entscheidende Unterschied zu bezahlter Werbung: Die Fläche ist <strong>einmal bezahlt und arbeitet dann jahrelang weiter</strong>. Deshalb ist Autobeschriftung für kleine Betriebe fast immer die günstigste Dauerwerbung, die sie haben können.</p>
+      <p>Damit das funktioniert, braucht es nur drei Dinge auf dem Fahrzeug: <strong>was Sie machen, wie man Sie erreicht, und ein Name, den man sich merkt.</strong> Alles darüber hinaus – Leistungsauflistungen, mehrere Rufnummern, QR-Codes im Kleinformat – wird im Vorbeifahren nicht gelesen. Die Telefonnummer gehört groß und aufs Heck, denn dort steht der Interessent im Stau hinter Ihnen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECHT & PRAXIS -->
+<section class="section bg-alt">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">📋 Recht &amp; Praxis</span>
+      <h2 class="sec-title">Was Sie vorher <em>wissen sollten</em></h2>
+      <p class="sec-sub">Zulassung, Leasing, Pflege – die Punkte, die nach dem Auftrag Ärger machen, wenn sie vorher niemand anspricht.</p>
+    </div>
+
+    <div class="fz-prose">
+      <h3>Farbänderung müssen Sie melden</h3>
+      <p>Wird ein Fahrzeug vollflächig in einer <strong>anderen Farbe</strong> foliert, stimmt die im Fahrzeugschein eingetragene Farbe nicht mehr. Nach der Fahrzeug-Zulassungsverordnung ist diese Änderung der Zulassungsstelle mitzuteilen und wird in die Papiere eingetragen – eine reine Meldung, keine Abnahme, und sie kostet wenige Euro. Wer es unterlässt, riskiert bei einer Kontrolle ein Verwarngeld und im Schadensfall Diskussionen mit der Versicherung.</p>
+      <p>Für die klassische <strong>Teilbeschriftung ändert sich nichts</strong>: Logo und Schriftzug auf der Wagenfarbe sind keine Farbänderung im Sinne der Zulassung. Die Grundfarbe bleibt ja, wie sie ist.</p>
+
+      <h3>Leasingfahrzeuge</h3>
+      <p>Beschriftung auf Leasingfahrzeugen ist üblich und in aller Regel problemlos – <strong>lesen Sie aber Ihren Vertrag</strong>. Die meisten Leasinggeber verlangen, dass das Fahrzeug im Originalzustand zurückgegeben wird. Genau dafür ist Folie gemacht: Wir verwenden Automotive-Folien, die sich bei fachgerechter Demontage rückstandslos vom Lack lösen. Der Lack darunter ist nach Jahren oft sogar besser erhalten als die unbeklebte Fläche daneben, weil die Folie ihn vor UV-Strahlung und Steinschlag geschützt hat. Den Rückbau übernehmen wir ebenfalls.</p>
+
+      <h3>Waschanlage und Pflege</h3>
+      <p>Beklebte Fahrzeuge dürfen in die Waschanlage – aber nicht in jede. <strong>Textilwäsche ist unproblematisch, Bürstenanlagen älterer Bauart nicht</strong>: Sie greifen an Folienkanten an und können sie mit der Zeit anheben. Beim Hochdruckreiniger gilt: mindestens 30 cm Abstand, nicht direkt und nicht flach auf die Kante halten, Wassertemperatur unter 60 °C. Handwäsche ist die schonendste Variante und bei einer teuren Vollfolierung die Investition wert.</p>
+      <p>Insektenreste und Vogelkot möglichst zeitnah entfernen – die Säure greift die Oberfläche an, wenn sie tagelang in der Sonne einbrennt. Politur und scheuernde Mittel gehören nicht auf Folie.</p>
+
+      <h3>Wie lange steht mein Fahrzeug still?</h3>
+      <p>Für einen Betrieb ist das oft die wichtigere Frage als der Preis. Eine Teilbeschriftung machen wir <strong>an einem Tag</strong>, meist innerhalb weniger Stunden. Eine Vollverklebung braucht je nach Fahrzeuggröße zwei bis vier Tage, weil jedes Bauteil einzeln bezogen und die Folie kontrolliert verarbeitet werden muss. Bei Flotten stimmen wir die Reihenfolge so ab, dass nie mehr als ein Fahrzeug gleichzeitig ausfällt.</p>
+      <p>Die Montage findet in geschlossener Halle bei kontrollierter Temperatur statt – Folie im Freien bei Berliner Wetter zu verarbeiten führt zu Blasen und Kantenablösung. Wer Ihnen eine Verklebung auf dem Hof anbietet, spart an der falschen Stelle.</p>
+
+      <h3>Haltbarkeit</h3>
+      <p>Wir arbeiten mit Automotive-Gussfolien namhafter Hersteller. Auf ebenen Flächen halten sie <strong>5 bis 7 Jahre</strong>, an stark gewölbten Partien und Kanten etwas weniger. Kräftige Rot- und Orangetöne verblassen naturgemäß eher als Weiß, Schwarz oder Blau. Wer sein Fahrzeug überwiegend im Freien parkt, liegt am unteren Ende der Spanne – Laternenparker in Berlin sollten also eher mit fünf Jahren rechnen als mit sieben.</p>
+    </div>
+
+    <div class="fz-note">
+      <p><strong>Passend dazu:</strong> Wenn zur Fahrzeugflotte auch der Auftritt am Standort gehört, finden Sie hier unsere <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>, <a href="/schilder-berlin.html">Firmenschilder</a> und <a href="/leuchtreklame-berlin.html">Leuchtreklame</a>. Für einheitliches Design über alle Werbemittel hinweg: <a href="/grafikdesign-berlin.html">Grafikdesign</a>.</p>
     </div>
   </div>
 </section>
