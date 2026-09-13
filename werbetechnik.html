@@ -23,6 +23,7 @@
   <meta name="keywords" content="Leuchtreklamen Berlin, LED-Schilder Berlin, Fahrzeugbeschriftung Berlin, Car Wrapping Berlin, Werbetechnik Berlin, Außenwerbung Berlin">
 <meta name="description" content="Werbetechnik aus Berlin-Wedding: Leuchtreklame, Fahrzeugbeschriftung und Schilder – Planung, Fertigung und Montage aus einer Hand. Angebot in 24h.">
 <title>Werbetechnik Berlin – Leuchtreklame, Schilder &amp; Beschriftung | Masar</title>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--nav-h:80px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -92,7 +93,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .svc-card:hover .svc-img{transform:scale(1.05);}
 .svc-icon-only{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--off),#e0eeec);}
 .svc-body{padding:1.5rem;}
-.svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--teal);margin-bottom:.3rem;}
+.svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:#0e6455;margin-bottom:.3rem;}
 .svc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
 .svc-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:.8rem;}
 .svc-list{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
@@ -189,12 +190,12 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
-*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
 select:focus-visible,textarea:focus-visible{
-  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:3px;border-radius:4px;
   box-shadow:0 0 0 5px rgba(88,208,189,.25);
 }
 .skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
@@ -235,6 +236,10 @@ select:focus-visible,textarea:focus-visible{
 .mk-submit:hover{background:#3db8a6}
 .mk-note{text-align:center;font-size:12px;color:#5a7070;margin:.7rem 0 0}
 @media(max-width:600px){.mk-row{grid-template-columns:1fr}.mk-fg input,.mk-fg select,.mk-fg textarea{font-size:16px}}
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 <meta property="og:title" content="Werbetechnik Berlin – Leuchtreklamen & Beschriftung | Masar">
 <meta property="og:description" content="Werbetechnik aus Berlin-Wedding: Leuchtreklame, Fahrzeugbeschriftung und Schilder – Planung, Fertigung und Montage aus einer Hand. Angebot in 24h.">

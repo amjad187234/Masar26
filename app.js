@@ -313,10 +313,11 @@ const Nav = {
 // ═══════════════════════════════════════════════════════════
 const Reveal = {
   init() {
+    if (!('IntersectionObserver' in window)) return;
     const obs = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('in'), i * 80);
+          setTimeout(() => e.target.classList.add('in'), Math.min(i, 4) * 60);
           obs.unobserve(e.target);
         }
       });
@@ -333,10 +334,13 @@ const Reveal = {
 const FAQ = {
   init() {
     document.querySelectorAll('.faq-q').forEach(btn => {
+      if (!btn.hasAttribute('aria-expanded')) btn.setAttribute('aria-expanded', 'false');
+      btn.querySelector('.faq-ic')?.setAttribute('aria-hidden', 'true');
       btn.addEventListener('click', () => {
         const answer = btn.nextElementSibling;
         const icon   = btn.querySelector('.faq-ic');
         const isOpen = answer?.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(!!isOpen));
         if (icon) {
           icon.classList.toggle('open', isOpen);
           icon.textContent = isOpen ? '−' : '+';

@@ -147,6 +147,7 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 /* ═══ TOKENS ═══ */
 :root {
@@ -172,7 +173,7 @@ a { text-decoration:none; color:inherit; }
 .btn-teal:focus-visible { outline:3px solid var(--navy); outline-offset:2px; }
 .btn-outline-light { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.4); padding:12px 28px; border-radius:6px; font-weight:700; font-size:14px; display:inline-flex; align-items:center; cursor:pointer; font-family:inherit; transition:all .25s; }
 .btn-outline-light:hover { border-color:var(--teal); color:var(--teal); }
-.btn-outline-light:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.btn-outline-light:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
 .section { padding:6rem 0; }
 .eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal-ink); margin-bottom:.8rem; display:block; }
 .eyebrow.light { color:rgba(88,208,189,.8); }
@@ -274,7 +275,7 @@ nav.main-nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(2
 }
 .tab-btn[aria-selected="true"] { color:var(--navy); border-bottom-color:var(--teal); }
 .tab-btn:hover { color:var(--navy); }
-.tab-btn:focus-visible { outline:3px solid var(--teal); outline-offset:-3px; border-radius:4px 4px 0 0; }
+.tab-btn:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; outline-offset:-3px; border-radius:4px 4px 0 0; }
 .tab-icon { font-size:1.4rem; line-height:1; }
 
 /* Tab panels */
@@ -333,7 +334,7 @@ nav.main-nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(2
   transition:all .25s; cursor:pointer; font-family:inherit;
 }
 .panel-cta-secondary:hover { border-color:var(--teal); color:var(--teal); }
-.panel-cta-secondary:focus-visible { outline:3px solid var(--teal); outline-offset:2px; }
+.panel-cta-secondary:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
 
 /* Right column — solution card */
 .solution-card {
@@ -438,6 +439,10 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>

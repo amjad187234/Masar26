@@ -41,6 +41,7 @@
 <link rel="alternate" hreflang="de" href="https://masar-werbeagentur.de/">
 <link rel="alternate" hreflang="x-default" href="https://masar-werbeagentur.de/">
 <title>Werbeagentur Berlin | Werbetechnik, Design & Print – Masar</title>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 /* ═══════════ TOKENS ═══════════ */
 :root {
@@ -84,6 +85,7 @@ a { text-decoration:none; color:inherit; }
 .sec-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; color:var(--navy); line-height:1; margin-bottom:.7rem; }
 .sec-title em { color:var(--teal-ink); font-style:normal; }
 .sec-title.white { color:#fff; }
+.sec-title.white em{color:var(--teal)}
 .sec-sub { font-size:16px; color:var(--muted); line-height:1.75; max-width:580px; }
 .sec-sub.light { color:rgba(255,255,255,.6); }
 .sec-head { margin-bottom:3.5rem; }
@@ -183,10 +185,10 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .svc-card:hover .svc-img { transform:scale(1.05); }
 .svc-icon-ph { width:100%; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; font-size:6rem; background:linear-gradient(135deg,var(--off),#ddeee9); }
 .svc-body { padding:1.5rem; }
-.svc-num { font-size:10px; font-weight:700; letter-spacing:3px; color:var(--teal); margin-bottom:.4rem; }
+.svc-num { font-size:10px; font-weight:700; letter-spacing:3px; color:#0e6455; margin-bottom:.4rem; }
 .svc-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
 .svc-desc { font-size:13px; color:var(--muted); line-height:1.75; }
-.svc-link { display:inline-flex; align-items:center; gap:.3rem; color:var(--teal); font-size:12px; font-weight:700; text-decoration:none; margin-top:.75rem; letter-spacing:.3px; transition:gap .2s; }
+.svc-link { display:inline-flex; align-items:center; gap:.3rem; color:#0e6455; font-size:12px; font-weight:700; text-decoration:none; margin-top:.75rem; letter-spacing:.3px; transition:gap .2s; }
 .svc-link:hover { gap:.6rem; }
 
 /* ═══════════ PREMIUM BLOCK ═══════════ */
@@ -274,7 +276,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .faq-list { display:flex; flex-direction:column; max-width:720px; }
 .faq-item { border-bottom:1px solid var(--border); }
 .faq-q { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; cursor:pointer; font-weight:600; font-size:15px; color:var(--navy); gap:1rem; background:none; border:none; width:100%; text-align:left; font-family:inherit; }
-.faq-ic { width:28px; height:28px; border-radius:50%; background:var(--teal-l); display:flex; align-items:center; justify-content:center; color:var(--teal); font-size:18px; flex-shrink:0; transition:transform .3s; }
+.faq-ic { width:28px; height:28px; border-radius:50%; background:var(--teal-l); display:flex; align-items:center; justify-content:center; color:#177567; font-size:18px; flex-shrink:0; transition:transform .3s; }
 .faq-ic.open { transform:rotate(45deg); }
 .faq-a { font-size:14px; color:var(--muted); line-height:1.85; padding-bottom:1.2rem; display:none; }
 .faq-a.open { display:block; }
@@ -283,7 +285,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:4rem; }
 .cinfo-item { display:flex; gap:14px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--border); }
 .cinfo-icon { width:46px; height:46px; background:var(--teal); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:20px; }
-.cinfo-lbl { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); font-weight:700; margin-bottom:4px; }
+.cinfo-lbl { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#0e6455; font-weight:700; margin-bottom:4px; }
 .cinfo-val { font-size:15px; color:var(--navy); font-weight:600; }
 .cinfo-val a { color:inherit; }
 .cform { background:#fff; border:1px solid var(--border); border-radius:var(--r); padding:2.5rem; box-shadow:var(--shadow); position:relative; z-index:2; }
@@ -297,7 +299,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .consent-row { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:1rem; margin-top:.5rem; }
 .consent-row input[type="checkbox"] { width:18px; height:18px; flex-shrink:0; margin-top:2px; accent-color:var(--teal); cursor:pointer; }
 .consent-row label { font-size:12px; color:var(--muted); line-height:1.65; cursor:pointer; }
-.consent-row a { color:var(--teal); text-decoration:underline; }
+.consent-row a { color:#0e6455; text-decoration:underline; }
 .submit-btn { width:100%; background:var(--teal); color:var(--navy); border:none; padding:15px; border-radius:6px; font-family:'Barlow',sans-serif; font-weight:700; font-size:15px; letter-spacing:.5px; cursor:pointer; transition:all .25s; margin-top:.5rem; }
 .submit-btn:hover { background:var(--teal-d); transform:translateY(-1px); }
 
@@ -473,12 +475,12 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
    Replaces outline:none with a visible focus ring on all
    interactive elements for keyboard and assistive technology users */
-*:focus { outline: 3px solid #58d0bd; outline-offset: 2px; }
+*:focus { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
 *:focus:not(:focus-visible) { outline: none; }
-*:focus-visible { outline: 3px solid #58d0bd; outline-offset: 2px; border-radius: 3px; }
+*:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; border-radius: 3px; }
 a:focus-visible, button:focus-visible, input:focus-visible,
 select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
-  outline: 3px solid #58d0bd;
+  outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;
   outline-offset: 3px;
   border-radius: 4px;
   box-shadow: 0 0 0 5px rgba(88,208,189,.25);
@@ -494,6 +496,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 
 @keyframes heroScroll { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(5px);opacity:.8} }
 
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 <script type="application/ld+json">
 {
@@ -704,7 +710,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       "name": "Was kostet eine Fahrzeugbeschriftung in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Eine einfache Teilbeschriftung (Logo + Kontaktdaten) beginnt ab ca. 150 €. Eine Vollfolierung kostet je nach Fahrzeuggröße 800–2.500 €. Wir erstellen Ihnen ein kostenloses Angebot innerhalb von 24 Stunden."
+        "text": "Eine Teilbeschriftung (Logo, Schriftzug, Kontaktdaten) beginnt ab 290 € gem. § 19 UStG. Eine Vollverklebung (Car Wrapping) kalkulieren wir nach Fahrzeuggröße und Umfang individuell. Kostenloses Angebot innerhalb von 24 Stunden."
       }
     },
     {
@@ -1189,7 +1195,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="faq-item"><button class="faq-q">Wie schnell sehe ich Ergebnisse beim Social Media Marketing? <span class="faq-ic">+</span></button><div class="faq-a">Erste Ergebnisse sind oft nach 4–8 Wochen sichtbar. Nachhaltige Reichweite und Wachstum entwickeln sich über 3–6 Monate.</div></div>
       <div class="faq-item"><button class="faq-q">Bieten Sie auch KI-Lösungen an? <span class="faq-ic">+</span></button><div class="faq-a">Ja. Neben Werbetechnik und Design bieten wir auch KI-Lösungen an: von autonomen Agenten bis zu DSGVO-konformen Wissensdatenbanken. Mehr Infos unter <a href="/ki-loesungen/" style="color:var(--teal)">KI-Lösungen</a>.</div></div>
       <div class="faq-item"><button class="faq-q">Brauche ich eine Genehmigung für Außenwerbung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Für Leuchtreklamen und größere Außenwerbeanlagen ist in Berlin eine Baugenehmigung beim Bezirksamt erforderlich. Wir übernehmen die gesamte Antragstellung für Sie – inklusive Planunterlagen.</div></div>
-      <div class="faq-item"><button class="faq-q">Was kostet eine Fahrzeugbeschriftung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Eine einfache Teilbeschriftung (Logo + Kontaktdaten) beginnt ab ca. 150 €. Eine Vollfolierung kostet je nach Fahrzeuggröße 800–2.500 €. Wir erstellen Ihnen ein kostenloses Angebot innerhalb von 24 Stunden.</div></div>
+      <div class="faq-item"><button class="faq-q">Was kostet eine Fahrzeugbeschriftung in Berlin? <span class="faq-ic">+</span></button><div class="faq-a">Eine Teilbeschriftung (Logo, Schriftzug, Kontaktdaten) beginnt ab 290 € gem. § 19 UStG. Eine Vollverklebung (Car Wrapping) kalkulieren wir nach Fahrzeuggröße und Umfang individuell. Kostenloses Angebot innerhalb von 24 Stunden.</div></div>
       <div class="faq-item"><button class="faq-q">Machen Sie auch Schaufensterbeschriftung und Firmenschilder? <span class="faq-ic">+</span></button><div class="faq-a">Ja! Schaufensterfolien, Firmenschilder, Aufkleber, Fassadenbeschriftung und Außenwerbung jeder Art gehören zu unserem Kerngeschäft. Sprechen Sie uns an – wir unterbreiten Ihnen ein individuelles Angebot innerhalb von 24 Stunden.</div></div>
       <div class="faq-item"><button class="faq-q">Welche Zahlungsmöglichkeiten bieten Sie an? <span class="faq-ic">+</span></button><div class="faq-a">Wir akzeptieren Banküberweisung und Barzahlung bei Abholung. Im Online-Print-Shop zahlen Sie sicher per Kreditkarte. Für größere Projekte ist Teilzahlung auf Anfrage möglich.</div></div>
     </div>
@@ -1336,7 +1342,7 @@ window.addEventListener('scroll',()=>{
 
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
-  if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),i*80);
+  if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),Math.min(i,4)*60);
 }),{threshold:.08});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 

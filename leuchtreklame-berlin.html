@@ -279,6 +279,7 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--muted:#8fa4c0;--r:10px;--nav-h:72px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -401,15 +402,15 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .foot-logo img{height:36px;width:auto}
 .foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
-.foot-desc{font-size:14px;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
+.foot-desc{font-size:14px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
 .foot-social{display:flex;gap:.8rem}
 .fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
 .fsoc svg{width:18px;height:18px;fill:currentColor}
 .fsoc:hover{background:var(--teal);color:var(--navy)}
 .foot-col h5{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
-.foot-col a{display:block;font-size:14px;color:var(--muted);margin-bottom:.5rem;transition:color .2s}
+.foot-col a{display:block;font-size:14px;color:#8fa4c0;margin-bottom:.5rem;transition:color .2s}
 .foot-col a:hover{color:#fff}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:var(--muted)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:#8fa4c0}
 .foot-legal{display:flex;gap:1.5rem}
 .foot-legal a:hover{color:#fff}
 
@@ -482,12 +483,12 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .svc-picked-lbl{font-size:13px;color:var(--teal);margin-top:.4rem;font-weight:600;}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
-*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
 select:focus-visible,textarea:focus-visible{
-  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:3px;border-radius:4px;
   box-shadow:0 0 0 5px rgba(88,208,189,.25);
 }
 .skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
@@ -500,6 +501,10 @@ select:focus-visible,textarea:focus-visible{
 .mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -589,12 +594,12 @@ select:focus-visible,textarea:focus-visible{
   <div class="container">
     <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:var(--teal);"><span itemprop="name">Home</span></a>
+        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
         <meta itemprop="position" content="1">
       </li>
       <li style="opacity:.4;">/</li>
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:var(--teal);"><span itemprop="name">Werbetechnik</span></a>
+        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a>
         <meta itemprop="position" content="2">
       </li>
       <li style="opacity:.4;">/</li>
@@ -955,7 +960,7 @@ select:focus-visible,textarea:focus-visible{
         <div class="fg"><label for="cf-nachricht">Ihre Nachricht</label><textarea id="cf-nachricht" name="nachricht" placeholder="Kurze Beschreibung: Größe, Standort, Wunschtermin..."></textarea></div>
         <div style="display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;">
           <input type="checkbox" id="lk-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
-          <label for="lk-consent" style="font-size:12px;color:var(--muted);line-height:1.65;">Ich habe die <a href="/datenschutz.html" style="color:var(--teal);">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art. 6 Abs. 1 lit. b DSGVO). *</label>
+          <label for="lk-consent" style="font-size:12px;color:var(--muted);line-height:1.65;">Ich habe die <a href="/datenschutz.html" style="color:#0e6455;">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art. 6 Abs. 1 lit. b DSGVO). *</label>
         </div>
         <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
         <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">🔒 Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
@@ -1025,7 +1030,7 @@ select:focus-visible,textarea:focus-visible{
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
 
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in')}}),{threshold:.1});
+const obs=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in');o.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.svc-card,.why-item,.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
 document.querySelectorAll('.faq-q').forEach(btn=>{

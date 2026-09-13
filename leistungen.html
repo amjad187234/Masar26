@@ -23,6 +23,7 @@
   <meta name="keywords" content="Werbeagentur Leistungen Berlin, Leuchtreklamen, Fahrzeugbeschriftung, Grafikdesign, Webdesign, Druck Berlin">
 <meta name="description" content="Alle Leistungen von Masar Berlin-Wedding auf einen Blick: Werbetechnik, Fahrzeugbeschriftung, Schilder, Leuchtreklame, Druck, Grafikdesign und Social Media.">
 <title>Leistungen im Überblick – Werbetechnik, Druck & Design | Masar</title>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--teal-l:rgba(88,208,189,.1);--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--gold:#f5c000;--nav-h:80px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
@@ -92,7 +93,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .svc-card:hover .svc-img{transform:scale(1.05);}
 .svc-icon-only{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:5rem;background:linear-gradient(135deg,var(--off),#e0eeec);}
 .svc-body{padding:1.4rem;}
-.svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--teal);margin-bottom:.3rem;}
+.svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:#0e6455;margin-bottom:.3rem;}
 .svc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
 .svc-desc{font-size:13px;color:var(--muted);line-height:1.7;}
 .pb{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,.1);}
@@ -170,12 +171,12 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #58d0bd;outline-offset:2px;}
+*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
-*:focus-visible{outline:3px solid #58d0bd;outline-offset:2px;border-radius:3px;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
 select:focus-visible,textarea:focus-visible{
-  outline:3px solid #58d0bd;outline-offset:3px;border-radius:4px;
+  outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:3px;border-radius:4px;
   box-shadow:0 0 0 5px rgba(88,208,189,.25);
 }
 .skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;
@@ -214,6 +215,10 @@ select:focus-visible,textarea:focus-visible{
 .mk-submit:hover{background:#3db8a6}
 .mk-note{text-align:center;font-size:12px;color:#5a7070;margin:.7rem 0 0}
 @media(max-width:600px){.mk-row{grid-template-columns:1fr}.mk-fg input,.mk-fg select,.mk-fg textarea{font-size:16px}}
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 </style>
 <meta property="og:title" content="Leistungen im Überblick – Werbetechnik, Druck & Design | Masar">
 <meta property="og:description" content="Werbeagentur Berlin Leistungen für Unternehmen: Werbetechnik, Grafikdesign & Druckerei. Leuchtreklamen, Fahrzeugbeschriftung, Webdesign und Social Media – alles aus einer Hand.">
@@ -609,7 +614,7 @@ select:focus-visible,textarea:focus-visible{
       <details>
         <summary>Bieten Sie auch Expressdruck in Berlin an?</summary>
         <div class="faq-answer">
-          <p>Ja, bei dringenden Aufträgen – z. B. für Messen, Events oder kurzfristige Kampagnen – können wir viele Produkte innerhalb von 24 bis 48 Stunden produzieren und liefern. Bitte kontaktieren Sie uns direkt telefonisch unter <a href="tel:01785143918" style="color:var(--teal);font-weight:600;">0178 514 3918</a> oder per WhatsApp, damit wir die Machbarkeit sofort prüfen können.</p>
+          <p>Ja, bei dringenden Aufträgen – z. B. für Messen, Events oder kurzfristige Kampagnen – können wir viele Produkte innerhalb von 24 bis 48 Stunden produzieren und liefern. Bitte kontaktieren Sie uns direkt telefonisch unter <a href="tel:01785143918" style="color:#0e6455;font-weight:600;">0178 514 3918</a> oder per WhatsApp, damit wir die Machbarkeit sofort prüfen können.</p>
         </div>
       </details>
       <details>

@@ -132,15 +132,22 @@ DirectoryIndex index.html index.php
 
 # ─── CACHE-CONTROL HEADERS ─────────────────────────────────────
 <IfModule mod_headers.c>
-  # HTML: no-store prevents stale pages
+  # HTML: always revalidate, but keep the back/forward cache working.
+  # no-store would disable bfcache, making every Back navigation a full reload.
   <FilesMatch "\.(html|htm|php)$">
-    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
-    Header always set Pragma "no-cache"
+    Header always set Cache-Control "no-cache, must-revalidate, max-age=0"
   </FilesMatch>
 
-  # Static assets: immutable for 1 year
-  <FilesMatch "\.(css|js|woff|woff2|ttf|otf)$">
+  # Fonts never change under a given filename -> safe to freeze for a year.
+  <FilesMatch "\.(woff|woff2|ttf|otf)$">
     Header always set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # CSS/JS are served under fixed, unversioned names (/app.js, /css/viral-ui.css,
+  # /fonts.css), so "immutable" would hide every future fix from returning
+  # visitors for up to a year with no way to force a refresh.
+  <FilesMatch "\.(css|js)$">
+    Header always set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
   </FilesMatch>
 
   # Images: 6 months
