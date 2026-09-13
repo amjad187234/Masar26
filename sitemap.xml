@@ -10,6 +10,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Über uns -->
+  <url>
+    <loc>https://masar-werbeagentur.de/ueber-uns.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Leistungsübersicht -->
   <url>
     <loc>https://masar-werbeagentur.de/leistungen.html</loc>
