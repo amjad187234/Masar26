@@ -46,6 +46,7 @@
   "url": "https://masar-werbeagentur.de/messebeschriftung-berlin.html",
   "provider": {
     "@type": "LocalBusiness",
+    "@id": "https://masar-werbeagentur.de/#identity",
     "name": "Masar Werbeagentur",
     "url": "https://masar-werbeagentur.de",
     "telephone": "+49 178 514 3918",
@@ -74,7 +75,12 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
-    "priceSpecification": "Roll-up Display ab 99 € gem. § 19 UStG, Messewand individuelles Angebot gem. § 19 UStG, Beachflag ab 129 € gem. § 19 UStG",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": true,
+      "description": "Roll-up Display ab 99 € gem. § 19 UStG, Messewand individuelles Angebot gem. § 19 UStG, Beachflag ab 129 € gem. § 19 UStG"
+    },
     "availability": "https://schema.org/InStock"
   },
   "hasOfferCatalog": {

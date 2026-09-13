@@ -46,6 +46,7 @@
   "url": "https://masar-werbeagentur.de/schilder-berlin.html",
   "provider": {
     "@type": "LocalBusiness",
+    "@id": "https://masar-werbeagentur.de/#identity",
     "name": "Masar Werbeagentur",
     "url": "https://masar-werbeagentur.de",
     "telephone": "+49 178 514 3918",
@@ -74,7 +75,12 @@
   "offers": {
     "@type": "Offer",
     "priceCurrency": "EUR",
-    "priceSpecification": "Hinweis- und Sicherheitsschild ab 45 € gem. § 19 UStG, Türschild ab 69 € gem. § 19 UStG, Firmenschild Alu-Dibond ab 149 € gem. § 19 UStG; Edelstahlschild graviert nach individuellem Angebot",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": true,
+      "description": "Hinweis- und Sicherheitsschild ab 45 € gem. § 19 UStG, Türschild ab 69 € gem. § 19 UStG, Firmenschild Alu-Dibond ab 149 € gem. § 19 UStG; Edelstahlschild graviert nach individuellem Angebot"
+    },
     "availability": "https://schema.org/InStock"
   },
   "hasOfferCatalog": {
