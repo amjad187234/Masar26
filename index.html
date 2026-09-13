@@ -154,7 +154,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 
 /* ═══════════ STATS ═══════════ */
 .stats { background:var(--navy3); border-top:1px solid rgba(88,208,189,.1); }
-.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+.stats-grid { display:grid; grid-template-columns:repeat(2,1fr); }
 .stat { padding:2.5rem 1.5rem; text-align:center; border-right:1px solid rgba(255,255,255,.05); }
 .stat:last-child { border-right:none; }
 .stat-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); color:var(--teal); line-height:1; }
@@ -817,11 +817,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
           <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:-.8rem;margin-bottom:1rem;">Entdecken Sie unser vollständiges Leistungsportfolio auf der <a href="/leistungen.html" style="color:var(--teal);text-decoration:underline;font-weight:600;">Leistungsübersicht</a>.</p>
-        <div class="hero-trust">
-          <span class="hero-trust-txt">Bewertet mit</span>
-          <span class="hero-stars">★★★★★</span>
-          <span class="hero-trust-txt">von unseren Kunden</span>
-        </div>
         <div style="text-align:center;padding-top:2rem;" class="hero-scroll">
           <a href="#leistungen" aria-label="Scrollen" style="display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .2s;text-decoration:none;" onmouseover="this.style.color='rgba(88,208,189,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">
             Entdecken
@@ -860,9 +855,7 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 <div class="stats">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat"><div class="stat-num" data-count="120" data-suffix="+">120+</div><div class="stat-lbl">Projekte umgesetzt</div></div>
       <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
-      <div class="stat"><div class="stat-num" data-count="100" data-suffix="%">100%</div><div class="stat-lbl">Qualitätsgarantie</div></div>
       <div class="stat"><div class="stat-num" data-count="24" data-suffix="h">24h</div><div class="stat-lbl">Angebot per E-Mail</div></div>
     </div>
   </div>
@@ -1091,23 +1084,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
   </div>
 </section>
 
-<!-- RESULTS -->
-<section class="section bg-dark">
-  <div class="container">
-    <div class="sec-head center reveal">
-      <span class="eyebrow light">Ergebnisse</span>
-      <h2 class="sec-title white">Was wir <em>erreichen</em></h2>
-      <p class="sec-sub light">Echte Resultate für echte Unternehmen – messbar, nachhaltig und wirkungsvoll.</p>
-    </div>
-    <div class="results-grid">
-      <div class="result-card reveal"><div class="result-num">120+</div><div class="result-lbl">Erfolgreiche Projekte abgeschlossen</div></div>
-      <div class="result-card reveal"><div class="result-num">100%</div><div class="result-lbl">Qualitätsgarantie bei jedem Auftrag</div></div>
-      <div class="result-card reveal"><div class="result-num">24h</div><div class="result-lbl">Express-Service auf Anfrage</div></div>
-      <div class="result-card reveal"><div class="result-num">5★</div><div class="result-lbl">Kundenbewertung durchschnittlich</div></div>
-    </div>
-  </div>
-</section>
-
 <!-- WHY US -->
 <section class="section">
   <div class="container">
@@ -1121,7 +1097,6 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
       <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Full-Service aus einer Hand</div><div class="why-desc">Design, Produktion, Montage und Marketing – ein Ansprechpartner, keine Schnittstellen, keine Überraschungen.</div></div>
       <div class="why-card reveal"><div class="why-icon">📍</div><div class="why-title">Direkt vor Ort in Wedding</div><div class="why-desc">Unser Büro ist in Bristolstraße 19HN, Berlin-Wedding. Schnelle Reaktion, kurze Wege, persönlicher Kontakt.</div></div>
       <div class="why-card reveal"><div class="why-icon">💎</div><div class="why-title">Grafikdesign inklusive</div><div class="why-desc">Kein eigenes Design? Kein Problem. Professionelles Grafikdesign ist bei allen Aufträgen immer inklusive.</div></div>
-      <div class="why-card reveal"><div class="why-icon">♾️</div><div class="why-title">Unbegrenzte Korrekturen</div><div class="why-desc">Wir arbeiten so lange, bis Sie 100 % zufrieden sind. Keine versteckten Kosten für Überarbeitungen.</div></div>
       <div class="why-card reveal"><div class="why-icon">🤖</div><div class="why-title">KI-gestützte Lösungen</div><div class="why-desc">Wir setzen modernste KI-Technologie ein – für smarte Automatisierung, schnellere Ergebnisse und mehr Effizienz für Ihr Business.</div></div>
     </div>
   </div>
