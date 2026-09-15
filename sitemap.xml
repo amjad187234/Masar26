@@ -10,6 +10,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Standort Berlin-Wedding -->
+  <url>
+    <loc>https://masar-werbeagentur.de/werbetechnik-berlin-wedding.html</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Über uns -->
   <url>
     <loc>https://masar-werbeagentur.de/ueber-uns.html</loc>
