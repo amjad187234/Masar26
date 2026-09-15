@@ -894,10 +894,10 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
         <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
         <input type="hidden" name="_autoresponse" value="Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden. – Masar Werbeagentur Berlin | Tel: 0178 514 3918">
         <div class="form-grid">
-          <div class="fg"><label for="name">Ihr Name *</label><input type="text" id="name" name="name" placeholder="Max Mustermann" required></div>
-          <div class="fg"><label for="email">E-Mail *</label><input type="email" id="email" name="email" placeholder="max@firma.de" required></div>
+          <div class="fg"><label for="name">Ihr Name *</label><input type="text" id="name" name="name" autocomplete="name" placeholder="Max Mustermann" required></div>
+          <div class="fg"><label for="email">E-Mail *</label><input type="email" id="email" name="email" autocomplete="email" placeholder="max@firma.de" required></div>
         </div>
-        <div class="fg"><label for="tel">Telefon</label><input type="tel" id="tel" name="telefon" placeholder="0178 000 0000"></div>
+        <div class="fg"><label for="tel">Telefon</label><input type="tel" id="tel" name="telefon" autocomplete="tel" placeholder="0178 000 0000"></div>
         <div class="fg"><label for="beschreibung">Was benötigen Sie? *</label><textarea id="beschreibung" name="beschreibung" placeholder="z. B. Schaufensterfolie für mein Restaurant in Mitte – ca. 3m × 1,5m, Logo + Öffnungszeiten..." required></textarea></div>
         <div style="display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;">
           <input type="checkbox" id="sf-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
