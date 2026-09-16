@@ -18,6 +18,7 @@
   var CONSENT_KEY  = 'masarCookieConsent';
   var DATE_KEY     = 'masarConsentDate';
   var EXPIRY_DAYS  = 365;
+  var GA_ID        = 'G-TS9RE2RHDH';
 
   // ─── STATE ────────────────────────────────────────────────
   var consentState = {
@@ -64,15 +65,23 @@
   }
 
   // ─── LOAD TRACKING (nur nach Einwilligung) ────────────────
+  var analyticsLoaded = false;
+
   function loadAnalytics() {
-    // Google Analytics — nur wenn eingewilligt
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag(){dataLayer.push(arguments);}
-    // gtag('js', new Date());
-    // var s = document.createElement('script');
-    // s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-    // s.async = true;
-    // document.head.appendChild(s);
+    // Google Analytics 4 — nur wenn eingewilligt
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+
+    var s = document.createElement('script');
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    s.async = true;
+    document.head.appendChild(s);
+
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
   }
 
   function loadMarketing() {
