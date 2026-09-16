@@ -237,16 +237,12 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 @media(max-width:480px){ .prozess-grid { grid-template-columns:1fr; } }
 
 /* ═══════════ CONTACT EXTRAS ═══════════ */
-.contact-extras { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:2rem; max-width:640px; margin-left:auto; margin-right:auto; }
+.contact-extras { display:grid; grid-template-columns:1fr; gap:1.2rem; margin-top:2rem; max-width:640px; margin-left:auto; margin-right:auto; }
 .hours-box { background:rgba(255,255,255,.06); border:1px solid rgba(88,208,189,.2); border-radius:var(--r); padding:1.4rem 1.6rem; }
 .hours-box-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:.9rem; }
 .hours-row { display:flex; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.55); padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
 .hours-row:last-child { border-bottom:none; }
 .hours-row .day { color:rgba(255,255,255,.85); }
-.gmap-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.6rem; background:rgba(88,208,189,.08); border:1px solid rgba(88,208,189,.22); border-radius:var(--r); padding:1.4rem; color:var(--teal); font-weight:700; font-size:14px; text-decoration:none; transition:all .25s; text-align:center; }
-.gmap-btn span { font-size:2rem; }
-.gmap-btn:hover { background:rgba(88,208,189,.15); transform:translateY(-2px); }
-@media(max-width:500px){ .contact-extras { grid-template-columns:1fr; } }
 
 /* ═══════════ FAQ ═══════════ */
 .faq-list { display:flex; flex-direction:column; max-width:720px; }
@@ -1181,10 +1177,6 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
         <div class="hours-row"><span class="day">Sonntag</span><span>Geschlossen</span></div>
         <div class="hours-row"><span class="day">Vor Ort</span><span>Termin nach Vereinbarung</span></div>
       </div>
-      <a href="https://www.google.com/maps/search/Bristolstraße+19E+13349+Berlin" target="_blank" rel="noopener noreferrer" class="gmap-btn">
-        <span>📍</span>
-        Auf Google Maps<br>öffnen →
-      </a>
     </div>
   </div>
 </div>
