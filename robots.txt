@@ -1,3 +1,7 @@
+# Masar Werbeagentur Berlin
+# Such- und KI-Crawler sind ausdruecklich willkommen.
+# Gesperrt sind nur interne Pfade ohne Inhalt fuer Besucher.
+
 User-agent: *
 Allow: /
 Allow: /css/
@@ -12,16 +16,5 @@ Disallow: /mail.php
 Disallow: /danke.html
 Disallow: /qr/
 Disallow: /qr.html
-Crawl-delay: 1
-
-# AI-Crawler blockieren
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
 
 Sitemap: https://masar-werbeagentur.de/sitemap.xml
