@@ -125,12 +125,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .filter-count{font-weight:600;opacity:.6;margin-left:.35rem}
 
 /* ───────── Galerie ───────── */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:start}
 .gal-item{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--off);border:1px solid var(--border);cursor:zoom-in;padding:0;transition:transform .25s,box-shadow .25s,border-color .25s;display:block;width:100%}
 .gal-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(88,208,189,.18);border-color:var(--teal)}
-/* Kachel bleibt quadratisch, das Bild wird nie beschnitten:
-   quadratische Fotos füllen sie ganz aus, hochformatige Seiten stehen mittig drin. */
-.gal-item img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#fff;display:block}
+/* Kein festes Format: jede Kachel ist so hoch wie ihr Bild.
+   width/height am Tag geben das Seitenverhältnis vor, damit vor dem Laden nichts springt. */
+.gal-item img{width:100%;height:auto;display:block}
 .gal-item .gal-tag{position:absolute;left:10px;bottom:10px;background:rgba(19,46,80,.86);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 11px;border-radius:5px;backdrop-filter:blur(4px)}
 .gal-item[hidden]{display:none}
 .gal-empty{text-align:center;color:var(--muted);font-size:15px;padding:2rem 0}
