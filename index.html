@@ -106,7 +106,7 @@ a { text-decoration:none; color:inherit; }
 nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,255,.97); border-bottom:2px solid var(--teal); box-shadow:0 2px 20px rgba(0,0,0,.06); backdrop-filter:blur(16px); }
 .nav-inner { max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:var(--nav-h); }
 .nav-logo { display:flex; align-items:center; gap:10px; }
-.nav-logo img { height:56px; object-fit:contain; }
+.nav-logo img { height:56px; object-fit:contain;width:auto;}
 .nav-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:var(--navy); letter-spacing:2px; display:none; }
 .nav-links { display:flex; gap:1.1rem; list-style:none; align-items:center; }
 .nav-links a { color:var(--navy); font-size:13px; font-weight:600; transition:color .2s; position:relative; padding-bottom:4px; }
@@ -281,7 +281,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 footer { background:#060e1a; padding:4rem 0 2rem; }
 .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.06); }
 .foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
-.foot-logo img { height:54px; object-fit:contain; }
+.foot-logo img { height:54px; object-fit:contain;width:auto;}
 .foot-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; color:var(--teal); letter-spacing:2px; display:none; }
 .foot-desc { font-size:13px; color:rgba(255,255,255,.38); line-height:1.85; margin-bottom:1.2rem; }
 .foot-social { display:flex; gap:.7rem; }
@@ -672,7 +672,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
-      <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="800" height="800">
       <span class="nav-logo-txt">MASAR</span>
     </a>
     <ul class="nav-links" role="list">
@@ -732,7 +732,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-logo-img" src="logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager">
+        <img class="hero-logo-img" src="logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" width="800" height="800">
       </div>
     </div>
   </div>
@@ -818,7 +818,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     <div class="svc-grid-3">
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="leuchtreklamen.webp" alt="Leuchtreklame Berlin – Masar Werbeagentur" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>💡</div>'">
+          <img class="svc-img" src="leuchtreklamen.webp" alt="Leuchtreklame Berlin – Masar Werbeagentur" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>💡</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">01 · HIGHLIGHT</div>
@@ -829,7 +829,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="fahrzeug.webp" alt="Fahrzeugbeschriftung Berlin – Car Wrapping & Folierung" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🚗</div>'">
+          <img class="svc-img" src="fahrzeug.webp" alt="Fahrzeugbeschriftung Berlin – Car Wrapping & Folierung" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🚗</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">02</div>
@@ -840,7 +840,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="banner.webp" alt="Firmenschilder und Außenwerbung Berlin – Werbetechnik Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🪧</div>'">
+          <img class="svc-img" src="banner.webp" alt="Firmenschilder und Außenwerbung Berlin – Werbetechnik Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🪧</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">03</div>
@@ -867,7 +867,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     <div class="svc-grid-3">
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="flyer.webp" alt="Flyer und Visitenkarten Druckerei Berlin – Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📋</div>'">
+          <img class="svc-img" src="flyer.webp" alt="Flyer und Visitenkarten Druckerei Berlin – Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📋</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">01</div>
@@ -878,7 +878,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="poster.webp" alt="Plakate und Poster Großformat Druck Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🖼️</div>'">
+          <img class="svc-img" src="poster.webp" alt="Plakate und Poster Großformat Druck Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🖼️</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">02</div>
@@ -889,7 +889,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="katalog.webp" alt="Kataloge und Broschüren Druckerei Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📚</div>'">
+          <img class="svc-img" src="katalog.webp" alt="Kataloge und Broschüren Druckerei Berlin" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📚</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">03</div>
@@ -900,7 +900,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="druck.webp" alt="CMYK Druck und Verpackung Berlin – Masar Werbeagentur" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📦</div>'">
+          <img class="svc-img" src="druck.webp" alt="CMYK Druck und Verpackung Berlin – Masar Werbeagentur" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>📦</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">04</div>
@@ -911,7 +911,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="sticker.webp" alt="Aufkleber und Sticker Druck Berlin – wasserfest individuell" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🏷️</div>'">
+          <img class="svc-img" src="sticker.webp" alt="Aufkleber und Sticker Druck Berlin – wasserfest individuell" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🏷️</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">05</div>
@@ -922,7 +922,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       </div>
       <div class="svc-card reveal">
         <div class="svc-img-wrap">
-          <img class="svc-img" src="rollup.webp" alt="Roll-ups und Textildruck Berlin – Messedisplays Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🖥️</div>'">
+          <img class="svc-img" src="rollup.webp" alt="Roll-ups und Textildruck Berlin – Messedisplays Masar" loading="lazy" onerror="this.parentElement.innerHTML='<div class=svc-icon-ph>🖥️</div>'" width="1080" height="1350">
         </div>
         <div class="svc-body">
           <div class="svc-num">06</div>
@@ -944,7 +944,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
     <div class="pb reveal">
       <div class="pb-img">
-        <img src="grafikdesign.webp" alt="Grafikdesign Berlin – Corporate Identity & Logo-Design von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy)';this.style.minHeight='380px'">
+        <img src="grafikdesign.webp" alt="Grafikdesign Berlin – Corporate Identity & Logo-Design von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy)';this.style.minHeight='380px'" width="1080" height="1350">
       </div>
       <div class="pb-body dk">
         <div class="pb-ey">✦ Branding & Corporate Identity</div>
@@ -971,7 +971,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
     <div class="pb rev reveal">
       <div class="pb-img">
-        <img src="webdesign.webp" alt="Webdesign Berlin – Professionelle Websites & Online-Shops von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy2)';this.style.minHeight='380px'">
+        <img src="webdesign.webp" alt="Webdesign Berlin – Professionelle Websites & Online-Shops von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy2)';this.style.minHeight='380px'" width="1080" height="1350">
       </div>
       <div class="pb-body lt">
         <div class="pb-ey">✦ Moderne Websites & Online-Shops</div>
@@ -1187,7 +1187,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="800" height="800">
           <span class="foot-logo-txt">MASAR</span>
         </div>
         <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>

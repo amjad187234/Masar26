@@ -243,7 +243,7 @@ a{text-decoration:none;color:inherit;}
 nav.main-nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-shadow:0 2px 20px rgba(0,0,0,.06);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
 .nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
 .nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo img{height:56px;object-fit:contain;}
+.nav-logo img{height:56px;object-fit:contain;width:auto;}
 .nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:28px;color:var(--navy);letter-spacing:2px;display:none;}
 .nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;}
 .nav-links a{color:var(--navy);font-size:13px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;}
@@ -407,7 +407,7 @@ input[type="range"]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 3px var(--n
 footer{background:#060e1a;padding:4rem 0 2rem;}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
 .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:1.2rem;}
-.foot-logo img{height:48px;object-fit:contain;}
+.foot-logo img{height:48px;object-fit:contain;width:auto;}
 .foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:22px;color:#fff;letter-spacing:2px;}
 .foot-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.75;margin-bottom:1.5rem;}
 .foot-social{display:flex;gap:.8rem;}
@@ -492,7 +492,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 <nav class="main-nav" aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
-      <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="800" height="800">
       <span class="nav-logo-txt">MASAR</span>
     </a>
     <ul class="nav-links" role="list">
@@ -1067,7 +1067,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" width="800" height="800">
           <span class="foot-logo-txt">MASAR</span>
         </div>
         <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>
