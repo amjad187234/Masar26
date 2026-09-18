@@ -220,7 +220,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-cta::after{display:none!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:.3s}
-.mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#fff;z-index:800;padding:1.5rem 24px;border-top:1px solid var(--border);flex-direction:column}
+.mob-nav{display:none;position:fixed;height:auto;max-height:calc(100vh - var(--nav-h));overflow-y:auto;top:var(--nav-h);left:0;right:0;background:#fff;z-index:800;padding:1.5rem 24px;border-top:1px solid var(--border);flex-direction:column}
 .mob-nav.open{display:flex}
 .mob-nav a{padding:14px 0;font-weight:600;font-size:17px;color:var(--navy);border-bottom:1px solid var(--border)}
 .mob-nav a:hover{color:var(--teal-ink)}
@@ -334,6 +334,10 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* a11y + resilience: content is visible unless JS confirms it can animate it in */
 html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Bei geöffnetem Menü nichts darüberlegen */
+body:has(.mob-nav.open) .wa{display:none}
+body:has(.mob-nav.open) #stickyCta{display:none}
 </style>
 </head>
 <body>

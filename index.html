@@ -413,6 +413,10 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 /* a11y + resilience: content is visible unless JS confirms it can animate it in */
 html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* Bei geöffnetem Menü nichts darüberlegen */
+body:has(.mob-nav.open) .wa{display:none}
+body:has(.mob-nav.open) .sticky-cta{display:none}
 </style>
 <script type="application/ld+json">
 {

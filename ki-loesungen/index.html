@@ -257,7 +257,7 @@ nav.main-nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
 .hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;display:block;}
 .hamburger:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:4px;}
-.mob-nav{display:none;position:fixed;inset:0;top:var(--nav-h);background:#fff;z-index:499;padding:2rem;overflow-y:auto;}
+.mob-nav{display:none;position:fixed;height:auto;max-height:calc(100vh - var(--nav-h));overflow-y:auto;inset:0;top:var(--nav-h);background:#fff;z-index:499;padding:2rem;overflow-y:auto;}
 .mob-nav.open{display:block;}
 .mob-nav a{display:block;padding:14px 0;color:var(--navy);font-size:17px;font-weight:600;border-bottom:1px solid var(--border);}
 .mob-nav a:hover,.mob-nav a:focus-visible{color:var(--teal);}
@@ -1019,7 +1019,10 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
   </div>
 </section>
-<style>@media(max-width:768px){.usp-grid{grid-template-columns:1fr!important;}}</style>
+<style>@media(max-width:768px){.usp-grid{grid-template-columns:1fr!important;}}
+/* Bei geöffnetem Menü nichts darüberlegen */
+body:has(.mob-nav.open) .wa{display:none}
+</style>
 
 <!-- ═══ CTA ═══ -->
 <div class="cta-strip">
