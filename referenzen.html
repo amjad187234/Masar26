@@ -118,6 +118,42 @@
     "duration": "PT14S",
     "inLanguage": "de-DE",
     "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Digitale Menütafel – Manakisch, Teigtaschen und Pizza",
+    "description": "Animierte Menütafel für ein Restaurant in Berlin: Tagesangebot, Manakisch, Teigtaschen und Pizza mit Preisen, gestaltet und produziert von der Masar Werbeagentur.",
+    "thumbnailUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-01.webp",
+    "contentUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-01.mp4",
+    "uploadDate": "2026-09-18",
+    "duration": "PT20S",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Digitale Menütafel – Burger, Grillteller und Pasta",
+    "description": "Zweite Tafel derselben Serie: Burger, Mix-Grillteller und Pastagerichte mit Preisen, gestaltet und produziert von der Masar Werbeagentur in Berlin.",
+    "thumbnailUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-02.webp",
+    "contentUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-02.mp4",
+    "uploadDate": "2026-09-18",
+    "duration": "PT30S",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Digitale Menütafel – Frühstück und Salate",
+    "description": "Dritte Tafel derselben Serie: Eiergerichte, Salate und Frühstücksteller mit Preisen, gestaltet und produziert von der Masar Werbeagentur in Berlin.",
+    "thumbnailUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-03.webp",
+    "contentUrl": "https://masar-werbeagentur.de/videos/digital-signage-restaurant-03.mp4",
+    "uploadDate": "2026-09-18",
+    "duration": "PT30S",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
   }
 ]
 </script>
@@ -194,6 +230,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .vid-card figcaption{font-size:13.5px;color:var(--muted);padding:.9rem 1.1rem;line-height:1.6}
 .vid-card figcaption strong{color:var(--navy);display:block;font-size:14.5px;margin-bottom:.15rem}
 .vid-note{text-align:center;font-size:13px;color:var(--muted);margin-top:1.5rem}
+/* Vorschaubild statt Video: das Video wird erst beim Klick geladen.
+   Ohne JavaScript bleibt der Link und öffnet die Datei direkt. */
+.vid-play{display:block;position:relative;background:#0b1622;line-height:0}
+.vid-play img{width:100%;height:auto;display:block}
+.vid-play::after{content:'';position:absolute;inset:0;background:rgba(11,22,34,.18);transition:background .2s}
+.vid-play:hover::after{background:rgba(11,22,34,.05)}
+.vid-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .2s,background .2s;box-shadow:0 6px 22px rgba(0,0,0,.28)}
+.vid-icon::before{content:'';border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+.vid-play:hover .vid-icon{transform:translate(-50%,-50%) scale(1.08);background:var(--teal)}
 
 /* ───────── Lightbox ───────── */
 #lb{position:fixed;inset:0;z-index:1000;background:rgba(8,15,26,.94);display:none;align-items:center;justify-content:center;padding:2.5rem 1rem 4.5rem}
@@ -514,35 +559,56 @@ html:not(.js) .reveal{opacity:1!important;transform:none!important}
     </div>
     <div class="vid-grid">
       <figure class="vid-card reveal">
-        <video controls preload="none" playsinline poster="/videos/digital-signage-bubble-tea-01.webp" width="1920" height="1080">
-          <source src="/videos/digital-signage-bubble-tea-01.mp4" type="video/mp4">
-          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-bubble-tea-01.mp4">Video herunterladen</a>
-        </video>
+        <a class="vid-play" href="/videos/digital-signage-bubble-tea-01.mp4" data-video data-w="1920" data-h="1080" aria-label="Video abspielen: Signature-Sorten">
+          <img src="/videos/digital-signage-bubble-tea-01.webp" alt="Digitale Menütafel für Bubble Tea mit acht Sorten und Preisen" loading="eager" width="1920" height="1080">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
         <figcaption><strong>Signature-Sorten</strong>Die komplette Auswahl mit Preisen, 15 Sekunden im Wechsel.</figcaption>
       </figure>
       <figure class="vid-card reveal">
-        <video controls preload="none" playsinline poster="/videos/digital-signage-bubble-tea-02.webp" width="1920" height="1080">
-          <source src="/videos/digital-signage-bubble-tea-02.mp4" type="video/mp4">
-          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-bubble-tea-02.mp4">Video herunterladen</a>
-        </video>
+        <a class="vid-play" href="/videos/digital-signage-bubble-tea-02.mp4" data-video data-w="1920" data-h="1080" aria-label="Video abspielen: Milky Classics">
+          <img src="/videos/digital-signage-bubble-tea-02.webp" alt="Digitale Menütafel mit vier Milky-Classics-Sorten und Preisen" loading="eager" width="1920" height="1080">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
         <figcaption><strong>Milky Classics</strong>Kurzer Durchlauf einer Produktgruppe, 7 Sekunden.</figcaption>
       </figure>
       <figure class="vid-card reveal">
-        <video controls preload="none" playsinline poster="/videos/digital-signage-imbiss-01.webp" width="1280" height="720">
-          <source src="/videos/digital-signage-imbiss-01.mp4" type="video/mp4">
-          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-imbiss-01.mp4">Video herunterladen</a>
-        </video>
+        <a class="vid-play" href="/videos/digital-signage-imbiss-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Menütafel Imbiss, Teil 1">
+          <img src="/videos/digital-signage-imbiss-01.webp" alt="Digitale Menütafel eines Imbisses mit Burgern, Schawarma und Grillgerichten" loading="lazy" width="1280" height="720">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
         <figcaption><strong>Menütafel Imbiss, Teil 1</strong>Burger, Schawarma, Vegetarisch, Grill und Salate auf einer Tafel, 14 Sekunden.</figcaption>
       </figure>
       <figure class="vid-card reveal">
-        <video controls preload="none" playsinline poster="/videos/digital-signage-imbiss-02.webp" width="1280" height="720">
-          <source src="/videos/digital-signage-imbiss-02.mp4" type="video/mp4">
-          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-imbiss-02.mp4">Video herunterladen</a>
-        </video>
+        <a class="vid-play" href="/videos/digital-signage-imbiss-02.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Menütafel Imbiss, Teil 2">
+          <img src="/videos/digital-signage-imbiss-02.webp" alt="Digitale Menütafel eines Imbisses mit Pizza- und Dönergerichten" loading="lazy" width="1280" height="720">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
         <figcaption><strong>Menütafel Imbiss, Teil 2</strong>Pizza, Döner und Crispy – zweite Tafel derselben Serie, 14 Sekunden.</figcaption>
       </figure>
+      <figure class="vid-card reveal">
+        <a class="vid-play" href="/videos/digital-signage-restaurant-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Manakisch und Teigtaschen">
+          <img src="/videos/digital-signage-restaurant-01.webp" alt="Digitale Menütafel eines Restaurants mit Manakisch, Teigtaschen und Pizza" loading="lazy" width="1280" height="720">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
+        <figcaption><strong>Manakisch und Teigtaschen</strong>Tagesangebot, Manakisch, Teigtaschen und Pizza im Wechsel, 20 Sekunden.</figcaption>
+      </figure>
+      <figure class="vid-card reveal">
+        <a class="vid-play" href="/videos/digital-signage-restaurant-02.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Burger, Grill und Pasta">
+          <img src="/videos/digital-signage-restaurant-02.webp" alt="Digitale Menütafel eines Restaurants mit Burgern, Grilltellern und Pasta" loading="lazy" width="1280" height="720">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
+        <figcaption><strong>Burger, Grill und Pasta</strong>Zweite Tafel derselben Serie, 30 Sekunden.</figcaption>
+      </figure>
+      <figure class="vid-card reveal">
+        <a class="vid-play" href="/videos/digital-signage-restaurant-03.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Frühstück und Salate">
+          <img src="/videos/digital-signage-restaurant-03.webp" alt="Digitale Menütafel eines Restaurants mit Eiergerichten, Salaten und Frühstück" loading="lazy" width="1280" height="720">
+          <span class="vid-icon" aria-hidden="true"></span>
+        </a>
+        <figcaption><strong>Frühstück und Salate</strong>Eiergerichte, Salate und Frühstücksteller, 30 Sekunden.</figcaption>
+      </figure>
     </div>
-    <p class="vid-note">Die Videos liegen auf unserem eigenen Server und starten erst, wenn Sie auf Play drücken – es werden keine Daten an Dritte übertragen.</p>
+    <p class="vid-note">Die Videos liegen auf unserem eigenen Server und werden erst geladen, wenn Sie auf Play drücken – es werden keine Daten an Dritte übertragen.</p>
   </div>
 </section>
 
@@ -695,6 +761,22 @@ html:not(.js) .reveal{opacity:1!important;transform:none!important}
         if (match) shown++;
       });
       if (empty) empty.hidden = shown > 0;
+    });
+  });
+
+  /* ── Video erst auf Klick laden ── */
+  document.querySelectorAll('a[data-video]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var v = document.createElement('video');
+      v.src = a.getAttribute('href');
+      v.controls = true; v.autoplay = true; v.playsInline = true;
+      v.setAttribute('playsinline', '');
+      v.width = a.dataset.w; v.height = a.dataset.h;
+      var img = a.querySelector('img');
+      if (img) v.poster = img.getAttribute('src');
+      a.replaceWith(v);
+      v.focus();
     });
   });
 
