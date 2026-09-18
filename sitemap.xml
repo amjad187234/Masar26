@@ -26,6 +26,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- KI für Arztpraxen -->
+  <url>
+    <loc>https://masar-werbeagentur.de/ki-fuer-arztpraxen-berlin.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Webdesign -->
   <url>
     <loc>https://masar-werbeagentur.de/webdesign-berlin.html</loc>
