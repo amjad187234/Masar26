@@ -69,6 +69,34 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Digitale Menütafel für Bubble Tea – Signature-Sorten",
+    "description": "Animierte Menütafel für die Bildschirme über der Theke: die Signature-Sorten mit Preisen, gestaltet und produziert von der Masar Werbeagentur in Berlin.",
+    "thumbnailUrl": "https://masar-werbeagentur.de/videos/digital-signage-bubble-tea-01.webp",
+    "contentUrl": "https://masar-werbeagentur.de/videos/digital-signage-bubble-tea-01.mp4",
+    "uploadDate": "2026-09-18",
+    "duration": "PT15S",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Digitale Menütafel für Bubble Tea – Milky Classics",
+    "description": "Kurzer Durchlauf einer Produktgruppe auf der digitalen Menütafel, gestaltet und produziert von der Masar Werbeagentur in Berlin.",
+    "thumbnailUrl": "https://masar-werbeagentur.de/videos/digital-signage-bubble-tea-02.webp",
+    "contentUrl": "https://masar-werbeagentur.de/videos/digital-signage-bubble-tea-02.mp4",
+    "uploadDate": "2026-09-18",
+    "duration": "PT7S",
+    "inLanguage": "de-DE",
+    "publisher": { "@id": "https://masar-werbeagentur.de/#identity" }
+  }
+]
+</script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#f5b800;--r:10px;--nav-h:72px}
@@ -135,6 +163,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .gal-item[hidden]{display:none}
 .gal-empty{text-align:center;color:var(--muted);font-size:15px;padding:2rem 0}
 
+/* ───────── Bewegtbild ───────── */
+.vid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.vid-card{margin:0;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.vid-card video{width:100%;height:auto;display:block;background:#0b1622}
+.vid-card figcaption{font-size:13.5px;color:var(--muted);padding:.9rem 1.1rem;line-height:1.6}
+.vid-card figcaption strong{color:var(--navy);display:block;font-size:14.5px;margin-bottom:.15rem}
+.vid-note{text-align:center;font-size:13px;color:var(--muted);margin-top:1.5rem}
+
 /* ───────── Lightbox ───────── */
 #lb{position:fixed;inset:0;z-index:1000;background:rgba(8,15,26,.94);display:none;align-items:center;justify-content:center;padding:2.5rem 1rem 4.5rem}
 #lb.open{display:flex}
@@ -197,6 +233,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px}
 #lb *:focus-visible{outline:3px solid #58d0bd;box-shadow:none}
 @media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.gal{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.vid-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.gal{grid-template-columns:1fr;gap:1rem}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}#stickyCta{flex-direction:column;text-align:center}.filter-btn{font-size:13px;padding:9px 16px}#lbPrev{left:8px}#lbNext{right:8px}}
 html:not(.js) .reveal{opacity:1!important;transform:none!important}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}.gal-item{transition:none}}
@@ -444,7 +481,34 @@ html:not(.js) .reveal{opacity:1!important;transform:none!important}
   <p id="lbCap"></p>
 </div>
 
-<section class="section bg-alt" style="padding:2.5rem 0;">
+<section class="section bg-alt" id="bewegtbild">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">▶ Bewegtbild</span>
+      <h2 class="sec-title">Was auf den <em>Bildschirmen</em> läuft</h2>
+      <p class="sec-sub">Eine Menütafel steht selten still. Zwei Beispiele aus dem, was wir für die Bildschirme über der Theke produziert haben – stumm, genau so wie sie im Laden laufen.</p>
+    </div>
+    <div class="vid-grid">
+      <figure class="vid-card reveal">
+        <video controls preload="none" playsinline poster="/videos/digital-signage-bubble-tea-01.webp" width="1920" height="1080">
+          <source src="/videos/digital-signage-bubble-tea-01.mp4" type="video/mp4">
+          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-bubble-tea-01.mp4">Video herunterladen</a>
+        </video>
+        <figcaption><strong>Signature-Sorten</strong>Die komplette Auswahl mit Preisen, 15 Sekunden im Wechsel.</figcaption>
+      </figure>
+      <figure class="vid-card reveal">
+        <video controls preload="none" playsinline poster="/videos/digital-signage-bubble-tea-02.webp" width="1920" height="1080">
+          <source src="/videos/digital-signage-bubble-tea-02.mp4" type="video/mp4">
+          Ihr Browser kann dieses Video nicht abspielen. <a href="/videos/digital-signage-bubble-tea-02.mp4">Video herunterladen</a>
+        </video>
+        <figcaption><strong>Milky Classics</strong>Kurzer Durchlauf einer Produktgruppe, 7 Sekunden.</figcaption>
+      </figure>
+    </div>
+    <p class="vid-note">Die Videos liegen auf unserem eigenen Server und starten erst, wenn Sie auf Play drücken – es werden keine Daten an Dritte übertragen.</p>
+  </div>
+</section>
+
+<section class="section" style="padding:2.5rem 0;">
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:1.5rem;">
       <span class="eyebrow">🔗 Passend dazu</span>
