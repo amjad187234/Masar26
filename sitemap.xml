@@ -26,6 +26,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Webdesign -->
+  <url>
+    <loc>https://masar-werbeagentur.de/webdesign-berlin.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Digital Signage -->
   <url>
     <loc>https://masar-werbeagentur.de/digital-signage-berlin.html</loc>
