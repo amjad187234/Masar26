@@ -211,6 +211,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Expressdruck -->
+  <url>
+    <loc>https://masar-werbeagentur.de/express-druck-berlin.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <url>
     <loc>https://masar-werbeagentur.de/print.html</loc>
     <lastmod>2026-09-19</lastmod>
