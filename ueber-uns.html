@@ -217,7 +217,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 *:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:2px}
 *:focus:not(:focus-visible){outline:none}
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px}
-@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.svc-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
+@media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.svc-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.svc-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}#stickyCta{flex-direction:column;text-align:center}}
 
 /* a11y + resilience: content is visible unless JS confirms it can animate it in */
@@ -227,6 +227,9 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 /* Bei geöffnetem Menü nichts darüberlegen */
 body:has(.mob-nav.open) .wa{display:none}
 body:has(.mob-nav.open) #stickyCta{display:none}
+
+/* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
+@media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
 </style>
 </head>
 <body>
@@ -255,11 +258,6 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <li><a href="/leistungen.html">Leistungen</a></li>
       <li><a href="/werbetechnik.html">Werbetechnik</a></li>
       <li><a href="/referenzen.html">Referenzen</a></li>
-      <li><a href="/webdesign-berlin.html">Webdesign</a></li>
-      <li><a href="/digital-signage-berlin.html">Digital Signage</a></li>
-      <li><a href="/digital.html">Social Media</a></li>
-      <li><a href="/grafikdesign-berlin.html">Grafikdesign Berlin</a></li>
-      <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>

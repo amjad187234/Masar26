@@ -479,6 +479,9 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 /* Bei geöffnetem Menü nichts darüberlegen */
 body:has(.mob-nav.open) .wa{display:none}
 body:has(.mob-nav.open) #stickyCta{display:none}
+
+/* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
+@media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
 </style>
 </head>
 <body>
@@ -509,9 +512,6 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <li><a href="/">Home</a></li>
       <li><a href="/leistungen.html">Leistungen</a></li>
       <li><a href="/werbetechnik.html" class="active">Werbetechnik</a></li>
-      <li><a href="/digital.html">Social Media</a></li>
-      <li><a href="/print.html">Print &amp; Design</a></li>
-      <li><a href="/angebote/">Angebote</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>

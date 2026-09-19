@@ -356,6 +356,9 @@ html:not(.js) .reveal{opacity:1!important;transform:none!important}
 /* Bei geöffnetem Menü nichts darüberlegen */
 body:has(.mob-nav.open) .wa{display:none}
 body:has(.mob-nav.open) #stickyCta{display:none}
+
+/* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
+@media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
 </style>
 </head>
 <body>
