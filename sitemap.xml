@@ -204,6 +204,14 @@
   </url>
 
   <!-- Service-Seiten -->
+  <!-- Werbetechnik Potsdam -->
+  <url>
+    <loc>https://masar-werbeagentur.de/werbetechnik-potsdam.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik.html</loc>
     <lastmod>2026-09-19</lastmod>
