@@ -293,6 +293,12 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px}
 #lb *:focus-visible{outline:3px solid #58d0bd;box-shadow:none}
 
+/* ───────── Text neben Bild ───────── */
+.split{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:3rem;align-items:center;max-width:1000px;margin:0 auto}
+.split-media img{width:100%;height:auto;display:block;border-radius:var(--r);box-shadow:0 18px 44px rgba(19,46,80,.18)}
+.split .blog-prose{max-width:none}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:2rem}.split-media{max-width:420px;margin:0 auto}}
+
 /* ───────── Leistungskarten ───────── */
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
 .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .3s;opacity:0;transform:translateY(24px);box-shadow:0 2px 12px rgba(0,0,0,.04)}
@@ -451,10 +457,15 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <h2 class="sec-title">Der <em>Prüfstand</em> ist diese Seite</h2>
       <p class="sec-sub">Bei Werbetechnik sieht man die Arbeit an der Fassade. Bei einer Website sieht man sie erst, wenn man nachmisst.</p>
     </div>
-    <div class="blog-prose" style="max-width:760px;margin:0 auto;">
+    <div class="split">
+      <div class="split-media reveal">
+        <img src="/webdesign.webp" alt="Webdesign Berlin – Websites und Online-Shops von Masar Werbeagentur" loading="lazy" width="1080" height="1350">
+      </div>
+      <div class="blog-prose reveal">
       <p>Die meisten Firmenseiten sehen auf dem Bildschirm des Gestalters gut aus. Entscheidend ist aber, was passiert, wenn jemand sie unterwegs mit mittelmäßigem Empfang öffnet: Wie lange dauert es bis zum ersten sichtbaren Inhalt? Springt das Layout beim Laden? Lässt sich das Formular mit der Tastatur bedienen? Findet Google überhaupt alle Unterseiten?</p>
       <p>Das sind keine Geschmacksfragen, sondern messbare Werte – und genau deshalb laden wir Sie ein, diese Seite hier selbst zu prüfen. Schicken Sie <strong>masar-werbeagentur.de</strong> durch <em>Googles PageSpeed Insights</em>, schauen Sie sich die Werte für Mobilgeräte an und vergleichen Sie sie mit den Seiten, die Sie sonst noch in der Auswahl haben. Was wir bauen, bauen wir nach demselben Maßstab.</p>
       <p>Dazu kommt der Teil, den man erst Monate später merkt: Wem gehören am Ende Domain, Hosting und Zugänge? Bei uns Ihnen. Die Seite läuft auf Ihrem Vertrag, nicht auf unserem.</p>
+      </div>
     </div>
   </div>
 </section>
