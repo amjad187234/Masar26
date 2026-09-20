@@ -204,6 +204,14 @@
   </url>
 
   <!-- Service-Seiten -->
+  <!-- Werbetechnik Brandenburg & Umland -->
+  <url>
+    <loc>https://masar-werbeagentur.de/werbetechnik-brandenburg.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Werbetechnik Potsdam -->
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik-potsdam.html</loc>
