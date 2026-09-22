@@ -680,7 +680,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <p class="sec-sub">Beschreiben Sie kurz Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot für Ihre Messebeschriftung in Berlin.</p>
     </div>
     <div class="form-wrap">
-      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Messebeschriftung Berlin – Firmenanfrage">
         <input type="hidden" name="_captcha" value="true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -707,6 +707,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
           </select>
         </div>
         <div class="fg"><label for="cf-nachricht">Ihr Anliegen</label><textarea id="cf-nachricht" name="nachricht" placeholder="Anzahl, Format, Messeort / Datum, Besonderheiten, Corporate-Design-Vorgaben..."></textarea></div>
+        <div class="fg"><label for="ms-datei">Datei anhängen (optional)</label><input type="file" id="ms-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
         <div style="display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;">
           <input type="checkbox" id="ms-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
           <label for="ms-consent" style="font-size:12px;color:var(--muted);line-height:1.65;">Ich habe die <a href="/datenschutz.html" style="color:#0e6455;">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>

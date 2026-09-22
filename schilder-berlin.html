@@ -816,7 +816,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <p class="sec-sub">Beschreiben Sie kurz Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem individuellen Festpreisangebot für Ihr Schild in Berlin, inklusive Montage.</p>
     </div>
     <div class="form-wrap">
-      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Schilder Berlin – Firmenanfrage">
         <input type="hidden" name="_captcha" value="true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -846,6 +846,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
           </select>
         </div>
         <div class="fg"><label for="cf-nachricht">Ihr Anliegen</label><textarea id="cf-nachricht" name="nachricht" placeholder="Format / Maße, Anbringungsort, Untergrund (Putz / Klinker / Glas / WDVS), Montage gewünscht?, Zeitrahmen..."></textarea></div>
+        <div class="fg"><label for="sb-datei">Datei anhängen (optional)</label><input type="file" id="sb-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
         <div class="consent-row">
           <input type="checkbox" id="sb-consent" name="consent" required>
           <label for="sb-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>

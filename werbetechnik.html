@@ -718,7 +718,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
       <a href="tel:01785143918" class="mk-btn mk-tel">📞 0178 514 3918</a>
       <a href="https://wa.me/491785143918" class="mk-btn mk-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
     </div>
-    <form class="mk-form" action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+    <form class="mk-form" action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="Werbetechnik Berlin – Anfrage">
       <input type="hidden" name="_captcha" value="true">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -745,6 +745,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
         </select>
       </div>
       <div class="mk-fg"><label for="wt-nachricht">Ihr Anliegen</label><textarea id="wt-nachricht" name="nachricht" placeholder="Maße, Stückzahl, Standort, Zeitrahmen – je konkreter, desto genauer das Angebot."></textarea></div>
+      <div class="mk-fg"><label for="wt-datei">Datei anhängen (optional)</label><input type="file" id="wt-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
       <div class="mk-consent">
         <input type="checkbox" id="wt-consent" name="consent" required>
         <label for="wt-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>

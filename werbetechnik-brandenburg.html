@@ -731,7 +731,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <p class="sec-sub">Nennen Sie uns Ort und Vorhaben. Wir sagen Ihnen, ob und wann wir rauskommen – und wenn sich die Anfahrt für einen kleinen Auftrag nicht lohnt, sagen wir auch das. Antwort innerhalb von 24 Stunden, kostenlos und unverbindlich.</p>
     </div>
     <div class="form-wrap">
-      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST">
+      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Werbetechnik Umland/Brandenburg – Anfrage">
         <input type="hidden" name="_captcha" value="true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -762,6 +762,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
           </div>
         </div>
         <div class="fg"><label for="bb-nachricht">Ihr Anliegen</label><textarea id="bb-nachricht" name="nachricht" placeholder="Zum Beispiel: Halle im Gewerbegebiet, Schriftzug über dem Tor, dazu vier Transporter beschriften."></textarea></div>
+        <div class="fg"><label for="bb-datei">Datei anhängen (optional)</label><input type="file" id="bb-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
         <div style="display:flex;gap:.7rem;align-items:flex-start;margin:1.2rem 0;">
           <input type="checkbox" id="bb-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
           <label for="bb-consent" style="font-size:13px;color:var(--muted);line-height:1.6;">Ich habe die <a href="/datenschutz.html" style="color:var(--teal-ink);">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art. 6 Abs. 1 lit. b DSGVO). *</label>
