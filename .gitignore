@@ -4,6 +4,9 @@
 *.key
 *.pem
 
+# ─── Formular-Zugangsdaten (nur auf dem Server) ───────────────
+kontakt-config.php
+
 # ─── Database files ────────────────────────────────────────────
 data/*.db
 data/*.sqlite

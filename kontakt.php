@@ -16,7 +16,8 @@ declare(strict_types=1);
 // ─────────────────────────── Konfiguration ───────────────────────────
 
 const EMPFAENGER      = 'info@masar-werbeagentur.de';
-const ABSENDER        = 'website@masar-werbeagentur.de';   // muss zur Domain gehören
+const ABSENDER        = 'website@masar-werbeagentur.de';   // muss als Postfach existieren
+const KONFIG_DATEI    = __DIR__ . '/kontakt-config.php';
 const DANKE_SEITE     = '/danke.html';
 const FEHLER_SEITE    = '/kontakt-fehler.html';
 const MAX_UPLOAD_MB   = 10;
@@ -198,9 +199,14 @@ if (isset($_FILES['attachment']) && is_array($_FILES['attachment'])
 
 // 8. Mail bauen und senden
 $absender_name = '=?UTF-8?B?' . base64_encode('Masar Website') . '?=';
+$nachricht_id = '<' . bin2hex(random_bytes(12)) . '@masar-werbeagentur.de>';
 $kopf = [
     'From: ' . $absender_name . ' <' . ABSENDER . '>',
     'Reply-To: ' . einzeilig($name) . ' <' . $email . '>',
+    'Date: ' . date('r'),
+    'Message-ID: ' . $nachricht_id,
+    'X-Mailer: Masar Kontaktformular',
+    'Auto-Submitted: auto-generated',
     'MIME-Version: 1.0',
 ];
 
@@ -226,12 +232,36 @@ if ($anhang === null) {
 
 $betreff_kodiert = '=?UTF-8?B?' . base64_encode($betreff) . '?=';
 
-$erfolg = @mail(
-    EMPFAENGER,
-    $betreff_kodiert,
-    $rumpf,
-    implode("\r\n", $kopf),
-    '-f' . ABSENDER
-);
+$erfolg = false;
+
+// Bevorzugt über das eigene Postfach versenden: nur so greifen SPF und DKIM,
+// und die Mail landet zuverlässig im Posteingang statt im Spam-Ordner.
+if (is_readable(KONFIG_DATEI)) {
+    $konfig = require KONFIG_DATEI;
+    if (is_array($konfig)) {
+        require_once __DIR__ . '/mailer.php';
+        $smtp_kopf = array_merge(
+            ['To: ' . EMPFAENGER, 'Subject: ' . $betreff_kodiert],
+            $kopf
+        );
+        $erfolg = masar_smtp_senden(
+            $konfig,
+            (string) ($konfig['from'] ?? ABSENDER),
+            EMPFAENGER,
+            implode("\r\n", $smtp_kopf),
+            $rumpf
+        );
+    }
+}
+
+if (!$erfolg) {
+    $erfolg = @mail(
+        EMPFAENGER,
+        $betreff_kodiert,
+        $rumpf,
+        implode("\r\n", $kopf),
+        '-f' . ABSENDER
+    );
+}
 
 weiter($erfolg ? DANKE_SEITE : FEHLER_SEITE);
