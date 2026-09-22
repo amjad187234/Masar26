@@ -431,6 +431,12 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 
 /* ───────── Fließtext ───────── */
 .blog-prose{max-width:760px}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:2.5rem;border:1px solid var(--border);border-radius:var(--r)}
+.cmp-table{width:100%;min-width:660px;border-collapse:collapse;font-size:14px}
+.cmp-table th{background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left}
+.cmp-table td{padding:14px 16px;border-top:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.6}
+.cmp-table td:first-child{color:var(--navy);font-weight:700}
+.cmp-table tbody tr:nth-child(even) td{background:var(--off)}
 .blog-prose p{font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem}
 .blog-prose p:last-child{margin-bottom:0}
 html:not(.js) .why-item{opacity:1!important;transform:none!important}
@@ -635,6 +641,70 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       </figure>
     </div>
     <p class="vid-note">Die Videos liegen auf unserem eigenen Server und werden erst geladen, wenn Sie auf Play drücken – es werden keine Daten an Dritte übertragen.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">⚖️ Entscheidungshilfe</span>
+      <h2 class="sec-title">Bildschirm oder <em>gedruckte Tafel?</em></h2>
+      <p class="sec-sub">Ein Bildschirm ist nicht automatisch die bessere Lösung. Diese sechs Fragen entscheiden es – und bei der Hälfte davon ist Druck die ehrlichere Antwort.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table class="cmp-table">
+        <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Entscheidungskriterien Bildschirm oder Druck</caption>
+        <thead>
+          <tr>
+            <th scope="col">Frage</th>
+            <th scope="col">Für einen Bildschirm spricht</th>
+            <th scope="col">Für eine gedruckte Tafel spricht</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wie oft ändert sich der Inhalt?</td>
+            <td>Mehrmals im Monat – Preise, Tagesangebote, Aktionen</td>
+            <td>Ein- bis zweimal im Jahr</td>
+          </tr>
+          <tr>
+            <td>Wie viele Flächen?</td>
+            <td>Mehrere Tafeln oder mehrere Standorte mit demselben Inhalt</td>
+            <td>Eine einzelne Fläche</td>
+          </tr>
+          <tr>
+            <td>Was soll gezeigt werden?</td>
+            <td>Auch Bewegtbild: Zubereitung, Produkt, kurze Clips</td>
+            <td>Reiner Text mit Preisen</td>
+          </tr>
+          <tr>
+            <td>Wie hell ist der Standort?</td>
+            <td>Innen, kontrollierte Beleuchtung</td>
+            <td>Direkte Sonne auf der Fläche oder Schaufenster von außen</td>
+          </tr>
+          <tr>
+            <td>Wer kümmert sich?</td>
+            <td>Jemand im Betrieb kann eine Datei austauschen</td>
+            <td>Niemand will etwas am Gerät machen</td>
+          </tr>
+          <tr>
+            <td>Was kostet es über Jahre?</td>
+            <td>Gerät einmal, Inhalte laufend – dafür kein Neudruck</td>
+            <td>Einmal drucken, dann nichts mehr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="blog-prose" style="max-width:760px;margin:2.5rem auto 0;">
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-transform:uppercase;margin-bottom:1rem;">Wann wir von einem Bildschirm abraten</h3>
+      <p><strong>Wenn sich nichts ändert.</strong> Eine Karte, die einmal im Jahr angepasst wird, gehört gedruckt. Ein Bildschirm kostet dann Strom und Aufmerksamkeit, ohne dafür etwas zurückzugeben.</p>
+      <p><strong>Wenn die Sonne drauf steht.</strong> Ein normaler Fernseher hinter einer Schaufensterscheibe in der Mittagssonne ist von außen kaum zu erkennen und wird obendrein sehr warm. Für solche Flächen gibt es Geräte mit deutlich höherer Helligkeit – und wenn die nicht im Budget sind, ist eine gedruckte Fläche das ehrlichere Ergebnis.</p>
+      <p><strong>Wenn niemand im Betrieb etwas austauschen will.</strong> Digital Signage lebt davon, dass Inhalte wechseln. Wenn im Alltag niemand die Zeit oder die Lust hat, eine Datei zu tauschen, hängt nach drei Monaten dieselbe Ansicht an der Wand – dann war der Bildschirm der teurere Weg zum gleichen Ergebnis.</p>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 1rem;">Und wenn es ein Bildschirm wird</h3>
+      <p>Wir liefern keine Hardware und montieren die Geräte nicht – unser Teil ist der Inhalt. Trotzdem sagen wir Ihnen vorher, worauf es beim Gerät ankommt, damit Sie nicht das Falsche kaufen: Helligkeit passend zum Standort, ein Gerät, das für den Dauerbetrieb gedacht ist, die richtige Ausrichtung – quer oder hochkant – und ein Weg, Dateien einzuspielen, den Sie selbst bedienen können. Sagen Sie uns, was Sie im Auge haben, bevor Sie bestellen.</p>
+      <p>Und eine Kombination ist oft die beste Lösung: der wechselnde Teil auf dem Bildschirm, das Feste – Name, Logo, Öffnungszeiten – <a href="/schilder-berlin.html">gedruckt oder als Schild</a>. Was ständig gleich bleibt, muss nicht jeden Tag neu gerendert werden.</p>
+    </div>
   </div>
 </section>
 
