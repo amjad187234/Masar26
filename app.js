@@ -355,7 +355,16 @@ const FAQ = {
 // ═══════════════════════════════════════════════════════════
 // INIT ALL MODULES
 // ═══════════════════════════════════════════════════════════
+// Zeitstempel für den Bot-Schutz des eigenen Formular-Handlers
+const FormTimestamp = {
+  init() {
+    document.querySelectorAll('form[action="/kontakt.php"] input[name="_t"]')
+      .forEach(el => { el.value = String(Date.now()); });
+  }
+};
+
 function initAll() {
+  FormTimestamp.init();
   Nav.init();
   Reveal.init();
   StickyCta.init();

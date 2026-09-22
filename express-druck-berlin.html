@@ -6,7 +6,6 @@
 <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/barlow-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="image" href="/logo.webp" fetchpriority="high">
-<link rel="preconnect" href="https://formsubmit.co">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -707,11 +706,10 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <p class="sec-sub">Für heute ist der Anruf der schnellste Weg – <a href="tel:01785143918" style="color:var(--teal-ink);font-weight:700;">0178 514 3918</a>. Für morgen oder diese Woche reicht das Formular.</p>
     </div>
     <div class="form-wrap">
-      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
+      <form action="/kontakt.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Expressdruck – Anfrage">
-        <input type="hidden" name="_captcha" value="true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
+        <input type="hidden" name="_t" value="">
         <div class="form-grid">
           <div class="fg"><label for="ex-firma">Firmenname *</label><input type="text" id="ex-firma" name="firma" autocomplete="organization" placeholder="Muster GmbH" required></div>
           <div class="fg"><label for="ex-name">Ansprechpartner *</label><input type="text" id="ex-name" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
