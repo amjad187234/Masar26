@@ -321,6 +321,12 @@ html:not(.js) .svc-card{opacity:1!important;transform:none!important}
 
 /* ───────── FAQ ───────── */
 .faq-item{border-bottom:1px solid var(--border)}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:2.5rem;border:1px solid var(--border);border-radius:var(--r)}
+.cmp-table{width:100%;min-width:700px;border-collapse:collapse;font-size:14px}
+.cmp-table th{background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left}
+.cmp-table td{padding:14px 16px;border-top:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.6}
+.cmp-table td:first-child{color:var(--navy);font-weight:700}
+.cmp-table tbody tr:nth-child(even) td{background:var(--off)}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:15px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:transform .2s;flex-shrink:0}
 .faq-q[aria-expanded="true"]::after{transform:rotate(45deg)}
@@ -499,6 +505,68 @@ body:has(.mob-nav.open) #stickyCta{display:none}
         <h3>Relaunch</h3>
         <p>Eine bestehende Seite, die langsam, unübersichtlich oder auf dem Handy unbrauchbar geworden ist. Inhalte bleiben, Struktur und Technik werden neu aufgebaut.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">⚖️ Entscheidungshilfe</span>
+      <h2 class="sec-title">Was Ihr Betrieb <em>wirklich braucht</em></h2>
+      <p class="sec-sub">Nicht jede Firma braucht dasselbe – und die teuerste Lösung ist selten die richtige. Was sinnvoll ist, hängt an Ihrer Größe und daran, was die Seite auslösen soll.</p>
+    </div>
+    <div class="tbl-scroll">
+      <table class="cmp-table">
+        <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Empfehlung nach Betriebsgröße</caption>
+        <thead>
+          <tr>
+            <th scope="col">Betrieb</th>
+            <th scope="col">Was meistens reicht</th>
+            <th scope="col">Worauf es ankommt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Einzelunternehmen, Neugründung</td>
+            <td>Eine kompakte Firmenseite: Leistungen, ein Beispiel, Kontakt.</td>
+            <td>Gefunden werden und einen Anruf auslösen. Mehr muss sie am Anfang nicht.</td>
+          </tr>
+          <tr>
+            <td>Ladengeschäft, Gastronomie</td>
+            <td>Firmenseite mit Öffnungszeiten, Anfahrt und Bildern.</td>
+            <td>Die Seite beantwortet, was Gäste vorher wissen wollen – und verweist auf das Google-Profil statt es zu ersetzen.</td>
+          </tr>
+          <tr>
+            <td>Handwerksbetrieb mit Team</td>
+            <td>Firmenseite mit Referenzen und einer Seite für Stellenangebote.</td>
+            <td>Bei vielen Betrieben ist die Karriereseite inzwischen die Seite, die am meisten einbringt – nicht die Startseite.</td>
+          </tr>
+          <tr>
+            <td>Praxis, Pflegedienst</td>
+            <td>Firmenseite mit klarer Anfragestrecke, barrierearm aufgebaut.</td>
+            <td>Keine Gesundheitsdaten über das Formular, dafür ein kurzer Weg zu Termin und Rückruf.</td>
+          </tr>
+          <tr>
+            <td>Händler mit Sortiment</td>
+            <td>Online-Shop – oder zunächst ein Katalog mit Anfrage.</td>
+            <td>Ein Shop bringt laufende Pflichten mit: Rechtstexte, Zahlung, Versand, Retouren. Das muss das Sortiment hergeben.</td>
+          </tr>
+          <tr>
+            <td>Wer Anzeigen schaltet</td>
+            <td>Landingpage für genau diese Kampagne.</td>
+            <td>Ein Ziel, keine Navigation – damit messbar wird, was die Anzeige bringt.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="blog-prose" style="margin:2.5rem auto 0;">
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-transform:uppercase;margin-bottom:1rem;">Die drei häufigsten Fehlentscheidungen</h3>
+      <p><strong>Ein Shop, wo ein Katalog gereicht hätte.</strong> Ein Shop ist kein Website-Typ, sondern ein Betrieb: Rechtstexte, Zahlungsarten, Versandregeln, Retouren, Preispflege. Wenn Sie zehn Artikel haben, die ohnehin telefonisch besprochen werden, bringt eine gute Katalogseite mit Anfrageformular mehr – und kostet Sie nichts an laufender Arbeit.</p>
+      <p><strong>Eine Seite ohne Ziel.</strong> „Wir brauchen mal was Neues" ist kein Ziel. Anrufe, Anfragen, Bestellungen oder Bewerbungen sind eins. Ohne diese Festlegung entsteht eine Seite, die hübsch aussieht und über die niemand sagen kann, ob sie funktioniert.</p>
+      <p><strong>Die Bewerberseite vergessen.</strong> In Handwerk und Pflege ist Personal oft knapper als Aufträge. Trotzdem endet fast jede Seite beim Kontaktformular für Kunden. Eine eigene Seite mit offenen Stellen und einem kurzen Bewerbungsweg kostet wenig – und ist bei manchen Betrieben der einzige Teil der Website, der sich in Euro rechnen lässt.</p>
+      <p>Sie müssen das nicht vorher entscheiden. Sagen Sie uns, wie groß der Betrieb ist und was passieren soll, wenn jemand die Seite verlässt. Den Rest schlagen wir vor – und wenn der kleinere Weg reicht, sagen wir das.</p>
     </div>
   </div>
 </section>
