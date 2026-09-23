@@ -316,10 +316,10 @@ img{max-width:100%;display:block}
 nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--teal);box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1160px;margin:0 auto;padding:0 24px}
 .nav-logo{display:flex;align-items:center;gap:.6rem}
-.nav-logo img{height:38px;width:auto}
+.nav-logo img{height:50px;width:auto}
 .nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
-.nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
+.nav-links a{font-size:15px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
 .nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
@@ -339,7 +339,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem}
 .hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:.98;color:#fff;text-transform:uppercase;margin-bottom:1.2rem}
 .hero h1 em{color:var(--teal);font-style:normal;display:block}
-.hero-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.2rem;max-width:500px}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.2rem;max-width:500px}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .btn{display:inline-block;padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;transition:all .2s;cursor:pointer;border:none}
 .btn-teal{background:var(--teal);color:var(--navy)}
@@ -352,6 +352,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .hero-trust-txt{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase}
 .hero-visual{text-align:center}
 .hero-logo-img{width:100%;max-width:380px;margin:0 auto;filter:drop-shadow(0 0 60px rgba(88,208,189,.3))}
+.hero-shot{width:100%;max-width:560px;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);object-fit:cover;aspect-ratio:4/3;max-height:380px}
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
 .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
@@ -364,20 +365,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .svc-card:hover{background:var(--off);border-color:var(--teal);transform:translateY(-4px);box-shadow:0 8px 24px rgba(88,208,189,.12)}
 .svc-icon{font-size:2.4rem;margin-bottom:1rem}
 .svc-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;text-transform:uppercase}
-.svc-card p{font-size:14px;color:var(--muted);line-height:1.7}
+.svc-card p{font-size:15.5px;color:var(--muted);line-height:1.7}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
 .why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:all .5s}
 .why-item.vis{opacity:1;transform:none}
 .why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
 .why-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase}
-.why-item p{font-size:14px;color:var(--muted);line-height:1.65}
+.why-item p{font-size:15.5px;color:var(--muted);line-height:1.65}
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:15px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:16.5px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
-.faq-a p{padding:0 0 1.2rem;font-size:14px;color:var(--muted);line-height:1.75}
+.faq-a p{padding:0 0 1.2rem;font-size:15.5px;color:var(--muted);line-height:1.75}
 .faq-q.open+.faq-a{max-height:400px}
 .cta-band{background:linear-gradient(135deg,rgba(88,208,189,.15) 0%,rgba(88,208,189,.05) 100%);border-top:1px solid rgba(88,208,189,.2);border-bottom:1px solid rgba(88,208,189,.2);padding:3.5rem 0;text-align:center}
 .cta-band h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--navy);text-transform:uppercase;margin-bottom:.8rem}
@@ -397,13 +398,13 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .foot-logo img{height:36px;width:auto}
 .foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
-.foot-desc{font-size:14px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
+.foot-desc{font-size:15px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
 .foot-social{display:flex;gap:.8rem}
 .fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
 .fsoc svg{width:18px;height:18px;fill:currentColor}
 .fsoc:hover{background:var(--teal);color:var(--navy)}
 .foot-col h5{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
-.foot-col a{display:block;font-size:14px;color:#8fa4c0;margin-bottom:.5rem;transition:color .2s}
+.foot-col a{display:block;font-size:15px;color:#8fa4c0;margin-bottom:.5rem;transition:color .2s}
 .foot-col a:hover{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:#8fa4c0}
 .foot-legal{display:flex;gap:1.5rem}
@@ -567,36 +568,8 @@ body:has(.mob-nav.open) #stickyCta{display:none}
           <span class="hero-trust-txt">Für Berliner Unternehmen · Design + Druck + Montage aus einer Hand</span>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q">Ist Autobeschriftung dasselbe wie Fahrzeugbeschriftung?</button>
-        <div class="faq-a"><p>Ja, gemeint ist dasselbe. „Autobeschriftung" wird meist gesagt, wenn es um PKW geht, „Fahrzeugbeschriftung" ist der Oberbegriff und schließt Transporter, Sprinter, LKW und Anhänger mit ein. Wir beschriften alles davon – vom Kleinwagen der Pflegekraft bis zum Sprinter des Handwerksbetriebs.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Muss ich eine Fahrzeugfolierung bei der Zulassungsstelle melden?</button>
-        <div class="faq-a"><p>Nur bei einer Farbänderung. Wird das Fahrzeug vollflächig in einer anderen Farbe foliert, stimmt die eingetragene Farbe im Fahrzeugschein nicht mehr – das ist der Zulassungsstelle zu melden und wird in die Papiere eingetragen. Es ist eine reine Meldung, keine Abnahme, und kostet wenige Euro. Bei einer Teilbeschriftung mit Logo und Schriftzug auf der Wagenfarbe ändert sich nichts, denn die Grundfarbe bleibt bestehen.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Darf ein beklebtes Fahrzeug in die Waschanlage?</button>
-        <div class="faq-a"><p>Textilwäsche ja, ältere Bürstenanlagen besser nicht – sie greifen an den Folienkanten an und können sie mit der Zeit anheben. Beim Hochdruckreiniger ausreichend Abstand halten, nicht flach auf die Kante zielen und auf heiße Wäsche verzichten. Handwäsche ist am schonendsten. Insektenreste und Vogelkot zeitnah entfernen, Politur und Scheuermittel gehören nicht auf Folie.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Wie lange steht mein Fahrzeug während der Beschriftung still?</button>
-        <div class="faq-a"><p>Eine Teilbeschriftung ist deutlich schneller erledigt als eine Vollverklebung, bei der jedes Bauteil einzeln bezogen wird. Die konkrete Standzeit für Ihr Fahrzeug nennen wir Ihnen verbindlich mit dem Angebot. Bei Flotten stimmen wir die Reihenfolge so ab, dass Ihr Betrieb weiterläuft.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Lohnt sich Vollverklebung oder reicht eine Teilbeschriftung?</button>
-        <div class="faq-a"><p>Für die meisten Betriebe reicht die Teilbeschriftung. Ein sauber gesetzter Schriftzug auf einem weißen Transporter wird im Verkehr genauso gelesen wie eine Vollfolierung, kostet aber einen Bruchteil und ist beim Wiederverkauf unproblematischer. Zur Vollverklebung raten wir, wenn die Fahrzeugfarbe nicht zur Marke passt oder das Fahrzeug selbst Teil des Auftritts sein soll.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Was gehört auf das Fahrzeug – und was nicht?</button>
-        <div class="faq-a"><p>Drei Dinge: was Sie machen, wie man Sie erreicht, und ein Name, den man sich merkt. Leistungsauflistungen, mehrere Rufnummern und kleine QR-Codes werden im Vorbeifahren nicht gelesen. Die Telefonnummer gehört groß aufs Heck – dort steht der Interessent im Stau hinter Ihnen und hat Zeit, sie zu notieren.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Übernehmen Sie auch das Entfernen alter Beschriftung?</button>
-        <div class="faq-a"><p>Sprechen Sie uns darauf an. Alte Folie muss vor einer neuen Beschriftung entfernt und der Untergrund vorbereitet werden – bei sehr alter oder spröder Folie steigt der Aufwand deutlich. Wir sehen uns das Fahrzeug vorher an und klären Umfang und Kosten, bevor etwas beginnt.</p></div>
-      </div>
       <div class="hero-visual">
-        <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager">
+        <img class="hero-shot" src="/fahrzeug.webp" alt="Fahrzeugbeschriftung Berlin – beschrifteter Firmentransporter von Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">
       </div>
     </div>
   </div>
@@ -899,6 +872,34 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <h2 class="sec-title">Fahrzeugbeschriftung Berlin – <em>Fragen von Unternehmen</em></h2>
     </div>
     <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q">Ist Autobeschriftung dasselbe wie Fahrzeugbeschriftung?</button>
+        <div class="faq-a"><p>Ja, gemeint ist dasselbe. „Autobeschriftung" wird meist gesagt, wenn es um PKW geht, „Fahrzeugbeschriftung" ist der Oberbegriff und schließt Transporter, Sprinter, LKW und Anhänger mit ein. Wir beschriften alles davon – vom Kleinwagen der Pflegekraft bis zum Sprinter des Handwerksbetriebs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Muss ich eine Fahrzeugfolierung bei der Zulassungsstelle melden?</button>
+        <div class="faq-a"><p>Nur bei einer Farbänderung. Wird das Fahrzeug vollflächig in einer anderen Farbe foliert, stimmt die eingetragene Farbe im Fahrzeugschein nicht mehr – das ist der Zulassungsstelle zu melden und wird in die Papiere eingetragen. Es ist eine reine Meldung, keine Abnahme, und kostet wenige Euro. Bei einer Teilbeschriftung mit Logo und Schriftzug auf der Wagenfarbe ändert sich nichts, denn die Grundfarbe bleibt bestehen.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Darf ein beklebtes Fahrzeug in die Waschanlage?</button>
+        <div class="faq-a"><p>Textilwäsche ja, ältere Bürstenanlagen besser nicht – sie greifen an den Folienkanten an und können sie mit der Zeit anheben. Beim Hochdruckreiniger ausreichend Abstand halten, nicht flach auf die Kante zielen und auf heiße Wäsche verzichten. Handwäsche ist am schonendsten. Insektenreste und Vogelkot zeitnah entfernen, Politur und Scheuermittel gehören nicht auf Folie.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wie lange steht mein Fahrzeug während der Beschriftung still?</button>
+        <div class="faq-a"><p>Eine Teilbeschriftung ist deutlich schneller erledigt als eine Vollverklebung, bei der jedes Bauteil einzeln bezogen wird. Die konkrete Standzeit für Ihr Fahrzeug nennen wir Ihnen verbindlich mit dem Angebot. Bei Flotten stimmen wir die Reihenfolge so ab, dass Ihr Betrieb weiterläuft.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Lohnt sich Vollverklebung oder reicht eine Teilbeschriftung?</button>
+        <div class="faq-a"><p>Für die meisten Betriebe reicht die Teilbeschriftung. Ein sauber gesetzter Schriftzug auf einem weißen Transporter wird im Verkehr genauso gelesen wie eine Vollfolierung, kostet aber einen Bruchteil und ist beim Wiederverkauf unproblematischer. Zur Vollverklebung raten wir, wenn die Fahrzeugfarbe nicht zur Marke passt oder das Fahrzeug selbst Teil des Auftritts sein soll.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was gehört auf das Fahrzeug – und was nicht?</button>
+        <div class="faq-a"><p>Drei Dinge: was Sie machen, wie man Sie erreicht, und ein Name, den man sich merkt. Leistungsauflistungen, mehrere Rufnummern und kleine QR-Codes werden im Vorbeifahren nicht gelesen. Die Telefonnummer gehört groß aufs Heck – dort steht der Interessent im Stau hinter Ihnen und hat Zeit, sie zu notieren.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Übernehmen Sie auch das Entfernen alter Beschriftung?</button>
+        <div class="faq-a"><p>Sprechen Sie uns darauf an. Alte Folie muss vor einer neuen Beschriftung entfernt und der Untergrund vorbereitet werden – bei sehr alter oder spröder Folie steigt der Aufwand deutlich. Wir sehen uns das Fahrzeug vorher an und klären Umfang und Kosten, bevor etwas beginnt.</p></div>
+      </div>
       <div class="faq-item">
         <button class="faq-q">Was kostet eine Fahrzeugbeschriftung für ein Unternehmen in Berlin?</button>
         <div class="faq-a"><p>Eine Teilbeschriftung (Firmenlogo, Schriftzug, Kontaktdaten) beginnt ab 290 € gem. § 19 UStG. Eine Vollverklebung (Car Wrapping) kalkulieren wir nach Fahrzeuggröße und Umfang individuell. Für Flotten stimmen wir gesonderte Konditionen ab. Kostenloses Angebot innerhalb von 24 Stunden.</p></div>
