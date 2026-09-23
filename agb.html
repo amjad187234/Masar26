@@ -113,6 +113,16 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 
 /* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
 @media(max-width:1050px){.nav-links{display:none}.hbg{display:flex}.nav-phone{display:none}}
+
+/* Untermenü in der Hauptnavigation */
+.nav-links li.has-sub{position:relative}
+.nav-links li.has-sub>a::after{content:" ▾";font-size:.8em;opacity:.55}
+.subnav{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:.35rem;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 18px 44px rgba(19,46,80,.16);padding:.5rem;min-width:300px;list-style:none;display:none;z-index:900;columns:2;column-gap:.4rem}
+.nav-links li.has-sub:hover .subnav,.nav-links li.has-sub:focus-within .subnav{display:block}
+.subnav li{break-inside:avoid;margin:0}
+.subnav a{display:block;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;white-space:nowrap}
+.subnav a:hover,.subnav a:focus-visible{background:var(--off);color:var(--teal-ink)}
+@media(max-width:1050px){.subnav{display:none!important}}
 </style>
 </head>
 <body>
@@ -144,7 +154,24 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
     <ul class="nav-links" role="list">
       <li><a href="/">Home</a></li>
       <li><a href="/leistungen.html">Leistungen</a></li>
-      <li><a href="/werbetechnik.html">Werbetechnik</a></li>
+      <li class="has-sub"><a href="/werbetechnik.html">Werbetechnik</a>
+        <ul class="subnav">
+          <li><a href="/leuchtreklame-berlin.html">Leuchtreklame</a></li>
+          <li><a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a></li>
+          <li><a href="/schaufensterbeschriftung-berlin.html">Schaufenster &amp; Folien</a></li>
+          <li><a href="/schilder-berlin.html">Schilder</a></li>
+          <li><a href="/foliendruck-berlin.html">Foliendruck</a></li>
+          <li><a href="/aussenwerbung-berlin.html">Außenwerbung</a></li>
+          <li><a href="/messebeschriftung-berlin.html">Messe &amp; Displays</a></li>
+          <li><a href="/digital-signage-berlin.html">Digital Signage</a></li>
+          <li><a href="/grafikdesign-berlin.html">Grafikdesign</a></li>
+          <li><a href="/print.html">Druck &amp; Print</a></li>
+          <li><a href="/express-druck-berlin.html">Express am selben Tag</a></li>
+          <li><a href="/digital.html">Social Media</a></li>
+          <li><a href="/werbetechnik-potsdam.html">Potsdam</a></li>
+          <li><a href="/werbetechnik-brandenburg.html">Brandenburg &amp; Umland</a></li>
+        </ul>
+        </li>
       <li><a href="/webdesign-berlin.html">Webdesign</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="/referenzen.html">Referenzen</a></li>
