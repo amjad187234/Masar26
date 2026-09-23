@@ -248,7 +248,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 html:not(.js) .svc-card{opacity:1!important;transform:none!important}
 
 /* ───────── Ablauf ───────── */
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0}
 .why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:all .5s}
 .why-item.vis,.why-item.in{opacity:1;transform:none}
 .why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
@@ -316,6 +316,14 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* Logo im Hero: gleiche Bildflaeche wie die Fotos (1080x1350) */
+.hero-logo-frame{position:relative;width:100%;max-width:400px;aspect-ratio:1080/1350;margin:0 auto;display:flex;align-items:center;justify-content:center;border-radius:var(--r);overflow:hidden;isolation:isolate;background:linear-gradient(158deg,rgba(255,255,255,.08) 0%,rgba(88,208,189,.12) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.22);box-shadow:0 22px 60px rgba(0,0,0,.35)}
+.hero-logo-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 42%,rgba(88,208,189,.20) 0%,transparent 64%);pointer-events:none}
+.hero-logo-frame .hero-logo-img{position:relative;z-index:1;width:66%;max-width:264px;height:auto;margin:0;display:block;filter:drop-shadow(0 12px 34px rgba(0,0,0,.4));transition:transform .35s ease}
+.hero-logo-frame::after{content:"";position:absolute;top:0;left:-140%;width:60%;height:100%;pointer-events:none;z-index:2;opacity:0;transform:skewX(-18deg);background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 100%);animation:logoSheen 1.4s ease-out 1.2s 1}
+.hero-logo-frame:hover::after{animation:logoSheenHover 1.4s ease-out}
+.hero-logo-frame:hover .hero-logo-img{transform:scale(1.04)}
+@media (prefers-reduced-motion:reduce){.hero-logo-frame::after,.hero-logo-frame:hover::after{animation:none}.hero-logo-frame:hover .hero-logo-img{transform:none}}
 </style>
 </head>
 <body>
@@ -363,6 +371,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
       <li><a href="/webdesign-berlin.html">Webdesign</a></li>
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="/referenzen.html">Referenzen</a></li>
+      <li><a href="/ueber-uns.html" class="active" aria-current="page">Über uns</a></li>
       <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
@@ -383,6 +392,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   <a href="/print.html">Print &amp; Grafikdesign</a>
   <a href="/angebote/">Branchen-Angebote</a>
   <a href="/ki-loesungen/">KI-Lösungen</a>
+  <a href="/ueber-uns.html">Über uns</a>
   <div class="mob-contact-row">
     <a href="tel:01785143918" class="mob-call-btn"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z"/></svg>Anrufen</a>
     <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
@@ -396,7 +406,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
     <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16.5 5.5a3.2 3.2 0 0 1 0 6M17 14.5a6 6 0 0 1 4 5.5"/></svg>Über uns · Masar Werbeagentur · Berlin-Wedding</div>
-        <h1>Ein Team.<br><em>Alle Gewerke.</em><br>Eine Nummer.</h1>
+        <h1>Ein Team.<em>Alle Gewerke.</em>Eine Nummer.</h1>
         <p class="hero-sub">Gestalter, Handwerker und Entwickler unter einem Dach. Wir entwerfen Ihre Marke, bauen sie an die Fassade, kleben sie auf den Transporter, bringen sie auf den Bildschirm über der Theke und ins Netz – und Sie sprechen dabei mit derselben Person.</p>
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Projekt besprechen</a>
@@ -407,7 +417,9 @@ body:has(.mob-nav.open) #stickyCta{display:none}
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/massnfertigung.webp" alt="Eigene Werkstatt in Berlin-Wedding – Fertigung bei Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">
+        <div class="hero-logo-frame">
+          <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" fetchpriority="high" width="800" height="800">
+        </div>
       </div>
     </div>
   </div>
@@ -604,7 +616,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   </div>
 </section>
 
-<section class="section bg-alt">
+<section class="section">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M21.5 12h-3M5.5 12h-3M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1M18.7 18.7l-2.1-2.1M7.4 7.4 5.3 5.3"/></svg>Arbeitsweise</span>
@@ -639,7 +651,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   </div>
 </section>
 
-<section class="section">
+<section class="section bg-alt">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2.5 12 4-4 4 3 3-1.5 3 1.5 4-3 1 3.5-5 5-3-2-3 2-4.5-3Z"/></svg>Wer dahintersteht</span>
@@ -653,7 +665,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   </div>
 </section>
 
-<section class="section bg-alt">
+<section class="section">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m6 6 12 12"/></svg>Ehrlich gesagt</span>
@@ -693,7 +705,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   </div>
 </section>
 
-<section class="section" style="padding:2.5rem 0;">
+<section class="section bg-alt" style="padding:2.5rem 0;">
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:1.5rem;">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Weiter im Angebot</span>
@@ -709,7 +721,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
   </div>
 </section>
 
-<section class="section bg-alt" id="kontakt">
+<section class="section" id="kontakt">
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.5 12 4l9 5.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="m3 10 9 6 9-6"/></svg>Kontakt</span>
@@ -823,9 +835,9 @@ body:has(.mob-nav.open) #stickyCta{display:none}
     var obs = new IntersectionObserver(function(entries, o){
       entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); } });
     }, {threshold:.1});
-    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+    document.querySelectorAll('.reveal,.svc-card,.why-item').forEach(function(el){ obs.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    document.querySelectorAll('.reveal,.svc-card,.why-item').forEach(function(el){ el.classList.add('in'); });
   }
 
   /* ── Filter ── */
