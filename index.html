@@ -106,7 +106,7 @@ a { text-decoration:none; color:inherit; }
 nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,255,.97); border-bottom:2px solid var(--teal); box-shadow:0 2px 20px rgba(0,0,0,.06); backdrop-filter:blur(16px); }
 .nav-inner { max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:var(--nav-h); }
 .nav-logo { display:flex; align-items:center; gap:10px; }
-.nav-logo img { height:56px; object-fit:contain; }
+.nav-logo img { height:62px; width:auto; object-fit:contain; }
 .nav-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:var(--navy); letter-spacing:2px; display:none; }
 .nav-links { display:flex; gap:1.1rem; list-style:none; align-items:center; }
 .nav-links a { color:var(--navy); font-size:13px; font-weight:600; transition:color .2s; position:relative; padding-bottom:4px; }
@@ -141,6 +141,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
 .hero-visual { text-align:center; }
 .hero-logo-img { width:100%; max-width:400px; margin:0 auto; filter:drop-shadow(0 0 60px rgba(88,208,189,.3)); }
+.hero-shot{width:100%;max-width:400px;height:auto;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35)}
 
 /* ═══════════ STATS ═══════════ */
 .stats { background:var(--navy3); border-top:1px solid rgba(88,208,189,.1); }
@@ -281,7 +282,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 footer { background:#060e1a; padding:4rem 0 2rem; }
 .foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.06); }
 .foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
-.foot-logo img { height:54px; object-fit:contain; }
+.foot-logo img { height:48px; object-fit:contain; }
 .foot-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; color:var(--teal); letter-spacing:2px; display:none; }
 .foot-desc { font-size:13px; color:rgba(255,255,255,.38); line-height:1.85; margin-bottom:1.2rem; }
 .foot-social { display:flex; gap:.7rem; }
@@ -776,7 +777,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-logo-img" src="logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager">
+        <img class="hero-shot" src="/leuchtreklamen.webp" alt="Werbetechnik aus Berlin-Wedding – beleuchtete Werbeanlage von Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">
       </div>
     </div>
   </div>
