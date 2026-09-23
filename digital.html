@@ -22,7 +22,7 @@
 <title>Social Media Agentur Berlin – Instagram, LinkedIn & TikTok | Masar</title>
 <script>document.documentElement.classList.add('js')</script>
 <style>
-:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--purple-d:#6d28d9;--nav-h:80px;--radius:12px;}
+:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#7c3aed;--purple-d:#6d28d9;--nav-h:84px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
@@ -44,7 +44,7 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-shadow:0 2px 16px rgba(0,0,0,.06);backdrop-filter:blur(12px);}
 .nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
 .nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo img{height:50px;width:auto;object-fit:contain;}
+.nav-logo img{height:62px;width:auto;object-fit:contain;}
 .nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;color:var(--navy);letter-spacing:2px;display:none;}
 .nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;}
 .nav-links a{color:var(--navy);font-size:15px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;text-decoration:none;}
@@ -215,8 +215,10 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 /* Untermenü in der Hauptnavigation */
 .nav-links li.has-sub{position:relative}
 .nav-links li.has-sub>a::after{content:" ▾";font-size:.8em;opacity:.55}
-.subnav{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:.35rem;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 18px 44px rgba(19,46,80,.16);padding:.5rem;min-width:300px;list-style:none;display:none;z-index:900;columns:2;column-gap:.4rem}
-.nav-links li.has-sub:hover .subnav,.nav-links li.has-sub:focus-within .subnav{display:block}
+.subnav{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 18px 44px rgba(19,46,80,.16);padding:.5rem;min-width:300px;list-style:none;display:none;z-index:900;columns:2;column-gap:.4rem}
+.nav-links li.has-sub::after{content:"";position:absolute;left:0;right:0;top:100%;height:22px}
+.nav-links li.has-sub:hover .subnav,.nav-links li.has-sub:focus-within .subnav{display:block;animation:subIn .12s ease-out}
+@keyframes subIn{from{opacity:0;transform:translateX(-50%) translateY(-4px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .subnav li{break-inside:avoid;margin:0}
 .subnav a{display:block;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;white-space:nowrap}
 .subnav a:hover,.subnav a:focus-visible{background:var(--off);color:var(--teal-ink)}
@@ -641,11 +643,11 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
     </div>
 
     <div style="max-width:760px;margin:2.5rem 0 0;">
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-transform:uppercase;margin-bottom:1rem;">Wann Social Media nicht die erste Maßnahme ist</h3>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.45rem;color:var(--navy);text-transform:uppercase;letter-spacing:.4px;margin-bottom:1rem;">Wann Social Media nicht die erste Maßnahme ist</h3>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;">Wenn jemand in Berlin nach Ihrer Leistung sucht, landet er zuerst bei Google – nicht bei Instagram. Ein gepflegtes <strong style="color:var(--navy);">Google-Unternehmensprofil</strong> mit aktuellen Fotos, korrekten Öffnungszeiten und Bewertungen bringt in den meisten Fällen mehr Anfragen als ein neuer Social-Media-Kanal. Dasselbe gilt für ein Schild über der Tür und einen beschrifteten Transporter: Sie arbeiten jeden Tag, ohne dass jemand etwas posten muss.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;">Deshalb fragen wir im ersten Gespräch, was bei Ihnen schon steht. Wenn das Profil leer ist und die Website nicht überzeugt, fangen wir dort an – auch wenn das für uns der kleinere Auftrag ist.</p>
 
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 1rem;">Die drei häufigsten Fehlentscheidungen</h3>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.45rem;color:var(--navy);text-transform:uppercase;letter-spacing:.4px;margin:2rem 0 1rem;">Die drei häufigsten Fehlentscheidungen</h3>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Auf allen Kanälen gleichzeitig starten.</strong> Vier Profile, die nach zwei Monaten stillstehen, wirken schlechter als eines, das läuft. Wir fangen mit einem an und nehmen den nächsten erst dazu, wenn der erste trägt.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Posten, weil der Plan es vorsieht.</strong> Drei Beiträge pro Woche ohne Anlass sind Pflichterfüllung, und man sieht es ihnen an. Besser weniger Beiträge, die etwas zeigen: eine fertige Arbeit, eine neue Karte, eine offene Stelle.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Menschen fotografieren, ohne zu fragen.</strong> Kunden, Gäste, Patienten, Mitarbeiter: Für erkennbare Personen brauchen Sie eine Einwilligung, und in Praxen und Pflegediensten kommt die Schweigepflicht dazu. Ein gutes Bild ist kein Argument gegen diese Regel – wir planen Aufnahmen von vornherein so, dass sie nicht zum Problem werden.</p>

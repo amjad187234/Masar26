@@ -46,7 +46,7 @@
   --navy:#132e50; --navy2:#1e4275; --navy3:#0a1628;
   --off:#f4f7f7; --text:#1a2a2a; --muted:#5a7070; --border:#e0eaea;
   --gold:#f5c000; --purple:#7c3aed;
-  --nav-h:80px; --r:12px;
+  --nav-h:84px; --r:12px;
   --shadow:0 8px 32px rgba(0,0,0,.08);
   --shadow-lg:0 20px 60px rgba(0,0,0,.12);
 }
@@ -326,7 +326,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media(max-width:640px) {
-  :root { --nav-h:68px; }
+  :root { --nav-h:84px; }
   .hero { min-height:auto; padding:calc(var(--nav-h) + 1rem) 0 2rem; }
   .hero-inner { padding: 1rem 0 1.5rem; }
   .hero h1 { font-size:clamp(2.4rem,10vw,3.5rem); }
@@ -424,8 +424,10 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 /* Untermenü in der Hauptnavigation */
 .nav-links li.has-sub{position:relative}
 .nav-links li.has-sub>a::after{content:" ▾";font-size:.8em;opacity:.55}
-.subnav{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:.35rem;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 18px 44px rgba(19,46,80,.16);padding:.5rem;min-width:300px;list-style:none;display:none;z-index:900;columns:2;column-gap:.4rem}
-.nav-links li.has-sub:hover .subnav,.nav-links li.has-sub:focus-within .subnav{display:block}
+.subnav{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 18px 44px rgba(19,46,80,.16);padding:.5rem;min-width:300px;list-style:none;display:none;z-index:900;columns:2;column-gap:.4rem}
+.nav-links li.has-sub::after{content:"";position:absolute;left:0;right:0;top:100%;height:22px}
+.nav-links li.has-sub:hover .subnav,.nav-links li.has-sub:focus-within .subnav{display:block;animation:subIn .12s ease-out}
+@keyframes subIn{from{opacity:0;transform:translateX(-50%) translateY(-4px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .subnav li{break-inside:avoid;margin:0}
 .subnav a{display:block;padding:8px 12px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;white-space:nowrap}
 .subnav a:hover,.subnav a:focus-visible{background:var(--off);color:var(--teal-ink)}
