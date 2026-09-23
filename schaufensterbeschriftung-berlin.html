@@ -445,7 +445,7 @@ body:has(.mob-nav.open) .wa{display:none}
 .i-inline{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.16em;margin-right:.42em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* Logo: dezenter Glanz, einmal beim Laden und bei Hover */
-.nav-logo{position:relative;overflow:hidden;border-radius:10px;isolation:isolate}
+.nav-logo{position:relative;overflow:hidden;border-radius:10px;isolation:isolate;flex:0 0 auto}
 .nav-logo img{filter:drop-shadow(0 2px 7px rgba(88,208,189,.30));transition:transform .3s ease}
 .nav-logo:hover img{transform:scale(1.04)}
 .nav-logo::after{content:"";position:absolute;top:0;left:-140%;width:65%;height:100%;pointer-events:none;z-index:2;opacity:0;transform:skewX(-18deg);background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.75) 50%,rgba(255,255,255,0) 100%);animation:logoSheen 1.1s ease-out 1s 1}
@@ -453,6 +453,35 @@ body:has(.mob-nav.open) .wa{display:none}
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* === Hero-Logo: gleiche Bildflaeche wie die Fotos, Glanz nur auf dem Logo === */
+.hero-logo-frame{position:relative;width:100%;max-width:400px;aspect-ratio:1080/1350;margin:0 auto;display:flex;align-items:center;justify-content:center;border-radius:var(--r);overflow:hidden;background:linear-gradient(158deg,rgba(255,255,255,.08) 0%,rgba(88,208,189,.12) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.22);box-shadow:0 22px 60px rgba(0,0,0,.35)}
+.hero-logo-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(88,208,189,.20) 0%,transparent 64%);pointer-events:none}
+.hero-logo-wrap{position:relative;z-index:1;display:block;width:175%;flex:0 0 auto}
+.hero-logo-frame .hero-logo-img{width:100%;max-width:none;height:auto;margin:0;display:block;filter:drop-shadow(0 12px 34px rgba(0,0,0,.4));transition:transform .35s ease}
+.hero-logo-frame:hover .hero-logo-img{transform:scale(1.04)}
+@supports ((-webkit-mask-image:url(/logo.webp)) or (mask-image:url(/logo.webp))){
+.hero-logo-wrap::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:linear-gradient(100deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%);background-size:300% 100%;background-position:180% 0;-webkit-mask:url(/logo.webp) center/contain no-repeat;mask:url(/logo.webp) center/contain no-repeat;animation:logoShine 1.6s ease-out 1.1s 1}
+.hero-logo-frame:hover .hero-logo-wrap::after{animation:logoShine 1.6s ease-out}
+@keyframes logoShine{0%{background-position:180% 0;opacity:0}12%{opacity:1}88%{opacity:1}100%{background-position:-80% 0;opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-logo-wrap::after{animation:none}.hero-logo-frame:hover .hero-logo-img{transform:none}}
+}
+/* === Hero ohne Bild: Text mittig ueber die ganze Breite (nur Desktop) === */
+@media(min-width:901px){
+.hero-inner.hero-solo{grid-template-columns:1fr;max-width:940px;margin-left:auto;margin-right:auto;text-align:center}
+.hero-inner.hero-solo .hero-sub{max-width:760px;margin-left:auto;margin-right:auto}
+.hero-inner.hero-solo .hero-btns{justify-content:center}
+.hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
+}
+/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
+@media(min-width:1051px){
+.hero{min-height:100vh}
+.hero-inner{padding:2.1rem 0}
+.hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
+.hero-sub{font-size:16.5px;line-height:1.7;margin-bottom:1.5rem}
+.hero-btns{margin-bottom:1.4rem}
+.hero-trust{padding-top:1.2rem}
+.hero-shot,.hero-logo-frame{max-width:min(360px,40vh)}
+}
 </style>
 </head>
 <body>
@@ -534,7 +563,7 @@ body:has(.mob-nav.open) .wa{display:none}
 <section class="hero" aria-labelledby="hero-heading">
   <div class="hero-lines" aria-hidden="true"></div>
   <div class="container">
-    <div class="hero-inner">
+    <div class="hero-inner hero-solo">
       <div class="hero-badge" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg>Schaufensterbeschriftung · Shopbeschriftung · Berlin</div>
       <h1 id="hero-heading">Schaufenster<em>beschriftung Berlin</em> – Design &amp; Montage inklusive.</h1>
       <p class="hero-sub">Professionelle Schaufensterfolie, Shopbeschriftung und Ladenbeklebung für Unternehmen in Berlin – für Geschäfte, Restaurants und Büros in ganz Berlin – Design, Druck und Montage aus einer Hand. Direkt aus Berlin-Wedding.</p>

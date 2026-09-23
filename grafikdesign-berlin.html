@@ -405,7 +405,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .i-inline{width:1.05em;height:1.05em;display:inline-block;vertical-align:-.16em;margin-right:.42em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
 /* Logo: dezenter Glanz, einmal beim Laden und bei Hover */
-.nav-logo{position:relative;overflow:hidden;border-radius:10px;isolation:isolate}
+.nav-logo{position:relative;overflow:hidden;border-radius:10px;isolation:isolate;flex:0 0 auto}
 .nav-logo img{filter:drop-shadow(0 2px 7px rgba(88,208,189,.30));transition:transform .3s ease}
 .nav-logo:hover img{transform:scale(1.04)}
 .nav-logo::after{content:"";position:absolute;top:0;left:-140%;width:65%;height:100%;pointer-events:none;z-index:2;opacity:0;transform:skewX(-18deg);background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.75) 50%,rgba(255,255,255,0) 100%);animation:logoSheen 1.1s ease-out 1s 1}
@@ -413,6 +413,35 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* === Hero-Logo: gleiche Bildflaeche wie die Fotos, Glanz nur auf dem Logo === */
+.hero-logo-frame{position:relative;width:100%;max-width:400px;aspect-ratio:1080/1350;margin:0 auto;display:flex;align-items:center;justify-content:center;border-radius:var(--r);overflow:hidden;background:linear-gradient(158deg,rgba(255,255,255,.08) 0%,rgba(88,208,189,.12) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.22);box-shadow:0 22px 60px rgba(0,0,0,.35)}
+.hero-logo-frame::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(88,208,189,.20) 0%,transparent 64%);pointer-events:none}
+.hero-logo-wrap{position:relative;z-index:1;display:block;width:175%;flex:0 0 auto}
+.hero-logo-frame .hero-logo-img{width:100%;max-width:none;height:auto;margin:0;display:block;filter:drop-shadow(0 12px 34px rgba(0,0,0,.4));transition:transform .35s ease}
+.hero-logo-frame:hover .hero-logo-img{transform:scale(1.04)}
+@supports ((-webkit-mask-image:url(/logo.webp)) or (mask-image:url(/logo.webp))){
+.hero-logo-wrap::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:linear-gradient(100deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%);background-size:300% 100%;background-position:180% 0;-webkit-mask:url(/logo.webp) center/contain no-repeat;mask:url(/logo.webp) center/contain no-repeat;animation:logoShine 1.6s ease-out 1.1s 1}
+.hero-logo-frame:hover .hero-logo-wrap::after{animation:logoShine 1.6s ease-out}
+@keyframes logoShine{0%{background-position:180% 0;opacity:0}12%{opacity:1}88%{opacity:1}100%{background-position:-80% 0;opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-logo-wrap::after{animation:none}.hero-logo-frame:hover .hero-logo-img{transform:none}}
+}
+/* === Hero ohne Bild: Text mittig ueber die ganze Breite (nur Desktop) === */
+@media(min-width:901px){
+.hero-inner.hero-solo{grid-template-columns:1fr;max-width:940px;margin-left:auto;margin-right:auto;text-align:center}
+.hero-inner.hero-solo .hero-sub{max-width:760px;margin-left:auto;margin-right:auto}
+.hero-inner.hero-solo .hero-btns{justify-content:center}
+.hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
+}
+/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
+@media(min-width:1051px){
+.hero{min-height:100vh}
+.hero-inner{padding:2.1rem 0}
+.hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
+.hero-sub{font-size:16.5px;line-height:1.7;margin-bottom:1.5rem}
+.hero-btns{margin-bottom:1.4rem}
+.hero-trust{padding-top:1.2rem}
+.hero-shot,.hero-logo-frame{max-width:min(360px,40vh)}
+}
 </style>
 </head>
 <body>
@@ -496,10 +525,10 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 <section class="hero" id="main-content" role="main" tabindex="-1">
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-inner">
+    <div class="hero-inner hero-solo">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg>Grafikdesign Berlin · Logo &amp; Corporate Design</div>
-        <h1>Grafikdesign Berlin –<em>Ihre Marke.</em>Klar gestaltet.</h1>
+        <h1>Grafikdesign Berlin&nbsp;–<em>Ihre Marke.</em>Klar gestaltet.</h1>
         <p class="hero-sub">Logo-Design, Corporate Design, Geschäftsausstattung, Print und Social Media für Berliner Unternehmen. Festpreise ab 490 €, feste Korrekturschleifen und druckfertige Daten – Logo-Design ab 490 € gem. § 19 UStG.</p>
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>
@@ -508,9 +537,6 @@ body:has(.mob-nav.open) #stickyCta{display:none}
         <div class="hero-trust">
           <span class="hero-trust-txt">Berlin &amp; Bundesweit · Design + Reinzeichnung + Druck aus einer Hand</span>
         </div>
-      </div>
-      <div class="hero-visual">
-        <img class="hero-shot" src="/grafikdesign.webp" alt="Grafikdesign Berlin – Corporate Design von Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">
       </div>
     </div>
   </div>
