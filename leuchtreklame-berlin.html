@@ -322,7 +322,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .hero-lines{position:absolute;top:0;right:0;bottom:0;width:40%;opacity:.04;background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);pointer-events:none}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4rem 0;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;letter-spacing:1px}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:1.12;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;letter-spacing:1px}
 .hero h1 em{color:var(--teal);font-style:normal;display:block}
 .hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.2rem;max-width:500px}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -341,7 +341,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
 .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.05;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.1;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
 .sec-title em{color:var(--teal-ink);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 
@@ -356,7 +356,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 
 /* WHY */
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0}
-.why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:all .5s}
+.why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:opacity .38s ease,transform .38s ease}
 .why-item.vis{opacity:1;transform:none}
 .why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
 .why-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
@@ -439,7 +439,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .scta-btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
 
 /* REVEAL */
-.reveal,.reveal-l,.reveal-r{opacity:0;transition:opacity .6s,transform .6s}
+.reveal,.reveal-l,.reveal-r{opacity:0;transition:opacity .38s ease,transform .38s ease}
 .reveal{transform:translateY(28px)}
 .reveal-l{transform:translateX(-40px)}
 .reveal-r{transform:translateX(40px)}
@@ -492,7 +492,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .svc-picked-lbl{font-size:13px;color:var(--teal-ink);margin-top:.4rem;font-weight:600;}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
@@ -645,6 +645,20 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
 
 /* Fusszeile und Sticky-Leiste bleiben dunkel wie ueberall */
 .fsoc{color:#8fa4c0}
+/* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
+@media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Datei-Auswahl: eigener Knopf statt Browser-Standard */
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
+/* Hero-Bild in derselben Flaeche wie das Logo - quadratische Fotos werden nicht beschnitten */
+@media(min-width:901px){
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
+}
 </style>
 </head>
 <body>
@@ -1201,7 +1215,7 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
 const stickyCta=document.getElementById('stickyCta');
 window.addEventListener('scroll',()=>{stickyCta.classList.toggle('visible',window.scrollY>500)},{passive:true});
 
-const obs=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in');o.unobserve(e.target)}}),{threshold:.1});
+const obs=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis','in');o.unobserve(e.target)}}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.svc-card,.why-item,.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
 document.querySelectorAll('.faq-q').forEach(btn=>{

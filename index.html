@@ -79,7 +79,7 @@ a { text-decoration:none; color:inherit; }
 
 .eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal-ink); margin-bottom:.8rem; display:block; }
 .eyebrow.light { color:rgba(88,208,189,.8); }
-.sec-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; color:var(--navy); line-height:1; margin-bottom:.7rem; }
+.sec-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; color:var(--navy); line-height:1.12; margin-bottom:.7rem; }
 .sec-title em { color:var(--teal-ink); font-style:normal; }
 .sec-title.white { color:#fff; }
 .sec-title.white em{color:var(--teal)}
@@ -90,11 +90,11 @@ a { text-decoration:none; color:inherit; }
 .sec-head.center .sec-sub { margin:0 auto; }
 
 /* ═══════════ ANIMATIONS ═══════════ */
-.reveal { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.25,.46,.45,.94), transform .7s cubic-bezier(.25,.46,.45,.94); }
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .38s ease, transform .38s ease; }
 .reveal.in { opacity:1; transform:translateY(0); }
-.reveal-l { opacity:0; transform:translateX(-28px); transition:opacity .7s ease, transform .7s ease; }
+.reveal-l { opacity:0; transform:translateX(-28px); transition:opacity .38s ease, transform .38s ease; }
 .reveal-l.in { opacity:1; transform:translateX(0); }
-.reveal-r { opacity:0; transform:translateX(28px); transition:opacity .7s ease, transform .7s ease; }
+.reveal-r { opacity:0; transform:translateX(28px); transition:opacity .38s ease, transform .38s ease; }
 .reveal-r.in { opacity:1; transform:translateX(0); }
 
 /* ═══════════ WHATSAPP ═══════════ */
@@ -135,7 +135,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .hero-lines { position:absolute; top:0; right:0; bottom:0; width:40%; opacity:.04; background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px); pointer-events:none; }
 .hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; padding:4rem 0; position:relative; z-index:2; }
 .hero-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(88,208,189,.12); border:1px solid rgba(88,208,189,.3); color:var(--teal); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:1.5rem; }
-.hero h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.8rem,5.5vw,4.5rem); line-height:1.06; color:#fff; text-transform:uppercase; margin-bottom:1.2rem; }
+.hero h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.8rem,5.5vw,4.5rem); line-height:1.12; color:#fff; text-transform:uppercase; margin-bottom:1.2rem; }
 .hero h1 em { color:var(--teal); font-style:normal; display:block; }
 .hero-sub { font-size:17px; color:rgba(255,255,255,.65); line-height:1.85; margin-bottom:2.2rem; max-width:500px; }
 .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
@@ -188,7 +188,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 .pb-body.dk { background:var(--navy); }
 .pb-body.lt { background:#fff; }
 .pb-ey { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:.8rem; }
-.pb-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.5rem); text-transform:uppercase; line-height:1; margin-bottom:.8rem; }
+.pb-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.5rem); text-transform:uppercase; line-height:1.12; margin-bottom:.8rem; }
 .pb-body.dk .pb-title { color:#fff; }
 .pb-body.lt .pb-title { color:var(--navy); }
 .pb-title em { color:var(--teal); font-style:normal; }
@@ -271,7 +271,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 /* ═══════════ CTA STRIP ═══════════ */
 .cta-strip { background:linear-gradient(135deg,var(--navy3),var(--navy),#0d4a4a); padding:6rem 0; text-align:center; position:relative; overflow:hidden; }
 .cta-strip::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50%,rgba(88,208,189,.1),transparent 65%); pointer-events:none; }
-.cta-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.5rem,5vw,4rem); color:#fff; text-transform:uppercase; margin-bottom:1rem; line-height:1; position:relative; z-index:1; }
+.cta-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.5rem,5vw,4rem); color:#fff; text-transform:uppercase; margin-bottom:1rem; line-height:1.12; position:relative; z-index:1; }
 .cta-title em { color:var(--teal); font-style:normal; }
 .cta-sub { font-size:17px; color:rgba(255,255,255,.6); margin-bottom:2.5rem; position:relative; z-index:1; }
 .cta-contact { display:flex; align-items:center; gap:2rem; justify-content:center; margin-top:2rem; flex-wrap:wrap; position:relative; z-index:1; }
@@ -390,7 +390,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
    Replaces outline:none with a visible focus ring on all
    interactive elements for keyboard and assistive technology users */
-*:focus { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
 *:focus:not(:focus-visible) { outline: none; }
 *:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; border-radius: 3px; }
 a:focus-visible, button:focus-visible, input:focus-visible,
@@ -478,6 +478,26 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 }
 .pb-body.lt .pb-ey{color:var(--teal-ink)}
 .pb-body.lt .pb-title em{color:var(--teal-ink)}
+/* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
+@media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Datei-Auswahl: eigener Knopf statt Browser-Standard */
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Preiskarten: Knopf unten buendig, auch wenn die Listen verschieden lang sind */
+.price-card{display:flex;flex-direction:column}
+.price-card .price-list{flex:1 1 auto}
+.price-card .price-btn{margin-top:auto}
+/* Schmale Textbloecke mittig statt links, sonst bleibt die rechte Haelfte leer */
+.faq-list,.blog-prose{margin-left:auto;margin-right:auto}
+section > .container > div[style*='max-width'],section > div > .container > div[style*='max-width']{margin-left:auto;margin-right:auto}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
 </style>
 <script type="application/ld+json">
 {
@@ -811,7 +831,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
           <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
           <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:-.8rem;margin-bottom:1rem;">Entdecken Sie unser vollständiges Leistungsportfolio auf der <a href="/leistungen.html" style="color:var(--teal-ink);text-decoration:underline;font-weight:600;">Leistungsübersicht</a>.</p>
+        <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:-.8rem;margin-bottom:1rem;">Entdecken Sie unser vollständiges Leistungsportfolio auf der <a href="/leistungen.html" style="color:var(--teal);text-decoration:underline;font-weight:600;">Leistungsübersicht</a>.</p>
         <div style="text-align:center;padding-top:2rem;" class="hero-scroll">
           <a href="#leistungen" aria-label="Scrollen" style="display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .2s;text-decoration:none;" onmouseover="this.style.color='rgba(88,208,189,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">
             Entdecken
@@ -1139,7 +1159,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 <section class="section bg-navy" id="social">
   <div class="container">
     <div class="sec-head center reveal">
-      <span class="eyebrow light"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Social Media Marketing</span>
+      <span class="eyebrow light"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg>Social Media Marketing</span>
       <h2 class="sec-title white">Viral auf dem <em>Smartphone.</em></h2>
       <p class="sec-sub light">Professionelles Management auf Instagram, TikTok, Facebook, LinkedIn und YouTube – mit Content, Reels und gezielten Ads.</p>
     </div>
@@ -1351,7 +1371,7 @@ window.addEventListener('scroll',()=>{
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
   if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),Math.min(i,4)*60);
-}),{threshold:.08});
+}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 
 // ═══ STATS COUNT-UP ═══
@@ -1375,7 +1395,7 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe
       }
       requestAnimationFrame(step);
     });
-  }, { threshold: 0.5 });
+  }, {threshold:0.01,rootMargin:"0px 0px -40px 0px"});
   counters.forEach(el => statsObs.observe(el));
 })();
 

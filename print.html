@@ -32,10 +32,10 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .btn-gold:hover{background:#e5b800;transform:translateY(-2px);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
 .sec-title em{color:#b45309;font-style:normal;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .38s ease,transform .38s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
 .wa{position:fixed;bottom:90px;right:18px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);}
 .wa svg{width:26px;height:26px;fill:white;}
@@ -61,7 +61,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(245,192,0,.15),transparent 58%);pointer-events:none;pointer-events:none;}
 .ph-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,192,0,.2);border:1px solid rgba(245,192,0,.5);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
-.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
 .ph-title em{color:var(--gold);font-style:normal;}
 .ph-sub{font-size:16px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:2rem;}
 .ph-icons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
@@ -146,7 +146,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
@@ -682,6 +682,27 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .dec-table td:first-child{color:var(--navy);font-weight:700}
 .dec-table tbody tr:nth-child(even) td{background:rgba(19,46,80,.028)}
 .sec-title.white em,.bg-navy .sec-title em{color:var(--amber)}
+/* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
+@media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Links ohne Unterstreichung wie auf den uebrigen Seiten */
+a{text-decoration:none}
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Datei-Auswahl: eigener Knopf statt Browser-Standard */
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Kachel-Symbole zentriert, Beschriftung lesbarer */
+.ph-icon-card .icon svg{margin:0 auto}
+.ph-icon-card p{color:rgba(255,255,255,.95)}
+/* Schmale Textbloecke mittig statt links, sonst bleibt die rechte Haelfte leer */
+.faq-list,.blog-prose{margin-left:auto;margin-right:auto}
+section > .container > div[style*='max-width'],section > div > .container > div[style*='max-width']{margin-left:auto;margin-right:auto}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
 </style>
     <div class="faq-list fade-up">
       <details>
@@ -837,7 +858,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
   </div>
 </footer>
 <script>
-const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:.08});
+const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 </script>

@@ -317,11 +317,11 @@ const Reveal = {
     const obs = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('in'), Math.min(i, 4) * 60);
+          setTimeout(() => e.target.classList.add('in'), Math.min(i, 3) * 35);
           obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08 });
+    }, {threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 
     document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
   }

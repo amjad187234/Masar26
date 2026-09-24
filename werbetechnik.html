@@ -102,10 +102,10 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
 .sec-title em{color:var(--teal-ink);font-style:normal;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .38s ease,transform .38s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
 .wa{position:fixed;bottom:90px;right:18px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);}
 .wa svg{width:26px;height:26px;fill:white;}
@@ -131,7 +131,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(88,208,189,.13),transparent 58%);pointer-events:none;pointer-events:none;}
 .ph-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
-.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
 .ph-title em{color:var(--teal);font-style:normal;}
 .ph-sub{font-size:16px;color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:2rem;}
 .ph-icons-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -142,7 +142,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .highlight-box{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:16px;padding:3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border:1px solid rgba(88,208,189,.15);position:relative;overflow:hidden;}
 .highlight-box::before{content:'';position:absolute;top:-30%;right:-10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(88,208,189,.08),transparent 70%);}
 .hb-ey{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
-.hb-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;text-transform:uppercase;line-height:1;margin-bottom:.8rem;;letter-spacing:.8px}
+.hb-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;text-transform:uppercase;line-height:1.12;margin-bottom:.8rem;;letter-spacing:.8px}
 .hb-title em{color:var(--teal);font-style:normal;}
 .hb-desc{font-size:14px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:1.5rem;}
 .hb-feats{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.8rem;}
@@ -237,7 +237,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 .mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#58d0bd; color:#132e50; font-size:14px; font-weight:700; text-decoration:none; }
 .mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
@@ -325,6 +325,24 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 }
+/* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
+@media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Links ohne Unterstreichung wie auf den uebrigen Seiten */
+a{text-decoration:none}
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Datei-Auswahl: eigener Knopf statt Browser-Standard */
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Kachel-Symbole zentriert, Beschriftung lesbarer */
+.ph-icon-card .icon svg{margin:0 auto}
+.ph-icon-card p{color:rgba(255,255,255,.95)}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
 </style>
 <meta property="og:title" content="Werbetechnik Berlin – Leuchtreklamen & Beschriftung | Masar">
 <meta property="og:description" content="Werbetechnik für Unternehmen in ganz Berlin: Leuchtreklame, Fahrzeugbeschriftung und Schilder – Planung, Fertigung und Montage aus einer Hand. Angebot in 24h.">
@@ -867,7 +885,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
   </div>
 </footer>
 <script>
-const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:.08});
+const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 </script>

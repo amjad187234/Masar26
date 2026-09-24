@@ -96,13 +96,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 .page-header{padding-top:calc(var(--nav-h) + 4rem);padding-bottom:3rem;background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 60%,#0d4a4a 100%);position:relative;overflow:hidden}
 .page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(88,208,189,.1) 0%,transparent 60%);pointer-events:none}
-.page-header h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;text-transform:uppercase;line-height:1;margin-bottom:.8rem;position:relative;z-index:2;letter-spacing:1px}
+.page-header h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;text-transform:uppercase;line-height:1.12;margin-bottom:.8rem;position:relative;z-index:2;letter-spacing:1px}
 .page-header h1 em{color:var(--teal);font-style:normal}
 .page-header p{font-size:16px;color:rgba(255,255,255,.6);max-width:600px;position:relative;z-index:2}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .blog-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.04)}
 .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(88,208,189,.14);border-color:var(--teal)}
-.blog-card-img{background:linear-gradient(135deg,var(--navy) 0%,#0d4a4a 100%);height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem}
+.blog-card-img{background:linear-gradient(135deg,var(--navy) 0%,#0d4a4a 100%);height:180px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;color:var(--teal)}
 .blog-card-body{padding:1.5rem}
 .blog-tag{display:inline-block;background:rgba(88,208,189,.12);color:var(--teal-ink);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:.8rem}
 .blog-card-body h2{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;color:var(--navy);line-height:1.15;margin-bottom:.6rem;text-transform:uppercase;letter-spacing:.6px}
@@ -137,7 +137,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .foot-legal a:hover{color:#fff}
 .skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;padding:10px 20px;font-weight:700;font-size:14px;border-radius:0 0 6px 0;z-index:9999;text-decoration:none}
 .skip-link:focus{top:0}
-*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:2px}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;outline-offset:2px}
 *:focus:not(:focus-visible){outline:none}
 @media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.blog-grid{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}}
@@ -168,6 +168,14 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Schmale Textbloecke mittig statt links, sonst bleibt die rechte Haelfte leer */
+.faq-list,.blog-prose{margin-left:auto;margin-right:auto}
+section > .container > div[style*='max-width'],section > div > .container > div[style*='max-width']{margin-left:auto;margin-right:auto}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
 </style>
 </head>
 <body>

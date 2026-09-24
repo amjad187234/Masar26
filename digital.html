@@ -32,12 +32,12 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .btn-purple:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
 .sec-title em{color:var(--purple);font-style:normal;}
 .sec-title.white{color:#fff;}.sec-title.white em{color:#c4b5fd;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
 .sec-sub.light{color:rgba(255,255,255,.6);}
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .38s ease,transform .38s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
 .wa{position:fixed;bottom:90px;right:18px;z-index:998;width:52px;height:52px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);}
 .wa svg{width:26px;height:26px;fill:white;}
@@ -63,7 +63,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(124,58,237,.2),transparent 58%);pointer-events:none;pointer-events:none;}
 .ph-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
-.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:.95;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
+.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
 .ph-title em{color:#c4b5fd;font-style:normal;}
 .ph-sub{font-size:16px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:2rem;}
 .ph-stats{display:flex;gap:2rem;flex-wrap:wrap;}
@@ -156,7 +156,7 @@ footer{background:#060e1a;padding:4rem 0 2rem;}
 @media(max-width:640px){.cookie-inner{flex-direction:column;align-items:flex-start;}.cookie-actions{width:100%;}.cookie-btn-reject,.cookie-btn-accept{flex:1;text-align:center;}.sticky-cta{padding:.7rem 1rem;}.sticky-cta-text span{display:none;}.sticky-btn-phone{display:none;}.sticky-btn-main{width:100%;text-align:center;}}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
-*:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
 *:focus:not(:focus-visible){outline:none;}
 *:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px;}
 a:focus-visible,button:focus-visible,input:focus-visible,
@@ -246,6 +246,28 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .dec-table td{padding:13px 16px;border-top:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.65}
 .dec-table td:first-child{color:var(--navy);font-weight:700}
 .dec-table tbody tr:nth-child(even) td{background:rgba(19,46,80,.028)}
+/* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
+@media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Links ohne Unterstreichung wie auf den uebrigen Seiten */
+a{text-decoration:none}
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Datei-Auswahl: eigener Knopf statt Browser-Standard */
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Bildflaeche der Service-Bloecke: Symbol in Markenfarbe statt Schwarz */
+.svc-visual{color:var(--teal-ink)}
+.svc-visual svg{margin:0 auto}
+/* Schmale Textbloecke mittig statt links, sonst bleibt die rechte Haelfte leer */
+.faq-list,.blog-prose{margin-left:auto;margin-right:auto}
+section > .container > div[style*='max-width'],section > div > .container > div[style*='max-width']{margin-left:auto;margin-right:auto}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
+@media(min-width:1051px) and (max-height:760px){.page-hero .ph-title{font-size:clamp(2rem,4vw,3rem)}.page-hero .ph-sub{font-size:16px;margin-bottom:1.2rem}}
 </style>
 <meta property="og:title" content="Social Media Agentur Berlin – Instagram, LinkedIn & TikTok | Masar">
 <meta property="og:description" content="Social Media Agentur Berlin für Unternehmen – Instagram, LinkedIn, TikTok & YouTube, Reels, Meta Ads, monatliches Paket ab 490 € gem. § 19 UStG. Masar Berlin-Wedding.">
@@ -507,7 +529,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 
 <div class="page-hero" id="main-content" role="main" tabindex="-1"><div class="container"><div class="ph-inner">
   <div>
-    <div class="ph-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Social Media Agentur Berlin · Instagram · LinkedIn · TikTok</div>
+    <div class="ph-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg>Social Media Agentur Berlin · Instagram · LinkedIn · TikTok</div>
     <h1 class="ph-title">Social Media Agentur <em>Berlin</em> – Instagram, LinkedIn & TikTok.</h1>
     <p class="ph-sub">Von professionellem Social Media Marketing bis zu datengetriebenen Werbekampagnen – für Unternehmen in Berlin bringt Ihre Social Media Agentur Ihre Marke dorthin, wo Ihre Kunden sind.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
@@ -533,7 +555,6 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 <section class="section"><div class="container">
   <div class="svc-detail-grid fade-up">
     <div>
-      <div class="svc-icon-big"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
       <div class="svc-tag">Service 01</div>
       <h2 class="svc-d-title">Social Media Management</h2>
       <p class="svc-d-desc">Wir übernehmen Planung, Gestaltung und Veröffentlichung – damit der Kanal nicht nach drei Wochen einschläft, weil im Betrieb niemand dazu kommt.</p>
@@ -550,7 +571,6 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
   </div>
   <div class="svc-detail-grid rev fade-up">
     <div>
-      <div class="svc-icon-big"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="8" width="19" height="12" rx="2"/><path d="m3 8 3.5-4M9 8l3.5-4M15 8l3.5-4"/></svg></div>
       <div class="svc-tag">Service 02</div>
       <h2 class="svc-d-title">Content Creation & Reels</h2>
       <p class="svc-d-desc">Fotos und Videos aus Ihrem Betrieb statt Bildern aus einer Datenbank. Wir kommen zu Ihnen, der Rest entsteht bei uns.</p>
@@ -567,7 +587,6 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
   </div>
   <div class="svc-detail-grid fade-up">
     <div>
-      <div class="svc-icon-big"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.6"/></svg></div>
       <div class="svc-tag">Service 03</div>
       <h2 class="svc-d-title">Performance Marketing</h2>
       <p class="svc-d-desc">Anzeigen auf Meta und Google mit festem Budget. Sie erfahren vorher, was das Budget abdeckt, und hinterher, was daraus geworden ist.</p>
@@ -771,7 +790,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
         </select>
       </div>
       <div class="mk-fg"><label for="dg-nachricht">Ihr Anliegen</label><textarea id="dg-nachricht" name="nachricht" placeholder="Maße, Stückzahl, Standort, Zeitrahmen – je konkreter, desto genauer das Angebot."></textarea></div>
-      <div class="mk-fg"><label for="dg-datei">Datei anhängen (optional)</label><input type="file" id="dg-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
+      <div class="mk-fg"><label for="dg-datei">Datei anhängen (optional)</label><input type="file" id="dg-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
       <div class="mk-consent">
         <input type="checkbox" id="dg-consent" name="consent" required>
         <label for="dg-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>
@@ -841,7 +860,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
   </div>
 </footer>
 <script>
-const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:.08});
+const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 </script>

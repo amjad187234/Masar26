@@ -59,6 +59,8 @@ p{color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:1.5rem;font-size:16p
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* Logo auf dunklem Grund: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.logo img{background:rgba(255,255,255,.95);padding:10px 14px;border-radius:12px;height:62px;box-sizing:content-box;margin:0 auto}
 </style>
 </head>
 <body>

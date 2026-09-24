@@ -473,6 +473,21 @@ footer {
 .hero-404 h1{font-size:clamp(2.4rem,4.4vw,3.6rem)}
 .hero-404 .hero-sub{margin-bottom:1.6rem}
 }
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
+/* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
+.foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
+/* Nur die Kopfzeile ist fixiert - andere <nav>-Elemente nicht */
+nav.quick-grid{position:static;top:auto;left:auto;right:auto;width:auto;height:auto;z-index:auto;background:transparent;border-bottom:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+/* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
+.nav-links li.has-sub>a{white-space:nowrap}
+.nav-links li.has-sub{flex:0 0 auto}
+/* Telefonnummer in der Kopfzeile wie auf den uebrigen Seiten */
+.nav-phone{display:flex;align-items:center;gap:.4rem;color:var(--navy);font-size:14.5px;font-weight:700;text-decoration:none;transition:color .2s;margin-left:.8rem;white-space:nowrap}
+.nav-phone:hover{color:var(--teal-ink)}
+.nav-phone svg{width:15px;height:15px;flex-shrink:0}
+@media(max-width:1050px){.nav-phone{display:none}}
 </style>
 </head>
 <body>
@@ -511,6 +526,11 @@ footer {
       <li><a href="/ueber-uns.html">Über uns</a></li>
       <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
+
+    <a href="tel:01785143918" class="nav-phone" aria-label="Jetzt anrufen">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      0178 514 3918
+    </a>
     <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobNav">
       <span></span><span></span><span></span>
     </button>
