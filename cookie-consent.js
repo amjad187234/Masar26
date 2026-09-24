@@ -117,7 +117,7 @@
       '.mck-wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}',
       '.mck-title{font-weight:800;font-size:1rem;color:#132e50;margin-bottom:.35rem;}',
       '.mck-text{font-size:13px;color:#5a7070;line-height:1.55;max-width:680px;}',
-      '.mck-text a{color:#58d0bd;font-weight:600;text-decoration:none;}',
+      '.mck-text a{color:#177567;font-weight:600;text-decoration:underline;}',
       '.mck-actions{display:flex;gap:.7rem;flex-shrink:0;flex-wrap:wrap;}',
       /* KEIN DARK PATTERN — beide Buttons gleich gewichtet */
       '.mck-btn{',

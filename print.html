@@ -33,7 +33,7 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1;margin-bottom:.6rem;;letter-spacing:.8px}
-.sec-title em{color:var(--amber);font-style:normal;}
+.sec-title em{color:#b45309;font-style:normal;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
@@ -521,9 +521,9 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Professionelle Druckerei in Berlin – direkt in Berlin-Wedding</h2>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Als <strong>Druckerei in Berlin</strong> bieten wir Ihnen alles aus einer Hand: <strong>Flyer drucken</strong>, <strong>Visitenkarten</strong>, <strong>Plakate</strong> und das passende <strong>Printdesign</strong>. Unser Studio mit eigener Werkstatt sitzt in Berlin-Wedding und betreut Kunden im ganzen Stadtgebiet – von Mitte über Charlottenburg bis Prenzlauer Berg. Grafik und Layout sind bei jedem Auftrag kostenlos enthalten. Kein Mehraufwand, keine versteckten Kosten – Sie fragen an und erhalten Ihr Angebot innerhalb von 24 Stunden.</p>
     <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:13px;">
-      <a href="/leistungen.html" style="color:var(--teal);font-weight:600;">→ Alle Leistungen</a>
-      <a href="/werbetechnik.html" style="color:var(--teal);font-weight:600;">→ Werbetechnik Berlin</a>
-      <a href="/index.html#druck" style="color:var(--teal);font-weight:600;">→ Druck auf der Startseite</a>
+      <a href="/leistungen.html" style="color:var(--teal-ink);font-weight:600;">→ Alle Leistungen</a>
+      <a href="/werbetechnik.html" style="color:var(--teal-ink);font-weight:600;">→ Werbetechnik Berlin</a>
+      <a href="/index.html#druck" style="color:var(--teal-ink);font-weight:600;">→ Druck auf der Startseite</a>
     </div>
   </div>
 
@@ -574,7 +574,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
 
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);">
-      <table style="width:100%;min-width:700px;border-collapse:collapse;font-size:14px;">
+      <table class="dec-table" style="width:100%;min-width:700px;border-collapse:collapse;font-size:14px;">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Papierempfehlung nach Druckprodukt</caption>
         <thead>
           <tr>
@@ -659,10 +659,10 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       .faq-list details[open]{box-shadow:0 8px 32px rgba(88,208,189,.12);border-color:rgba(88,208,189,.4);}
       .faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:var(--navy);user-select:none;}
       .faq-list summary::-webkit-details-marker{display:none;}
-      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .25s;}
+      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal-ink);flex-shrink:0;line-height:1;transition:transform .25s;}
       .faq-list details[open] summary::after{transform:rotate(45deg);}
       .faq-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
-      .faq-list summary:hover{color:var(--teal);}
+      .faq-list summary:hover{color:var(--teal-ink);}
       .faq-answer{padding:0 1.5rem 1.2rem;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);}
       .faq-answer p{margin-top:.8rem;}
     
@@ -677,6 +677,11 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 }
+/* === Vergleichstabellen: Zellen mit Abstand und Trennlinien === */
+.dec-table td{padding:13px 16px;border-top:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.65}
+.dec-table td:first-child{color:var(--navy);font-weight:700}
+.dec-table tbody tr:nth-child(even) td{background:rgba(19,46,80,.028)}
+.sec-title.white em,.bg-navy .sec-title em{color:var(--amber)}
 </style>
     <div class="faq-list fade-up">
       <details>

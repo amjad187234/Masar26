@@ -113,11 +113,11 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .price-card:hover{transform:translateY(-3px);}
 .price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--navy);font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px;white-space:nowrap;}
 .price-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;;letter-spacing:.6px}
-.price-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--teal);line-height:1;}
+.price-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--teal-ink);line-height:1;}
 .price-period{font-size:12px;color:var(--muted);margin-bottom:1rem;}
 .price-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem;}
 .price-list li{font-size:13px;color:var(--text);list-style:none;display:flex;align-items:flex-start;gap:.4rem;}
-.price-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.price-list li::before{content:'✓';color:var(--teal-ink);font-weight:700;flex-shrink:0;}
 .price-btn{display:block;text-align:center;background:var(--navy);color:#fff;padding:11px;border-radius:6px;font-weight:700;font-size:13px;transition:background .2s;text-decoration:none;}
 .price-card.featured .price-btn{background:var(--teal);color:var(--navy);}
 .price-btn:hover{background:var(--teal);color:var(--navy);}
@@ -557,9 +557,9 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
   </div>
   <div style="text-align:center;margin-top:1.5rem;" class="fade-up"><a href="werbetechnik.html" class="btn-primary">Mehr zu Werbetechnik →</a></div>
   <div style="text-align:center;margin-top:1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;" class="fade-up">
-    <a href="/leuchtreklame-berlin.html" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Leuchtreklame Berlin →</a>
-    <a href="/fahrzeugbeschriftung-berlin.html" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Fahrzeugbeschriftung Berlin →</a>
-    <a href="/schaufensterbeschriftung-berlin.html" style="font-size:13px;color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Schaufensterbeschriftung Berlin →</a>
+    <a href="/leuchtreklame-berlin.html" style="font-size:13px;color:var(--teal-ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Leuchtreklame Berlin →</a>
+    <a href="/fahrzeugbeschriftung-berlin.html" style="font-size:13px;color:var(--teal-ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Fahrzeugbeschriftung Berlin →</a>
+    <a href="/schaufensterbeschriftung-berlin.html" style="font-size:13px;color:var(--teal-ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--teal);padding-bottom:2px;">Schaufensterbeschriftung Berlin →</a>
   </div>
 </div>
 <hr class="divider">
@@ -632,10 +632,10 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
       .faq-list details[open]{box-shadow:0 8px 32px rgba(88,208,189,.12);border-color:rgba(88,208,189,.4);}
       .faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.2rem 1.5rem;cursor:pointer;list-style:none;font-weight:700;font-size:15px;color:var(--navy);user-select:none;}
       .faq-list summary::-webkit-details-marker{display:none;}
-      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal);flex-shrink:0;line-height:1;transition:transform .25s;}
+      .faq-list summary::after{content:'+';font-size:1.4rem;font-weight:300;color:var(--teal-ink);flex-shrink:0;line-height:1;transition:transform .25s;}
       .faq-list details[open] summary::after{transform:rotate(45deg);}
       .faq-list summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
-      .faq-list summary:hover{color:var(--teal);}
+      .faq-list summary:hover{color:var(--teal-ink);}
       .faq-answer{padding:0 1.5rem 1.2rem;font-size:14px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);}
       .faq-answer p{margin-top:.8rem;}
     
@@ -652,6 +652,8 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .page-hero-inner{max-width:960px;margin-left:auto;margin-right:auto;text-align:center}
 .page-hero-inner .ph-sub{max-width:780px;margin-left:auto;margin-right:auto}
 }
+.lt .pb-ey{color:var(--teal-ink)}
+.lt .pb-t em{color:var(--teal-ink)}
 </style>
     <div class="faq-list fade-up">
       <details>

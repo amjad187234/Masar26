@@ -242,6 +242,10 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 }
+/* === Vergleichstabellen: Zellen mit Abstand und Trennlinien === */
+.dec-table td{padding:13px 16px;border-top:1px solid var(--border);color:var(--muted);vertical-align:top;line-height:1.65}
+.dec-table td:first-child{color:var(--navy);font-weight:700}
+.dec-table tbody tr:nth-child(even) td{background:rgba(19,46,80,.028)}
 </style>
 <meta property="og:title" content="Social Media Agentur Berlin – Instagram, LinkedIn & TikTok | Masar">
 <meta property="og:description" content="Social Media Agentur Berlin für Unternehmen – Instagram, LinkedIn, TikTok & YouTube, Reels, Meta Ads, monatliches Paket ab 490 € gem. § 19 UStG. Masar Berlin-Wedding.">
@@ -586,8 +590,8 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Social Media Marketing Berlin – Lokale Strategie für Ihren Erfolg</h2>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Als <strong>Social Media Agentur Berlin</strong> kennen wir den lokalen Markt: die Kieze, die Zielgruppen und das, was hier tatsächlich funktioniert. Ob <strong>Instagram Marketing Berlin</strong> für Ihre Gastronomie in Mitte, <strong>TikTok Agentur Berlin</strong> für Ihren Einzelhandel in Prenzlauer Berg oder <strong>Social Media Marketing Berlin</strong> für Ihren Handwerksbetrieb in Wedding – wir entwickeln eine Strategie, die zu Ihrem Standort und Ihrer Zielgruppe passt. Unser Studio mit eigener Werkstatt sitzt in Berlin-Wedding und betreut Kunden aus dem ganzen Stadtgebiet.</p>
     <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:13px;">
-      <a href="/index.html#social" style="color:var(--teal);font-weight:600;">→ Social Media auf der Startseite</a>
-      <a href="/leistungen.html" style="color:var(--teal);font-weight:600;">→ Alle Leistungen</a>
+      <a href="/index.html#social" style="color:var(--teal-ink);font-weight:600;">→ Social Media auf der Startseite</a>
+      <a href="/leistungen.html" style="color:var(--teal-ink);font-weight:600;">→ Alle Leistungen</a>
     </div>
   </div>
 </div></section>
@@ -619,7 +623,7 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
     </div>
 
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);">
-      <table style="width:100%;min-width:680px;border-collapse:collapse;font-size:14px;">
+      <table class="dec-table" style="width:100%;min-width:680px;border-collapse:collapse;font-size:14px;">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Kanalempfehlung nach Betriebsart</caption>
         <thead>
           <tr>

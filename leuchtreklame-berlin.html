@@ -306,7 +306,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:#fff;letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:15px;font-weight:600;letter-spacing:.5px;color:rgba(255,255,255,.7);transition:color .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
 .nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px;border-radius:6px;font-weight:700!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
 .hamburger span{display:block;width:24px;height:2px;background:#fff;transition:.3s}
@@ -340,9 +340,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 /* SECTION */
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:#fff;line-height:1.05;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
-.sec-title em{color:var(--teal);font-style:normal}
+.sec-title em{color:var(--teal-ink);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 
 /* CARDS */
@@ -366,7 +366,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid rgba(255,255,255,.08)}
 .faq-q{width:100%;text-align:left;background:none;border:none;color:#fff;font-family:'Barlow',sans-serif;font-size:16.5px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal);transition:.2s;flex-shrink:0}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
 .faq-a p{padding:0 0 1.2rem;font-size:15.5px;color:var(--muted);line-height:1.75}
@@ -376,15 +376,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .lw-table th{background:rgba(88,208,189,.1);color:var(--teal);padding:13px 16px;text-align:left;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;white-space:nowrap}
 .lw-table td{padding:13px 16px;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);vertical-align:top}
 .lw-table td:first-child{color:#fff;font-weight:700}
-.lw-table td.num{color:var(--teal);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.lw-table td.num{color:var(--teal-ink);font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
 .lw-prose{max-width:780px;margin:2.5rem auto 0;font-size:15.5px;line-height:1.85;color:var(--muted)}
 .lw-prose p{margin-bottom:1.1rem}
 .lw-prose h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;text-transform:uppercase;margin:2.1rem 0 .8rem;letter-spacing:.5px}
 .lw-prose strong{color:#fff}
-.lw-prose a{color:var(--teal);font-weight:600}
+.lw-prose a{color:var(--teal-ink);font-weight:600}
 .lw-steps{list-style:none;counter-reset:s;margin-top:2.2rem;display:grid;gap:.9rem;max-width:780px;margin-left:auto;margin-right:auto}
 .lw-steps li{counter-increment:s;position:relative;padding:1.1rem 1.4rem 1.1rem 3.4rem;background:rgba(255,255,255,.035);border:1px solid rgba(88,208,189,.14);border-radius:var(--r);font-size:15px;line-height:1.75;color:var(--muted)}
-.lw-steps li::before{content:counter(s);position:absolute;left:1.3rem;top:1.15rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.15rem;color:var(--teal)}
+.lw-steps li::before{content:counter(s);position:absolute;left:1.3rem;top:1.15rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.15rem;color:var(--teal-ink)}
 .lw-steps strong{display:block;color:#fff;margin-bottom:.15rem}
 
 /* CTA BAND */
@@ -488,8 +488,8 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .svc-picker.open{display:flex;}
 .svc-pick-opt{background:rgba(255,255,255,.07);border:1px solid rgba(88,208,189,.2);border-radius:8px;padding:9px 14px;color:rgba(255,255,255,.75);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;text-align:left;}
 .svc-pick-opt:hover{border-color:var(--teal);color:#fff;background:rgba(88,208,189,.1);}
-.svc-pick-opt.picked{background:rgba(88,208,189,.2);border-color:var(--teal);color:var(--teal);}
-.svc-picked-lbl{font-size:13px;color:var(--teal);margin-top:.4rem;font-weight:600;}
+.svc-pick-opt.picked{background:rgba(88,208,189,.2);border-color:var(--teal);color:var(--teal-ink);}
+.svc-picked-lbl{font-size:13px;color:var(--teal-ink);margin-top:.4rem;font-weight:600;}
 
 /* ── BFSG / WCAG 2.1 AA — Global Focus States ──────────────── */
 *:focus{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;}
@@ -583,6 +583,68 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
 .nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
 .nav-phone{color:var(--navy)}
 }
+
+/* === Helles Seitenlayout wie auf allen anderen Seiten (Hero bleibt dunkel) === */
+:root{--teal-ink:#177567;--off:#f4f7f7;--text:#1a2a2a;--border:#e0eaea;--muted:#5a7070}
+body{background:#fff;color:var(--text)}
+
+nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-shadow:0 2px 20px rgba(0,0,0,.06)}
+.nav-links a{color:var(--navy)}
+.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
+.nav-phone{color:var(--navy)}
+.nav-logo-txt{color:var(--navy)}
+.hamburger span{background:var(--navy)}
+
+.bg-alt{background:var(--off)}
+.sec-title{color:var(--navy)}
+.sec-title em{color:var(--teal-ink)}
+.eyebrow{color:var(--teal-ink)}
+.sec-sub{color:var(--muted)}
+
+.svc-card{background:#fff;border:1px solid var(--border);box-shadow:0 2px 12px rgba(19,46,80,.05)}
+.svc-card:hover{background:#fff;border-color:rgba(88,208,189,.55);box-shadow:0 12px 32px rgba(19,46,80,.10)}
+.svc-card h3{color:var(--navy)}
+.svc-card p{color:var(--muted)}
+.svc-icon{color:var(--teal-ink)}
+
+.why-item h4{color:var(--navy)}
+.why-item p{color:var(--muted)}
+
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{color:var(--navy)}
+.faq-q::after{color:var(--teal-ink)}
+.faq-a p{color:var(--muted)}
+
+.lw-wrap{border:1px solid var(--border);background:#fff}
+.lw-table th{background:var(--navy);color:#fff}
+.lw-table td{border-top:1px solid var(--border);color:var(--muted)}
+.lw-table td:first-child{color:var(--navy)}
+.lw-table td.num{color:var(--teal-ink)}
+
+.lw-prose{color:var(--muted)}
+.lw-prose h3{color:var(--navy)}
+.lw-prose strong{color:var(--navy)}
+.lw-prose a{color:var(--teal-ink)}
+
+.lw-steps li{background:#fff;border:1px solid var(--border);color:var(--muted);box-shadow:0 2px 10px rgba(19,46,80,.05)}
+.lw-steps li::before{color:var(--teal-ink)}
+.lw-steps strong{color:var(--navy)}
+
+.cta-band{background:linear-gradient(135deg,var(--navy3) 0%,var(--navy) 60%,#0d4a4a 100%);border-top:none;border-bottom:none}
+.cta-band h2{color:#fff}
+.cta-band p{color:rgba(255,255,255,.72)}
+.cta-band .btn-outline{border-color:rgba(255,255,255,.35);color:#fff}
+
+.fg label{color:var(--muted)}
+.fg input,.fg select,.fg textarea{background:#fff;border:1px solid var(--border);color:var(--text)}
+.fg select option{background:#fff;color:var(--text)}
+.svc-toggle{background:#fff;border:1.5px solid var(--border);color:var(--muted)}
+.svc-toggle:hover,.svc-toggle.has-val{border-color:var(--teal);color:var(--navy)}
+.svc-pick-opt{background:#fff;border:1px solid var(--border);color:var(--muted)}
+.svc-pick-opt:hover{border-color:var(--teal);color:var(--navy);background:rgba(88,208,189,.08)}
+
+/* Fusszeile und Sticky-Leiste bleiben dunkel wie ueberall */
+.fsoc{color:#8fa4c0}
 </style>
 </head>
 <body>
@@ -684,7 +746,7 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/referenzen/leuchtreklame-berlin-05.webp" alt="Hinterleuchtete Leuchtwerbung aus Berlin – ausgeführte Arbeit von Masar Werbeagentur" loading="eager" fetchpriority="high" width="1078" height="1078">
+        <img class="hero-shot" src="/leuchtreklamen.webp" alt="Leuchtreklame Berlin – Lichtwerbung von Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">
       </div>
     </div>
   </div>
@@ -705,7 +767,7 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
       </li>
       <li style="opacity:.4;">/</li>
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:#fff;">Leuchtreklame Berlin</span>
+        <span itemprop="name" style="color:var(--navy);">Leuchtreklame Berlin</span>
         <meta itemprop="position" content="3">
       </li>
     </ol>
@@ -762,12 +824,12 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
       <!-- Preise -->
       <div style="background:rgba(88,208,189,.08);border:1px solid rgba(88,208,189,.25);border-radius:var(--r);padding:2rem;max-width:680px;margin:0 auto;">
         <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.8a4.5 4.5 0 1 0 0 6.4M7.5 11h6M7.5 13.5h6"/></svg>Preise</span>
-        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.7rem;color:#fff;text-transform:uppercase;margin:.5rem 0 1rem;">Leuchtreklame Berlin – Kosten</h2>
+        <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.7rem;color:var(--navy);text-transform:uppercase;margin:.5rem 0 1rem;">Leuchtreklame Berlin – Kosten</h2>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.8rem;">
-          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:#fff;">LED-Leuchtbuchstaben</strong> – ab 149 € pro Buchstabe gem. § 19 UStG</span></li>
-          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:#fff;">Leuchtkasten</strong> – auf Anfrage (je nach Größe)</span></li>
-          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:#fff;">Neonreklame (LED-Optik)</strong> – auf Anfrage</span></li>
-          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:#fff;">Fassadenwerbung &amp; Montage</strong> – auf Anfrage</span></li>
+          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal-ink);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:var(--navy);">LED-Leuchtbuchstaben</strong> – ab 149 € pro Buchstabe gem. § 19 UStG</span></li>
+          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal-ink);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:var(--navy);">Leuchtkasten</strong> – auf Anfrage (je nach Größe)</span></li>
+          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal-ink);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:var(--navy);">Neonreklame (LED-Optik)</strong> – auf Anfrage</span></li>
+          <li style="display:flex;gap:.8rem;align-items:flex-start;font-size:14px;color:var(--muted);"><span style="color:var(--teal-ink);font-size:1rem;flex-shrink:0;">✓</span><span><strong style="color:var(--navy);">Fassadenwerbung &amp; Montage</strong> – auf Anfrage</span></li>
         </ul>
         <p style="font-size:12px;color:var(--muted);margin-top:1rem;">Alle Preise gem. § 19 UStG (Kleinunternehmer). Kostenloses Angebot innerhalb 24 h.</p>
         <a href="#kontakt" class="btn btn-teal" style="margin-top:1.2rem;display:inline-block;">Angebot anfordern</a>
@@ -1009,12 +1071,12 @@ nav{background:rgba(255,255,255,.97);border-bottom:2px solid var(--teal);box-sha
       <h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">Masar Werbetechnik Berlin – <em>komplett aus einer Hand</em></h2>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-      <a href="/werbetechnik.html" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(88,208,189,.2);color:var(--teal);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;transition:all .2s;">
+      <a href="/werbetechnik.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);color:var(--teal-ink);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;box-shadow:0 2px 10px rgba(19,46,80,.06);transition:all .2s;">
         ← Zurück zur Werbetechnik-Übersicht
       </a>
-      <a href="/fahrzeugbeschriftung-berlin.html" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(88,208,189,.2);color:var(--teal);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;transition:all .2s;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 17h14M3 17v-4l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/><path d="M4.5 12.5h15"/></svg>Fahrzeugbeschriftung Berlin
+      <a href="/fahrzeugbeschriftung-berlin.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);color:var(--teal-ink);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;box-shadow:0 2px 10px rgba(19,46,80,.06);transition:all .2s;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 17h14M3 17v-4l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/><path d="M4.5 12.5h15"/></svg>Fahrzeugbeschriftung Berlin
       </a>
-      <a href="/schaufensterbeschriftung-berlin.html" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(88,208,189,.2);color:var(--teal);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;transition:all .2s;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg>Schaufensterbeschriftung Berlin
+      <a href="/schaufensterbeschriftung-berlin.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);color:var(--teal-ink);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;box-shadow:0 2px 10px rgba(19,46,80,.06);transition:all .2s;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg>Schaufensterbeschriftung Berlin
       </a>
       <a href="/#kontakt" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:var(--navy);font-size:14px;font-weight:700;padding:12px 20px;border-radius:8px;transition:all .2s;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.5 12 4l9 5.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="m3 10 9 6 9-6"/></svg>Direkt anfragen
       </a>
