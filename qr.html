@@ -138,6 +138,8 @@ footer a{color:rgba(88,208,189,.6);}
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
+/* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
+h1,h2,h3,h4{overflow-wrap:break-word}
 </style>
 </head>
 <body>

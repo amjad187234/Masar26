@@ -298,6 +298,8 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 @media(min-width:901px){
 .hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 }
+/* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
+h1,h2,h3,h4{overflow-wrap:break-word}
 </style>
 </head>
 <body>
@@ -739,7 +741,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries, o){
       entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); } });
-    }, {threshold:0.01,rootMargin:"0px 0px -40px 0px"});
+    }, {threshold:0,rootMargin:"260px 0px 260px 0px"});
     document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
   } else {
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
@@ -827,5 +829,6 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
+<script src="/reveal-fallback.js" defer></script>
 </body>
 </html>

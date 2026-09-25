@@ -268,6 +268,8 @@ section > .container > div[style*='max-width'],section > div > .container > div[
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 @media(min-width:1051px) and (max-height:760px){.page-hero .ph-title{font-size:clamp(2rem,4vw,3rem)}.page-hero .ph-sub{font-size:16px;margin-bottom:1.2rem}}
+/* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
+h1,h2,h3,h4{overflow-wrap:break-word}
 </style>
 <meta property="og:title" content="Social Media Agentur Berlin – Instagram, LinkedIn & TikTok | Masar">
 <meta property="og:description" content="Social Media Agentur Berlin für Unternehmen – Instagram, LinkedIn, TikTok & YouTube, Reels, Meta Ads, monatliches Paket ab 490 € gem. § 19 UStG. Masar Berlin-Wedding.">
@@ -860,10 +862,11 @@ section > .container > div[style*='max-width'],section > div > .container > div[
   </div>
 </footer>
 <script>
-const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:0.01,rootMargin:"0px 0px -40px 0px"});
+const obs=new IntersectionObserver(e=>e.forEach((x,i)=>{if(x.isIntersecting)setTimeout(()=>x.target.classList.add('vis'),i*70);}),{threshold:0,rootMargin:"260px 0px 260px 0px"});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 </script>
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
+<script src="/reveal-fallback.js" defer></script>
 </body></html>

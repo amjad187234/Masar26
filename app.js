@@ -321,7 +321,7 @@ const Reveal = {
           obs.unobserve(e.target);
         }
       });
-    }, {threshold:0.01,rootMargin:"0px 0px -40px 0px"});
+    }, {threshold:0,rootMargin:"260px 0px 260px 0px"});
 
     document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
   }
