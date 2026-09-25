@@ -135,7 +135,9 @@ footer a{color:rgba(88,208,189,.6);}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
+.hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 </style>
 </head>
 <body>

@@ -194,7 +194,15 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -365,7 +373,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
       <p><strong>Was das für Sie bedeutet:</strong> Kürzere Produktionszeiten = niedrigere Kosten. Für Standardaufträge (Fahrzeugbeschriftung, Aufkleber, Schilder) kommen wir damit schneller zum ersten Entwurf als früher. Diese Effizienz geben wir in Form günstigerer Preise an unsere Kunden weiter.</p>
     </div>
 
-    <h2>Trend 5: Fahrzeugfolierung als mobile Werbung – Nachfrage steigt</h2>
+    <h2>Trend 5: Fahrzeug&shy;folierung als mobile Werbung – Nachfrage steigt</h2>
 
     <p>Fahrzeugbeschriftung bleibt für Handwerksbetriebe, Lieferdienste und Dienstleister in Berlin eines der günstigsten Werbemittel überhaupt. Ein beklebtes Fahrzeug wird im Stadtverkehr täglich von sehr vielen Menschen gesehen und ist damit eines der kosteneffizientesten Werbemedien überhaupt.</p>
 

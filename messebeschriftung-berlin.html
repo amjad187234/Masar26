@@ -411,7 +411,17 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
+.hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -498,7 +508,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
     <div class="hero-inner hero-solo">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><path d="M3 21c0-6 4-11 9-15 5 4 9 9 9 15Z"/><path d="M12 6v15M7.5 21c1.5-4 3-7 4.5-9 1.5 2 3 5 4.5 9"/></svg>Messebeschriftung Berlin · Für Unternehmen &amp; Events</div>
-        <h1>Messebeschriftung Berlin&nbsp;–<em>Ihr Auftritt.</em>Perfekt inszeniert.</h1>
+        <h1>Messe&shy;beschriftung Berlin&nbsp;–<em>Ihr Auftritt.</em>Perfekt inszeniert.</h1>
         <p class="hero-sub">Roll-up Displays, Beachflags, Messewände &amp; Backdrop-Systeme für Berliner Unternehmen. CI-konformes Design, Schnelldruck, Lieferung direkt an Ihren Messestand. Firmenangebot in 24h!</p>
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>
@@ -548,7 +558,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><path d="M3 21c0-6 4-11 9-15 5 4 9 9 9 15Z"/><path d="M12 6v15M7.5 21c1.5-4 3-7 4.5-9 1.5 2 3 5 4.5 9"/></svg>Messe-Displays für Unternehmen</span>
-      <h2 class="sec-title">Messebeschriftung Berlin – <em>jedes Format</em></h2>
+      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>jedes Format</em></h2>
       <p class="sec-sub">Von kompakten Roll-up Displays bis zur großformatigen Messewand – wir produzieren alle Formate für Ihren Messeauftritt in Berlin, in Deutschland und international.</p>
     </div>
     <div class="svc-grid">
@@ -590,7 +600,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:2rem;">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.8a4.5 4.5 0 1 0 0 6.4M7.5 11h6M7.5 13.5h6"/></svg>Transparente Preise</span>
-      <h2 class="sec-title">Messebeschriftung Berlin – <em>Preisübersicht</em></h2>
+      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>Preisübersicht</em></h2>
     </div>
     <div style="overflow-x:auto;">
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
@@ -644,7 +654,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>Warum Masar?</span>
-      <h2 class="sec-title">Ihr Vorteil bei der <em>Messebeschriftung</em></h2>
+      <h2 class="sec-title">Ihr Vorteil bei der <em>Messe&shy;beschriftung</em></h2>
     </div>
     <div class="why-grid">
       <div class="why-item">
@@ -697,7 +707,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2A2.6 2.6 0 0 1 14.5 10c0 1.7-2.5 2-2.5 3.8"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>Häufige Fragen</span>
-      <h2 class="sec-title">Messebeschriftung Berlin – <em>Fragen &amp; Antworten</em></h2>
+      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>Fragen &amp; Antworten</em></h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
@@ -730,7 +740,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
 <div class="cta-band">
   <div class="container">
-    <h2>Kostenloses Angebot –<br>Messebeschriftung Berlin</h2>
+    <h2>Kostenloses Angebot –<br>Messe&shy;beschriftung Berlin</h2>
     <p>Antwort innerhalb von 24 Stunden · CI-konformes Design · Mengenrabatt für Firmen</p>
     <div class="btns">
       <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>

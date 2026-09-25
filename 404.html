@@ -489,7 +489,15 @@ nav.quick-grid{position:static;top:auto;left:auto;right:auto;width:auto;height:a
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>

@@ -441,7 +441,17 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
+.hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>

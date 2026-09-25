@@ -141,7 +141,11 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -273,7 +277,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- ODR & VSBG -->
   <section class="ls" aria-labelledby="sec-odr">
-    <h2 id="sec-odr">Verbraucherstreitbeilegung</h2>
+    <h2 id="sec-odr">Verbraucher&shy;streit&shy;beilegung</h2>
     <p>Die Plattform der Europäischen Kommission zur Online-Streitbeilegung (OS-Plattform) wurde zum 20. Juli 2025 eingestellt. Ein Hinweis darauf entfällt daher.</p>
     <p>Unsere E-Mail-Adresse lautet: <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></p>
     <div class="notice-box">

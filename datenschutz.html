@@ -144,7 +144,13 @@ nav.toc{position:static;top:auto;left:auto;right:auto;width:auto;height:auto;z-i
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
+.hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -222,7 +228,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 <div class="cw">
 
   <nav class="toc" aria-label="Inhaltsverzeichnis Datenschutzerklärung">
-    <h2>Inhaltsverzeichnis</h2>
+    <h2>Inhalts&shy;verzeichnis</h2>
     <ol>
       <li><a href="#s1">Verantwortlicher</a></li>
       <li><a href="#s1b">Datenschutzbeauftragter</a></li>
@@ -256,14 +262,14 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   </section>
 
   <section class="ls" id="s1b" aria-labelledby="h1b">
-    <h2 id="h1b">2. Datenschutzbeauftragter</h2>
+    <h2 id="h1b">2. Datenschutz&shy;beauftragter</h2>
     <div class="notice-box">
       <p>Gemäß Art. 37 DSGVO ist die Bestellung eines Datenschutzbeauftragten nur unter bestimmten Voraussetzungen verpflichtend (z. B. bei regelmäßiger und systematischer Überwachung von Personen im großen Umfang oder bei umfangreicher Verarbeitung besonderer Datenkategorien nach Art. 9 DSGVO sowie i. V. m. § 38 BDSG bei mehr als 20 mit der Datenverarbeitung beschäftigten Personen). Diese Voraussetzungen liegen bei der Masar Werbeagentur als Kleinunternehmen derzeit nicht vor. Ein Datenschutzbeauftragter ist daher nicht bestellt. Für datenschutzbezogene Anfragen wenden Sie sich bitte direkt an den Verantwortlichen unter <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a>.</p>
     </div>
   </section>
 
   <section class="ls" id="s2" aria-labelledby="h2">
-    <h2 id="h2">3. Grundsätze der Datenverarbeitung</h2>
+    <h2 id="h2">3. Grundsätze der Daten&shy;verarbeitung</h2>
     <p>Wir verarbeiten personenbezogene Daten grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Eine regelmäßige Verarbeitung personenbezogener Daten erfolgt nur, sofern eine Rechtsgrundlage nach Art. 6 DSGVO vorliegt oder eine ausdrückliche Einwilligung der betroffenen Person gegeben wurde.</p>
     <p>Wir halten uns an die Grundsätze der Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO), der Zweckbindung (Art. 5 Abs. 1 lit. b DSGVO) und der Speicherbegrenzung (Art. 5 Abs. 1 lit. e DSGVO).</p>
   </section>
@@ -402,7 +408,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
   </section>
 
   <section class="ls" id="s13" aria-labelledby="h13">
-    <h2 id="h13">14. Änderungen dieser Datenschutzerklärung</h2>
+    <h2 id="h13">14. Änderungen dieser Datenschutz&shy;erklärung</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie stets den aktuellen rechtlichen Anforderungen sowie etwaigen Änderungen unserer Leistungen anzupassen. Die jeweils aktuelle Version dieser Datenschutzerklärung ist jederzeit auf dieser Seite abrufbar. Bei wesentlichen Änderungen werden wir Sie gesondert informieren, sofern wir über Ihre Kontaktdaten verfügen.</p>
   </section>
 

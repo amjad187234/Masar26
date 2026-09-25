@@ -184,7 +184,15 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -260,7 +268,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
       </ol>
     </nav>
     <div class="art-tag"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18M3 12h18"/></svg>Schaufensterwerbung · Praxistipps</div>
-    <h1>7 Profi-Tipps für <em>mehr Laufkundschaft</em><br>durch Schaufensterbeschriftung</h1>
+    <h1>7 Profi-Tipps für <em>mehr Laufkundschaft</em><br>durch Schaufenster&shy;beschriftung</h1>
     <div class="art-meta">
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>September 2026</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 1.5M9.5 2h5M12 2v3.5"/></svg>4 Min. Lesezeit</span>

@@ -151,7 +151,11 @@ nav.toc{position:static;top:auto;left:auto;right:auto;width:auto;height:auto;z-i
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -239,7 +243,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 <div class="cw">
 
   <nav class="toc" aria-label="Inhaltsverzeichnis">
-    <h2>Inhaltsverzeichnis</h2>
+    <h2>Inhalts&shy;verzeichnis</h2>
     <ol>
       <li><a href="#sec-geltung">Geltungsbereich und B2B-Klausel</a></li>
       <li><a href="#sec-vertragsschluss">Vertragsschluss</a></li>
@@ -279,7 +283,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §3 -->
   <section class="ls" aria-labelledby="sec-leistungen">
-    <h2 id="sec-leistungen">&#167; 3 &#8211; Leistungsgegenstand und Druckvermittlung</h2>
+    <h2 id="sec-leistungen">&#167; 3 &#8211; Leistungs&shy;gegenstand und Druckvermittlung</h2>
     <h3>3.1 Leistungsumfang</h3>
     <p>Der Anbieter erbringt Leistungen in den Bereichen Druckprodukte (Visitenkarten, Flyer, Plakate, Banner, Aufkleber u.&#8239;&#196;.), Werbetechnik (LED-Schilder, Beschriftungen, Displays) sowie Mediengestaltung (Grafikdesign, Corporate Identity, Social-Media-Grafiken).</p>
     <h3>3.2 Rolle als Druckvermittler</h3>
@@ -303,7 +307,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §5 -->
   <section class="ls" aria-labelledby="sec-zahlung">
-    <h2 id="sec-zahlung">&#167; 5 &#8211; Zahlungsbedingungen</h2>
+    <h2 id="sec-zahlung">&#167; 5 &#8211; Zahlungs&shy;bedingungen</h2>
     <h3>5.1 F&#228;lligkeit und Vorauszahlung</h3>
     <div class="warn-box">
       <p><strong>Vorkasse-Prinzip:</strong> Alle Bestellungen sind zu 100&#8239;% im Voraus zu bezahlen. Die Produktion wird erst nach vollst&#228;ndigem Zahlungseingang beim Anbieter begonnen. Bis zum Zahlungseingang besteht kein Anspruch auf Produktionsbeginn oder Lieferung.</p>
@@ -322,7 +326,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §6 -->
   <section class="ls" aria-labelledby="sec-druckdaten">
-    <h2 id="sec-druckdaten">&#167; 6 &#8211; Druckdaten und Dateianforderungen</h2>
+    <h2 id="sec-druckdaten">&#167; 6 &#8211; Druckdaten und Datei&shy;anforderungen</h2>
     <h3>6.1 Technische Mindestanforderungen</h3>
     <p>Der Auftraggeber ist f&#252;r die &#220;bermittlung druckf&#228;higer Dateien verantwortlich. Folgende technische Mindestanforderungen sind einzuhalten:</p>
     <ul>
@@ -378,7 +382,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §9 -->
   <section class="ls" aria-labelledby="sec-eigentum">
-    <h2 id="sec-eigentum">&#167; 9 &#8211; Eigentumsvorbehalt</h2>
+    <h2 id="sec-eigentum">&#167; 9 &#8211; Eigentums&shy;vorbehalt</h2>
     <p>Die gelieferte Ware bleibt bis zur vollst&#228;ndigen Bezahlung aller Forderungen aus der Gesch&#228;ftsbeziehung mit dem Auftraggeber Eigentum des Anbieters (Vorbehaltsware).</p>
     <p>Der Auftraggeber ist berechtigt, die Vorbehaltsware im ordnungsgem&#228;&#223;en Gesch&#228;ftsbetrieb weiterzuver&#228;u&#223;ern. Er tritt dem Anbieter jedoch bereits jetzt alle Forderungen in H&#246;he des Rechnungsbetrags ab, die ihm aus der Weiterverau&#223;erung gegen einen Abnehmer erwachsen. Der Anbieter nimmt die Abtretung an. Der Auftraggeber ist weiterhin zur Einziehung der Forderung erm&#228;chtigt, solange er seinen Zahlungsverpflichtungen nachkommt.</p>
     <p>Pf&#228;ndungen oder sonstige Eingriffe Dritter in die Vorbehaltsware hat der Auftraggeber dem Anbieter unverz&#252;glich schriftlich anzuzeigen.</p>
@@ -387,7 +391,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §10 -->
   <section class="ls" aria-labelledby="sec-nutzungsrechte">
-    <h2 id="sec-nutzungsrechte">&#167; 10 &#8211; Nutzungsrechte an Gestaltungsleistungen</h2>
+    <h2 id="sec-nutzungsrechte">&#167; 10 &#8211; Nutzungsrechte an Gestaltungs&shy;leistungen</h2>
     <h3>10.1 Entstehung der Rechte</h3>
     <p>Entw&#252;rfe, Layouts, Logos, Illustrationen, Reinzeichnungen, Fotografien und sonstige Gestaltungsleistungen des Anbieters sind urheberrechtlich gesch&#252;tzte Werke bzw. Leistungen im Sinne des Urheberrechtsgesetzes. Das Urheberrecht selbst ist nicht &#252;bertragbar (&#167; 29 Abs. 1 UrhG); &#252;bertragen werden ausschlie&#223;lich Nutzungsrechte nach Ma&#223;gabe dieses Abschnitts.</p>
     <h3>10.2 Umfang der einger&#228;umten Rechte</h3>
@@ -437,7 +441,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
 
   <!-- §14 -->
   <section class="ls" aria-labelledby="sec-schluss">
-    <h2 id="sec-schluss">&#167; 14 &#8211; Schlussbestimmungen</h2>
+    <h2 id="sec-schluss">&#167; 14 &#8211; Schluss&shy;bestimmungen</h2>
     <h3>14.1 Anwendbares Recht</h3>
     <p>Es gilt ausschlie&#223;lich das Recht der Bundesrepublik Deutschland. Die Anwendung des UN-Kaufrechts (CISG) ist ausgeschlossen.</p>
     <h3>14.2 Gerichtsstand</h3>

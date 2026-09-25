@@ -190,7 +190,15 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+/* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
+   Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
+.hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
+.hero-inner,.hero-inner > *,.ph-inner,.ph-inner > *{min-width:0}
+/* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
+.svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
+.gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
+.plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
 </head>
 <body>
@@ -284,7 +292,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg><strong>Wichtig vorab:</strong> In Berlin ist jede Werbeanlage an einer Fassade, die dauerhaft sichtbar ist, grundsätzlich genehmigungspflichtig – unabhängig von Größe oder Beleuchtung. Ausnahmen gibt es nur für temporäre Werbung (z.&nbsp;B. Wahlplakate oder befristete Veranstaltungshinweise).</p>
     </div>
 
-    <h2>1. Genehmigungspflicht – welche Behörde in Berlin?</h2>
+    <h2>1. Genehmigungs&shy;pflicht – welche Behörde in Berlin?</h2>
     <p>Die Genehmigung für Außenwerbung in Berlin erteilt das jeweilige <strong>Bezirksamt – Abteilung Stadtentwicklung und Bauen</strong>. Da Berlin 12 Bezirke mit unterschiedlichen Gestaltungssatzungen hat, variieren die Anforderungen erheblich.</p>
     <p><strong>Welche Behörde ist zuständig?</strong> Zuständig ist das Bezirksamt des Standorts der Werbeanlage, nicht das Ihres Firmensitzes. Ein Unternehmen aus Mitte, das eine Filiale in Charlottenburg-Wilmersdorf betreibt, muss beim Bezirksamt Charlottenburg-Wilmersdorf den Antrag stellen.</p>
     <p><strong>Was brauchen Sie für den Antrag?</strong></p>
@@ -306,7 +314,7 @@ h1,h2,h3,h4{overflow-wrap:break-word}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg><strong>Praxistipp:</strong> Lassen Sie die Genehmigung von Ihrer Werbeagentur vorbereiten und einreichen. Erfahrene Anbieter kennen die lokalen Anforderungen, haben Musterdokumente und beschleunigen den Prozess erheblich. Bei Masar übernehmen wir den Genehmigungsservice für unsere Kunden.</p>
     </div>
 
-    <h2>2. Kosten – Fassadenbeschriftung vs. Leuchtreklame</h2>
+    <h2>2. Kosten – Fassaden&shy;beschriftung vs. Leuchtreklame</h2>
     <p>Die Kosten für Außenwerbung in Berlin variieren stark je nach Technik, Größe und Standort. Hier eine realistische Übersicht für 2026:</p>
 
     <div class="table-wrap">
