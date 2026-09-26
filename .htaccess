@@ -11,14 +11,16 @@ ServerSignature Off
   RewriteEngine On
   RewriteBase /
 
+  # Force www → non-www (choose one direction and stick with it)
+  # Steht vor der HTTPS-Regel: http://www. landet so in einem Schritt
+  # auf https://masar-werbeagentur.de statt ueber zwei Weiterleitungen.
+  RewriteCond %{HTTP_HOST} ^www\.masar-werbeagentur\.de$ [NC]
+  RewriteRule ^ https://masar-werbeagentur.de%{REQUEST_URI} [R=301,L]
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP_HOST} !^localhost [NC]
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
-  # Force www → non-www (choose one direction and stick with it)
-  RewriteCond %{HTTP_HOST} ^www\.masar-werbeagentur\.de$ [NC]
-  RewriteRule ^ https://masar-werbeagentur.de%{REQUEST_URI} [R=301,L]
 
   # Clean URL: /qr/ → /qr/index.html (handled by DirectoryIndex, but explicit fallback)
   RewriteCond %{REQUEST_FILENAME} !-f
