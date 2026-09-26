@@ -6,7 +6,6 @@
 <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" href="/fonts/barlow-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="image" href="/logo.webp" fetchpriority="high">
-<link rel="preconnect" href="https://formsubmit.co">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
@@ -473,7 +472,7 @@ table.rt td:first-child::before{display:none}
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
-      <img src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="/logo.webp" width="800" height="800" alt="Masar Werbeagentur Berlin – Logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="nav-logo-txt">MASAR</span>
     </a>
     <ul class="nav-links" role="list">
@@ -789,11 +788,9 @@ table.rt td:first-child::before{display:none}
       <p class="sec-sub">Beschreiben Sie kurz Ihren Bedarf – wir melden uns innerhalb von 24 Stunden mit einem individuellen Angebot für Ihren Foliendruck in Berlin.</p>
     </div>
     <div class="form-wrap">
-      <form action="https://formsubmit.co/info@masar-werbeagentur.de" method="POST" enctype="multipart/form-data">
+      <form action="/kontakt.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Foliendruck Berlin – Firmenanfrage">
-        <input type="hidden" name="_captcha" value="true">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <input type="hidden" name="_next" value="https://masar-werbeagentur.de/danke.html">
         <div class="form-grid">
           <div class="fg"><label for="cf-firma">Firmenname *</label><input type="text" id="cf-firma" name="firma" autocomplete="organization" placeholder="Musterfirma GmbH" required></div>
           <div class="fg"><label for="cf-name">Ansprechpartner *</label><input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Max Mustermann" required></div>
@@ -833,7 +830,7 @@ table.rt td:first-child::before{display:none}
     <div class="foot-grid">
       <div>
         <div class="foot-logo">
-          <img src="/logo.webp" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <img src="/logo.webp" width="800" height="800" alt="Masar Werbeagentur Berlin" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
           <span class="foot-logo-txt">MASAR</span>
         </div>
         <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>

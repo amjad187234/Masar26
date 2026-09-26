@@ -47,6 +47,20 @@ const BESCHRIFTUNG = [
     'wann'       => 'Zeitrahmen',
     'groesse'    => 'Größe',
     'nachricht'  => 'Nachricht',
+    'betreff'    => 'Betreff',
+    'bereich'    => 'Bereich',
+    'art'        => 'Art',
+    'leistung'   => 'Leistung',
+    'anzahl'     => 'Anzahl Bildschirme',
+    'anzahl_fahrzeuge' => 'Anzahl Fahrzeuge',
+    'folie'      => 'Folien-Art',
+    'design'     => 'Design-Leistung',
+    'schild'     => 'Schild-Art',
+    'beschreibung' => 'Beschreibung',
+    'bestehende_seite' => 'Bestehende Website',
+    'anlass'     => 'Häufigster Anlass',
+    'pvs'        => 'Praxisverwaltungssystem',
+    'daten'      => 'Personenbezogene Daten betroffen',
 ];
 
 // ─────────────────────────── Hilfsfunktionen ───────────────────────────

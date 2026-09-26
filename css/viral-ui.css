@@ -343,3 +343,9 @@ nav.scrolled {
     transition: transform .1s !important;
   }
 }
+
+/* Bildmasse: width/height-Attribute nennen nur das Seitenverhaeltnis
+   (Platzreservierung beim Laden). :where() hat Spezifitaet 0 - jede
+   bestehende Regel fuer Breite oder Hoehe gewinnt, die Bilder bleiben
+   genau so gross wie ohne Attribute. */
+:where(img[width][height]){width:auto;height:auto}
