@@ -432,8 +432,8 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .hero-inner.hero-solo .hero-btns{justify-content:center}
 .hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
 }
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .hero{min-height:100vh}
 .hero-inner{padding:2.1rem 0}
 .hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
@@ -464,6 +464,19 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
 </head>
 <body>
@@ -551,7 +564,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg>Grafikdesign Berlin · Logo &amp; Corporate Design</div>
         <h1>Grafikdesign Berlin&nbsp;–<em>Ihre Marke.</em>Klar gestaltet.</h1>
-        <p class="hero-sub">Logo-Design, Corporate Design, Geschäftsausstattung, Print und Social Media für Berliner Unternehmen. Festpreise ab 490 €, feste Korrekturschleifen und druckfertige Daten – Logo-Design ab 490 € netto zzgl. 19 % MwSt.</p>
+        <p class="hero-sub">Logo-Design, Corporate Design, Geschäftsausstattung, Print und Social Media für Berliner Unternehmen. Festpreise ab 490 € netto, feste Korrekturschleifen und druckfertige Daten – Logo-Design ab 490 € netto zzgl. 19 % MwSt.</p>
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>
           <a href="tel:01785143918" class="btn btn-outline"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z"/></svg>0178 514 3918</a>
@@ -585,7 +598,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
     <div style="display:flex;gap:1.5rem 2.5rem;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--navy);text-align:center;">
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="M14.5 5.5l3 3"/></svg>Logo-Design ab 490 €</span>
+      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="M14.5 5.5l3 3"/></svg>Logo-Design ab 490 € netto</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20 20 3l1 1L4 21Z"/><path d="M3 20h18"/><path d="M9 14v3M13 10v3"/></svg>Offene Vektordaten inklusive</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>Druckfertiges PDF/X in CMYK</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 1.5M9.5 2h5M12 2v3.5"/></svg>Angebot in 24h</span>
@@ -686,20 +699,20 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     </div>
     <div class="price-wrap">
       <div class="price-table-wrap">
-        <table class="price-table">
+        <table class="price-table rt">
           <caption class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">Preise Grafikdesign Berlin</caption>
           <thead>
             <tr><th scope="col">Leistung</th><th scope="col">Umfang</th><th scope="col">Preis</th></tr>
           </thead>
           <tbody>
-            <tr><td>Logo-Design</td><td>3 Entwürfe, 2 Korrekturschleifen, Reinzeichnung</td><td class="price">ab 490 € netto</td></tr>
-            <tr><td>Logo + Basis-CI</td><td>Logo, Farbwelt, Typografie, Mini-Guide</td><td class="price">ab 790 € netto</td></tr>
-            <tr><td>Corporate-Design-Paket</td><td>Logo, Visitenkarte, Briefpapier, CI-Guide</td><td class="price">ab 1.490 € netto</td></tr>
-            <tr><td>Visitenkarten-Design</td><td>Vorder- und Rückseite, druckfertig</td><td class="price">ab 190 € netto</td></tr>
-            <tr><td>Flyer- / Broschüren-Design</td><td>Layout, Satz, Bildauswahl, 2 Korrekturschleifen</td><td class="price">ab 290 € netto</td></tr>
-            <tr><td>Speisekarten-Design</td><td>Layout mehrseitig, Speisen- und Preissatz</td><td class="price">ab 290 € netto</td></tr>
-            <tr><td>Social-Media-Template-Set</td><td>Post-, Story- und Cover-Vorlagen</td><td class="price">ab 390 € netto</td></tr>
-            <tr><td>Druckdatenaufbereitung / Reinzeichnung</td><td>CMYK, Beschnitt, PDF/X-Ausgabe</td><td class="price">ab 90 € netto</td></tr>
+            <tr><td data-label="Leistung">Logo-Design</td><td data-label="Umfang">3 Entwürfe, 2 Korrekturschleifen, Reinzeichnung</td><td class="price" data-label="Preis">ab 490 € netto</td></tr>
+            <tr><td data-label="Leistung">Logo + Basis-CI</td><td data-label="Umfang">Logo, Farbwelt, Typografie, Mini-Guide</td><td class="price" data-label="Preis">ab 790 € netto</td></tr>
+            <tr><td data-label="Leistung">Corporate-Design-Paket</td><td data-label="Umfang">Logo, Visitenkarte, Briefpapier, CI-Guide</td><td class="price" data-label="Preis">ab 1.490 € netto</td></tr>
+            <tr><td data-label="Leistung">Visitenkarten-Design</td><td data-label="Umfang">Vorder- und Rückseite, druckfertig</td><td class="price" data-label="Preis">ab 190 € netto</td></tr>
+            <tr><td data-label="Leistung">Flyer- / Broschüren-Design</td><td data-label="Umfang">Layout, Satz, Bildauswahl, 2 Korrekturschleifen</td><td class="price" data-label="Preis">ab 290 € netto</td></tr>
+            <tr><td data-label="Leistung">Speisekarten-Design</td><td data-label="Umfang">Layout mehrseitig, Speisen- und Preissatz</td><td class="price" data-label="Preis">ab 290 € netto</td></tr>
+            <tr><td data-label="Leistung">Social-Media-Template-Set</td><td data-label="Umfang">Post-, Story- und Cover-Vorlagen</td><td class="price" data-label="Preis">ab 390 € netto</td></tr>
+            <tr><td data-label="Leistung">Druckdatenaufbereitung / Reinzeichnung</td><td data-label="Umfang">CMYK, Beschnitt, PDF/X-Ausgabe</td><td class="price" data-label="Preis">ab 90 € netto</td></tr>
           </tbody>
         </table>
       </div>
@@ -762,7 +775,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p class="sec-sub">Die ehrliche Antwort hängt davon ab, was in den nächsten zwei Jahren an Werbemitteln dazukommt. Diese Übersicht zeigt, was Sie mit dem kleineren Umfang später nachholen müssen.</p>
     </div>
     <div class="price-table-wrap">
-      <table class="price-table">
+      <table class="price-table rt">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Umfang im Vergleich</caption>
         <thead>
           <tr>
@@ -773,19 +786,19 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Nur ein Logo</td>
-            <td>Sie brauchen kurzfristig ein Zeichen für Visitenkarte und Profilbild und haben sonst wenig vor.</td>
-            <td>Verbindliche Farbwerte für Folie und Druck, Mindestgrößen, Schriftlizenzen und eine Variante für dunkle Untergründe.</td>
+            <td data-label="Umfang">Nur ein Logo</td>
+            <td data-label="Wann das reicht">Sie brauchen kurzfristig ein Zeichen für Visitenkarte und Profilbild und haben sonst wenig vor.</td>
+            <td data-label="Was dann später fehlt">Verbindliche Farbwerte für Folie und Druck, Mindestgrößen, Schriftlizenzen und eine Variante für dunkle Untergründe.</td>
           </tr>
           <tr>
-            <td>Logo mit Basisdaten</td>
-            <td>Ein Standort, überschaubare Werbemittel, alles läuft über dieselbe Hand.</td>
-            <td>Regeln für das, was später dazukommt: Fahrzeug, Schild, Messestand, ein zweiter Standort, eine fremde Druckerei.</td>
+            <td data-label="Umfang">Logo mit Basisdaten</td>
+            <td data-label="Wann das reicht">Ein Standort, überschaubare Werbemittel, alles läuft über dieselbe Hand.</td>
+            <td data-label="Was dann später fehlt">Regeln für das, was später dazukommt: Fahrzeug, Schild, Messestand, ein zweiter Standort, eine fremde Druckerei.</td>
           </tr>
           <tr>
-            <td>Komplettes Corporate Design mit CI-Guide</td>
-            <td>Mehrere Werbemittel, ein Team, Fremdfertigung oder Wachstum in Sicht.</td>
-            <td>Nichts – das ist der Umfang, mit dem jede spätere Anwendung ohne Rückfrage funktioniert.</td>
+            <td data-label="Umfang">Komplettes Corporate Design mit CI-Guide</td>
+            <td data-label="Wann das reicht">Mehrere Werbemittel, ein Team, Fremdfertigung oder Wachstum in Sicht.</td>
+            <td data-label="Was dann später fehlt">Nichts – das ist der Umfang, mit dem jede spätere Anwendung ohne Rückfrage funktioniert.</td>
           </tr>
         </tbody>
       </table>
@@ -1003,5 +1016,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body>
 </html>

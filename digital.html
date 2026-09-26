@@ -237,8 +237,8 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 @keyframes logoSheen{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @keyframes logoSheenHover{0%{left:-140%;opacity:0}15%{opacity:.95}100%{left:150%;opacity:0}}
 @media (prefers-reduced-motion:reduce){.nav-logo::after,.nav-logo:hover::after{animation:none}.nav-logo:hover img{transform:none}}
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 }
@@ -280,6 +280,21 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Kleine Beschriftungen auf Handy und Tablet lesbar (mind. 12 px) */
+@media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
 <meta property="og:title" content="Social Media Agentur Berlin – Instagram, LinkedIn & TikTok | Masar">
 <meta property="og:description" content="Social Media Agentur Berlin für Unternehmen – Instagram, LinkedIn, TikTok & YouTube, Reels, Meta Ads, monatliches Paket ab 490 € netto. Masar Berlin-Wedding.">
@@ -549,7 +564,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     </div>
     <div class="ph-stats">
       <div><div class="ph-stat-num">3</div><div class="ph-stat-lbl">Plattformen</div></div>
-      <div><div class="ph-stat-num">ab 490 €</div><div class="ph-stat-lbl">pro Monat</div></div>
+      <div><div class="ph-stat-num">ab 490 €</div><div class="ph-stat-lbl">netto / Monat</div></div>
       <div><div class="ph-stat-num">24h</div><div class="ph-stat-lbl">Reaktionszeit</div></div>
     </div>
   </div>
@@ -654,7 +669,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     </div>
 
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);">
-      <table class="dec-table" style="width:100%;min-width:680px;border-collapse:collapse;font-size:14px;">
+      <table class="dec-table rt" style="width:100%;min-width:680px;border-collapse:collapse;font-size:14px;">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Kanalempfehlung nach Betriebsart</caption>
         <thead>
           <tr>
@@ -665,34 +680,34 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Gastronomie, Café, Imbiss</td>
-            <td>Instagram – Essen ist das dankbarste Motiv, das es gibt</td>
-            <td>Wenn niemand Zeit hat, regelmäßig Fotos zu machen, bringt der Kanal wenig</td>
+            <td data-label="Betrieb">Gastronomie, Café, Imbiss</td>
+            <td data-label="Wo es sich meistens lohnt">Instagram – Essen ist das dankbarste Motiv, das es gibt</td>
+            <td data-label="Wo eher nicht">Wenn niemand Zeit hat, regelmäßig Fotos zu machen, bringt der Kanal wenig</td>
           </tr>
           <tr>
-            <td>Einzelhandel, Mode, Deko</td>
-            <td>Instagram und Reels für neue Ware</td>
-            <td>Bei reinem Fachhandel mit festem Kundenstamm liegt die Wirkung eher im Ladenauftritt</td>
+            <td data-label="Betrieb">Einzelhandel, Mode, Deko</td>
+            <td data-label="Wo es sich meistens lohnt">Instagram und Reels für neue Ware</td>
+            <td data-label="Wo eher nicht">Bei reinem Fachhandel mit festem Kundenstamm liegt die Wirkung eher im Ladenauftritt</td>
           </tr>
           <tr>
-            <td>Handwerk und Bau</td>
-            <td>Vor allem für die Personalsuche – Baustellenbilder wirken auf Bewerber</td>
-            <td>Für Aufträge bringen Google-Profil, Website und beschriftete Fahrzeuge meist mehr</td>
+            <td data-label="Betrieb">Handwerk und Bau</td>
+            <td data-label="Wo es sich meistens lohnt">Vor allem für die Personalsuche – Baustellenbilder wirken auf Bewerber</td>
+            <td data-label="Wo eher nicht">Für Aufträge bringen Google-Profil, Website und beschriftete Fahrzeuge meist mehr</td>
           </tr>
           <tr>
-            <td>Praxis, Pflegedienst</td>
-            <td>Zurückhaltend und vor allem für Bewerber: Team, Arbeitsalltag, offene Stellen</td>
-            <td>Keine Patienten- oder Klientenbilder, auch nicht angedeutet – hier gelten Schweigepflicht und enge Werbegrenzen</td>
+            <td data-label="Betrieb">Praxis, Pflegedienst</td>
+            <td data-label="Wo es sich meistens lohnt">Zurückhaltend und vor allem für Bewerber: Team, Arbeitsalltag, offene Stellen</td>
+            <td data-label="Wo eher nicht">Keine Patienten- oder Klientenbilder, auch nicht angedeutet – hier gelten Schweigepflicht und enge Werbegrenzen</td>
           </tr>
           <tr>
-            <td>B2B, Dienstleister, Kanzleien</td>
-            <td>LinkedIn, wenn Sie Geschäftskunden ansprechen</td>
-            <td>Instagram, wenn dort niemand aus Ihrer Zielgruppe unterwegs ist</td>
+            <td data-label="Betrieb">B2B, Dienstleister, Kanzleien</td>
+            <td data-label="Wo es sich meistens lohnt">LinkedIn, wenn Sie Geschäftskunden ansprechen</td>
+            <td data-label="Wo eher nicht">Instagram, wenn dort niemand aus Ihrer Zielgruppe unterwegs ist</td>
           </tr>
           <tr>
-            <td>Betriebe im Umland</td>
-            <td>Facebook ist dort häufig noch der aktivere Kanal</td>
-            <td>Aufwand auf drei Kanälen gleichzeitig – einer, der durchgehalten wird, ist mehr wert</td>
+            <td data-label="Betrieb">Betriebe im Umland</td>
+            <td data-label="Wo es sich meistens lohnt">Facebook ist dort häufig noch der aktivere Kanal</td>
+            <td data-label="Wo eher nicht">Aufwand auf drei Kanälen gleichzeitig – einer, der durchgehalten wird, ist mehr wert</td>
           </tr>
         </tbody>
       </table>
@@ -879,4 +894,5 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body></html>

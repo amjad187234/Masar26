@@ -574,7 +574,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
 
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);">
-      <table class="dec-table" style="width:100%;min-width:700px;border-collapse:collapse;font-size:14px;">
+      <table class="dec-table rt" style="width:100%;min-width:700px;border-collapse:collapse;font-size:14px;">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Papierempfehlung nach Druckprodukt</caption>
         <thead>
           <tr>
@@ -586,46 +586,46 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
         </thead>
         <tbody>
           <tr>
-            <td>Visitenkarte</td>
-            <td>300–400 g/m²</td>
-            <td>matt</td>
-            <td>Auf mattem Papier kann man handschriftlich etwas notieren – auf glänzendem nicht. Das entscheidet öfter als die Optik.</td>
+            <td data-label="Produkt">Visitenkarte</td>
+            <td data-label="Übliches Papier">300–400 g/m²</td>
+            <td data-label="Oberfläche">matt</td>
+            <td data-label="Worauf es ankommt">Auf mattem Papier kann man handschriftlich etwas notieren – auf glänzendem nicht. Das entscheidet öfter als die Optik.</td>
           </tr>
           <tr>
-            <td>Handzettel, Flyer für die Hand</td>
-            <td>135–170 g/m²</td>
-            <td>matt oder glänzend</td>
-            <td>Unter 135 g/m² fühlt sich der Flyer nach Wegwerfware an, und genau da landet er auch.</td>
+            <td data-label="Produkt">Handzettel, Flyer für die Hand</td>
+            <td data-label="Übliches Papier">135–170 g/m²</td>
+            <td data-label="Oberfläche">matt oder glänzend</td>
+            <td data-label="Worauf es ankommt">Unter 135 g/m² fühlt sich der Flyer nach Wegwerfware an, und genau da landet er auch.</td>
           </tr>
           <tr>
-            <td>Hochwertiger Flyer, Klappkarte</td>
-            <td>250–350 g/m²</td>
-            <td>matt</td>
-            <td>Wenn der Flyer am Empfang ausliegt oder verschickt wird, zählt das Gewicht in der Hand mehr als das Motiv.</td>
+            <td data-label="Produkt">Hochwertiger Flyer, Klappkarte</td>
+            <td data-label="Übliches Papier">250–350 g/m²</td>
+            <td data-label="Oberfläche">matt</td>
+            <td data-label="Worauf es ankommt">Wenn der Flyer am Empfang ausliegt oder verschickt wird, zählt das Gewicht in der Hand mehr als das Motiv.</td>
           </tr>
           <tr>
-            <td>Briefpapier</td>
-            <td>80–100 g/m²</td>
-            <td>ungestrichen</td>
-            <td>Muss durch Ihren Drucker laufen und beschreibbar sein – hier ist dickeres Papier ein Nachteil.</td>
+            <td data-label="Produkt">Briefpapier</td>
+            <td data-label="Übliches Papier">80–100 g/m²</td>
+            <td data-label="Oberfläche">ungestrichen</td>
+            <td data-label="Worauf es ankommt">Muss durch Ihren Drucker laufen und beschreibbar sein – hier ist dickeres Papier ein Nachteil.</td>
           </tr>
           <tr>
-            <td>Plakat für innen</td>
-            <td>135–170 g/m²</td>
-            <td>matt</td>
-            <td>Matt spiegelt unter Ladenbeleuchtung nicht – glänzende Plakate sind aus dem falschen Winkel unlesbar.</td>
+            <td data-label="Produkt">Plakat für innen</td>
+            <td data-label="Übliches Papier">135–170 g/m²</td>
+            <td data-label="Oberfläche">matt</td>
+            <td data-label="Worauf es ankommt">Matt spiegelt unter Ladenbeleuchtung nicht – glänzende Plakate sind aus dem falschen Winkel unlesbar.</td>
           </tr>
           <tr>
-            <td>Plakat oder Aushang für außen</td>
-            <td>wetterfestes Material</td>
-            <td>—</td>
-            <td>Papier hält draußen keinen Regen aus. Für außen nehmen wir Folie, Blueback oder eine Plane.</td>
+            <td data-label="Produkt">Plakat oder Aushang für außen</td>
+            <td data-label="Übliches Papier">wetterfestes Material</td>
+            <td data-label="Oberfläche">—</td>
+            <td data-label="Worauf es ankommt">Papier hält draußen keinen Regen aus. Für außen nehmen wir Folie, Blueback oder eine Plane.</td>
           </tr>
           <tr>
-            <td>Broschüre, Katalog</td>
-            <td>Umschlag stärker als Innenteil</td>
-            <td>nach Anlass</td>
-            <td>Ein Umschlag im selben Papier wie der Innenteil wirkt wie ein geheftetes Dokument, nicht wie eine Broschüre.</td>
+            <td data-label="Produkt">Broschüre, Katalog</td>
+            <td data-label="Übliches Papier">Umschlag stärker als Innenteil</td>
+            <td data-label="Oberfläche">nach Anlass</td>
+            <td data-label="Worauf es ankommt">Ein Umschlag im selben Papier wie der Innenteil wirkt wie ein geheftetes Dokument, nicht wie eine Broschüre.</td>
           </tr>
         </tbody>
       </table>
@@ -672,8 +672,8 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 
 /* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
 @media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 }
@@ -715,6 +715,21 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Kleine Beschriftungen auf Handy und Tablet lesbar (mind. 12 px) */
+@media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
     <div class="faq-list fade-up">
       <details>
@@ -877,4 +892,5 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body></html>

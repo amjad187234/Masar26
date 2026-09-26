@@ -645,8 +645,8 @@ body:has(.mob-nav.open) .sticky-cta{display:none}
 
 /* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
 @media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .page-hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 2rem) 0 2rem}
 .page-hero > .container{width:100%}
 .page-hero-inner{max-width:960px;margin-left:auto;margin-right:auto;text-align:center}
@@ -688,6 +688,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Kleine Beschriftungen auf Handy und Tablet lesbar (mind. 12 px) */
+@media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
     <div class="faq-list fade-up">
       <details>
@@ -853,4 +857,5 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body></html>

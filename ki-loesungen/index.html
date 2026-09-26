@@ -390,8 +390,8 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .hero-inner.hero-solo .hero-btns{justify-content:center}
 .hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
 }
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .hero{min-height:100vh}
 .hero-inner{padding:2.1rem 0}
 .hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
@@ -422,6 +422,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Kleine Beschriftungen auf Handy und Tablet lesbar (mind. 12 px) */
+@media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
 </head>
 <body>
@@ -948,5 +952,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body>
 </html>

@@ -153,7 +153,7 @@
       "name": "Was kostet Foliendruck in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Einfache Klebefolien im A3-Format beginnen ab ca. 25 € netto zzgl. 19 % MwSt. Aufkleber im DIN-A6-Format sind ab 25 € erhältlich. Großformatfolien werden individuell nach Größe und Auflage kalkuliert. Mengenrabatt ab 5 Stück. Firmenangebot in 24h."
+        "text": "Einfache Klebefolien im A3-Format beginnen ab ca. 25 € netto zzgl. 19 % MwSt. Aufkleber im DIN-A6-Format sind ab 25 € netto erhältlich. Großformatfolien werden individuell nach Größe und Auflage kalkuliert. Mengenrabatt ab 5 Stück. Firmenangebot in 24h."
       }
     },
     {
@@ -408,8 +408,8 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .hero-inner.hero-solo .hero-btns{justify-content:center}
 .hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
 }
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .hero{min-height:100vh}
 .hero-inner{padding:2.1rem 0}
 .hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
@@ -440,13 +440,26 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <div id="stickyCta">
-  <div class="scta-txt"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg><span>Foliendruck Berlin</span> – Klebefolie, Aufkleber &amp; Bodenkleber · ab 45 € · Firmenangebot in 24h</div>
+  <div class="scta-txt"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg><span>Foliendruck Berlin</span> – Klebefolie, Aufkleber &amp; Bodenkleber · ab 45 € netto · Firmenangebot in 24h</div>
   <div class="scta-btns">
     <a href="tel:01785143918" class="scta-btn primary"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z"/></svg>0178 514 3918</a>
     <a href="#kontakt" class="scta-btn secondary">Angebot anfordern</a>
@@ -563,7 +576,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div style="display:flex;gap:1.5rem 2.5rem;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--navy);text-align:center;">
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3s6 6.5 6 10.5a6 6 0 1 1-12 0C6 9.5 12 3 12 3Z"/></svg>Wetterfest &amp; UV-beständig</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/><path d="M21 4v4h-4"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/><path d="M3 20v-4h4"/></svg>Rückstandslos entfernbar</span>
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg>Individuell bedruckt ab 45 €</span>
+      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 0 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg>Individuell bedruckt ab 45 € netto</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 8.5 12 3 3 8.5v7L12 21l9-5.5Z"/><path d="m3 8.5 9 5.5 9-5.5M12 14v7"/></svg>Bundesweite Lieferung</span>
     </div>
   </div>
@@ -654,7 +667,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p class="sec-sub">Die Folie richtet sich nach dem Untergrund, nicht nach dem Motiv. Diese Übersicht beantwortet die Frage, bevor Sie anrufen müssen.</p>
     </div>
     <div class="tbl-scroll">
-      <table class="cmp-table">
+      <table class="cmp-table rt">
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Folienarten nach Einsatzfläche</caption>
         <thead>
           <tr>
@@ -667,46 +680,46 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Schaufenster, von innen beklebt</td>
-            <td>Klebefolie innen, Milchglas-Optik oder bedruckt</td>
-            <td>innen dauerhaft</td>
-            <td>rückstandslos</td>
-            <td>Wird von außen gelesen, muss der Schnitt spiegelverkehrt erfolgen</td>
+            <td data-label="Fläche">Schaufenster, von innen beklebt</td>
+            <td data-label="Passende Folie">Klebefolie innen, Milchglas-Optik oder bedruckt</td>
+            <td data-label="Haltbarkeit">innen dauerhaft</td>
+            <td data-label="Entfernbarkeit">rückstandslos</td>
+            <td data-label="Worauf es ankommt">Wird von außen gelesen, muss der Schnitt spiegelverkehrt erfolgen</td>
           </tr>
           <tr>
-            <td>Schaufenster oder Fassade, von außen</td>
-            <td>Cast-Folie mit Laminat</td>
-            <td>je nach Witterung und Ausrichtung</td>
-            <td>rückstandslos bei sachgemäßer Montage</td>
-            <td>Das Laminat schützt vor UV-Strahlung und Kratzern</td>
+            <td data-label="Fläche">Schaufenster oder Fassade, von außen</td>
+            <td data-label="Passende Folie">Cast-Folie mit Laminat</td>
+            <td data-label="Haltbarkeit">je nach Witterung und Ausrichtung</td>
+            <td data-label="Entfernbarkeit">rückstandslos bei sachgemäßer Montage</td>
+            <td data-label="Worauf es ankommt">Das Laminat schützt vor UV-Strahlung und Kratzern</td>
           </tr>
           <tr>
-            <td>Fahrzeug</td>
-            <td>Automotive-Cast-Folie</td>
-            <td>mehrere Jahre</td>
-            <td>rückstandslos, wenn rechtzeitig entfernt</td>
-            <td>Auf Wölbungen und Sicken führt kein Weg an Cast vorbei</td>
+            <td data-label="Fläche">Fahrzeug</td>
+            <td data-label="Passende Folie">Automotive-Cast-Folie</td>
+            <td data-label="Haltbarkeit">mehrere Jahre</td>
+            <td data-label="Entfernbarkeit">rückstandslos, wenn rechtzeitig entfernt</td>
+            <td data-label="Worauf es ankommt">Auf Wölbungen und Sicken führt kein Weg an Cast vorbei</td>
           </tr>
           <tr>
-            <td>Boden innen und außen</td>
-            <td>Bodenfolie, rutschhemmend (R9/R10)</td>
-            <td>je nach Begehung</td>
-            <td>ja</td>
-            <td>Reinigungsfest, geeignet für Wegeleitung und Aktionsflächen</td>
+            <td data-label="Fläche">Boden innen und außen</td>
+            <td data-label="Passende Folie">Bodenfolie, rutschhemmend (R9/R10)</td>
+            <td data-label="Haltbarkeit">je nach Begehung</td>
+            <td data-label="Entfernbarkeit">ja</td>
+            <td data-label="Worauf es ankommt">Reinigungsfest, geeignet für Wegeleitung und Aktionsflächen</td>
           </tr>
           <tr>
-            <td>Bauzaun, Messewand, Großfläche</td>
-            <td>Großformatfolie oder Plane</td>
-            <td>temporär bis mehrjährig</td>
-            <td>je nach Untergrund</td>
-            <td>Bei Planen Windlast und Ösenabstand einplanen</td>
+            <td data-label="Fläche">Bauzaun, Messewand, Großfläche</td>
+            <td data-label="Passende Folie">Großformatfolie oder Plane</td>
+            <td data-label="Haltbarkeit">temporär bis mehrjährig</td>
+            <td data-label="Entfernbarkeit">je nach Untergrund</td>
+            <td data-label="Worauf es ankommt">Bei Planen Windlast und Ösenabstand einplanen</td>
           </tr>
           <tr>
-            <td>Aufkleber und Etiketten</td>
-            <td>Papier innen, wetterfeste Folie außen</td>
-            <td>innen dauerhaft, außen je nach Belastung</td>
-            <td>je nach Klebstoff</td>
-            <td>Beliebige Form über den Konturschnitt möglich</td>
+            <td data-label="Fläche">Aufkleber und Etiketten</td>
+            <td data-label="Passende Folie">Papier innen, wetterfeste Folie außen</td>
+            <td data-label="Haltbarkeit">innen dauerhaft, außen je nach Belastung</td>
+            <td data-label="Entfernbarkeit">je nach Klebstoff</td>
+            <td data-label="Worauf es ankommt">Beliebige Form über den Konturschnitt möglich</td>
           </tr>
         </tbody>
       </table>
@@ -729,7 +742,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <h2 class="sec-title">Foliendruck Berlin – <em>Fragen &amp; Antworten</em></h2>
     </div>
     <div class="faq-wrap">
-      <div class="faq-item"><button class="faq-q">Was kostet Foliendruck in Berlin?</button><div class="faq-a"><p>Einfache Klebefolien im A3-Format beginnen ab ca. 25 € netto zzgl. 19 % MwSt. Aufkleber im DIN-A6-Format sind ab 25 € erhältlich. Großformatfolien werden individuell nach Größe und Auflage kalkuliert. Mengenrabatt ab 5 Stück. Firmenangebot in 24h.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Was kostet Foliendruck in Berlin?</button><div class="faq-a"><p>Einfache Klebefolien im A3-Format beginnen ab ca. 25 € netto zzgl. 19 % MwSt. Aufkleber im DIN-A6-Format sind ab 25 € netto erhältlich. Großformatfolien werden individuell nach Größe und Auflage kalkuliert. Mengenrabatt ab 5 Stück. Firmenangebot in 24h.</p></div></div>
       <div class="faq-item"><button class="faq-q">Welche Folien eignen sich für den Außenbereich?</button><div class="faq-a"><p>Für den Außenbereich empfehlen wir UV-beständige und witterungsfeste Cast-Folien mit Laminierung. Wie lange sie im Freien halten, hängt vom Montage-Untergrund und von der Wetterbelastung ab. Für Fahrzeuge verwenden wir spezielle Automotive-Folien. Wir beraten Sie kostenlos zur optimalen Folienauswahl.</p></div></div>
       <div class="faq-item"><button class="faq-q">Können Klebefolien rückstandslos entfernt werden?</button><div class="faq-a"><p>Ja – hochwertige Klebefolien lassen sich bei sachgemäßer Montage rückstandsfrei entfernen, ohne den Untergrund zu beschädigen. Besonders wichtig für Mieter: Wir verwenden Folien mit rückstandslosem Kleber, die nach Ende des Mietverhältnisses problemlos entfernt werden können.</p></div></div>
       <div class="faq-item"><button class="faq-q">Was ist der Unterschied zwischen Cast- und kalandrierter Folie?</button><div class="faq-a"><p>Cast-Folien (gegossen) sind formstabiler, langlebiger und eignen sich für gewölbte Flächen und Fahrzeuge. Kalandrierte Folien sind günstiger und ideal für flache, gerade Flächen. Für dauerhaften Außeneinsatz empfehlen wir immer Cast-Folien. Wir beraten Sie zur richtigen Wahl.</p></div></div>
@@ -882,5 +895,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body>
 </html>

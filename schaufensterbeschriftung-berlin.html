@@ -472,8 +472,8 @@ body:has(.mob-nav.open) .wa{display:none}
 .hero-inner.hero-solo .hero-btns{justify-content:center}
 .hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
 }
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .hero{min-height:100vh}
 .hero-inner{padding:2.1rem 0}
 .hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
@@ -502,6 +502,17 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
 </style>
 </head>
 <body>
@@ -789,7 +800,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="container">
-    <h2>Schaufenster beschriften lassen – <em style="color:var(--teal-ink);font-style:normal;">ab 149 €</em></h2>
+    <h2>Schaufenster beschriften lassen – <em style="color:var(--teal-ink);font-style:normal;">ab 149 € netto</em></h2>
     <p>Kostenlose Beratung · Design inklusive · Montage vor Ort · Angebot in 24h</p>
     <div class="btns">
       <a href="#kontakt" class="btn btn-teal">Jetzt kostenloses Angebot anfordern</a>
@@ -808,7 +819,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     </div>
 
     <div class="mat-wrap">
-      <table class="mat-table">
+      <table class="mat-table rt">
         <thead>
           <tr>
             <th scope="col">Folienart</th>
@@ -820,39 +831,39 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Plottfolie (geschnitten)</td>
-            <td>Logo, Schriftzug, Öffnungszeiten</td>
-            <td>voll – nur die Buchstaben sind deckend</td>
-            <td>keiner</td>
-            <td>innen und außen</td>
+            <td data-label="Folienart">Plottfolie (geschnitten)</td>
+            <td data-label="Wofür geeignet">Logo, Schriftzug, Öffnungszeiten</td>
+            <td data-label="Lichtdurchlass">voll – nur die Buchstaben sind deckend</td>
+            <td data-label="Sichtschutz">keiner</td>
+            <td data-label="Einsatzort">innen und außen</td>
           </tr>
           <tr>
-            <td>Digitaldruckfolie</td>
-            <td>Fotos, Farbverläufe, komplexe Motive</td>
-            <td>je nach Motiv</td>
-            <td>je nach Deckung</td>
-            <td>innen und außen</td>
+            <td data-label="Folienart">Digitaldruckfolie</td>
+            <td data-label="Wofür geeignet">Fotos, Farbverläufe, komplexe Motive</td>
+            <td data-label="Lichtdurchlass">je nach Motiv</td>
+            <td data-label="Sichtschutz">je nach Deckung</td>
+            <td data-label="Einsatzort">innen und außen</td>
           </tr>
           <tr>
-            <td>Milchglasfolie (Glasdekorfolie)</td>
-            <td>Büros, Praxen, Besprechungsräume</td>
-            <td>hoch – Licht bleibt, Sicht nicht</td>
-            <td>blickdicht</td>
-            <td>innen</td>
+            <td data-label="Folienart">Milchglasfolie (Glasdekorfolie)</td>
+            <td data-label="Wofür geeignet">Büros, Praxen, Besprechungsräume</td>
+            <td data-label="Lichtdurchlass">hoch – Licht bleibt, Sicht nicht</td>
+            <td data-label="Sichtschutz">blickdicht</td>
+            <td data-label="Einsatzort">innen</td>
           </tr>
           <tr>
-            <td>Lochfolie (One Way Vision)</td>
-            <td>Große Scheiben, Werbung mit Durchblick</td>
-            <td>gedämpft</td>
-            <td>von außen dicht, von innen frei</td>
-            <td>außen</td>
+            <td data-label="Folienart">Lochfolie (One Way Vision)</td>
+            <td data-label="Wofür geeignet">Große Scheiben, Werbung mit Durchblick</td>
+            <td data-label="Lichtdurchlass">gedämpft</td>
+            <td data-label="Sichtschutz">von außen dicht, von innen frei</td>
+            <td data-label="Einsatzort">außen</td>
           </tr>
           <tr>
-            <td>Sonnenschutzfolie</td>
-            <td>Südseite, aufgeheizte Verkaufsräume</td>
-            <td>reduziert</td>
-            <td>leicht spiegelnd</td>
-            <td>innen</td>
+            <td data-label="Folienart">Sonnenschutzfolie</td>
+            <td data-label="Wofür geeignet">Südseite, aufgeheizte Verkaufsräume</td>
+            <td data-label="Lichtdurchlass">reduziert</td>
+            <td data-label="Sichtschutz">leicht spiegelnd</td>
+            <td data-label="Einsatzort">innen</td>
           </tr>
         </tbody>
       </table>

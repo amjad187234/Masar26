@@ -462,8 +462,8 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .hero-inner.hero-solo .hero-btns{justify-content:center}
 .hero-inner.hero-solo .hero-trust{justify-content:center;text-align:center}
 }
-/* === Der erste Abschnitt passt auf den Laptop-Bildschirm (nur Desktop) === */
-@media(min-width:1051px){
+/* === Der erste Abschnitt passt auf den Bildschirm (ab Tablet quer) === */
+@media(min-width:901px){
 .hero{min-height:100vh}
 .hero-inner{padding:2.1rem 0}
 .hero h1{font-size:clamp(2.3rem,3.7vw,3.4rem)}
@@ -496,13 +496,26 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Tabellen am Handy als Karten: jede Zeile ein Block, jede Zelle mit ihrer Spaltenueberschrift */
+@media(max-width:600px){
+table.rt,table.rt tbody,table.rt tr,table.rt td{display:block;width:100%}
+table.rt{min-width:0!important;border:0!important;background:transparent!important}
+table.rt thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+table.rt tr{background:#fff!important;border:1px solid var(--border,#e0eaea)!important;border-radius:10px;margin:0 0 .75rem;padding:.35rem .95rem;box-shadow:0 2px 10px rgba(19,46,80,.05)}
+table.rt td{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.5rem 0!important;border:0!important;border-top:1px solid var(--border,#e0eaea)!important;text-align:right;background:transparent!important;white-space:normal!important}
+table.rt td::before{content:attr(data-label);flex:0 0 40%;text-align:left;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted,#5a7070)}
+table.rt td:first-child{display:block;border-top:0!important;text-align:left;font-size:1.02rem;font-weight:700;color:var(--navy,#132e50);padding-top:.6rem!important}
+table.rt td:first-child::before{display:none}
+}
+/* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
+@media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
 </style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
 <div id="stickyCta">
-  <div class="scta-txt"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg><span>Schilder Berlin</span> – Firmenschilder, Türschilder &amp; Praxisschilder · ab 45 € · inkl. Montage</div>
+  <div class="scta-txt"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg><span>Schilder Berlin</span> – Firmenschilder, Türschilder &amp; Praxisschilder · ab 45 € netto · inkl. Montage</div>
   <div class="scta-btns">
     <a href="tel:01785143918" class="scta-btn primary"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z"/></svg>0178 514 3918</a>
     <a href="#kontakt" class="scta-btn secondary">Angebot anfordern</a>
@@ -619,7 +632,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="usp-row">
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6Z"/></svg>Wetterfest &amp; UV-beständig</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.5 3a5.5 5.5 0 0 0-5 7.7L3 18.2 5.8 21l7.5-7.5A5.5 5.5 0 1 0 15.5 3Z"/></svg>Montage in ganz Berlin</span>
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20 20 3l1 1L4 21Z"/><path d="M3 20h18"/><path d="M9 14v3M13 10v3"/></svg>Maßanfertigung ab 45 €</span>
+      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 20 20 3l1 1L4 21Z"/><path d="M3 20h18"/><path d="M9 14v3M13 10v3"/></svg>Maßanfertigung ab 45 € netto</span>
       <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7Z"/></svg>Angebot in 24 h</span>
     </div>
   </div>
@@ -736,7 +749,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p class="sec-sub">Dieselben Angaben wie oben, nur vergleichbar – damit Sie die Wahl in einer Minute treffen können statt in einem Telefonat.</p>
     </div>
     <div class="price-scroll">
-      <table class="price-table">
+      <table class="price-table rt">
         <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Schildmaterialien im Vergleich</caption>
         <thead>
           <tr>
@@ -749,46 +762,46 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Alu-Dibond</td>
-            <td>Firmen-, Eingangs- und Bauschilder im Freien</td>
-            <td>rund 5–8 Jahre mit Schutzlaminat</td>
-            <td>sachlich, matt, unauffällig</td>
-            <td>Schraub- oder Klebemontage</td>
+            <td data-label="Material">Alu-Dibond</td>
+            <td data-label="Wofür geeignet">Firmen-, Eingangs- und Bauschilder im Freien</td>
+            <td data-label="Haltbarkeit im Berliner Klima">rund 5–8 Jahre mit Schutzlaminat</td>
+            <td data-label="Wirkung">sachlich, matt, unauffällig</td>
+            <td data-label="Übliche Befestigung">Schraub- oder Klebemontage</td>
           </tr>
           <tr>
-            <td>Acrylglas (PMMA)</td>
-            <td>Empfang, Foyer, Eingangstür</td>
-            <td>7–10 Jahre</td>
-            <td>edel, wirkt durch den Schattenwurf schwebend</td>
-            <td>Abstandshalter</td>
+            <td data-label="Material">Acrylglas (PMMA)</td>
+            <td data-label="Wofür geeignet">Empfang, Foyer, Eingangstür</td>
+            <td data-label="Haltbarkeit im Berliner Klima">7–10 Jahre</td>
+            <td data-label="Wirkung">edel, wirkt durch den Schattenwurf schwebend</td>
+            <td data-label="Übliche Befestigung">Abstandshalter</td>
           </tr>
           <tr>
-            <td>Edelstahl (V2A/V4A)</td>
-            <td>Kanzlei, Praxis, Firmensitz</td>
-            <td>praktisch unbegrenzt, da graviert statt bedruckt</td>
-            <td>hochwertig und zurückhaltend</td>
-            <td>Abstandshalter</td>
+            <td data-label="Material">Edelstahl (V2A/V4A)</td>
+            <td data-label="Wofür geeignet">Kanzlei, Praxis, Firmensitz</td>
+            <td data-label="Haltbarkeit im Berliner Klima">praktisch unbegrenzt, da graviert statt bedruckt</td>
+            <td data-label="Wirkung">hochwertig und zurückhaltend</td>
+            <td data-label="Übliche Befestigung">Abstandshalter</td>
           </tr>
           <tr>
-            <td>Messing</td>
-            <td>Altbau-Eingang, Notariat, Kanzlei</td>
-            <td>sehr lang, setzt mit der Zeit Patina an</td>
-            <td>klassisch, warmer Goldton</td>
-            <td>Abstandshalter</td>
+            <td data-label="Material">Messing</td>
+            <td data-label="Wofür geeignet">Altbau-Eingang, Notariat, Kanzlei</td>
+            <td data-label="Haltbarkeit im Berliner Klima">sehr lang, setzt mit der Zeit Patina an</td>
+            <td data-label="Wirkung">klassisch, warmer Goldton</td>
+            <td data-label="Übliche Befestigung">Abstandshalter</td>
           </tr>
           <tr>
-            <td>Forex / PVC-Hartschaum</td>
-            <td>Innenbereich, Wegeleitung, Messe, Temporäres</td>
-            <td>innen dauerhaft, außen nach 2–3 Jahren prüfen</td>
-            <td>schlicht und funktional</td>
-            <td>Klebemontage</td>
+            <td data-label="Material">Forex / PVC-Hartschaum</td>
+            <td data-label="Wofür geeignet">Innenbereich, Wegeleitung, Messe, Temporäres</td>
+            <td data-label="Haltbarkeit im Berliner Klima">innen dauerhaft, außen nach 2–3 Jahren prüfen</td>
+            <td data-label="Wirkung">schlicht und funktional</td>
+            <td data-label="Übliche Befestigung">Klebemontage</td>
           </tr>
           <tr>
-            <td>Verbundplatte</td>
-            <td>Bauzaun und Baustelle, Großformat</td>
-            <td>mehrere Jahre im Freien</td>
-            <td>funktional, auf Fernwirkung ausgelegt</td>
-            <td>Ösen, Rahmen oder Schrauben</td>
+            <td data-label="Material">Verbundplatte</td>
+            <td data-label="Wofür geeignet">Bauzaun und Baustelle, Großformat</td>
+            <td data-label="Haltbarkeit im Berliner Klima">mehrere Jahre im Freien</td>
+            <td data-label="Wirkung">funktional, auf Fernwirkung ausgelegt</td>
+            <td data-label="Übliche Befestigung">Ösen, Rahmen oder Schrauben</td>
           </tr>
         </tbody>
       </table>
@@ -841,7 +854,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p class="sec-sub">Transparente Einstiegspreise – der Endpreis hängt von Format, Material, Veredelung und Montageaufwand ab.</p>
     </div>
     <div class="price-scroll">
-      <table class="price-table">
+      <table class="price-table rt">
         <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Preisübersicht Schilder Berlin</caption>
         <thead>
           <tr>
@@ -852,44 +865,44 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </thead>
         <tbody>
           <tr>
-            <td>Hinweis- / Sicherheitsschild</td>
-            <td>Alu oder Kunststoff, A4/A5, nach ASR A1.3</td>
-            <td class="pcell">ab 45 €</td>
+            <td data-label="Schildart">Hinweis- / Sicherheitsschild</td>
+            <td data-label="Material / Format">Alu oder Kunststoff, A4/A5, nach ASR A1.3</td>
+            <td class="pcell" data-label="Preis">ab 45 € netto</td>
           </tr>
           <tr>
-            <td>Türschild / Klingelschild</td>
-            <td>Acryl oder Alu, Druck oder Gravur</td>
-            <td class="pcell">ab 69 €</td>
+            <td data-label="Schildart">Türschild / Klingelschild</td>
+            <td data-label="Material / Format">Acryl oder Alu, Druck oder Gravur</td>
+            <td class="pcell" data-label="Preis">ab 69 € netto</td>
           </tr>
           <tr>
-            <td>Firmenschild</td>
-            <td>Alu-Dibond 3 mm, bis 1 m², laminiert</td>
-            <td class="pcell">ab 149 €</td>
+            <td data-label="Schildart">Firmenschild</td>
+            <td data-label="Material / Format">Alu-Dibond 3 mm, bis 1 m², laminiert</td>
+            <td class="pcell" data-label="Preis">ab 149 € netto</td>
           </tr>
           <tr>
-            <td>Einzelbuchstaben (unbeleuchtet)</td>
-            <td>Acryl, Alu oder Edelstahl, pro Buchstabe</td>
-            <td class="pcell">ab 119 €</td>
+            <td data-label="Schildart">Einzelbuchstaben (unbeleuchtet)</td>
+            <td data-label="Material / Format">Acryl, Alu oder Edelstahl, pro Buchstabe</td>
+            <td class="pcell" data-label="Preis">ab 119 € netto</td>
           </tr>
           <tr>
-            <td>Acrylglasschild</td>
-            <td>PMMA, rückseitig bedruckt, mit Abstandshaltern</td>
-            <td class="pcell">ab 240 €</td>
+            <td data-label="Schildart">Acrylglasschild</td>
+            <td data-label="Material / Format">PMMA, rückseitig bedruckt, mit Abstandshaltern</td>
+            <td class="pcell" data-label="Preis">ab 240 € netto</td>
           </tr>
           <tr>
-            <td>Bauschild</td>
-            <td>Verbundplatte, großformatig, wetterfest</td>
-            <td class="pcell">ab 290 €</td>
+            <td data-label="Schildart">Bauschild</td>
+            <td data-label="Material / Format">Verbundplatte, großformatig, wetterfest</td>
+            <td class="pcell" data-label="Preis">ab 290 € netto</td>
           </tr>
           <tr>
-            <td>Praxis- / Kanzleischild</td>
-            <td>Hochwertige Ausführung inkl. Gestaltung</td>
-            <td class="pcell">ab 390 €</td>
+            <td data-label="Schildart">Praxis- / Kanzleischild</td>
+            <td data-label="Material / Format">Hochwertige Ausführung inkl. Gestaltung</td>
+            <td class="pcell" data-label="Preis">ab 390 € netto</td>
           </tr>
           <tr>
-            <td>Edelstahlschild graviert</td>
-            <td>V2A gebürstet, Gravur farbig ausgelegt</td>
-            <td class="pcell">individuelles Angebot</td>
+            <td data-label="Schildart">Edelstahlschild graviert</td>
+            <td data-label="Material / Format">V2A gebürstet, Gravur farbig ausgelegt</td>
+            <td class="pcell" data-label="Preis">individuelles Angebot</td>
           </tr>
         </tbody>
       </table>
@@ -1101,5 +1114,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/cookie-consent.js" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
+<script src="/fab-offset.js" defer></script>
 </body>
 </html>
