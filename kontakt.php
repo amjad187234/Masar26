@@ -124,7 +124,9 @@ if (feldwert('_honey') !== '') {
 // 2. Mindestzeit (nur prüfen, wenn das Feld per JavaScript gesetzt wurde)
 $start = feldwert('_t');
 if ($start !== '' && ctype_digit($start)) {
-    $sekunden = (time() * 1000 - (int) $start) / 1000;
+    // Millisekunden auf beiden Seiten: mit time() (volle Sekunden) ergab ein
+    // sofortiges Absenden einen negativen Wert und wurde nie erkannt.
+    $sekunden = (microtime(true) * 1000 - (int) $start) / 1000;
     if ($sekunden >= 0 && $sekunden < MIN_SEKUNDEN) {
         weiter(DANKE_SEITE);
     }
@@ -276,6 +278,72 @@ if (!$erfolg) {
         implode("\r\n", $kopf),
         '-f' . ABSENDER
     );
+}
+
+// 9. Eingangsbestaetigung an den Absender
+// Fester Text ohne Angaben aus dem Formular: Wer eine fremde Adresse
+// eintraegt, kann so keine eigenen Inhalte an Dritte verschicken. Scheitert
+// der Versand, bleibt die Anfrage trotzdem erfolgreich.
+if ($erfolg) {
+    require_once __DIR__ . '/signatur.php';
+
+    $a_text = "Guten Tag,\n\n"
+            . "vielen Dank für Ihre Anfrage – sie ist bei uns angekommen. Wir melden uns "
+            . "innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.\n\n"
+            . "Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter 0178 514 3918.\n\n"
+            . "Mit freundlichen Grüßen\n\n"
+            . masar_signatur_text()
+            . "\nDiese E-Mail wurde automatisch versendet. Sie können direkt darauf antworten.\n";
+
+    $a_html = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head>'
+            . '<body style="margin:0;padding:24px;background:#ffffff;">'
+            . '<div style="max-width:560px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#1a2a2a;">'
+            . '<p style="margin:0 0 14px;">Guten Tag,</p>'
+            . '<p style="margin:0 0 14px;">vielen Dank für Ihre Anfrage – sie ist bei uns angekommen. '
+            . 'Wir melden uns innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.</p>'
+            . '<p style="margin:0 0 14px;">Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter '
+            . '<a href="tel:+491785143918" style="color:#132e50;font-weight:bold;text-decoration:none;">0178 514 3918</a>.</p>'
+            . '<p style="margin:0 0 18px;">Mit freundlichen Grüßen</p>'
+            . masar_signatur_html()
+            . '<p style="margin:22px 0 0;font-size:11px;color:#5a7070;">Diese E-Mail wurde automatisch versendet. '
+            . 'Sie können direkt darauf antworten.</p>'
+            . '</div></body></html>';
+
+    $a_grenze  = 'masar_alt_' . bin2hex(random_bytes(12));
+    $a_betreff = '=?UTF-8?B?' . base64_encode('Ihre Anfrage bei Masar Werbeagentur') . '?=';
+    $a_kopf = [
+        'From: =?UTF-8?B?' . base64_encode('Masar Werbeagentur') . '?= <' . ABSENDER . '>',
+        'Reply-To: ' . EMPFAENGER,
+        'Date: ' . date('r'),
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@masar-werbeagentur.de>',
+        'Auto-Submitted: auto-replied',
+        'X-Auto-Response-Suppress: All',
+        'MIME-Version: 1.0',
+        'Content-Type: multipart/alternative; boundary="' . $a_grenze . '"',
+    ];
+    $a_rumpf = "--{$a_grenze}\r\n"
+             . "Content-Type: text/plain; charset=UTF-8\r\n"
+             . "Content-Transfer-Encoding: base64\r\n\r\n"
+             . chunk_split(base64_encode($a_text)) . "\r\n"
+             . "--{$a_grenze}\r\n"
+             . "Content-Type: text/html; charset=UTF-8\r\n"
+             . "Content-Transfer-Encoding: base64\r\n\r\n"
+             . chunk_split(base64_encode($a_html)) . "\r\n"
+             . "--{$a_grenze}--\r\n";
+
+    $a_ok = false;
+    if (isset($konfig) && is_array($konfig)) {
+        $a_ok = masar_smtp_senden(
+            $konfig,
+            (string) ($konfig['from'] ?? ABSENDER),
+            $email,
+            implode("\r\n", array_merge(['To: ' . $email, 'Subject: ' . $a_betreff], $a_kopf)),
+            $a_rumpf
+        );
+    }
+    if (!$a_ok) {
+        @mail($email, $a_betreff, $a_rumpf, implode("\r\n", $a_kopf), '-f' . ABSENDER);
+    }
 }
 
 weiter($erfolg ? DANKE_SEITE : FEHLER_SEITE);
