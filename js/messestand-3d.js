@@ -176,7 +176,7 @@ export async function init(hero) {
   } catch (e) { /* Schrift-Fallback reicht */ }
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-  const PR = Math.min(window.devicePixelRatio || 1, small.matches ? 1.5 : 1.75);
+  const PR = Math.min(window.devicePixelRatio || 1, small.matches ? 1.75 : 2);
   renderer.setPixelRatio(PR);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -184,6 +184,9 @@ export async function init(hero) {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   const aniso = renderer.capabilities.getMaxAnisotropy();
+  const MAXT = renderer.capabilities.maxTextureSize || 4096;
+  /* Grafik-Auflösung: Desktop doppelt so scharf, Smartphone Standard (Speicher) */
+  const Q = !small.matches && MAXT >= 4096 ? 1.6 : 1;
 
   const scene = new THREE.Scene();
   /* Studio-Umgebung für realistische Reflexionen auf Metall, Theke und Folien */
@@ -197,7 +200,7 @@ export async function init(hero) {
   const tex = {};
   const makeTex = (key, w, h, wrap = false) => {
     const c = document.createElement('canvas');
-    c.width = w; c.height = h;
+    c.width = Math.round(w * Q); c.height = Math.round(h * Q);
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
     t.anisotropy = aniso;
@@ -207,10 +210,10 @@ export async function init(hero) {
   };
   makeTex('wall', 2048, 1112);
   makeTex('side', 1312, 1112);
-  makeTex('counter', 2048, 480);
-  makeTex('rollupA', 512, 1206);
-  makeTex('rollupB', 512, 1206);
-  makeTex('flag', 512, 1664);
+  makeTex('counter', 2048, 560);
+  makeTex('rollupA', 768, 1809);
+  makeTex('rollupB', 768, 1809);
+  makeTex('flag', 768, 2496);
   makeTex('ring', 2048, 256, true);
 
   const mat = (o) => new THREE.MeshStandardMaterial(o);
@@ -544,7 +547,7 @@ export async function init(hero) {
   }
 
   /* ── Entwurf als Bild ──────────────────────────── */
-  function snapshot(W = 1600, H = 1000) {
+  function snapshot(W = small.matches ? 1800 : 2400, H = small.matches ? 1125 : 1500) {
     const out = document.createElement('canvas');
     out.width = W; out.height = H;
     const o = out.getContext('2d');
@@ -552,7 +555,8 @@ export async function init(hero) {
     bg.addColorStop(0, '#0b1f38'); bg.addColorStop(0.6, NAVY); bg.addColorStop(1, '#0d4a4a');
     o.fillStyle = bg; o.fillRect(0, 0, W, H);
     const SH = H - Math.round(H * 0.11);
-    renderer.setPixelRatio(1);
+    const SS = Math.max(1, Math.min(small.matches ? 1.25 : 1.6, (MAXT * 0.9) / W));
+    renderer.setPixelRatio(SS);
     renderer.setSize(W, SH, false);
     camera.clearViewOffset();
     camera.aspect = W / SH;
@@ -561,6 +565,7 @@ export async function init(hero) {
     place();
     camera.updateProjectionMatrix();
     renderer.render(scene, camera);
+    o.imageSmoothingEnabled = true; o.imageSmoothingQuality = 'high';
     o.drawImage(renderer.domElement, 0, 0, W, SH);
     dist = d0;
     renderer.setPixelRatio(PR);
@@ -574,7 +579,7 @@ export async function init(hero) {
     text(o, `Standfarbe: ${state.colorName} (${state.color})${state.name ? ' · ' + state.name : ''}`, M, Y2, P2, 'rgba(255,255,255,.75)', { weight: 500, family: '"Barlow"', align: 'left', maxW: W * 0.55 });
     text(o, 'MASAR WERBEAGENTUR · MESSEBAU BERLIN', W - M, Y1, Math.round(P1 * 0.88), state.color, { align: 'right' });
     text(o, 'masar-werbeagentur.de · Unverbindliche Visualisierung', W - M, Y2, Math.round(P2 * 0.92), 'rgba(255,255,255,.7)', { weight: 500, family: '"Barlow"', align: 'right' });
-    return new Promise(res => { try { out.toBlob(b => res(b), 'image/jpeg', 0.9); } catch (e) { res(null); } });
+    return new Promise(res => { try { out.toBlob(b => res(b), 'image/jpeg', 0.93); } catch (e) { res(null); } });
   }
 
   const safeSnap = () => Promise.race([

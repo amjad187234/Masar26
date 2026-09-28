@@ -1027,7 +1027,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(navigator.connection&&navigator.connection.saveData) return false;
     try{var c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch(e){return false;}
   }
-  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260929').then(function(m){return m.init(hero);}).catch(function(){}); }
+  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260930').then(function(m){return m.init(hero);}).catch(function(){}); }
   function soon(){ if('requestIdleCallback' in window) requestIdleCallback(go,{timeout:1200}); else setTimeout(go,400); }
   if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
 })();
