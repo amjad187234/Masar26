@@ -577,6 +577,11 @@ export async function init(hero) {
     return new Promise(res => { try { out.toBlob(b => res(b), 'image/jpeg', 0.9); } catch (e) { res(null); } });
   }
 
+  const safeSnap = () => Promise.race([
+    Promise.resolve().then(snapshot).catch(() => null),
+    new Promise(r => setTimeout(() => r(null), 5000)),
+  ]);
+
   /* ── Bedienelemente ────────────────────────────── */
   const swatches = $$('.mb-sw button');
   const picker = $('.mb-pick input');
@@ -606,7 +611,8 @@ export async function init(hero) {
   if (fileIn) fileIn.addEventListener('change', () => {
     const f = fileIn.files && fileIn.files[0];
     if (!f) return;
-    if (!/^image\/(png|jpeg|webp|svg\+xml)$/.test(f.type) || f.size > 8 * 1024 * 1024) {
+    const isImg = /^image\//.test(f.type) || /\.(png|jpe?g|webp|svg|gif|heic|heif)$/i.test(f.name || '');
+    if (!isImg || f.size > 8 * 1024 * 1024) {
       say('Bitte ein Logo als PNG, JPG, WebP oder SVG (max. 8 MB) wählen.');
       return;
     }
@@ -617,10 +623,11 @@ export async function init(hero) {
         if (!img.width || !img.height) { img.width = 600; img.height = 300; }
         state.logo = img;
         if (clearBtn) clearBtn.hidden = false;
-        say('');
+        say('✓ Logo ist jetzt auf dem Stand.');
+        setTimeout(() => say(''), 3500);
         repaint();
       };
-      img.onerror = () => say('Das Logo konnte nicht gelesen werden. Bitte eine andere Datei versuchen.');
+      img.onerror = () => say('Dieses Dateiformat kann Ihr Browser nicht anzeigen. Bitte das Logo als PNG oder JPG wählen.');
       img.src = rd.result;
     };
     rd.readAsDataURL(f);
@@ -633,7 +640,7 @@ export async function init(hero) {
 
   const saveBtn = $('.mb-save');
   if (saveBtn) saveBtn.addEventListener('click', async () => {
-    const blob = await snapshot();
+    const blob = await safeSnap();
     if (!blob) { say('Das Bild konnte nicht erstellt werden.'); return; }
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -644,24 +651,29 @@ export async function init(hero) {
 
   const goBtn = $('.mb-go');
   if (goBtn) goBtn.addEventListener('click', async () => {
+    const box = document.getElementById('kontakt');
     const form = document.querySelector('#kontakt form');
+    if (box) box.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
     if (!form) return;
-    const sel = form.querySelector('#cf-produkt');
-    if (sel && !sel.value) {
-      const opt = [...sel.options].find(o => /komplett/i.test(o.textContent));
-      if (opt) sel.value = opt.value || opt.textContent;
-    }
+    const ta = form.querySelector('#cf-nachricht');
     let attached = false;
-    const fi = form.querySelector('input[type="file"][name="attachment"]');
-    const blob = await snapshot();
-    if (fi && blob && typeof DataTransfer !== 'undefined') {
-      try {
-        const dt = new DataTransfer();
-        dt.items.add(new File([blob], `messestand-entwurf-${state.type}.jpg`, { type: 'image/jpeg' }));
-        fi.files = dt.files;
-        attached = fi.files.length === 1;
-      } catch (e) { attached = false; }
-    }
+    try {
+      const sel = form.querySelector('#cf-produkt');
+      if (sel && !sel.value) {
+        const opt = [...sel.options].find(o => /komplett/i.test(o.textContent));
+        if (opt) sel.value = opt.value || opt.textContent;
+      }
+      const fi = form.querySelector('input[type="file"][name="attachment"]');
+      const blob = await safeSnap();
+      if (fi && blob && typeof DataTransfer !== 'undefined') {
+        try {
+          const dt = new DataTransfer();
+          dt.items.add(new File([blob], `messestand-entwurf-${state.type}.jpg`, { type: 'image/jpeg' }));
+          fi.files = dt.files;
+          attached = fi.files.length === 1;
+        } catch (e) { attached = false; }
+      }
+    } catch (e) { /* Formular trotzdem ausfüllen */ }
     const lines = [
       'Meine Auswahl im 3D-Planer:',
       `• Standtyp: ${TYPES[state.type].name} (${TYPES[state.type].open})`,
@@ -671,7 +683,6 @@ export async function init(hero) {
     lines.push(state.logo ? '• Eigenes Logo im Entwurf verwendet' : '• Logo: folgt');
     if (attached) lines.push('• Entwurfsbild ist angehängt');
     lines.push('', 'Messe / Termin / Standgröße (m²): ');
-    const ta = form.querySelector('#cf-nachricht');
     if (ta) {
       const rest = ta.value.replace(/^Meine Auswahl im 3D-Planer:[\s\S]*?Messe \/ Termin \/ Standgröße \(m²\): ?/, '');
       ta.value = lines.join('\n') + rest;
@@ -679,7 +690,16 @@ export async function init(hero) {
     let hid = form.querySelector('input[name="art"]');
     if (!hid) { hid = document.createElement('input'); hid.type = 'hidden'; hid.name = 'art'; form.appendChild(hid); }
     hid.value = `3D-Planer: ${TYPES[state.type].name}, ${state.colorName} ${state.color}`;
-    document.getElementById('kontakt').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' });
+    let note = document.querySelector('.mb-sent');
+    if (!note) {
+      note = document.createElement('div');
+      note.className = 'mb-sent';
+      note.setAttribute('role', 'status');
+      form.parentNode.insertBefore(note, form);
+    }
+    note.textContent = attached
+      ? '✓ Ihr 3D-Entwurf ist übernommen und als Bild angehängt. Ergänzen Sie nur noch Ihre Kontaktdaten sowie Messe, Termin und Standgröße.'
+      : '✓ Ihre Auswahl aus dem 3D-Planer steht in der Nachricht. Ergänzen Sie nur noch Ihre Kontaktdaten sowie Messe, Termin und Standgröße.';
     setTimeout(() => { if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(ta.value.length, ta.value.length); } }, reduced ? 0 : 700);
   });
 

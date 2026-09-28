@@ -489,6 +489,7 @@ table.rt td:first-child::before{display:none}
 .hero-mb.mb-3d .mb-hint{opacity:1}
 .hero-mb .mb-hint-m{display:none}
 .hero-mb .mb-stage canvas{touch-action:pan-y}
+.mb-sent{max-width:720px;margin:0 auto 1.2rem;background:rgba(88,208,189,.14);border:1px solid rgba(23,117,103,.35);color:#0e4f45;border-radius:10px;padding:.85rem 1rem;font-size:14.5px;line-height:1.55;font-weight:600}
 @media(max-width:1180px) and (min-width:901px){.hero-mb .mb-ui{width:calc(56vw - 24px)}.hero-mb .mb-name{display:none}}
 @media(max-width:900px){
 .hero-mb{flex-direction:column;align-items:stretch;min-height:0;padding-bottom:1.5rem}
@@ -1026,7 +1027,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(navigator.connection&&navigator.connection.saveData) return false;
     try{var c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch(e){return false;}
   }
-  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js').then(function(m){return m.init(hero);}).catch(function(){}); }
+  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260929').then(function(m){return m.init(hero);}).catch(function(){}); }
   function soon(){ if('requestIdleCallback' in window) requestIdleCallback(go,{timeout:1200}); else setTimeout(go,400); }
   if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
 })();
