@@ -349,3 +349,6 @@ nav.scrolled {
    bestehende Regel fuer Breite oder Hoehe gewinnt, die Bilder bleiben
    genau so gross wie ohne Attribute. */
 :where(img[width][height]){width:auto;height:auto}
+
+/* Hauptnavigation mit Messebau: auf schmalen Desktop-Breiten enger setzen, damit nichts umbricht */
+@media (min-width:901px) and (max-width:1180px){.nav-links{gap:.8rem!important}.nav-links > li > a{font-size:14px!important;letter-spacing:.2px!important;white-space:nowrap}}
