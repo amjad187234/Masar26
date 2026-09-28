@@ -434,6 +434,7 @@ table.rt td:first-child::before{display:none}
 }
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 </style>
 </head>
 <body>
@@ -517,7 +518,7 @@ table.rt td:first-child::before{display:none}
 <section class="hero" id="main-content" role="main" tabindex="-1">
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-inner hero-solo">
+    <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><path d="M3 21c0-6 4-11 9-15 5 4 9 9 9 15Z"/><path d="M12 6v15M7.5 21c1.5-4 3-7 4.5-9 1.5 2 3 5 4.5 9"/></svg>Messebeschriftung Berlin · Für Unternehmen &amp; Events</div>
         <h1>Messe&shy;beschriftung Berlin&nbsp;–<em>Ihr Auftritt.</em>Perfekt inszeniert.</h1>
@@ -529,6 +530,9 @@ table.rt td:first-child::before{display:none}
         <div class="hero-trust">
           <span class="hero-trust-txt">Berlin · Potsdam · Brandenburg · Design, Druck und Lieferung aus einer Hand</span>
         </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-shot" src="/messe.webp" srcset="/messe-360.webp 360w, /messe-540.webp 540w, /messe-720.webp 720w, /messe.webp 1080w" sizes="360px" width="1080" height="1350" alt="Messebeschriftung Berlin – Roll-ups, Beachflags und Messewände von Masar Werbeagentur" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
