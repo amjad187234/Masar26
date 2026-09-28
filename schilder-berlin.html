@@ -520,6 +520,8 @@ table.rt td:first-child::before{display:none}
 }
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.hero-visual{text-align:center}
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 </style>
 </head>
 <body>
@@ -603,7 +605,7 @@ table.rt td:first-child::before{display:none}
 <section class="hero" id="main-content" role="main" tabindex="-1">
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-inner hero-solo">
+    <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>Schilder Berlin · Unbeleuchtet · Für Unternehmen</div>
         <h1>Schilder Berlin&nbsp;–<em>Ihr Name.</em>Gut sichtbar.</h1>
@@ -615,6 +617,9 @@ table.rt td:first-child::before{display:none}
         <div class="hero-trust">
           <span class="hero-trust-txt">Berlin · Potsdam · Brandenburg · Gestaltung, Fertigung und Montage aus einer Hand</span>
         </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-shot" src="/schilder.webp" srcset="/schilder-360.webp 360w, /schilder-540.webp 540w, /schilder-720.webp 720w, /schilder.webp 1080w" sizes="360px" width="1080" height="1350" alt="Schilder Berlin – Firmenschild, Praxisschild und Türschild von Masar Werbeagentur" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
