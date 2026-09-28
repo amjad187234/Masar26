@@ -127,7 +127,8 @@ export async function init(hero) {
   } catch (e) { /* Schrift-Fallback reicht */ }
 
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+  const small = matchMedia('(max-width: 900px)');
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small.matches ? 1.5 : 1.75));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.05;
@@ -212,7 +213,7 @@ export async function init(hero) {
   const key = new THREE.DirectionalLight(0xffffff, 2.4);
   key.position.set(4, 8, 7); key.castShadow = true;
   Object.assign(key.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 25 });
-  key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02;
+  key.shadow.mapSize.setScalar(small.matches ? 1024 : 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02;
   scene.add(key);
   const fill = new THREE.DirectionalLight(0xbfe9ff, 0.8);
   fill.position.set(-6, 4, 3);
@@ -370,9 +371,25 @@ export async function init(hero) {
   const T = new THREE.Vector3(0, 1.2, 0);
   const BASE_YAW = 0.22, BASE_PITCH = 0.11;
   let yaw = BASE_YAW, pitch = BASE_PITCH, tYaw = yaw, tPitch = pitch, dist = 14, lastMove = -1e9;
+  /* Touch: seitlich wischen dreht den Stand, senkrecht wird normal gescrollt */
+  let drag = null;
+  canvas.addEventListener('pointerdown', e => {
+    if (e.pointerType === 'mouse') return;
+    drag = { x: e.clientX, yaw: tYaw };
+  }, { passive: true });
+  canvas.addEventListener('pointermove', e => {
+    if (!drag) return;
+    const dx = (e.clientX - drag.x) / Math.max(stage.clientWidth, 1);
+    tYaw = THREE.MathUtils.clamp(drag.yaw + dx * 2.6, BASE_YAW - 0.9, BASE_YAW + 0.9);
+    lastMove = performance.now() + 2000;
+    kick();
+  }, { passive: true });
+  const endDrag = () => { drag = null; };
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
   if (!reduced) {
     hero.addEventListener('pointermove', e => {
-      if (e.pointerType === 'touch') return;
+      if (e.pointerType !== 'mouse' || small.matches) return;
       const r = hero.getBoundingClientRect();
       const nx = (e.clientX - r.left) / r.width * 2 - 1;
       const ny = (e.clientY - r.top) / r.height * 2 - 1;
@@ -390,9 +407,14 @@ export async function init(hero) {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     const vt = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-    const frac = w > 1100 ? 0.45 : 0.5;
-    dist = Math.max(3.5 / (vt * camera.aspect * frac), 1.75 / (vt * 0.74), 9);
-    camera.setViewOffset(w, h, -w * (w > 1100 ? 0.22 : 0.23), -h * 0.03, w, h);
+    if (small.matches) {
+      dist = Math.max(3.6 / (vt * camera.aspect * 0.8), 1.75 / (vt * 0.8), 8);
+      camera.clearViewOffset();
+    } else {
+      const frac = w > 1100 ? 0.45 : 0.5;
+      dist = Math.max(3.5 / (vt * camera.aspect * frac), 1.75 / (vt * 0.74), 9);
+      camera.setViewOffset(w, h, -w * (w > 1100 ? 0.22 : 0.23), -h * 0.03, w, h);
+    }
     camera.updateProjectionMatrix();
     kick();
   }

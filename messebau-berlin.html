@@ -165,7 +165,7 @@
       "name": "Was kostet ein Messestand in Berlin?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das hängt von Standgröße, Standtyp, Bauweise und Ausstattung ab. Nach einem kurzen Briefing erhalten Sie innerhalb von 24 Stunden ein unverbindliches Angebot. Alle Preise verstehen sich netto zzgl. 19 % MwSt."
+        "text": "Jeder Messestand ist anders – Standgröße, Standtyp, Bauweise und Ausstattung bestimmen den Aufwand. Deshalb gibt es bei uns keine Pauschalpreise, sondern für jedes Projekt ein individuelles Angebot: kostenlos, unverbindlich und innerhalb von 24 Stunden nach Ihrer Anfrage."
       }
     },
     {
@@ -465,8 +465,22 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-sw button[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.18)}
 .hero-mb .mb-sw button:focus-visible{outline:2px solid #fff;outline-offset:3px}
 .hero-mb .mb-hint{font-size:12px;color:rgba(255,255,255,.7)}
-@media(max-width:1100px){.hero-mb .mb-hint{display:none}}
-@media(max-width:900px){.hero-mb .mb-stage,.hero-mb .mb-shade,.hero-mb .mb-ui{display:none!important}.hero-mb .hero-visual.mb-poster{display:block;opacity:1;visibility:visible;margin-top:.5rem}.hero-mb .mb-poster .hero-shot{max-width:min(420px,100%)}}
+.hero-mb .mb-hint-m{display:none}
+.hero-mb .mb-stage canvas{touch-action:pan-y}
+@media(max-width:1100px) and (min-width:901px){.hero-mb .mb-hint-d{display:none}}
+@media(max-width:900px){
+.hero-mb{flex-direction:column;align-items:stretch;min-height:0;padding-bottom:1.5rem}
+.hero-mb .container{order:1}
+.hero-mb .mb-shade{display:none}
+.hero-mb .mb-stage{order:2;position:relative;inset:auto;height:clamp(280px,80vw,500px);margin-top:-.25rem}
+.hero-mb .mb-ui{order:3;position:relative;right:auto;bottom:auto;align-self:center;justify-content:center;margin:.4rem 16px 0;border-radius:18px;row-gap:.45rem}
+.hero-mb .mb-hint-d{display:none}.hero-mb .mb-hint-m{display:inline;width:100%;text-align:center}
+.hero-mb .hero-visual.mb-poster{display:block;opacity:1;visibility:visible;margin-top:.5rem}
+.hero-mb .mb-poster .hero-shot{max-width:min(420px,100%)}
+.hero-mb.mb-3d .hero-visual.mb-poster{display:none}
+.hero-mb:not(.mb-3d) .mb-stage{display:none}
+.hero-mb .mb-sw button{width:32px;height:32px}
+}
 </style>
 </head>
 <body>
@@ -575,7 +589,7 @@ table.rt td:first-child::before{display:none}
   <div class="mb-ui" hidden>
     <span class="mb-ui-lbl">Standfarbe testen</span>
     <div class="mb-sw" role="group" aria-label="Standfarbe wählen"><button type="button" data-c="#58d0bd" style="--c:#58d0bd" aria-pressed="true" aria-label="Standfarbe Türkis" title="Türkis"></button><button type="button" data-c="#f5c518" style="--c:#f5c518" aria-pressed="false" aria-label="Standfarbe Gelb" title="Gelb"></button><button type="button" data-c="#e5484d" style="--c:#e5484d" aria-pressed="false" aria-label="Standfarbe Rot" title="Rot"></button><button type="button" data-c="#3b82f6" style="--c:#3b82f6" aria-pressed="false" aria-label="Standfarbe Blau" title="Blau"></button><button type="button" data-c="#34c759" style="--c:#34c759" aria-pressed="false" aria-label="Standfarbe Grün" title="Grün"></button></div>
-    <span class="mb-hint">Maus bewegen – der Stand dreht sich mit</span>
+    <span class="mb-hint mb-hint-d">Maus bewegen – der Stand dreht sich mit</span><span class="mb-hint mb-hint-m">Zum Drehen seitlich wischen</span>
   </div>
 </section>
 
@@ -715,7 +729,7 @@ table.rt td:first-child::before{display:none}
     <div class="faq-wrap">
       <div class="faq-item">
         <button class="faq-q">Was kostet ein Messestand in Berlin?</button>
-        <div class="faq-a"><p>Das hängt von Standgröße, Standtyp, Bauweise und Ausstattung ab. Nach einem kurzen Briefing erhalten Sie innerhalb von 24 Stunden ein unverbindliches Angebot. Alle Preise verstehen sich netto zzgl. 19 % MwSt.</p></div>
+        <div class="faq-a"><p>Jeder Messestand ist anders – Standgröße, Standtyp, Bauweise und Ausstattung bestimmen den Aufwand. Deshalb gibt es bei uns keine Pauschalpreise, sondern für jedes Projekt ein individuelles Angebot: kostenlos, unverbindlich und innerhalb von 24 Stunden nach Ihrer Anfrage.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Wie früh sollte ich den Messebau beauftragen?</button>
@@ -899,15 +913,14 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 <script type="module">
 (function(){
   var hero=document.querySelector('.hero-mb'); if(!hero) return;
-  var mq=matchMedia('(min-width: 901px)'), started=false;
+  var started=false;
   function ok(){
-    if(!mq.matches) return false;
     if(navigator.connection&&navigator.connection.saveData) return false;
     try{var c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch(e){return false;}
   }
   function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js').then(function(m){return m.init(hero);}).catch(function(){}); }
-  if(document.readyState==='complete') setTimeout(go,300); else addEventListener('load',function(){setTimeout(go,300);});
-  if(mq.addEventListener) mq.addEventListener('change',go);
+  function soon(){ if('requestIdleCallback' in window) requestIdleCallback(go,{timeout:1200}); else setTimeout(go,400); }
+  if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
 })();
 </script>
 </body>
