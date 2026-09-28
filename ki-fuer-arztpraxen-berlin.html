@@ -436,6 +436,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 @media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 </style>
 </head>
 <body>
@@ -529,11 +530,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-logo-frame">
-          <span class="hero-logo-wrap">
-            <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" fetchpriority="high" width="800" height="800">
-          </span>
-        </div>
+        <img class="hero-shot" src="/ki-loesungen.webp" srcset="/ki-loesungen-360.webp 360w, /ki-loesungen-540.webp 540w, /ki-loesungen-720.webp 720w, /ki-loesungen.webp 1080w" sizes="360px" width="1080" height="1350" alt="KI für Arztpraxen Berlin – KI-Lösungen von Masar Werbeagentur" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>

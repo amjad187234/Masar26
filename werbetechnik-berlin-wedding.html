@@ -304,6 +304,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 </style>
 </head>
 <body>
@@ -386,7 +387,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <section class="hero" id="main-content" role="main" tabindex="-1">
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-inner hero-solo">
+    <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Werbetechnik · Berlin-Wedding · Bezirk Mitte</div>
         <h1>Werbetechnik in<em>Berlin-Wedding.</em>Von hier aus.</h1>
@@ -398,6 +399,9 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <div class="hero-trust">
           <span class="hero-trust-txt">Studio &amp; Werkstatt in Berlin-Wedding · Termin nach Vereinbarung</span>
         </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-shot" src="/aussenwerbung.webp" srcset="/aussenwerbung-360.webp 360w, /aussenwerbung-540.webp 540w, /aussenwerbung-720.webp 720w, /aussenwerbung.webp 1080w" sizes="360px" width="1080" height="1350" alt="Werbetechnik Berlin-Wedding – Außenwerbung von Masar Werbeagentur" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
