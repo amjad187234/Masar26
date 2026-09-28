@@ -452,6 +452,7 @@ table.rt td:first-child::before{display:none}
 }
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 </style>
 </head>
 <body>
@@ -535,7 +536,7 @@ table.rt td:first-child::before{display:none}
 <section class="hero" id="main-content" role="main" tabindex="-1">
   <div class="hero-lines"></div>
   <div class="container">
-    <div class="hero-inner hero-solo">
+    <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>Foliendruck Berlin · Innen &amp; Außen · Für Unternehmen</div>
         <h1>Foliendruck Berlin&nbsp;–<em>Ihre Werbung.</em>Auf jeder Fläche.</h1>
@@ -547,6 +548,9 @@ table.rt td:first-child::before{display:none}
         <div class="hero-trust">
           <span class="hero-trust-txt">Berlin &amp; Bundesweit · Design + Druck + Lieferung aus einer Hand</span>
         </div>
+      </div>
+      <div class="hero-visual">
+        <img class="hero-shot" src="/foliendruck.webp" srcset="/foliendruck-360.webp 360w, /foliendruck-540.webp 540w, /foliendruck-720.webp 720w, /foliendruck.webp 1080w" sizes="360px" width="1080" height="1350" alt="Foliendruck Berlin – Sticker und Aufkleber individuell gedruckt und konturgeschnitten von Masar Werbeagentur" loading="eager" fetchpriority="high">
       </div>
     </div>
   </div>
