@@ -515,8 +515,17 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 @media(min-width:901px) and (max-width:1024px){.hero-inner{grid-template-columns:1fr 1fr}.hero-visual{display:block}}
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
-.social-shot{text-align:center;margin:0 auto 2.6rem}
+.social-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:980px;margin:0 auto 3rem}
+.social-copy h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.05;text-transform:uppercase;color:#fff;margin:0 0 1rem}
+.social-copy h3 em{font-style:normal;color:var(--teal)}
+.social-copy p{color:rgba(255,255,255,.78);font-size:17px;line-height:1.75;margin:0 0 1.3rem}
+.social-copy ul{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;gap:.6rem}
+.social-copy li{color:#fff;font-size:16px;font-weight:600;padding-left:30px;position:relative}
+.social-copy li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:rgba(88,208,189,.18);box-shadow:inset 0 0 0 2px var(--teal)}
+.social-copy li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border:solid var(--teal);border-width:0 2px 2px 0;transform:rotate(40deg)}
+.social-more{display:inline-block;color:var(--teal);font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px}
 .social-shot img{width:100%;max-width:380px;height:auto;aspect-ratio:1080/1350;display:block;margin:0 auto;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);border:1px solid rgba(88,208,189,.18)}
+@media(max-width:900px){.social-split{grid-template-columns:1fr;gap:2rem}.social-copy{text-align:left}}
 </style>
 <script type="application/ld+json">
 {
@@ -1264,7 +1273,20 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <h2 class="sec-title white">Viral auf dem <em>Smartphone.</em></h2>
       <p class="sec-sub light">Professionelles Management auf Instagram, TikTok, Facebook, LinkedIn und YouTube – mit Content, Reels und gezielten Ads.</p>
     </div>
-    <div class="social-shot reveal"><img src="social-media.webp" srcset="social-media-360.webp 360w, social-media-540.webp 540w, social-media-720.webp 720w, social-media.webp 1080w" sizes="(max-width: 600px) calc(100vw - 80px), 380px" width="1080" height="1350" alt="Social Media Agentur Berlin – Instagram, Reels und TikTok von Masar Werbeagentur" loading="lazy"></div>
+    <div class="social-split reveal">
+      <div class="social-copy">
+        <h3>Mehr Reichweite für Ihr <em>Unternehmen</em></h3>
+        <p>Wir planen, gestalten und veröffentlichen Ihre Inhalte – von Posts und Reels bis zu gezielten Anzeigen. Damit Ihr Unternehmen dort sichtbar ist, wo Ihre Kunden täglich scrollen.</p>
+        <ul>
+          <li>Content &amp; Reels aus einer Hand</li>
+          <li>Instagram, TikTok, Facebook &amp; LinkedIn</li>
+          <li>Gezielte Meta Ads</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+        <a href="/digital.html" class="social-more">Mehr zu Social Media →</a>
+      </div>
+      <div class="social-shot"><img src="social-media.webp" srcset="social-media-360.webp 360w, social-media-540.webp 540w, social-media-720.webp 720w, social-media.webp 1080w" sizes="(max-width: 900px) calc(100vw - 80px), 380px" width="1080" height="1350" alt="Social Media Agentur Berlin – Instagram, Reels und TikTok von Masar Werbeagentur" loading="lazy"></div>
+    </div>
     <div class="pricing-grid">
       <div class="price-card reveal">
         <div class="price-name">Starter</div>
