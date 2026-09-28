@@ -456,7 +456,7 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-poster{transition:opacity .6s ease}
 .hero-mb.mb-3d .mb-stage,.hero-mb.mb-3d .mb-shade{opacity:1}
 .hero-mb.mb-3d .mb-poster{opacity:0;visibility:hidden}
-.hero-mb .mb-ui{position:absolute;z-index:3;right:max(24px,calc((100vw - 1160px)/2 + 24px));bottom:22px;width:min(640px,calc(50vw - 24px));display:flex;flex-direction:column;gap:.55rem;background:rgba(9,22,38,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(88,208,189,.25);border-radius:16px;padding:.8rem 1rem;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.3)}
+.hero-mb .mb-ui{position:absolute;z-index:3;right:max(24px,calc((100vw - 1160px)/2 + 24px));bottom:22px;width:min(580px,calc(50vw - 110px));display:flex;flex-direction:column;gap:.55rem;background:rgba(9,22,38,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(88,208,189,.25);border-radius:16px;padding:.8rem 1rem;color:#fff;box-shadow:0 18px 50px rgba(0,0,0,.3)}
 .hero-mb .mb-ui[hidden]{display:none}
 .hero-mb .mb-ui-head{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;flex-wrap:wrap}
 .hero-mb .mb-ui-lbl{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--teal)}
@@ -485,12 +485,13 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-ui button:focus-visible,.hero-mb .mb-pick:focus-within{outline:2px solid #fff;outline-offset:2px}
 .hero-mb .mb-msg{margin:0;font-size:12.5px;color:#ffd48a}
 .hero-mb .mb-note{margin:0;font-size:11.5px;color:rgba(255,255,255,.55)}
+.hero-mb .mb-tip{margin:0;font-size:12px;color:rgba(255,255,255,.78)}
 .hero-mb .mb-hint{position:absolute;z-index:2;top:calc(var(--nav-h,76px) + 18px);right:max(24px,calc((100vw - 1160px)/2 + 24px));font-size:12px;color:rgba(255,255,255,.6);pointer-events:none;opacity:0;transition:opacity .9s}
 .hero-mb.mb-3d .mb-hint{opacity:1}
 .hero-mb .mb-hint-m{display:none}
 .hero-mb .mb-stage canvas{touch-action:pan-y}
 .mb-sent{max-width:720px;margin:0 auto 1.2rem;background:rgba(88,208,189,.14);border:1px solid rgba(23,117,103,.35);color:#0e4f45;border-radius:10px;padding:.85rem 1rem;font-size:14.5px;line-height:1.55;font-weight:600}
-@media(max-width:1180px) and (min-width:901px){.hero-mb .mb-ui{width:calc(56vw - 24px)}.hero-mb .mb-name{display:none}}
+@media(max-width:1180px) and (min-width:901px){.hero-mb .mb-ui{width:calc(50vw - 56px)}.hero-mb .mb-name{display:none}}
 @media(max-width:900px){
 .hero-mb{flex-direction:column;align-items:stretch;min-height:0;padding-bottom:1.5rem}
 .hero-mb .container{order:1}
@@ -640,6 +641,7 @@ table.rt td:first-child::before{display:none}
       <button type="button" class="mb-btn mb-go">Diesen Stand anfragen →</button>
     </div>
     <p class="mb-msg" role="status" hidden></p>
+    <p class="mb-tip">Tipp: Logo als SVG oder PNG ab 1000&nbsp;px – so bleibt es auch auf der Rückwand scharf.</p>
     <p class="mb-note">Ihr Logo wird nur in Ihrem Browser verarbeitet – übertragen wird es erst, wenn Sie die Anfrage absenden.</p>
   </div>
 </section>
