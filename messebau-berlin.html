@@ -483,6 +483,23 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-name::placeholder{color:rgba(255,255,255,.55)}
 .hero-mb .mb-name:focus{outline:2px solid var(--teal);outline-offset:1px}
 .hero-mb .mb-ui button:focus-visible,.hero-mb .mb-pick:focus-within{outline:2px solid #fff;outline-offset:2px}
+.hero-mb .mb-tabs{display:flex;gap:.2rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-mb .mb-tabs button{background:none;border:0;border-bottom:2px solid transparent;color:rgba(255,255,255,.7);font:600 13px/1 'Barlow',sans-serif;padding:8px 10px 9px;margin-bottom:-1px;cursor:pointer}
+.hero-mb .mb-tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--teal)}
+.hero-mb .mb-tabs button:hover{color:#fff}
+.hero-mb .mb-pane{display:flex;flex-direction:column;gap:.55rem;min-height:78px}
+.hero-mb .mb-pane[hidden]{display:none}
+.hero-mb .mb-chips{gap:.45rem}
+.hero-mb .mb-chip{display:inline-flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);font:600 13px/1 'Barlow',sans-serif;padding:8px 11px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.hero-mb .mb-chip::before{content:"";width:14px;height:14px;border-radius:4px;border:1.5px solid rgba(255,255,255,.5);box-sizing:border-box}
+.hero-mb .mb-chip[aria-pressed="true"]{background:rgba(88,208,189,.16);border-color:var(--teal);color:#fff}
+.hero-mb .mb-chip[aria-pressed="true"]::before{background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6 9.6 3.6' fill='none' stroke='%23132e50' stroke-width='2'/%3E%3C/svg%3E") center/10px no-repeat;border-color:var(--teal)}
+.hero-mb .mb-view{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:3px}
+.hero-mb .mb-view button{background:none;border:0;color:rgba(255,255,255,.8);font:600 13px/1 'Barlow',sans-serif;padding:8px 11px;border-radius:7px;cursor:pointer}
+.hero-mb .mb-view button[aria-pressed="true"]{background:var(--teal);color:var(--navy)}
+.hero-mb .mb-actions{justify-content:flex-end}
+.hero-mb .mb-actions .mb-go{margin-left:0}
+.hero-mb .mb-tip .mb-note{display:block;margin-top:2px}
 .hero-mb .mb-msg{margin:0;font-size:12.5px;color:#ffd48a}
 .hero-mb .mb-note{margin:0;font-size:11.5px;color:rgba(255,255,255,.55)}
 .hero-mb .mb-tip{margin:0;font-size:12px;color:rgba(255,255,255,.78)}
@@ -504,7 +521,7 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-poster .hero-shot{max-width:min(420px,100%)}
 .hero-mb.mb-3d .hero-visual.mb-poster{display:none}
 .hero-mb:not(.mb-3d) .mb-stage{display:none}
-.hero-mb .mb-sw button,.hero-mb .mb-pick{width:32px;height:32px}.hero-mb .mb-seg{width:100%}.hero-mb .mb-seg button{flex:1;padding:10px 4px}
+.hero-mb .mb-sw button,.hero-mb .mb-pick{width:32px;height:32px}.hero-mb .mb-seg,.hero-mb .mb-view{width:100%}.hero-mb .mb-seg button,.hero-mb .mb-view button{flex:1;padding:10px 4px}.hero-mb .mb-tabs button{flex:1;padding:10px 4px 11px}.hero-mb .mb-actions .mb-save{flex:1 1 100%;justify-content:center}.hero-mb .mb-chip{padding:10px 12px}
 }
 .st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
 .st-card{background:#fff;border:1px solid var(--border,#e3e8ec);border-radius:14px;padding:1.4rem 1.3rem;display:flex;flex-direction:column;gap:.45rem;box-shadow:0 8px 28px rgba(19,46,80,.06)}
@@ -629,20 +646,37 @@ table.rt td:first-child::before{display:none}
   <div class="mb-hint" aria-hidden="true"><span class="mb-hint-d">Maus bewegen – der Stand dreht sich mit</span><span class="mb-hint-m">Zum Drehen seitlich wischen</span></div>
   <div class="mb-ui" hidden>
     <div class="mb-ui-head"><span class="mb-ui-lbl">3D-Messestand-Planer</span><span class="mb-type-lbl">Kopfstand · drei Seiten offen</span></div>
-    <div class="mb-row">
-      <div class="mb-seg" role="group" aria-label="Standtyp wählen"><button type="button" data-type="reihe" aria-pressed="false" title="Reihenstand">Reihe</button><button type="button" data-type="eck" aria-pressed="false" title="Eckstand">Ecke</button><button type="button" data-type="kopf" aria-pressed="true" title="Kopfstand">Kopf</button><button type="button" data-type="insel" aria-pressed="false" title="Inselstand">Insel</button></div>
-      <div class="mb-sw" role="group" aria-label="Standfarbe wählen"><button type="button" data-c="#58d0bd" style="--c:#58d0bd" aria-pressed="true" aria-label="Standfarbe Türkis" title="Türkis"></button><button type="button" data-c="#f5c518" style="--c:#f5c518" aria-pressed="false" aria-label="Standfarbe Gelb" title="Gelb"></button><button type="button" data-c="#e5484d" style="--c:#e5484d" aria-pressed="false" aria-label="Standfarbe Rot" title="Rot"></button><button type="button" data-c="#3b82f6" style="--c:#3b82f6" aria-pressed="false" aria-label="Standfarbe Blau" title="Blau"></button><button type="button" data-c="#34c759" style="--c:#34c759" aria-pressed="false" aria-label="Standfarbe Grün" title="Grün"></button><label class="mb-pick" title="Eigene Farbe"><input type="color" value="#58d0bd" aria-label="Eigene Standfarbe wählen"></label></div>
+    <div class="mb-tabs" role="tablist" aria-label="Planer-Bereiche">
+      <button type="button" role="tab" id="mbt-stand" aria-controls="mbp-stand" aria-selected="true">Stand &amp; Marke</button>
+      <button type="button" role="tab" id="mbt-extra" aria-controls="mbp-extra" aria-selected="false" tabindex="-1">Ausstattung</button>
+      <button type="button" role="tab" id="mbt-view" aria-controls="mbp-view" aria-selected="false" tabindex="-1">Ansicht</button>
     </div>
-    <div class="mb-row">
-      <label class="mb-btn mb-file"><input type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>Ihr Logo</label>
-      <button type="button" class="mb-x" hidden aria-label="Logo entfernen">×</button>
-      <input class="mb-name" type="text" maxlength="28" placeholder="Firmenname" aria-label="Firmenname auf dem Stand" autocomplete="organization">
+    <div class="mb-pane" id="mbp-stand" role="tabpanel" aria-labelledby="mbt-stand">
+      <div class="mb-row">
+        <div class="mb-seg" role="group" aria-label="Standtyp wählen"><button type="button" data-type="reihe" aria-pressed="false" title="Reihenstand">Reihe</button><button type="button" data-type="eck" aria-pressed="false" title="Eckstand">Ecke</button><button type="button" data-type="kopf" aria-pressed="true" title="Kopfstand">Kopf</button><button type="button" data-type="insel" aria-pressed="false" title="Inselstand">Insel</button></div>
+        <div class="mb-sw" role="group" aria-label="Standfarbe wählen"><button type="button" data-c="#58d0bd" style="--c:#58d0bd" aria-pressed="true" aria-label="Standfarbe Türkis" title="Türkis"></button><button type="button" data-c="#f5c518" style="--c:#f5c518" aria-pressed="false" aria-label="Standfarbe Gelb" title="Gelb"></button><button type="button" data-c="#e5484d" style="--c:#e5484d" aria-pressed="false" aria-label="Standfarbe Rot" title="Rot"></button><button type="button" data-c="#3b82f6" style="--c:#3b82f6" aria-pressed="false" aria-label="Standfarbe Blau" title="Blau"></button><button type="button" data-c="#34c759" style="--c:#34c759" aria-pressed="false" aria-label="Standfarbe Grün" title="Grün"></button><label class="mb-pick" title="Eigene Farbe"><input type="color" value="#58d0bd" aria-label="Eigene Standfarbe wählen"></label></div>
+      </div>
+      <div class="mb-row">
+        <label class="mb-btn mb-file"><input type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg>Ihr Logo</label>
+        <button type="button" class="mb-x" hidden aria-label="Logo entfernen">×</button>
+        <input class="mb-name" type="text" maxlength="28" placeholder="Firmenname" aria-label="Firmenname auf dem Stand" autocomplete="organization">
+      </div>
+    </div>
+    <div class="mb-pane" id="mbp-extra" role="tabpanel" aria-labelledby="mbt-extra" hidden>
+      <div class="mb-row mb-chips"><button type="button" class="mb-chip" data-extra="screen" aria-pressed="true">LED-Stele</button><button type="button" class="mb-chip" data-extra="truss" aria-pressed="false">Lichttraverse</button><button type="button" class="mb-chip" data-extra="seating" aria-pressed="true">Sitzecke</button><button type="button" class="mb-chip" data-extra="plants" aria-pressed="true">Pflanzen</button><button type="button" class="mb-chip" data-extra="flag" aria-pressed="true">Beachflag</button><button type="button" class="mb-chip" data-extra="rollups" aria-pressed="true">Roll-ups</button></div>
+    </div>
+    <div class="mb-pane" id="mbp-view" role="tabpanel" aria-labelledby="mbt-view" hidden>
+      <div class="mb-row">
+        <div class="mb-view" role="group" aria-label="Ansicht wählen"><button type="button" data-view="standard" aria-pressed="true">Standard</button><button type="button" data-view="top" aria-pressed="false">Von oben</button><button type="button" data-view="tour" aria-pressed="false">360°-Rundgang</button></div>
+        <button type="button" class="mb-chip" data-dims aria-pressed="false">Maße anzeigen</button>
+      </div>
+    </div>
+    <div class="mb-row mb-actions">
       <button type="button" class="mb-btn mb-save"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v12M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>Entwurf speichern</button>
       <button type="button" class="mb-btn mb-go">Diesen Stand anfragen →</button>
     </div>
     <p class="mb-msg" role="status" hidden></p>
-    <p class="mb-tip">Tipp: Logo als SVG oder PNG ab 1000&nbsp;px – so bleibt es auch auf der Rückwand scharf.</p>
-    <p class="mb-note">Ihr Logo wird nur in Ihrem Browser verarbeitet – übertragen wird es erst, wenn Sie die Anfrage absenden.</p>
+    <p class="mb-tip">Tipp: Logo als SVG oder PNG ab 1000&nbsp;px – so bleibt es auch auf der Rückwand scharf. <span class="mb-note">Ihr Logo bleibt in Ihrem Browser, bis Sie die Anfrage absenden.</span></p>
   </div>
 </section>
 
@@ -1029,7 +1063,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(navigator.connection&&navigator.connection.saveData) return false;
     try{var c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch(e){return false;}
   }
-  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260930').then(function(m){return m.init(hero);}).catch(function(){}); }
+  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260929b').then(function(m){return m.init(hero);}).catch(function(){}); }
   function soon(){ if('requestIdleCallback' in window) requestIdleCallback(go,{timeout:1200}); else setTimeout(go,400); }
   if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
 })();
