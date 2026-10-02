@@ -352,3 +352,17 @@ nav.scrolled {
 
 /* Hauptnavigation mit Messebau: auf schmalen Desktop-Breiten enger setzen, damit nichts umbricht */
 @media (min-width:901px) and (max-width:1180px){.nav-links{gap:.8rem!important}.nav-links > li > a{font-size:14px!important;letter-spacing:.2px!important;white-space:nowrap}}
+
+/* Barrierefreiheit (WCAG 2.1 AA, Kontrast ≥ 4,5:1): Footer-Texte, WhatsApp-Buttons und kleine Hinweise */
+footer .foot-desc,footer .foot-col a:not(:hover),footer .fc a:not(:hover),footer .fb p,
+.foot-bottom,.foot-bottom span,.foot-legal a:not(:hover),.fbot,.fbot span,.fbot a:not(:hover){color:rgba(255,255,255,.74)!important}
+.btn-wa,.mk-wa{color:#062b1c!important}
+.wa-hint{color:rgba(255,255,255,.72)!important}
+.stat-lbl{color:rgba(255,255,255,.72)!important}
+#social>.container>p{color:rgba(255,255,255,.75)!important}
+.filter-count{opacity:.85!important}
+.trust-item{color:rgba(255,255,255,.75)!important}
+/* Links im Fließtext zusätzlich unterstreichen (nicht nur über die Farbe erkennbar) */
+p a:not([class]),main li a:not([class]),article li a:not([class]),label a:not([class]),td a:not([class]),
+nav[aria-label="Breadcrumb"] a:not([class]){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+nav li a,.nav-links a,.subnav a,footer li a{text-decoration:none}

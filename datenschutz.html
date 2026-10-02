@@ -159,7 +159,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+<div class="sticky-cta" id="stickyCta" aria-hidden="true" inert>
   <div class="sticky-cta-inner">
     <div class="sticky-cta-text"><strong>Kostenlose Erstberatung</strong><span>Antwort innerhalb 24 Stunden</span></div>
     <div class="sticky-cta-actions">
@@ -458,7 +458,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   var hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
   hbg.addEventListener('click',function(){var o=mob.classList.toggle('open');hbg.setAttribute('aria-expanded',o);mob.setAttribute('aria-hidden',!o);});
   var sc=document.getElementById('stickyCta');
-  window.addEventListener('scroll',function(){sc.classList.toggle('visible',window.scrollY>500);sc.setAttribute('aria-hidden',window.scrollY<=500);},{passive:true});
+  window.addEventListener('scroll',function(){sc.classList.toggle('visible',window.scrollY>500);sc.setAttribute('aria-hidden',window.scrollY<=500);sc.inert=window.scrollY<=500;},{passive:true});
 })();
 </script>
 <script src="/cookie-consent.js" defer></script>

@@ -163,7 +163,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+<div class="sticky-cta" id="stickyCta" aria-hidden="true" inert>
   <div class="sticky-cta-inner">
     <div class="sticky-cta-text">
       <strong>Kostenlose Erstberatung</strong>
@@ -517,6 +517,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       var show = window.scrollY > 500;
       cta.classList.toggle('visible', show);
       cta.setAttribute('aria-hidden', !show);
+      cta.inert = !show;
     }, {passive:true});
   }
 })();

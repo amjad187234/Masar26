@@ -21,18 +21,18 @@
 <title>Druckerei Berlin – Flyer, Visitenkarten & Print | Masar</title>
 <script>document.documentElement.classList.add('js')</script>
 <style>
-:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--gold:#f5c000;--amber:#d97706;--nav-h:94px;--radius:12px;}
+:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--gold:#58d0bd;--amber:#177567;--nav-h:94px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:var(--navy);padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;border:2px solid var(--teal);}
 .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px);}
-.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#451a03;padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#132e50;padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;}
 .btn-gold:hover{background:#e5b800;transform:translateY(-2px);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
 .sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
-.sec-title em{color:#b45309;font-style:normal;}
+.sec-title em{color:#177567;font-style:normal;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
 .fade-up{opacity:0;transform:translateY(24px);transition:opacity .38s ease,transform .38s ease;}
 .fade-up.vis{opacity:1;transform:translateY(0);}
@@ -56,10 +56,10 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .mob-nav.open{display:block;}
 .mob-nav a{display:block;padding:14px 0;color:var(--navy);font-size:18px;font-weight:600;border-bottom:1px solid var(--border);text-decoration:none;}
 .mob-cta{margin-top:1.5rem;display:block;background:var(--teal);color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;}
-.page-hero{padding:calc(var(--nav-h) + 4rem) 0 4rem;background:linear-gradient(150deg,#451a03,#854d0e,#d97706);position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(245,192,0,.15),transparent 58%);pointer-events:none;pointer-events:none;}
+.page-hero{padding:calc(var(--nav-h) + 4rem) 0 4rem;background:linear-gradient(150deg,#0d1f3c 0%,#132e50 55%,#0d4a4a 100%);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(88,208,189,.15),transparent 58%);pointer-events:none;pointer-events:none;}
 .ph-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(245,192,0,.2);border:1px solid rgba(245,192,0,.5);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
+.ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.2);border:1px solid rgba(88,208,189,.5);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
 .ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
 .ph-title em{color:var(--gold);font-style:normal;}
 .ph-sub{font-size:16px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:2rem;}
@@ -90,7 +90,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s;position:relative;}
 .svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
-.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(245,192,0,.1);border-color:rgba(245,192,0,.3);}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(88,208,189,.1);border-color:rgba(88,208,189,.3);}
 .svc-card:hover::after{transform:scaleX(1);}
 .svc-img-wrap{overflow:hidden;}
 .svc-img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s;display:block;}
@@ -99,8 +99,8 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .svc-num{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--amber);margin-bottom:.3rem;}
 .svc-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;;letter-spacing:.6px}
 .svc-desc{font-size:13px;color:var(--muted);line-height:1.7;}
-.cta-strip{background:linear-gradient(135deg,#451a03,#854d0e);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
-.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50%,rgba(245,192,0,.1),transparent 65%);pointer-events:none;}
+.cta-strip{background:linear-gradient(135deg,#0d1f3c,#132e50);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
+.cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50%,rgba(88,208,189,.1),transparent 65%);pointer-events:none;}
 .cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.5rem);color:#fff;text-transform:uppercase;margin-bottom:.8rem;position:relative;z-index:1;;letter-spacing:.8px}
 .cta-title em{color:var(--gold);font-style:normal;}
 .cta-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:2rem;position:relative;z-index:1;}
