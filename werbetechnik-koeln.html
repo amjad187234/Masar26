@@ -3,17 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="/fonts/barlow-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <!-- Preload critical fonts — self-hosted (DSGVO-konform, kein US-Server) -->
+  <link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/barlow-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 <link rel="preload" as="image" href="/logo.webp" fetchpriority="high">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#58d0bd">
-<link rel="stylesheet" href="/fonts.css">
-<link rel="stylesheet" href="/css/viral-ui.css">
+  <!-- Self-hosted fonts CSS -->
+  <!-- Favicon & PWA -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#58d0bd">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/css/viral-ui.css">
 <title>Werbetechnik Köln: Schilder &amp; Beschriftung | Masar</title>
 <meta name="description" content="Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung in Köln – mit Team vor Ort, von Entwurf bis Montage.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -170,222 +173,385 @@
 }
 </script>
 <script>document.documentElement.classList.add('js')</script>
-<script>document.documentElement.classList.add('js')</script>
 <style>
-:root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#f5b800;--r:10px;--nav-h:94px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
-body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{max-width:1160px;margin:0 auto;padding:0 24px}
-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--teal);box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1160px;margin:0 auto;padding:0 24px}
-.nav-logo{display:flex;align-items:center;gap:.6rem}
-.nav-logo img{height:72px;width:auto}
-.nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
-.nav-links{display:flex;list-style:none;gap:1.1rem}
-.nav-links a{font-size:15px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
-.nav-links a:hover,.nav-links a.active{color:var(--teal-ink)}
-.nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{background:var(--teal)!important;color:var(--navy)!important;padding:8px 18px;border-radius:6px;font-weight:700!important}
-.nav-cta::after{display:none!important}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:.3s}
-.mob-nav{display:none;position:fixed;height:auto;max-height:calc(100vh - var(--nav-h));overflow-y:auto;top:var(--nav-h);left:0;right:0;background:#fff;z-index:800;padding:1.5rem 24px;border-top:1px solid var(--border);flex-direction:column}
-.mob-nav.open{display:flex}
-.mob-nav a{padding:14px 0;font-weight:600;font-size:17px;color:var(--navy);border-bottom:1px solid var(--border)}
-.mob-nav a:hover{color:var(--teal-ink)}
-.mob-cta{margin-top:1.5rem;background:var(--teal)!important;color:var(--navy)!important;text-align:center;padding:15px!important;border-radius:6px;font-weight:700!important;border:none!important}
-.hero{padding-top:var(--nav-h);min-height:100vh;display:flex;align-items:center;background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 55%,#0d4a4a 100%);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 72% 45%,rgba(88,208,189,.13) 0%,transparent 58%);pointer-events:none}
-.hero-lines{position:absolute;top:0;right:0;bottom:0;width:40%;opacity:.04;background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4rem 0;position:relative;z-index:2}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:1.12;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;letter-spacing:1px}
-.hero h1 em{color:var(--teal);font-style:normal;display:block}
-.hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.2rem;max-width:500px}
-.hero-trust{display:flex;align-items:center;gap:.8rem;padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
-.hero-trust-txt{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:1px;text-transform:uppercase}
-.hero-visual{text-align:center}
-.hero-logo-img{width:100%;max-width:380px;margin:0 auto;filter:drop-shadow(0 0 60px rgba(88,208,189,.3))}
+/* ═══════════ TOKENS ═══════════ */
+:root {
+  --teal:#58d0bd;--teal-ink:#177567; --teal-d:#3ab8a5; --teal-l:rgba(88,208,189,.1);
+  --navy:#132e50; --navy2:#1e4275; --navy3:#0a1628;
+  --off:#f4f7f7; --text:#1a2a2a; --muted:#5a7070; --border:#e0eaea;
+  --gold:#f5c000; --purple:#7c3aed;
+  --nav-h:94px; --r:12px;
+  --shadow:0 8px 32px rgba(0,0,0,.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.12);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; overflow-x:hidden; }
+body { font-family:'Barlow',sans-serif; background:#fff; color:var(--text); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+
+/* ═══════════ UTILS ═══════════ */
+.container { max-width:1240px; margin:0 auto; padding:0 2rem; }
+.btn { display:inline-flex; align-items:center; gap:.5rem; padding:14px 30px; border-radius:6px; font-weight:700; font-size:14px; transition:all .25s; border:none; cursor:pointer; font-family:inherit; letter-spacing:.3px; }
+.btn-teal { background:var(--teal); color:var(--navy); }
+.btn-teal:hover { background:var(--teal-d); transform:translateY(-2px); box-shadow:0 8px 24px rgba(88,208,189,.35); }
+.btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.4); padding:12px 28px; }
+.btn-outline:hover { border-color:var(--teal); color:var(--teal); }
+.btn-navy { background:var(--navy); color:#fff; }
+.btn-navy:hover { background:var(--teal); color:var(--navy); transform:translateY(-2px); }
+
+.section { padding:6rem 0; }
+.kinetic-marquee-wrap{overflow:hidden;white-space:nowrap;background:linear-gradient(135deg,#132e50,#0a1628);padding:.85rem 0;border-top:1px solid rgba(88,208,189,.1);border-bottom:1px solid rgba(88,208,189,.1);user-select:none;}
+.kinetic-marquee{display:inline-block;animation:marqueeRoll 30s linear infinite;font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:900;font-size:clamp(1rem,2.8vw,1.5rem);text-transform:uppercase;color:rgba(88,208,189,.5);letter-spacing:.12em;}
+.kinetic-marquee .sep{color:rgba(255,255,255,.18);margin:0 2rem;}
+.kinetic-marquee .hi{color:#fff;}
+@keyframes marqueeRoll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media(prefers-reduced-motion:reduce){.kinetic-marquee{animation-duration:80s;}}
+.section.bg-off { background:var(--off); }
+.section.bg-navy { background:var(--navy); }
+.section.bg-dark { background:var(--navy3); }
+
+.eyebrow { font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal-ink); margin-bottom:.8rem; display:block; }
+.eyebrow.light { color:rgba(88,208,189,.8); }
+.sec-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); text-transform:uppercase; color:var(--navy); line-height:1.12; margin-bottom:.7rem; }
+.sec-title em { color:var(--teal-ink); font-style:normal; }
+.sec-title.white { color:#fff; }
+.sec-title.white em{color:var(--teal)}
+.sec-sub { font-size:16px; color:var(--muted); line-height:1.75; max-width:580px; }
+.sec-sub.light { color:rgba(255,255,255,.6); }
+.sec-head { margin-bottom:3.5rem; }
+.sec-head.center { text-align:center; }
+.sec-head.center .sec-sub { margin:0 auto; }
+
+/* ═══════════ ANIMATIONS ═══════════ */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .38s ease, transform .38s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+.reveal-l { opacity:0; transform:translateX(-28px); transition:opacity .38s ease, transform .38s ease; }
+.reveal-l.in { opacity:1; transform:translateX(0); }
+.reveal-r { opacity:0; transform:translateX(28px); transition:opacity .38s ease, transform .38s ease; }
+.reveal-r.in { opacity:1; transform:translateX(0); }
+
+/* ═══════════ WHATSAPP ═══════════ */
+.wa { position:fixed; bottom:100px; right:18px; z-index:998; width:54px; height:54px; border-radius:50%; background:#25d366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 24px rgba(37,211,102,.45); transition:transform .25s; }
+.wa:hover { transform:scale(1.1); }
+.wa svg { width:28px; height:28px; fill:#fff; }
+
+/* ═══════════ NAV ═══════════ */
+nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,255,.97); border-bottom:2px solid var(--teal); box-shadow:0 2px 20px rgba(0,0,0,.06); backdrop-filter:blur(16px); }
+.nav-inner { max-width:1240px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:var(--nav-h); }
+.nav-logo { display:flex; align-items:center; gap:10px; }
+.nav-logo img { height:72px; width:auto; object-fit:contain; }
+.nav-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:28px; color:var(--navy); letter-spacing:2px; display:none; }
+.nav-links { display:flex; gap:1.1rem; list-style:none; align-items:center; }
+.nav-links a { color:var(--navy); font-size:13px; font-weight:600; transition:color .2s; position:relative; padding-bottom:4px; }
+.nav-links a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--teal); transition:width .3s; }
+.nav-links a:hover, .nav-links a.active { color:var(--teal-ink); }
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+.nav-cta { background:var(--teal)!important; color:var(--navy)!important; padding:9px 22px!important; border-radius:6px; font-weight:700!important; }
+.nav-cta::after { display:none!important; }
+.hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; }
+.hamburger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:all .3s; }
+.nav-phone { display:flex; align-items:center; gap:.4rem; color:var(--navy); font-size:13px; font-weight:700; text-decoration:none; transition:color .2s; margin-left:.8rem; white-space:nowrap; }
+.nav-phone:hover { color:var(--teal-ink); }
+.nav-phone svg { width:15px; height:15px; flex-shrink:0; }
+.mob-nav { display:none; position:fixed; inset:0; top:var(--nav-h); background:#fff; z-index:499; padding:2rem; overflow-y:auto; }
+.mob-nav.open { display:block; }
+.mob-nav a { display:block; padding:1rem 1.5rem; color:var(--navy); font-size:17px; font-weight:600; border-bottom:1px solid var(--border); }
+.mob-nav a:hover { color:var(--teal-ink); }
+.mob-contact-row { display:flex; gap:.7rem; margin-top:1.2rem; margin-bottom:.5rem; }
+.mob-call-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:var(--teal); color:var(--navy); font-size:14px; font-weight:700; text-decoration:none; }
+.mob-wa-btn { flex:1; display:flex; align-items:center; justify-content:center; gap:.5rem; padding:14px 10px; border-radius:8px; background:#25d366; color:#fff; font-size:14px; font-weight:700; text-decoration:none; }
+.mob-cta { margin-top:.5rem; display:block; background:var(--teal); color:var(--navy)!important; text-align:center; padding:15px!important; border-radius:6px; font-weight:700!important; }
+
+/* ═══════════ HERO ═══════════ */
+.hero { padding-top:var(--nav-h); min-height:100vh; display:flex; align-items:center; background:linear-gradient(150deg,var(--navy3) 0%,var(--navy) 55%,#0d4a4a 100%); position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 72% 45%,rgba(88,208,189,.13) 0%,transparent 58%); pointer-events:none; }
+.hero-lines { position:absolute; top:0; right:0; bottom:0; width:40%; opacity:.04; background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px); pointer-events:none; }
+.hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; padding:4rem 0; position:relative; z-index:2; }
+.hero-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(88,208,189,.12); border:1px solid rgba(88,208,189,.3); color:var(--teal); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:6px 14px; border-radius:4px; margin-bottom:1.5rem; }
+.hero h1 { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.8rem,5.5vw,4.5rem); line-height:1.12; color:#fff; text-transform:uppercase; margin-bottom:1.2rem; }
+.hero h1 em { color:var(--teal); font-style:normal; display:block; }
+.hero-sub { font-size:17px; color:rgba(255,255,255,.65); line-height:1.85; margin-bottom:2.2rem; max-width:500px; }
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.hero-visual { text-align:center; }
+.hero-logo-img { width:100%; max-width:400px; margin:0 auto; filter:drop-shadow(0 0 60px rgba(88,208,189,.3)); }
 .hero-shot{width:100%;max-width:400px;height:auto;margin:0 auto;display:block;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35)}
-.btn{display:inline-block;padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;transition:all .2s;cursor:pointer;border:none}
-.btn-teal{background:var(--teal);color:var(--navy)}
-.btn-teal:hover{background:#3db8a6;transform:translateY(-2px)}
-.btn-outline{border:2px solid rgba(255,255,255,.3);color:#fff;background:transparent}
-.btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-.section{padding:4rem 0}
-.sec-head{text-align:center;margin-bottom:2.5rem}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy);line-height:1.1;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
-.sec-title em{color:var(--teal-ink);font-style:normal}
-.sec-sub{font-size:16px;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.8}
 
-/* ───────── Filter ───────── */
-.filters{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.5rem}
-.filter-btn{background:#fff;border:1px solid var(--border);color:var(--navy);font-family:'Barlow',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:999px;cursor:pointer;transition:.2s}
-.filter-btn:hover{border-color:var(--teal);color:var(--teal-ink)}
-.filter-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
-.filter-count{font-weight:600;opacity:.6;margin-left:.35rem}
+/* ═══════════ STATS ═══════════ */
+.stats { background:var(--navy3); border-top:1px solid rgba(88,208,189,.1); }
+.stats-grid { display:grid; grid-template-columns:repeat(2,1fr); }
+.stat { padding:2.5rem 1.5rem; text-align:center; border-right:1px solid rgba(255,255,255,.05); }
+.stat:last-child { border-right:none; }
+.stat-num { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2rem,4vw,3rem); color:var(--teal); line-height:1; }
+.stat-lbl { font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:rgba(255,255,255,.38); margin-top:6px; }
 
-/* ───────── Galerie ───────── */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:start}
-.gal-item{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--off);border:1px solid var(--border);cursor:zoom-in;padding:0;transition:transform .25s,box-shadow .25s,border-color .25s;display:block;width:100%}
-.gal-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(88,208,189,.18);border-color:var(--teal)}
-/* Kein festes Format: jede Kachel ist so hoch wie ihr Bild.
-   width/height am Tag geben das Seitenverhältnis vor, damit vor dem Laden nichts springt. */
-.gal-item img{width:100%;height:auto;display:block}
-.gal-item .gal-tag{position:absolute;left:10px;bottom:10px;background:rgba(19,46,80,.86);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 11px;border-radius:5px;backdrop-filter:blur(4px)}
-.gal-item[hidden]{display:none}
-.gal-empty{text-align:center;color:var(--muted);font-size:15px;padding:2rem 0}
+/* ═══════════ QUICK NAV ═══════════ */
+.quick-nav { padding:3rem 0; background:#fff; border-bottom:1px solid var(--border); }
+.qn-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; }
+.qn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.qn-card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.5rem 1rem; border:2px solid var(--border); border-radius:var(--r); transition:all .3s; cursor:pointer; }
+.qn-card:hover { border-color:var(--teal); background:var(--teal-l); transform:translateY(-3px); box-shadow:0 8px 24px rgba(88,208,189,.12); }
+.qn-icon { font-size:2rem; }
+.qn-name { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.95rem; text-transform:uppercase; color:var(--navy); text-align:center; line-height:1.3; }
+.qn-sub { font-size:11px; color:var(--muted); text-align:center; line-height:1.4; }
 
-/* ───────── Bewegtbild ───────── */
-.vid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.vid-card{margin:0;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
-.vid-card video{width:100%;height:auto;display:block;background:#0b1622}
-.vid-card figcaption{font-size:13.5px;color:var(--muted);padding:.9rem 1.1rem;line-height:1.6}
-.vid-card figcaption strong{color:var(--navy);display:block;font-size:14.5px;margin-bottom:.15rem}
-.vid-note{text-align:center;font-size:13px;color:var(--muted);margin-top:1.5rem}
-/* Vorschaubild statt Video: das Video wird erst beim Klick geladen.
-   Ohne JavaScript bleibt der Link und öffnet die Datei direkt. */
-.vid-play{display:block;position:relative;background:#0b1622;line-height:0}
-.vid-play img{width:100%;height:auto;display:block}
-.vid-play::after{content:'';position:absolute;inset:0;background:rgba(11,22,34,.18);transition:background .2s}
-.vid-play:hover::after{background:rgba(11,22,34,.05)}
-.vid-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .2s,background .2s;box-shadow:0 6px 22px rgba(0,0,0,.28)}
-.vid-icon::before{content:'';border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
-.vid-play:hover .vid-icon{transform:translate(-50%,-50%) scale(1.08);background:var(--teal)}
+/* ═══════════ SERVICE CARDS ═══════════ */
+.svc-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.svc-card { background:#fff; border:1px solid var(--border); border-radius:var(--r); overflow:hidden; transition:all .35s; position:relative; }
+.svc-card::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--teal); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+.svc-card:hover { transform:translateY(-6px); box-shadow:0 20px 50px rgba(88,208,189,.12); border-color:rgba(88,208,189,.3); }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-img-wrap { overflow:hidden; }
+.svc-img { width:100%; aspect-ratio:4/5; object-fit:cover; transition:transform .5s; display:block; }
+.svc-card:hover .svc-img { transform:scale(1.05); }
+.svc-body { padding:1.5rem; }
+.svc-num { font-size:10px; font-weight:700; letter-spacing:3px; color:#0e6455; margin-bottom:.4rem; }
+.svc-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.25rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
+.svc-desc { font-size:13px; color:var(--muted); line-height:1.75; }
+.svc-link { display:inline-flex; align-items:center; gap:.3rem; color:#0e6455; font-size:12px; font-weight:700; text-decoration:none; margin-top:.75rem; letter-spacing:.3px; transition:gap .2s; }
+.svc-link:hover { gap:.6rem; }
 
-/* ───────── Lightbox ───────── */
-#lb{position:fixed;inset:0;z-index:1000;background:rgba(8,15,26,.94);display:none;align-items:center;justify-content:center;padding:2.5rem 1rem 4.5rem}
-#lb.open{display:flex}
-#lb img{max-width:min(94vw,1100px);max-height:82vh;width:auto;height:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.lb-btn{position:absolute;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:46px;height:46px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
-.lb-btn:hover{background:var(--teal);color:var(--navy);border-color:var(--teal)}
-#lbClose{top:18px;right:18px}
-#lbPrev{left:18px;top:50%;transform:translateY(-50%)}
-#lbNext{right:18px;top:50%;transform:translateY(-50%)}
-#lbCap{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px;letter-spacing:.5px;padding:0 1rem}
+/* ═══════════ PREMIUM BLOCK ═══════════ */
+.pb { display:grid; grid-template-columns:1fr 1fr; border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg); }
+.pb.rev { direction:rtl; }
+.pb.rev > * { direction:ltr; }
+.pb-img { overflow:hidden; }
+.pb-img img { width:100%; height:100%; object-fit:cover; min-height:380px; display:block; transition:transform .5s; }
+.pb:hover .pb-img img { transform:scale(1.04); }
+.pb-body { padding:3rem; display:flex; flex-direction:column; justify-content:center; }
+.pb-body.dk { background:var(--navy); }
+.pb-body.lt { background:#fff; }
+.pb-ey { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:.8rem; }
+.pb-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(1.7rem,3vw,2.5rem); text-transform:uppercase; line-height:1.12; margin-bottom:.8rem; }
+.pb-body.dk .pb-title { color:#fff; }
+.pb-body.lt .pb-title { color:var(--navy); }
+.pb-title em { color:var(--teal); font-style:normal; }
+.pb-desc { font-size:14px; line-height:1.85; margin-bottom:1.4rem; }
+.pb-body.dk .pb-desc { color:rgba(255,255,255,.62); }
+.pb-body.lt .pb-desc { color:var(--muted); }
+.pb-feats { display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.5rem; }
+.pb-feat { font-size:13px; display:flex; align-items:center; gap:.5rem; }
+.pb-body.dk .pb-feat { color:rgba(255,255,255,.8); }
+.pb-body.lt .pb-feat { color:var(--text); }
+.pb-feat::before { content:'✓'; color:var(--teal); font-weight:700; flex-shrink:0; }
 
-footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
-.foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
-.foot-logo img{height:48px;width:auto}
-.foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
-.foot-desc{font-size:15px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
-.foot-social{display:flex;gap:.8rem}
-.fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
-.fsoc svg{width:18px;height:18px;fill:currentColor}
-.fsoc:hover{background:var(--teal);color:var(--navy)}
-.foot-col h5{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
-.foot-col a{display:block;font-size:15px;color:#8fa4c0;margin-bottom:.5rem;transition:color .2s}
-.foot-col a:hover{color:#fff}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:12px;color:#8fa4c0}
-.foot-legal{display:flex;gap:1.5rem}
-.foot-legal a:hover{color:#fff}
-.wa{position:fixed;bottom:90px;right:18px;z-index:850;width:54px;height:54px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:.3s}
-.wa:hover{transform:scale(1.1)}
-.wa svg{width:28px;height:28px;fill:#fff}
-#stickyCta{position:fixed;bottom:0;left:0;right:0;z-index:800;background:var(--navy);border-top:2px solid var(--teal);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(100%);transition:.3s;flex-wrap:wrap}
-#stickyCta.visible{transform:none}
-.scta-txt{font-size:14px;font-weight:600;color:#fff}
-.scta-txt span{color:var(--teal)}
-.scta-btns{display:flex;gap:.7rem;flex-wrap:wrap}
-.scta-btn{padding:9px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Barlow',sans-serif;transition:.2s}
-.scta-btn.primary{background:var(--teal);color:var(--navy)}
-.scta-btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
-.form-wrap{max-width:720px;margin:0 auto}
-.fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem}
-.fg label{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.5px}
-.fg input,.fg select,.fg textarea{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow',sans-serif;font-size:15px;width:100%;transition:border .2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--teal)}
-.fg textarea{min-height:120px;resize:vertical}
-.submit-btn{width:100%;background:var(--teal);color:var(--navy);border:none;border-radius:8px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Barlow',sans-serif}
-.submit-btn:hover{background:#3db8a6;transform:translateY(-2px)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .38s ease,transform .38s ease}
-.reveal.in{opacity:1;transform:none}
-.bg-alt{background:var(--off)}
-.nav-phone{display:flex;align-items:center;gap:.4rem;color:inherit;font-size:14.5px;font-weight:700;text-decoration:none;transition:color .2s;margin-left:.8rem;white-space:nowrap}
-.nav-phone svg{width:15px;height:15px;flex-shrink:0}
-.mob-contact-row{display:flex;gap:.7rem;margin-top:1.2rem;margin-bottom:.5rem}
-.mob-call-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:14px 10px;border-radius:8px;background:#58d0bd;color:#132e50;font-size:14px;font-weight:700;text-decoration:none}
-.mob-wa-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;padding:14px 10px;border-radius:8px;background:#25d366;color:#fff;font-size:14px;font-weight:700;text-decoration:none}
-.skip-link{position:absolute;top:-999px;left:0;background:#58d0bd;color:#132e50;padding:10px 20px;font-weight:700;font-size:14px;border-radius:0 0 6px 0;z-index:9999;text-decoration:none}
-.skip-link:focus{top:0}
-*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd}
-*:focus:not(:focus-visible){outline:none;box-shadow:none}
-*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;border-radius:3px}
-#lb *:focus-visible{outline:3px solid #58d0bd;box-shadow:none}
+/* ═══════════ WHY US ═══════════ */
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.why-card { padding:2rem; border:1px solid var(--border); border-radius:var(--r); background:#fff; transition:all .3s; position:relative; overflow:hidden; }
+.why-card::before { content:''; position:absolute; top:0; left:0; bottom:0; width:3px; background:var(--teal); transform:scaleY(0); transform-origin:bottom; transition:transform .35s; }
+.why-card:hover { box-shadow:0 12px 40px rgba(88,208,189,.1); border-color:rgba(88,208,189,.25); }
+.why-card:hover::before { transform:scaleY(1); }
+.why-icon { font-size:2.5rem; margin-bottom:1rem; }
+.why-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.2rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
+.why-desc { font-size:13px; color:var(--muted); line-height:1.75; }
 
-/* ───────── Leistungskarten ───────── */
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2.5rem}
-.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .3s;opacity:0;transform:translateY(24px);box-shadow:0 2px 12px rgba(0,0,0,.04)}
-.svc-card.vis,.svc-card.in{opacity:1;transform:none}
-.svc-card:hover{background:var(--off);border-color:var(--teal);transform:translateY(-4px);box-shadow:0 8px 24px rgba(88,208,189,.12)}
-.svc-icon{font-size:2.4rem;margin-bottom:1rem;color:var(--teal-ink)}
-.svc-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.6px}
-.svc-card p{font-size:15.5px;color:var(--muted);line-height:1.7}
-html:not(.js) .svc-card{opacity:1!important;transform:none!important}
+/* ═══════════ PRICING ═══════════ */
+.pricing-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.price-card { background:#fff; border:2px solid var(--border); border-radius:var(--r); padding:2rem; position:relative; transition:all .3s; }
+.price-card.featured { border-color:var(--teal); box-shadow:0 20px 50px rgba(88,208,189,.15); }
+.price-card:hover { transform:translateY(-4px); }
+.price-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--teal); color:var(--navy); font-size:11px; font-weight:700; padding:4px 16px; border-radius:20px; white-space:nowrap; }
+.price-name { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.4rem; text-transform:uppercase; color:var(--navy); margin-bottom:.4rem; }
+.price-val { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:2.3rem; color:var(--teal-ink); line-height:1; }
+.price-period { font-size:12px; color:var(--muted); margin-bottom:1.2rem; }
+.price-list { display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.5rem; }
+.price-list li { font-size:13px; color:var(--text); list-style:none; display:flex; align-items:flex-start; gap:.5rem; line-height:1.5; }
+.price-list li::before { content:'✓'; color:var(--teal-ink); font-weight:700; flex-shrink:0; }
+.price-btn { display:block; text-align:center; background:var(--navy); color:#fff; padding:13px; border-radius:6px; font-weight:700; font-size:13px; transition:all .25s; }
+.price-card.featured .price-btn { background:var(--teal); color:var(--navy); }
+.price-btn:hover { background:var(--teal); color:var(--navy); }
 
-/* ───────── Problem / Lösung ───────── */
-.prob-grid{display:grid;gap:1.2rem;margin-top:2.5rem;max-width:860px;margin-left:auto;margin-right:auto}
-.prob-item{display:flex;gap:1.2rem;align-items:flex-start;background:#fff;border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:var(--r);padding:1.6rem 1.8rem;opacity:0;transform:translateY(20px);transition:opacity .38s ease,transform .38s ease}
-.prob-item.vis,.prob-item.in{opacity:1;transform:none}
-.prob-icon{font-size:1.9rem;flex-shrink:0;line-height:1;color:var(--teal-ink)}
-.prob-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.25rem;color:var(--navy);margin-bottom:.7rem;text-transform:uppercase;line-height:1.15;letter-spacing:.6px}
-.prob-p,.prob-l{font-size:15.5px;line-height:1.8;margin-bottom:.6rem}
-.prob-p{color:var(--muted)}
-.prob-l{color:var(--text);margin-bottom:0}
-.prob-p strong{color:var(--navy)}
-.prob-l strong{color:var(--teal-ink)}
-html:not(.js) .prob-item{opacity:1!important;transform:none!important}
-@media(max-width:600px){.prob-item{flex-direction:column;gap:.7rem;padding:1.4rem}}
+/* ═══════════ PROZESS ═══════════ */
+.prozess-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3rem; }
+.prozess-step { text-align:center; position:relative; padding:0 .5rem; }
+.prozess-step:not(:last-child)::after { content:''; position:absolute; top:28px; right:-16%; width:32%; height:2px; background:linear-gradient(90deg,var(--teal),rgba(88,208,189,.15)); }
+.prozess-num { width:56px; height:56px; border-radius:50%; background:var(--teal); color:var(--navy); font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.4rem; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; position:relative; z-index:1; }
+.prozess-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.05rem; text-transform:uppercase; color:var(--navy); margin-bottom:.5rem; }
+.prozess-desc { font-size:13px; color:var(--muted); line-height:1.65; }
+@media(max-width:768px){ .prozess-grid { grid-template-columns:repeat(2,1fr); } .prozess-step:not(:last-child)::after { display:none; } }
+@media(max-width:480px){ .prozess-grid { grid-template-columns:1fr; } }
 
-/* ───────── Ablauf ───────── */
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0}
-.why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:opacity .38s ease,transform .38s ease}
-.why-item.vis,.why-item.in{opacity:1;transform:none}
-.why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
-.why-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
-.why-item p{font-size:15.5px;color:var(--muted);line-height:1.65}
+/* ═══════════ CONTACT EXTRAS ═══════════ */
+.contact-extras { display:grid; grid-template-columns:1fr; gap:1.2rem; margin-top:2rem; max-width:640px; margin-left:auto; margin-right:auto; }
+.hours-box { background:rgba(255,255,255,.06); border:1px solid rgba(88,208,189,.2); border-radius:var(--r); padding:1.4rem 1.6rem; }
+.hours-box-title { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:.9rem; }
+.hours-row { display:flex; justify-content:space-between; font-size:13px; color:rgba(255,255,255,.55); padding:.3rem 0; border-bottom:1px solid rgba(255,255,255,.06); }
+.hours-row:last-child { border-bottom:none; }
+.hours-row .day { color:rgba(255,255,255,.85); }
 
-/* ───────── FAQ ───────── */
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:16.5px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-.faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:transform .2s;flex-shrink:0}
-.faq-q[aria-expanded="true"]::after{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
-.faq-a.open{max-height:600px}
-.faq-a p{font-size:14.5px;color:var(--muted);line-height:1.8;padding-bottom:1.2rem}
+/* ═══════════ FAQ ═══════════ */
+.faq-list { display:flex; flex-direction:column; max-width:720px; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; cursor:pointer; font-weight:600; font-size:15px; color:var(--navy); gap:1rem; background:none; border:none; width:100%; text-align:left; font-family:inherit; }
+.faq-ic { width:28px; height:28px; border-radius:50%; background:var(--teal-l); display:flex; align-items:center; justify-content:center; color:#177567; font-size:18px; flex-shrink:0; transition:transform .3s; }
+.faq-ic.open { transform:rotate(45deg); }
+.faq-a { font-size:14px; color:var(--muted); line-height:1.85; padding-bottom:1.2rem; display:none; }
+.faq-a.open { display:block; }
+.cform { background:#fff; border:1px solid var(--border); border-radius:var(--r); padding:2.5rem; box-shadow:var(--shadow); position:relative; z-index:2; }
+.cform h3 { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.6rem; text-transform:uppercase; color:var(--navy); margin-bottom:1.5rem; }
+.fg { margin-bottom:.9rem; }
+.fg label { display:block; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:5px; }
+.fg input, .fg textarea, .fg select { width:100%; background:var(--off); border:2px solid var(--border); color:var(--text); padding:12px 14px; font-family:'Barlow',sans-serif; font-size:14px; outline:none; transition:border .2s; border-radius:6px; -webkit-appearance:none; }
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color:var(--teal); background:#fff; }
+.fg textarea { height:110px; resize:none; }
+.fg-row { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.consent-row { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:1rem; margin-top:.5rem; }
+.consent-row input[type="checkbox"] { width:18px; height:18px; flex-shrink:0; margin-top:2px; accent-color:var(--teal); cursor:pointer; }
+.consent-row label { font-size:12px; color:var(--muted); line-height:1.65; cursor:pointer; }
+.consent-row a { color:#0e6455; text-decoration:underline; }
+.submit-btn { width:100%; background:var(--teal); color:var(--navy); border:none; padding:15px; border-radius:6px; font-family:'Barlow',sans-serif; font-weight:700; font-size:15px; letter-spacing:.5px; cursor:pointer; transition:all .25s; margin-top:.5rem; }
+.submit-btn:hover { background:var(--teal-d); transform:translateY(-1px); }
 
-.art-badge{display:inline-block;background:var(--navy);color:var(--teal);font-size:10.5px;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:3px;margin:0 2px;font-family:'Barlow Condensed',sans-serif;white-space:nowrap}
+/* ═══════════ CTA STRIP ═══════════ */
+.cta-strip { background:linear-gradient(135deg,var(--navy3),var(--navy),#0d4a4a); padding:6rem 0; text-align:center; position:relative; overflow:hidden; }
+.cta-strip::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50%,rgba(88,208,189,.1),transparent 65%); pointer-events:none; }
+.cta-title { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:clamp(2.5rem,5vw,4rem); color:#fff; text-transform:uppercase; margin-bottom:1rem; line-height:1.12; position:relative; z-index:1; }
+.cta-title em { color:var(--teal); font-style:normal; }
+.cta-sub { font-size:17px; color:rgba(255,255,255,.6); margin-bottom:2.5rem; position:relative; z-index:1; }
+.cta-contact { display:flex; align-items:center; gap:2rem; justify-content:center; margin-top:2rem; flex-wrap:wrap; position:relative; z-index:1; }
+.cta-info { display:flex; align-items:center; gap:.5rem; color:rgba(255,255,255,.55); font-size:14px; }
+.cta-info strong { color:#fff; }
 
-/* ───────── Fließtext ───────── */
-.blog-prose{max-width:760px}
-.blog-prose p{font-size:16.5px;color:var(--muted);line-height:1.8;margin-bottom:1rem}
-.blog-prose p:last-child{margin-bottom:0}
+/* ═══════════ FOOTER ═══════════ */
+footer { background:#060e1a; padding:4rem 0 2rem; }
+.foot-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(255,255,255,.06); }
+.foot-logo { display:flex; align-items:center; gap:10px; margin-bottom:1rem; }
+.foot-logo img { height:48px; object-fit:contain; }
+.foot-logo-txt { font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:26px; color:var(--teal); letter-spacing:2px; display:none; }
+.foot-desc { font-size:13px; color:rgba(255,255,255,.38); line-height:1.85; margin-bottom:1.2rem; }
+.foot-social { display:flex; gap:.7rem; }
+.fsoc { width:36px; height:36px; border-radius:50%; border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; transition:all .25s; }
+.fsoc:hover { border-color:var(--teal); background:rgba(88,208,189,.1); }
+.fsoc svg { width:16px; height:16px; fill:rgba(255,255,255,.45); transition:fill .25s; }
+.fsoc:hover svg { fill:var(--teal); }
+.foot-col h5 { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#fff; margin-bottom:1rem; }
+.foot-col a { display:block; font-size:13px; color:rgba(255,255,255,.38); margin-bottom:.5rem; transition:color .2s; }
+.foot-col a:hover { color:var(--teal); }
+.foot-bottom { display:flex; justify-content:space-between; align-items:center; padding-top:1.5rem; font-size:11px; color:rgba(255,255,255,.28); flex-wrap:wrap; gap:1rem; }
+.foot-legal { display:flex; gap:1.5rem; }
+.foot-legal a { color:rgba(255,255,255,.28); transition:color .2s; }
+.foot-legal a:hover { color:var(--teal); }
 
-/* ───────── Quellenangabe ───────── */
-.src{max-width:760px;margin:2rem auto 0;padding-top:1rem;border-top:1px solid var(--border);font-size:13px;color:var(--muted);line-height:1.7}
-.src a{color:var(--teal-ink);text-decoration:underline;text-underline-offset:2px}
-.src a:hover{color:var(--navy)}
-html:not(.js) .why-item{opacity:1!important;transform:none!important}
-html:not(.js) .faq-a{max-height:none!important}
-html:not(.js) .faq-q::after{display:none}
+/* ═══════════ MOBILE ═══════════ */
+@media(max-width:1024px) {
+  .nav-links { display:none; } .hamburger { display:flex; } .nav-phone { display:none; }
+  .hero-inner { grid-template-columns:1fr; } .hero-visual { display:none; }
+  .qn-grid { grid-template-columns:repeat(3,1fr); }
+  .svc-grid-3 { grid-template-columns:1fr 1fr; }
+  .pb { grid-template-columns:1fr; } .pb.rev { direction:ltr; }
+  .pb-img img { min-height:260px; }
+  .results-grid { grid-template-columns:repeat(2,1fr); }
+  .why-grid { grid-template-columns:1fr 1fr; }
+  .pricing-grid { grid-template-columns:1fr; }
+  .contact-grid { grid-template-columns:1fr; }
+  .foot-grid { grid-template-columns:1fr 1fr; }
+  .fg-row { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:768px) {
+  .qn-grid { grid-template-columns: repeat(2,1fr); }
+  .stats-grid { grid-template-columns: repeat(2,1fr); }
+  .prozess-grid { grid-template-columns: repeat(2,1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: repeat(2,1fr); }
+  .pb { grid-template-columns: 1fr; }
+  .pb.rev { direction: ltr; }
+  .pb-img img { min-height: 220px; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media(max-width:640px) {
+  :root { --nav-h:94px; }
+  .hero { min-height:auto; padding:calc(var(--nav-h) + 1rem) 0 2rem; }
+  .hero-inner { padding: 1rem 0 1.5rem; }
+  .hero h1 { font-size:clamp(2.4rem,10vw,3.5rem); }
+  .qn-grid { grid-template-columns:repeat(2,1fr); }
+  .svc-grid-3, .svc-grid-2 { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; }
+  .foot-grid { grid-template-columns:1fr; }
+  .results-grid { grid-template-columns:1fr 1fr; }
+  .section { padding:4rem 0; }
+  .hero-btns { flex-direction:column; }
+  .hero-btns a { text-align:center; }
+  .hero-btns a { width:100%; justify-content:center; }
+  .hero-trust { gap:.5rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 1.2rem .8rem; }
+  .stat-num { font-size: 2rem; }
+  .qn-grid { grid-template-columns: repeat(2,1fr); gap:.7rem; }
+  .qn-card { padding: .8rem; }
+  .qn-icon { font-size: 1.6rem; }
+  .qn-name { font-size: 13px; }
+  .qn-sub { font-size: 11px; }
+}
 
-@media(max-width:900px){.svc-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}.hero-inner{grid-template-columns:1fr}.hero-visual{display:none}.gal{grid-template-columns:repeat(2,1fr)}.foot-grid{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}}
-@media(max-width:700px){.vid-grid{grid-template-columns:1fr}}
-@media(max-width:600px){.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.gal{grid-template-columns:1fr;gap:1rem}.foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column;text-align:center}#stickyCta{flex-direction:column;text-align:center}.filter-btn{font-size:13px;padding:9px 16px}#lbPrev{left:8px}#lbNext{right:8px}}
-html:not(.js) .reveal{opacity:1!important;transform:none!important}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}.gal-item{transition:none}}
+/* ═══ STICKY CTA ═══ */
+.sticky-cta{
+  position:fixed;bottom:0;left:0;right:0;z-index:490;
+  background:var(--navy);
+  border-top:2px solid var(--teal);
+  padding:.8rem 2rem;
+  transform:translateY(100%);
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.sticky-cta.visible{transform:translateY(0);}
+.sticky-cta-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+.sticky-cta-text strong{color:#fff;font-size:14px;font-weight:700;display:block;}
+.sticky-cta-text span{color:rgba(255,255,255,.55);font-size:12px;}
+.sticky-cta-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+.sticky-btn-phone{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25);padding:9px 18px;border-radius:6px;font-weight:600;font-size:13px;white-space:nowrap;transition:all .2s;}
+.sticky-btn-phone:hover{background:rgba(255,255,255,.2);}
+.sticky-btn-main{background:var(--teal);color:var(--navy);padding:9px 22px;border-radius:6px;font-weight:700;font-size:13px;white-space:nowrap;transition:all .2s;}
+.sticky-btn-main:hover{background:var(--teal-d);}
+@media(max-width:640px){
+  .sticky-cta{padding:.7rem 1rem;}
+  .sticky-cta-inner{gap:.8rem;}
+  .sticky-cta-text span{display:none;}
+  .sticky-btn-phone{display:none;}
+  .sticky-btn-main{width:100%;text-align:center;}
+  .wa { bottom: 80px; right: 14px; width: 48px; height: 48px; }
+  .wa svg { width: 24px; height: 24px; }
+}
+.calc-chip:hover:not(.active){border-color:var(--teal);color:var(--teal-ink);background:#e8f8f5;}
+@keyframes ppop{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1);opacity:1}}
+.fg-input{width:100%;background:var(--off);border:2px solid var(--border);color:var(--text);padding:11px 14px;border-radius:6px;font-family:inherit;font-size:14px;outline:none;transition:border .2s;-webkit-appearance:none;}
+.fg-input:focus{border-color:var(--teal);background:#fff;}
+.field-error{border-color:#e53e3e!important;background:#fff5f5!important;}
+.form-success .success-icon{font-size:3.5rem;margin-bottom:1rem;}
+
+/* ═══ TESTIMONIAL SLIDER ═══ */
+
+/* ── BFSG / WCAG 2.1 AA — Global Focus States ─────────────────
+   Replaces outline:none with a visible focus ring on all
+   interactive elements for keyboard and assistive technology users */
+*:focus-visible{outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; }
+*:focus:not(:focus-visible) { outline: none; }
+*:focus-visible { outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd; border-radius: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline:3px solid #132e50;outline-offset:2px;box-shadow:0 0 0 6px #58d0bd;
+  outline-offset: 3px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 5px rgba(88,208,189,.25);
+}
+/* Skip-to-content link for screen readers */
+.skip-link {
+  position: absolute; top: -999px; left: 0;
+  background: #58d0bd; color: #132e50;
+  padding: 10px 20px; font-weight: 700; font-size: 14px;
+  border-radius: 0 0 6px 0; z-index: 9999; text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+@keyframes heroScroll { 0%,100%{transform:translateY(0);opacity:.35} 50%{transform:translateY(5px);opacity:.8} }
+
+/* a11y + resilience: content is visible unless JS confirms it can animate it in */
+html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.js) .fade-up,html:not(.js) .svc-card,html:not(.js) .why-item{opacity:1!important;transform:none!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-l,.reveal-r,.fade-up,.svc-card,.why-item{opacity:1!important;transform:none!important;transition:none!important}}
 
 /* Bei geöffnetem Menü nichts darüberlegen */
 body:has(.mob-nav.open) .wa{display:none}
-body:has(.mob-nav.open) #stickyCta{display:none}
+body:has(.mob-nav.open) .sticky-cta{display:none}
 
 /* nav-collapse: einheitlicher Umbruchpunkt für die Hauptnavigation */
 @media(max-width:1050px){.nav-links{display:none}.hamburger{display:flex}.nav-phone{display:none}}
@@ -444,20 +610,28 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 .hero-trust{padding-top:1.2rem}
 .hero-shot,.hero-logo-frame{max-width:min(360px,40vh)}
 }
+.pb-body.lt .pb-ey{color:var(--teal-ink)}
+.pb-body.lt .pb-title em{color:var(--teal-ink)}
 /* Sticky-Leiste verdeckt sonst die letzte Zeile der Fusszeile */
 @media(min-width:1051px){footer{padding-bottom:6rem}}
+/* Kopfzeile und Inhaltsbreite wie auf den uebrigen Seiten */
+.nav-inner{max-width:1160px;padding:0 24px}
+.container{max-width:1160px;padding:0 24px}
 /* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
 .foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
 /* Datei-Auswahl: eigener Knopf statt Browser-Standard */
 input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
 input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
+/* Preiskarten: Knopf unten buendig, auch wenn die Listen verschieden lang sind */
+.price-card{display:flex;flex-direction:column}
+.price-card .price-list{flex:1 1 auto}
+.price-card .price-btn{margin-top:auto}
+/* Schmale Textbloecke mittig statt links, sonst bleibt die rechte Haelfte leer */
+.faq-list,.blog-prose{margin-left:auto;margin-right:auto}
+section > .container > div[style*='max-width'],section > div > .container > div[style*='max-width']{margin-left:auto;margin-right:auto}
 /* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
-/* Hero-Bild in derselben Flaeche wie das Logo - quadratische Fotos werden nicht beschnitten */
-@media(min-width:901px){
-.hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
-}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
 h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
@@ -470,34 +644,58 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
+/* Kleine Beschriftungen auf Handy und Tablet lesbar (mind. 12 px) */
+@media(max-width:900px){.art-badge,.svc-tag,.stat-lbl,.svc-num,.pb-ey,.hb-ey{font-size:12px}}
+/* Hero zweispaltig ab 901 px wie auf den uebrigen Seiten */
+@media(min-width:901px) and (max-width:1024px){.hero-inner{grid-template-columns:1fr 1fr}.hero-visual{display:block}}
 /* Sticky-Leiste verdeckt am Handy sonst die letzte Zeile der Fusszeile */
 @media(max-width:1050px){footer{padding-bottom:8.5rem!important}}
+.social-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:980px;margin:0 auto 3rem}
+.social-copy h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1.05;text-transform:uppercase;color:#fff;margin:0 0 1rem}
+.social-copy h3 em{font-style:normal;color:var(--teal)}
+.social-copy p{color:rgba(255,255,255,.78);font-size:17px;line-height:1.75;margin:0 0 1.3rem}
+.social-copy ul{list-style:none;padding:0;margin:0 0 1.6rem;display:grid;gap:.6rem}
+.social-copy li{color:#fff;font-size:16px;font-weight:600;padding-left:30px;position:relative}
+.social-copy li::before{content:"";position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:rgba(88,208,189,.18);box-shadow:inset 0 0 0 2px var(--teal)}
+.social-copy li::after{content:"";position:absolute;left:6px;top:8px;width:6px;height:9px;border:solid var(--teal);border-width:0 2px 2px 0;transform:rotate(40deg)}
+.social-more{display:inline-block;color:var(--teal);font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid var(--teal);padding-bottom:2px}
+.social-shot img{width:100%;max-width:380px;height:auto;aspect-ratio:1080/1350;display:block;margin:0 auto;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);border:1px solid rgba(88,208,189,.18)}
+@media(max-width:900px){.social-split{grid-template-columns:1fr;gap:2rem}.social-copy{text-align:left}}
+.svc-7 > .svc-card:last-child{grid-column:2}@media(max-width:1024px){.svc-7 > .svc-card:last-child{grid-column:1/-1;justify-self:center;width:calc(50% - .75rem)}}@media(max-width:640px){.svc-7 > .svc-card:last-child{grid-column:auto;justify-self:stretch;width:auto}}
+.qn-grid > .qn-card:nth-child(7):last-child{grid-column:2}@media(max-width:768px){.qn-grid > .qn-card:nth-child(7):last-child{grid-column:1/-1}}.mb-split{margin-bottom:0}
 </style>
-</head>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<div id="stickyCta">
-  <div class="scta-txt"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg><span>Werbetechnik Köln</span> – Team vor Ort</div>
-  <div class="scta-btns">
-    <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." target="_blank" rel="noopener noreferrer" class="scta-btn primary"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
-    <a href="#kontakt" class="scta-btn secondary">Projekt besprechen</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." class="wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.454-2.012A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm7.843 22.516c-.333.937-1.959 1.79-2.695 1.903-.688.107-1.555.152-2.51-.157-.58-.188-1.323-.438-2.27-.857-3.996-1.727-6.607-5.764-6.806-6.03-.2-.265-1.626-2.163-1.626-4.126 0-1.963 1.03-2.928 1.395-3.326.364-.397.795-.496 1.06-.496.265 0 .53.003.762.014.244.012.572-.093.895.682.333.795 1.13 2.757 1.23 2.956.1.2.166.432.033.695-.133.265-.2.43-.397.662-.2.231-.42.516-.6.693-.2.198-.407.412-.175.808.232.397 1.03 1.696 2.212 2.748 1.52 1.35 2.8 1.768 3.197 1.967.397.2.628.166.86-.1.232-.265.994-1.16 1.26-1.557.265-.397.53-.332.895-.2.364.133 2.31 1.09 2.707 1.287.397.2.662.298.762.464.1.166.1.96-.232 1.897z"/></svg>
+</a>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-inner">
+    <div class="sticky-cta-text">
+      <strong>Werbetechnik Köln</strong>
+      <span>Wir melden uns innerhalb von 24 Stunden</span>
+    </div>
+    <div class="sticky-cta-actions">
+      <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." target="_blank" rel="noopener noreferrer" class="sticky-btn-phone"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
+      <a href="#kontakt" class="sticky-btn-main" id="stickyCtaBtn">Jetzt anfragen →</a>
+    </div>
   </div>
 </div>
 
-<a class="wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Masar Werbeagentur">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-</a>
-
+<!-- NAV -->
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Masar Werbeagentur – Startseite">
-      <img src="/logo.webp" width="800" height="800" alt="Masar Werbeagentur Berlin – Logo" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="/logo.webp" width="800" height="800" alt="Masar Werbeagentur Berlin" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span class="nav-logo-txt">MASAR</span>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="/">Home</a></li>
+      <li><a href="/" class="active" aria-current="page">Home</a></li>
       <li><a href="/leistungen.html">Leistungen</a></li>
       <li class="has-sub"><a href="/werbetechnik.html">Werbetechnik</a>
         <ul class="subnav">
@@ -523,7 +721,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <li><a href="/ki-loesungen/">KI-Lösungen</a></li>
       <li><a href="/referenzen.html">Referenzen</a></li>
       <li><a href="/ueber-uns.html">Über uns</a></li>
-      <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+      <li><a href="/#kontakt" class="nav-cta">Kontakt</a></li>
     </ul>
     <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." target="_blank" rel="noopener noreferrer" class="nav-phone" aria-label="Per WhatsApp schreiben">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a8.5 8.5 0 0 0-7.4 12.7L3 21l5.4-1.5A8.5 8.5 0 1 0 12 3Zm-3 7.2h6a.8.8 0 0 1 0 1.6H9a.8.8 0 0 1 0-1.6Zm0 3h4a.8.8 0 0 1 0 1.6H9a.8.8 0 0 1 0-1.6Z"/></svg>
@@ -537,39 +735,45 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <nav class="mob-nav" id="mobNav" aria-label="Mobile Navigation">
   <a href="/">Home</a>
   <a href="/leistungen.html">Alle Leistungen</a>
-  <a href="/werbetechnik.html">Werbetechnik</a>
+  <a href="/werbetechnik.html">Werbetechnik &amp; Leuchtreklamen</a>
   <a href="/messebau-berlin.html">Messebau Berlin</a>
   <a href="/referenzen.html">Referenzen</a>
+  <a href="/webdesign-berlin.html">Webdesign</a>
+  <a href="/digital-signage-berlin.html">Digital Signage</a>
   <a href="/digital.html">Social Media Marketing</a>
   <a href="/print.html">Print &amp; Grafikdesign</a>
   <a href="/angebote/">Branchen-Angebote</a>
   <a href="/ki-loesungen/">KI-Lösungen</a>
+  <a href="/ki-fuer-arztpraxen-berlin.html">KI für Arztpraxen</a>
+  <a href="/ki-fuer-pflegedienste-berlin.html">KI für Pflegedienste</a>
   <a href="/ueber-uns.html">Über uns</a>
   <div class="mob-contact-row">
     <a href="#kontakt" class="mob-call-btn"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>E-Mail</a>
     <a href="https://wa.me/491785143918" class="mob-wa-btn" target="_blank" rel="noopener noreferrer"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
   </div>
-  <a href="#kontakt" class="mob-cta">Jetzt Angebot anfordern →</a>
+  <a href="#kontakt" class="mob-cta">Jetzt kostenlos anfragen →</a>
 </nav>
-
-<section class="hero" id="main-content" role="main" tabindex="-1">
+<main id="main-content">
+<!-- HERO -->
+<section class="hero">
   <div class="hero-lines"></div>
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Werbetechnik · Köln</div>
+        <div class="hero-badge">✦ Werbetechnik · Köln</div>
         <h1>Werbetechnik<em>für</em>Köln.</h1>
         <p class="hero-sub">Café im Veedel, Laden in Ehrenfeld, Handwerksbetrieb in Porz: Unser Team in NRW kommt in Köln zu Ihnen, misst auf und montiert – vom Schild über die Leuchtreklame bis zum beschrifteten Transporter.</p>
         <div class="hero-btns">
-          <a href="#kontakt" class="btn btn-teal">Projekt besprechen</a>
+          <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
           <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." target="_blank" rel="noopener noreferrer" class="btn btn-outline"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp schreiben</a>
-        </div>
-        <div class="hero-trust">
-          <span class="hero-trust-txt">Team vor Ort in Köln · Aufmaß und Montage · Antwort in 24 Stunden</span>
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/referenzen/neon-berlin-01.webp" alt="LED-Neon-Schriftzug in der Fertigung – Beispiel aus unseren Projekten" loading="eager" fetchpriority="high" width="1080" height="1080">
+        <div class="hero-logo-frame">
+          <span class="hero-logo-wrap">
+            <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur – Logo" loading="eager" fetchpriority="high" width="800" height="800">
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -577,326 +781,562 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
 <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid var(--border);padding:.55rem 0;">
   <div class="container" style="font-size:12.5px;color:var(--muted);">
-    <a href="/" style="color:var(--teal-ink);">Home</a>
-    <span style="margin:0 .4rem;">/</span>
-    <a href="/werbetechnik.html" style="color:var(--teal-ink);">Werbetechnik</a>
-    <span style="margin:0 .4rem;">/</span>
-    <a href="/werbetechnik-nrw.html" style="color:var(--teal-ink);">NRW</a>
-    <span style="margin:0 .4rem;">/</span>
+    <a href="/" style="color:var(--teal-ink);">Home</a> <span style="margin:0 .4rem;">/</span>
+    <a href="/werbetechnik.html" style="color:var(--teal-ink);">Werbetechnik</a> <span style="margin:0 .4rem;">/</span> <a href="/werbetechnik-nrw.html" style="color:var(--teal-ink);">NRW</a> <span style="margin:0 .4rem;">/</span>
     <span>Köln</span>
   </div>
 </nav>
 
-<div style="background:var(--teal);padding:.9rem 0;">
+<!-- KINETIC MARQUEE -->
+<div class="kinetic-marquee-wrap" aria-hidden="true">
+  <div class="kinetic-marquee">
+    <span class="hi">Leuchtreklamen</span><span class="sep">✦</span>
+    Fahrzeugbeschriftung<span class="sep">✦</span>
+    <span class="hi">Grafikdesign</span><span class="sep">✦</span>
+    Webdesign<span class="sep">✦</span>
+    <span class="hi">Social Media</span><span class="sep">✦</span>
+    Print & Design<span class="sep">✦</span>
+    <span class="hi">Werbetechnik Köln</span><span class="sep">✦</span>
+    Leuchtreklamen<span class="sep">✦</span>
+    Fahrzeugbeschriftung<span class="sep">✦</span>
+    <span class="hi">Grafikdesign</span><span class="sep">✦</span>
+    Webdesign<span class="sep">✦</span>
+    <span class="hi">Social Media</span><span class="sep">✦</span>
+    Print & Design<span class="sep">✦</span>
+    <span class="hi">Werbetechnik Köln</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
   <div class="container">
-    <div style="display:flex;gap:1.5rem 2.5rem;justify-content:center;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--navy);text-align:center;">
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg>Team vor Ort in Köln</span>
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Aufmaß und Montage vor Ort</span>
-      <span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 1.5M9.5 2h5M12 2v3.5"/></svg>Antwort innerhalb von 24 Stunden</span>
+    <div class="stats-grid">
+      <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
+      <div class="stat"><div class="stat-num" data-count="24" data-suffix="h">24h</div><div class="stat-lbl">Angebot per E-Mail</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK NAV -->
+<div class="quick-nav" id="leistungen">
+  <div class="container">
+    <div class="qn-label">Direkt zu Ihrem Thema</div>
+    <div class="qn-grid">
+      <a href="#werbetechnik" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg></span>
+        <span class="qn-name">Werbetechnik</span>
+        <span class="qn-sub">Leuchtreklamen & Außenwerbung</span>
+      </a>
+      <a href="#druck" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg></span>
+        <span class="qn-name">Druck & Print</span>
+        <span class="qn-sub">Flyer, Kataloge & mehr</span>
+      </a>
+      <a href="#design" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="M14.5 5.5l3 3"/></svg></span>
+        <span class="qn-name">Grafikdesign</span>
+        <span class="qn-sub">Branding & Corporate Identity</span>
+      </a>
+      <a href="#web" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg></span>
+        <span class="qn-name">Webdesign</span>
+        <span class="qn-sub">Websites & Online-Shops</span>
+      </a>
+      <a href="#social" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+        <span class="qn-name">Social Media</span>
+        <span class="qn-sub">Instagram, TikTok & Ads</span>
+      </a>
+      <a href="/ki-loesungen/" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5M12 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/><circle cx="9" cy="13" r="1.1"/><circle cx="15" cy="13" r="1.1"/><path d="M9 17h6M2 12v3M22 12v3"/></svg></span>
+        <span class="qn-name">KI-Lösungen</span>
+        <span class="qn-sub">Automatisierung & KI-Agenten</span>
+      </a>
     </div>
   </div>
 </div>
 
 <section class="section">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.5-5.5 2 2-5.5Z"/></svg>Werbetechnik in Köln</span>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Werbetechnik in Köln</span>
       <h2 class="sec-title">Was in Köln <em>gefragt ist</em></h2>
     </div>
-    <div class="prob-grid">
-      <div class="prob-item reveal">
-        <div class="prob-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-        <div class="prob-body">
-          <h3>Werbung fürs Veedel</h3>
-          <p class="prob-p">In Köln kauft man oft im eigenen Viertel. Wer dort sichtbar sein will, braucht ein Schild, das von der anderen Straßenseite lesbar ist, ein Schaufenster, das zeigt, was es drinnen gibt, und Öffnungszeiten an der Tür. Genau das ist unser Alltag.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div class="why-title">Werbung fürs Veedel</div><div class="why-desc">In Köln kauft man oft im eigenen Viertel. Wer dort sichtbar sein will, braucht ein Schild, das von der anderen Straßenseite lesbar ist, ein Schaufenster, das zeigt, was es drinnen gibt, und Öffnungszeiten an der Tür. Genau das ist unser Alltag.</div></div>
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h4"/></svg></div><div class="why-title">Gastronomie und Abendgeschäft</div><div class="why-desc">Für Cafés, Restaurants und Bars zählt, wie der Laden abends aussieht. Leuchtbuchstaben, Leuchtkästen oder LED-Neon im Innenraum – geplant mit Blick darauf, was an der Fassade genehmigungsfähig ist.</div></div>
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 3a4.5 4.5 0 0 0-4 6.4L3 17l4 4 7.6-7.6A4.5 4.5 0 1 0 14.5 3Z"/><path d="m15 15 6 6"/></svg></div><div class="why-title">Nasenschild und Gehweg</div><div class="why-desc">Ein Ausleger über dem Gehweg ist in der Altstadt und in den Veedeln beliebt – er ragt aber in den öffentlichen Raum und braucht neben der Bauordnung auch eine Sondernutzungserlaubnis der Stadt Köln. Wir klären beides, bevor produziert wird.</div></div>
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.5-5.5 2 2-5.5Z"/></svg></div><div class="why-title">Handwerk und Flotten</div><div class="why-desc">Im Stadtgebiet und rund um die Gewerbegebiete ist das Fahrzeug oft die sichtbarste Werbefläche eines Betriebs. Wir beschriften Transporter und Flotten einheitlich, damit jedes Fahrzeug sofort als Ihres erkannt wird.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WERBETECHNIK -->
+<section class="section" id="werbetechnik">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg>Werbetechnik & Außenwerbung</span>
+      <h2 class="sec-title">Sichtbar auf der <em>Straße</em> – rund um die Uhr</h2>
+      <p class="sec-sub"><a href="/leuchtreklame-berlin.html" style="color:var(--teal-ink);font-weight:600;">Leuchtreklamen</a>, Fahrzeugbeschriftung und Außenwerbung, die Tag und Nacht für Ihr Unternehmen arbeiten.</p>
+    </div>
+    <div class="svc-grid-3 svc-7">
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="leuchtreklamen.webp" srcset="leuchtreklamen-360.webp 360w, leuchtreklamen-540.webp 540w, leuchtreklamen-720.webp 720w, leuchtreklamen.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Leuchtreklame – Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">01 · HIGHLIGHT</div>
+          <div class="svc-title">Leuchtreklamen & LED</div>
+          <div class="svc-desc">Maßgeschneiderte Neon- und LED-Schilder. Energieeffizient, langlebig und individuell gestaltet für maximale Aufmerksamkeit.</div>
+          <a href="leuchtreklame-berlin.html" class="svc-link">Mehr: Leuchtreklame →</a>
         </div>
       </div>
-      <div class="prob-item reveal">
-        <div class="prob-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg></div>
-        <div class="prob-body">
-          <h3>Gastronomie und Abendgeschäft</h3>
-          <p class="prob-p">Für Cafés, Restaurants und Bars zählt, wie der Laden abends aussieht. Leuchtbuchstaben, Leuchtkästen oder LED-Neon im Innenraum – geplant mit Blick darauf, was an der Fassade genehmigungsfähig ist.</p>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="fahrzeug.webp" srcset="fahrzeug-360.webp 360w, fahrzeug-540.webp 540w, fahrzeug-720.webp 720w, fahrzeug.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Fahrzeugbeschriftung – Car Wrapping & Folierung" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <div class="svc-title">Fahrzeugbeschriftung</div>
+          <div class="svc-desc">Car Wrapping und Fahrzeugbranding für Ihr Unternehmen. Mobile Werbung, die täglich tausende Menschen erreicht.</div>
+          <a href="/fahrzeugbeschriftung-berlin.html" class="svc-link">Mehr: Fahrzeugbeschriftung →</a>
         </div>
       </div>
-      <div class="prob-item reveal">
-        <div class="prob-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h4"/></svg></div>
-        <div class="prob-body">
-          <h3>Nasenschild und Gehweg</h3>
-          <p class="prob-p">Ein Ausleger über dem Gehweg ist in der Altstadt und in den Veedeln beliebt – er ragt aber in den öffentlichen Raum und braucht neben der Bauordnung auch eine Sondernutzungserlaubnis der Stadt Köln. Wir klären beides, bevor produziert wird.</p>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="schilder.webp" srcset="schilder-360.webp 360w, schilder-540.webp 540w, schilder-720.webp 720w, schilder.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Schilder – Firmen-, Praxis- und Türschilder von Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">03</div>
+          <div class="svc-title">Schilder</div>
+          <div class="svc-desc">Firmen-, Praxis- und Türschilder aus Alu-Dibond, Acrylglas und Edelstahl – gefertigt und montiert.</div>
+          <a href="/schilder-berlin.html" class="svc-link">Mehr: Schilder →</a>
         </div>
       </div>
-      <div class="prob-item reveal">
-        <div class="prob-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 17h14M3 17v-4l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/><path d="M4.5 12.5h15"/></svg></div>
-        <div class="prob-body">
-          <h3>Handwerk und Flotten</h3>
-          <p class="prob-p">Im Stadtgebiet und rund um die Gewerbegebiete ist das Fahrzeug oft die sichtbarste Werbefläche eines Betriebs. Wir beschriften Transporter und Flotten einheitlich, damit jedes Fahrzeug sofort als Ihres erkannt wird.</p>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="schaufenster.webp" srcset="schaufenster-360.webp 360w, schaufenster-540.webp 540w, schaufenster-720.webp 720w, schaufenster.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Schaufensterbeschriftung – Folie, Milchglas und Beschriftung" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">04</div>
+          <div class="svc-title">Schaufensterbeschriftung</div>
+          <div class="svc-desc">Folie, Milchglas und Beschriftung für Ihr Ladenlokal – Design und Montage inklusive.</div>
+          <a href="/schaufensterbeschriftung-berlin.html" class="svc-link">Schaufensterbeschriftung →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="aussenwerbung.webp" srcset="aussenwerbung-360.webp 360w, aussenwerbung-540.webp 540w, aussenwerbung-720.webp 720w, aussenwerbung.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Außenwerbung – Fassadenwerbung mit Leuchtbuchstaben" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">05</div>
+          <div class="svc-title">Außenwerbung</div>
+          <div class="svc-desc">Fassadenwerbung, Buchstaben und Werbeanlagen – inklusive Klärung der Genehmigung.</div>
+          <a href="/aussenwerbung-berlin.html" class="svc-link">Mehr: Außenwerbung →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="banner.webp" srcset="banner-360.webp 360w, banner-540.webp 540w, banner-720.webp 720w, banner.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Banner und Planen – Werbetechnik Masar" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">06</div>
+          <div class="svc-title">Banner & Planen</div>
+          <div class="svc-desc">Großformatige Banner, Bauplanen und Werbeplanen – wetterfest und in jeder Größe.</div>
+          <a href="werbetechnik.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="messe.webp" srcset="messe-360.webp 360w, messe-540.webp 540w, messe-720.webp 720w, messe.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Messebeschriftung – Roll-ups, Beachflags und Messewände von Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">07</div>
+          <div class="svc-title">Messebeschriftung</div>
+          <div class="svc-desc">Roll-ups, Beachflags, Messewände und Backdrops im Corporate Design – für Ihren Auftritt auf Messen und Events.</div>
+          <a href="/messebeschriftung-berlin.html" class="svc-link">Mehr: Messebeschriftung →</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem;" class="reveal">
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 auto 1.2rem;max-width:640px;">Aufmaß und Montage übernimmt unser Team in NRW – Firmensitz und Studio sind in Berlin-Wedding.</p>
+      <a href="werbetechnik.html" class="btn btn-navy">Alle Werbetechnik-Leistungen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- DRUCK & PRINT -->
+<section class="section bg-off" id="druck">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>Druck & Printmedien</span>
+      <h2 class="sec-title">Qualität, die man <em>anfassen</em> kann</h2>
+      <p class="sec-sub">Premium-Druck für Ihr Unternehmen – Design immer inklusive, Lieferung deutschlandweit.</p>
+    </div>
+    <div class="svc-grid-3 svc-7">
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="flyer.webp" srcset="flyer-360.webp 360w, flyer-540.webp 540w, flyer-720.webp 720w, flyer.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Flyer und Visitenkarten Druckerei – Masar" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">01</div>
+          <div class="svc-title">Flyer & Visitenkarten</div>
+          <div class="svc-desc">Alle Formate, alle Auflagen. Design inklusive – professionell und unvergesslich.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="sticker.webp" srcset="sticker-360.webp 360w, sticker-540.webp 540w, sticker-720.webp 720w, sticker.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Plakate und Poster Großformat Druck" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">02</div>
+          <div class="svc-title">Plakate & Poster</div>
+          <div class="svc-desc">Von A3 bis Großformat – auffällig, wirkungsvoll und in Premium-Qualität gedruckt.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="katalog.webp" srcset="katalog-360.webp 360w, katalog-540.webp 540w, katalog-720.webp 720w, katalog.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Kataloge und Broschüren Druckerei" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">03</div>
+          <div class="svc-title">Kataloge & Broschüren</div>
+          <div class="svc-desc">Hochwertige Publikationen – gestaltet und gedruckt in Premiumqualität.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="druck.webp" srcset="druck-360.webp 360w, druck-540.webp 540w, druck-720.webp 720w, druck.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="CMYK Druck und Verpackung – Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">04</div>
+          <div class="svc-title">Druck & Verpackung</div>
+          <div class="svc-desc">CMYK-Druck und individuelle Verpackungslösungen für Ihre Marke.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="poster.webp" srcset="poster-360.webp 360w, poster-540.webp 540w, poster-720.webp 720w, poster.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Folder und Präsentationsmappen drucken – Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">05</div>
+          <div class="svc-title">Folder & Mappen</div>
+          <div class="svc-desc">Präsentationsmappen und Folder im Corporate Design – für Angebote, Kundentermine und Messen.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="rollup.webp" srcset="rollup-360.webp 360w, rollup-540.webp 540w, rollup-720.webp 720w, rollup.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Roll-ups und Textildruck – Messedisplays Masar" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">06</div>
+          <div class="svc-title">Roll-ups & Textildruck</div>
+          <div class="svc-desc">Displays für Events und bedruckte Workwear für Ihr Team.</div>
+          <a href="print.html" class="svc-link">Jetzt beraten lassen →</a>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img class="svc-img" src="foliendruck.webp" srcset="foliendruck-360.webp 360w, foliendruck-540.webp 540w, foliendruck-720.webp 720w, foliendruck.webp 1080w" sizes="(max-width: 600px) calc(100vw - 50px), (max-width: 1024px) calc(50vw - 38px), 353px" width="1080" height="1350" alt="Sticker und Aufkleber drucken – Foliendruck, konturgeschnitten von Masar Werbeagentur" loading="lazy" onerror="this.style.display='none'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-num">07</div>
+          <div class="svc-title">Sticker & Aufkleber</div>
+          <div class="svc-desc">UV-beständig, wasserfest – in jeder Form und Größe möglich.</div>
+          <a href="foliendruck-berlin.html" class="svc-link">Mehr zum Foliendruck →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- GRAFIKDESIGN -->
+<section class="section" id="design">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 3a4.5 4.5 0 0 0-4 6.4L3 17l4 4 7.6-7.6A4.5 4.5 0 1 0 14.5 3Z"/><path d="m15 15 6 6"/></svg>Leistungen</span>
-      <h2 class="sec-title">Unsere Leistungen <em>in Köln</em></h2>
-      <p class="sec-sub">Jede Leistung führt zur ausführlichen Seite.</p>
+      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"/><path d="M14.5 5.5l3 3"/></svg>Grafikdesign & Branding</span>
+      <h2 class="sec-title">Ihre Marke. <em>Unverwechselbar.</em></h2>
     </div>
-    <div class="svc-grid">
-      <a href="/schilder-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="10" rx="2"/><path d="M12 14v7M8 21h8"/></svg></div>
-        <h3>Firmenschilder und Praxisschilder</h3>
-        <p>Firmenschild, Praxisschild, Klingel- und Türschild, Wegweiser – aus Alu-Dibond, Acryl oder als Folienschrift.</p>
-      </a>
-      <a href="/leuchtreklame-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg></div>
-        <h3>Leuchtreklame und Leuchtbuchstaben</h3>
-        <p>Leuchtkästen, Leuchtbuchstaben und LED-Neon – geplant so, dass die Anlage auch genehmigungsfähig ist.</p>
-      </a>
-      <a href="/schaufensterbeschriftung-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></div>
-        <h3>Schaufenster und Glasfolien</h3>
-        <p>Schaufensterbeschriftung, Öffnungszeiten, Sichtschutz und Milchglasfolie für Laden, Praxis und Büro.</p>
-      </a>
-      <a href="/fahrzeugbeschriftung-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 17h14M3 17v-4l2-5.5A2 2 0 0 1 6.9 6h10.2a2 2 0 0 1 1.9 1.5L21 13v4"/><circle cx="7.5" cy="17" r="1.8"/><circle cx="16.5" cy="17" r="1.8"/><path d="M4.5 12.5h15"/></svg></div>
-        <h3>Fahrzeugbeschriftung und Flotten</h3>
-        <p>Vom einzelnen Transporter bis zur Flotte – Teil- oder Vollbeschriftung, terminiert so, dass Ihr Betrieb weiterläuft.</p>
-      </a>
-      <a href="/aussenwerbung-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v3"/><path d="M3 21c0-6 4-11 9-15 5 4 9 9 9 15Z"/><path d="M12 6v15M7.5 21c1.5-4 3-7 4.5-9 1.5 2 3 5 4.5 9"/></svg></div>
-        <h3>Außenwerbung, Banner und Planen</h3>
-        <p>Bauzaunbanner, Planen, Mesh und Werbebanner für Eröffnung, Baustelle oder Fassade.</p>
-      </a>
-      <a href="/print.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg></div>
-        <h3>Druck und Drucksachen</h3>
-        <p>Flyer, Visitenkarten, Plakate, Speisekarten und Roll-ups.</p>
-      </a>
-      <a href="/werbetechnik.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3 4 5.5 6 10l2-1v12h8V9l2 1 2-4.5L16 3l-2 2h-4Z"/></svg></div>
-        <h3>Textildruck und Workwear</h3>
-        <p>T-Shirts, Hoodies, Poloshirts und Workwear mit Ihrem Logo – Siebdruck, Digitaldruck oder Stickerei.</p>
-      </a>
-      <a href="/grafikdesign-berlin.html" class="svc-card reveal" style="text-decoration:none;color:inherit;display:block;">
-        <div class="svc-icon" aria-hidden="true"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5s.8-1.5 2-1.5H17a4 4 0 0 0 4-4c0-4.7-4-8.5-9-8.5Z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></svg></div>
-        <h3>Grafikdesign und Logo</h3>
-        <p>Logo, Farben und Vorlagen – damit Schild, Fahrzeug und Website zusammenpassen.</p>
-      </a>
+    <div class="pb reveal">
+      <div class="pb-img">
+        <img src="grafikdesign.webp" srcset="grafikdesign-360.webp 360w, grafikdesign-540.webp 540w, grafikdesign-720.webp 720w, grafikdesign.webp 1080w" sizes="(max-width: 1024px) calc(100vw - 48px), 556px" width="1080" height="1350" alt="Grafikdesign – Corporate Identity & Logo-Design von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy)';this.style.minHeight='380px'">
+      </div>
+      <div class="pb-body dk">
+        <div class="pb-ey">✦ Branding & Corporate Identity</div>
+        <h3 class="pb-title">Design, das <em>überzeugt</em> – und verkauft.</h3>
+        <p class="pb-desc">Starke Marken entstehen nicht zufällig. Wir entwickeln visuelle Identitäten, die Vertrauen aufbauen, sich von der Konkurrenz abheben und bei Ihrer Zielgruppe ankommen.</p>
+        <div class="pb-feats">
+          <div class="pb-feat">Logo-Design mit 3 Konzeptvarianten</div>
+          <div class="pb-feat">Komplette Corporate Identity & Styleguide</div>
+          <div class="pb-feat">Alle Dateiformate (AI, PDF, PNG, SVG)</div>
+          <div class="pb-feat">Visitenkarten, Briefpapier & Stempel</div>
+        </div>
+        <a href="#kontakt" class="btn btn-teal">Branding anfragen →</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- WEBDESIGN -->
+<section class="section bg-off" id="web">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h4"/></svg>Genehmigung</span>
+      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z"/></svg>Webdesign & Entwicklung</span>
+      <h2 class="sec-title">Ihre Website. <em>Ihr bester Verkäufer.</em></h2>
+    </div>
+    <div class="pb rev reveal">
+      <div class="pb-img">
+        <img src="webdesign.webp" srcset="webdesign-360.webp 360w, webdesign-540.webp 540w, webdesign-720.webp 720w, webdesign.webp 1080w" sizes="(max-width: 1024px) calc(100vw - 48px), 556px" width="1080" height="1350" alt="Webdesign – Professionelle Websites & Online-Shops von Masar Werbeagentur" loading="lazy" onerror="this.style.background='var(--navy2)';this.style.minHeight='380px'">
+      </div>
+      <div class="pb-body lt">
+        <div class="pb-ey">✦ Moderne Websites & Online-Shops</div>
+        <h3 class="pb-title">Websites, die <em>Kunden gewinnen.</em></h3>
+        <p class="pb-desc">Eine professionelle Website ist heute Ihr wichtigster Vertriebskanal. Wir gestalten schnelle, mobile-optimierte Websites mit starker User Experience, die echte Anfragen bringen.</p>
+        <div class="pb-feats">
+          <div class="pb-feat">100 % individuelles Design – kein Template</div>
+          <div class="pb-feat">Mobile-first & blitzschnell (Lighthouse 90+)</div>
+          <div class="pb-feat">SEO-optimiert von Anfang an</div>
+          <div class="pb-feat">Kontaktformulare & Buchungssysteme</div>
+          <div class="pb-feat">Schulung & persönlicher Support nach Launch</div>
+        </div>
+        <a href="#kontakt" class="btn btn-teal">Website anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-off">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Genehmigung</span>
       <h2 class="sec-title">Was die <em>Bauordnung NRW</em> sagt</h2>
       <p class="sec-sub">In NRW gilt die Landesbauordnung NRW (BauO NRW), nicht die Berliner Bauordnung. Die wichtigsten Punkte für Schilder und Leuchtreklame:</p>
     </div>
-    <div class="why-grid" style="max-width:900px;margin:0 auto;">
-      <div class="why-item reveal">
-        <div class="why-num">1</div>
-        <div>
-          <h4>Bis 1 m² ohne Verfahren</h4>
-          <p>Werbeanlagen mit einer Ansichtsfläche bis 1 m² sind nach § 62 der Landesbauordnung NRW (BauO NRW) verfahrensfrei. Mehrere kleine Schilder nebeneinander werden dabei zusammengerechnet – drei Schilder à 0,4 m² sind also kein „kleines Schild“ mehr.</p>
-        </div>
+    <div class="prozess-grid">
+      <div class="prozess-step reveal">
+        <div class="prozess-num">1</div>
+        <div class="prozess-title">Bis 1 m² ohne Verfahren</div>
+        <div class="prozess-desc">Werbeanlagen mit einer Ansichtsfläche bis 1 m² sind nach § 62 der Landesbauordnung NRW (BauO NRW) verfahrensfrei. Mehrere kleine Schilder nebeneinander werden dabei zusammengerechnet – drei Schilder à 0,4 m² sind also kein „kleines Schild“ mehr.</div>
       </div>
-      <div class="why-item reveal">
-        <div class="why-num">2</div>
-        <div>
-          <h4>Befristete Werbung bis zwei Monate</h4>
-          <p>Werbung, die nur vorübergehend hängt – etwa für eine Eröffnung, eine Aktion oder einen Räumungsverkauf –, ist bis zu zwei Monate verfahrensfrei, außer im Außenbereich. Für Banner zur Neueröffnung ist das oft der einfachste Weg.</p>
-        </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">2</div>
+        <div class="prozess-title">Befristete Werbung bis zwei Monate</div>
+        <div class="prozess-desc">Werbung, die nur vorübergehend hängt – etwa für eine Eröffnung, eine Aktion oder einen Räumungsverkauf –, ist bis zu zwei Monate verfahrensfrei, außer im Außenbereich. Für Banner zur Neueröffnung ist das oft der einfachste Weg.</div>
       </div>
-      <div class="why-item reveal">
-        <div class="why-num">3</div>
-        <div>
-          <h4>Gewerbegebiet: andere Spielräume</h4>
-          <p>In Gewerbe- und Industriegebieten, die ein Bebauungsplan festsetzt, sind Werbeanlagen an der Stätte der Leistung bis zu einer bestimmten Höhe verfahrensfrei. Ob Ihr Grundstück dazugehört, steht im Bebauungsplan – das prüfen wir vor dem Angebot.</p>
-        </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">3</div>
+        <div class="prozess-title">Gewerbegebiet: andere Spielräume</div>
+        <div class="prozess-desc">In Gewerbe- und Industriegebieten, die ein Bebauungsplan festsetzt, sind Werbeanlagen an der Stätte der Leistung bis zu einer bestimmten Höhe verfahrensfrei. Ob Ihr Grundstück dazugehört, steht im Bebauungsplan – das prüfen wir vor dem Angebot.</div>
       </div>
-      <div class="why-item reveal">
-        <div class="why-num">4</div>
-        <div>
-          <h4>Verfahrensfrei heißt nicht regelfrei</h4>
-          <p>Auch ohne Bauantrag gelten Denkmalschutz, Gestaltungssatzungen und der Bebauungsplan. Ragt ein Schild in den öffentlichen Gehweg – etwa ein Nasenschild –, braucht es zusätzlich eine Sondernutzungserlaubnis der Stadt (§ 18 Straßen- und Wegegesetz NRW). Wie weit ein Vorsprung erlaubnisfrei ist, regelt jede Stadt in ihrer eigenen Satzung.</p>
-        </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">4</div>
+        <div class="prozess-title">Verfahrensfrei heißt nicht regelfrei</div>
+        <div class="prozess-desc">Auch ohne Bauantrag gelten Denkmalschutz, Gestaltungssatzungen und der Bebauungsplan. Ragt ein Schild in den öffentlichen Gehweg – etwa ein Nasenschild –, braucht es zusätzlich eine Sondernutzungserlaubnis der Stadt (§ 18 Straßen- und Wegegesetz NRW). Wie weit ein Vorsprung erlaubnisfrei ist, regelt jede Stadt in ihrer eigenen Satzung.</div>
       </div>
     </div>
-    <div class="blog-prose" style="max-width:760px;margin:2.5rem auto 0;">
-      <p>Köln ist eine kreisfreie Stadt – zuständig ist die Bauaufsicht der Stadt Köln, für Ausleger über dem Gehweg zusätzlich die Stelle, die dort Sondernutzungen erteilt. Diese Übersicht ersetzt keine Prüfung im Einzelfall – die übernehmen wir vor dem Angebot. Mehr zum Thema Genehmigung lesen Sie auf unserer Seite zur <a href="/leuchtreklame-berlin.html">Leuchtreklame</a>.</p>
+    <div class="reveal" style="max-width:760px;margin:2rem auto 0;font-size:15px;line-height:1.75;color:var(--muted);text-align:center;"><p>Köln ist eine kreisfreie Stadt – zuständig ist die Bauaufsicht der Stadt Köln, für Ausleger über dem Gehweg zusätzlich die Stelle, die dort Sondernutzungen erteilt. Diese Übersicht ersetzt keine Prüfung im Einzelfall – die übernehmen wir vor dem Angebot. Mehr zum Thema Genehmigung lesen Sie auf unserer Seite zur <a href="/leuchtreklame-berlin.html">Leuchtreklame</a>.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Einsatzgebiet</span>
+      <h2 class="sec-title">Wo wir in Köln <em>unterwegs sind</em></h2>
+      <p class="sec-sub">Steht Ihr Stadtteil nicht dabei, heißt das nur, dass wir ihn hier nicht aufgeschrieben haben – fragen Sie einfach.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div class="why-title">Stadtteile in Köln</div><div class="why-desc">Innenstadt, Altstadt, Ehrenfeld, Nippes, Sülz, Lindenthal, Deutz, Kalk, Mülheim, Rodenkirchen, Porz, Chorweiler</div></div>
+      <div class="why-card reveal"><div class="why-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div><div class="why-title">Nachbarstädte</div><div class="why-desc">Leverkusen, Bergisch Gladbach, Hürth, Frechen, Pulheim, Brühl</div></div>
+    </div>
+    <div class="reveal" style="max-width:760px;margin:2rem auto 0;font-size:15px;line-height:1.75;color:var(--muted);text-align:center;"><p>Unser Team ist in ganz NRW im Einsatz – eine Übersicht finden Sie auf der Seite <a href="/werbetechnik-nrw.html">Werbetechnik NRW</a>. Unser Firmensitz mit Studio liegt <a href="/werbetechnik-berlin-wedding.html">in Berlin-Wedding</a>.</p></div>
+  </div>
+</section>
+
+<section class="section bg-off">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Ablauf</span>
+      <h2 class="sec-title">Von der Anfrage <em>bis zur Montage</em></h2>
+    </div>
+    <div class="prozess-grid">
+      <div class="prozess-step reveal">
+        <div class="prozess-num">1</div>
+        <div class="prozess-title">Anfrage per WhatsApp, E-Mail oder Formular</div>
+        <div class="prozess-desc">Schicken Sie uns Ort, Vorhaben und gern ein Foto vom Standort oder Fahrzeug. Antwort innerhalb von 24 Stunden.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">2</div>
+        <div class="prozess-title">Aufmaß vor Ort durch unser NRW-Team</div>
+        <div class="prozess-desc">Unser Team in NRW kommt zu Ihnen, misst auf, prüft den Untergrund und klärt, ob eine Genehmigung nötig ist. Ein Termin, nicht drei.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">3</div>
+        <div class="prozess-title">Entwurf und schriftliches Angebot</div>
+        <div class="prozess-desc">Sie bekommen einen Entwurf und ein schriftliches Angebot. Erst wenn beides passt, wird produziert.</div>
+      </div>
+      <div class="prozess-step reveal">
+        <div class="prozess-num">4</div>
+        <div class="prozess-title">Druck, Montage, Übergabe</div>
+        <div class="prozess-desc">Folien, Schilder und Drucksachen werden produziert und von unserem Team montiert. Beleuchtete Anlagen schließt immer ein Elektrofachbetrieb an.</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section bg-alt">
+<!-- SOCIAL MEDIA -->
+<section class="section bg-navy" id="social">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow light"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.8 7.4-4.3M8.3 13.2l7.4 4.3"/></svg>Social Media Marketing</span>
+      <h2 class="sec-title white">Viral auf dem <em>Smartphone.</em></h2>
+      <p class="sec-sub light">Professionelles Management auf Instagram, TikTok, Facebook, LinkedIn und YouTube – mit Content, Reels und gezielten Ads.</p>
+    </div>
+    <div class="social-split reveal">
+      <div class="social-copy">
+        <h3>Mehr Reichweite für Ihr <em>Unternehmen</em></h3>
+        <p>Wir planen, gestalten und veröffentlichen Ihre Inhalte – von Posts und Reels bis zu gezielten Anzeigen. Damit Ihr Unternehmen dort sichtbar ist, wo Ihre Kunden täglich scrollen.</p>
+        <ul>
+          <li>Content &amp; Reels aus einer Hand</li>
+          <li>Instagram, TikTok, Facebook &amp; LinkedIn</li>
+          <li>Gezielte Meta Ads</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+        <a href="/digital.html" class="social-more">Mehr zu Social Media →</a>
+      </div>
+      <div class="social-shot"><img src="social-media.webp" srcset="social-media-360.webp 360w, social-media-540.webp 540w, social-media-720.webp 720w, social-media.webp 1080w" sizes="(max-width: 900px) calc(100vw - 80px), 380px" width="1080" height="1350" alt="Social Media Agentur – Instagram, Reels und TikTok von Masar Werbeagentur" loading="lazy"></div>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-name">Starter</div>
+        <div class="price-val">ab 490 €</div>
+        <div class="price-period">/ Monat · netto zzgl. 19 % MwSt.</div>
+        <ul class="price-list">
+          <li>8 professionelle Posts</li><li>2 Reels / Monat</li>
+          <li>1 Plattform</li><li>Design inklusive</li>
+          <li>Monatliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card featured reveal">
+        <div class="price-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3.5 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.9l6-.8Z"/></svg>Empfehlung</div>
+        <div class="price-name">Business</div>
+        <div class="price-val">ab 890 €</div>
+        <div class="price-period">/ Monat · netto zzgl. 19 % MwSt.</div>
+        <ul class="price-list">
+          <li>12 Posts / Monat</li><li>4 Reels / Monat</li>
+          <li>2 Plattformen</li><li>Community Management</li>
+          <li>Stories & Highlights</li><li>Wöchentliches Reporting</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-name">Premium</div>
+        <div class="price-val">ab 1.490 €</div>
+        <div class="price-period">/ Monat · netto zzgl. 19 % MwSt.</div>
+        <ul class="price-list">
+          <li>Content nach vereinbartem Redaktionsplan</li>
+          <li>Content Day vor Ort</li><li>Alle Plattformen</li>
+          <li>Meta Ads & Google Ads</li>
+          <li>Strategie-Meeting monatlich</li>
+        </ul>
+        <a href="#kontakt" class="price-btn">Anfragen</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;font-size:13px;color:rgba(255,255,255,.38);">Alle anderen Leistungen auf Anfrage – individuelle Preise je nach Umfang.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section bg-off">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Einsatzgebiet</span>
-      <h2 class="sec-title">Wo wir in Köln <em>unterwegs sind</em></h2>
-      <p class="sec-sub">Steht Ihr Stadtteil nicht dabei, heißt das nur, dass wir ihn hier nicht aufgeschrieben haben – fragen Sie einfach.</p>
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2 class="sec-title">Was Betriebe in Köln <em>vorher fragen</em></h2>
     </div>
-    <div class="why-grid" style="max-width:900px;margin:0 auto;">
-      <div class="why-item reveal">
-        <div class="why-num"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-        <div>
-          <h4>Stadtteile in Köln</h4>
-          <p>Innenstadt, Altstadt, Ehrenfeld, Nippes, Sülz, Lindenthal, Deutz, Kalk, Mülheim, Rodenkirchen, Porz, Chorweiler</p>
-        </div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-num"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-        <div>
-          <h4>Nachbarstädte</h4>
-          <p>Leverkusen, Bergisch Gladbach, Hürth, Frechen, Pulheim, Brühl</p>
-        </div>
-      </div>
-    </div>
-    <div class="blog-prose" style="max-width:760px;margin:2.5rem auto 0;">
-      <p>Unser Team ist in ganz NRW im Einsatz – eine Übersicht finden Sie auf der Seite <a href="/werbetechnik-nrw.html">Werbetechnik NRW</a>. Unser Firmensitz mit Studio liegt <a href="/werbetechnik-berlin-wedding.html">in Berlin-Wedding</a>.</p>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q">Sind Sie wirklich vor Ort in Köln? <span class="faq-ic">+</span></button><div class="faq-a">Ja. In NRW arbeitet ein eigenes Team für uns – für Aufmaß, Montage und Beschriftung kommen wir zu Ihnen nach Köln. Unser Firmensitz ist in Berlin; Anfragen aus NRW laufen über dieselbe Nummer, dieselbe E-Mail und dasselbe Formular.</div></div>
+      <div class="faq-item"><button class="faq-q">Brauche ich eine Genehmigung für mein Schild? <span class="faq-ic">+</span></button><div class="faq-a">Das hängt von Größe, Beleuchtung, Anbringung und Lage ab. In NRW gilt die Landesbauordnung NRW: Werbeanlagen bis 1 m² Ansichtsfläche sind verfahrensfrei, größere oder auskragende Anlagen meist nicht – und alles, was in den Gehweg ragt, braucht eine Sondernutzungserlaubnis. Wir klären das vor dem Angebot und bereiten den Antrag mit Ihnen vor.</div></div>
+      <div class="faq-item"><button class="faq-q">Bieten Sie in NRW auch Messebau an? <span class="faq-ic">+</span></button><div class="faq-a">Nein – Messebau machen wir nur in Berlin. Für Köln übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.</div></div>
+      <div class="faq-item"><button class="faq-q">Wie schnell geht das? <span class="faq-ic">+</span></button><div class="faq-a">Das hängt vom Projekt ab: Eine Schaufensterbeschriftung oder ein Fahrzeug geht deutlich schneller als eine Leuchtreklame mit Genehmigung. Den realistischen Zeitplan nennen wir Ihnen nach dem Aufmaß – schriftlich im Angebot.</div></div>
+      <div class="faq-item"><button class="faq-q">Arbeiten Sie auch rechtsrheinisch und im Umland? <span class="faq-ic">+</span></button><div class="faq-a">Ja – Deutz, Kalk, Mülheim und Porz genauso wie Leverkusen, Bergisch Gladbach oder Hürth. Nennen Sie uns den Ort, wir sagen Ihnen, wann ein Termin möglich ist.</div></div>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 0 1 15.3-6.4L21 8"/><path d="M21 4v4h-4"/><path d="M21 12a9 9 0 0 1-15.3 6.4L3 16"/><path d="M3 20v-4h4"/></svg>Ablauf</span>
-      <h2 class="sec-title">Von der Anfrage <em>bis zur Montage</em></h2>
-    </div>
-    <div class="why-grid" style="max-width:900px;margin:0 auto;">
-      <div class="why-item reveal">
-        <div class="why-num">1</div>
-        <div>
-          <h4>Anfrage per WhatsApp, E-Mail oder Formular</h4>
-          <p>Schicken Sie uns Ort, Vorhaben und gern ein Foto vom Standort oder Fahrzeug. Antwort innerhalb von 24 Stunden.</p>
-        </div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-num">2</div>
-        <div>
-          <h4>Aufmaß vor Ort durch unser NRW-Team</h4>
-          <p>Unser Team in NRW kommt zu Ihnen, misst auf, prüft den Untergrund und klärt, ob eine Genehmigung nötig ist. Ein Termin, nicht drei.</p>
-        </div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-num">3</div>
-        <div>
-          <h4>Entwurf und schriftliches Angebot</h4>
-          <p>Sie bekommen einen Entwurf und ein schriftliches Angebot. Erst wenn beides passt, wird produziert.</p>
-        </div>
-      </div>
-      <div class="why-item reveal">
-        <div class="why-num">4</div>
-        <div>
-          <h4>Druck, Montage, Übergabe</h4>
-          <p>Folien, Schilder und Drucksachen werden produziert und von unserem Team montiert. Beleuchtete Anlagen schließt immer ein Elektrofachbetrieb an.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section bg-alt" aria-labelledby="faq-heading">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2A2.6 2.6 0 0 1 14.5 10c0 1.7-2.5 2-2.5 3.8"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>Häufige Fragen</span>
-      <h2 class="sec-title" id="faq-heading">Was Betriebe in Köln <em>vorher fragen</em></h2>
-    </div>
-    <div style="max-width:800px;margin:0 auto;">
-      <div class="faq-item">
-        <button class="faq-q" type="button">Sind Sie wirklich vor Ort in Köln?</button>
-        <div class="faq-a"><p>Ja. In NRW arbeitet ein eigenes Team für uns – für Aufmaß, Montage und Beschriftung kommen wir zu Ihnen nach Köln. Unser Firmensitz ist in Berlin; Anfragen aus NRW laufen über dieselbe Nummer, dieselbe E-Mail und dasselbe Formular.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Brauche ich eine Genehmigung für mein Schild?</button>
-        <div class="faq-a"><p>Das hängt von Größe, Beleuchtung, Anbringung und Lage ab. In NRW gilt die Landesbauordnung NRW: Werbeanlagen bis 1 m² Ansichtsfläche sind verfahrensfrei, größere oder auskragende Anlagen meist nicht – und alles, was in den Gehweg ragt, braucht eine Sondernutzungserlaubnis. Wir klären das vor dem Angebot und bereiten den Antrag mit Ihnen vor.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Bieten Sie in NRW auch Messebau an?</button>
-        <div class="faq-a"><p>Nein – Messebau machen wir nur in Berlin. Für Köln übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Wie schnell geht das?</button>
-        <div class="faq-a"><p>Das hängt vom Projekt ab: Eine Schaufensterbeschriftung oder ein Fahrzeug geht deutlich schneller als eine Leuchtreklame mit Genehmigung. Den realistischen Zeitplan nennen wir Ihnen nach dem Aufmaß – schriftlich im Angebot.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">Arbeiten Sie auch rechtsrheinisch und im Umland?</button>
-        <div class="faq-a"><p>Ja – Deutz, Kalk, Mülheim und Porz genauso wie Leverkusen, Bergisch Gladbach oder Hürth. Nennen Sie uns den Ort, wir sagen Ihnen, wann ein Termin möglich ist.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" style="padding:2.5rem 0;">
-  <div class="container">
-    <div class="sec-head reveal" style="margin-bottom:1.5rem;">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Passend dazu</span>
-      <h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">Weitere Städte und <em>Leistungen</em></h2>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Passend dazu</span>
+      <h2 class="sec-title">Weitere Städte und <em>Leistungen</em></h2>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;">
-      <a href="/werbetechnik-nrw.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Werbetechnik NRW</a>
-      <a href="/werbetechnik-duesseldorf.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Düsseldorf</a>
-      <a href="/werbetechnik-dortmund.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Dortmund</a>
-      <a href="/werbetechnik-essen.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>Essen</a>
-      <a href="/werbetechnik.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Werbetechnik</a>
-      <a href="/referenzen.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Referenzen</a>
+      <a href="/werbetechnik-nrw.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Werbetechnik NRW</a>
+      <a href="/werbetechnik-duesseldorf.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Düsseldorf</a>
+      <a href="/werbetechnik-dortmund.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Dortmund</a>
+      <a href="/werbetechnik-essen.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Essen</a>
+      <a href="/werbetechnik.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Werbetechnik</a>
+      <a href="/referenzen.html" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:999px;padding:11px 20px;font-size:14px;font-weight:600;color:var(--navy);">Referenzen</a>
     </div>
   </div>
 </section>
 
-<section class="section" id="kontakt">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.5 12 4l9 5.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="m3 10 9 6 9-6"/></svg>Kontakt</span>
-      <h2 class="sec-title">Wo steht <em>Ihr Betrieb?</em></h2>
-      <p class="sec-sub">Nennen Sie uns Ort und Vorhaben in Köln. Wir melden uns innerhalb von 24 Stunden – per E-Mail oder WhatsApp, kostenlos und unverbindlich.</p>
-    </div>
-    <div class="form-wrap">
-      <form action="/kontakt.php" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="Werbetechnik Köln – Anfrage">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="form-grid">
-          <div class="fg"><label for="koe-firma">Firmenname *</label><input type="text" id="koe-firma" name="firma" autocomplete="organization" placeholder="Muster GmbH" required></div>
-          <div class="fg"><label for="koe-name">Ansprechpartner *</label><input type="text" id="koe-name" name="name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+<!-- CONTACT -->
+<div class="cta-strip" id="kontakt">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="cta-title reveal">Ihr Projekt in <em>Köln.</em></div>
+    <p class="cta-sub reveal">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
+    <div style="max-width:640px;margin:0 auto;" class="reveal">
+      <div class="cform">
+        <h3>Kostenlose Anfrage</h3>
+        <div style="background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.2rem;font-size:13px;color:var(--muted,#94a3b8);display:flex;gap:.5rem;align-items:flex-start;">
+          <span style="font-size:16px;line-height:1.4;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg></span>
+          <span>Ihre Daten werden gemäß unserer <a href="/datenschutz.html" style="color:var(--teal-ink);text-decoration:underline;text-underline-offset:2px;">Datenschutzerklärung</a> verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage genutzt (Art. 6 Abs. 1 lit. b DSGVO).</span>
         </div>
-        <div class="form-grid">
-          <div class="fg"><label for="koe-email">E-Mail *</label><input type="email" id="koe-email" name="email" autocomplete="email" placeholder="info@beispiel.de" required></div>
-          <div class="fg"><label for="koe-telefon">Telefon / WhatsApp</label><input type="tel" id="koe-telefon" name="telefon" autocomplete="tel" placeholder="+49 ..."></div>
-        </div>
-        <div class="form-grid">
-          <div class="fg"><label for="koe-ort">Ort *</label><input type="text" id="koe-ort" name="ort" placeholder="z. B. Ehrenfeld, Nippes, Leverkusen" required></div>
-          <div class="fg">
-            <label for="koe-thema">Worum geht es?</label>
-            <select id="koe-thema" name="thema" style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow',sans-serif;font-size:15px;width:100%;appearance:none;">
-              <option value="">Bitte wählen...</option>
-              <option>Schild / Praxisschild</option>
-              <option>Leuchtreklame / beleuchtete Anlage</option>
-              <option>Schaufenster / Glasfolie</option>
-              <option>Fahrzeug oder Flotte</option>
-              <option>Banner / Planen / Außenwerbung</option>
-              <option>Druck / Textildruck</option>
-              <option>Webdesign / Grafikdesign</option>
-              <option>Mehreres zusammen</option>
-              <option>Noch nicht entschieden</option>
-            </select>
+        <form action="/kontakt.php" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_subject" value="Werbetechnik Köln – Anfrage">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="fg"><label for="cf-firma">Firmenname</label><input type="text" id="cf-firma" name="firma" autocomplete="organization" class="fg-input" placeholder="Muster GmbH"></div>
+          <div class="fg-row">
+            <div class="fg"><label for="cf-name">Ihr Name *</label><input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Max Mustermann" required></div>
+            <div class="fg"><label for="cf-email">E-Mail *</label><input type="email" id="cf-email" name="email" autocomplete="email" placeholder="max@firma.de" required></div>
           </div>
-        </div>
-        <div class="fg"><label for="koe-nachricht">Ihr Anliegen</label><textarea id="koe-nachricht" name="nachricht" placeholder="Zum Beispiel: Café in Ehrenfeld – Leuchtschrift über dem Eingang, Schaufenster mit Öffnungszeiten, dazu neue Speisekarten."></textarea></div>
-        <div class="fg"><label for="koe-datei">Datei anhängen (optional)</label><input type="file" id="koe-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
-        <div style="display:flex;gap:.7rem;align-items:flex-start;margin:1.2rem 0;">
-          <input type="checkbox" id="koe-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
-          <label for="koe-consent" style="font-size:13px;color:var(--muted);line-height:1.6;">Ich habe die <a href="/datenschutz.html" style="color:var(--teal-ink);">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art. 6 Abs. 1 lit. b DSGVO). *</label>
-        </div>
-        <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos &amp; unverbindlich</button>
-        <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:1rem;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>Kein Spam. Ihre Daten werden vertraulich behandelt. Antwort innerhalb von 24 Stunden.</p>
-      </form>
+          <div class="fg"><label for="cf-telefon">Telefon / WhatsApp</label><input type="tel" id="cf-telefon" name="telefon" autocomplete="tel" placeholder="0178 000 0000"></div>
+          <div class="fg"><label for="betreffInput">Betreff *</label><input type="text" name="betreff" id="betreffInput" placeholder="z. B. Schild und Schaufenster in Köln" required></div>
+          <div class="fg"><label for="cf-nachricht">Ihre Nachricht</label><textarea id="cf-nachricht" name="nachricht" placeholder="Zum Beispiel: Café in Ehrenfeld – Leuchtschrift über dem Eingang, Schaufenster mit Öffnungszeiten, dazu neue Speisekarten."></textarea></div>
+          <div class="fg"><label for="cf-datei">Datei anhängen (optional)</label><input type="file" id="cf-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
+          <div class="consent-row">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und bestätige, dass meine Angaben ausschließlich zur Bearbeitung meiner Anfrage verarbeitet werden (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). Technischer Versanddienstleister: FormSubmit.co. Details: <a href="/datenschutz.html">Datenschutzerklärung</a>. *</label>
+          </div>
+          <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos & unverbindlich</button>
+          <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
+        </form>
+      </div>
+    </div>
+    <div class="cta-contact">
+      <div class="cta-info"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><strong><a href="mailto:info@masar-werbeagentur.de" style="color:#fff;">info@masar-werbeagentur.de</a></strong></div>
+      <div class="cta-info"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg><strong><a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Anfrage%20f%C3%BCr%20Werbetechnik%20in%20K%C3%B6ln." style="color:#fff;" target="_blank" rel="noopener noreferrer">WhatsApp</a></strong></div>
+      <div class="cta-info"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><strong>Team vor Ort in NRW</strong> · Termin nach Vereinbarung</div>
+    </div>
+    <div class="contact-extras reveal">
+      <div class="hours-box">
+        <div class="hours-box-title"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="13" r="8"/><path d="M12 8.5V13l3 2M4 5 7 2.5M20 5 17 2.5"/></svg>Erreichbarkeit</div>
+        <div class="hours-row"><span class="day">Mo – Sa</span><span>08:00 – 20:00 Uhr</span></div>
+        <div class="hours-row"><span class="day">Sonntag</span><span>Geschlossen</span></div>
+        <div class="hours-row"><span class="day">Vor Ort</span><span>Termin nach Vereinbarung</span></div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
+</main>
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -914,25 +1354,30 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       </div>
       <div class="foot-col">
         <h5>Leistungen</h5>
-        <a href="/leuchtreklame-berlin.html">Leuchtreklamen Berlin</a>
         <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
         <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
+        <a href="/digital-signage-berlin.html">Digital Signage Berlin</a>
+        <a href="/webdesign-berlin.html">Webdesign Berlin</a>
+        <a href="/foto-video-berlin.html">Foto &amp; Video Berlin</a>
+        <a href="/ki-fuer-arztpraxen-berlin.html">KI für Arztpraxen</a>
+        <a href="/ki-fuer-pflegedienste-berlin.html">KI für Pflegedienste</a>
+        <a href="/leuchtreklame-berlin.html">Leuchtreklamen Berlin</a>
+        <a href="/foliendruck-berlin.html">Foliendruck Berlin</a>
         <a href="/messebeschriftung-berlin.html">Messebeschriftung</a>
         <a href="/messebau-berlin.html">Messebau Berlin</a>
-        <a href="/foliendruck-berlin.html">Foliendruck Berlin</a>
-        <a href="/aussenwerbung-berlin.html">Außenwerbung Berlin</a>
+        <a href="/aussenwerbung-berlin.html">Außenwerbung</a>
+        <a href="/schilder-berlin.html">Schilder</a>
       </div>
       <div class="foot-col">
-        <h5>Seiten</h5>
+        <h5>Mehr</h5>
         <a href="/referenzen.html">Referenzen</a>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/werbetechnik-berlin-wedding.html">Werbetechnik Berlin-Wedding</a>
         <a href="/werbetechnik-nrw.html">Werbetechnik NRW</a>
         <a href="/leistungen.html">Alle Leistungen</a>
         <a href="/werbetechnik.html">Werbetechnik</a>
-        <a href="/print.html">Print &amp; Druck</a>
+        <a href="/grafikdesign-berlin.html">Grafikdesign</a>
         <a href="/digital.html">Social Media</a>
-        <a href="/foto-video-berlin.html">Foto &amp; Video</a>
         <a href="/blog/">Blog &amp; Tipps</a>
       </div>
       <div class="foot-col">
@@ -948,110 +1393,60 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     </div>
     <div class="foot-bottom">
       <span>© 2026 Masar Werbeagentur · Amjad Alblili · Berlin · Steuernummer: 23/203/00524 · Alle Rechte vorbehalten.</span>
-      <div class="foot-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div>
+      <div class="foot-legal">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        <a href="/agb.html">AGB</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
-(function(){
-  var sticky = document.getElementById('stickyCta');
-  if (sticky) window.addEventListener('scroll', function(){
-    sticky.classList.toggle('visible', window.scrollY > 500);
-  }, {passive:true});
-
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function(entries, o){
-      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); } });
-    }, {threshold:0,rootMargin:"260px 0px 260px 0px"});
-    document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+// ═══ STICKY CTA ═══
+const stickyCta=document.getElementById('stickyCta');
+window.addEventListener('scroll',()=>{
+  if(window.scrollY > 500){
+    stickyCta.classList.add('visible');
   } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    stickyCta.classList.remove('visible');
   }
+},{ passive:true });
 
-  /* ── Filter ── */
-  var items = Array.prototype.slice.call(document.querySelectorAll('.gal-item'));
-  var empty = document.getElementById('galEmpty');
-  document.querySelectorAll('.filter-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var f = btn.dataset.filter, shown = 0;
-      document.querySelectorAll('.filter-btn').forEach(function(b){
-        b.setAttribute('aria-pressed', String(b === btn));
-      });
-      items.forEach(function(it){
-        var match = (f === 'alle' || it.dataset.cat === f);
-        it.hidden = !match;
-        if (match) shown++;
-      });
-      if (empty) empty.hidden = shown > 0;
+// Reveal on scroll
+const obs=new IntersectionObserver(entries=>entries.forEach((e,i)=>{
+  if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),Math.min(i,4)*60);
+}),{threshold:0,rootMargin:"260px 0px 260px 0px"});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
+
+// ═══ STATS COUNT-UP ═══
+(function(){
+  const counters = document.querySelectorAll('.stat-num[data-count]');
+  if(!counters.length) return;
+  const statsObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      statsObs.unobserve(entry.target);
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function step(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
     });
-  });
-
-  /* ── Video erst auf Klick laden ── */
-  document.querySelectorAll('a[data-video]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      var v = document.createElement('video');
-      v.src = a.getAttribute('href');
-      v.controls = true; v.autoplay = true; v.playsInline = true;
-      v.setAttribute('playsinline', '');
-      v.width = a.dataset.w; v.height = a.dataset.h;
-      var img = a.querySelector('img');
-      if (img) v.poster = img.getAttribute('src');
-      a.replaceWith(v);
-      v.focus();
-    });
-  });
-
-  /* ── Lightbox ── */
-  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'),
-      lbCap = document.getElementById('lbCap'), idx = 0, opener = null;
-
-  function visible(){ return items.filter(function(it){ return !it.hidden; }); }
-
-  function show(i){
-    var list = visible();
-    if (!list.length) return;
-    idx = (i + list.length) % list.length;
-    var it = list[idx], img = it.querySelector('img');
-    lbImg.src = it.dataset.src;
-    lbImg.alt = img ? img.alt : '';
-    lbCap.textContent = it.dataset.cap || '';
-  }
-
-  function open(it){
-    opener = it;
-    show(visible().indexOf(it));
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    document.getElementById('lbClose').focus();
-  }
-
-  function close(){
-    lb.classList.remove('open');
-    lbImg.src = '';
-    document.body.style.overflow = '';
-    if (opener) { opener.focus(); opener = null; }
-  }
-
-  if (lb) {
-    items.forEach(function(it){ it.addEventListener('click', function(){ open(it); }); });
-    document.getElementById('lbClose').addEventListener('click', close);
-    document.getElementById('lbPrev').addEventListener('click', function(){ show(idx - 1); });
-    document.getElementById('lbNext').addEventListener('click', function(){ show(idx + 1); });
-    lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
-    document.addEventListener('keydown', function(e){
-      if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') show(idx - 1);
-      else if (e.key === 'ArrowRight') show(idx + 1);
-    });
-  }
+  }, {threshold:0,rootMargin:"260px 0px 260px 0px"});
+  counters.forEach(el => statsObs.observe(el));
 })();
+
 </script>
 <script src="/cookie-consent.js" defer></script>
-<script src="/app.js" defer></script>
-<script src="/reveal-fallback.js" defer></script>
+<script src="/app.js" defer></script><script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
 </body>
