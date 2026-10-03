@@ -227,7 +227,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik-nrw.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -252,6 +252,12 @@
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik-essen.html</loc>
     <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbetechnik-bochum.html</loc>
+    <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
