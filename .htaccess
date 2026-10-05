@@ -27,6 +27,14 @@ ServerSignature Off
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^qr/?$ /qr/index.html [L]
 
+  # Umbenennung NRW-Seiten (Werbetechnik → Werbeagentur), 301 dauerhaft
+  RewriteRule ^werbetechnik-nrw\.html$ /werbeagentur-nrw.html [R=301,L]
+  RewriteRule ^werbetechnik-duesseldorf\.html$ /werbeagentur-duesseldorf.html [R=301,L]
+  RewriteRule ^werbetechnik-koeln\.html$ /werbeagentur-koeln.html [R=301,L]
+  RewriteRule ^werbetechnik-dortmund\.html$ /werbeagentur-dortmund.html [R=301,L]
+  RewriteRule ^werbetechnik-essen\.html$ /werbeagentur-essen.html [R=301,L]
+  RewriteRule ^werbetechnik-bochum\.html$ /werbeagentur-bochum.html [R=301,L]
+
   # Block access to sensitive files
   RewriteRule ^\.env$              - [F,L]
   RewriteRule ^\.git(/|$)          - [F,L]
