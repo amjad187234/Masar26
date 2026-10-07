@@ -937,7 +937,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <p class="hero-sub">Auf der Straße, auf der Messe und online: Werbetechnik, Messebau, Grafikdesign, Webdesign und Social Media – professionell, kreativ und aus einer Hand.</p>
         <div class="hero-btns">
           <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
-          <a href="#kontakt" class="btn btn-outline">Kostenlos anfragen</a>
+          <a href="#rechner" class="btn btn-outline">In 30 Sekunden zum Angebot</a>
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:-.8rem;margin-bottom:1rem;">Entdecken Sie unser vollständiges Leistungsportfolio auf der <a href="/leistungen.html" style="color:var(--teal);text-decoration:underline;font-weight:600;">Leistungsübersicht</a>.</p>
         <div style="text-align:center;padding-top:2rem;" class="hero-scroll">
@@ -997,6 +997,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z"/></svg></span>
         <span class="qn-name">Werbetechnik</span>
         <span class="qn-sub">Leuchtreklamen & Außenwerbung</span>
+      </a>
+      <a href="/fensterfolie-berlin.html" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg></span>
+        <span class="qn-name">Fensterfolien</span>
+        <span class="qn-sub">Sonnen-, Sicht- & Splitterschutz</span>
       </a>
       <a href="#messebau" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg></span>
@@ -1450,13 +1455,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <section class="section bg-off" id="rechner">
   <div class="container">
     <div class="sec-head center reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>Ihr Angebot</span>
-      <h2 class="sec-title">Was kostet <em>Ihr Projekt?</em></h2>
-      <p class="sec-sub">Preis abhängig von Umfang, Material und Ausführung. Einen Überblick nach Branche finden Sie in unseren <a href="/angebote/" style="color:var(--teal-ink);font-weight:600;">Branchen-Angeboten</a>. Sagen Sie uns kurz, worum es geht – Sie erhalten ein individuelles Angebot innerhalb von 24 Stunden.</p>
+      <span class="eyebrow">Anfrage-Assistent</span>
+      <h2 class="sec-title">In 30 Sekunden zu <em>Ihrem Angebot</em></h2>
+      <p class="sec-sub">Drei Klicks, und Sie sehen, was zu Ihrem Vorhaben passt – mit Preisrahmen, wo wir ihn nennen können. Ihre Anfrage schicken Sie dann direkt per WhatsApp oder E-Mail. Einen Überblick nach Branche finden Sie in unseren <a href="/angebote/" style="color:var(--teal-ink);font-weight:600;">Branchen-Angeboten</a>.</p>
     </div>
-    <div style="text-align:center;">
-      <a href="#kontakt" class="btn btn-teal">Individuelles Angebot anfragen</a>
-    </div>
+    <div data-assistent></div>
+    <noscript><div style="text-align:center;"><a href="#kontakt" class="btn btn-teal">Individuelles Angebot anfragen</a></div></noscript>
   </div>
 </section>
 
@@ -1628,5 +1632,6 @@ document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
 <script src="/bewertungen.js" defer></script>
+<script src="/assistent.js" defer></script>
 </body>
 </html>
