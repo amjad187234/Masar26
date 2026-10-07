@@ -5,7 +5,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://masar-werbeagentur.de/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +61,7 @@
   <!-- Referenzen -->
   <url>
     <loc>https://masar-werbeagentur.de/referenzen.html</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -69,7 +69,7 @@
   <!-- Leistungsübersicht -->
   <url>
     <loc>https://masar-werbeagentur.de/leistungen.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -91,7 +91,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/schaufensterbeschriftung-berlin.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -149,7 +149,7 @@
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -330,7 +330,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/datenschutz.html</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -374,7 +374,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/werbung-pflegedienst-berlin.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -459,6 +459,66 @@
   <url>
     <loc>https://masar-werbeagentur.de/blog/werbung-sprachschule-akademie.html</loc>
     <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/fensterfolie-berlin.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/sonnenschutzfolie-berlin.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/sichtschutzfolie-berlin.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/sicherheitsfolie-berlin.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-innen-oder-aussen.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/spiegelfolie-nachts.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/hitze-im-buero-sonnenschutz.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/glastueren-kennzeichnen.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sicherheitsfolie-splitterschutz-einbruchschutz.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/fensterfolie-mietwohnung.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
