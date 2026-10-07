@@ -42,3 +42,6 @@ Thumbs.db
 # ─── Node / package managers ───────────────────────────────────
 node_modules/
 npm-debug.log*
+
+# ─── Kundenbewertungen (nur auf dem Server) ──────────────────
+data/*.json

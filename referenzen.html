@@ -629,6 +629,18 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </section>
 
+<!-- KUNDENSTIMMEN: erscheint erst, wenn mindestens eine Bewertung freigegeben ist -->
+<section class="section" id="kundenstimmen" data-bewertungen hidden>
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2 class="sec-title">Was unsere <em>Kunden</em> sagen</h2>
+    </div>
+    <div class="kst-grid" data-bewertungen-liste></div>
+    <p class="kst-note">Zur Echtheit: Den Link zur Bewertung schicken wir nur an Kundinnen und Kunden nach einem abgeschlossenen Auftrag. Jede Bewertung prüfen wir vor der Veröffentlichung anhand unserer Auftragsunterlagen. Positive und kritische Bewertungen behandeln wir gleich; entfernt werden nur Beiträge ohne Auftragsbezug oder mit beleidigendem Inhalt.</p>
+  </div>
+</section>
+
 <section class="section" style="padding:2.5rem 0;">
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:1.5rem;">
@@ -856,5 +868,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
+<script src="/bewertungen.js" defer></script>
 </body>
 </html>

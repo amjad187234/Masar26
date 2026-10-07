@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bewerten Sie Ihren Auftrag bei Masar Werbeagentur Berlin. Ihre Bewertung erscheint nach Prüfung auf unserer Website.">
+<link rel="preload" href="/fonts/barlow-condensed-black.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="/fonts/barlow-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#58d0bd">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://masar-werbeagentur.de/bewerten.html">
+<link rel="stylesheet" href="/fonts.css">
+<title>Bewertung abgeben | Masar Werbeagentur Berlin</title>
+<style>
+:root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#f5b800;--teal-ink:#177567;--err:#ff8a7a}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{font-family:'Barlow',sans-serif;background:var(--navy3);color:#e8f0fb;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem 1rem}
+a{color:var(--teal)}
+.logo{margin-bottom:1.6rem;text-align:center}
+.logo img{background:rgba(255,255,255,.95);padding:10px 14px;border-radius:12px;height:62px;width:auto;box-sizing:content-box;display:block;margin:0 auto}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:2.4rem 2rem;max-width:600px;width:100%}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.3rem;color:#fff;text-transform:uppercase;margin-bottom:.7rem;line-height:1.05;letter-spacing:1px;text-align:center;overflow-wrap:break-word;hyphens:auto}
+h1 em{color:var(--teal);font-style:normal}
+.lead{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:1.8rem;text-align:center}
+.f{margin-bottom:1.25rem}
+label,legend{display:block;font-weight:700;font-size:14px;color:#fff;margin-bottom:.45rem}
+.opt{font-weight:400;color:rgba(255,255,255,.6)}
+input[type=text],select,textarea{width:100%;font:inherit;font-size:16px;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);border-radius:8px;padding:12px 14px}
+select option{color:#132e50}
+textarea{min-height:150px;resize:vertical;line-height:1.55}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.hint{font-size:13px;color:rgba(255,255,255,.6);margin-top:.35rem}
+fieldset{border:0}
+/* Sterne: Radiobuttons in umgekehrter Reihenfolge, damit ~ die vorherigen einfärbt */
+.stars{display:inline-flex;flex-direction:row-reverse;gap:.15rem}
+.stars input{position:absolute;opacity:0;width:1px;height:1px}
+.stars label{font-size:2.4rem;line-height:1;color:rgba(255,255,255,.25);cursor:pointer;margin:0;padding:0 .1rem;transition:color .15s,transform .15s}
+.stars label:hover,.stars label:hover~label,.stars input:checked~label{color:var(--gold)}
+.stars label:hover{transform:scale(1.12)}
+.stars input:focus-visible+label{outline:3px solid var(--teal);outline-offset:2px;border-radius:4px}
+.radio{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;font-size:15px;color:rgba(255,255,255,.85);margin-bottom:.4rem;cursor:pointer}
+.radio input,.check input{margin-top:.25rem;accent-color:var(--teal);width:18px;height:18px;flex-shrink:0}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;font-size:14px;line-height:1.55;color:rgba(255,255,255,.8);cursor:pointer}
+.btn{display:block;width:100%;padding:15px 24px;border-radius:8px;font-weight:700;font-size:16px;font-family:'Barlow',sans-serif;background:var(--teal);color:var(--navy);border:0;cursor:pointer;transition:.2s;margin-top:.6rem}
+.btn:hover{background:#3db8a6}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.note{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-top:1.2rem;text-align:center}
+.msg{border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.5rem;line-height:1.6;font-size:15px}
+.msg-ok{background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.4);color:#fff;text-align:center}
+.msg-ok strong{display:block;font-size:1.3rem;color:var(--teal);margin-bottom:.3rem}
+.msg-err{background:rgba(255,138,122,.1);border:1px solid rgba(255,138,122,.45);color:#ffd9d3}
+.legal{margin-top:2rem;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+.legal a{font-size:13px;color:rgba(255,255,255,.72);text-decoration:none}
+.legal a:hover{color:var(--teal);text-decoration:underline}
+@media(max-width:520px){.card{padding:1.8rem 1.2rem}h1{font-size:1.9rem}.stars label{font-size:2.6rem}}
+</style>
+</head>
+<body>
+<div class="logo">
+  <a href="/" aria-label="Zur Startseite"><img src="/logo.webp" width="800" height="800" alt="Masar Werbeagentur"></a>
+</div>
+<main class="card" id="main-content">
+  <h1>Wie war die <em>Zusammenarbeit?</em></h1>
+  <p class="lead">Vielen Dank, dass Sie sich kurz Zeit nehmen. Ihre ehrliche Meinung hilft anderen Unternehmen bei der Entscheidung – und uns, noch besser zu werden.</p>
+
+  <div class="msg msg-ok" id="ok" hidden role="status">
+    <strong>Vielen Dank für Ihre Bewertung!</strong>
+    Wir prüfen sie kurz und veröffentlichen sie dann auf unserer Website.
+    <br><a href="/">Zur Startseite</a>
+  </div>
+  <div class="msg msg-err" id="err" hidden role="alert"></div>
+
+  <form id="form" method="post" action="/bewertung.php" novalidate>
+    <fieldset class="f">
+      <legend>Ihre Bewertung *</legend>
+      <div class="stars" id="stars">
+        <input type="radio" id="s5" name="sterne" value="5" required><label for="s5" title="5 Sterne – sehr gut">★<span class="hp">5 von 5 Sternen</span></label>
+        <input type="radio" id="s4" name="sterne" value="4"><label for="s4" title="4 Sterne">★<span class="hp">4 von 5 Sternen</span></label>
+        <input type="radio" id="s3" name="sterne" value="3"><label for="s3" title="3 Sterne">★<span class="hp">3 von 5 Sternen</span></label>
+        <input type="radio" id="s2" name="sterne" value="2"><label for="s2" title="2 Sterne">★<span class="hp">2 von 5 Sternen</span></label>
+        <input type="radio" id="s1" name="sterne" value="1"><label for="s1" title="1 Stern">★<span class="hp">1 von 5 Sternen</span></label>
+      </div>
+    </fieldset>
+
+    <div class="f">
+      <label for="text">Ihre Erfahrung *</label>
+      <textarea id="text" name="text" required minlength="20" maxlength="1500" placeholder="Was haben wir für Sie umgesetzt, und wie lief es – von der Beratung bis zur Montage?"></textarea>
+      <p class="hint">Mindestens 20 Zeichen.</p>
+    </div>
+
+    <div class="f">
+      <label for="leistung">Was haben wir für Sie gemacht? <span class="opt">(optional)</span></label>
+      <select id="leistung" name="leistung">
+        <option value="">Bitte wählen …</option>
+        <option>Schaufensterbeschriftung</option>
+        <option>Fahrzeugbeschriftung</option>
+        <option>Schilder</option>
+        <option>Leuchtreklame</option>
+        <option>Druck &amp; Flyer</option>
+        <option>Grafikdesign</option>
+        <option>Webdesign</option>
+        <option>Digital Signage</option>
+        <option>Foto &amp; Video</option>
+        <option>Messebau</option>
+        <option>Sonstiges</option>
+      </select>
+    </div>
+
+    <div class="f">
+      <label for="name">Ihr Name *</label>
+      <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name">
+    </div>
+
+    <div class="f">
+      <label for="firma">Firma <span class="opt">(optional, wird mit angezeigt)</span></label>
+      <input type="text" id="firma" name="firma" maxlength="80" autocomplete="organization">
+    </div>
+
+    <fieldset class="f">
+      <legend>So soll Ihr Name erscheinen</legend>
+      <label class="radio"><input type="radio" name="anzeige" value="kurz" checked> Vorname und Anfangsbuchstabe (z.&nbsp;B. „Marco G.“)</label>
+      <label class="radio"><input type="radio" name="anzeige" value="voll"> Vollständiger Name</label>
+    </fieldset>
+
+    <div class="hp" aria-hidden="true">
+      <label for="_honey">Bitte leer lassen</label>
+      <input type="text" id="_honey" name="_honey" tabindex="-1" autocomplete="off">
+    </div>
+    <input type="hidden" name="_t" id="_t" value="">
+
+    <div class="f">
+      <label class="check"><input type="checkbox" name="einwilligung" value="ja" required> <span>Ich bin damit einverstanden, dass meine Bewertung mit dem gewählten Namen (und ggf. der Firma) auf masar-werbeagentur.de veröffentlicht wird. Die Einwilligung kann ich jederzeit per E-Mail an <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a> widerrufen. Mehr in der <a href="/datenschutz.html#bewertungen">Datenschutzerklärung</a>. *</span></label>
+    </div>
+
+    <button class="btn" type="submit">Bewertung absenden</button>
+    <p class="note">Wir schicken den Link zu dieser Seite nur an Kundinnen und Kunden nach einem abgeschlossenen Auftrag und prüfen jede Bewertung vor der Veröffentlichung anhand unserer Auftragsunterlagen. Positive wie kritische Bewertungen werden gleich behandelt.</p>
+  </form>
+</main>
+<nav class="legal" aria-label="Rechtliches">
+  <a href="/impressum.html">Impressum</a>
+  <a href="/datenschutz.html">Datenschutz</a>
+  <a href="/agb.html">AGB</a>
+</nav>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search);
+  var form = document.getElementById('form');
+  var err = document.getElementById('err');
+  document.getElementById('_t').value = Date.now();
+
+  if (q.has('gesendet')) {
+    form.hidden = true;
+    document.querySelector('.lead').hidden = true;
+    document.getElementById('ok').hidden = false;
+    return;
+  }
+  var fehler = {
+    angaben: 'Bitte vergeben Sie Sterne, schreiben Sie mindestens 20 Zeichen, geben Sie Ihren Namen an und bestätigen Sie die Einwilligung.',
+    limit: 'Es wurden gerade sehr viele Bewertungen von Ihrem Anschluss gesendet. Bitte versuchen Sie es in einer Stunde erneut.',
+    technik: 'Leider ist ein technischer Fehler aufgetreten. Bitte schicken Sie uns Ihre Bewertung per E-Mail an info@masar-werbeagentur.de.'
+  };
+  if (q.get('fehler') && fehler[q.get('fehler')]) { err.textContent = fehler[q.get('fehler')]; err.hidden = false; }
+
+  // Vorbelegung aus dem persönlichen Link, z. B. ?firma=Galileo%20Pflege%20GmbH&leistung=Schaufensterbeschriftung
+  if (q.get('firma')) form.firma.value = q.get('firma').slice(0, 80);
+  if (q.get('name')) form.name.value = q.get('name').slice(0, 60);
+  if (q.get('leistung')) {
+    var l = q.get('leistung');
+    Array.prototype.forEach.call(form.leistung.options, function(o){ if (o.value === l) form.leistung.value = l; });
+  }
+
+  form.addEventListener('submit', function(e){
+    var probleme = [];
+    if (!form.querySelector('input[name=sterne]:checked')) probleme.push('Bitte vergeben Sie 1 bis 5 Sterne.');
+    if (form.text.value.trim().length < 20) probleme.push('Bitte schreiben Sie mindestens 20 Zeichen zu Ihrer Erfahrung.');
+    if (form.name.value.trim().length < 2) probleme.push('Bitte geben Sie Ihren Namen an.');
+    if (!form.einwilligung.checked) probleme.push('Bitte bestätigen Sie die Einwilligung zur Veröffentlichung.');
+    if (probleme.length) {
+      e.preventDefault();
+      err.textContent = probleme.join(' ');
+      err.hidden = false;
+      err.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  });
+})();
+</script>
+<script src="/cookie-consent.js" defer></script>
+</body>
+</html>
