@@ -102,7 +102,7 @@
     div.id = 'masar-cookie-root';
     div.innerHTML = [
       '<style>',
-      '#masar-cookie-root *{box-sizing:border-box;margin:0;padding:0;font-family:inherit;}',
+      ':where(#masar-cookie-root *){box-sizing:border-box;margin:0;padding:0;font-family:inherit;}',
       '#masar-cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:99997;backdrop-filter:blur(3px);}',
       '#masar-cookie-overlay.show{display:block;}',
       '#masar-cookie-banner{',
@@ -160,10 +160,14 @@
         '#masar-cookie-banner{padding:1rem 1.2rem;}',
         '.mck-wrap{flex-direction:column;align-items:flex-start;}',
         '.mck-actions{width:100%;}',
-        '.mck-btn{flex:1;min-width:0;}',
+        '.mck-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}',
+        '.mck-btn{min-width:0;padding:12px 10px;white-space:normal;}',
+        '.mck-actions .mck-settings-btn{grid-column:1/-1;order:3;}',
         '.mck-save-row{justify-content:stretch;}',
         '.mck-save-row .mck-btn{flex:1;min-width:0;}',
         '.mck-setting{flex-direction:row;align-items:center;}',
+        /* Auf dem Handy verdeckt das Rädchen Text – dort reicht der Footer-Link „Cookie-Einstellungen“ */
+        'body:has([data-cookie-settings]) #masar-cookie-widget{display:none;}',
       '}',
       '</style>',
 
@@ -289,6 +293,14 @@
       saveConsent(state);
       hideBanner();
       applyConsent(state);
+    });
+
+    // Links mit data-cookie-settings (z. B. im Footer) öffnen dieselben Einstellungen
+    document.addEventListener('click', function(e){
+      var t = e.target.closest && e.target.closest('[data-cookie-settings]');
+      if (!t) return;
+      e.preventDefault();
+      document.getElementById('masar-cookie-widget').click();
     });
 
     // PERSISTENT REVOKE WIDGET
