@@ -497,6 +497,25 @@ table.rt td:first-child::before{display:none}
 .hero-mb .mb-view{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:3px}
 .hero-mb .mb-view button{background:none;border:0;color:rgba(255,255,255,.8);font:600 13px/1 'Barlow',sans-serif;padding:8px 11px;border-radius:7px;cursor:pointer}
 .hero-mb .mb-view button[aria-pressed="true"]{background:var(--teal);color:var(--navy)}
+.hero-mb .mb-dim{display:inline-flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:3px}
+.hero-mb .mb-dim button{background:none;border:0;color:rgba(255,255,255,.8);font:600 13px/1 'Barlow',sans-serif;padding:8px 10px;border-radius:7px;cursor:pointer}
+.hero-mb .mb-dim button[aria-pressed="true"]{background:var(--teal);color:var(--navy)}
+.hero-mb .mb-sublbl{font:700 11px/1 'Barlow',sans-serif;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.hero-mb .mb-times{color:rgba(255,255,255,.5);font-weight:700}
+.hero-mb .mb-size-lbl{font:600 12.5px/1 'Barlow',sans-serif;color:var(--teal)}
+.hero-mb .mb-arr-tools{display:inline-flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.hero-mb .mb-arr-tools[hidden]{display:none}
+.hero-mb .mb-sel-lbl{font:600 12.5px/1.3 'Barlow',sans-serif;color:var(--teal)}
+.hero-mb .mb-btn:disabled{opacity:.4;cursor:not-allowed}
+.hero-mb .mb-arr-on[aria-pressed="true"]{box-shadow:0 0 0 2px var(--teal) inset}
+.hero-mb .mb-parts{margin-top:.2rem;font:500 12.5px/1.5 'Barlow',sans-serif;color:rgba(255,255,255,.8)}
+.hero-mb .mb-parts summary{cursor:pointer;font-weight:700;color:#fff;list-style:none;display:inline-flex;align-items:center;gap:.4rem}
+.hero-mb .mb-parts summary::-webkit-details-marker{display:none}
+.hero-mb .mb-parts summary::before{content:"▸";color:var(--teal);transition:transform .2s}
+.hero-mb .mb-parts[open] summary::before{transform:rotate(90deg)}
+.hero-mb .mb-parts ul{margin:.5rem 0 0;padding-left:1.1rem;max-height:9.5rem;overflow:auto}
+.hero-mb .mb-parts li{margin:.15rem 0}
+.hero-mb.mb-arranging .mb-hint{opacity:0}
 .hero-mb .mb-actions{justify-content:flex-end}
 .hero-mb .mb-actions .mb-go{margin-left:0}
 .hero-mb .mb-tip .mb-note{display:block;margin-top:2px}
@@ -668,20 +687,34 @@ table.rt td:first-child::before{display:none}
         <button type="button" class="mb-x" hidden aria-label="Logo entfernen">×</button>
         <input class="mb-name" type="text" maxlength="28" placeholder="Firmenname" aria-label="Firmenname auf dem Stand" autocomplete="organization">
       </div>
+      <div class="mb-row mb-sizes">
+        <span class="mb-sublbl">Größe</span>
+        <div class="mb-dim" data-k="w" role="group" aria-label="Standbreite"><button type="button" data-v="4" aria-pressed="false">4 m</button><button type="button" data-v="6" aria-pressed="true">6 m</button><button type="button" data-v="8" aria-pressed="false">8 m</button><button type="button" data-v="10" aria-pressed="false">10 m</button></div>
+        <span class="mb-times" aria-hidden="true">×</span>
+        <div class="mb-dim" data-k="d" role="group" aria-label="Standtiefe"><button type="button" data-v="3" aria-pressed="false">3 m</button><button type="button" data-v="4" aria-pressed="true">4 m</button><button type="button" data-v="5" aria-pressed="false">5 m</button></div>
+        <span class="mb-size-lbl">6 × 4 m · 24 m²</span>
+      </div>
     </div>
     <div class="mb-pane" id="mbp-extra" role="tabpanel" aria-labelledby="mbt-extra" hidden>
       <div class="mb-row mb-chips"><button type="button" class="mb-chip" data-extra="screen" aria-pressed="true">LED-Stele</button><button type="button" class="mb-chip" data-extra="truss" aria-pressed="false">Lichttraverse</button><button type="button" class="mb-chip" data-extra="seating" aria-pressed="true">Sitzecke</button><button type="button" class="mb-chip" data-extra="plants" aria-pressed="true">Pflanzen</button><button type="button" class="mb-chip" data-extra="flag" aria-pressed="true">Beachflag</button><button type="button" class="mb-chip" data-extra="rollups" aria-pressed="true">Roll-ups</button></div>
+      <div class="mb-row mb-arr">
+        <button type="button" class="mb-chip mb-arr-on" data-arrange aria-pressed="false">✥ Möbel verschieben</button>
+        <span class="mb-arr-tools" hidden><span class="mb-sel-lbl">Element antippen und ziehen</span><button type="button" class="mb-btn mb-rot" disabled>⟳ Drehen</button><button type="button" class="mb-btn mb-reset">Zurücksetzen</button></span>
+      </div>
     </div>
     <div class="mb-pane" id="mbp-view" role="tabpanel" aria-labelledby="mbt-view" hidden>
       <div class="mb-row">
-        <div class="mb-view" role="group" aria-label="Ansicht wählen"><button type="button" data-view="standard" aria-pressed="true">Standard</button><button type="button" data-view="top" aria-pressed="false">Von oben</button><button type="button" data-view="tour" aria-pressed="false">360°-Rundgang</button></div>
+        <div class="mb-view" role="group" aria-label="Ansicht wählen"><button type="button" data-view="standard" aria-pressed="true">Standard</button><button type="button" data-view="top" aria-pressed="false">Von oben</button><button type="button" data-view="besucher" aria-pressed="false">Besucher-Blick</button><button type="button" data-view="tour" aria-pressed="false">360°</button></div>
         <button type="button" class="mb-chip" data-dims aria-pressed="false">Maße anzeigen</button>
+        <button type="button" class="mb-btn mb-video">● 360°-Video speichern</button>
       </div>
     </div>
     <div class="mb-row mb-actions">
       <button type="button" class="mb-btn mb-save"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v12M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>Entwurf speichern</button>
+      <button type="button" class="mb-btn mb-share"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 13.5a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1.5 1.5"/><path d="M14 10.5a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1.5-1.5"/></svg>Link teilen</button>
       <button type="button" class="mb-btn mb-go">Diesen Stand anfragen →</button>
     </div>
+    <details class="mb-parts"><summary>Stückliste Ihres Entwurfs</summary><ul></ul></details>
     <p class="mb-msg" role="status" hidden></p>
     <p class="mb-tip">Tipp: Logo als SVG oder PNG ab 1000&nbsp;px – so bleibt es auch auf der Rückwand scharf. <span class="mb-note">Ihr Logo bleibt in Ihrem Browser, bis Sie die Anfrage absenden.</span></p>
   </div>
@@ -1075,7 +1108,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
     if(navigator.connection&&navigator.connection.saveData) return false;
     try{var c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'));}catch(e){return false;}
   }
-  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20260929b').then(function(m){return m.init(hero);}).catch(function(){}); }
+  function go(){ if(started||!ok()) return; started=true; import('/js/messestand-3d.js?v=20261008a').then(function(m){return m.init(hero);}).catch(function(){}); }
   function soon(){ if('requestIdleCallback' in window) requestIdleCallback(go,{timeout:1200}); else setTimeout(go,400); }
   if(document.readyState!=='loading') soon(); else document.addEventListener('DOMContentLoaded',soon);
 })();
