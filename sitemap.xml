@@ -5,7 +5,7 @@
   <!-- Startseite -->
   <url>
     <loc>https://masar-werbeagentur.de/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -61,7 +61,7 @@
   <!-- Referenzen -->
   <url>
     <loc>https://masar-werbeagentur.de/referenzen.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,7 +91,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/schaufensterbeschriftung-berlin.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -149,7 +149,7 @@
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -344,7 +344,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/praxisbeschilderung-berlin.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -470,7 +470,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/sonnenschutzfolie-berlin.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -519,6 +519,48 @@
   <url>
     <loc>https://masar-werbeagentur.de/blog/fensterfolie-mietwohnung.html</loc>
     <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-kosten.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-oder-jalousie.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-glasfassade-buero.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-wintergarten-dachfenster.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-schaufenster.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-winter.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/sonnenschutzfolie-nach-der-montage.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
