@@ -29,6 +29,7 @@
     fahrzeug: { name: 'Fahrzeug', icon: 'M2.5 16V6.5h11V16M13.5 9.5h3.8l3.2 3.2V16h-7', q: 'Was für ein Fahrzeug?', a: [
       ['PKW', '/fahrzeugbeschriftung-berlin.html', 290, 'Beschriftung mit Logo, Leistungen und Kontakt.', 'Fahrzeugbeschriftung PKW'],
       ['Transporter', '/fahrzeugbeschriftung-berlin.html', 290, 'Mehr Fläche, mehr Wirkung – Preis nach Umfang.', 'Transporter-Beschriftung'],
+      ['LKW / Sattelzug', '/lkw-beschriftung-berlin.html', null, 'Fahrerhaus, Kofferaufbau oder Plane – Montage bei Ihnen vor Ort, Festpreis nach Fotos.', 'LKW-Beschriftung'],
       ['Mehrere Fahrzeuge', '/fahrzeugbeschriftung-berlin.html', 290, 'Einheitliches Design für die ganze Flotte.', 'Flottenbeschriftung'],
       ['Vollfolierung', '/fahrzeugbeschriftung-berlin.html', null, 'Komplette Folierung – Preis nach Fahrzeug und Folie.', 'Fahrzeug-Vollfolierung']
     ]},

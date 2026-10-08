@@ -69,7 +69,7 @@
   <!-- Leistungsübersicht -->
   <url>
     <loc>https://masar-werbeagentur.de/leistungen.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -84,7 +84,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/fahrzeugbeschriftung-berlin.html</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -563,5 +563,11 @@
     <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/lkw-beschriftung-berlin.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>
