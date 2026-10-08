@@ -64,6 +64,12 @@ ServerSignature Off
 # ─── DIRECTORY INDEX ───────────────────────────────────────────
 DirectoryIndex index.html index.php
 
+# Zeichensatz für Text-Dateien (robots.txt, llms.txt), damit Umlaute korrekt ankommen
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .txt .xml
+</IfModule>
+
 # ─── SECURITY HEADERS ──────────────────────────────────────────
 <IfModule mod_headers.c>
   # HSTS — browsers remember HTTPS for 1 year (+ subdomains + preload)
