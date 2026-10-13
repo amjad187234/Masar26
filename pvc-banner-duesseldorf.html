@@ -786,8 +786,10 @@ table.rt td:first-child::before{display:none}
       <h2 class="sec-title">Kostenloses Angebot <em>anfordern</em></h2>
       <p class="sec-sub">Sagen Sie uns Größe, Stückzahl und wo das Banner hängt – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team montiert bei Ihnen in Düsseldorf.</p>
     </div>
-    <div class="form-wrap">
-      <form action="/kontakt.php" method="POST" enctype="multipart/form-data">
+    <div data-assistent data-as-inject="1" data-start="druck:1" data-region="nrw" data-ort="Düsseldorf" style="margin-bottom:1.4rem"></div>
+<div class="form-wrap">
+      <details class="as-classic" style="margin-top:.4rem"><summary style="cursor:pointer;font-weight:700;color:var(--teal-ink,#177567);padding:.6rem 0">Lieber das klassische Formular?</summary>
+<form action="/kontakt.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="Anfrage PVC-Banner Düsseldorf (Website)">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-grid">
@@ -822,6 +824,7 @@ table.rt td:first-child::before{display:none}
         <button type="submit" class="submit-btn">✓ Anfrage senden – kostenlos &amp; unverbindlich</button>
         <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;">Kein Spam. Ihre Daten werden vertraulich behandelt. Antwort innerhalb von 24 Stunden.</p>
       </form>
+</details>
     </div>
   </div>
 </section>
@@ -902,5 +905,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
+<script src="/assistent.js?v=2" defer></script>
 </body>
 </html>
