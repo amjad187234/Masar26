@@ -126,6 +126,7 @@
   function txt(tag, cls, t) { var e = el(tag, cls); e.textContent = t; return e; }
   function store(k, v) { try { if (v === undefined) return JSON.parse(sessionStorage.getItem(k) || 'null'); sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
 
+  if (window.MasarAssistent) return;
   var api = [];
   window.MasarAssistent = { open: function (thema, wahl) { if (api[0]) api[0](thema, wahl); } };
   document.addEventListener('click', function (e) {
@@ -134,6 +135,7 @@
   });
 
   Array.prototype.forEach.call(roots, function (root, idx) {
+    if (root.getAttribute('data-as-ready')) return; root.setAttribute('data-as-ready', '1');
     var nrw = root.getAttribute('data-region') === 'nrw';
     var sv = (root.getAttribute('data-start') || '').split(':');
     var key = 'masar-as-' + location.pathname + '-' + idx;
