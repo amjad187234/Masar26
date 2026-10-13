@@ -221,7 +221,7 @@
   <!-- Werbetechnik Brandenburg & Umland -->
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik-brandenburg.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -271,7 +271,7 @@
   <!-- Werbetechnik Potsdam -->
   <url>
     <loc>https://masar-werbeagentur.de/werbetechnik-potsdam.html</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -765,6 +765,66 @@
   <url>
     <loc>https://masar-werbeagentur.de/pvc-banner-bochum.html</loc>
     <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-brandenburg-havel.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-frankfurt-oder.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-bernau.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-koenigs-wusterhausen.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-eberswalde.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-falkensee.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-teltow-kleinmachnow.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-fuerstenwalde.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-hennigsdorf.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbeagentur-neuruppin.html</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
