@@ -34,6 +34,8 @@ ServerSignature Off
   RewriteRule ^werbetechnik-dortmund\.html$ /werbeagentur-dortmund.html [R=301,L]
   RewriteRule ^werbetechnik-essen\.html$ /werbeagentur-essen.html [R=301,L]
   RewriteRule ^werbetechnik-bochum\.html$ /werbeagentur-bochum.html [R=301,L]
+  # PVC-Banner-Städteseiten zusammengeführt (13.10.2026)
+  RewriteRule ^pvc-banner-(koeln|duesseldorf|dortmund|essen|bochum)\.html$ /pvc-banner-nrw.html [R=301,L]
 
   # Kurzlink zum Teilen: masar-werbeagentur.de/google-bewertung → Google-Bewertungsformular
   RewriteRule ^google-bewertung/?$ https://g.page/r/CWpWcEIfYCo-ECE/review [R=302,L]
