@@ -24,7 +24,7 @@ require_once dirname(__DIR__) . '/inc/anfragen.php';
 $K = anf_konfig();
 $HASH = (string) ($K['admin_pass_hash'] ?? '');
 
-function h(?string $s): string { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
+function h($s): string { return htmlspecialchars((string) $s, ENT_QUOTES, 'UTF-8'); }
 function csrf(): string { if (empty($_SESSION['csrf'])) $_SESSION['csrf'] = bin2hex(random_bytes(24)); return $_SESSION['csrf']; }
 function csrf_ok(): bool { return isset($_POST['csrf']) && hash_equals(csrf(), (string) $_POST['csrf']); }
 function sperre_datei(): string { return sys_get_temp_dir() . '/masar_anf_login_' . md5($_SERVER['REMOTE_ADDR'] ?? 'x') . '.txt'; }
@@ -144,7 +144,7 @@ if (($_GET['ansicht'] ?? '') === 'einstellungen') {
         $r = anf_telegram_abruf($tok, 'getUpdates');
         $j = $r ? json_decode($r, true) : null; $ids = [];
         foreach (($j['result'] ?? []) as $u) { $c = $u['message']['chat'] ?? null; if ($c) $ids[(string) $c['id']] = trim(($c['first_name'] ?? '') . ' ' . ($c['last_name'] ?? '') . ' ' . ($c['title'] ?? '')); }
-        $chats = $ids ? '<div class="ok">Gefundene Chats:<br>' . implode('<br>', array_map(fn($id, $n) => '<code>' . h($id) . '</code> – ' . h($n), array_keys($ids), $ids)) . '<br>Diese Zeile in kontakt-config.php einfügen: <code>\'telegram_chat\' => \'' . h((string) array_key_first($ids)) . '\',</code></div>'
+        $chats = $ids ? '<div class="ok">Gefundene Chats:<br>' . implode('<br>', array_map(fn($id, $n) => '<code>' . h((string) $id) . '</code> – ' . h($n), array_keys($ids), $ids)) . '<br>Diese Zeile in kontakt-config.php einfügen: <code>\'telegram_chat\' => \'' . h((string) array_key_first($ids)) . '\',</code></div>'
                       : (!$r ? '<div class="err">Keine Verbindung zu Telegram möglich (Server blockiert ausgehende Verbindung).</div>'
                       : (empty($j['ok']) ? '<div class="err">Telegram meldet: ' . h((string) ($j['description'] ?? 'Fehler')) . ' – meist ist der Token falsch oder unvollständig eingefügt.</div>'
                       : '<div class="err">Kein Chat gefunden. Schreiben Sie Ihrem Bot in Telegram zuerst „/start“ und laden Sie diese Seite dann neu.</div>'));
