@@ -315,7 +315,7 @@ function sek_cron(): array
         if (sek_einmal('kundenmail:' . $r['nr'], static fn() => anf_mail((string) $r['email'], "Erinnerung: Ihre Beratung am {$wann} – Masar Werbeagentur",
                 'Guten Tag ' . $r['name'] . ",\n\nwir freuen uns auf Ihre kostenlose Beratung:\n\n  {$wann}\n  " . $r['termin_art'] . ' · ' . $r['sprache'] . "\n  Terminnummer: " . $r['nr'] . "\n\n"
                 . "Falls etwas dazwischenkommt, antworten Sie einfach auf diese E-Mail oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
-                . "Mit freundlichen Grüßen\nMasar Werbeagentur\nBristolstraße 19E · 13349 Berlin · 0178 514 3918\n"))) {
+                , '', true))) {
             $log[] = 'Kundenmail ' . $r['nr'];
         }
     }

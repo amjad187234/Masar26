@@ -274,8 +274,11 @@ function anf_termin_frei(string $tag, string $art): array
     return $frei;
 }
 
-/** E-Mail über das Postfach aus kontakt-config.php (SMTP), sonst mail(). */
-function anf_mail(string $an, string $betreff, string $text, string $antwort_an = ''): bool
+/**
+ * E-Mail über das Postfach aus kontakt-config.php (SMTP), sonst mail().
+ * $signatur = true: an Kunden – mit Grußformel und der Masar-Signatur (signatur.php), als Text + HTML.
+ */
+function anf_mail(string $an, string $betreff, string $text, string $antwort_an = '', bool $signatur = false): bool
 {
     $k = anf_konfig();
     $von = (string) ($k['from'] ?? 'website@masar-werbeagentur.de');
@@ -285,11 +288,27 @@ function anf_mail(string $an, string $betreff, string $text, string $antwort_an 
         'Date: ' . date('r'),
         'Message-ID: <' . bin2hex(random_bytes(12)) . '@masar-werbeagentur.de>',
         'MIME-Version: 1.0',
-        'Content-Type: text/plain; charset=UTF-8',
-        'Content-Transfer-Encoding: base64',
     ];
+    if ($signatur) {
+        require_once dirname(__DIR__) . '/signatur.php';
+        $grenze = 'masar_alt_' . bin2hex(random_bytes(12));
+        $klar = rtrim($text) . "\n\nMit freundlichen Grüßen\n\n" . masar_signatur_text();
+        $html = '<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head><body style="margin:0;padding:0;">'
+              . '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#132e50;max-width:600px;padding:16px;">'
+              . implode('', array_map(static fn($absatz) => preg_match('/\p{Arabic}/u', $absatz)   // arabische Absätze von rechts nach links
+                    ? '<p dir="rtl" lang="ar" style="margin:0 0 14px;text-align:right;">' . preg_replace('/(ANF-\d{4}-\d{4}|\p{L}{2} \d{2}\.\d{2}\.\d{4}, \d{2}:\d{2} Uhr)/u', '<bdi style="white-space:nowrap">$1</bdi>', nl2br(htmlspecialchars($absatz, ENT_QUOTES, 'UTF-8'), false)) . '</p>'
+                    : '<p style="margin:0 0 14px;">' . nl2br(htmlspecialchars($absatz, ENT_QUOTES, 'UTF-8'), false) . '</p>', preg_split('/\n{2,}/', rtrim($text))))
+              . '<p style="margin:18px 0;">Mit freundlichen Grüßen</p>' . masar_signatur_html() . '</div></body></html>';
+        $kopf[] = 'Content-Type: multipart/alternative; boundary="' . $grenze . '"';
+        $rumpf = "--{$grenze}\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($klar))
+               . "\r\n--{$grenze}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html))
+               . "\r\n--{$grenze}--\r\n";
+    } else {
+        $kopf[] = 'Content-Type: text/plain; charset=UTF-8';
+        $kopf[] = 'Content-Transfer-Encoding: base64';
+        $rumpf = chunk_split(base64_encode($text));
+    }
     $b = '=?UTF-8?B?' . base64_encode($betreff) . '?=';
-    $rumpf = chunk_split(base64_encode($text));
     if (!empty($k['user']) && !empty($k['pass'])) {
         require_once dirname(__DIR__) . '/mailer.php';
         if (masar_smtp_senden($k, $von, $an, implode("\r\n", array_merge(['To: ' . $an, 'Subject: ' . $b], $kopf)), $rumpf)) return true;

@@ -131,7 +131,7 @@ if ($mail !== '') {
         . $wie . "\n\nSie möchten den Termin verschieben oder absagen? Antworten Sie einfach auf diese E-Mail "
         . "oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
         . ($extra !== '' ? $extra . "\n\n" : '')
-        . "Mit freundlichen Grüßen\nMasar Werbeagentur\nBristolstraße 19E · 13349 Berlin · 0178 514 3918\nhttps://masar-werbeagentur.de\n");
+        , '', true);
 }
 
 aus(['nr' => $nr, 'termin' => $wann, 'start' => date('c', $ts), 'dauer' => anf_termin_dauer($art)]);
