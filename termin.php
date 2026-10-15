@@ -115,22 +115,16 @@ $zeiten[] = $jetzt;
 anf_mail('info@masar-werbeagentur.de', "[{$nr}] Beratungstermin {$wann} – " . ANF_TERMIN_ARTEN[$art] . ', ' . ANF_SPRACHEN[$spr],
     "Anfragenummer: {$nr}\n\n" . $text . "\nÜbersicht: https://masar-werbeagentur.de/admin/anfragen.php?nr=" . rawurlencode($nr) . "\n", $mail);
 
-// Bestätigung an den Kunden (Deutsch + gewählte Sprache)
+// Bestätigung an den Kunden (nur Deutsch)
 if ($mail !== '') {
     $wie = ['telefon' => 'Wir rufen Sie zum Termin unter ' . $tel . ' an.',
             'video'   => 'Wir rufen Sie zum Termin per WhatsApp-Video unter ' . $tel . ' an.',
             'vorort'  => 'Wir kommen zum Termin zu Ihnen: ' . $adr . '.'][$art];
-    $extra = [
-        'en' => "Your free consultation is booked for {$wann} (Berlin time). Reference: {$nr}. To change or cancel, simply reply to this e-mail or message us on WhatsApp.",
-        'ar' => "تم حجز موعد الاستشارة المجانية: {$wann} (بتوقيت برلين). رقم الحجز: {$nr}. لتغيير الموعد أو إلغائه يكفي الرد على هذه الرسالة أو مراسلتنا على واتساب.",
-        'tr' => "Ücretsiz danışmanlık randevunuz: {$wann} (Berlin saati). Randevu numarası: {$nr}. Değiştirmek veya iptal etmek için bu e-postayı yanıtlamanız ya da bize WhatsApp'tan yazmanız yeterli.",
-    ][$spr] ?? '';
     anf_mail($mail, "Ihr Beratungstermin am {$wann} – Masar Werbeagentur",
         "Guten Tag {$name},\n\nvielen Dank! Ihre kostenlose Beratung ist gebucht:\n\n"
         . "  {$wann} (" . anf_termin_dauer($art) . " Min.)\n  " . ANF_TERMIN_ARTEN[$art] . ' · ' . ANF_SPRACHEN[$spr] . "\n  Terminnummer: {$nr}\n\n"
         . $wie . "\n\nSie möchten den Termin verschieben oder absagen? Antworten Sie einfach auf diese E-Mail "
         . "oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
-        . ($extra !== '' ? $extra . "\n\n" : '')
         , '', true);
 }
 
