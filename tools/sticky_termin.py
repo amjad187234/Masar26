@@ -7,6 +7,7 @@ Idempotent (Marker data-termin-link). Nach dem Neu-Erzeugen von Seiten erneut au
 import html, os, re, sys, urllib.parse
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))).rstrip('/') + '/'
+BTN = ("text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid #58d0bd;background:rgba(88,208,189,.16);color:#fff;border-radius:8px;padding:9px 16px;font-weight:700;line-height:1.3")
 CAL = ('<svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
        '<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>')
 ALLGEMEIN = {'Masar Werbeagentur', ''}
@@ -22,12 +23,9 @@ def neu_scta(m, seite):
     inner = m.group(1)
     sp = re.search(r'<span>(.*?)</span>', inner)
     thema = html.unescape(re.sub(r'<[^>]+>', '', sp.group(1))).strip() if sp else ''
-    if thema in ALLGEMEIN:
-        text = f'{CAL}<span>Kostenlose Beratung</span> buchen – Telefon, Video oder vor Ort →'
-    else:
-        text = f'{CAL}<span>{html.escape(thema, quote=False)}</span>: kostenlose Beratung buchen →'
-    return (f'<a class="scta-txt" data-termin-link href="{html.escape(link(thema, seite))}" '
-            f'style="text-decoration:none">{text}</a>')
+    text = f'{CAL}<b style="color:#fff">Kostenlose Beratung buchen →</b>'   # Thema geht über den Link mit
+    return (f'<a class="scta-txt" data-termin-link data-btn href="{html.escape(link(thema, seite))}" '
+            f'style="{BTN}">{text}</a>')
 
 
 def blog_cta(s: str) -> str:
@@ -57,8 +55,8 @@ def bearbeiten(pfad: str) -> bool:
     s = re.sub(r'<div class="scta-txt">(.*?)</div>', lambda m: neu_scta(m, seite), s, count=1, flags=re.S)
     # Variante 2: <div class="sticky-cta-text"><strong>…</strong><span>…</span></div>
     s = re.sub(r'<div class="sticky-cta-text">.*?</div>',
-               f'<a class="sticky-cta-text" data-termin-link href="{link("", seite)}" style="text-decoration:none;display:block">'
-               f'<strong>{CAL} Kostenlose Beratung buchen →</strong><span>Termin online wählen – Telefon, Video oder vor Ort</span></a>',
+               f'<a class="sticky-cta-text" data-termin-link data-btn href="{link("", seite)}" style="{BTN}">'
+               f'<strong style="color:#fff;font-size:14px">{CAL} Kostenlose Beratung buchen →</strong></a>',
                s, count=1, flags=re.S)
     if s != alt:
         open(pfad, 'w', encoding='utf-8').write(s)
