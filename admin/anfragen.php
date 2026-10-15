@@ -58,6 +58,14 @@ function seite(string $titel, string $inhalt): void
        . '.chips a{padding:6px 12px;border-radius:999px;border:1px solid var(--b);background:#fff;text-decoration:none;font-size:13px;color:var(--n)}.chips a.on{background:var(--n);color:#fff}'
        . 'pre{white-space:pre-wrap;background:var(--bg);border-radius:8px;padding:12px;font:13px/1.55 Arial;margin:0}.m{color:var(--m);font-size:13px}'
        . '.ok{background:#e8f8f5;border:1px solid var(--t);padding:10px 12px;border-radius:8px;margin-bottom:12px}.err{background:#fbeaea;border:1px solid #e3a0a0;padding:10px 12px;border-radius:8px;margin-bottom:12px}'
+       . '.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}.tile{background:#fff;border:1px solid var(--b);border-radius:12px;padding:12px 8px;text-align:center;text-decoration:none;color:var(--n)}.tile span{display:block;font-size:20px}.tile b{display:block;font-size:24px;line-height:1.2}.tile small{font-size:12px;color:var(--m);font-weight:700;text-transform:uppercase;letter-spacing:.4px}.tile.on{background:var(--n);border-color:var(--n);color:#fff}.tile.on small{color:var(--t)}'
+       . '.filter .such{display:flex;gap:8px}.filter .such button{flex:0 0 auto}.filter .zwei{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}'
+       . '.liste{display:grid;gap:10px;margin-bottom:10px}.karte{display:block;background:#fff;border:1px solid var(--b);border-left:4px solid var(--b);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--n)}.karte:hover{border-color:var(--t)}'
+       . '.karte.st-neu{border-left-color:var(--t)}.karte.st-auftrag{border-left-color:#2e7d32}.karte.st-verloren{opacity:.7}'
+       . '.karte .oben{display:flex;justify-content:space-between;align-items:center;gap:8px}.karte .oben b{font-size:15px}.karte .was{font-weight:700;font-size:16px;margin:6px 0}'
+       . '.karte .infos{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.karte .infos span{background:var(--bg);border-radius:999px;padding:3px 10px;font-size:13px}.karte .infos .termin{background:var(--t);font-weight:700}.karte .infos .q{color:var(--m)}'
+       . '.karte .unten{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--m)}'
+       . '@media(max-width:520px){.tile{padding:10px 4px}.tile b{font-size:20px}.tile small{font-size:11px}.filter .zwei{grid-template-columns:1fr}}'
        . '.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}@media(max-width:800px){.grid{grid-template-columns:1fr}.hide-m{display:none}th,td{padding:8px 5px}}'
        . '</style></head><body><header><div><b>MASAR</b> · Anfragen</div>'
        . (!empty($_SESSION['ok']) ? '<nav><a href="anfragen.php">Übersicht</a><a href="anfragen.php?ansicht=einstellungen">Einstellungen</a><a href="anfragen.php?export=csv">CSV</a><a href="anfragen.php?abmelden=1">Abmelden</a></nav>' : '')
@@ -251,8 +259,10 @@ if (isset($_GET['nr'])) {
 // ─── Übersicht ──────────────────────────────────────────────────────────
 $filter = (string) ($_GET['status'] ?? 'offen');
 $such = trim((string) ($_GET['q'] ?? ''));
-$reg = (string) ($_GET['region'] ?? ''); if (!isset(ANF_REGIONEN[$reg])) $reg = '';
-$stadt = trim((string) ($_GET['stadt'] ?? ''));
+$reg = (string) ($_GET['region'] ?? ''); $stadt = trim((string) ($_GET['stadt'] ?? ''));
+$ortw = (string) ($_GET['ort'] ?? '');
+if (substr($ortw, 0, 2) === 'r:') { $reg = substr($ortw, 2); $stadt = ''; } elseif (substr($ortw, 0, 2) === 's:') { $stadt = substr($ortw, 2); $reg = ''; }
+if (!isset(ANF_REGIONEN[$reg])) $reg = '';
 $sql = 'SELECT * FROM anfragen WHERE 1'; $par = [];
 if ($filter === 'termine') $sql .= " AND termin >= " . (strtotime('today')) . " AND status <> 'verloren'";
 elseif ($filter === 'offen') $sql .= " AND status IN ('neu','kontakt','angebot')";
@@ -265,29 +275,43 @@ $st = $db->prepare($sql); $st->execute($par); $rows = $st->fetchAll();
 $zahl = []; foreach ($db->query('SELECT status, COUNT(*) c FROM anfragen GROUP BY status') as $z) $zahl[$z['status']] = (int) $z['c'];
 $offen = ($zahl['neu'] ?? 0) + ($zahl['kontakt'] ?? 0) + ($zahl['angebot'] ?? 0);
 $tz = (int) $db->query("SELECT COUNT(*) FROM anfragen WHERE termin >= " . strtotime('today') . " AND status <> 'verloren'")->fetchColumn();
-$chips = '<a href="?status=termine" class="' . ($filter === 'termine' ? 'on' : '') . '">📅 Termine (' . $tz . ')</a>';
-$chips .= '<a href="?status=offen" class="' . ($filter === 'offen' ? 'on' : '') . '">Offen (' . $offen . ')</a>';
-foreach (ANF_STATUS as $k => $v) $chips .= '<a href="?status=' . $k . '" class="' . ($filter === $k ? 'on' : '') . '">' . $v . ' (' . ($zahl[$k] ?? 0) . ')</a>';
-$chips .= '<a href="?status=alle" class="' . ($filter === 'alle' ? 'on' : '') . '">Alle</a>';
-// Regionen und Städte (Zählung über alle Anfragen)
-$url = static fn(array $p) => '?' . http_build_query(array_filter(array_merge(['status' => $filter, 'q' => $such, 'region' => $reg, 'stadt' => $stadt], $p), static fn($v) => $v !== ''));
+$alle = array_sum($zahl);
+// Kacheln oben: die vier wichtigsten Ansichten
+$kachel = static function (string $k, string $titel, int $n, string $icon) use ($filter) {
+    return '<a class="tile' . ($filter === $k ? ' on' : '') . '" href="?status=' . $k . '"><span>' . $icon . '</span><b>' . $n . '</b><small>' . $titel . '</small></a>';
+};
+$tiles = '<div class="tiles">' . $kachel('neu', 'Neu', $zahl['neu'] ?? 0, '🔔') . $kachel('termine', 'Termine', $tz, '📅')
+       . $kachel('offen', 'Offen', $offen, '📂') . $kachel('alle', 'Alle', $alle, '🗂') . '</div>';
+// Status-Auswahl
+$sopt = '';
+foreach (['offen' => 'Offen (neu, Kontakt, Angebot)', 'termine' => '📅 Termine ab heute', 'alle' => 'Alle Status'] + ANF_STATUS as $k => $v) {
+    $n = $k === 'offen' ? $offen : ($k === 'termine' ? $tz : ($k === 'alle' ? $alle : ($zahl[$k] ?? 0)));
+    $sopt .= '<option value="' . h($k) . '"' . ($filter === $k ? ' selected' : '') . '>' . h($v) . ' (' . $n . ')</option>';
+}
+// Ort-Auswahl: Regionen mit ihren Städten
 $rz = []; foreach ($db->query('SELECT region, COUNT(*) c FROM anfragen GROUP BY region') as $z) $rz[(string) $z['region']] = (int) $z['c'];
-$rchips = '<a href="' . h($url(['region' => '', 'stadt' => ''])) . '" class="' . ($reg === '' && $stadt === '' ? 'on' : '') . '">Alle Orte</a>';
-foreach (ANF_REGIONEN as $k => $v) $rchips .= '<a href="' . h($url(['region' => $k, 'stadt' => ''])) . '" class="' . ($reg === $k ? 'on' : '') . '">' . h($v) . ' (' . ($rz[$k] ?? 0) . ')</a>';
-$sq = 'SELECT stadt, region, COUNT(*) c FROM anfragen' . ($reg !== '' ? ' WHERE region = ?' : '') . ' GROUP BY stadt ORDER BY c DESC, stadt';
-$ss = $db->prepare($sq); $ss->execute($reg !== '' ? [$reg] : []);
-$opt = '<option value="">– alle Städte –</option>';
-foreach ($ss->fetchAll() as $z) $opt .= '<option value="' . h($z['stadt']) . '"' . ($stadt === (string) $z['stadt'] ? ' selected' : '') . '>' . h($z['stadt']) . ' (' . (int) $z['c'] . ')</option>';
-$stadtform = '<form method="get" class="row" style="margin-top:10px">'
-    . '<input type="hidden" name="status" value="' . h($filter) . '"><input type="hidden" name="q" value="' . h($such) . '"><input type="hidden" name="region" value="' . h($reg) . '">'
-    . '<select name="stadt" onchange="this.form.submit()">' . $opt . '</select></form>';
+$staedte = []; foreach ($db->query('SELECT stadt, region, COUNT(*) c FROM anfragen GROUP BY stadt, region ORDER BY c DESC, stadt') as $z) $staedte[(string) $z['region']][] = $z;
+$oopt = '<option value="">📍 Alle Orte</option>';
+foreach (ANF_REGIONEN as $k => $v) {
+    $oopt .= '<optgroup label="' . h($v) . '"><option value="r:' . h($k) . '"' . ($reg === $k && $stadt === '' ? ' selected' : '') . '>' . h($v) . ' – alle (' . ($rz[$k] ?? 0) . ')</option>';
+    foreach ($staedte[$k] ?? [] as $z) if ((string) $z['stadt'] !== $v) $oopt .= '<option value="s:' . h($z['stadt']) . '"' . ($stadt === (string) $z['stadt'] ? ' selected' : '') . '>' . h($z['stadt']) . ' (' . (int) $z['c'] . ')</option>';
+    $oopt .= '</optgroup>';
+}
+$filterform = '<form method="get" class="filter">'
+    . '<div class="such"><input name="q" value="' . h($such) . '" placeholder="Suchen: Name, Nummer, Leistung …"><button>Suchen</button></div>'
+    . '<div class="zwei"><select name="status" onchange="this.form.submit()">' . $sopt . '</select>'
+    . '<select name="ort" onchange="this.form.submit()">' . $oopt . '</select></div></form>';
+// Liste als Karten
 $tr = '';
 foreach ($rows as $r) {
-    $alt = time() - (int) $r['erstellt']; $warn = $r['status'] === 'neu' && $alt > 86400 ? ' ⚠️' : '';
-    $tr .= '<tr class="' . h($r['status']) . '"><td><a href="?nr=' . h(rawurlencode($r['nr'])) . '"><b>' . h($r['nr']) . '</b></a><br><span class="tag">📍 ' . h($r['stadt'] ?? '') . '</span>' . (!empty($r['termin']) ? '<br><span class="tag neu">📅 ' . h(anf_termin_text((int) $r['termin'])) . '</span>' : '') . '<br><span class="m">' . date('d.m. H:i', (int) $r['erstellt']) . $warn . '</span></td>'
-         . '<td>' . h($r['name']) . ($r['firma'] ? '<br><span class="m">' . h($r['firma']) . '</span>' : '') . '</td><td>' . h($r['leistung']) . '<br><span class="m">' . h($r['ort']) . '</span></td>'
-         . '<td class="hide-m">' . h($r['quelle']) . '</td><td><span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></td></tr>';
+    $alt = time() - (int) $r['erstellt']; $warn = $r['status'] === 'neu' && empty($r['termin']) && $alt > 86400;
+    $tr .= '<a class="karte st-' . h($r['status']) . '" href="?nr=' . h(rawurlencode($r['nr'])) . '">'
+         . '<div class="oben"><b>' . h($r['nr']) . '</b><span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></div>'
+         . '<div class="was">' . h($r['leistung'] !== '' ? $r['leistung'] : 'Anfrage') . '</div>'
+         . '<div class="infos"><span>📍 ' . h($r['stadt'] ?? '') . '</span>' . (!empty($r['termin']) ? '<span class="termin">📅 ' . h(anf_termin_text((int) $r['termin'])) . '</span>' : '')
+         . '<span class="q">' . h($r['quelle']) . '</span></div>'
+         . '<div class="unten"><span>' . h($r['name']) . ($r['firma'] ? ' · ' . h($r['firma']) : '') . '</span><span class="m">' . ($warn ? '⚠️ ' : '') . date('d.m. H:i', (int) $r['erstellt']) . '</span></div></a>';
 }
 seite('Übersicht', (isset($_GET['geloescht']) ? '<div class="ok">Anfrage ' . h((string) $_GET['geloescht']) . ' gelöscht.</div>' : '')
-    . '<div class="k"><h1>Anfragen</h1><form class="row" method="get"><input type="hidden" name="status" value="' . h($filter) . '"><input name="q" value="' . h($such) . '" placeholder="Suchen: Name, Ort, Nummer, Leistung …"><button style="flex:0">Suchen</button></form><div class="chips" style="margin-top:12px">' . $chips . '</div><div class="chips" style="margin-top:10px">' . $rchips . '</div>' . $stadtform . '</div>'
-    . '<div class="k">' . ($tr ? '<table><tr><th>Nr / Datum</th><th>Kunde</th><th>Leistung / Ort</th><th class="hide-m">Quelle</th><th>Status</th></tr>' . $tr . '</table>' : '<p class="m">Keine Anfragen in dieser Ansicht.</p>') . '<p class="m">⚠️ = seit über 24 Stunden unbeantwortet</p></div>');
+    . $tiles . '<div class="k">' . $filterform . '</div>'
+    . ($tr ? '<div class="liste">' . $tr . '</div><p class="m">⚠️ = seit über 24 Stunden unbeantwortet · ' . count($rows) . ' Anfrage(n)</p>' : '<div class="k"><p class="m">Keine Anfragen in dieser Ansicht.</p></div>'));
