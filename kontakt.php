@@ -201,8 +201,9 @@ if (is_readable(__DIR__ . '/inc/anfragen.php')) {
     }
 }
 if ($anfrage_nr !== '') {
-    $betreff = mb_substr('[' . $anfrage_nr . '] ' . $betreff, 0, 140);
-    $text = 'Anfragenummer: ' . $anfrage_nr . "\n\n" . $text;
+    [$anfrage_stadt] = anf_stadt(feldwert('ort'), $herkunft);
+    $betreff = mb_substr('[' . $anfrage_nr . ' · ' . $anfrage_stadt . '] ' . $betreff, 0, 140);
+    $text = 'Anfragenummer: ' . $anfrage_nr . ' · Stadt: ' . $anfrage_stadt . "\n\n" . $text;
 }
 
 // 7. Datei-Anhang prüfen

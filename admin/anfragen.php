@@ -130,9 +130,9 @@ if (isset($_GET['export'])) {
     header('Content-Type: text/csv; charset=UTF-8');
     header('Content-Disposition: attachment; filename="anfragen-' . date('Y-m-d') . '.csv"');
     $o = fopen('php://output', 'w'); fwrite($o, "\xEF\xBB\xBF");
-    fputcsv($o, ['Nr', 'Datum', 'Status', 'Quelle', 'Name', 'Firma', 'E-Mail', 'Telefon', 'Ort', 'Leistung', 'Notiz'], ';');
+    fputcsv($o, ['Nr', 'Datum', 'Status', 'Quelle', 'Name', 'Firma', 'E-Mail', 'Telefon', 'Ort', 'Stadt', 'Region', 'Leistung', 'Notiz'], ';');
     foreach ($db->query('SELECT * FROM anfragen ORDER BY id DESC') as $r)
-        fputcsv($o, [$r['nr'], date('d.m.Y H:i', (int) $r['erstellt']), ANF_STATUS[$r['status']] ?? $r['status'], $r['quelle'], $r['name'], $r['firma'], $r['email'], $r['telefon'], $r['ort'], $r['leistung'], $r['notiz']], ';');
+        fputcsv($o, [$r['nr'], date('d.m.Y H:i', (int) $r['erstellt']), ANF_STATUS[$r['status']] ?? $r['status'], $r['quelle'], $r['name'], $r['firma'], $r['email'], $r['telefon'], $r['ort'], $r['stadt'] ?? '', $r['region'] ?? '', $r['leistung'], $r['notiz']], ';');
     exit;
 }
 
@@ -187,7 +187,7 @@ if (isset($_GET['nr'])) {
     $opt = ''; foreach (ANF_STATUS as $k => $v) $opt .= '<option value="' . $k . '"' . ($r['status'] === $k ? ' selected' : '') . '>' . $v . '</option>';
     seite($r['nr'], (isset($_GET['ok']) ? '<div class="ok">Gespeichert.</div>' : '')
         . '<p><a href="anfragen.php">← Übersicht</a></p><div class="grid"><div>'
-        . '<div class="k"><h1>' . h($r['nr']) . ' <span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></h1>'
+        . '<div class="k"><h1>' . h($r['nr']) . ' <span class="tag">📍 ' . h(($r['stadt'] ?? '') . (($r['region'] ?? '') !== '' && ($r['region'] ?? '') !== ($r['stadt'] ?? '') ? ' · ' . $r['region'] : '')) . '</span> <span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></h1>'
         . '<p class="m">' . date('d.m.Y H:i', (int) $r['erstellt']) . ' · ' . h($r['quelle']) . ($r['seite'] ? ' · <a href="' . h($r['seite']) . '" target="_blank" rel="noopener">Seite</a>' : '') . '</p>'
         . '<table><tr><th>Name</th><td>' . h($r['name']) . ($r['firma'] ? ' (' . h($r['firma']) . ')' : '') . '</td></tr><tr><th>Telefon</th><td>' . h($r['telefon']) . '</td></tr><tr><th>E-Mail</th><td>' . h($r['email']) . '</td></tr><tr><th>Ort</th><td>' . h($r['ort']) . '</td></tr><tr><th>Leistung</th><td>' . h($r['leistung']) . '</td></tr></table></div>'
         . '<div class="k"><h2>Antworten</h2><div class="chips" style="gap:8px">' . ($btn ?: '<span class="m">Keine Telefonnummer oder E-Mail angegeben.</span>') . '</div></div>'
@@ -200,9 +200,13 @@ if (isset($_GET['nr'])) {
 // ─── Übersicht ──────────────────────────────────────────────────────────
 $filter = (string) ($_GET['status'] ?? 'offen');
 $such = trim((string) ($_GET['q'] ?? ''));
+$reg = (string) ($_GET['region'] ?? ''); if (!isset(ANF_REGIONEN[$reg])) $reg = '';
+$stadt = trim((string) ($_GET['stadt'] ?? ''));
 $sql = 'SELECT * FROM anfragen WHERE 1'; $par = [];
 if ($filter === 'offen') $sql .= " AND status IN ('neu','kontakt','angebot')";
 elseif (isset(ANF_STATUS[$filter])) { $sql .= ' AND status = ?'; $par[] = $filter; }
+if ($reg !== '') { $sql .= ' AND region = ?'; $par[] = $reg; }
+if ($stadt !== '') { $sql .= ' AND stadt = ?'; $par[] = $stadt; }
 if ($such !== '') { $sql .= ' AND (nr LIKE ? OR name LIKE ? OR firma LIKE ? OR ort LIKE ? OR leistung LIKE ? OR telefon LIKE ? OR email LIKE ?)'; $par = array_merge($par, array_fill(0, 7, '%' . $such . '%')); }
 $sql .= ' ORDER BY id DESC LIMIT 300';
 $st = $db->prepare($sql); $st->execute($par); $rows = $st->fetchAll();
@@ -211,13 +215,25 @@ $offen = ($zahl['neu'] ?? 0) + ($zahl['kontakt'] ?? 0) + ($zahl['angebot'] ?? 0)
 $chips = '<a href="?status=offen" class="' . ($filter === 'offen' ? 'on' : '') . '">Offen (' . $offen . ')</a>';
 foreach (ANF_STATUS as $k => $v) $chips .= '<a href="?status=' . $k . '" class="' . ($filter === $k ? 'on' : '') . '">' . $v . ' (' . ($zahl[$k] ?? 0) . ')</a>';
 $chips .= '<a href="?status=alle" class="' . ($filter === 'alle' ? 'on' : '') . '">Alle</a>';
+// Regionen und Städte (Zählung über alle Anfragen)
+$url = static fn(array $p) => '?' . http_build_query(array_filter(array_merge(['status' => $filter, 'q' => $such, 'region' => $reg, 'stadt' => $stadt], $p), static fn($v) => $v !== ''));
+$rz = []; foreach ($db->query('SELECT region, COUNT(*) c FROM anfragen GROUP BY region') as $z) $rz[(string) $z['region']] = (int) $z['c'];
+$rchips = '<a href="' . h($url(['region' => '', 'stadt' => ''])) . '" class="' . ($reg === '' && $stadt === '' ? 'on' : '') . '">Alle Orte</a>';
+foreach (ANF_REGIONEN as $k => $v) $rchips .= '<a href="' . h($url(['region' => $k, 'stadt' => ''])) . '" class="' . ($reg === $k ? 'on' : '') . '">' . h($v) . ' (' . ($rz[$k] ?? 0) . ')</a>';
+$sq = 'SELECT stadt, region, COUNT(*) c FROM anfragen' . ($reg !== '' ? ' WHERE region = ?' : '') . ' GROUP BY stadt ORDER BY c DESC, stadt';
+$ss = $db->prepare($sq); $ss->execute($reg !== '' ? [$reg] : []);
+$opt = '<option value="">– alle Städte –</option>';
+foreach ($ss->fetchAll() as $z) $opt .= '<option value="' . h($z['stadt']) . '"' . ($stadt === (string) $z['stadt'] ? ' selected' : '') . '>' . h($z['stadt']) . ' (' . (int) $z['c'] . ')</option>';
+$stadtform = '<form method="get" class="row" style="margin-top:10px">'
+    . '<input type="hidden" name="status" value="' . h($filter) . '"><input type="hidden" name="q" value="' . h($such) . '"><input type="hidden" name="region" value="' . h($reg) . '">'
+    . '<select name="stadt" onchange="this.form.submit()">' . $opt . '</select></form>';
 $tr = '';
 foreach ($rows as $r) {
     $alt = time() - (int) $r['erstellt']; $warn = $r['status'] === 'neu' && $alt > 86400 ? ' ⚠️' : '';
-    $tr .= '<tr class="' . h($r['status']) . '"><td><a href="?nr=' . h(rawurlencode($r['nr'])) . '"><b>' . h($r['nr']) . '</b></a><br><span class="m">' . date('d.m. H:i', (int) $r['erstellt']) . $warn . '</span></td>'
+    $tr .= '<tr class="' . h($r['status']) . '"><td><a href="?nr=' . h(rawurlencode($r['nr'])) . '"><b>' . h($r['nr']) . '</b></a><br><span class="tag">📍 ' . h($r['stadt'] ?? '') . '</span><br><span class="m">' . date('d.m. H:i', (int) $r['erstellt']) . $warn . '</span></td>'
          . '<td>' . h($r['name']) . ($r['firma'] ? '<br><span class="m">' . h($r['firma']) . '</span>' : '') . '</td><td>' . h($r['leistung']) . '<br><span class="m">' . h($r['ort']) . '</span></td>'
          . '<td class="hide-m">' . h($r['quelle']) . '</td><td><span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></td></tr>';
 }
 seite('Übersicht', (isset($_GET['geloescht']) ? '<div class="ok">Anfrage ' . h((string) $_GET['geloescht']) . ' gelöscht.</div>' : '')
-    . '<div class="k"><h1>Anfragen</h1><form class="row" method="get"><input type="hidden" name="status" value="' . h($filter) . '"><input name="q" value="' . h($such) . '" placeholder="Suchen: Name, Ort, Nummer, Leistung …"><button style="flex:0">Suchen</button></form><div class="chips" style="margin-top:12px">' . $chips . '</div></div>'
+    . '<div class="k"><h1>Anfragen</h1><form class="row" method="get"><input type="hidden" name="status" value="' . h($filter) . '"><input name="q" value="' . h($such) . '" placeholder="Suchen: Name, Ort, Nummer, Leistung …"><button style="flex:0">Suchen</button></form><div class="chips" style="margin-top:12px">' . $chips . '</div><div class="chips" style="margin-top:10px">' . $rchips . '</div>' . $stadtform . '</div>'
     . '<div class="k">' . ($tr ? '<table><tr><th>Nr / Datum</th><th>Kunde</th><th>Leistung / Ort</th><th class="hide-m">Quelle</th><th>Status</th></tr>' . $tr . '</table>' : '<p class="m">Keine Anfragen in dieser Ansicht.</p>') . '<p class="m">⚠️ = seit über 24 Stunden unbeantwortet</p></div>');
