@@ -30,10 +30,27 @@ def neu_scta(m, seite):
             f'style="text-decoration:none">{text}</a>')
 
 
+def blog_cta(s: str) -> str:
+    """Blogartikel: dritte Taste „Kostenlose Beratung buchen“ im Kasten am Artikelende (Thema = Kastenüberschrift)."""
+    m = re.search(r'<div class="article-cta">\s*<h3>(.*?)</h3>.*?<div class="btns">(.*?)</div>', s, re.S)
+    if not m:
+        return s
+    thema = html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip()
+    taste = (f'\n        <a href="{html.escape(link(thema, ""))}" data-termin-link class="btn-termin" '
+             f'style="background:#fff;color:var(--navy);padding:13px 24px;border-radius:8px;font-weight:700;font-size:15px">{CAL} Kostenlose Beratung buchen</a>\n      ')
+    return s[:m.end(2)].rstrip() + taste + s[m.end(2):]
+
+
 def bearbeiten(pfad: str) -> bool:
     seite = os.path.relpath(pfad, ROOT)
     s = open(pfad, encoding='utf-8').read()
-    if 'data-termin-link' in s or 'id="stickyCta"' not in s:
+    if 'data-termin-link' in s:
+        return False
+    if 'id="stickyCta"' not in s:
+        neu = blog_cta(s)
+        if neu != s:
+            open(pfad, 'w', encoding='utf-8').write(neu)
+            return True
         return False
     alt = s
     # Variante 1: <div class="scta-txt">★<span>Thema</span> – Text</div>
