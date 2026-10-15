@@ -21,12 +21,30 @@ const ANF_KONFIG     = __DIR__ . '/../kontakt-config.php';
 const ANF_MONATE     = 6;
 const ANF_STATUS     = ['neu' => 'Neu', 'kontakt' => 'In Kontakt', 'angebot' => 'Angebot gesendet', 'auftrag' => 'Auftrag', 'erledigt' => 'Erledigt', 'verloren' => 'Kein Auftrag'];
 
+/** Fehlermeldung, falls kontakt-config.php einen Tippfehler enthält ('' = alles in Ordnung). */
+function anf_konfig_fehler(): string
+{
+    anf_konfig();
+    return $GLOBALS['ANF_KONFIG_FEHLER'] ?? '';
+}
+
 function anf_konfig(): array
 {
     static $k = null;
     if ($k === null) {
-        $k = is_readable(ANF_KONFIG) ? (require ANF_KONFIG) : [];
+        $k = [];
+        if (is_readable(ANF_KONFIG)) {
+            // Tippfehler in kontakt-config.php dürfen die Seite nicht lahmlegen
+            try { $k = require ANF_KONFIG; } catch (Throwable $e) {
+                error_log('kontakt-config.php: ' . $e->getMessage());
+                $GLOBALS['ANF_KONFIG_FEHLER'] = $e->getMessage() . ' (Zeile ' . $e->getLine() . ')';
+                $k = [];
+            }
+        }
         if (!is_array($k)) $k = [];
+        // Beim Kopieren aus Telegram kommt oft Text mit – nur Token bzw. Chat-ID übernehmen
+        if (preg_match('/\d{6,}:[A-Za-z0-9_-]{30,}/', (string) ($k['telegram_token'] ?? ''), $m)) $k['telegram_token'] = $m[0];
+        if (preg_match('/-?\d{5,}/', (string) ($k['telegram_chat'] ?? ''), $m)) $k['telegram_chat'] = $m[0];
     }
     return $k;
 }

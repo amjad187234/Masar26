@@ -65,6 +65,16 @@ function seite(string $titel, string $inhalt): void
     exit;
 }
 
+// ─── Tippfehler in kontakt-config.php ──────────────────────────────────
+if (anf_konfig_fehler() !== '') {
+    seite('Konfiguration', '<div class="k" style="max-width:560px"><h1>Fehler in kontakt-config.php</h1>'
+        . '<div class="err">' . h(anf_konfig_fehler()) . '</div>'
+        . '<p class="m">Meist fehlt ein Anführungszeichen <code>\'</code> oder ein Komma <code>,</code> am Zeilenende, '
+        . 'oder beim Einfügen ist zusätzlicher Text mitgekommen. Jede Zeile muss so aussehen: <code>\'name\' => \'wert\',</code></p>'
+        . '<p class="m">Das Kontaktformular funktioniert trotzdem weiter (Versand über den Server).</p></div>');
+    exit;
+}
+
 // ─── Einrichtung: noch kein Passwort hinterlegt ─────────────────────────
 if ($HASH === '') {
     $out = '';

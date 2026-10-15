@@ -280,7 +280,7 @@ $erfolg = false;
 // Bevorzugt über das eigene Postfach versenden: nur so greifen SPF und DKIM,
 // und die Mail landet zuverlässig im Posteingang statt im Spam-Ordner.
 if (is_readable(KONFIG_DATEI)) {
-    $konfig = require KONFIG_DATEI;
+    try { $konfig = require KONFIG_DATEI; } catch (Throwable $e) { error_log('kontakt-config.php: ' . $e->getMessage()); $konfig = null; }
     if (is_array($konfig)) {
         require_once __DIR__ . '/mailer.php';
         $smtp_kopf = array_merge(
