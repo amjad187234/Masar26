@@ -136,6 +136,20 @@ function anf_telegram(string $nr, string $leistung, string $ort, string $quelle)
     return anf_telegram_senden($token, $chat, $text);
 }
 
+/** GET-Abruf der Bot-API (gibt die Antwort auch bei HTTP-Fehlern zurück, '' wenn keine Verbindung). */
+function anf_telegram_abruf(string $token, string $methode): string
+{
+    $url = 'https://api.telegram.org/bot' . $token . '/' . $methode;
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8]);
+        $r = curl_exec($ch); curl_close($ch);
+        return is_string($r) ? $r : '';
+    }
+    $r = @file_get_contents($url, false, stream_context_create(['http' => ['timeout' => 8, 'ignore_errors' => true]]));
+    return is_string($r) ? $r : '';
+}
+
 function anf_telegram_senden(string $token, string $chat, string $text): bool
 {
     $url = 'https://api.telegram.org/bot' . $token . '/sendMessage';

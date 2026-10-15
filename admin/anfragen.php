@@ -141,11 +141,13 @@ if (($_GET['ansicht'] ?? '') === 'einstellungen') {
     $tok = (string) ($K['telegram_token'] ?? ''); $chat = (string) ($K['telegram_chat'] ?? '');
     $chats = '';
     if ($tok !== '' && isset($_GET['chatsuche'])) {
-        $r = @file_get_contents('https://api.telegram.org/bot' . $tok . '/getUpdates');
+        $r = anf_telegram_abruf($tok, 'getUpdates');
         $j = $r ? json_decode($r, true) : null; $ids = [];
         foreach (($j['result'] ?? []) as $u) { $c = $u['message']['chat'] ?? null; if ($c) $ids[(string) $c['id']] = trim(($c['first_name'] ?? '') . ' ' . ($c['last_name'] ?? '') . ' ' . ($c['title'] ?? '')); }
         $chats = $ids ? '<div class="ok">Gefundene Chats:<br>' . implode('<br>', array_map(fn($id, $n) => '<code>' . h($id) . '</code> – ' . h($n), array_keys($ids), $ids)) . '<br>Diese Zeile in kontakt-config.php einfügen: <code>\'telegram_chat\' => \'' . h((string) array_key_first($ids)) . '\',</code></div>'
-                      : '<div class="err">Kein Chat gefunden. Schreiben Sie Ihrem Bot in Telegram zuerst „/start“ und laden Sie diese Seite dann neu.</div>';
+                      : (!$r ? '<div class="err">Keine Verbindung zu Telegram möglich (Server blockiert ausgehende Verbindung).</div>'
+                      : (empty($j['ok']) ? '<div class="err">Telegram meldet: ' . h((string) ($j['description'] ?? 'Fehler')) . ' – meist ist der Token falsch oder unvollständig eingefügt.</div>'
+                      : '<div class="err">Kein Chat gefunden. Schreiben Sie Ihrem Bot in Telegram zuerst „/start“ und laden Sie diese Seite dann neu.</div>'));
     }
     $anz = (int) $db->query('SELECT COUNT(*) FROM anfragen')->fetchColumn();
     seite('Einstellungen', $hinweis . '<div class="k"><h1>Einstellungen</h1>'
