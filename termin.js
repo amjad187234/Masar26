@@ -54,7 +54,7 @@
     + '.tm-ok p{color:rgba(255,255,255,.85);line-height:1.6;margin:0 0 .7rem;font-size:15px}'
     + '.tm-ok .tm-big{font:700 19px Barlow,sans-serif;color:#58d0bd}'
     + '.tm-btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}'
-    + '.tm-btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 18px;font:700 15px Barlow,sans-serif;text-decoration:none;cursor:pointer;background:#fff;color:#132e50}.tm-btn.wa{background:#25d366;color:#08331a}'
+    + '.tm-btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 18px;font:700 15px Barlow,sans-serif;text-decoration:none;cursor:pointer;background:#fff;color:#132e50}.tm-btn.tm-wa{background:#25d366;color:#08331a}'
     + '.tm-load{color:var(--muted,#5a7070);font-size:14px;margin:.6rem 0}'
     + '@media(max-width:620px){.tm{padding:1.1rem}.tm-two{grid-template-columns:1fr}.tm-nav .tm-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
@@ -256,7 +256,7 @@
       + (s.mail ? ' Eine Bestätigung ist per E-Mail unterwegs.' : '')));
     var btns = el('div', 'tm-btns');
     var cal = txt('a', 'tm-btn', 'In Kalender eintragen'); cal.href = ics(j); cal.download = 'Termin-Masar-' + j.nr + '.ics'; btns.appendChild(cal);
-    var wa = txt('a', 'tm-btn wa', 'Verschieben per WhatsApp'); wa.href = 'https://wa.me/491785143918?text=' + encodeURIComponent('Hallo, ich möchte meinen Beratungstermin ' + j.nr + ' (' + j.termin + ') verschieben.');
+    var wa = txt('a', 'tm-btn tm-wa', 'Verschieben per WhatsApp'); wa.href = 'https://wa.me/491785143918?text=' + encodeURIComponent('Hallo, ich möchte meinen Beratungstermin ' + j.nr + ' (' + j.termin + ') verschieben.');
     wa.target = '_blank'; wa.rel = 'noopener noreferrer'; btns.appendChild(wa);
     ok.appendChild(btns);
     box.appendChild(ok);
