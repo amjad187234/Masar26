@@ -44,6 +44,9 @@ ServerSignature Off
   RewriteRule ^\.env$              - [F,L]
   RewriteRule ^\.git(/|$)          - [F,L]
   RewriteRule ^composer\.(json|lock)$ - [F,L]
+  # Werkzeuge und Notizen (nur im Repository, nicht für Besucher)
+  RewriteRule ^tools(/|$)          - [F,L]
+  RewriteRule \.(md|py|mjs)$       - [F,L]
 
   # Block common attack probes (WordPress, phpMyAdmin, shell uploads, scanners)
   RewriteRule ^wp-admin(/|$)       - [F,L]

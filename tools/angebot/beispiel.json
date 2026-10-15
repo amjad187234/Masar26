@@ -1,0 +1,19 @@
+{
+ "nr": "AN-2026-0000",
+ "datum": "01.01.2026",
+ "gueltig": "15.01.2026",
+ "titel": "Firmenschild Acrylglas",
+ "untertitel": "Beispielkunde GmbH",
+ "kunde": "Beispielkunde GmbH",
+ "ort": "Berlin · Eingangsbereich",
+ "masse": "600 × 400 mm (Breite × Höhe)",
+ "box_titel": "Ihr Schild",
+ "box_text": "Beispieltext: Acrylglasschild mit Digitaldruck, Abstandshalter Edelstahl.",
+ "positionen": [
+  ["Gestaltung & Reinzeichnung", "Aufbereitung Ihres Logos\nFreigabe vor Produktion", "60"],
+  ["Acrylglasschild 8 mm", "Digitaldruck rückseitig, 600 × 400 mm\n4 Abstandshalter Edelstahl", "240"],
+  ["Montage Berlin", "inkl. Anfahrt", "90"]
+ ],
+ "anzahlung": 60,
+ "summe_zusatz": "inkl. Montage in Berlin"
+}

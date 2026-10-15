@@ -46,3 +46,8 @@ npm-debug.log*
 
 # ─── Kundenbewertungen (nur auf dem Server) ──────────────────
 data/*.json
+
+# ─── Werkzeuge: private Kundendaten, Stempel, Zwischendateien ─
+tools/angebot/privat/
+tools/og/jobs.json
+__pycache__/
