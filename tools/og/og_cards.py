@@ -1,7 +1,7 @@
 """Vorschaubilder (1200×630) für Social Media / WhatsApp und passende Meta-Tags.
 
 Neue Seite:
-  python3 tools/og/og_cards.py add <seite.html> <bild.webp|-> "<Kategorie>" "<Überschrift>" "<Unterzeile>"
+  python3 tools/og/og_cards.py add <seite.html> <bild.webp|grafik.html|-> "<Kategorie>" "<Überschrift>" "<Unterzeile>"
   → erzeugt og/<seite>.jpg (Playwright/Chromium) und setzt og:image, og:image:alt und twitter:image.
 Nur Meta-Tags neu setzen (Bild existiert schon):
   python3 tools/og/og_cards.py meta <seite.html> "<Überschrift>"
@@ -20,6 +20,9 @@ TPL = '''<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:B;font-weight:400;src:url(file://{ROOT}fonts/barlow-regular.woff2)}
 @font-face{font-family:B;font-weight:600;src:url(file://{ROOT}fonts/barlow-semibold.woff2)}
 @font-face{font-family:BC;font-weight:900;src:url(file://{ROOT}fonts/barlow-condensed-black.woff2)}
+@font-face{font-family:Barlow;font-weight:400;src:url(file://{ROOT}fonts/barlow-regular.woff2)}
+@font-face{font-family:Barlow;font-weight:600 800;src:url(file://{ROOT}fonts/barlow-semibold.woff2)}
+@font-face{font-family:"Barlow Condensed";font-weight:900;src:url(file://{ROOT}fonts/barlow-condensed-black.woff2)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1200px;height:630px;overflow:hidden;background:#132e50;font-family:B,sans-serif;color:#fff;position:relative}
 .bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 0% 100%,rgba(88,208,189,.22),transparent 60%),linear-gradient(160deg,#16365e,#0e2340)}
@@ -34,6 +37,7 @@ h1{font:900 {HS}px/.95 BC,sans-serif;text-transform:uppercase;margin-top:14px}
 .r{position:absolute;right:0;top:0;width:504px;height:630px;overflow:hidden}
 .r img{width:100%;height:100%;object-fit:cover}
 .r:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#132e50 0,rgba(19,46,80,0) 60px);z-index:1}
+.r.v{display:flex;align-items:center;justify-content:center;padding:0 34px 0 0}.r.v:before{display:none}.r.v .tv{width:440px}
 </style></head><body><div class="bg"></div>
 {RIGHT}
 <div class="l"><div class="logo"><img src="file://{ROOT}logo.webp"><span>MASAR WERBEAGENTUR</span></div>
@@ -46,7 +50,10 @@ def og_name(f):
 
 
 def render(f, img, ey, h, sub):
-    right = f'<div class="r"><img src="file://{ROOT}{img}"></div>' if img else ''
+    if img and img.endswith('.html'):   # gestaltete Grafik statt Foto (z. B. tools/og/visuals/termin.html)
+        right = '<div class="r v">' + open(os.path.join(HERE, '..', '..', img) if not os.path.isabs(img) else img, encoding='utf-8').read() + '</div>'
+    else:
+        right = f'<div class="r"><img src="file://{ROOT}{img}"></div>' if img else ''
     lw = 600 if img else 1070
     hs = 78 if len(h) <= 22 else (66 if len(h) <= 30 else 56)
     if not img:
