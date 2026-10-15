@@ -39,6 +39,22 @@ def blog_cta(s: str) -> str:
     return s[:m.end(2)].rstrip() + taste + s[m.end(2):]
 
 
+def nrw(s: str, seite: str) -> str:
+    """NRW-Seiten (data-region="nrw"): region=nrw anhängen – die Terminseite bietet dann nur Telefon/Video an."""
+    if 'data-region="nrw"' not in s:
+        return s
+    stadt = {'koeln': 'Köln', 'duesseldorf': 'Düsseldorf', 'dortmund': 'Dortmund', 'essen': 'Essen', 'bochum': 'Bochum'}
+    def fix(m):
+        url = m.group(2)
+        if 'region=nrw' in url:
+            return m.group(0)
+        k = seite[len('werbeagentur-'):-5] if seite.startswith('werbeagentur-') else ''
+        if url == '/termin.html' and k in stadt:
+            url += '?thema=' + urllib.parse.quote('Werbeagentur ' + stadt[k])
+        return m.group(1) + url + ('&' if '?' in url else '?') + 'region=nrw"'
+    return re.sub(r'(data-termin-link data-btn href=")(/termin\.html[^"]*)"', fix, s)
+
+
 def bearbeiten(pfad: str) -> bool:
     seite = os.path.relpath(pfad, ROOT)
     s = open(pfad, encoding='utf-8').read()
@@ -58,6 +74,7 @@ def bearbeiten(pfad: str) -> bool:
                f'<a class="sticky-cta-text" data-termin-link data-btn href="{link("", seite)}" style="{BTN}">'
                f'<strong style="color:#fff;font-size:14px">{CAL} Kostenlose Beratung buchen →</strong></a>',
                s, count=1, flags=re.S)
+    s = nrw(s, seite)
     if s != alt:
         open(pfad, 'w', encoding='utf-8').write(s)
         return True
