@@ -29,4 +29,13 @@ return [
 
     // Absenderadresse; muss zum Postfach oben passen
     'from'   => 'website@masar-werbeagentur.de',
+
+    // ── Anfragen-Übersicht /admin/anfragen.php ──
+    // Zeile auf /admin/anfragen.php erzeugen lassen (Einrichtung) und hier einfügen:
+    // 'admin_pass_hash' => '$2y$10$…',
+
+    // ── Telegram-Benachrichtigung (optional, ohne personenbezogene Daten) ──
+    // Token von @BotFather, Chat-ID über /admin/anfragen.php → Einstellungen → „Chat-ID suchen“
+    // 'telegram_token' => '123456789:ABC…',
+    // 'telegram_chat'  => '123456789',
 ];

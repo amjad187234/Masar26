@@ -41,7 +41,7 @@
 Options -Indexes
 
 # ─── Block direct access to any non-PHP files in admin ─────────
-<FilesMatch "^(?!login\.php|dashboard\.php)">
+<FilesMatch "^(?!login\.php|dashboard\.php|anfragen\.php)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>

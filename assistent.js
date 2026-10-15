@@ -114,7 +114,7 @@
     + '.as-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:8px;padding:13px 18px;font:700 15px Barlow,sans-serif;text-decoration:none;cursor:pointer;width:100%;margin-top:auto}'
     + '.as-wa{background:#25d366;color:#08331a}.as-mail{background:#fff;color:#132e50}.as-mail[disabled]{opacity:.5;cursor:not-allowed}'
     + '.as-btn:hover{filter:brightness(1.05)}'
-    + '.as-card label{font-size:13px;color:rgba(255,255,255,.8);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}.as-card label a{color:#58d0bd}'
+    + '.as-card label{font-size:13px;color:rgba(255,255,255,.8);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}.as-card label a,.as-card p a{color:#58d0bd}'
     + '.as-card input[type=file]{font-size:13px;color:rgba(255,255,255,.8);width:100%}'
     + '.as-hint{font-size:13px;color:rgba(255,255,255,.6);margin:.9rem 0 0}.as-more{color:#58d0bd;font-weight:600}'
     + '@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:1fr 1fr}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
@@ -264,10 +264,29 @@
       // WhatsApp
       var c1 = el('div', 'as-card');
       c1.appendChild(txt('h5', '', 'Per WhatsApp – am schnellsten'));
-      c1.appendChild(txt('p', '', 'Die Nachricht ist fertig vorbereitet. Fotos können Sie in WhatsApp direkt anhängen.'));
+      c1.appendChild(el('p', '', 'Die Nachricht ist fertig vorbereitet. Fotos können Sie in WhatsApp direkt anhängen. Ihre Angaben speichern wir mit einer Anfragenummer zur Bearbeitung (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>).'));
       var w = el('a', 'as-btn as-wa', '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/></svg>WhatsApp öffnen');
       w.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); w.target = '_blank'; w.rel = 'noopener noreferrer';
-      w.addEventListener('click', function () { try { sessionStorage.removeItem(key); } catch (e) {} });
+      w.addEventListener('click', function (ev) {
+        // Anfrage zuerst speichern (Nummer für die Übersicht), dann WhatsApp mit Anfragenummer öffnen
+        if (!window.fetch) return;
+        ev.preventDefault();
+        var win = null; try { win = window.open('', '_blank'); } catch (e) {}
+        var payload = { _t: t0, _honey: '', name: s.name.trim(), firma: s.firma.trim(), email: s.mail.trim(), telefon: s.tel.trim(), ort: s.ort.trim(),
+          leistung: T[s.thema].name + ' – ' + a[0], details: T[s.thema].d[0] + ' ' + (s.detail || ''), wer: s.wer || '', wann: s.wann || '', zusammenfassung: msg };
+        var done = false;
+        function open(nr) {
+          if (done) return; done = true;
+          var text = nr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + nr + '):') : msg;
+          var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+          try { sessionStorage.removeItem(key); } catch (e) {}
+          if (win && !win.closed) { try { win.opener = null; win.location.href = url; return; } catch (e) {} }
+          location.href = url;
+        }
+        setTimeout(function () { open(''); }, 2500);
+        fetch('/anfrage-log.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), credentials: 'same-origin' })
+          .then(function (r) { return r.ok ? r.json() : { nr: '' }; }).then(function (j) { open(j && j.nr ? j.nr : ''); }, function () { open(''); });
+      });
       c1.appendChild(w); send.appendChild(c1);
       // E-Mail (Formular an kontakt.php)
       var c2 = el('form', 'as-card'); c2.action = '/kontakt.php'; c2.method = 'POST'; c2.enctype = 'multipart/form-data';

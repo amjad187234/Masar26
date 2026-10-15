@@ -178,6 +178,33 @@ $zeilen[] = 'Einwilligung Datenschutz: erteilt (Art. 6 Abs. 1 lit. b DSGVO)';
 
 $text = implode("\n", $zeilen) . "\n";
 
+// 6b. Anfrage mit Nummer speichern (Übersicht /admin/anfragen.php, Telegram-Hinweis)
+$anfrage_nr = '';
+if (is_readable(__DIR__ . '/inc/anfragen.php')) {
+    try {
+        require_once __DIR__ . '/inc/anfragen.php';
+        $daten = [];
+        foreach ($_POST as $k => $v) {
+            if (is_string($k) && is_string($v) && trim($v) !== '' && !in_array($k, INTERNE_FELDER, true)) {
+                $daten[BESCHRIFTUNG[$k] ?? ucfirst($k)] = mb_substr(trim($v), 0, 2000);
+            }
+        }
+        $leistung = trim(feldwert('thema') . ' ' . feldwert('produkt'));
+        if ($leistung === '') $leistung = feldwert('betreff') !== '' ? feldwert('betreff') : $betreff;
+        $anfrage_nr = anf_speichern([
+            'quelle' => 'E-Mail-Formular', 'seite' => $herkunft, 'name' => $name, 'firma' => feldwert('firma'),
+            'email' => $email, 'telefon' => feldwert('telefon'), 'ort' => feldwert('ort'),
+            'leistung' => $leistung, 'zusammenfassung' => $text, 'daten' => $daten,
+        ]);
+    } catch (Throwable $e) {
+        error_log('Anfrage-Speicher: ' . $e->getMessage());
+    }
+}
+if ($anfrage_nr !== '') {
+    $betreff = mb_substr('[' . $anfrage_nr . '] ' . $betreff, 0, 140);
+    $text = 'Anfragenummer: ' . $anfrage_nr . "\n\n" . $text;
+}
+
 // 7. Datei-Anhang prüfen
 $anhang = null;
 if (isset($_FILES['attachment']) && is_array($_FILES['attachment'])
@@ -288,7 +315,8 @@ if ($erfolg) {
     require_once __DIR__ . '/signatur.php';
 
     $a_text = "Guten Tag,\n\n"
-            . "vielen Dank für Ihre Anfrage – sie ist bei uns angekommen. Wir melden uns "
+            . "vielen Dank für Ihre Anfrage – sie ist bei uns angekommen"
+            . ($anfrage_nr !== '' ? " (Anfragenummer {$anfrage_nr})" : '') . ". Wir melden uns "
             . "innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.\n\n"
             . "Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter 0178 514 3918.\n\n"
             . "Mit freundlichen Grüßen\n\n"
@@ -299,7 +327,8 @@ if ($erfolg) {
             . '<body style="margin:0;padding:24px;background:#ffffff;">'
             . '<div style="max-width:560px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#1a2a2a;">'
             . '<p style="margin:0 0 14px;">Guten Tag,</p>'
-            . '<p style="margin:0 0 14px;">vielen Dank für Ihre Anfrage – sie ist bei uns angekommen. '
+            . '<p style="margin:0 0 14px;">vielen Dank für Ihre Anfrage – sie ist bei uns angekommen'
+            . ($anfrage_nr !== '' ? ' (Anfragenummer <strong>' . htmlspecialchars($anfrage_nr, ENT_QUOTES, 'UTF-8') . '</strong>)' : '') . '. '
             . 'Wir melden uns innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.</p>'
             . '<p style="margin:0 0 14px;">Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter '
             . '<a href="tel:+491785143918" style="color:#132e50;font-weight:bold;text-decoration:none;">0178 514 3918</a>.</p>'
@@ -310,7 +339,7 @@ if ($erfolg) {
             . '</div></body></html>';
 
     $a_grenze  = 'masar_alt_' . bin2hex(random_bytes(12));
-    $a_betreff = '=?UTF-8?B?' . base64_encode('Ihre Anfrage bei Masar Werbeagentur') . '?=';
+    $a_betreff = '=?UTF-8?B?' . base64_encode('Ihre Anfrage bei Masar Werbeagentur' . ($anfrage_nr !== '' ? ' – ' . $anfrage_nr : '')) . '?=';
     $a_kopf = [
         'From: =?UTF-8?B?' . base64_encode('Masar Werbeagentur') . '?= <' . ABSENDER . '>',
         'Reply-To: ' . EMPFAENGER,
@@ -346,4 +375,5 @@ if ($erfolg) {
     }
 }
 
-weiter($erfolg ? DANKE_SEITE : FEHLER_SEITE);
+// Auch wenn der Mailversand scheitert: gespeicherte Anfragen gehen nicht verloren (Übersicht /admin/anfragen.php)
+weiter(($erfolg || $anfrage_nr !== '') ? DANKE_SEITE : FEHLER_SEITE);
