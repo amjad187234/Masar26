@@ -240,6 +240,8 @@ ErrorDocument 500 /500.html
 # Block requests with no User-Agent (most scanners)
 <IfModule mod_rewrite.c>
   RewriteCond %{HTTP_USER_AGENT} ^-?$
+  # Telegram schickt Webhooks ohne User-Agent – telegram.php prüft selbst ein geheimes Token
+  RewriteCond %{REQUEST_URI} !^/telegram\.php$
   RewriteRule .* - [F,L]
 </IfModule>
 

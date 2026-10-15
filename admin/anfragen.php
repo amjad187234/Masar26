@@ -167,11 +167,14 @@ function sek_einstellungen(): string
     $f = static fn(string $a, string $t, string $cls = '') => '<form method="post" style="display:inline-block;margin:0 8px 8px 0"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="aktion" value="' . $a . '"><button class="' . $cls . '">' . $t . '</button></form>';
     $wh = sek_api('getWebhookInfo', []);
     $aktiv = !empty($wh['result']['url']);
+    $whfehler = (string) ($wh['result']['last_error_message'] ?? '');
+    $whzeit = (int) ($wh['result']['last_error_date'] ?? 0);
     $letzt = sek_letzter_cron();
     $cron = 'wget -q -O /dev/null "https://masar-werbeagentur.de/cron.php?k=' . sek_geheim('cron') . '"';
     return '<div class="k"><h2>🤖 Telegram-Sekretär</h2>'
         . '<p>Tasten &amp; Befehle: ' . ($aktiv ? '✅ aktiv' : '❌ noch nicht aktiviert') . ' · Zeitplan (Cronjob): '
         . ($letzt > time() - 900 ? '✅ läuft (zuletzt ' . date('H:i', $letzt) . ')' : ($letzt ? '⚠️ zuletzt ' . date('d.m. H:i', $letzt) : '❌ noch nicht eingerichtet')) . '</p>'
+        . ($whfehler !== '' && $whzeit > time() - 86400 ? '<div class="err">Telegram meldet beim Zustellen (' . date('H:i', $whzeit) . '): ' . h($whfehler) . ((int) ($wh['result']['pending_update_count'] ?? 0) ? ' · ' . (int) $wh['result']['pending_update_count'] . ' Nachricht(en) warten' : '') . '</div>' : '')
         . '<p class="m">Der Sekretär schickt jede neue Anfrage mit Status-Tasten, erinnert 30 Min. vor jedem Termin, schickt Kunden 24 h vorher eine Erinnerungs-E-Mail, '
         . 'jeden Morgen um 8 Uhr einen Tagesbericht und montags einen Wochenbericht mit Verbesserungsvorschlägen. Befehle: /heute /morgen /termine /offen /bericht /hilfe.</p>'
         . $f('sek_aktiv', $aktiv ? 'Sekretär neu verbinden' : 'Sekretär aktivieren')
