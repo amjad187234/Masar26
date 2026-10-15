@@ -113,6 +113,12 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && csrf_ok()) {
     if ($akt === 'speichern' && $nr !== '') {
         $st = (string) ($_POST['status'] ?? 'neu'); if (!isset(ANF_STATUS[$st])) $st = 'neu';
         $db->prepare('UPDATE anfragen SET status = ?, notiz = ?, geaendert = ? WHERE nr = ?')->execute([$st, mb_substr((string) ($_POST['notiz'] ?? ''), 0, 5000), time(), $nr]);
+        $neu = trim((string) ($_POST['stadt'] ?? ''));
+        if ($neu !== '') {   // Stadt von Hand korrigieren – Region wird daraus neu bestimmt
+            [$sname, $sreg] = anf_stadt($neu);
+            if ($sreg === 'Sonstige') $sname = mb_substr($neu, 0, 60);
+            $db->prepare('UPDATE anfragen SET stadt = ?, region = ? WHERE nr = ?')->execute([$sname, $sreg, $nr]);
+        }
         header('Location: anfragen.php?nr=' . rawurlencode($nr) . '&ok=1'); exit;
     }
     if ($akt === 'loeschen' && $nr !== '') {
@@ -193,7 +199,7 @@ if (isset($_GET['nr'])) {
         . '<div class="k"><h2>Antworten</h2><div class="chips" style="gap:8px">' . ($btn ?: '<span class="m">Keine Telefonnummer oder E-Mail angegeben.</span>') . '</div></div>'
         . '<div class="k"><h2>Anfrage</h2><pre>' . h($r['zusammenfassung']) . '</pre></div></div>'
         . '<div><div class="k"><h2>Bearbeiten</h2><form method="post"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="nr" value="' . h($r['nr']) . '"><input type="hidden" name="aktion" value="speichern">'
-        . '<p><label class="m">Status</label><select name="status">' . $opt . '</select></p><p><label class="m">Notiz</label><textarea name="notiz" placeholder="z. B. Preis genannt, Termin 26.10., Datei fehlt …">' . h($r['notiz']) . '</textarea></p><button>Speichern</button></form></div>'
+        . '<p><label class="m">Status</label><select name="status">' . $opt . '</select></p><p><label class="m">Stadt (bei Bedarf korrigieren)</label><input name="stadt" value="' . h($r['stadt'] ?? '') . '" placeholder="z. B. Köln oder 44137"></p><p><label class="m">Notiz</label><textarea name="notiz" placeholder="z. B. Preis genannt, Termin 26.10., Datei fehlt …">' . h($r['notiz']) . '</textarea></p><button>Speichern</button></form></div>'
         . '<div class="k"><h2>Löschen</h2><p class="m">Auf Wunsch des Kunden oder wenn die Anfrage erledigt ist (Datenschutz).</p><form method="post" onsubmit="return confirm(\'Anfrage endgültig löschen?\')"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="nr" value="' . h($r['nr']) . '"><input type="hidden" name="aktion" value="loeschen"><button class="btn r">Endgültig löschen</button></form></div></div></div>');
 }
 

@@ -272,7 +272,7 @@
         if (!window.fetch) return;
         ev.preventDefault();
         var win = null; try { win = window.open('', '_blank'); } catch (e) {}
-        var payload = { _t: t0, _honey: '', name: s.name.trim(), firma: s.firma.trim(), email: s.mail.trim(), telefon: s.tel.trim(), ort: s.ort.trim(),
+        var payload = { _t: t0, _honey: '', seite: location.pathname, name: s.name.trim(), firma: s.firma.trim(), email: s.mail.trim(), telefon: s.tel.trim(), ort: s.ort.trim(),
           leistung: T[s.thema].name + ' – ' + a[0], details: T[s.thema].d[0] + ' ' + (s.detail || ''), wer: s.wer || '', wann: s.wann || '', zusammenfassung: msg };
         var done = false;
         function open(nr) {

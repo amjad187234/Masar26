@@ -48,7 +48,8 @@ if (mb_strlen($name) < 2) antwort('', 422);
 require_once __DIR__ . '/inc/anfragen.php';
 $nr = anf_speichern([
     'quelle' => 'WhatsApp-Assistent',
-    'seite' => mb_substr((string) ($_SERVER['HTTP_REFERER'] ?? ''), 0, 200),
+    // Seite: vom Assistenten mitgeschickter Pfad (nur eigene Seiten), sonst Referer
+    'seite' => preg_match('~^/[A-Za-z0-9/_.-]{0,150}$~', $f('seite', 160)) ? 'https://masar-werbeagentur.de' . $f('seite', 160) : mb_substr((string) ($_SERVER['HTTP_REFERER'] ?? ''), 0, 200),
     'name' => $name, 'firma' => $f('firma', 120), 'email' => $f('email', 160), 'telefon' => $f('telefon', 60),
     'ort' => $f('ort', 120), 'leistung' => $f('leistung', 200), 'zusammenfassung' => $f('zusammenfassung', 4000),
     'daten' => ['Leistung' => $f('leistung', 200), 'Details' => $f('details', 400), 'Für' => $f('wer', 40), 'Zeitrahmen' => $f('wann', 60)],
