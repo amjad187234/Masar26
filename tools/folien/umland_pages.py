@@ -257,7 +257,7 @@ def build(c):
     </div></noscript>
   </div>
 </section>
-{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=3" defer></script>'}
+{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=4" defer></script>'}
 <script>
 document.querySelectorAll('[data-betreff]').forEach(function(a){{a.addEventListener('click',function(){{var i=document.getElementById('betreffInput');var b=a.getAttribute('data-betreff');if(i){{i.value=b;}}var p=document.getElementById('uaPick');if(p){{p.textContent='Ausgewählt: '+b+' – ergänzen Sie einfach ein paar Stichworte.';p.className='ua-pick on';}}setTimeout(function(){{var n=document.getElementById('fo-name');if(n){{n.focus({{preventScroll:true}});}}}},450);}});}});
 </script>

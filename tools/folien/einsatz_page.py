@@ -16,7 +16,7 @@ FAQ = [
  ('Kostet die Anfahrt nach Brandenburg extra?', 'Die Anfahrt ist im Festpreis enthalten und dort einzeln ausgewiesen. Sie wissen vorher genau, was Sie zahlen. Für reine Druck- und Designaufträge fällt keine Anfahrt an.'),
  ('Gelten in NRW andere Preise?', 'Ja. In NRW arbeitet ein eigenes Montageteam vor Ort, deshalb liegen die Startpreise dort leicht über Berlin – zum Beispiel Firmenschild ab 179 € statt ab 149 € netto, LED-Leuchtbuchstaben ab 229 € statt ab 199 € pro Buchstabe.'),
  ('Wie schnell bekomme ich ein Angebot?', 'In der Regel innerhalb von 24 Stunden. Ein Foto vom Ort und Ihr Logo reichen für ein erstes Angebot; den verbindlichen Festpreis nennen wir nach Fotos oder Aufmaß.'),
- ('In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch und Arabisch.'),
+ ('In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Arabisch und Türkisch.'),
 ]
 ROWS = [
  ('Schilder & Leuchtreklame', '✓', '✓', '✓ (Montageteam)'),
@@ -93,7 +93,7 @@ def build():
       <div><b>Inhaber</b><span>Amjad Alblili, Mediengestalter</span></div>
       <div><b>Kontakt</b><span>Telefon / WhatsApp 0178 514 3918<br>info@masar-werbeagentur.de</span></div>
       <div><b>Erreichbar</b><span>Montag bis Samstag, 08:00–20:00 Uhr; Besuche vor Ort nach Vereinbarung</span></div>
-      <div><b>Sprachen</b><span>Deutsch, Englisch, Arabisch</span></div>
+      <div><b>Sprachen</b><span>Deutsch, Englisch, Arabisch, Türkisch</span></div>
       <div><b>Arbeitsweise</b><span>Gestaltung, Produktion und Montage aus einer Hand; Angebot in der Regel innerhalb von 24 Stunden; Preise netto zzgl. 19&nbsp;% MwSt.</span></div>
     </div>
     <div class="blog-prose" style="max-width:820px;margin:1.6rem auto 0">
@@ -111,7 +111,7 @@ def build():
   <div data-assistent></div>
   <noscript><p style="text-align:center">Schreiben Sie uns an <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a> oder per <a href="{w}">WhatsApp</a>.</p></noscript>
 </div></section>
-{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=3" defer></script>'}
+{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=4" defer></script>'}
 '''
     out = HEAD_A + meta + js(page) + js(bc) + js(fq) + HEAD_B
     out = out.replace('</head>', css + '\n</head>', 1) + body + '\n' + FOOT

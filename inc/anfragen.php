@@ -84,6 +84,12 @@ function anf_db(): ?PDO
             }
         }
         $pdo->exec('CREATE INDEX IF NOT EXISTS i_stadt ON anfragen(stadt)');
+        // Beratungstermine (nachgerüstet)
+        $spalten = array_column($pdo->query('PRAGMA table_info(anfragen)')->fetchAll(), 'name');
+        foreach (['termin' => 'INTEGER', 'termin_dauer' => 'INTEGER', 'termin_art' => 'TEXT', 'sprache' => 'TEXT'] as $sp => $typ) {
+            if (!in_array($sp, $spalten, true)) $pdo->exec("ALTER TABLE anfragen ADD COLUMN $sp $typ");
+        }
+        $pdo->exec('CREATE INDEX IF NOT EXISTS i_termin ON anfragen(termin)');
         // Aufbewahrungsfrist
         $pdo->prepare('DELETE FROM anfragen WHERE erstellt < ?')->execute([time() - ANF_MONATE * 30 * 86400]);
     } catch (Throwable $e) {
@@ -172,8 +178,9 @@ function anf_speichern(array $f): string
     try {
         $jetzt = time();
         [$stadt, $region] = anf_stadt((string) ($f['ort'] ?? ''), (string) ($f['seite'] ?? ''));
-        $st = $db->prepare('INSERT INTO anfragen (erstellt, geaendert, quelle, seite, name, firma, email, telefon, ort, leistung, zusammenfassung, daten, stadt, region)
-                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+        $termin = isset($f['termin']) ? (int) $f['termin'] : null;
+        $st = $db->prepare('INSERT INTO anfragen (erstellt, geaendert, quelle, seite, name, firma, email, telefon, ort, leistung, zusammenfassung, daten, stadt, region, termin, termin_dauer, termin_art, sprache)
+                            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
         $st->execute([
             $jetzt, $jetzt,
             anf_kurz((string) ($f['quelle'] ?? 'Formular'), 30),
@@ -187,16 +194,108 @@ function anf_speichern(array $f): string
             anf_kurz((string) ($f['zusammenfassung'] ?? ''), 6000),
             json_encode($f['daten'] ?? [], JSON_UNESCAPED_UNICODE),
             $stadt, $region,
+            $termin, $termin !== null ? (int) ($f['termin_dauer'] ?? 30) : null,
+            anf_kurz((string) ($f['termin_art'] ?? ''), 40), anf_kurz((string) ($f['sprache'] ?? ''), 20),
         ]);
         $id = (int) $db->lastInsertId();
         $nr = sprintf('ANF-%s-%04d', date('Y', $jetzt), $id);
         $db->prepare('UPDATE anfragen SET nr = ? WHERE id = ?')->execute([$nr, $id]);
-        anf_telegram($nr, (string) ($f['leistung'] ?? ''), $stadt . ($region !== 'Sonstige' && $region !== $stadt ? ' (' . $region . ')' : ''), (string) ($f['quelle'] ?? 'Formular'));
+        $ortinfo = $stadt . ($region !== 'Sonstige' && $region !== $stadt ? ' (' . $region . ')' : '');
+        if ($termin !== null) {
+            anf_telegram_senden_k("📅 Neuer Beratungstermin {$nr}\n" . anf_termin_text($termin) . "\n"
+                . anf_kurz((string) ($f['termin_art'] ?? ''), 40) . ' · ' . anf_kurz((string) ($f['sprache'] ?? ''), 20) . "\n📍 " . $ortinfo . "\n"
+                . "https://masar-werbeagentur.de/admin/anfragen.php?nr=" . rawurlencode($nr));
+        } else {
+            anf_telegram($nr, (string) ($f['leistung'] ?? ''), $ortinfo, (string) ($f['quelle'] ?? 'Formular'));
+        }
         return $nr;
     } catch (Throwable $e) {
         error_log('Anfrage speichern: ' . $e->getMessage());
         return '';
     }
+}
+
+/** Telegram-Text mit hinterlegtem Token/Chat senden (ohne personenbezogene Daten verwenden!). */
+function anf_telegram_senden_k(string $text): bool
+{
+    $k = anf_konfig();
+    $token = (string) ($k['telegram_token'] ?? ''); $chat = (string) ($k['telegram_chat'] ?? '');
+    return $token !== '' && $chat !== '' && anf_telegram_senden($token, $chat, $text);
+}
+
+// ─── Beratungstermine ───────────────────────────────────────────────────
+const ANF_TERMIN_ARTEN  = ['telefon' => 'Telefon', 'video' => 'WhatsApp-Video', 'vorort' => 'Vor Ort (Berlin)'];
+const ANF_SPRACHEN      = ['de' => 'Deutsch', 'en' => 'Englisch', 'ar' => 'Arabisch', 'tr' => 'Türkisch'];
+const ANF_TERMIN_TAGE   = 21;                 // so viele Tage im Voraus buchbar (ab morgen)
+const ANF_TERMIN_RASTER = 30;                 // Minuten
+// Wochentag (1 = Mo … 7 = So) => [Beginn, Ende] – letzter Termin beginnt 30 Min. vor Ende
+const ANF_TERMIN_ZEITEN = [1 => ['09:00', '18:00'], 2 => ['09:00', '18:00'], 3 => ['09:00', '18:00'], 4 => ['09:00', '18:00'], 5 => ['09:00', '18:00'], 6 => ['10:00', '14:00']];
+// Gesetzliche Feiertage Berlin
+const ANF_FEIERTAGE = ['2026-01-01', '2026-03-08', '2026-04-03', '2026-04-06', '2026-05-01', '2026-05-14', '2026-05-25', '2026-10-03', '2026-12-25', '2026-12-26',
+                       '2027-01-01', '2027-03-08', '2027-03-26', '2027-03-29', '2027-05-01', '2027-05-06', '2027-05-17', '2027-10-03', '2027-12-25', '2027-12-26'];
+
+function anf_termin_dauer(string $art): int { return $art === 'vorort' ? 60 : 30; }   // vor Ort inkl. Anfahrt
+
+function anf_termin_text(int $ts): string
+{
+    $tage = ['', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
+    return $tage[(int) date('N', $ts)] . ' ' . date('d.m.Y', $ts) . ', ' . date('H:i', $ts) . ' Uhr';
+}
+
+/** Gesperrte Tage: Feiertage + optional 'termin_gesperrt' => ['2026-12-24', …] in kontakt-config.php */
+function anf_tag_gesperrt(string $tag): bool
+{
+    $k = anf_konfig();
+    return in_array($tag, ANF_FEIERTAGE, true) || in_array($tag, (array) ($k['termin_gesperrt'] ?? []), true);
+}
+
+/** Freie Startzeiten (Unix-Zeit) eines Tages für eine Terminart. */
+function anf_termin_frei(string $tag, string $art): array
+{
+    if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $tag) || anf_tag_gesperrt($tag)) return [];
+    $t0 = strtotime($tag . ' 00:00'); if ($t0 === false) return [];
+    $morgen = strtotime('tomorrow'); $bis = $morgen + ANF_TERMIN_TAGE * 86400;
+    if ($t0 < $morgen || $t0 >= $bis) return [];
+    $wt = (int) date('N', $t0); if (!isset(ANF_TERMIN_ZEITEN[$wt])) return [];
+    [$von, $ende] = ANF_TERMIN_ZEITEN[$wt];
+    $a = strtotime($tag . ' ' . $von); $e = strtotime($tag . ' ' . $ende);
+    $dauer = anf_termin_dauer($art) * 60;
+    $belegt = [];
+    if ($db = anf_db()) {
+        $st = $db->prepare("SELECT termin, termin_dauer FROM anfragen WHERE termin >= ? AND termin < ? AND status <> 'verloren'");
+        $st->execute([$t0 - 7200, $t0 + 86400]);
+        foreach ($st->fetchAll() as $r) $belegt[] = [(int) $r['termin'], (int) $r['termin'] + 60 * (int) ($r['termin_dauer'] ?: 30)];
+    }
+    $frei = [];
+    for ($t = $a; $t + $dauer <= $e; $t += ANF_TERMIN_RASTER * 60) {
+        $ok = true;
+        foreach ($belegt as [$b0, $b1]) if ($t < $b1 && $t + $dauer > $b0) { $ok = false; break; }
+        if ($ok) $frei[] = $t;
+    }
+    return $frei;
+}
+
+/** E-Mail über das Postfach aus kontakt-config.php (SMTP), sonst mail(). */
+function anf_mail(string $an, string $betreff, string $text, string $antwort_an = ''): bool
+{
+    $k = anf_konfig();
+    $von = (string) ($k['from'] ?? 'website@masar-werbeagentur.de');
+    $kopf = [
+        'From: =?UTF-8?B?' . base64_encode('Masar Werbeagentur') . '?= <' . $von . '>',
+        'Reply-To: ' . ($antwort_an !== '' ? $antwort_an : 'info@masar-werbeagentur.de'),
+        'Date: ' . date('r'),
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@masar-werbeagentur.de>',
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: base64',
+    ];
+    $b = '=?UTF-8?B?' . base64_encode($betreff) . '?=';
+    $rumpf = chunk_split(base64_encode($text));
+    if (!empty($k['user']) && !empty($k['pass'])) {
+        require_once dirname(__DIR__) . '/mailer.php';
+        if (masar_smtp_senden($k, $von, $an, implode("\r\n", array_merge(['To: ' . $an, 'Subject: ' . $b], $kopf)), $rumpf)) return true;
+    }
+    return @mail($an, $b, $rumpf, implode("\r\n", $kopf), '-f' . $von);
 }
 
 /** Telegram-Hinweis ohne personenbezogene Daten. */

@@ -25,6 +25,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 - NRW-Team macht alles außer Foto/Video und Messebau. Messebau und Express nur Berlin.
 - Keine Laternenwerbung anbieten.
 - Zahlung: Überweisung.
+- Sprachen der Beratung: Deutsch, Englisch, Arabisch, Türkisch (Türkisch vom Inhaber am 15.10.2026 bestätigt).
 
 ## Preise (netto, „ab“) – nur mit Freigabe ändern
 
@@ -64,6 +65,13 @@ solche Festlegung im Bericht nennen.
   `/admin/anfragen.php`. Telegram-Hinweise **ohne personenbezogene Daten**.
   Einrichtung auf dem Server in `kontakt-config.php`: `admin_pass_hash`, `telegram_token`,
   `telegram_chat` (siehe `kontakt-config.sample.php`). Datenschutzerklärung Abschnitt 6 beschreibt das.
+- Anfragen haben Stadt + Region (Berlin/Brandenburg/NRW/Sonstige), automatisch aus Ortsangabe, PLZ
+  oder Herkunftsseite (`anf_stadt()`), in der Detailansicht korrigierbar. Zeiten in Europe/Berlin.
+- Terminbuchung „Kostenlose Beratung“: `termin.html` + `termin.js` + `termin.php`. Arten Telefon,
+  WhatsApp-Video, Vor Ort (nur Berlin, 60 Min.); sonst 30 Min.; Mo–Fr 9–18, Sa 10–14; ab morgen,
+  21 Tage im Voraus; Feiertage Berlin gesperrt, weitere Sperrtage per `termin_gesperrt` in
+  kontakt-config.php. Termin = Anfrage mit Spalte `termin`; Status „Kein Auftrag“ oder Löschen gibt
+  die Zeit frei. Footer-Link „Kostenlose Beratung buchen“ auf allen Seiten.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

@@ -195,7 +195,7 @@ if (isset($_GET['nr'])) {
         . '<p><a href="anfragen.php">← Übersicht</a></p><div class="grid"><div>'
         . '<div class="k"><h1>' . h($r['nr']) . ' <span class="tag">📍 ' . h(($r['stadt'] ?? '') . (($r['region'] ?? '') !== '' && ($r['region'] ?? '') !== ($r['stadt'] ?? '') ? ' · ' . $r['region'] : '')) . '</span> <span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></h1>'
         . '<p class="m">' . date('d.m.Y H:i', (int) $r['erstellt']) . ' · ' . h($r['quelle']) . ($r['seite'] ? ' · <a href="' . h($r['seite']) . '" target="_blank" rel="noopener">Seite</a>' : '') . '</p>'
-        . '<table><tr><th>Name</th><td>' . h($r['name']) . ($r['firma'] ? ' (' . h($r['firma']) . ')' : '') . '</td></tr><tr><th>Telefon</th><td>' . h($r['telefon']) . '</td></tr><tr><th>E-Mail</th><td>' . h($r['email']) . '</td></tr><tr><th>Ort</th><td>' . h($r['ort']) . '</td></tr><tr><th>Leistung</th><td>' . h($r['leistung']) . '</td></tr></table></div>'
+        . '<table>' . (!empty($r['termin']) ? '<tr><th>Termin</th><td><b>📅 ' . h(anf_termin_text((int) $r['termin'])) . '</b> (' . (int) $r['termin_dauer'] . ' Min.)<br>' . h($r['termin_art'] ?? '') . ' · ' . h($r['sprache'] ?? '') . '</td></tr>' : '') . '<tr><th>Name</th><td>' . h($r['name']) . ($r['firma'] ? ' (' . h($r['firma']) . ')' : '') . '</td></tr><tr><th>Telefon</th><td>' . h($r['telefon']) . '</td></tr><tr><th>E-Mail</th><td>' . h($r['email']) . '</td></tr><tr><th>Ort</th><td>' . h($r['ort']) . '</td></tr><tr><th>Leistung</th><td>' . h($r['leistung']) . '</td></tr></table></div>'
         . '<div class="k"><h2>Antworten</h2><div class="chips" style="gap:8px">' . ($btn ?: '<span class="m">Keine Telefonnummer oder E-Mail angegeben.</span>') . '</div></div>'
         . '<div class="k"><h2>Anfrage</h2><pre>' . h($r['zusammenfassung']) . '</pre></div></div>'
         . '<div><div class="k"><h2>Bearbeiten</h2><form method="post"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="nr" value="' . h($r['nr']) . '"><input type="hidden" name="aktion" value="speichern">'
@@ -209,16 +209,19 @@ $such = trim((string) ($_GET['q'] ?? ''));
 $reg = (string) ($_GET['region'] ?? ''); if (!isset(ANF_REGIONEN[$reg])) $reg = '';
 $stadt = trim((string) ($_GET['stadt'] ?? ''));
 $sql = 'SELECT * FROM anfragen WHERE 1'; $par = [];
-if ($filter === 'offen') $sql .= " AND status IN ('neu','kontakt','angebot')";
+if ($filter === 'termine') $sql .= " AND termin >= " . (strtotime('today')) . " AND status <> 'verloren'";
+elseif ($filter === 'offen') $sql .= " AND status IN ('neu','kontakt','angebot')";
 elseif (isset(ANF_STATUS[$filter])) { $sql .= ' AND status = ?'; $par[] = $filter; }
 if ($reg !== '') { $sql .= ' AND region = ?'; $par[] = $reg; }
 if ($stadt !== '') { $sql .= ' AND stadt = ?'; $par[] = $stadt; }
 if ($such !== '') { $sql .= ' AND (nr LIKE ? OR name LIKE ? OR firma LIKE ? OR ort LIKE ? OR leistung LIKE ? OR telefon LIKE ? OR email LIKE ?)'; $par = array_merge($par, array_fill(0, 7, '%' . $such . '%')); }
-$sql .= ' ORDER BY id DESC LIMIT 300';
+$sql .= $filter === 'termine' ? ' ORDER BY termin ASC LIMIT 300' : ' ORDER BY id DESC LIMIT 300';
 $st = $db->prepare($sql); $st->execute($par); $rows = $st->fetchAll();
 $zahl = []; foreach ($db->query('SELECT status, COUNT(*) c FROM anfragen GROUP BY status') as $z) $zahl[$z['status']] = (int) $z['c'];
 $offen = ($zahl['neu'] ?? 0) + ($zahl['kontakt'] ?? 0) + ($zahl['angebot'] ?? 0);
-$chips = '<a href="?status=offen" class="' . ($filter === 'offen' ? 'on' : '') . '">Offen (' . $offen . ')</a>';
+$tz = (int) $db->query("SELECT COUNT(*) FROM anfragen WHERE termin >= " . strtotime('today') . " AND status <> 'verloren'")->fetchColumn();
+$chips = '<a href="?status=termine" class="' . ($filter === 'termine' ? 'on' : '') . '">📅 Termine (' . $tz . ')</a>';
+$chips .= '<a href="?status=offen" class="' . ($filter === 'offen' ? 'on' : '') . '">Offen (' . $offen . ')</a>';
 foreach (ANF_STATUS as $k => $v) $chips .= '<a href="?status=' . $k . '" class="' . ($filter === $k ? 'on' : '') . '">' . $v . ' (' . ($zahl[$k] ?? 0) . ')</a>';
 $chips .= '<a href="?status=alle" class="' . ($filter === 'alle' ? 'on' : '') . '">Alle</a>';
 // Regionen und Städte (Zählung über alle Anfragen)
@@ -236,7 +239,7 @@ $stadtform = '<form method="get" class="row" style="margin-top:10px">'
 $tr = '';
 foreach ($rows as $r) {
     $alt = time() - (int) $r['erstellt']; $warn = $r['status'] === 'neu' && $alt > 86400 ? ' ⚠️' : '';
-    $tr .= '<tr class="' . h($r['status']) . '"><td><a href="?nr=' . h(rawurlencode($r['nr'])) . '"><b>' . h($r['nr']) . '</b></a><br><span class="tag">📍 ' . h($r['stadt'] ?? '') . '</span><br><span class="m">' . date('d.m. H:i', (int) $r['erstellt']) . $warn . '</span></td>'
+    $tr .= '<tr class="' . h($r['status']) . '"><td><a href="?nr=' . h(rawurlencode($r['nr'])) . '"><b>' . h($r['nr']) . '</b></a><br><span class="tag">📍 ' . h($r['stadt'] ?? '') . '</span>' . (!empty($r['termin']) ? '<br><span class="tag neu">📅 ' . h(anf_termin_text((int) $r['termin'])) . '</span>' : '') . '<br><span class="m">' . date('d.m. H:i', (int) $r['erstellt']) . $warn . '</span></td>'
          . '<td>' . h($r['name']) . ($r['firma'] ? '<br><span class="m">' . h($r['firma']) . '</span>' : '') . '</td><td>' . h($r['leistung']) . '<br><span class="m">' . h($r['ort']) . '</span></td>'
          . '<td class="hide-m">' . h($r['quelle']) . '</td><td><span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></td></tr>';
 }

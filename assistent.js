@@ -308,7 +308,7 @@
       send.appendChild(c2);
       res.appendChild(send);
       var pg = page(a);
-      var hint = el('p', 'as-hint', 'Antwort in der Regel innerhalb von 24 Stunden.' + (pg && pg !== location.pathname ? ' <a class="as-more" href="' + pg + '">Mehr zu ' + a[4] + ' →</a>' : ''));
+      var hint = el('p', 'as-hint', 'Antwort in der Regel innerhalb von 24 Stunden. Lieber persönlich sprechen? <a class="as-more" href="/termin.html">Kostenlose Beratung buchen →</a>' + (pg && pg !== location.pathname ? ' <a class="as-more" href="' + pg + '">Mehr zu ' + a[4] + ' →</a>' : ''));
       res.appendChild(hint);
       box.appendChild(res);
       var n = el('div', 'as-nav'); var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(5); }); n.appendChild(b);
