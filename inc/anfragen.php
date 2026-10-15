@@ -16,6 +16,8 @@
 
 declare(strict_types=1);
 
+date_default_timezone_set('Europe/Berlin');   // Server läuft auf UTC – Zeiten in deutscher Zeit anzeigen
+
 const ANF_DB         = __DIR__ . '/../data/anfragen.sqlite';
 const ANF_KONFIG     = __DIR__ . '/../kontakt-config.php';
 const ANF_MONATE     = 6;
