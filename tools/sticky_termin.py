@@ -1,0 +1,55 @@
+"""Untere Leiste (#stickyCta): Textzeile wird zum Link „Kostenlose Beratung buchen“ – mit dem Thema der Seite.
+
+  python3 tools/sticky_termin.py            → alle HTML-Seiten
+  python3 tools/sticky_termin.py a.html …   → nur diese Seiten
+Idempotent (Marker data-termin-link). Nach dem Neu-Erzeugen von Seiten erneut ausführen.
+"""
+import html, os, re, sys, urllib.parse
+
+ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))).rstrip('/') + '/'
+CAL = ('<svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+       '<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>')
+ALLGEMEIN = {'Masar Werbeagentur', ''}
+
+
+def link(thema: str, seite: str) -> str:
+    if seite == 'termin.html':
+        return '#termin'
+    return '/termin.html' + ('?thema=' + urllib.parse.quote(thema) if thema not in ALLGEMEIN else '')
+
+
+def neu_scta(m, seite):
+    inner = m.group(1)
+    sp = re.search(r'<span>(.*?)</span>', inner)
+    thema = html.unescape(re.sub(r'<[^>]+>', '', sp.group(1))).strip() if sp else ''
+    if thema in ALLGEMEIN:
+        text = f'{CAL}<span>Kostenlose Beratung</span> buchen – Telefon, Video oder vor Ort →'
+    else:
+        text = f'{CAL}<span>{html.escape(thema, quote=False)}</span>: kostenlose Beratung buchen →'
+    return (f'<a class="scta-txt" data-termin-link href="{html.escape(link(thema, seite))}" '
+            f'style="text-decoration:none">{text}</a>')
+
+
+def bearbeiten(pfad: str) -> bool:
+    seite = os.path.relpath(pfad, ROOT)
+    s = open(pfad, encoding='utf-8').read()
+    if 'data-termin-link' in s or 'id="stickyCta"' not in s:
+        return False
+    alt = s
+    # Variante 1: <div class="scta-txt">★<span>Thema</span> – Text</div>
+    s = re.sub(r'<div class="scta-txt">(.*?)</div>', lambda m: neu_scta(m, seite), s, count=1, flags=re.S)
+    # Variante 2: <div class="sticky-cta-text"><strong>…</strong><span>…</span></div>
+    s = re.sub(r'<div class="sticky-cta-text">.*?</div>',
+               f'<a class="sticky-cta-text" data-termin-link href="{link("", seite)}" style="text-decoration:none;display:block">'
+               f'<strong>{CAL} Kostenlose Beratung buchen →</strong><span>Termin online wählen – Telefon, Video oder vor Ort</span></a>',
+               s, count=1, flags=re.S)
+    if s != alt:
+        open(pfad, 'w', encoding='utf-8').write(s)
+        return True
+    return False
+
+
+if __name__ == '__main__':
+    dateien = sys.argv[1:] or [os.path.join(d, f) for d, _, fs in os.walk(ROOT) if '/tools' not in d and '/.git' not in d for f in fs if f.endswith('.html')]
+    n = sum(bearbeiten(f if os.path.isabs(f) else ROOT + f) for f in dateien)
+    print(n, 'Seiten geändert')

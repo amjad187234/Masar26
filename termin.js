@@ -70,6 +70,12 @@
 
   var t0 = Date.now();
   var s = { art: null, sprache: null, tag: null, zeit: null, name: '', tel: '', mail: '', firma: '', adresse: '', ort: '', thema: '', info: '' };
+  // Thema aus dem Link der Leistungsseite (?thema=LKW-Beschriftung Berlin); „Werbeagentur Bernau“ → Ort
+  try {
+    var q = (new URLSearchParams(location.search).get('thema') || '').slice(0, 80).trim();
+    var wa = /^Werbeagentur (.+)$/.exec(q);
+    if (wa) s.ort = wa[1]; else if (q) s.thema = q;
+  } catch (e) {}
   var step = 0, tageCache = {};
   var box = el('div', 'tm'); root.innerHTML = ''; root.appendChild(box);
 
@@ -96,6 +102,7 @@
   }
 
   function stepArt() {
+    if (s.thema) box.appendChild(el('div', 'tm-sum', 'Thema: <b>' + s.thema.replace(/[<>&"]/g, '') + '</b>'));
     frage('Wie möchten Sie beraten werden?');
     var g = el('div', 'tm-grid');
     ARTEN.forEach(function (a) {
@@ -197,7 +204,7 @@
     else box.appendChild(feld('Ihr Ort', 'ort', 'text', 'z. B. Köln oder 13349', false));
     var tw = el('label'); tw.style.display = 'block'; tw.appendChild(el('span', 'tm-sub', 'Worum geht es? <small>(optional)</small>'));
     var sel = el('select', 'tm-in'); sel.appendChild(txt('option', '', '– bitte wählen –')); sel.firstChild.value = '';
-    THEMEN.forEach(function (t) { var o = txt('option', '', t); o.value = t; if (s.thema === t) o.selected = true; sel.appendChild(o); });
+    (s.thema && THEMEN.indexOf(s.thema) < 0 ? [s.thema].concat(THEMEN) : THEMEN).forEach(function (t) { var o = txt('option', '', t); o.value = t; if (s.thema === t) o.selected = true; sel.appendChild(o); });
     sel.addEventListener('change', function () { s.thema = sel.value; }); tw.appendChild(sel); box.appendChild(tw);
     box.appendChild(feld('Nachricht', 'info', 'area', 'z. B. Maße, Wunschtermin für die Umsetzung, Fragen …', false));
     var hp = el('input'); hp.type = 'text'; hp.name = 'website'; hp.tabIndex = -1; hp.autocomplete = 'off'; hp.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px'; hp.setAttribute('aria-hidden', 'true'); box.appendChild(hp);

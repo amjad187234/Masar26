@@ -25,6 +25,7 @@ Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
 Aufruf jeweils `python3 tools/folien/<skript>.py`. Danach immer:
 
 1. `python3 tools/add_assistent.py` – baut den Anfrage-Assistenten ein (idempotent, `--dry` zum Prüfen)
+   und `python3 tools/sticky_termin.py` – untere Leiste mit Link „Kostenlose Beratung buchen“ (Thema der Seite)
 2. Vorschaubilder/Meta: `python3 tools/og/og_cards.py add <seite.html> <bild.webp|-> "<Kategorie>" "<Überschrift>" "<Unterzeile>"`
    (nur Meta-Tags: `og_cards.py meta <seite.html> "<Überschrift>"`)
 3. Neue Seiten in `sitemap.xml`, ggf. `llms.txt` und `einsatzgebiete.html` eintragen, IndexNow melden.
