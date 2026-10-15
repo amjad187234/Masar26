@@ -112,7 +112,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && csrf_ok()) {
     $akt = (string) ($_POST['aktion'] ?? '');
     if ($akt === 'speichern' && $nr !== '') {
         $st = (string) ($_POST['status'] ?? 'neu'); if (!isset(ANF_STATUS[$st])) $st = 'neu';
-        $db->prepare('UPDATE anfragen SET status = ?, notiz = ?, geaendert = ? WHERE nr = ?')->execute([$st, mb_substr((string) ($_POST['notiz'] ?? ''), 0, 5000), time(), $nr]);
+        $db->prepare("UPDATE anfragen SET status = ?, notiz = ?, geaendert = ?, erste_reaktion = COALESCE(erste_reaktion, CASE WHEN ? <> 'neu' THEN ? END) WHERE nr = ?")->execute([$st, mb_substr((string) ($_POST['notiz'] ?? ''), 0, 5000), time(), $st, time(), $nr]);
         $neu = trim((string) ($_POST['stadt'] ?? ''));
         if ($neu !== '') {   // Stadt von Hand korrigieren – Region wird daraus neu bestimmt
             [$sname, $sreg] = anf_stadt($neu);
@@ -124,6 +124,25 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && csrf_ok()) {
     if ($akt === 'loeschen' && $nr !== '') {
         $db->prepare('DELETE FROM anfragen WHERE nr = ?')->execute([$nr]);
         header('Location: anfragen.php?geloescht=' . rawurlencode($nr)); exit;
+    }
+    if (in_array($akt, ['sek_aktiv', 'sek_tag', 'sek_woche'], true)) {
+        require_once dirname(__DIR__) . '/inc/sekretaer.php';
+        if ($akt === 'sek_aktiv') {
+            $r = sek_api('setWebhook', ['url' => 'https://masar-werbeagentur.de/telegram.php', 'secret_token' => sek_geheim('webhook'),
+                                        'allowed_updates' => ['message', 'callback_query'], 'drop_pending_updates' => true]);
+            sek_api('setMyCommands', ['commands' => [
+                ['command' => 'heute', 'description' => 'مواعيد ومهام اليوم'], ['command' => 'morgen', 'description' => 'مواعيد بكرا'],
+                ['command' => 'termine', 'description' => 'المواعيد الجاية'], ['command' => 'offen', 'description' => 'الطلبات المفتوحة'],
+                ['command' => 'bericht', 'description' => 'تقرير الأسبوع'], ['command' => 'hilfe', 'description' => 'شو بيعمل السكرتير'],
+            ]]);
+            $ok = !empty($r['ok']);
+            if ($ok) sek_senden(sek_hilfe());
+            $hinweis = $ok ? '<div class="ok">Sekretär aktiviert – Tasten und Befehle funktionieren jetzt. Eine Begrüßung ist in Telegram.</div>'
+                           : '<div class="err">Aktivierung fehlgeschlagen: ' . h((string) ($r['description'] ?? 'keine Verbindung')) . '</div>';
+        } else {
+            $ok = sek_senden($akt === 'sek_tag' ? sek_tagesbericht() : sek_wochenbericht(true));
+            $hinweis = $ok ? '<div class="ok">Bericht gesendet – bitte in Telegram prüfen.</div>' : '<div class="err">Senden fehlgeschlagen.</div>';
+        }
     }
     if ($akt === 'tg_test') {
         $ok = anf_telegram_senden((string) ($K['telegram_token'] ?? ''), (string) ($K['telegram_chat'] ?? ''), '✅ Test von masar-werbeagentur.de – Benachrichtigungen funktionieren.');
@@ -140,6 +159,28 @@ if (isset($_GET['export'])) {
     foreach ($db->query('SELECT * FROM anfragen ORDER BY id DESC') as $r)
         fputcsv($o, [$r['nr'], date('d.m.Y H:i', (int) $r['erstellt']), ANF_STATUS[$r['status']] ?? $r['status'], $r['quelle'], $r['name'], $r['firma'], $r['email'], $r['telefon'], $r['ort'], $r['stadt'] ?? '', $r['region'] ?? '', $r['leistung'], $r['notiz']], ';');
     exit;
+}
+
+function sek_einstellungen(): string
+{
+    require_once dirname(__DIR__) . '/inc/sekretaer.php';
+    $f = static fn(string $a, string $t, string $cls = '') => '<form method="post" style="display:inline-block;margin:0 8px 8px 0"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="aktion" value="' . $a . '"><button class="' . $cls . '">' . $t . '</button></form>';
+    $wh = sek_api('getWebhookInfo', []);
+    $aktiv = !empty($wh['result']['url']);
+    $letzt = sek_letzter_cron();
+    $cron = 'wget -q -O /dev/null "https://masar-werbeagentur.de/cron.php?k=' . sek_geheim('cron') . '"';
+    return '<div class="k"><h2>🤖 Telegram-Sekretär</h2>'
+        . '<p>Tasten &amp; Befehle: ' . ($aktiv ? '✅ aktiv' : '❌ noch nicht aktiviert') . ' · Zeitplan (Cronjob): '
+        . ($letzt > time() - 900 ? '✅ läuft (zuletzt ' . date('H:i', $letzt) . ')' : ($letzt ? '⚠️ zuletzt ' . date('d.m. H:i', $letzt) : '❌ noch nicht eingerichtet')) . '</p>'
+        . '<p class="m">Der Sekretär schickt jede neue Anfrage mit Status-Tasten, erinnert 30 Min. vor jedem Termin, schickt Kunden 24 h vorher eine Erinnerungs-E-Mail, '
+        . 'jeden Morgen um 8 Uhr einen Tagesbericht und montags einen Wochenbericht mit Verbesserungsvorschlägen. Befehle: /heute /morgen /termine /offen /bericht /hilfe.</p>'
+        . $f('sek_aktiv', $aktiv ? 'Sekretär neu verbinden' : 'Sekretär aktivieren')
+        . $f('sek_tag', 'Tagesbericht jetzt senden', 'btn l') . $f('sek_woche', 'Wochenbericht jetzt senden', 'btn l')
+        . '<h2 style="margin-top:14px">Zeitplan einrichten (einmalig)</h2>'
+        . '<ol class="m"><li>Hostinger → Website → <b>Erweitert → Cron-Jobs</b> (Cron Jobs).</li><li>„Benutzerdefiniert“ wählen, Zeit: <b>alle 5 Minuten</b> (*/5 * * * *).</li>'
+        . '<li>Diesen Befehl einfügen und speichern:</li></ol>'
+        . '<textarea readonly rows="3" style="width:100%;font-family:monospace;font-size:13px" onclick="this.select()">' . h($cron) . '</textarea>'
+        . '<p class="m">Der Schlüssel im Befehl ist geheim (aus dem Bot-Token abgeleitet) – nicht weitergeben.</p></div>';
 }
 
 // ─── Einstellungen ──────────────────────────────────────────────────────
@@ -166,7 +207,8 @@ if (($_GET['ansicht'] ?? '') === 'einstellungen') {
         . '<li>Chat-ID eintragen, speichern, „Test senden“.</li></ol>'
         . '<p class="m">Die Telegram-Nachricht enthält nur Anfragenummer, Leistung, Ort und Quelle – keine Namen, Telefonnummern oder E-Mails.</p>'
         . $chats . '<div class="row" style="max-width:520px">' . ($tok !== '' ? '<a class="btn l" href="anfragen.php?ansicht=einstellungen&chatsuche=1">Chat-ID suchen</a>' : '')
-        . ($tok !== '' && $chat !== '' ? '<form method="post"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="aktion" value="tg_test"><button>Test senden</button></form>' : '') . '</div></div>');
+        . ($tok !== '' && $chat !== '' ? '<form method="post"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="aktion" value="tg_test"><button>Test senden</button></form>' : '') . '</div></div>'
+        . ($tok !== '' && $chat !== '' ? sek_einstellungen() : ''));
 }
 
 // ─── Detailansicht ──────────────────────────────────────────────────────

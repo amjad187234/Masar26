@@ -72,6 +72,11 @@ solche Festlegung im Bericht nennen.
   21 Tage im Voraus; Feiertage Berlin gesperrt, weitere Sperrtage per `termin_gesperrt` in
   kontakt-config.php. Termin = Anfrage mit Spalte `termin`; Status „Kein Auftrag“ oder Löschen gibt
   die Zeit frei. Footer-Link „Kostenlose Beratung buchen“ auf allen Seiten.
+- Telegram-Sekretär `inc/sekretaer.php` (Nachrichten auf Arabisch, ohne Personendaten): neue Anfrage/Termin
+  mit Status-Tasten, Erinnerung 30 Min. vor Termin, Kunden-Erinnerungsmail 24 h vorher, „Wie war's?“ nach
+  dem Termin, Tagesbericht 8 Uhr, Wochenbericht montags mit Vorschlägen (nur aus eigenen Zahlen).
+  Befehle /heute /morgen /termine /offen /bericht /hilfe über Webhook `telegram.php` (Secret-Token +
+  Chat-Prüfung). Zeitplan: `cron.php?k=…` per Hostinger-Cronjob alle 5 Min. (Schlüssel in Einstellungen).
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

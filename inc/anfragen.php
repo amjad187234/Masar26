@@ -86,7 +86,7 @@ function anf_db(): ?PDO
         $pdo->exec('CREATE INDEX IF NOT EXISTS i_stadt ON anfragen(stadt)');
         // Beratungstermine (nachgerüstet)
         $spalten = array_column($pdo->query('PRAGMA table_info(anfragen)')->fetchAll(), 'name');
-        foreach (['termin' => 'INTEGER', 'termin_dauer' => 'INTEGER', 'termin_art' => 'TEXT', 'sprache' => 'TEXT'] as $sp => $typ) {
+        foreach (['termin' => 'INTEGER', 'termin_dauer' => 'INTEGER', 'termin_art' => 'TEXT', 'sprache' => 'TEXT', 'erste_reaktion' => 'INTEGER'] as $sp => $typ) {
             if (!in_array($sp, $spalten, true)) $pdo->exec("ALTER TABLE anfragen ADD COLUMN $sp $typ");
         }
         $pdo->exec('CREATE INDEX IF NOT EXISTS i_termin ON anfragen(termin)');
@@ -200,13 +200,12 @@ function anf_speichern(array $f): string
         $id = (int) $db->lastInsertId();
         $nr = sprintf('ANF-%s-%04d', date('Y', $jetzt), $id);
         $db->prepare('UPDATE anfragen SET nr = ? WHERE id = ?')->execute([$nr, $id]);
-        $ortinfo = $stadt . ($region !== 'Sonstige' && $region !== $stadt ? ' (' . $region . ')' : '');
-        if ($termin !== null) {
-            anf_telegram_senden_k("📅 Neuer Beratungstermin {$nr}\n" . anf_termin_text($termin) . "\n"
-                . anf_kurz((string) ($f['termin_art'] ?? ''), 40) . ' · ' . anf_kurz((string) ($f['sprache'] ?? ''), 20) . "\n📍 " . $ortinfo . "\n"
-                . "https://masar-werbeagentur.de/admin/anfragen.php?nr=" . rawurlencode($nr));
-        } else {
-            anf_telegram($nr, (string) ($f['leistung'] ?? ''), $ortinfo, (string) ($f['quelle'] ?? 'Formular'));
+        // Benachrichtigung über den Telegram-Sekretär (Tasten, Arabisch, ohne Personendaten)
+        try {
+            require_once __DIR__ . '/sekretaer.php';
+            sek_neue_anfrage($nr);
+        } catch (Throwable $e) {
+            error_log('Sekretär: ' . $e->getMessage());
         }
         return $nr;
     } catch (Throwable $e) {
