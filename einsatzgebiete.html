@@ -693,7 +693,7 @@ const obs=new IntersectionObserver((entries,o)=>entries.forEach(e=>{if(e.isInter
 document.querySelectorAll('.svc-card,.why-item,.reveal,.reveal-l,.reveal-r').forEach(el=>obs.observe(el));
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const isOpen=btn.classList.contains('open');document.querySelectorAll('.faq-q').forEach(b=>b.classList.remove('open'));if(!isOpen)btn.classList.add('open');});});
 </script>
-<script src="/cookie-consent.js" defer></script>
+<script src="/cookie-consent.js?v=2" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>

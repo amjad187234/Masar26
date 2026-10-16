@@ -103,20 +103,20 @@
     div.innerHTML = [
       '<style>',
       ':where(#masar-cookie-root *){box-sizing:border-box;margin:0;padding:0;font-family:inherit;}',
-      '#masar-cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:99997;backdrop-filter:blur(3px);}',
+      '#masar-cookie-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:99997;}',
       '#masar-cookie-overlay.show{display:block;}',
       '#masar-cookie-banner{',
         'display:none;position:fixed;bottom:0;left:0;right:0;z-index:99998;',
         'background:#fff;border-top:3px solid #58d0bd;',
         'box-shadow:0 -8px 40px rgba(0,0,0,.15);',
-        'padding:1.5rem 2rem;',
+        'padding:.9rem 2rem;',
         'font-family:system-ui,-apple-system,sans-serif;',
         'max-height:90vh;overflow-y:auto;',
       '}',
       '#masar-cookie-banner.show{display:block;}',
-      '.mck-wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}',
-      '.mck-title{font-weight:800;font-size:1rem;color:#132e50;margin-bottom:.35rem;}',
-      '.mck-text{font-size:13px;color:#5a7070;line-height:1.55;max-width:680px;}',
+      '.mck-wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;max-width:1240px;margin:0 auto;}',
+      '.mck-title{font-weight:800;font-size:14px;color:#132e50;margin-bottom:.2rem;}',
+      '.mck-text{font-size:13px;color:#5a7070;line-height:1.5;max-width:680px;}',
       '.mck-text a{color:#177567;font-weight:600;text-decoration:underline;}',
       '.mck-actions{display:flex;gap:.7rem;flex-shrink:0;flex-wrap:wrap;}',
       /* KEIN DARK PATTERN — beide Buttons gleich gewichtet */
@@ -138,7 +138,7 @@
       '.mck-setting{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:.7rem 0;border-bottom:1px solid #f0f4f4;}',
       '.mck-setting-info strong{font-size:14px;color:#132e50;font-weight:700;}',
       '.mck-setting-info p{font-size:12px;color:#5a7070;margin-top:.2rem;line-height:1.45;}',
-      '.mck-toggle{min-width:52px;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;border:none;transition:all .2s;letter-spacing:.5px;}',
+      '.mck-toggle{min-width:52px;flex-shrink:0;white-space:nowrap;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;border:none;transition:all .2s;letter-spacing:.5px;}',
       '.mck-toggle.off{background:#e2ecec;color:#5a7070;}',
       '.mck-toggle.on{background:#58d0bd;color:#132e50;}',
       '.mck-toggle.locked{opacity:.6;cursor:not-allowed;}',
@@ -157,12 +157,12 @@
       '#masar-cookie-widget:hover{border-color:#58d0bd;transform:scale(1.1);}',
       /* RESPONSIVE */
       '@media(max-width:640px){',
-        '#masar-cookie-banner{padding:1rem 1.2rem;}',
-        '.mck-wrap{flex-direction:column;align-items:flex-start;}',
+        '#masar-cookie-banner{padding:.75rem 1rem calc(.75rem + env(safe-area-inset-bottom));}',
+        '.mck-wrap{flex-direction:column;align-items:stretch;gap:.6rem;}',
         '.mck-actions{width:100%;}',
-        '.mck-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}',
-        '.mck-btn{min-width:0;padding:12px 10px;white-space:normal;}',
-        '.mck-actions .mck-settings-btn{grid-column:1/-1;order:3;}',
+        '.mck-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.45rem;}',
+        '.mck-btn{min-width:0;padding:10px 4px;white-space:normal;font-size:12.5px;}',
+        '.mck-title{font-size:13.5px;}.mck-text{font-size:12.5px;}',
         '.mck-save-row{justify-content:stretch;}',
         '.mck-save-row .mck-btn{flex:1;min-width:0;}',
         '.mck-setting{flex-direction:row;align-items:center;}',
@@ -173,21 +173,19 @@
 
       '<div id="masar-cookie-overlay"></div>',
 
-      '<div id="masar-cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie-Einstellungen">',
+      '<div id="masar-cookie-banner" role="region" aria-label="Cookie-Hinweis">',
         '<div class="mck-wrap">',
           '<div>',
-            '<div class="mck-title">🍪 Wir respektieren Ihre Privatsphäre</div>',
+            '<div class="mck-title">🍪 Cookies</div>',
             '<p class="mck-text">',
-              'Wir verwenden Cookies. Notwendige Cookies sind für den Betrieb der Website erforderlich. ',
-              'Analyse- und Marketing-Cookies helfen uns, die Website zu verbessern – ',
-              'sie werden nur mit Ihrer Einwilligung gesetzt. ',
-              '<a href="/datenschutz.html" target="_blank">Datenschutzerklärung</a>',
+              'Notwendige Cookies brauchen wir für die Website. Analyse- und Marketing-Cookies setzen wir nur mit Ihrer Einwilligung. ',
+              '<a href="/datenschutz.html" target="_blank">Mehr erfahren</a>',
             '</p>',
           '</div>',
           '<div class="mck-actions">',
-            '<button class="mck-btn mck-reject" id="mck-reject">Alle ablehnen</button>',
-            '<button class="mck-btn mck-settings-btn" id="mck-settings-toggle">Einstellungen</button>',
-            '<button class="mck-btn mck-accept" id="mck-accept">Alle akzeptieren</button>',
+            '<button class="mck-btn mck-reject" id="mck-reject">Ablehnen</button>',
+            '<button class="mck-btn mck-settings-btn" id="mck-settings-toggle">Auswählen</button>',
+            '<button class="mck-btn mck-accept" id="mck-accept">Akzeptieren</button>',
           '</div>',
         '</div>',
 
@@ -227,9 +225,11 @@
   }
 
   // ─── SHOW / HIDE ──────────────────────────────────────────
-  function showBanner() {
+  // Erster Besuch: schmale Leiste ohne Abdunkeln – die Seite bleibt sichtbar und bedienbar.
+  // Nur das Einstellungsfenster (Zahnrad/Footer-Link) dunkelt den Hintergrund ab.
+  function showBanner(abdunkeln) {
     document.getElementById('masar-cookie-banner').classList.add('show');
-    document.getElementById('masar-cookie-overlay').classList.add('show');
+    if (abdunkeln) document.getElementById('masar-cookie-overlay').classList.add('show');
   }
   function hideBanner() {
     document.getElementById('masar-cookie-banner').classList.remove('show');
@@ -311,7 +311,7 @@
       toggleSwitch(marketingToggle, curr.marketing || false);
       analyticsState = curr.analytics || false;
       marketingState = curr.marketing || false;
-      showBanner();
+      showBanner(true);
       document.getElementById('mck-settings').classList.add('open');
     });
 
