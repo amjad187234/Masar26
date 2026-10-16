@@ -321,8 +321,8 @@ function sek_cron(): array
     }
 
     // 3) Nach dem Termin: „Wie war's?“ mit Status-Tasten (1 Stunde nach Ende, solange Status noch „neu“)
-    $st = $db->prepare("SELECT * FROM anfragen WHERE termin IS NOT NULL AND status = 'neu' AND termin + 60 * COALESCE(termin_dauer, 30) + 3600 < ? AND termin > ?");
-    $st->execute([$jetzt, $jetzt - 2 * 86400]);
+    // Zahlen direkt einsetzen (int): ein gebundener Parameter wäre Text, und SQLite wertet „Zahl < Text“ immer als wahr
+    $st = $db->query("SELECT * FROM anfragen WHERE termin IS NOT NULL AND status = 'neu' AND termin + 60 * COALESCE(termin_dauer, 30) + 3600 < " . (int) $jetzt . " AND termin > " . (int) ($jetzt - 2 * 86400));
     foreach ($st->fetchAll() as $r) {
         if ($tg && sek_einmal('nachher:' . $r['nr'], static fn() => sek_senden("📝 <b>كيف كان الموعد؟</b>\n" . sek_e(sek_wann((int) $r['termin'])) . ' · ' . sek_e((string) $r['termin_art']) . ' · 📍 ' . sek_e((string) $r['stadt']) . ' · ' . sek_e((string) $r['nr'])
                 . "\n\n<i>اختار شو صار، هيك بيضل التقرير مزبوط وبذكّرك تتابع.</i>", sek_tasten((string) $r['nr'])))) {
