@@ -316,6 +316,45 @@ function anf_mail(string $an, string $betreff, string $text, string $antwort_an 
     return @mail($an, $b, $rumpf, implode("\r\n", $kopf), '-f' . $von);
 }
 
+// ─── Status für Kunden (/status.html) ─────────────────────────────────
+// Kundenfreundliche Bezeichnung, Erklärung und Schritt im Ablauf (1–5)
+const ANF_STATUS_KUNDE = [
+    'neu'      => ['Eingegangen', 'Ihre Anfrage ist bei uns angekommen. Wir melden uns innerhalb von 24 Stunden, an Werktagen meist schneller.', 1],
+    'kontakt'  => ['In Bearbeitung', 'Wir sind mit Ihnen in Kontakt und klären die Details (Maße, Material, Gestaltung).', 2],
+    'angebot'  => ['Angebot verschickt', 'Ihr Angebot ist unterwegs. Fragen dazu? Antworten Sie einfach auf unsere E-Mail oder schreiben Sie per WhatsApp.', 3],
+    'auftrag'  => ['Auftrag bestätigt – in Arbeit', 'Danke für Ihren Auftrag! Wir gestalten, produzieren und stimmen den Montagetermin mit Ihnen ab.', 4],
+    'erledigt' => ['Fertig', 'Ihr Auftrag ist abgeschlossen. Wir freuen uns, wenn Sie wieder bei uns bestellen.', 5],
+    'verloren' => ['Abgeschlossen', 'Diese Anfrage ist abgeschlossen. Für ein neues Vorhaben stellen Sie einfach eine neue Anfrage.', 0],
+];
+
+/**
+ * Öffentlicher Status einer Anfrage – nur wenn Telefonnummer (mind. die letzten 6 Ziffern) oder E-Mail passt.
+ * Gibt KEINE Kontaktdaten zurück, nur Status, Leistung, Stadt, Datum und ggf. Termin. null = nicht gefunden.
+ */
+function anf_status_kunde(string $nr, string $kontakt): ?array
+{
+    $db = anf_db(); if (!$db) return null;
+    $nr = strtoupper(trim($nr)); $kontakt = trim($kontakt);
+    if (!preg_match('/^ANF-\d{4}-\d{4}$/', $nr) || $kontakt === '') return null;
+    $st = $db->prepare('SELECT * FROM anfragen WHERE nr = ?'); $st->execute([$nr]); $r = $st->fetch();
+    if (!$r) return null;
+    $ok = false;
+    if (strpos($kontakt, '@') !== false) {
+        $ok = $r['email'] !== '' && strcasecmp(trim((string) $r['email']), $kontakt) === 0;
+    } else {
+        $ein = preg_replace('/\D/', '', $kontakt) ?? ''; $gesp = preg_replace('/\D/', '', (string) $r['telefon']) ?? '';
+        $ok = strlen($ein) >= 6 && strlen($gesp) >= 6 && substr($gesp, -6) === substr($ein, -6);   // +49 176… = 0176…
+    }
+    if (!$ok) return null;
+    $k = ANF_STATUS_KUNDE[$r['status']] ?? ANF_STATUS_KUNDE['neu'];
+    return [
+        'nr' => $r['nr'], 'status' => $r['status'], 'titel' => $k[0], 'text' => $k[1], 'schritt' => $k[2],
+        'leistung' => (string) $r['leistung'], 'stadt' => (string) ($r['stadt'] ?? ''),
+        'datum' => date('d.m.Y', (int) $r['erstellt']), 'aktualisiert' => date('d.m.Y, H:i', (int) $r['geaendert']) . ' Uhr',
+        'termin' => !empty($r['termin']) ? anf_termin_text((int) $r['termin']) . ' · ' . $r['termin_art'] : '',
+    ];
+}
+
 /** Telegram-Hinweis ohne personenbezogene Daten. */
 function anf_telegram(string $nr, string $leistung, string $ort, string $quelle): bool
 {

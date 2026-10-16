@@ -111,7 +111,7 @@ def build():
   <div data-assistent></div>
   <noscript><p style="text-align:center">Schreiben Sie uns an <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a> oder per <a href="{w}">WhatsApp</a>.</p></noscript>
 </div></section>
-{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=4" defer></script>'}
+{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=5" defer></script>'}
 '''
     out = HEAD_A + meta + js(page) + js(bc) + js(fq) + HEAD_B
     out = out.replace('</head>', css + '\n</head>', 1) + body + '\n' + FOOT

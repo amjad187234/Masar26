@@ -92,6 +92,28 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <a href="/" class="btn btn-teal">← Zurück zur Startseite</a>
     <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20gerade%20eine%20Anfrage%20gesendet." target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
   </div>
+  <div id="danke-nr" hidden style="margin:1.2rem 0;padding:1rem 1.2rem;border:1px solid rgba(88,208,189,.45);border-radius:12px;background:rgba(88,208,189,.1);text-align:center">
+    <div style="font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:.75">Ihre Anfragenummer</div>
+    <div id="danke-nr-wert" style="font-size:24px;font-weight:800;margin:.2rem 0 .5rem;color:var(--teal)"></div>
+    <a id="danke-nr-link" href="/status.html" style="color:var(--teal);font-weight:700">Stand jederzeit ansehen →</a>
+  </div>
+  <script>
+  (function () {
+    var nr = (new URLSearchParams(location.search).get('nr') || '').toUpperCase();
+    if (!/^ANF-\d{4}-\d{4}$/.test(nr)) return;
+    document.getElementById('danke-nr').hidden = false;
+    document.getElementById('danke-nr-wert').textContent = nr;
+    document.getElementById('danke-nr-link').href = '/status.html?nr=' + encodeURIComponent(nr);
+    // Anfrage auf diesem Gerät merken – nur wenn im Assistenten „merken“ gewählt wurde
+    try {
+      var l = sessionStorage.getItem('masar-merken-leistung'), k = JSON.parse(localStorage.getItem('masar-kunde') || 'null');
+      if (l && k) {
+        k.anfragen = [{ nr: nr, leistung: l, datum: new Date().toLocaleDateString('de-DE') }].concat((k.anfragen || []).filter(function (a) { return a.nr !== nr; })).slice(0, 10);
+        localStorage.setItem('masar-kunde', JSON.stringify(k)); sessionStorage.removeItem('masar-merken-leistung');
+      }
+    } catch (e) {}
+  })();
+  </script>
   <p class="wa-hint">Dringlich? Rufen Sie uns direkt an: <a href="tel:01785143918" style="color:var(--teal);">0178 514 3918</a></p>
 </div>
 <nav class="legal" aria-label="Rechtliches">

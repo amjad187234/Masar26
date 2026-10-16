@@ -117,6 +117,8 @@
     + '.as-card label{font-size:13px;color:rgba(255,255,255,.8);display:flex;gap:.5rem;align-items:flex-start;line-height:1.45}.as-card label a,.as-card p a{color:#58d0bd}'
     + '.as-card input[type=file]{font-size:13px;color:rgba(255,255,255,.8);width:100%}'
     + '.as-hint{font-size:13px;color:rgba(255,255,255,.6);margin:.9rem 0 0}.as-more{color:#58d0bd;font-weight:600}'
+    + '.as-welcome{display:block;border-radius:10px;padding:.55rem .9rem;line-height:1.45}.as-welcome .as-more{color:var(--teal-ink,#177567)}'
+    + '.as-merk{display:flex;gap:.55rem;align-items:flex-start;margin-top:1rem;font-size:13.5px;line-height:1.45;color:var(--muted,#5a7070)}.as-merk input{margin-top:3px;width:18px;height:18px;flex-shrink:0}.as-merk a{color:var(--teal-ink,#177567)}'
     + '@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:1fr 1fr}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
@@ -125,6 +127,18 @@
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function txt(tag, cls, t) { var e = el(tag, cls); e.textContent = t; return e; }
   function store(k, v) { try { if (v === undefined) return JSON.parse(sessionStorage.getItem(k) || 'null'); sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
+
+  // Kunde auf diesem Gerät merken (nur mit Häkchen; localStorage, verlässt das Gerät nicht)
+  var KUNDE = 'masar-kunde';
+  function kLesen() { try { return JSON.parse(localStorage.getItem(KUNDE) || 'null'); } catch (e) { return null; } }
+  function kSchreiben(k) { try { localStorage.setItem(KUNDE, JSON.stringify(k)); } catch (e) {} }
+  function kVergessen() { try { localStorage.removeItem(KUNDE); } catch (e) {} }
+  function kAnfrage(nr, leistung) {
+    var k = kLesen(); if (!k || !nr) return;
+    var d = new Date(), heute = ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear();
+    k.anfragen = [{ nr: nr, leistung: leistung, datum: heute }].concat((k.anfragen || []).filter(function (a) { return a.nr !== nr; })).slice(0, 10);
+    kSchreiben(k);
+  }
 
   if (window.MasarAssistent) return;
   var api = [];
@@ -142,6 +156,13 @@
     var t0 = String(Date.now());
     var s = store(key) || { thema: null, wahl: null, detail: null, logo: null, info: '', wer: null, wann: null, ort: root.getAttribute('data-ort') || '', name: '', tel: '', mail: '', firma: '' };
     if (T[sv[0]]) { s.thema = sv[0]; if (sv[1] != null && T[sv[0]].a[+sv[1]]) s.wahl = +sv[1]; }
+    var kunde = kLesen();
+    if (kunde && !s.name) { s.name = kunde.name || ''; s.firma = kunde.firma || ''; s.tel = kunde.tel || ''; s.mail = kunde.mail || ''; if (!s.ort) s.ort = kunde.ort || ''; }
+    if (s.merken == null) s.merken = !!kunde;
+    function merken() {
+      if (s.merken) { var k = kLesen() || {}; k.name = s.name.trim(); k.firma = s.firma.trim(); k.tel = s.tel.trim(); k.mail = s.mail.trim(); k.ort = s.ort.trim(); kSchreiben(k); kunde = k; }
+      else if (kLesen()) { kVergessen(); kunde = null; }
+    }
     var minStep = T[sv[0]] ? (sv[1] != null ? 3 : 2) : 1;
     var step = minStep;
     if (s.thema && s.wahl != null && store(key)) step = Math.max(minStep, 3);
@@ -162,6 +183,10 @@
       var bar = el('div', 'as-bar', '<i style="width:' + Math.round(n / total * 100) + '%"></i>'); top.appendChild(bar);
       box.appendChild(top);
       if (step > 2 && A()) box.appendChild(txt('div', 'as-chip', T[s.thema].name + ' · ' + A()[0]));
+      if (step === minStep && kunde && kunde.name) {
+        box.appendChild(el('div', 'as-chip as-welcome', '👋 Willkommen zurück, ' + kunde.name.split(' ')[0].replace(/[<>&"]/g, '') + '! Ihre Kontaktdaten sind schon eingetragen.'
+          + (kunde.anfragen && kunde.anfragen.length ? ' <a href="/status.html" class="as-more">Status Ihrer Anfragen →</a>' : '')));
+      }
 
       if (step === 1) {
         box.appendChild(head('Worum geht es?'));
@@ -203,7 +228,11 @@
         field('Firma', 'optional', 'firma', 'input', 'falls gewerblich', 80, 'organization', two);
         field('Telefon / WhatsApp', 'optional', 'tel', 'input', '+49 …', 40, 'tel', two, 'tel');
         field('E-Mail', 'für Antwort per E-Mail', 'mail', 'input', 'info@beispiel.de', 100, 'email', two, 'email');
-        nav(true, function () { return s.name.trim().length > 1; }, 'Zur Zusammenfassung →', 'Bitte Ihren Namen eintragen.');
+        var mk = el('label', 'as-merk'); var mc = el('input'); mc.type = 'checkbox'; mc.checked = !!s.merken;
+        mc.addEventListener('change', function () { s.merken = mc.checked; save(); });
+        mk.appendChild(mc); mk.appendChild(el('span', '', 'Meine Kontaktdaten <b>auf diesem Gerät</b> merken – für die nächste Anfrage und den <a href="/status.html" target="_blank" rel="noopener">Anfrage-Status</a>. Jederzeit löschbar, wird nicht an uns übertragen.'));
+        box.appendChild(mk);
+        nav(true, function () { if (s.name.trim().length > 1) { merken(); return true; } return false; }, 'Zur Zusammenfassung →', 'Bitte Ihren Namen eintragen.');
       } else {
         result();
       }
@@ -277,6 +306,7 @@
         var done = false;
         function open(nr) {
           if (done) return; done = true;
+          if (s.merken && nr) kAnfrage(nr, T[s.thema].name + ' – ' + a[0]);
           var text = nr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + nr + '):') : msg;
           var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
           try { sessionStorage.removeItem(key); } catch (e) {}
@@ -303,7 +333,7 @@
         var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s.mail.trim());
         if (!ok) { ev.preventDefault(); me.innerHTML = 'Für den Versand per E-Mail brauchen wir Ihre E-Mail-Adresse – <button type="button" class="as-edit">jetzt eintragen</button>.'; me.querySelector('button').addEventListener('click', function () { go(5); }); return; }
         if (!cb.checked) { ev.preventDefault(); me.textContent = 'Bitte der Datenverarbeitung zustimmen.'; return; }
-        try { sessionStorage.removeItem(key); } catch (e) {}
+        try { sessionStorage.removeItem(key); if (s.merken) sessionStorage.setItem('masar-merken-leistung', T[s.thema].name + ' – ' + a[0]); } catch (e) {}
       });
       send.appendChild(c2);
       res.appendChild(send);
@@ -312,7 +342,7 @@
       res.appendChild(hint);
       box.appendChild(res);
       var n = el('div', 'as-nav'); var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(5); }); n.appendChild(b);
-      var r = el('button', 'as-skip', 'Neue Anfrage starten'); r.type = 'button'; r.addEventListener('click', function () { try { sessionStorage.removeItem(key); } catch (e) {} s = { thema: T[sv[0]] ? sv[0] : null, wahl: null, detail: null, logo: null, info: '', wer: null, wann: null, ort: root.getAttribute('data-ort') || '', name: s.name, tel: s.tel, mail: s.mail, firma: s.firma }; minStep = T[sv[0]] ? 2 : 1; go(minStep); });
+      var r = el('button', 'as-skip', 'Neue Anfrage starten'); r.type = 'button'; r.addEventListener('click', function () { try { sessionStorage.removeItem(key); } catch (e) {} s = { thema: T[sv[0]] ? sv[0] : null, wahl: null, detail: null, logo: null, info: '', wer: null, wann: null, ort: root.getAttribute('data-ort') || '', name: s.name, tel: s.tel, mail: s.mail, firma: s.firma, merken: s.merken }; minStep = T[sv[0]] ? 2 : 1; go(minStep); });
       n.appendChild(r); box.appendChild(n);
     }
     api.push(function (thema, wahl) {

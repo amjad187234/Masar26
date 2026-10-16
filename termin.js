@@ -57,6 +57,7 @@
     + '.tm-btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;padding:12px 18px;font:700 15px Barlow,sans-serif;text-decoration:none;cursor:pointer;background:#fff;color:#132e50}.tm-btn.tm-wa{background:#25d366;color:#08331a}'
     + '.tm-load{color:var(--muted,#5a7070);font-size:14px;margin:.6rem 0}'
     + '@media(max-width:620px){.tm{padding:1.1rem}.tm-two{grid-template-columns:1fr}.tm-nav .tm-go{margin-right:64px}}';
+  css += '.tm-ok{animation:masarIn .45s ease both}@keyframes masarIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.tm-ok{animation:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
@@ -70,6 +71,13 @@
 
   var t0 = Date.now();
   var s = { art: null, sprache: null, tag: null, zeit: null, name: '', tel: '', mail: '', firma: '', adresse: '', ort: '', thema: '', info: '' };
+  // Kunde auf diesem Gerät merken (nur mit Häkchen; localStorage)
+  var KUNDE = 'masar-kunde';
+  function kLesen() { try { return JSON.parse(localStorage.getItem(KUNDE) || 'null'); } catch (e) { return null; } }
+  function kSchreiben(k) { try { localStorage.setItem(KUNDE, JSON.stringify(k)); } catch (e) {} }
+  var kunde = kLesen();
+  if (kunde) { s.name = kunde.name || ''; s.tel = kunde.tel || ''; s.mail = kunde.mail || ''; s.firma = kunde.firma || ''; s.ort = kunde.ort || ''; }
+  s.merken = !!kunde;
   // Thema aus dem Link der Leistungsseite (?thema=LKW-Beschriftung Berlin); „Werbeagentur Bernau“ → Ort
   try {
     var q = (new URLSearchParams(location.search).get('thema') || '').slice(0, 80).trim();
@@ -109,6 +117,7 @@
   }
 
   function stepArt() {
+    if (kunde && kunde.name) box.appendChild(el('div', 'tm-sum', '👋 Willkommen zurück, <b>' + kunde.name.split(' ')[0].replace(/[<>&"]/g, '') + '</b>! Ihre Kontaktdaten sind schon eingetragen.'));
     if (s.thema) box.appendChild(el('div', 'tm-sum', 'Thema: <b>' + s.thema.replace(/[<>&"]/g, '') + '</b>'));
     frage('Wie möchten Sie beraten werden?');
     var g = el('div', 'tm-grid');
@@ -216,6 +225,9 @@
     sel.addEventListener('change', function () { s.thema = sel.value; }); tw.appendChild(sel); box.appendChild(tw);
     box.appendChild(feld('Nachricht', 'info', 'area', 'z. B. Maße, Wunschtermin für die Umsetzung, Fragen …', false));
     var hp = el('input'); hp.type = 'text'; hp.name = 'website'; hp.tabIndex = -1; hp.autocomplete = 'off'; hp.style.cssText = 'position:absolute;left:-9999px;width:1px;height:1px'; hp.setAttribute('aria-hidden', 'true'); box.appendChild(hp);
+    var mk = el('label', 'tm-chk', '<input type="checkbox"' + (s.merken ? ' checked' : '') + '> <span>Meine Kontaktdaten <b>auf diesem Gerät</b> merken – für die nächste Buchung und den <a href="/status.html" target="_blank" rel="noopener">Anfrage-Status</a>. Jederzeit löschbar.</span>');
+    mk.querySelector('input').addEventListener('change', function (e) { s.merken = e.target.checked; });
+    box.appendChild(mk);
     var ck = el('label', 'tm-chk', '<input type="checkbox"> <span>Ich bin einverstanden, dass meine Angaben zur Terminvereinbarung gespeichert und verarbeitet werden (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>).</span>');
     box.appendChild(ck);
     var err = el('p', 'tm-err'); err.setAttribute('role', 'alert'); box.appendChild(err);
@@ -255,6 +267,13 @@
   }
 
   function fertig(j) {
+    try {
+      if (s.merken) {
+        var k = kLesen() || {}; k.name = s.name.trim(); k.tel = s.tel.trim(); k.mail = s.mail.trim(); k.firma = s.firma.trim(); if (s.ort) k.ort = s.ort.trim();
+        k.anfragen = [{ nr: j.nr, leistung: 'Beratung' + (s.thema ? ': ' + s.thema : '') + ' · ' + j.termin, datum: new Date().toLocaleDateString('de-DE') }].concat((k.anfragen || []).filter(function (a) { return a.nr !== j.nr; })).slice(0, 10);
+        kSchreiben(k);
+      } else if (kunde) localStorage.removeItem(KUNDE);
+    } catch (e) {}
     box.innerHTML = '';
     var ok = el('div', 'tm-ok');
     ok.appendChild(txt('h4', '', 'Termin gebucht – danke!'));
@@ -264,6 +283,7 @@
       + (s.mail ? ' Eine Bestätigung ist per E-Mail unterwegs.' : '')));
     var btns = el('div', 'tm-btns');
     var cal = txt('a', 'tm-btn', 'In Kalender eintragen'); cal.href = ics(j); cal.download = 'Termin-Masar-' + j.nr + '.ics'; btns.appendChild(cal);
+    var stl = txt('a', 'tm-btn', 'Status ansehen'); stl.href = '/status.html?nr=' + encodeURIComponent(j.nr); btns.appendChild(stl);
     var wa = txt('a', 'tm-btn tm-wa', 'Verschieben per WhatsApp'); wa.href = 'https://wa.me/491785143918?text=' + encodeURIComponent('Hallo, ich möchte meinen Beratungstermin ' + j.nr + ' (' + j.termin + ') verschieben.');
     wa.target = '_blank'; wa.rel = 'noopener noreferrer'; btns.appendChild(wa);
     ok.appendChild(btns);

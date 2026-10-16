@@ -77,6 +77,11 @@ solche Festlegung im Bericht nennen.
   dem Termin, Tagesbericht 8 Uhr, Wochenbericht montags mit Vorschlägen (nur aus eigenen Zahlen).
   Befehle /heute /morgen /termine /offen /bericht /hilfe über Webhook `telegram.php` (Secret-Token +
   Chat-Prüfung). Zeitplan: `cron.php?k=…` per Hostinger-Cronjob alle 5 Min. (Schlüssel in Einstellungen).
+- Kundenbindung: „Auf diesem Gerät merken“ (Häkchen, localStorage `masar-kunde`: Kontaktdaten + Anfragenummern)
+  in Assistent und Terminbuchung → „Willkommen zurück“ und vorausgefüllte Felder. Anfrage-Status für Kunden:
+  `status.html` + `status.js` + `status.php` (Nummer + Telefon/E-Mail, nur Status/Leistung/Ort/Termin,
+  20 Abfragen/h je IP); Link in Bestätigungsmails, danke.html (?nr=), Terminbestätigung und Footer.
+  Status in der Übersicht aktuell halten – Kunden sehen ihn.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

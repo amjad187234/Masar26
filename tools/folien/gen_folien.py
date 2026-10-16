@@ -240,7 +240,7 @@ def build_f(p):
     if p.get('hero_mobile'):
         html_out = html_out.replace('</head>', '<style>@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.8rem}.hero-visual .hero-shot{width:100%;max-width:340px;height:auto;margin:0 auto;display:block;transform:none}}</style>\n</head>', 1)
     if p['file'] == 'fensterfolie-berlin.html':
-        html_out = html_out.replace('</body>', '<script src="/assistent.js?v=4" defer></script>\n</body>', 1)
+        html_out = html_out.replace('</body>', '<script src="/assistent.js?v=5" defer></script>\n</body>', 1)
     html_out = re.sub(r'<div class="scta-txt">.*?</div>', f'<div class="scta-txt">{I["star"]}<span>{p["sticky"][0]}</span> – {p["sticky"][1]}</div>', html_out, count=1, flags=re.S)
     html_out = html_out.replace('<a href="tel:01785143918" class="scta-btn primary">', f'<a href="{w}" target="_blank" rel="noopener noreferrer" class="scta-btn primary">', 1)
     html_out = re.sub(r'(<a href="https://wa\.me/[^"]*" target="_blank" rel="noopener noreferrer" class="scta-btn primary">)<svg.*?</svg>0178 514 3918', lambda m: m.group(1) + I['wa'] + 'WhatsApp', html_out, count=1, flags=re.S)

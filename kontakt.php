@@ -319,6 +319,7 @@ if ($erfolg) {
             . "vielen Dank für Ihre Anfrage – sie ist bei uns angekommen"
             . ($anfrage_nr !== '' ? " (Anfragenummer {$anfrage_nr})" : '') . ". Wir melden uns "
             . "innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.\n\n"
+            . ($anfrage_nr !== '' ? "Den Stand Ihrer Anfrage sehen Sie jederzeit hier (mit Ihrer Telefonnummer oder E-Mail):\nhttps://masar-werbeagentur.de/status.html?nr={$anfrage_nr}\n\n" : '')
             . "Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter 0178 514 3918.\n\n"
             . "Mit freundlichen Grüßen\n\n"
             . masar_signatur_text()
@@ -331,6 +332,7 @@ if ($erfolg) {
             . '<p style="margin:0 0 14px;">vielen Dank für Ihre Anfrage – sie ist bei uns angekommen'
             . ($anfrage_nr !== '' ? ' (Anfragenummer <strong>' . htmlspecialchars($anfrage_nr, ENT_QUOTES, 'UTF-8') . '</strong>)' : '') . '. '
             . 'Wir melden uns innerhalb von 24 Stunden bei Ihnen, an Werktagen meist schneller.</p>'
+            . ($anfrage_nr !== '' ? '<p style="margin:0 0 14px;">Den Stand Ihrer Anfrage sehen Sie jederzeit hier: <a href="https://masar-werbeagentur.de/status.html?nr=' . rawurlencode($anfrage_nr) . '" style="color:#177567;font-weight:bold;">Anfrage-Status ansehen</a></p>' : '')
             . '<p style="margin:0 0 14px;">Wenn es eilt, erreichen Sie uns telefonisch oder per WhatsApp unter '
             . '<a href="tel:+491785143918" style="color:#132e50;font-weight:bold;text-decoration:none;">0178 514 3918</a>.</p>'
             . '<p style="margin:0 0 18px;">Mit freundlichen Grüßen</p>'
@@ -377,4 +379,4 @@ if ($erfolg) {
 }
 
 // Auch wenn der Mailversand scheitert: gespeicherte Anfragen gehen nicht verloren (Übersicht /admin/anfragen.php)
-weiter(($erfolg || $anfrage_nr !== '') ? DANKE_SEITE : FEHLER_SEITE);
+weiter(($erfolg || $anfrage_nr !== '') ? DANKE_SEITE . ($anfrage_nr !== '' ? '?nr=' . rawurlencode($anfrage_nr) : '') : FEHLER_SEITE);

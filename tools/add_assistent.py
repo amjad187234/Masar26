@@ -52,7 +52,7 @@ def inject(f, start, nrw, ort, dry=False):
     ins_at = m.end() + wrap.start() if wrap else fs
     s2 = s[:ins_at] + box + s[ins_at:fs] + det_a + s[fs:fe] + det_b + s[fe:]
     if 'assistent.js' not in s2:
-        s2 = s2.replace('</body>', '<script src="/assistent.js?v=4" defer></script>\n</body>', 1)
+        s2 = s2.replace('</body>', '<script src="/assistent.js?v=5" defer></script>\n</body>', 1)
     if not dry: open(p, 'w', encoding='utf-8').write(s2)
     return 'ok' + (' (wrap)' if wrap else ' (direkt)')
 
