@@ -10,9 +10,9 @@
   root.setAttribute('data-tm-ready', '1');
 
   var ARTEN = [
-    ['telefon', 'Telefon', 'Wir rufen Sie an', 'M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z'],
-    ['video', 'WhatsApp-Video', 'Sie zeigen uns Fassade, Fenster oder Entwurf', 'M3 7h12v10H3zM15 10l6-3v10l-6-3'],
-    ['vorort', 'Vor Ort (Berlin)', 'Wir kommen zu Ihnen, sehen uns alles an und messen', 'M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z']
+    ['telefon', 'Telefon', 'Wir rufen Sie an', '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>'],
+    ['video', 'WhatsApp-Video', 'Sie zeigen uns Fassade, Fenster oder Entwurf', '<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>'],
+    ['vorort', 'Vor Ort (Berlin)', 'Wir kommen zu Ihnen, sehen uns alles an und messen', '<path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/>']
   ];
   var SPRACHEN = [['de', 'Deutsch'], ['en', 'English'], ['ar', 'العربية'], ['tr', 'Türkçe']];
   var THEMEN = ['Leuchtreklame', 'Schilder', 'Schaufenster & Fensterfolie', 'Fahrzeugbeschriftung', 'Banner & Druck', 'Logo & Webdesign', 'Social Media', 'Sonstiges'];
@@ -62,7 +62,7 @@
 
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function txt(tag, cls, t) { var e = el(tag, cls); e.textContent = t; return e; }
-  function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="' + d + '"/></svg>'; }
+  function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (d.charAt(0) === '<' ? d : '<path d="' + d + '"/>') + '</svg>'; }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function datum(tag) { var p = tag.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function tagText(tag) { var d = datum(tag); return TAGE[d.getDay()] + ', ' + pad(d.getDate()) + '.' + pad(d.getMonth() + 1) + '.' + d.getFullYear(); }

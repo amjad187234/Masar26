@@ -20,51 +20,51 @@
 
   // a: [Auswahl, Seite Berlin, ab-Preis Berlin, Hinweis, Titel, ab-Preis NRW, Einheit, Seite NRW]
   var T = {
-    schild: { name: 'Schild & Leuchtreklame', icon: 'M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.5.4.8 1 .9 1.6l.1.6h5.2l.1-.6c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z', q: 'Was brauchen Sie?', a: [
+    schild: { name: 'Schild & Leuchtreklame', icon: '<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/>', q: 'Was brauchen Sie?', a: [
       ['Firmen- oder Türschild', '/schilder-berlin.html', 45, 'Alu-Dibond, Acryl oder Edelstahl – passend zum Eingang.', 'Firmen- & Türschilder', 59, '', '/schilder-nrw.html'],
       ['Leuchtreklame außen', '/leuchtreklame-berlin.html', 199, 'Leuchtbuchstaben oder Leuchtkasten – Preis nach Größe und Montage.', 'Leuchtreklame', 229, ' / Buchstabe', '/leuchtreklame-nrw.html'],
       ['LED-Neon innen', '/leuchtreklame-berlin.html', 249, 'Schriftzug oder Logo für Wand oder Schaufenster, inkl. Entwurf.', 'LED-Neon-Schriftzug', null, '', '/leuchtreklame-nrw.html'],
       ['Praxis- oder Kanzleischild', '/praxisbeschilderung-berlin.html', null, 'Schild, Türschild und Sichtschutz – auch als Paket.', 'Praxis- & Kanzleischild', null, '', '/schilder-nrw.html']
     ], d: ['Wo soll es hin?', ['Innen', 'Außen an der Fassade', 'Noch unklar']] },
-    schaufenster: { name: 'Schaufenster', icon: 'M3 4h18v12H3zM8 20h8M12 16v4', q: 'Was soll aufs Schaufenster?', a: [
+    schaufenster: { name: 'Schaufenster', icon: '<path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/>', q: 'Was soll aufs Schaufenster?', a: [
       ['Logo & Öffnungszeiten', '/schaufensterbeschriftung-berlin.html', 149, 'Klassische Beschriftung aus Folie – sauber, langlebig, wieder entfernbar.', 'Schaufensterbeschriftung', 179, '', '/schaufensterbeschriftung-nrw.html'],
       ['Vollflächiger Druck', '/schaufensterbeschriftung-berlin.html', null, 'Bedruckte Folie oder Lochfolie – Preis nach Fläche.', 'Bedruckte Schaufensterfolie', null, '', '/schaufensterbeschriftung-nrw.html'],
       ['Sichtschutz mit Logo', '/sichtschutzfolie-berlin.html', 190, 'Milchglas mit ausgespartem Logo oder Muster.', 'Milchglas mit Logo', 229, '', '/fensterfolie-nrw.html'],
       ['Aktion / Eröffnung', '/schaufensterbeschriftung-berlin.html', 190, 'Temporäre Beklebung für Eröffnung, Sale oder Feiertage.', 'Aktions- & Eröffnungsfolie', 229, '', '/schaufensterbeschriftung-nrw.html']
     ], d: ['Wie groß ist die Fläche?', ['1 Scheibe', '2–3 Scheiben', 'Ganze Ladenfront']] },
-    fahrzeug: { name: 'Fahrzeug', icon: 'M2.5 16V6.5h11V16M13.5 9.5h3.8l3.2 3.2V16h-7', q: 'Was für ein Fahrzeug?', a: [
+    fahrzeug: { name: 'Fahrzeug', icon: '<path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>', q: 'Was für ein Fahrzeug?', a: [
       ['PKW', '/fahrzeugbeschriftung-berlin.html', 290, 'Beschriftung mit Logo, Leistungen und Kontakt.', 'Fahrzeugbeschriftung PKW', 340, '', '/fahrzeugbeschriftung-nrw.html'],
       ['Transporter', '/fahrzeugbeschriftung-berlin.html', 290, 'Mehr Fläche, mehr Wirkung – Preis nach Umfang.', 'Transporter-Beschriftung', 340, '', '/fahrzeugbeschriftung-nrw.html'],
       ['LKW / Sattelzug', '/lkw-beschriftung-berlin.html', null, 'Fahrerhaus, Kofferaufbau oder Plane – Montage bei Ihnen, Festpreis nach Fotos.', 'LKW-Beschriftung', null, '', '/lkw-beschriftung-nrw.html'],
       ['Vollfolierung', '/fahrzeugbeschriftung-berlin.html', null, 'Komplette Folierung – Preis nach Fahrzeug und Folie.', 'Fahrzeug-Vollfolierung', null, '', '/fahrzeugbeschriftung-nrw.html']
     ], d: ['Wie viele Fahrzeuge?', ['1', '2–5', '6 oder mehr']] },
-    fensterfolie: { name: 'Fensterfolie', icon: 'M3 3h18v18H3zM3 12h18M12 3v18', q: 'Was stört Sie am Fenster?', a: [
+    fensterfolie: { name: 'Fensterfolie', icon: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/>', q: 'Was stört Sie am Fenster?', a: [
       ['Hitze und Sonne', '/sonnenschutzfolie-berlin.html', null, 'Sonnenschutzfolie – wir prüfen vorher Ihr Glas und nennen nach Fotos einen Festpreis.', 'Sonnenschutzfolie', null, '', '/fensterfolie-nrw.html'],
       ['Einblicke von außen', '/sichtschutzfolie-berlin.html', 190, 'Sichtschutz- oder Milchglasfolie – blickdicht, aber hell.', 'Sichtschutzfolie', 229, '', '/fensterfolie-nrw.html'],
       ['Glasbruch / Sicherheit', '/sicherheitsfolie-berlin.html', null, 'Splitterschutz- oder durchwurfhemmende Folie – Preis nach Prüfklasse und Fläche.', 'Sicherheitsfolie', null, '', '/fensterfolie-nrw.html'],
       ['Glastür markieren', '/blog/glastueren-kennzeichnen.html', null, 'Markierung in zwei Höhen – als Streifen oder mit Ihrem Logo.', 'Glasmarkierung', null, '', '/blog/glastueren-kennzeichnen.html'],
       ['Werbung aufs Glas', '/schaufensterbeschriftung-berlin.html', 149, 'Schaufensterbeschriftung mit Logo, Leistungen und Öffnungszeiten.', 'Schaufensterbeschriftung', 179, '', '/schaufensterbeschriftung-nrw.html']
     ], d: ['Wie viele Fenster?', ['1', '2–4', '5–10', 'Mehr als 10']] },
-    druck: { name: 'Druck & Banner', icon: 'M6 3h12v6H6zM6 14H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2M6 14h12v7H6z', q: 'Was soll gedruckt werden?', a: [
+    druck: { name: 'Druck & Banner', icon: '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/>', q: 'Was soll gedruckt werden?', a: [
       ['Flyer & Visitenkarten', '/print.html', null, 'Druck mit Gestaltung – Preis nach Auflage und Papier.', 'Flyer & Visitenkarten', null, '', '/print.html'],
       ['PVC-Banner', '/pvc-banner-berlin.html', 19, 'Wetterfest, mit oder ohne Ösen, Mesh für Gerüst und Bauzaun.', 'PVC-Banner', 22, ' / m²', '/pvc-banner-nrw.html'],
       ['Aufkleber & Folien', '/foliendruck-berlin.html', 45, 'Klebefolie, Aufkleber und Bodenkleber.', 'Foliendruck & Aufkleber', null, '', '/foliendruck-berlin.html'],
       ['Roll-ups & Messewände', '/messebeschriftung-berlin.html', null, 'Für Messe, Event und Ladenlokal.', 'Roll-ups & Displays', null, '', '/messebeschriftung-berlin.html'],
       ['Express – heute noch', '/express-druck-berlin.html', null, 'Druck und Folie am selben Tag in Berlin.', 'Expressdruck', null, '', null]
     ], d: ['Welche Menge?', ['Einzelstück', 'bis 250 Stück', '250–1.000 Stück', 'mehr als 1.000']] },
-    design: { name: 'Logo & Design', icon: 'M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4ZM14.5 5.5l3 3', q: 'Was soll gestaltet werden?', a: [
+    design: { name: 'Logo & Design', icon: '<path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/>', q: 'Was soll gestaltet werden?', a: [
       ['Logo', '/grafikdesign-berlin.html', 490, 'Logo-Design mit druckfertigen Dateien.', 'Logo-Design', 490, '', '/grafikdesign-berlin.html'],
       ['Corporate Design', '/grafikdesign-berlin.html', 790, 'Logo, Farben, Schriften und Vorlagen aus einem Guss.', 'Corporate Design', 790, '', '/grafikdesign-berlin.html'],
       ['Speisekarte / Menütafel', '/digital-signage-berlin.html', null, 'Gedruckt oder digital auf Bildschirmen.', 'Speisekarte & Menütafel', null, '', '/digital-signage-berlin.html'],
       ['Social-Media-Design', '/digital.html', null, 'Posts, Reels und Vorlagen im eigenen Look.', 'Social-Media-Design', null, '', '/digital.html']
     ], d: ['Was gibt es schon?', ['Noch nichts', 'Ein altes Logo', 'Fertiges Logo']] },
-    web: { name: 'Website & Social Media', icon: 'M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z', q: 'Was planen Sie?', a: [
+    web: { name: 'Website & Social Media', icon: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>', q: 'Was planen Sie?', a: [
       ['Neue Website', '/webdesign-berlin.html', null, 'Schnell, mobil und gut bei Google – Festpreis nach Umfang.', 'Website', null, '', '/webdesign-nrw.html'],
       ['Website überarbeiten', '/webdesign-berlin.html', null, 'Schneller, barrierearm, besser bei Google.', 'Website-Relaunch', null, '', '/webdesign-nrw.html'],
       ['Online-Shop', '/webdesign-berlin.html', null, 'Shop mit Zahlung und Versand.', 'Online-Shop', null, '', '/webdesign-nrw.html'],
       ['Social Media betreuen', '/digital.html', 490, 'Posts und Reels für Instagram, Facebook und TikTok.', 'Social-Media-Betreuung', 490, ' / Monat', '/digital.html']
     ], d: ['Was gibt es schon?', ['Noch keine Website', 'Eine alte Website', 'Nur Social Media']] },
-    messe: { name: 'Messe', icon: 'M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6', berlin: true, q: 'Was brauchen Sie für die Messe?', a: [
+    messe: { name: 'Messe', icon: '<path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/>', berlin: true, q: 'Was brauchen Sie für die Messe?', a: [
       ['Kompletter Messestand', '/messebau-berlin.html', null, 'Konzept, 3D-Entwurf, Bau sowie Auf- und Abbau.', 'Messebau', null, '', null],
       ['Messewand & Roll-ups', '/messebeschriftung-berlin.html', null, 'Mobile Displays für Messe und Event.', 'Messewand & Roll-ups', null, '', null],
       ['Messegrafik', '/messebeschriftung-berlin.html', null, 'Grafik für einen bestehenden Stand.', 'Messegrafik', null, '', null]
@@ -122,7 +122,7 @@
     + '@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:1fr 1fr}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
-  function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="' + d + '"/></svg>'; }
+  function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (d.charAt(0) === '<' ? d : '<path d="' + d + '"/>') + '</svg>'; }   // Lucide-Markup oder einzelner Pfad
   function eur(n) { return n.toLocaleString('de-DE', { maximumFractionDigits: 2 }) + ' €'; }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function txt(tag, cls, t) { var e = el(tag, cls); e.textContent = t; return e; }
@@ -294,7 +294,7 @@
       var c1 = el('div', 'as-card');
       c1.appendChild(txt('h5', '', 'Per WhatsApp – am schnellsten'));
       c1.appendChild(el('p', '', 'Die Nachricht ist fertig vorbereitet. Fotos können Sie in WhatsApp direkt anhängen. Ihre Angaben speichern wir mit einer Anfragenummer zur Bearbeitung (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>).'));
-      var w = el('a', 'as-btn as-wa', '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/></svg>WhatsApp öffnen');
+      var w = el('a', 'as-btn as-wa', '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp öffnen');
       w.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); w.target = '_blank'; w.rel = 'noopener noreferrer';
       w.addEventListener('click', function (ev) {
         // Anfrage zuerst speichern (Nummer für die Übersicht), dann WhatsApp mit Anfragenummer öffnen
