@@ -155,7 +155,7 @@ nav { position:fixed; top:0; width:100%; z-index:500; background:rgba(255,255,25
 /* ═══════════ QUICK NAV ═══════════ */
 .quick-nav { padding:3rem 0; background:#fff; border-bottom:1px solid var(--border); }
 .qn-label { text-align:center; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:1.5rem; }
-.qn-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.qn-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
 .qn-card { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.5rem 1rem; border:2px solid var(--border); border-radius:var(--r); transition:all .3s; cursor:pointer; }
 .qn-card:hover { border-color:var(--teal); background:var(--teal-l); transform:translateY(-3px); box-shadow:0 8px 24px rgba(88,208,189,.12); }
 .qn-icon { font-size:2rem; }
@@ -303,7 +303,7 @@ footer { background:#060e1a; padding:4rem 0 2rem; }
 @media(max-width:1024px) {
   .nav-links { display:none; } .hamburger { display:flex; } .nav-phone { display:none; }
   .hero-inner { grid-template-columns:1fr; } .hero-visual { display:none; }
-  .qn-grid { grid-template-columns:repeat(3,1fr); }
+  .qn-grid { grid-template-columns:repeat(4,1fr); }
   .svc-grid-3 { grid-template-columns:1fr 1fr; }
   .pb { grid-template-columns:1fr; } .pb.rev { direction:ltr; }
   .pb-img img { min-height:260px; }
@@ -529,7 +529,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .social-shot img{width:100%;max-width:380px;height:auto;aspect-ratio:1080/1350;display:block;margin:0 auto;border-radius:var(--r);box-shadow:0 22px 60px rgba(0,0,0,.35);border:1px solid rgba(88,208,189,.18)}
 @media(max-width:900px){.social-split{grid-template-columns:1fr;gap:2rem}.social-copy{text-align:left}}
 .svc-7 > .svc-card:last-child{grid-column:2}@media(max-width:1024px){.svc-7 > .svc-card:last-child{grid-column:1/-1;justify-self:center;width:calc(50% - .75rem)}}@media(max-width:640px){.svc-7 > .svc-card:last-child{grid-column:auto;justify-self:stretch;width:auto}}
-.qn-grid > .qn-card:nth-child(7):last-child{grid-column:2}@media(max-width:768px){.qn-grid > .qn-card:nth-child(7):last-child{grid-column:1/-1}}.mb-split{margin-bottom:0}
+.qn-grid > .qn-card:nth-child(7):last-child{grid-column:auto}@media(max-width:768px){.qn-grid > .qn-card:nth-child(7):last-child{grid-column:1/-1}}.mb-split{margin-bottom:0}
 </style>
 <script type="application/ld+json">
 {
@@ -937,6 +937,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   ]
 }
 </script>
+<style id="mobil-swipe">.swipe-hint{display:none;justify-content:center;align-items:center;gap:6px;font:600 13px Barlow,sans-serif;color:var(--muted,#5a7070);margin:.4rem 0 0}@media(max-width:640px){.svc-grid-3.svc-7{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 2px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.svc-grid-3.svc-7::-webkit-scrollbar{display:none}.svc-grid-3.svc-7>.svc-card{flex:0 0 86%;scroll-snap-align:center;width:auto!important;opacity:1!important;transform:none!important}.swipe-hint{display:flex}}</style>
+<style id="sticky-zeile">@media(max-width:768px){.sticky-cta-inner{flex-wrap:nowrap!important;gap:8px!important}.sticky-cta-inner>.sticky-cta-text{flex:1 1 0;min-width:0;padding:10px 6px!important}.sticky-cta-inner>.sticky-cta-text strong{font-size:13px!important}.sticky-cta-actions{flex:1 1 0;min-width:0}.sticky-btn-main{display:block;width:100%;text-align:center;padding:11px 6px!important}}</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -1229,6 +1231,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
     </div>
+    <p class="swipe-hint" aria-hidden="true">← Wischen für alle Leistungen →</p>
     <div style="text-align:center;margin-top:2rem;" class="reveal">
       <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 auto 1.2rem;max-width:640px;">Werkstatt in Berlin-Wedding – Aufmaß und Montage in allen zwölf Berliner Bezirken sowie in Potsdam und Brandenburg. Mit eigenem Team auch in <a href="/werbeagentur-nrw.html">NRW</a>.</p>
       <a href="werbetechnik.html" class="btn btn-navy">Alle Werbetechnik-Leistungen →</a>
@@ -1348,6 +1351,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
     </div>
+    <p class="swipe-hint" aria-hidden="true">← Wischen für alle Leistungen →</p>
   </div>
 </section>
 
@@ -1558,6 +1562,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
 <!-- PRICE ESTIMATOR — Fahrzeugbeschriftung -->
 <section class="section bg-off" id="rechner">
+  <div id="kontakt" style="position:relative;top:-90px" aria-hidden="true"></div>
   <div class="container">
     <div class="sec-head center reveal">
       <span class="eyebrow">Anfrage-Assistent</span>
@@ -1565,17 +1570,18 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p class="sec-sub">Drei Klicks, und Sie sehen, was zu Ihrem Vorhaben passt – mit Preisrahmen, wo wir ihn nennen können. Ihre Anfrage schicken Sie dann direkt per WhatsApp oder E-Mail. Einen Überblick nach Branche finden Sie in unseren <a href="/angebote/" style="color:var(--teal-ink);font-weight:600;">Branchen-Angeboten</a>.</p>
     </div>
     <div data-assistent></div>
-    <noscript><div style="text-align:center;"><a href="#kontakt" class="btn btn-teal">Individuelles Angebot anfragen</a></div></noscript>
+    <noscript><div style="text-align:center;"><a href="#kontakt-formular" class="btn btn-teal">Individuelles Angebot anfragen</a></div></noscript>
   </div>
 </section>
 
 <!-- CONTACT -->
-<div class="cta-strip" id="kontakt">
+<div class="cta-strip" id="kontakt-formular">
   <div class="container" style="position:relative;z-index:1;">
     <div class="cta-title reveal">Ihr Projekt. <em>Unser Antrieb.</em></div>
-    <p class="cta-sub reveal">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
+    <p class="cta-sub reveal">Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden. Am schnellsten mit dem Anfrage-Assistenten oben oder per <a href="/termin.html" style="color:#58d0bd;text-decoration:underline">Beratungstermin</a>.</p>
     <div style="max-width:640px;margin:0 auto;" class="reveal">
-      <div class="cform">
+      <details class="cform-klappe"><summary style="cursor:pointer;text-align:center;color:#58d0bd;font-weight:700;font-size:15px;padding:.8rem;list-style-position:inside">Lieber das klassische Formular mit Datei-Upload?</summary>
+      <div class="cform" style="margin-top:1rem">
         <h3>Kostenlose Anfrage</h3>
         <div style="background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.35);border-radius:8px;padding:.75rem 1rem;margin-bottom:1.2rem;font-size:13px;color:var(--muted,#94a3b8);display:flex;gap:.5rem;align-items:flex-start;">
           <span style="font-size:16px;line-height:1.4;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg></span>
@@ -1601,6 +1607,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
           <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:.6rem;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10" width="15" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.3"/></svg>Kein Spam. Wir melden uns innerhalb von 24 Stunden.</p>
         </form>
       </div>
+      </details>
     </div>
     <div class="cta-contact">
       <div class="cta-info"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 3.5 9 8l-2 2a13 13 0 0 0 7 7l2-2 4.5 2.5-1.4 3.1a2 2 0 0 1-2.2 1.1C10.1 20.4 3.6 13.9 2.3 6.1A2 2 0 0 1 3.4 3.9Z"/></svg><strong><a href="tel:01785143918" style="color:#fff;">0178 514 3918</a></strong></div>
