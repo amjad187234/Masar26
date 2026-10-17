@@ -23,6 +23,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 - NRW: Team vor Ort, aber **keine Adresse/Filiale in NRW** behaupten. NRW-Seiten zeigen in
   Navigation/Mobilmenü WhatsApp/E-Mail statt Telefon.
 - NRW-Team macht alles außer Foto/Video und Messebau. Messebau und Express nur Berlin.
+  Ausnahme: In Essen gibt es eine Marketing-Kraft (Content, Video, „Gesicht“ für Kundenmarketing) – vom Inhaber am 17.10.2026 genannt.
 - Keine Laternenwerbung anbieten.
 - Zahlung: Überweisung.
 - Sprachen der Beratung: Deutsch, Englisch, Arabisch, Türkisch (Türkisch vom Inhaber am 15.10.2026 bestätigt).
