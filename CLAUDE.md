@@ -25,6 +25,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 - NRW-Team macht alles außer Foto/Video und Messebau. Messebau und Express nur Berlin.
   Ausnahme: In Essen gibt es eine Marketing-Kraft (Content, Video, „Gesicht“ für Kundenmarketing) – vom Inhaber am 17.10.2026 genannt.
 - Keine Laternenwerbung anbieten.
+- Genehmigung Werbeanlagen NRW: verfahrensfrei bis 1 m² (§ 62 Abs. 1 Nr. 12 BauO NRW, Flächen nebeneinander zusammengerechnet). Essen: Reklameaufsicht, Lindenallee 10, 45127 Essen, Tel. 0201 88-61114; Gestaltungssatzung Innenstadt in Aufstellung (seit 2025).
 - Zahlung: Überweisung.
 - Sprachen der Beratung: Deutsch, Englisch, Arabisch, Türkisch (Türkisch vom Inhaber am 15.10.2026 bestätigt).
 
