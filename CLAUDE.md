@@ -84,6 +84,7 @@ solche Festlegung im Bericht nennen.
   `status.html` + `status.js` + `status.php` (Nummer + Telefon/E-Mail, nur Status/Leistung/Ort/Termin,
   20 Abfragen/h je IP); Link in Bestätigungsmails, danke.html (?nr=), Terminbestätigung und Footer.
   Status in der Übersicht aktuell halten – Kunden sehen ihn.
+- Abschluss-Animation `fertig.js` (auf allen Seiten): Ring 0→100 % gekoppelt an den echten Versand, dann Haken, „Danke!“, Anfragenummer, Farbregen. API `MasarFertig.start().done/fail`; genutzt in Assistent (WhatsApp-Knopf erst danach), Terminbuchung, danke.html und automatisch bei Formularen an /kontakt.php.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

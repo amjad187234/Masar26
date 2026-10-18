@@ -100,6 +100,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <script>
   (function () {
     var nr = (new URLSearchParams(location.search).get('nr') || '').toUpperCase();
+    // Abschluss-Animation nach dem Absenden (fertig.js wird mit defer geladen)
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!window.MasarFertig || sessionStorage.getItem('mf-danke') === nr) return;
+      try { sessionStorage.setItem('mf-danke', nr); } catch (e) {}
+      MasarFertig.start({ titel: 'Anfrage wird gesendet', mindestens: 1100 }).done({ nr: /^ANF-\d{4}-\d{4}$/.test(nr) ? nr : '', titel: 'Danke!', text: 'Ihre Anfrage ist bei uns angekommen. Wir melden uns innerhalb von 24 Stunden.', knopf: 'Weiter' });
+    });
     if (!/^ANF-\d{4}-\d{4}$/.test(nr)) return;
     document.getElementById('danke-nr').hidden = false;
     document.getElementById('danke-nr-wert').textContent = nr;
@@ -122,5 +128,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <a href="/agb.html">AGB</a>
 </nav>
 <script src="/cookie-consent.js?v=2" defer></script>
+<script src="/fertig.js?v=1" defer></script>
 </body>
 </html>

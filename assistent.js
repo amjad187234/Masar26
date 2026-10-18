@@ -300,7 +300,7 @@
         // Anfrage zuerst speichern (Nummer für die Übersicht), dann WhatsApp mit Anfragenummer öffnen
         if (!window.fetch) return;
         ev.preventDefault();
-        var win = null; try { win = window.open('', '_blank'); } catch (e) {}
+        var fx = window.MasarFertig ? MasarFertig.start({ titel: 'Anfrage wird gesendet' }) : null;
         var payload = { _t: t0, _honey: '', seite: location.pathname, name: s.name.trim(), firma: s.firma.trim(), email: s.mail.trim(), telefon: s.tel.trim(), ort: s.ort.trim(),
           leistung: T[s.thema].name + ' – ' + a[0], details: T[s.thema].d[0] + ' ' + (s.detail || ''), wer: s.wer || '', wann: s.wann || '', zusammenfassung: msg };
         var done = false;
@@ -310,10 +310,12 @@
           var text = nr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + nr + '):') : msg;
           var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
           try { sessionStorage.removeItem(key); } catch (e) {}
-          if (win && !win.closed) { try { win.opener = null; win.location.href = url; return; } catch (e) {} }
-          location.href = url;
+          // WhatsApp erst per Klick öffnen (sonst blockiert der Browser das neue Fenster)
+          var los = function () { var win = null; try { win = window.open(url, '_blank', 'noopener'); } catch (e) {} if (!win) location.href = url; };
+          if (fx) fx.done({ nr: nr, titel: 'Danke!', text: 'Ihre Anfrage ist gespeichert. Jetzt nur noch in WhatsApp auf „Senden“ tippen.', knopf: 'WhatsApp öffnen', weiter: los });
+          else los();
         }
-        setTimeout(function () { open(''); }, 2500);
+        setTimeout(function () { open(''); }, 4000);
         fetch('/anfrage-log.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), credentials: 'same-origin' })
           .then(function (r) { return r.ok ? r.json() : { nr: '' }; }).then(function (j) { open(j && j.nr ? j.nr : ''); }, function () { open(''); });
       });

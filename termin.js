@@ -244,15 +244,21 @@
       if (s.art === 'vorort' && !/\b1[0-4]\d{3}\b/.test(s.adresse)) { err.textContent = 'Bitte Straße und Berliner Postleitzahl angeben.'; return; }
       if (!ck.querySelector('input').checked) { err.textContent = 'Bitte der Datenschutzerklärung zustimmen.'; return; }
       go.disabled = true; go.textContent = 'Wird gebucht …';
+      var fx = window.MasarFertig ? MasarFertig.start({ titel: 'Termin wird gebucht' }) : null;
       fetch('/termin.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({
         _t: Date.now() - t0, _honey: hp.value, art: s.art, sprache: s.sprache, tag: s.tag, zeit: s.zeit,
         name: s.name.trim(), telefon: s.tel.trim(), email: s.mail.trim(), firma: s.firma.trim(), adresse: s.adresse.trim(), ort: s.ort.trim(), thema: s.thema, nachricht: s.info.trim(), consent: true
       }) }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); }).then(function (x) {
-        if (x.ok && x.j.nr) { fertig(x.j); return; }
+        if (x.ok && x.j.nr) {
+          if (fx) fx.done({ nr: x.j.nr, titel: 'Danke!', text: 'Ihr Termin ist gebucht: ' + x.j.termin, knopf: 'Weiter', weiter: function () { fertig(x.j); } });
+          else fertig(x.j);
+          return;
+        }
+        if (fx) fx.fail((x.j && x.j.fehler) || '');
         go.disabled = false; go.textContent = 'Termin verbindlich buchen';
         err.textContent = (x.j && x.j.fehler) || 'Das hat leider nicht geklappt. Bitte rufen Sie uns an: 0178 514 3918.';
         if (x.j && x.j.vergeben) { delete tageCache[s.art]; s.zeit = null; setTimeout(function () { step = 2; render(); }, 1800); }
-      }).catch(function () { go.disabled = false; go.textContent = 'Termin verbindlich buchen'; err.textContent = 'Keine Verbindung. Bitte später erneut versuchen oder anrufen: 0178 514 3918.'; });
+      }).catch(function () { if (fx) fx.fail('Keine Verbindung.'); go.disabled = false; go.textContent = 'Termin verbindlich buchen'; err.textContent = 'Keine Verbindung. Bitte später erneut versuchen oder anrufen: 0178 514 3918.'; });
     });
   }
 
