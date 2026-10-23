@@ -49,7 +49,6 @@ Vorlage: `angebot/beispiel.json`. Kundendaten und Stempel (`privat/stempel.png`)
 
 ## Blog: Stadt-Ratgeber
 
-`python3 tools/blog/stadt_ratgeber.py` erzeugt `blog/werbeanlage-<stadt>.html` (Köln, Düsseldorf, Dortmund, Essen, Bochum,
-Hamburg, Potsdam) mit belegten lokalen Regeln und Quellen; Vorlage ist `blog/aussenwerbung-berlin-ratgeber.html`.
+`python3 tools/blog/stadt_ratgeber.py` erzeugt `blog/werbeanlage-<stadt>.html` (19 Städte: NRW, Hamburg, Potsdam) mit belegten lokalen Regeln und Quellen; Vorlage ist `blog/aussenwerbung-berlin-ratgeber.html`.
 Danach OG-Karten mit `og_cards.py add` erneuern. Die Stadtseiten verlinken per Hinweisbox auf ihren Ratgeber –
-nach dem Neu-Erzeugen von `nrw_staedte.py` die Box wieder einsetzen (bei Hamburg macht das `hamburg_page.py`).
+nach dem Neu-Erzeugen von `nrw_staedte.py`/`umland_pages.py` die Box wieder einsetzen (bei Hamburg macht das `hamburg_page.py`).
