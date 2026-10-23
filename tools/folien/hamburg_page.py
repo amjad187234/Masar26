@@ -201,6 +201,7 @@ s = s[:i] + '<a href="/werbeagentur-hamburg.html" style="color:#58d0bd;">Hamburg
 s = s.replace('<li><a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a></li>', '<li><a href="/lkw-beschriftung-berlin.html">LKW-Beschriftung</a></li>')
 s = s.replace('  <a href="/fahrzeugbeschriftung-nrw.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a>', '  <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-berlin.html">LKW-Beschriftung</a>')
 
+s = s.replace('<!-- CONTACT -->', '<div class="reveal" style="max-width:760px;width:calc(100% - 32px);margin:2rem auto 2.5rem;padding:1.1rem 1.4rem;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:10px;background:#fff;font-size:15px;line-height:1.7"><strong style="color:var(--navy)">Ratgeber:</strong> Welche Satzungen gelten in Hamburg, wer genehmigt und was kostet es? <a href="/blog/werbeanlage-hamburg.html" style="color:var(--teal-ink);font-weight:700">Werbeanlage in Hamburg – zum Artikel →</a></div>\n<!-- CONTACT -->', 1)
 s = s.replace('/assistent.js?v=7', '/assistent.js?v=8')   # Region hamburg braucht die neue Version
 
 assert 'Düsseldorf' not in s.split('<footer')[0], 'NRW-Stadt im Inhalt übrig'

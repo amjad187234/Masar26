@@ -46,3 +46,10 @@ python3 tools/angebot/angebot.py tools/angebot/privat/<kunde>.json
 Erzeugt HTML + A4-PDF im Masar-Layout und rechnet Netto, MwSt., Brutto, Anzahlung/Rest.
 Vorlage: `angebot/beispiel.json`. Kundendaten und Stempel (`privat/stempel.png`) nur in
 `tools/angebot/privat/` – der Ordner ist in `.gitignore`, das Repository ist öffentlich.
+
+## Blog: Stadt-Ratgeber
+
+`python3 tools/blog/stadt_ratgeber.py` erzeugt `blog/werbeanlage-<stadt>.html` (Köln, Düsseldorf, Dortmund, Essen, Bochum,
+Hamburg, Potsdam) mit belegten lokalen Regeln und Quellen; Vorlage ist `blog/aussenwerbung-berlin-ratgeber.html`.
+Danach OG-Karten mit `og_cards.py add` erneuern. Die Stadtseiten verlinken per Hinweisbox auf ihren Ratgeber –
+nach dem Neu-Erzeugen von `nrw_staedte.py` die Box wieder einsetzen (bei Hamburg macht das `hamburg_page.py`).
