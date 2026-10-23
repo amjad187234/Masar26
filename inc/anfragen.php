@@ -99,7 +99,7 @@ function anf_db(): ?PDO
     return $pdo;
 }
 
-const ANF_REGIONEN = ['Berlin' => 'Berlin', 'Brandenburg' => 'Brandenburg', 'NRW' => 'NRW', 'Sonstige' => 'Sonstige'];
+const ANF_REGIONEN = ['Berlin' => 'Berlin', 'Brandenburg' => 'Brandenburg', 'NRW' => 'NRW', 'Hamburg' => 'Hamburg', 'Sonstige' => 'Sonstige'];
 
 /** Bekannte Orte: Suchwort (kleingeschrieben, ä→ae …) => [Anzeigename, Region] */
 const ANF_ORTE = [
@@ -121,6 +121,8 @@ const ANF_ORTE = [
     'wuppertal' => ['Wuppertal', 'NRW'], 'bonn' => ['Bonn', 'NRW'], 'leverkusen' => ['Leverkusen', 'NRW'], 'neuss' => ['Neuss', 'NRW'],
     'hagen' => ['Hagen', 'NRW'], 'recklinghausen' => ['Recklinghausen', 'NRW'], 'krefeld' => ['Krefeld', 'NRW'],
     'moenchengladbach' => ['Mönchengladbach', 'NRW'], 'muenster' => ['Münster', 'NRW'], 'bielefeld' => ['Bielefeld', 'NRW'], 'aachen' => ['Aachen', 'NRW'],
+    'hamburg' => ['Hamburg', 'Hamburg'], 'altona' => ['Hamburg-Altona', 'Hamburg'], 'eimsbuettel' => ['Hamburg-Eimsbüttel', 'Hamburg'],
+    'wandsbek' => ['Hamburg-Wandsbek', 'Hamburg'], 'harburg' => ['Hamburg-Harburg', 'Hamburg'], 'bergedorf' => ['Hamburg-Bergedorf', 'Hamburg'],
 ];
 
 /**
@@ -152,6 +154,7 @@ function anf_stadt(string $ort, string $seite = ''): array
         if ($plz >= 10115 && $plz <= 14199) return ['Berlin', 'Berlin'];
         if (($plz >= 14400 && $plz <= 16999) || $zwei === 3) return [$rest !== '' ? $rest : 'PLZ ' . $m[1], 'Brandenburg'];
         if (in_array($zwei, [32, 33, 40, 41, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 57, 58, 59], true)) return [$rest !== '' ? $rest : 'PLZ ' . $m[1], 'NRW'];
+        if (($plz >= 20000 && $plz <= 21149) || ($plz >= 22000 && $plz <= 22769)) return [$rest !== '' ? $rest : 'Hamburg', 'Hamburg'];
     }
     $pfad = (string) (parse_url($seite, PHP_URL_PATH) ?? '');
     if ($pfad !== '') {

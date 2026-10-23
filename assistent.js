@@ -7,6 +7,7 @@
  *   data-start="fensterfolie"     startet mit einer Leistung (Schritt 1 entfällt)
  *   data-start="schild:1"         startet mit Leistung und Auswahl (Schritt 1 und 2 entfallen)
  *   data-region="nrw"             NRW-Preise und NRW-Seiten, ohne Berlin-only-Leistungen
+ *   data-region="hamburg"         wie NRW (Preise, ohne Berlin-only-Leistungen), aber ohne Links auf NRW-Seiten
  *   data-ort="Bernau"             Ort vorbelegen
  * Von außen öffnen: <a href="#..." data-as-open="schild:0">  oder  window.MasarAssistent.open('schild', 0)
  * Preise: nur „ab“-Preise, die so auch auf den Leistungsseiten stehen (netto).
@@ -150,7 +151,7 @@
 
   Array.prototype.forEach.call(roots, function (root, idx) {
     if (root.getAttribute('data-as-ready')) return; root.setAttribute('data-as-ready', '1');
-    var nrw = root.getAttribute('data-region') === 'nrw';
+    var region = root.getAttribute('data-region'), hh = region === 'hamburg', nrw = region === 'nrw' || hh;
     var sv = (root.getAttribute('data-start') || '').split(':');
     var key = 'masar-as-' + location.pathname + '-' + idx;
     var t0 = String(Date.now());
@@ -171,7 +172,7 @@
 
     function A() { return s.thema != null && s.wahl != null ? T[s.thema].a[s.wahl] : null; }
     function price(a) { var p = nrw ? a[5] : a[2]; return p ? 'ab ' + eur(p) + (a[6] || '') + ' netto' : 'Festpreis nach Fotos oder Aufmaß'; }
-    function page(a) { return nrw ? a[7] : a[1]; }
+    function page(a) { return hh ? null : nrw ? a[7] : a[1]; }
     function save() { store(key, s); }
 
     function render(focus) {
@@ -219,7 +220,7 @@
         box.appendChild(head('Wann und wo?'));
         box.appendChild(txt('span', 'as-sub', 'Für wen?')); box.appendChild(row(WER, 'wer'));
         box.appendChild(txt('span', 'as-sub', 'Wann?')); box.appendChild(row(WANN, 'wann'));
-        field('Ort oder Bezirk', 'optional', 'ort', 'input', nrw ? 'z. B. Essen-Rüttenscheid' : 'z. B. Berlin-Wedding', 60, 'address-level2');
+        field('Ort oder Bezirk', 'optional', 'ort', 'input', hh ? 'z. B. Hamburg-Altona' : nrw ? 'z. B. Essen-Rüttenscheid' : 'z. B. Berlin-Wedding', 60, 'address-level2');
         nav(true, function () { return s.wer && s.wann; }, 'Weiter →', 'Bitte „Für wen?“ und „Wann?“ wählen.');
       } else if (step === 5) {
         box.appendChild(head('Wie erreichen wir Sie?'));

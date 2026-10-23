@@ -21,6 +21,7 @@ Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
 | `folien/banner_pages.py` | `pvc-banner-berlin.html`, `pvc-banner-nrw.html` |
 | `folien/umland_pages.py` | `werbeagentur-<stadt>.html` (15 Brandenburg + Herne, Mülheim, Bottrop) |
 | `folien/einsatz_page.py` | `einsatzgebiete.html` |
+| `folien/hamburg_page.py` | `werbeagentur-hamburg.html` (aus `werbeagentur-nrw.html`) |
 
 Aufruf jeweils `python3 tools/folien/<skript>.py`. Danach immer:
 

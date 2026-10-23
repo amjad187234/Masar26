@@ -84,8 +84,10 @@
     var wa = /^Werbeagentur (.+)$/.exec(q);
     if (wa) s.ort = wa[1]; else if (q) s.thema = q;
     // Von NRW-Seiten: Beratung nur per Telefon/Video (Vor-Ort-Termine gibt es nur in Berlin)
-    if (new URLSearchParams(location.search).get('region') === 'nrw') {
+    var reg = new URLSearchParams(location.search).get('region');
+    if (reg === 'nrw' || reg === 'hamburg') {
       ARTEN = ARTEN.filter(function (a) { return a[0] !== 'vorort'; });
+      if (reg === 'hamburg') { if (!s.ort) s.ort = 'Hamburg'; s.gebiet = 'Hamburg'; }
       var st = /(Köln|Düsseldorf|Dortmund|Essen|Bochum|Herne|Mülheim an der Ruhr|Bottrop)$/.exec(q);
       if (st && !s.ort) s.ort = st[1];
       s.nrw = true;
@@ -128,7 +130,7 @@
       }));
     });
     box.appendChild(g);
-    box.appendChild(el('p', 'tm-load', s.nrw ? 'Kostenlos und unverbindlich · 30 Minuten · für NRW per Telefon oder WhatsApp-Video – Aufmaß und Montage macht unser Team vor Ort'
+    box.appendChild(el('p', 'tm-load', s.nrw ? 'Kostenlos und unverbindlich · 30 Minuten · für ' + (s.gebiet || 'NRW') + ' per Telefon oder WhatsApp-Video – Aufmaß und Montage macht unser Team vor Ort'
                                             : 'Kostenlos und unverbindlich · 30 Minuten (vor Ort 60) · Vor-Ort-Termine nur in Berlin'));
   }
 

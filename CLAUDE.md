@@ -24,6 +24,10 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
   Navigation/Mobilmenü WhatsApp/E-Mail statt Telefon.
 - NRW-Team macht alles außer Foto/Video und Messebau. Messebau und Express nur Berlin.
   Ausnahme: In Essen gibt es eine Marketing-Kraft (Content, Video, „Gesicht“ für Kundenmarketing) – vom Inhaber am 17.10.2026 genannt.
+- Hamburg (seit 23.10.2026, vom Inhaber bestätigt): eigenes Team vor Ort, **keine Adresse/Filiale**; Leistungen und Preise wie NRW
+  (ohne Foto/Video, Messebau, Express). Seite `werbeagentur-hamburg.html` (Generator `tools/folien/hamburg_page.py`),
+  Assistent `data-region="hamburg"`, Termin `?region=hamburg`, Region „Hamburg“ in den Anfragen. Genehmigung: bis 1 m²
+  genehmigungsfrei nach Anlage 2 HBauO, sonst meist Baugenehmigung; zuständig ist das Bezirksamt.
 - Keine Laternenwerbung anbieten.
 - Genehmigung Werbeanlagen NRW: verfahrensfrei bis 1 m² (§ 62 Abs. 1 Nr. 12 BauO NRW, Flächen nebeneinander zusammengerechnet). Essen: Reklameaufsicht, Lindenallee 10, 45127 Essen, Tel. 0201 88-61114; Gestaltungssatzung Innenstadt in Aufstellung (seit 2025).
 - Zahlung: Überweisung.
