@@ -449,7 +449,7 @@ STAEDTE += [
 
 def nachbarn(c, n=5):
     """Bis zu n andere Ratgeber: zuerst dieselbe Region, dann der Rest – in fester Reihenfolge."""
-    i = STAEDTE.index(c)
+    i = [o['slug'] for o in STAEDTE].index(c['slug'])
     ring = STAEDTE[i + 1:] + STAEDTE[:i]
     gleich = [o for o in ring if o['region'] == c['region']]
     rest = [o for o in ring if o['region'] != c['region']]
@@ -457,6 +457,8 @@ def nachbarn(c, n=5):
 
 
 def artikel(c):
+    # Kurzer Suchergebnis-Titel (≤ 60 Zeichen); der lange Titel bleibt für die Überschrift im JSON-LD erhalten
+    c = dict(c, title=f"Werbeanlage {c['stadt'].replace(' an der Ruhr', '')}: Satzung, Genehmigung & Kosten")
     s = c['stadt']; url = f"https://masar-werbeagentur.de/blog/werbeanlage-{c['slug']}.html"
     nrw = c['region'] == 'nrw'; preise = BER_PREISE if c['region'] == 'berlin' else NRW_PREISE
     team = {'nrw': 'unser Team in NRW', 'hamburg': 'unser Team in Hamburg', 'berlin': 'unser Team aus Berlin'}[c['region']]

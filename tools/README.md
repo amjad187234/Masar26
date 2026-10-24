@@ -52,3 +52,9 @@ Vorlage: `angebot/beispiel.json`. Kundendaten und Stempel (`privat/stempel.png`)
 `python3 tools/blog/stadt_ratgeber.py` erzeugt `blog/werbeanlage-<stadt>.html` (19 Städte: NRW, Hamburg, Potsdam) mit belegten lokalen Regeln und Quellen; Vorlage ist `blog/aussenwerbung-berlin-ratgeber.html`.
 Danach OG-Karten mit `og_cards.py add` erneuern. Die Stadtseiten verlinken per Hinweisbox auf ihren Ratgeber –
 nach dem Neu-Erzeugen von `nrw_staedte.py`/`umland_pages.py` die Box wieder einsetzen (bei Hamburg macht das `hamburg_page.py`).
+
+## SEO: Suchergebnis-Snippets
+
+`python3 tools/seo/snippets.py` setzt Titel und Beschreibung (inkl. og/twitter) für die Seiten mit den meisten
+Impressionen laut Search Console (Titel ≤ 60 Zeichen, Beschreibung 110–160, nur echte „ab“-Preise).
+`--dry` prüft nur die Längen. Nach dem Neu-Erzeugen von Seiten erneut ausführen.

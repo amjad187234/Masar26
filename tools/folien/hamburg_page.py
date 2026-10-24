@@ -32,6 +32,14 @@ s = s.replace(WA_NRW, WA_HH)
 BESCHR = 'Werbeagentur in Hamburg mit eigenem Team vor Ort: Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Druck, Grafik- und Webdesign.'
 s = s.replace('Werbeagentur in NRW mit eigenem Team vor Ort: Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Druck, Grafik- und Webdesign.', BESCHR)
 s = s.replace('Werbeagentur NRW: Werbetechnik, Druck &amp; Design | Masar', 'Werbeagentur Hamburg: Werbetechnik, Druck &amp; Design | Masar')
+# Titel und Beschreibung fest setzen (die NRW-Vorlage wird von tools/seo/snippets.py umgeschrieben)
+HH_T = 'Werbeagentur Hamburg: Schilder, Leuchtreklame & Folie | Masar'
+HH_D = 'Werbetechnik in Hamburg mit eigenem Team vor Ort: Schilder ab 59 €, Leuchtbuchstaben ab 229 €, Schaufenster- und Fahrzeugbeschriftung. Angebot in 24 h.'
+s = re.sub(r'<title>.*?</title>', '<title>' + HH_T.replace('&', '&amp;') + '</title>', s, count=1, flags=re.S)
+for _n, _a in [('description', 'name'), ('og:description', 'property'), ('twitter:description', 'name')]:
+    s = re.sub(rf'(<meta {_a}="{_n}" content=")[^"]*', lambda m: m.group(1) + HH_D, s, count=1)
+for _n, _a in [('og:title', 'property'), ('twitter:title', 'name')]:
+    s = re.sub(rf'(<meta {_a}="{_n}" content=")[^"]*', lambda m: m.group(1) + HH_T.replace('&', '&amp;'), s, count=1)
 s = s.replace('https://masar-werbeagentur.de/werbeagentur-nrw.html', 'https://masar-werbeagentur.de/werbeagentur-hamburg.html')
 s = s.replace('https://masar-werbeagentur.de/og/werbeagentur-nrw.jpg', 'https://masar-werbeagentur.de/og/werbeagentur-hamburg.jpg')
 ersetze('content="Werbeagentur NRW – Masar Werbeagentur"', 'content="Werbeagentur Hamburg – Masar Werbeagentur"')
