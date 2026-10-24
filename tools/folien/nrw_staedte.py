@@ -69,7 +69,7 @@ for k, c in C.items():
      faq=[(f'Montieren Sie Leuchtreklame in ganz {n}?', f'Ja. Unser Team in NRW kommt für Aufmaß und Montage zu Ihnen – zum Beispiel nach {c["veedel"]}. Unser Firmensitz ist in Berlin.'),
           c['faq_lokal'],
           ('Was kostet eine Leuchtreklame?', 'LED-Leuchtbuchstaben beginnen in NRW ab 229 € pro Buchstabe netto zzgl. 19 % MwSt. Leuchtkästen und Ausleger kalkulieren wir nach Größe. Den Festpreis inklusive Montage bekommen Sie nach einem Foto der Fassade.')] + L['faq'][2:5],
-     links=[('/leuchtreklame-nrw.html', 'Leuchtreklame NRW'), (f'/schilder-{k}.html', f'Schilder {n}'), (f'/schaufensterbeschriftung-{k}.html', f'Schaufenster {n}'), (f'/fensterfolie-{k}.html', f'Fensterfolie {n}'), ('/' + c['hub'], f'Werbeagentur {n}')] + [(u, f'Leuchtreklame {t}') for u, t in city_links('leuchtreklame', k)],
+     links=[('/leuchtreklame-nrw.html', 'Leuchtreklame NRW'), (f'/schilder-{k}.html', f'Schilder {n}'), (f'/schaufensterbeschriftung-{k}.html', f'Schaufenster {n}'), ('/fensterfolie-nrw.html', 'Fensterfolie NRW'), ('/' + c['hub'], f'Werbeagentur {n}')] + [(u, f'Leuchtreklame {t}') for u, t in city_links('leuchtreklame', k)],
      form_sub=f'Schicken Sie uns ein Foto der Fassade und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team montiert bei Ihnen in {n}.',
      subject=f'Anfrage Leuchtreklame {n} (Website)', msg_ph=f'z. B. Leuchtbuchstaben über dem Eingang, Fassade ca. 5 m breit, Ladenlokal in {c["ph"]}',
      sticky=(f'Leuchtreklame {n}', 'ab 229 € / Buchstabe netto'), ph=c['ph'])
@@ -119,7 +119,7 @@ for k, c in C.items():
      faq=[(f'Kommen Sie für die Montage nach {n}?', f'Ja. Unser Team in NRW montiert bei Ihnen vor Ort – zum Beispiel in {c["veedel"]}. Unser Firmensitz ist in Berlin.'),
           ('Was kostet eine Schaufensterbeschriftung?', 'Eine einfache Beschriftung mit Logo, Öffnungszeiten und Kontakt beginnt in NRW ab 179 € netto zzgl. 19 % MwSt., Milchglas-Sichtschutz ab 229 €, Lochfolie ab 55 € pro m². Den Festpreis mit Montage bekommen Sie nach einem Foto der Fenster.'),
           c['faq_lokal']] + W['faq'][1:3] + W['faq'][4:5],
-     links=[('/schaufensterbeschriftung-nrw.html', 'Schaufenster NRW'), ('/fensterfolie-nrw.html', 'Fensterfolie NRW'), (f'/schilder-{k}.html', f'Schilder {n}'), (f'/leuchtreklame-{k}.html', f'Leuchtreklame {n}'), (f'/fensterfolie-{k}.html', f'Fensterfolie {n}')] + [(u, f'Schaufenster {t}') for u, t in city_links('schaufensterbeschriftung', k)],
+     links=[('/schaufensterbeschriftung-nrw.html', 'Schaufenster NRW'), ('/fensterfolie-nrw.html', 'Fensterfolie NRW'), (f'/schilder-{k}.html', f'Schilder {n}'), (f'/leuchtreklame-{k}.html', f'Leuchtreklame {n}'), ('/fensterfolie-nrw.html', 'Fensterfolie NRW')] + [(u, f'Schaufenster {t}') for u, t in city_links('schaufensterbeschriftung', k)],
      form_sub=f'Schicken Sie uns ein Foto der Fenster und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team montiert bei Ihnen in {n}.',
      subject=f'Anfrage Schaufensterbeschriftung {n} (Website)', msg_ph=f'z. B. 3 Schaufenster je ca. 1,2 × 2 m, Logo und Leistungen, Milchglas unten, Laden in {c["ph"]}',
      sticky=(f'Schaufenster {n}', 'Beschriftung ab 179 € netto'), ph=c['ph'])
@@ -147,7 +147,8 @@ for k, c in C.items():
      subject=f'Anfrage Fensterfolie {n} (Website)', msg_ph=f'z. B. Büro mit 6 Fenstern nach Süden, je ca. 1,5 × 2 m, zu heiß im Sommer, 2. OG in {c["ph"]}',
      sticky=(f'Fensterfolie {n}', 'Sichtschutz ab 229 € netto'), ph=c['ph'])
     p['top'] = price_top(f'Was kostet <em>Fensterfolie in {n}?</em>', None, ROWS_F, PRICE_NOTE)
-    PAGES_C.append(p)
+    # 24.10.2026: Fensterfolie-Städteseiten in fensterfolie-nrw.html zusammengeführt (301 in .htaccess) – nicht mehr bauen
+    # PAGES_C.append(p)
 
 if __name__ == '__main__':
     for p in PAGES_C:

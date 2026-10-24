@@ -98,6 +98,9 @@ solche Festlegung im Bericht nennen.
 - PVC-Banner-Städteseiten (Köln, Düsseldorf, Dortmund, Essen, Bochum) zu `pvc-banner-nrw.html`
   zusammengeführt (301 in `.htaccess`) – zu ähnlich (Doorway-Risiko). Keine neuen Städteseiten,
   die sich nur im Ortsnamen unterscheiden.
+- Fensterfolie-Städteseiten (Köln, Düsseldorf, Dortmund, Essen, Bochum) am 24.10.2026 zu `fensterfolie-nrw.html`
+  zusammengeführt (301 in `.htaccess`, 98 % gleicher Text). Die übrigen NRW-Städteseiten haben einen lokalen Abschnitt
+  (`tools/seo/stadt_lokal.py`) und den Preisrechner `preisrechner.js` (`tools/seo/preisrechner_einbau.py`, nur Listenpreise).
 - Umland-Seiten `werbeagentur-*` (Brandenburg + Herne, Mülheim, Bottrop) sind sich noch ähnlich –
   echte Projekte/Fotos je Stadt ergänzen, sobald vorhanden.
 

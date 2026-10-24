@@ -332,7 +332,7 @@ F.update(file='fensterfolie-nrw.html', crumb='Fensterfolie NRW', img='fensterfol
   ('Lässt sich die Folie wieder entfernen?', 'Ja. Fensterfolien lassen sich später ablösen. Wie leicht das geht, hängt von Folie und Alter ab.'),
   ('Wie lange dauert die Montage?', 'Für ein Büro oder eine Ladenfront meist ein Termin. Bei großen Glasfassaden nennen wir die Dauer im Angebot.'),
  ],
- links=[('/fensterfolie-berlin.html', 'Fensterfolien: Übersicht'), ('/blog/sonnenschutzfolie-glasfassade-buero.html', 'Sonnenschutz für Glasfassade & Büro'), ('/schaufensterbeschriftung-nrw.html', 'Schaufensterbeschriftung NRW')] + [('/fensterfolie-koeln.html', 'Fensterfolie Köln'), ('/fensterfolie-duesseldorf.html', 'Fensterfolie Düsseldorf'), ('/fensterfolie-dortmund.html', 'Fensterfolie Dortmund'), ('/fensterfolie-essen.html', 'Fensterfolie Essen'), ('/fensterfolie-bochum.html', 'Fensterfolie Bochum')] + CITY_LINKS[:1],
+ links=[('/fensterfolie-berlin.html', 'Fensterfolien: Übersicht'), ('/blog/sonnenschutzfolie-glasfassade-buero.html', 'Sonnenschutz für Glasfassade & Büro'), ('/schaufensterbeschriftung-nrw.html', 'Schaufensterbeschriftung NRW')] + CITY_LINKS[:1],
  form_opts=['Sonnenschutzfolie', 'Sichtschutz / Milchglas', 'Spiegelfolie', 'Sicherheitsfolie', 'Glastür-Markierung'],
  form_sub='Schicken Sie uns Fotos der Fenster und sagen Sie uns, was stört – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team in NRW montiert bei Ihnen vor Ort.',
  subject='Anfrage Fensterfolie NRW (Website)', msg_ph='z. B. Büro mit 6 Fenstern nach Süden, je ca. 1,5 × 2 m, zu heiß im Sommer, 2. OG in Dortmund',

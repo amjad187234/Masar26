@@ -62,3 +62,7 @@ Impressionen laut Search Console (Titel ≤ 60 Zeichen, Beschreibung 110–160, 
 fensterfolie/werbeagentur × Köln, Düsseldorf, Dortmund, Essen, Bochum) einen Abschnitt „Vor Ort in <Stadt>“ mit den belegten
 lokalen Regeln, Tipps und FAQ aus `tools/blog/stadt_ratgeber.py` hinzu (idempotent, Marker `<!-- lokal:start -->`).
 Nach `nrw_staedte.py` erneut ausführen.
+
+`python3 tools/seo/preisrechner_einbau.py` baut den Preisrechner (`preisrechner.js`: Banner, Leuchtbuchstaben, Lochfolie –
+nur „ab“-Preise aus der Preisliste, Berlin bzw. NRW/Hamburg) in Banner-, Leuchtreklame-, Schaufenster- und Werbeagentur-Seiten ein.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `preisrechner_einbau.py` → `snippets.py`.

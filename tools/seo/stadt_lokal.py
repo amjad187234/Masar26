@@ -66,6 +66,19 @@ def main():
             else:
                 print('kein Anker:', f); continue
             open(f, 'w', encoding='utf-8').write(s); n += 1
+    # Sammelseite Fensterfolie NRW: alle fünf Städte in einem Abschnitt (die Städteseiten sind zusammengeführt)
+    f = os.path.join(ROOT, 'fensterfolie-nrw.html')
+    if os.path.exists(f):
+        s = open(f, encoding='utf-8').read()
+        s = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', s, flags=re.S)
+        karten = ''.join(f'<div style="background:#fff;border:1px solid var(--border,#e0eaea);border-radius:10px;padding:1rem 1.2rem"><strong style="color:var(--navy,#132e50)">Fensterfolie {STADT[k]["stadt"]}</strong><br><span style="font-size:15px">{t[0]} – auch {t[1]}.</span></div>' for k, t in TEILE.items())
+        blk = (f'{A}\n<section class="section" id="staedte" style="padding:3rem 0;background:var(--off,#f4f7f7)">\n  <div class="container">\n'
+               '    <div class="sec-head reveal" style="margin-bottom:1.2rem;"><span class="eyebrow">Vor Ort in NRW</span><h2 class="sec-title" style="font-size:clamp(1.5rem,3vw,2.2rem);">Fensterfolie in Köln, Düsseldorf, Dortmund, <em>Essen und Bochum</em></h2></div>\n'
+               '    <p style="max-width:820px;margin:0 auto 1.2rem;color:var(--muted,#5a7070);line-height:1.8">Unser Team in NRW montiert Sonnenschutz-, Sichtschutz- und Sicherheitsfolie in allen großen Städten an Rhein und Ruhr. Vor der Montage prüfen wir das Glas – nicht jede Folie passt zu jeder Scheibe. Soll die Folie Ihr Logo oder Werbung zeigen, kann sie als Werbeanlage gelten; was dann vor Ort gilt, steht in unseren <a href="/blog/#staedte" style="color:var(--teal-ink,#177567);font-weight:700">Stadt-Ratgebern</a>.</p>\n'
+               f'    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.8rem;max-width:1000px;margin:0 auto">{karten}</div>\n  </div>\n</section>\n{Z}\n')
+        m = re.search(r'<(section|div)[^>]*id="kontakt"', s)
+        if m:
+            s = s[:m.start()] + blk + s[m.start():]; open(f, 'w', encoding='utf-8').write(s); n += 1
     print(n, 'Seiten mit lokalem Abschnitt')
 
 
