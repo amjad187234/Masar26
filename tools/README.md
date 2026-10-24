@@ -66,4 +66,5 @@ Nach `nrw_staedte.py` erneut ausführen (die Fensterfolie-Städteseiten gibt es 
 `python3 tools/seo/referenzen_einbau.py` zeigt drei echte Projektfotos („Aus unserer Arbeit“) auf Leuchtreklame-, Fahrzeug-,
 Werbetechnik- und Regionsseiten.
 `python3 tools/seo/hero_klar.py` setzt auf 14 Leistungsseiten oben „ab“-Preis + drei Zusagen (und echte Fotos bei Fahrzeug/Leuchtreklame Berlin).
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py`.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py`.
+`python3 tools/seo/schnell.py` fügt allen öffentlichen Seiten Speculation Rules (Vorladen interner Links) und weiche Seitenübergänge (View Transitions) hinzu – auch nach neuen Seiten ausführen.
