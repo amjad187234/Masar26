@@ -109,4 +109,7 @@ solche Festlegung im Bericht nennen.
 - Phase 3: Angebote/Rechnungen aus der Anfragen-Übersicht; Phase 4: automatische Erinnerungen.
 - Inhaber: `admin_pass_hash` und Telegram einrichten, E-Mail-Versand testen.
 
-Kundennotizen (laufende Aufträge, Angebote) werden **nicht** hier, sondern privat geführt.
+Kundennotizen (laufende Aufträge, Angebote) werden **nicht** hier, sondern privat geführt:
+**Google Doc „Masar – Kundenkartei (privat)“** im Google Drive des Inhabers (Ordner „Masar“). Fragt der Inhaber nach einem
+Kunden, zuerst dort nachlesen (Drive-Suche nach dem Titel); nach jedem neuen Angebot, Termin oder jeder Rechnung den Eintrag
+dort ergänzen. Lokale Kopie nur in `tools/angebot/privat/KUNDENKARTEI.md` (nicht im Repository).
