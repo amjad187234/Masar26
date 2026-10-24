@@ -65,4 +65,5 @@ Nach `nrw_staedte.py` erneut ausführen (die Fensterfolie-Städteseiten gibt es 
 
 `python3 tools/seo/referenzen_einbau.py` zeigt drei echte Projektfotos („Aus unserer Arbeit“) auf Leuchtreklame-, Fahrzeug-,
 Werbetechnik- und Regionsseiten.
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `snippets.py`.
+`python3 tools/seo/hero_klar.py` setzt auf 14 Leistungsseiten oben „ab“-Preis + drei Zusagen (und echte Fotos bei Fahrzeug/Leuchtreklame Berlin).
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py`.
