@@ -939,6 +939,27 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 </script>
 <style id="mobil-swipe">.swipe-hint{display:none;justify-content:center;align-items:center;gap:6px;font:600 13px Barlow,sans-serif;color:var(--muted,#5a7070);margin:.4rem 0 0}@media(max-width:640px){.svc-grid-3.svc-7{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:4px 2px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.svc-grid-3.svc-7::-webkit-scrollbar{display:none}.svc-grid-3.svc-7>.svc-card{flex:0 0 86%;scroll-snap-align:center;width:auto!important;opacity:1!important;transform:none!important}.swipe-hint{display:flex}}</style>
 <style id="sticky-zeile">@media(max-width:768px){.sticky-cta-inner{flex-wrap:nowrap!important;gap:8px!important}.sticky-cta-inner>.sticky-cta-text{flex:1 1 0;min-width:0;padding:10px 6px!important}.sticky-cta-inner>.sticky-cta-text strong{font-size:13px!important}.sticky-cta-actions{flex:1 1 0;min-width:0}.sticky-btn-main{display:block;width:100%;text-align:center;padding:11px 6px!important}}</style>
+<style id="hero-mobile">
+.hero-checks{list-style:none;margin:0 0 1.6rem;padding:0;display:grid;gap:.45rem}
+.hero-checks li{position:relative;padding-left:1.7rem;color:rgba(255,255,255,.88);font-size:15.5px;line-height:1.5}
+.hero-checks li::before{content:"";position:absolute;left:0;top:.2rem;width:1.15rem;height:1.15rem;border-radius:50%;background:#58d0bd url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23132e50' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/70% no-repeat}
+.hero-foto{margin:0;position:relative;max-width:460px;margin-left:auto}
+.hero-foto img{width:100%;height:auto;display:block;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.4);aspect-ratio:1/1;object-fit:cover}
+.hero-foto figcaption{margin-top:.7rem;font-size:13px;color:rgba(255,255,255,.6);text-align:center}
+.zusagen{background:var(--navy3,#0e2340);border-top:1px solid rgba(88,208,189,.15)}
+.zusagen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding-top:1.3rem;padding-bottom:1.3rem}
+.zusagen-grid div{text-align:center;color:rgba(255,255,255,.75);font-size:14px;line-height:1.45}
+.zusagen-grid b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.35rem;color:#58d0bd;text-transform:uppercase;letter-spacing:.5px}
+.qn-label{font-size:clamp(1.3rem,3vw,1.8rem)!important;font-family:'Barlow Condensed',sans-serif;font-weight:800;color:var(--navy,#132e50);text-transform:uppercase;letter-spacing:.5px;margin-bottom:1.1rem!important;text-align:center}
+.qn-sub{font-size:13px!important;font-weight:600;color:var(--teal-ink,#177567)!important}
+.qn-note{text-align:center;font-size:13px;color:var(--muted,#5a7070);margin-top:1rem}
+.qn-note a{color:var(--teal-ink,#177567);font-weight:700}
+.ablauf{list-style:none;counter-reset:a;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem auto 0;padding:0;max-width:960px}
+.ablauf li{counter-increment:a;background:#fff;border:1px solid var(--border,#e0eaea);border-radius:12px;padding:1rem 1rem 1rem 3.4rem;position:relative;font-size:14px;color:var(--muted,#5a7070);line-height:1.5}
+.ablauf li::before{content:counter(a);position:absolute;left:1rem;top:1rem;width:1.8rem;height:1.8rem;border-radius:50%;background:#58d0bd;color:#132e50;font-weight:800;display:flex;align-items:center;justify-content:center}
+.ablauf b{display:block;color:var(--navy,#132e50);font-size:15.5px}
+@media(max-width:900px){.hero-scroll{display:none!important}.hero-visual{display:block!important;margin-top:1.5rem}.hero-foto{max-width:360px;margin:0 auto}.zusagen-grid,.ablauf{grid-template-columns:1fr}.zusagen-grid{gap:.7rem}}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -1039,14 +1060,18 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge">✦ Full-Service Werbeagentur · Berlin-Wedding · Für Unternehmen jeder Größe</div>
-        <h1>Werbeagentur Berlin&nbsp;–<em>Wir machen Sie sichtbar.</em></h1>
-        <p class="hero-sub">Auf der Straße, auf der Messe und online: Werbetechnik, Messebau, Grafikdesign, Webdesign und Social Media – professionell, kreativ und aus einer Hand.</p>
+        <div class="hero-badge">✦ Werkstatt in Berlin-Wedding · Montage in Berlin, Brandenburg, NRW &amp; Hamburg</div>
+        <h1>Werbeagentur Berlin&nbsp;–<em>Schilder, Leuchtreklame &amp; Beschriftung.</em></h1>
+        <p class="hero-sub">Wir gestalten, fertigen und montieren Ihre Werbung – vom Firmenschild über die Leuchtreklame bis zum beschrifteten Transporter. Schicken Sie uns ein Foto, Sie bekommen einen Festpreis.</p>
+        <ul class="hero-checks">
+          <li>Festpreis nach Fotos – Angebot in der Regel in 24&nbsp;Stunden</li>
+          <li>Entwurf inklusive, Genehmigung wird geprüft</li>
+          <li>Montage durch unser eigenes Team</li>
+        </ul>
         <div class="hero-btns">
-          <a href="#leistungen" class="btn btn-teal">Alle Leistungen ↓</a>
-          <a href="#rechner" class="btn btn-outline">In 30 Sekunden zum Angebot</a>
+          <a href="#rechner" class="btn btn-teal">Projekt anfragen →</a>
+          <a href="/termin.html" data-termin-link class="btn btn-outline">Kostenlose Beratung buchen</a>
         </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.45);margin-top:-.8rem;margin-bottom:1rem;">Entdecken Sie unser vollständiges Leistungsportfolio auf der <a href="/leistungen.html" style="color:var(--teal);text-decoration:underline;font-weight:600;">Leistungsübersicht</a>.</p>
         <div style="text-align:center;padding-top:2rem;" class="hero-scroll">
           <a href="#leistungen" aria-label="Scrollen" style="display:inline-flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.35);font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .2s;text-decoration:none;" onmouseover="this.style.color='rgba(88,208,189,.7)'" onmouseout="this.style.color='rgba(255,255,255,.35)'">
             Entdecken
@@ -1055,11 +1080,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
       <div class="hero-visual">
-        <div class="hero-logo-frame">
-          <span class="hero-logo-wrap">
-            <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" fetchpriority="high" width="800" height="800">
-          </span>
-        </div>
+        <figure class="hero-foto">
+          <img src="/referenzen/leuchtreklame-berlin-08.webp" srcset="/referenzen/leuchtreklame-berlin-08-480.webp 480w, /referenzen/leuchtreklame-berlin-08.webp 1079w" sizes="(max-width:900px) 90vw, 460px" alt="Von Masar gefertigte und montierte Leuchtreklame an einem Ladengeschäft in Berlin" loading="eager" fetchpriority="high" width="1079" height="1079">
+          <figcaption>Aus unserer Werkstatt: Leuchtreklame, montiert am Eröffnungstag</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -1085,62 +1109,67 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat"><div class="stat-num" data-count="10" data-suffix="+">10+</div><div class="stat-lbl">Leistungsbereiche</div></div>
-      <div class="stat"><div class="stat-num" data-count="24" data-suffix="h">24h</div><div class="stat-lbl">Angebot per E-Mail</div></div>
-    </div>
+<!-- ZUSAGEN -->
+<div class="zusagen" aria-label="Unsere Zusagen">
+  <div class="container zusagen-grid">
+    <div><b>Festpreis</b><span>nach Fotos oder Aufmaß – keine Überraschungen</span></div>
+    <div><b>24 Stunden</b><span>bis zum Angebot, in der Regel</span></div>
+    <div><b>Alles aus einer Hand</b><span>Entwurf, Fertigung, Genehmigung, Montage</span></div>
   </div>
 </div>
 
 <!-- QUICK NAV -->
 <div class="quick-nav" id="leistungen">
   <div class="container">
-    <div class="qn-label">Direkt zu Ihrem Thema</div>
+    <div class="qn-label">Was möchten Sie machen lassen?</div>
     <div class="qn-grid">
-      <a href="#werbetechnik" class="qn-card reveal">
+      <a href="/leuchtreklame-berlin.html" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
-        <span class="qn-name">Werbetechnik</span>
-        <span class="qn-sub">Leuchtreklamen & Außenwerbung</span>
+        <span class="qn-name">Leuchtreklame</span>
+        <span class="qn-sub">ab 199 € je Buchstabe</span>
       </a>
-      <a href="/fensterfolie-berlin.html" class="qn-card reveal">
+      <a href="/schilder-berlin.html" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M12 16v4M8 20h8"/></svg></span>
+        <span class="qn-name">Schilder</span>
+        <span class="qn-sub">ab 45 € · Firmenschild ab 149 €</span>
+      </a>
+      <a href="/schaufensterbeschriftung-berlin.html" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg></span>
-        <span class="qn-name">Fensterfolien</span>
-        <span class="qn-sub">Sonnen-, Sicht- & Splitterschutz</span>
+        <span class="qn-name">Schaufenster &amp; Folie</span>
+        <span class="qn-sub">ab 149 € · Sichtschutz ab 190 €</span>
       </a>
-      <a href="#messebau" class="qn-card reveal">
-        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></svg></span>
-        <span class="qn-name">Messebau</span>
-        <span class="qn-sub">Messestand von Konzept bis Aufbau</span>
+      <a href="/fahrzeugbeschriftung-berlin.html" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg></span>
+        <span class="qn-name">Fahrzeugbeschriftung</span>
+        <span class="qn-sub">ab 290 €</span>
       </a>
-      <a href="#druck" class="qn-card reveal">
+      <a href="/pvc-banner-berlin.html" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></span>
-        <span class="qn-name">Druck & Print</span>
-        <span class="qn-sub">Flyer, Kataloge & mehr</span>
+        <span class="qn-name">Banner &amp; Druck</span>
+        <span class="qn-sub">Banner ab 19 €/m²</span>
       </a>
-      <a href="#design" class="qn-card reveal">
+      <a href="/messebau-berlin.html" class="qn-card reveal">
+        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg></span>
+        <span class="qn-name">Messebau</span>
+        <span class="qn-sub">Konzept bis Aufbau</span>
+      </a>
+      <a href="/grafikdesign-berlin.html" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></span>
-        <span class="qn-name">Grafikdesign</span>
-        <span class="qn-sub">Branding & Corporate Identity</span>
+        <span class="qn-name">Logo &amp; Design</span>
+        <span class="qn-sub">Logo ab 490 €</span>
       </a>
-      <a href="#web" class="qn-card reveal">
+      <a href="/webdesign-berlin.html" class="qn-card reveal">
         <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
-        <span class="qn-name">Webdesign</span>
-        <span class="qn-sub">Websites & Online-Shops</span>
-      </a>
-      <a href="#social" class="qn-card reveal">
-        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
-        <span class="qn-name">Social Media</span>
-        <span class="qn-sub">Instagram, TikTok & Ads</span>
-      </a>
-      <a href="/ki-loesungen/" class="qn-card reveal">
-        <span class="qn-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
-        <span class="qn-name">KI-Lösungen</span>
-        <span class="qn-sub">Automatisierung & KI-Agenten</span>
+        <span class="qn-name">Website &amp; Social Media</span>
+        <span class="qn-sub">Social Media ab 490 €/Monat</span>
       </a>
     </div>
+    <p class="qn-note">Preise netto zzgl. MwSt., Berlin &amp; Brandenburg. NRW und Hamburg: <a href="/werbeagentur-nrw.html">NRW</a> · <a href="/werbeagentur-hamburg.html">Hamburg</a> · Alle Preise auf der <a href="/leistungen.html">Leistungsübersicht</a>.</p>
+    <ol class="ablauf">
+      <li><b>Foto oder Idee schicken</b><span>per WhatsApp, E-Mail oder Anfrage-Assistent</span></li>
+      <li><b>Festpreis erhalten</b><span>mit Entwurf, meist innerhalb von 24 Stunden</span></li>
+      <li><b>Fertigung &amp; Montage</b><span>durch unser Team – Sie müssen nichts tun</span></li>
+    </ol>
   </div>
 </div>
 
