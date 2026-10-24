@@ -58,3 +58,7 @@ nach dem Neu-Erzeugen von `nrw_staedte.py`/`umland_pages.py` die Box wieder eins
 `python3 tools/seo/snippets.py` setzt Titel und Beschreibung (inkl. og/twitter) für die Seiten mit den meisten
 Impressionen laut Search Console (Titel ≤ 60 Zeichen, Beschreibung 110–160, nur echte „ab“-Preise).
 `--dry` prüft nur die Längen. Nach dem Neu-Erzeugen von Seiten erneut ausführen.
+`python3 tools/seo/stadt_lokal.py` fügt den 25 NRW-Städte-Leistungsseiten (schilder/leuchtreklame/schaufensterbeschriftung/
+fensterfolie/werbeagentur × Köln, Düsseldorf, Dortmund, Essen, Bochum) einen Abschnitt „Vor Ort in <Stadt>“ mit den belegten
+lokalen Regeln, Tipps und FAQ aus `tools/blog/stadt_ratgeber.py` hinzu (idempotent, Marker `<!-- lokal:start -->`).
+Nach `nrw_staedte.py` erneut ausführen.
