@@ -1028,7 +1028,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .ablauf li{counter-increment:a;background:#fff;border:1px solid var(--border,#e0eaea);border-radius:12px;padding:1rem 1rem 1rem 3.4rem;position:relative;font-size:14px;color:var(--muted,#5a7070);line-height:1.5}
 .ablauf li::before{content:counter(a);position:absolute;left:1rem;top:1rem;width:1.8rem;height:1.8rem;border-radius:50%;background:#58d0bd;color:#132e50;font-weight:800;display:flex;align-items:center;justify-content:center}
 .ablauf b{display:block;color:var(--navy,#132e50);font-size:15.5px}
-@media(max-width:900px){.hero-scroll{display:none!important}.hero-visual{display:block!important;margin-top:1.5rem}.hero-foto{max-width:360px;margin:0 auto}.zusagen-grid,.ablauf{grid-template-columns:1fr}.zusagen-grid{gap:.7rem}}
+@media(max-width:900px){.hero-scroll{display:none!important}.hero-visual{display:none!important}.zusagen-grid,.ablauf{grid-template-columns:1fr}.zusagen-grid{gap:.7rem}}
 </style>
 <!-- schnell:start -->
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
@@ -1154,10 +1154,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
       <div class="hero-visual">
-        <figure class="hero-foto">
-          <img src="/referenzen/leuchtreklame-berlin-08.webp" srcset="/referenzen/leuchtreklame-berlin-08-480.webp 480w, /referenzen/leuchtreklame-berlin-08.webp 1079w" sizes="(max-width:900px) 90vw, 460px" alt="Von Masar gefertigte und montierte Leuchtreklame an einem Ladengeschäft in Berlin" loading="eager" fetchpriority="high" width="1079" height="1079">
-          <figcaption>Aus unserer Werkstatt: Leuchtreklame, montiert am Eröffnungstag</figcaption>
-        </figure>
+        <div class="hero-logo-frame">
+          <span class="hero-logo-wrap">
+            <img class="hero-logo-img" src="/logo.webp" alt="Masar Werbeagentur Berlin – Logo" loading="eager" fetchpriority="high" width="800" height="800">
+          </span>
+        </div>
       </div>
     </div>
   </div>
