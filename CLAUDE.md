@@ -100,7 +100,7 @@ solche Festlegung im Bericht nennen.
   die sich nur im Ortsnamen unterscheiden.
 - Fensterfolie-Städteseiten (Köln, Düsseldorf, Dortmund, Essen, Bochum) am 24.10.2026 zu `fensterfolie-nrw.html`
   zusammengeführt (301 in `.htaccess`, 98 % gleicher Text). Die übrigen NRW-Städteseiten haben einen lokalen Abschnitt
-  (`tools/seo/stadt_lokal.py`) und den Preisrechner `preisrechner.js` (`tools/seo/preisrechner_einbau.py`, nur Listenpreise).
+  (`tools/seo/stadt_lokal.py`). Online-Preisrechner am 24.10.2026 auf Wunsch des Inhabers wieder entfernt – nicht neu einbauen.
 - Umland-Seiten `werbeagentur-*` (Brandenburg + Herne, Mülheim, Bottrop) sind sich noch ähnlich –
   echte Projekte/Fotos je Stadt ergänzen, sobald vorhanden.
 

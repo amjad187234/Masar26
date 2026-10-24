@@ -53,7 +53,7 @@ def main():
         if not os.path.exists(p): continue
         s = open(p, encoding='utf-8').read()
         s = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', s, flags=re.S)
-        for anker in ['<!-- preisrechner:start -->', '<!-- lokal:start -->', '<!-- CONTACT -->']:
+        for anker in ['<!-- lokal:start -->', '<!-- CONTACT -->']:
             if anker in s:
                 i = s.index(anker); break
         else:

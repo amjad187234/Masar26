@@ -61,10 +61,8 @@ Impressionen laut Search Console (Titel ≤ 60 Zeichen, Beschreibung 110–160, 
 `python3 tools/seo/stadt_lokal.py` fügt den 25 NRW-Städte-Leistungsseiten (schilder/leuchtreklame/schaufensterbeschriftung/
 fensterfolie/werbeagentur × Köln, Düsseldorf, Dortmund, Essen, Bochum) einen Abschnitt „Vor Ort in <Stadt>“ mit den belegten
 lokalen Regeln, Tipps und FAQ aus `tools/blog/stadt_ratgeber.py` hinzu (idempotent, Marker `<!-- lokal:start -->`).
-Nach `nrw_staedte.py` erneut ausführen.
+Nach `nrw_staedte.py` erneut ausführen (die Fensterfolie-Städteseiten gibt es nicht mehr, dafür einen Städte-Abschnitt auf `fensterfolie-nrw.html`).
 
-`python3 tools/seo/preisrechner_einbau.py` baut den Preisrechner (`preisrechner.js`: Banner, Leuchtbuchstaben, Lochfolie –
-nur „ab“-Preise aus der Preisliste, Berlin bzw. NRW/Hamburg) in Banner-, Leuchtreklame-, Schaufenster- und Werbeagentur-Seiten ein.
 `python3 tools/seo/referenzen_einbau.py` zeigt drei echte Projektfotos („Aus unserer Arbeit“) auf Leuchtreklame-, Fahrzeug-,
 Werbetechnik- und Regionsseiten.
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `preisrechner_einbau.py` → `referenzen_einbau.py` → `snippets.py`.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `snippets.py`.
