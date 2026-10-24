@@ -33,7 +33,7 @@ BESCHR = 'Werbeagentur in Hamburg mit eigenem Team vor Ort: Schilder, Leuchtrekl
 s = s.replace('Werbeagentur in NRW mit eigenem Team vor Ort: Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Druck, Grafik- und Webdesign.', BESCHR)
 s = s.replace('Werbeagentur NRW: Werbetechnik, Druck &amp; Design | Masar', 'Werbeagentur Hamburg: Werbetechnik, Druck &amp; Design | Masar')
 # Titel und Beschreibung fest setzen (die NRW-Vorlage wird von tools/seo/snippets.py umgeschrieben)
-HH_T = 'Werbeagentur Hamburg: Schilder, Leuchtreklame & Folie | Masar'
+HH_T = 'Werbeagentur Hamburg: Schilder, Leuchtreklame & Folie'
 HH_D = 'Werbetechnik in Hamburg mit eigenem Team vor Ort: Schilder ab 59 €, Leuchtbuchstaben ab 229 €, Schaufenster- und Fahrzeugbeschriftung. Angebot in 24 h.'
 s = re.sub(r'<title>.*?</title>', '<title>' + HH_T.replace('&', '&amp;') + '</title>', s, count=1, flags=re.S)
 for _n, _a in [('description', 'name'), ('og:description', 'property'), ('twitter:description', 'name')]:

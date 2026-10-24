@@ -12,7 +12,7 @@ ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname
 S = {
  'index.html': ('Werbeagentur Berlin: Schilder, Leuchtreklame & Folie | Masar',
    'Werbetechnik aus Berlin-Wedding: Schilder ab 45 €, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung. Festpreis nach Fotos, Angebot in 24 h.'),
- 'werbetechnik.html': ('Werbetechnik Berlin: Schilder, Leuchtreklame & Montage | Masar',
+ 'werbetechnik.html': ('Werbetechnik Berlin: Schilder, Leuchtreklame & Montage',
    'Werbetechnik für Berliner Firmen: Schilder ab 45 €, Leuchtbuchstaben ab 199 €, Fahrzeug- und Schaufensterbeschriftung – Entwurf, Fertigung, Montage.'),
  'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung Berlin ab 290 € | Transporter & Flotte',
    'Auto, Transporter oder ganze Flotte in Berlin beschriften lassen: Entwurf inklusive, Montage in unserer Werkstatt im Wedding, Festpreis nach Fotos.'),
@@ -106,6 +106,24 @@ def main(dry=False):
         s = setze(s, 'twitter:title', t); s = setze(s, 'twitter:description', d)
         open(p, 'w', encoding='utf-8').write(s)
     print(len(S), 'Seiten', 'geprüft' if dry else 'aktualisiert', '–', fehler, 'Längenhinweise')
+    # Zweiter Durchgang: übrige Titel über 60 Zeichen – Markenzusatz „ | Masar“ weglassen
+    import glob
+    gekuerzt = 0
+    for p in glob.glob(os.path.join(ROOT, '*.html')) + glob.glob(os.path.join(ROOT, 'blog', '*.html')):
+        s = open(p, encoding='utf-8').read()
+        m = re.search(r'<title>(.*?)</title>', s, re.S)
+        if not m: continue
+        t = html.unescape(m.group(1).strip())
+        if len(t) <= 60 or not t.endswith(' | Masar'): continue
+        neu = t[:-len(' | Masar')]
+        gekuerzt += 1
+        if dry: print('kürzen', os.path.relpath(p, ROOT), len(t), '→', len(neu)); continue
+        e = html.escape(neu, quote=False)
+        s = s.replace(m.group(0), f'<title>{e}</title>', 1)
+        for n, a in [('og:title', 'property'), ('twitter:title', 'name')]:
+            s = re.sub(rf'(<meta {a}="{n}" content=")[^"]*', lambda mm: mm.group(1) + html.escape(neu, quote=True), s, count=1)
+        open(p, 'w', encoding='utf-8').write(s)
+    print(gekuerzt, 'weitere Titel gekürzt')
 
 
 if __name__ == '__main__':
