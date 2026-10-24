@@ -65,4 +65,6 @@ Nach `nrw_staedte.py` erneut ausführen.
 
 `python3 tools/seo/preisrechner_einbau.py` baut den Preisrechner (`preisrechner.js`: Banner, Leuchtbuchstaben, Lochfolie –
 nur „ab“-Preise aus der Preisliste, Berlin bzw. NRW/Hamburg) in Banner-, Leuchtreklame-, Schaufenster- und Werbeagentur-Seiten ein.
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `preisrechner_einbau.py` → `snippets.py`.
+`python3 tools/seo/referenzen_einbau.py` zeigt drei echte Projektfotos („Aus unserer Arbeit“) auf Leuchtreklame-, Fahrzeug-,
+Werbetechnik- und Regionsseiten.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `preisrechner_einbau.py` → `referenzen_einbau.py` → `snippets.py`.
