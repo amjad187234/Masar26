@@ -17,7 +17,7 @@
   var roots = document.querySelectorAll('[data-assistent]');
   if (!roots.length) return;
 
-  var WA = '491785143918';
+  var WA = '491785143918', WA_NRW = '491782410682'; // NRW-Team (Inhaber, 28.10.2026)
 
   // a: [Auswahl, Seite Berlin, ab-Preis Berlin, Hinweis, Titel, ab-Preis NRW, Einheit, Seite NRW]
   var T = {
@@ -152,6 +152,7 @@
   Array.prototype.forEach.call(roots, function (root, idx) {
     if (root.getAttribute('data-as-ready')) return; root.setAttribute('data-as-ready', '1');
     var region = root.getAttribute('data-region'), hh = region === 'hamburg', nrw = region === 'nrw' || hh;
+    var wa = region === 'nrw' ? WA_NRW : WA;
     var sv = (root.getAttribute('data-start') || '').split(':');
     var key = 'masar-as-' + location.pathname + '-' + idx;
     var t0 = String(Date.now());
@@ -296,7 +297,7 @@
       c1.appendChild(txt('h5', '', 'Per WhatsApp – am schnellsten'));
       c1.appendChild(el('p', '', 'Die Nachricht ist fertig vorbereitet. Fotos können Sie in WhatsApp direkt anhängen. Ihre Angaben speichern wir mit einer Anfragenummer zur Bearbeitung (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>).'));
       var w = el('a', 'as-btn as-wa', '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp öffnen');
-      w.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg); w.target = '_blank'; w.rel = 'noopener noreferrer';
+      w.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg); w.target = '_blank'; w.rel = 'noopener noreferrer';
       w.addEventListener('click', function (ev) {
         // Anfrage zuerst speichern (Nummer für die Übersicht), dann WhatsApp mit Anfragenummer öffnen
         if (!window.fetch) return;
@@ -309,7 +310,7 @@
           if (done) return; done = true;
           if (s.merken && nr) kAnfrage(nr, T[s.thema].name + ' – ' + a[0]);
           var text = nr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + nr + '):') : msg;
-          var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text);
+          var url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
           try { sessionStorage.removeItem(key); } catch (e) {}
           // WhatsApp erst per Klick öffnen (sonst blockiert der Browser das neue Fenster)
           var los = function () { var win = null; try { win = window.open(url, '_blank', 'noopener'); } catch (e) {} if (!win) location.href = url; };

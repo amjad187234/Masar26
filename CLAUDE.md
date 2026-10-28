@@ -22,7 +22,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 - Ein Standort: Bristolstraße 19E, 13349 Berlin · Tel./WhatsApp 0178 514 3918 · info@masar-werbeagentur.de
 - NRW: Team vor Ort, aber **keine Adresse/Filiale in NRW** behaupten. NRW-Seiten zeigen in
   Navigation/Mobilmenü WhatsApp/E-Mail statt Telefon.
-- WhatsApp NRW-Team: 0178 2410682 (Inhaber, 28.10.2026) – in Nachrichten an NRW-Kunden für die Abstimmung nennen. Auf der Website noch nicht eingebaut.
+- WhatsApp NRW-Team: 0178 2410682 (Inhaber, 28.10.2026) – in Nachrichten an NRW-Kunden nennen. Auf allen NRW-Seiten (`data-region="nrw"`) als WhatsApp-Link und im Assistenten (`tools/seo/nrw_whatsapp.py`); Telefon/Impressum/JSON-LD bleiben bei der Firmennummer.
 - NRW-Team macht alles außer Foto/Video und Messebau. Messebau und Express nur Berlin.
   Ausnahme: In Essen gibt es eine Marketing-Kraft (Content, Video, „Gesicht“ für Kundenmarketing) – vom Inhaber am 17.10.2026 genannt.
 - Hamburg (seit 23.10.2026, vom Inhaber bestätigt): eigenes Team vor Ort, **keine Adresse/Filiale**; Leistungen und Preise wie NRW
