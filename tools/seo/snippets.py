@@ -34,6 +34,8 @@ S = {
    'Foliendruck in Berlin: Aufkleber, Klebefolie, Bodenaufkleber und Fensterfolie ab 45 € – wetterfest und in Ihrem Design. Angebot in 24 h.'),
  'praxisbeschilderung-berlin.html': ('Praxisschilder Berlin: Schild, Tür & Sichtschutz | Masar',
    'Praxisschild, Türschild, Sprechzeiten und Sichtschutz am Fenster für Arzt- und Therapiepraxen in Berlin – gestaltet und montiert. Pakete ab 699 € netto.'),
+ 'referenzen.html': ('Referenzen: Leuchtreklame & Fahrzeugbeschriftung Berlin',
+   'Echte Projekte aus unserer Werkstatt: Leuchtreklame, Fahrzeugbeschriftung und Vollfolierung, Schaufenster, Digital Signage – Fotos aus Berlin.'),
  'werbetechnik-potsdam.html': ('Werbetechnik Potsdam: Schilder, Banner & Fahrzeuge | Masar',
    'Werbetechnik in Potsdam: Schilder ab 45 €, Banner, Fahrzeugbeklebung, Leuchtreklame und Schaufenster – Werbesatzung geprüft, Montage vor Ort.'),
  'werbeagentur-koeln.html': ('Werbeagentur & Werbetechnik Köln | Masar',
