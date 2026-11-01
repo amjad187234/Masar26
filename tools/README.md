@@ -68,5 +68,6 @@ Werbetechnik- und Regionsseiten.
 `python3 tools/seo/hero_klar.py` setzt auf 14 Leistungsseiten oben „ab“-Preis + drei Zusagen (und echte Fotos bei Fahrzeug/Leuchtreklame Berlin).
 Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py`.
 `python3 tools/seo/blog_kurzbox.py` setzt in jedem Ratgeber nach der Einleitung eine kurze Angebotsbox (Text/Link aus der `.article-cta` des Artikels) – nach neuen Ratgebern ausführen.
+`python3 tools/seo/banner_beispiele.py` setzt auf den Banner-Seiten (Berlin/NRW) Rechenbeispiele aus den Listenpreisen – nach `banner_pages.py` ausführen.
 `python3 tools/seo/nrw_whatsapp.py` stellt die WhatsApp-Links auf NRW-Seiten (`data-region="nrw"`) auf das NRW-Team (0178 2410682) um; der Assistent nutzt dort dieselbe Nummer.
 `python3 tools/seo/schnell.py` fügt allen öffentlichen Seiten Speculation Rules (Vorladen interner Links) und weiche Seitenübergänge (View Transitions) hinzu – auch nach neuen Seiten ausführen.
