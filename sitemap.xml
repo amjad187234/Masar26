@@ -149,7 +149,7 @@
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -947,5 +947,30 @@
     <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/messestand-berlin-2027.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/schaufenster-weihnachten-black-friday.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/messeauftritt-berlin-2027-checkliste.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/leasingrueckgabe-fahrzeugbeschriftung-entfernen.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/fotowand-firmenfeier.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
