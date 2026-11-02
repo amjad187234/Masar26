@@ -45,7 +45,7 @@
 
   function start(o) {
     o = o || {};
-    var el = document.createElement('div'); el.className = 'mf'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); el.setAttribute('aria-live', 'polite');
+    var el = document.createElement('div'); el.className = 'mf'; el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', 'true'); el.setAttribute('aria-live', 'polite'); el.setAttribute('aria-label', 'Status Ihrer Anfrage');
     el.innerHTML = '<div class="mf-k"><canvas></canvas><div class="mf-ring">'
       + '<svg viewBox="0 0 148 148" aria-hidden="true"><defs><linearGradient id="mfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#58d0bd"/><stop offset="1" stop-color="#132e50"/></linearGradient></defs>'
       + '<circle class="mf-bg" cx="74" cy="74" r="64"/><circle class="mf-pr" cx="74" cy="74" r="64" stroke-dasharray="' + U + '" stroke-dashoffset="' + U + '"/>'

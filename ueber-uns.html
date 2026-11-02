@@ -255,7 +255,7 @@ html:not(.js) .svc-card{opacity:1!important;transform:none!important}
 .why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:opacity .38s ease,transform .38s ease}
 .why-item.vis,.why-item.in{opacity:1;transform:none}
 .why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
-.why-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
+.why-item h4,.why-item h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
 .why-item p{font-size:15.5px;color:var(--muted);line-height:1.65}
 
 /* ───────── FAQ ───────── */
@@ -378,11 +378,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<div id="stickyCta">
+<div id="stickyCta" role="complementary" aria-label="Schnellkontakt">
   <a class="scta-txt" data-termin-link data-btn href="/termin.html?thema=Ein%20Team%2C%20alle%20Gewerke" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid #58d0bd;background:rgba(88,208,189,.16);color:#fff;border-radius:8px;padding:9px 16px;font-weight:700;line-height:1.3"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><b style="color:#fff">Kostenlose Beratung buchen →</b></a>
   <div class="scta-btns">
     <a href="tel:01785143918" class="scta-btn primary"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0178 514 3918</a>
@@ -390,9 +391,9 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </div>
 
-<a class="wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Frage%20an%20Ihr%20Team." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Masar Werbeagentur">
+<aside aria-label="WhatsApp"><a class="wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20habe%20eine%20Frage%20an%20Ihr%20Team." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Masar Werbeagentur">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.96 9.96 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-</a>
+</a></aside>
 
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
@@ -462,7 +463,8 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <a href="#kontakt" class="mob-cta">Jetzt Angebot anfordern →</a>
 </nav>
 
-<section class="hero" id="main-content" role="main" tabindex="-1">
+<main id="main-content" tabindex="-1">
+<section class="hero">
   <div class="hero-lines"></div>
   <div class="container">
     <div class="hero-inner">
@@ -537,42 +539,42 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <div class="why-item reveal">
         <div class="why-num">1</div>
         <div>
-          <h4>Eine Verantwortung statt gegenseitiger Hinweise</h4>
+          <h3>Eine Verantwortung statt gegenseitiger Hinweise</h3>
           <p>Weicht die Farbe ab, sagt die Druckerei, die Datei sei schuld, und die Agentur, der Druck. Wenn beides bei uns liegt, gibt es diese Diskussion nicht – wir korrigieren einfach.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">2</div>
         <div>
-          <h4>Entworfen wird mit der Fertigung im Kopf</h4>
+          <h3>Entworfen wird mit der Fertigung im Kopf</h3>
           <p>Ein Logo mit haarfeinen Linien sieht am Bildschirm gut aus und lässt sich nicht als Folie schneiden. Wer beides macht, merkt das im Entwurf und nicht am Plotter.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">3</div>
         <div>
-          <h4>Ihr Auftritt bleibt derselbe</h4>
+          <h3>Ihr Auftritt bleibt derselbe</h3>
           <p>Schild, Transporter, Speisekarte, Bildschirm, Website: dieselbe Schrift, dasselbe Grün, derselbe Abstand. Bei vier Zulieferern werden daraus vier Auslegungen Ihrer Marke.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">4</div>
         <div>
-          <h4>Ein Termin statt einer Kette von Wartezeiten</h4>
+          <h3>Ein Termin statt einer Kette von Wartezeiten</h3>
           <p>Nicht erst der Entwurf, dann zwei Wochen auf den Druck, dann auf einen Montagetermin. Wir planen die Schritte zusammen, weil sie in denselben Kalender gehören.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">5</div>
         <div>
-          <h4>Sie erklären Ihr Vorhaben einmal</h4>
+          <h3>Sie erklären Ihr Vorhaben einmal</h3>
           <p>Kein viermaliges Briefing, kein Weiterleiten von Dateien, keine Erklärung, warum die Filiale in Moabit anders heißt. Ein Gespräch, ein Ansprechpartner, eine Rechnung.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">6</div>
         <div>
-          <h4>Später kommt etwas dazu – und passt</h4>
+          <h3>Später kommt etwas dazu – und passt</h3>
           <p>Ein zweites Fahrzeug, ein neuer Standort, eine Aktion. Die Vorlagen und Daten liegen bei uns. Wir setzen fort, statt Ihre Marke neu zu rekonstruieren.</p>
         </div>
       </div>
@@ -597,27 +599,27 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="why-grid" style="margin-top:2rem;">
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
-        <div><h4>Gestaltung &amp; Druckdaten</h4><p>Entwurf, Reinzeichnung und druckfertige Daten – von einem Mediengestalter Digital und Print, nicht von einer Vorlage.</p></div>
+        <div><h3>Gestaltung &amp; Druckdaten</h3><p>Entwurf, Reinzeichnung und druckfertige Daten – von einem Mediengestalter Digital und Print, nicht von einer Vorlage.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></div>
-        <div><h4>Druck im Haus</h4><p>Hochauflösender Großformatdruck auf eigenen Maschinen. Farbkontrolle passiert bei uns, nicht per E-Mail mit einem Zulieferer.</p></div>
+        <div><h3>Druck im Haus</h3><p>Hochauflösender Großformatdruck auf eigenen Maschinen. Farbkontrolle passiert bei uns, nicht per E-Mail mit einem Zulieferer.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></div>
-        <div><h4>Plott &amp; Zuschnitt</h4><p>Folienschnitt und Zuschnitt direkt im Anschluss an den Druck – kurze Wege, keine Wartezeit zwischen zwei Betrieben.</p></div>
+        <div><h3>Plott &amp; Zuschnitt</h3><p>Folienschnitt und Zuschnitt direkt im Anschluss an den Druck – kurze Wege, keine Wartezeit zwischen zwei Betrieben.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg></div>
-        <div><h4>Werkstatt und Partnerbetrieb</h4><p>Schilder, Zuschnitte und Folienarbeiten entstehen in unserer eigenen Werkstatt. Beleuchtete Anlagen werden nach unseren Zeichnungen in einem eingetragenen Fachbetrieb gebaut – Entwurf, Konstruktionsvorgaben und Abnahme bleiben bei uns.</p></div>
+        <div><h3>Werkstatt und Partnerbetrieb</h3><p>Schilder, Zuschnitte und Folienarbeiten entstehen in unserer eigenen Werkstatt. Beleuchtete Anlagen werden nach unseren Zeichnungen in einem eingetragenen Fachbetrieb gebaut – Entwurf, Konstruktionsvorgaben und Abnahme bleiben bei uns.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <div><h4>Montage vor Ort</h4><p>Beschriftungen, Folien und Schilder bringt unser eigenes Team an. Beleuchtete Anlagen werden von unseren Fachbetrieben gesetzt und angeschlossen.</p></div>
+        <div><h3>Montage vor Ort</h3><p>Beschriftungen, Folien und Schilder bringt unser eigenes Team an. Beleuchtete Anlagen werden von unseren Fachbetrieben gesetzt und angeschlossen.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num" aria-hidden="true"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
-        <div><h4>Behördenabwicklung</h4><p>Ist eine Werbeanlage genehmigungspflichtig, übernehmen wir den Weg zum zuständigen Bezirksamt.</p></div>
+        <div><h3>Behördenabwicklung</h3><p>Ist eine Werbeanlage genehmigungspflichtig, übernehmen wir den Weg zum zuständigen Bezirksamt.</p></div>
       </div>
     </div>
   </div>
@@ -689,27 +691,27 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="why-grid">
       <div class="why-item">
         <div class="why-num">1</div>
-        <div><h4>Ein Ansprechpartner</h4><p>Vom ersten Gespräch bis zur Montage bleiben Sie bei derselben Person. Keine Weiterreichung zwischen Abteilungen, keine Nummer im Ticketsystem.</p></div>
+        <div><h3>Ein Ansprechpartner</h3><p>Vom ersten Gespräch bis zur Montage bleiben Sie bei derselben Person. Keine Weiterreichung zwischen Abteilungen, keine Nummer im Ticketsystem.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">2</div>
-        <div><h4>Erst der Entwurf, dann die Produktion</h4><p>Sie sehen, wie Ihre Beschriftung aussehen wird, bevor irgendetwas geschnitten oder gedruckt wird. Änderungen kosten in dieser Phase nichts außer Zeit.</p></div>
+        <div><h3>Erst der Entwurf, dann die Produktion</h3><p>Sie sehen, wie Ihre Beschriftung aussehen wird, bevor irgendetwas geschnitten oder gedruckt wird. Änderungen kosten in dieser Phase nichts außer Zeit.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">3</div>
-        <div><h4>Preis steht vor dem Auftrag</h4><p>Was im Angebot steht, gilt. Kommt im Projektverlauf etwas hinzu, besprechen wir es vorher – nicht auf der Schlussrechnung.</p></div>
+        <div><h3>Preis steht vor dem Auftrag</h3><p>Was im Angebot steht, gilt. Kommt im Projektverlauf etwas hinzu, besprechen wir es vorher – nicht auf der Schlussrechnung.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">4</div>
-        <div><h4>Wir kommen zu Ihnen</h4><p>Aufmaß und Montage übernehmen wir vor Ort – in Berlin, in <a href="/werbetechnik-potsdam.html">Potsdam</a>, im <a href="/werbetechnik-brandenburg.html">Umland und in Brandenburg</a> und in Dresden. Bei Fassaden und Werbeanlagen sehen wir uns den Standort vorher an, statt nach Fotos zu kalkulieren.</p></div>
+        <div><h3>Wir kommen zu Ihnen</h3><p>Aufmaß und Montage übernehmen wir vor Ort – in Berlin, in <a href="/werbetechnik-potsdam.html">Potsdam</a>, im <a href="/werbetechnik-brandenburg.html">Umland und in Brandenburg</a> und in Dresden. Bei Fassaden und Werbeanlagen sehen wir uns den Standort vorher an, statt nach Fotos zu kalkulieren.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">5</div>
-        <div><h4>Beratung auch auf Arabisch</h4><p>Für arabischsprachige Unternehmerinnen und Unternehmer in Berlin: Beratung und Abstimmung auf Arabisch möglich – كلامنا عربي.</p></div>
+        <div><h3>Beratung auch auf Arabisch</h3><p>Für arabischsprachige Unternehmerinnen und Unternehmer in Berlin: Beratung und Abstimmung auf Arabisch möglich – كلامنا عربي.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">6</div>
-        <div><h4>Wo ein Partner beteiligt ist, sagen wir es</h4><p>Den elektrischen Anschluss beleuchteter Anlagen übernimmt ein Elektrofachbetrieb, bei bestimmten Druckauflagen arbeiten wir mit Druckpartnern. Sie erfahren das vorher und nicht aus einer fremden Rechnung – Ihr Vertragspartner bleiben wir.</p></div>
+        <div><h3>Wo ein Partner beteiligt ist, sagen wir es</h3><p>Den elektrischen Anschluss beleuchteter Anlagen übernimmt ein Elektrofachbetrieb, bei bestimmten Druckauflagen arbeiten wir mit Druckpartnern. Sie erfahren das vorher und nicht aus einer fremden Rechnung – Ihr Vertragspartner bleiben wir.</p></div>
       </div>
     </div>
   </div>
@@ -740,28 +742,28 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <div class="why-item reveal">
         <div class="why-num">✕</div>
         <div>
-          <h4>Wenn das Vorhaben nicht trägt</h4>
+          <h3>Wenn das Vorhaben nicht trägt</h3>
           <p>Wenn eine Werbeanlage genehmigungspflichtig ist und die Aussichten schlecht stehen, oder ein Material für Ihren Untergrund nicht taugt, sagen wir es vorher. Lieber ein Auftrag weniger als eine Lösung, die nach einem Jahr Ärger macht.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">✕</div>
         <div>
-          <h4>Wenn der Aufwand den Nutzen übersteigt</h4>
+          <h3>Wenn der Aufwand den Nutzen übersteigt</h3>
           <p>Nicht jeder Betrieb braucht ein KI-System, nicht jede Website einen Relaunch. Wenn der kleinere Weg reicht, empfehlen wir den kleineren Weg.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">✕</div>
         <div>
-          <h4>Wenn jemand anders besser passt</h4>
+          <h3>Wenn jemand anders besser passt</h3>
           <p>Es gibt Aufträge, für die eine spezialisierte Firma die bessere Adresse ist. Das zu sagen kostet uns einen Auftrag und Ihnen nichts – und ist der Grund, warum man wiederkommt.</p>
         </div>
       </div>
       <div class="why-item reveal">
         <div class="why-num">✕</div>
         <div>
-          <h4>Wenn Zahlen erfunden werden müssten</h4>
+          <h3>Wenn Zahlen erfunden werden müssten</h3>
           <p>Auf dieser Website finden Sie keine Prozentangaben über Zufriedenheit und keine Versprechen, die wir nicht halten können. Was hier steht, können wir belegen – notfalls in der Werkstatt.</p>
         </div>
       </div>
@@ -834,6 +836,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </section>
 
+</main>
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -850,7 +853,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
       <div class="foot-col">
-        <h5>Leistungen</h5>
+        <h2 class="foot-h">Leistungen</h2>
         <a href="/leuchtreklame-berlin.html">Leuchtreklamen Berlin</a>
         <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
         <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
@@ -861,7 +864,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <a href="/aussenwerbung-berlin.html">Außenwerbung Berlin</a>
       </div>
       <div class="foot-col">
-        <h5>Seiten</h5>
+        <h2 class="foot-h">Seiten</h2>
         <a href="/referenzen.html">Referenzen</a>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/einsatzgebiete.html">Einsatzgebiete</a>
@@ -878,11 +881,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <a href="/blog/">Blog &amp; Tipps</a>
       </div>
       <div class="foot-col">
-        <h5>Kontakt</h5>
+        <h2 class="foot-h">Kontakt</h2>
         <a href="tel:01785143918">0178 514 3918</a>
         <a href="https://wa.me/491785143918">WhatsApp</a>
         <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
-        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <h2 class="foot-h" style="margin-top:1.2rem;">Rechtliches</h2>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
         <a href="/agb.html">AGB</a>
@@ -993,7 +996,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 })();
 </script>
 <script src="/cookie-consent.js?v=2" defer></script>
-<script src="/fertig.js?v=1" defer></script>
+<script src="/fertig.js?v=2" defer></script>
 <script src="/app.js" defer></script>
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>

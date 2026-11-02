@@ -12,7 +12,7 @@ CSS = ('<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-con
        'padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}'
        '.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}'
        '.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}'
-       '.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#fff}</style>')
+       '.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#0b2e19}</style>')
 
 
 def main():

@@ -193,7 +193,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
 .related-card{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:.2s}
 .related-card:hover{border-color:var(--teal)}
-.related-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
+.related-card h4,.related-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
 .related-card p{font-size:13px;color:var(--muted);margin-bottom:.6rem}
 .related-card a{font-size:13px;color:var(--teal-ink);font-weight:700}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
@@ -273,11 +273,12 @@ table.rt td:first-child{display:block;border-top:0!important;text-align:left;fon
 table.rt td:first-child::before{display:none}
 }
 </style>
-<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#fff}</style>
+<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#0b2e19}</style>
 <!-- schnell:start -->
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -368,7 +369,7 @@ table.rt td:first-child::before{display:none}
 
     <div class="tip-box"><p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Kurz gesagt:</strong> In Bottrop gilt für Werbeanlagen die BauO NRW (bis 1 m² verfahrensfrei). Für den Gehweg regelt die <strong>Straßenbenutzungs-Satzung</strong>: Werbung an der Stätte der Leistung darf ohne Erlaubnis bis <strong>0,30 m</strong> in die Straße ragen, wenn mindestens <strong>1,50 m</strong> Gehweg frei bleiben.</p></div>
 
-                    <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Werbeanlage in Bottrop planen?</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/werbeagentur-bottrop.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo,%20ich%20plane%20eine%20Werbeanlage%20in%20Bottrop." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
+                        <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Werbeanlage in Bottrop planen?</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/werbeagentur-bottrop.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo,%20ich%20plane%20eine%20Werbeanlage%20in%20Bottrop." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
     <h2>1. Was grundsätzlich gilt</h2>
     <p>In ganz Nordrhein-Westfalen gilt die Landesbauordnung (BauO NRW). Werbeanlagen mit einer Ansichtsfläche bis 1 m² sind nach § 62 BauO NRW verfahrensfrei; mehrere Flächen nebeneinander werden zusammengerechnet. Städte dürfen aber nach § 89 BauO NRW eigene Gestaltungs- und Werbesatzungen erlassen – und genau dort wird es in Bottrop interessant.</p>
     <p>Wichtig ist immer der <strong>Standort der Werbeanlage</strong>, nicht der Sitz Ihrer Firma. Und „verfahrensfrei“ heißt nicht „regelfrei“: Auch ohne Antrag müssen Größe, Lage und Gestaltung zu den örtlichen Vorschriften passen.</p>
@@ -416,8 +417,8 @@ table.rt td:first-child::before{display:none}
     <div class="related-posts">
       <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Ratgeber für weitere Städte</h2>
       <div class="related-grid">
-        <div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Leverkusen</h4><p>Für die Wiesdorfer City gibt es neue Gestaltungsregeln und eine Fibel für Händler. Was …</p><a href="/blog/werbeanlage-leverkusen.html">Artikel lesen →</a></div><div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Köln</h4><p>Köln hat für viele Veedel eigene Werbesatzungen – dort ist oft schon ab 0,5 m² ein Antrag …</p><a href="/blog/werbeanlage-koeln.html">Artikel lesen →</a></div><div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Düsseldorf</h4><p>In der Düsseldorfer Altstadt braucht schon ein Schild unter 0,5 m² eine Baugenehmigung. …</p><a href="/blog/werbeanlage-duesseldorf.html">Artikel lesen →</a></div><div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Dortmund</h4><p>Am Westen- und Ostenhellweg ist jede Werbeanlage genehmigungspflichtig. Was die …</p><a href="/blog/werbeanlage-dortmund.html">Artikel lesen →</a></div><div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Essen</h4><p>Wer genehmigt Werbung in Essen, was kostet der Antrag und was bedeutet die geplante …</p><a href="/blog/werbeanlage-essen.html">Artikel lesen →</a></div>
-        <div class="related-card"><h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Berlin</h4><p>Außenwerbung in Berlin: Genehmigung, Kosten und Strategien …</p><a href="/blog/aussenwerbung-berlin-ratgeber.html">Artikel lesen →</a></div>
+        <div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Leverkusen</h3><p>Für die Wiesdorfer City gibt es neue Gestaltungsregeln und eine Fibel für Händler. Was …</p><a href="/blog/werbeanlage-leverkusen.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Köln</h3><p>Köln hat für viele Veedel eigene Werbesatzungen – dort ist oft schon ab 0,5 m² ein Antrag …</p><a href="/blog/werbeanlage-koeln.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Düsseldorf</h3><p>In der Düsseldorfer Altstadt braucht schon ein Schild unter 0,5 m² eine Baugenehmigung. …</p><a href="/blog/werbeanlage-duesseldorf.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Dortmund</h3><p>Am Westen- und Ostenhellweg ist jede Werbeanlage genehmigungspflichtig. Was die …</p><a href="/blog/werbeanlage-dortmund.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Essen</h3><p>Wer genehmigt Werbung in Essen, was kostet der Antrag und was bedeutet die geplante …</p><a href="/blog/werbeanlage-essen.html">Artikel lesen →</a></div>
+        <div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Berlin</h3><p>Außenwerbung in Berlin: Genehmigung, Kosten und Strategien …</p><a href="/blog/aussenwerbung-berlin-ratgeber.html">Artikel lesen →</a></div>
       </div>
     </div>
   </div>
@@ -440,7 +441,7 @@ table.rt td:first-child::before{display:none}
         </div>
       </div>
       <div class="foot-col">
-        <h5>Leistungen</h5>
+        <h2 class="foot-h">Leistungen</h2>
         <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
         <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
         <a href="/fensterfolie-berlin.html">Fensterfolien Berlin</a>
@@ -455,7 +456,7 @@ table.rt td:first-child::before{display:none}
         <a href="/schilder-berlin.html">Schilder</a>
       </div>
       <div class="foot-col">
-        <h5>Seiten &amp; Blog</h5>
+        <h2 class="foot-h">Seiten &amp; Blog</h2>
         <a href="/referenzen.html">Referenzen</a>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/einsatzgebiete.html">Einsatzgebiete</a>
@@ -472,11 +473,11 @@ table.rt td:first-child::before{display:none}
         <a href="/blog/aussenwerbung-berlin-ratgeber.html">Außenwerbung Ratgeber</a>
       </div>
       <div class="foot-col">
-        <h5>Kontakt</h5>
+        <h2 class="foot-h">Kontakt</h2>
         <a href="tel:01785143918">0178 514 3918</a>
         <a href="https://wa.me/491785143918">WhatsApp</a>
         <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
-        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <h2 class="foot-h" style="margin-top:1.2rem;">Rechtliches</h2>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
         <a href="/agb.html">AGB</a>
@@ -491,7 +492,7 @@ table.rt td:first-child::before{display:none}
   </div>
 </footer>
 <script src="/cookie-consent.js?v=2" defer></script>
-<script src="/fertig.js?v=1" defer></script>
+<script src="/fertig.js?v=2" defer></script>
 <script src="/app.js" defer></script>
 </body>
 </html>

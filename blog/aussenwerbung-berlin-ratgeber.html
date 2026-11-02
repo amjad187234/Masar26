@@ -135,7 +135,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
 .related-card{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:.2s}
 .related-card:hover{border-color:var(--teal)}
-.related-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
+.related-card h4,.related-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
 .related-card p{font-size:13px;color:var(--muted);margin-bottom:.6rem}
 .related-card a{font-size:13px;color:var(--teal-ink);font-weight:700}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
@@ -215,11 +215,12 @@ table.rt td:first-child{display:block;border-top:0!important;text-align:left;fon
 table.rt td:first-child::before{display:none}
 }
 </style>
-<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#fff}</style>
+<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#0b2e19}</style>
 <!-- schnell:start -->
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -319,7 +320,7 @@ table.rt td:first-child::before{display:none}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Wichtig vorab:</strong> Nicht jede Werbeanlage braucht in Berlin eine Baugenehmigung. Nach § 61 Abs. 1 BauO Bln sind Anlagen bis 1&nbsp;m² Ansichtsfläche verfahrensfrei, an der Stätte der Leistung – also am eigenen Geschäft – bis 2,5&nbsp;m². Verfahrensfrei heißt aber nicht regelfrei: Denkmalschutz, Bebauungsplan und bei Auslegern über dem Gehweg das Straßenrecht gelten trotzdem. Größere Anlagen brauchen eine Baugenehmigung beim Bezirksamt.</p>
     </div>
 
-                    <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Außenwerbung in Berlin planen?</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/aussenwerbung-berlin.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20m%C3%B6chte%20Au%C3%9Fenwerbung%20f%C3%BCr%20mein%20Unternehmen%20in%20Berlin%20planen." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
+                        <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Außenwerbung in Berlin planen?</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/aussenwerbung-berlin.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20m%C3%B6chte%20Au%C3%9Fenwerbung%20f%C3%BCr%20mein%20Unternehmen%20in%20Berlin%20planen." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
     <h2>1. Genehmigungs&shy;pflicht – welche Behörde in Berlin?</h2>
     <p>Die Genehmigung für Außenwerbung in Berlin erteilt das jeweilige <strong>Bezirksamt – Abteilung Stadtentwicklung und Bauen</strong>. Da Berlin 12 Bezirke mit unterschiedlichen Gestaltungssatzungen hat, variieren die Anforderungen erheblich.</p>
     <p><strong>Welche Behörde ist zuständig?</strong> Zuständig ist das Bezirksamt des Standorts der Werbeanlage, nicht das Ihres Firmensitzes. Ein Unternehmen aus Mitte, das eine Filiale in Charlottenburg-Wilmersdorf betreibt, muss beim Bezirksamt Charlottenburg-Wilmersdorf den Antrag stellen.</p>
@@ -485,12 +486,12 @@ table.rt td:first-child::before{display:none}
       <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Weitere Artikel</h2>
       <div class="related-grid">
         <div class="related-card">
-          <h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>LED oder Neon fürs Ladenlokal</h4>
+          <h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>LED oder Neon fürs Ladenlokal</h3>
           <p>Was sich 2026 in der Berliner Werbetechnik verändert hat und wie Sie profitieren.</p>
           <a href="/blog/werbetechnik-trends-2026.html">Artikel lesen →</a>
         </div>
         <div class="related-card">
-          <h4><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>Schaufensterbeschriftung Tipps</h4>
+          <h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>Schaufensterbeschriftung Tipps</h3>
           <p>7 Profi-Tipps für mehr Laufkundschaft durch Schaufensterwerbung.</p>
           <a href="/blog/schaufensterbeschriftung-tipps.html">Artikel lesen →</a>
         </div>
@@ -516,7 +517,7 @@ table.rt td:first-child::before{display:none}
         </div>
       </div>
       <div class="foot-col">
-        <h5>Leistungen</h5>
+        <h2 class="foot-h">Leistungen</h2>
         <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>
         <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
         <a href="/fensterfolie-berlin.html">Fensterfolien Berlin</a>
@@ -531,7 +532,7 @@ table.rt td:first-child::before{display:none}
         <a href="/schilder-berlin.html">Schilder</a>
       </div>
       <div class="foot-col">
-        <h5>Seiten &amp; Blog</h5>
+        <h2 class="foot-h">Seiten &amp; Blog</h2>
         <a href="/referenzen.html">Referenzen</a>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/einsatzgebiete.html">Einsatzgebiete</a>
@@ -548,11 +549,11 @@ table.rt td:first-child::before{display:none}
         <a href="/blog/aussenwerbung-berlin-ratgeber.html">Außenwerbung Ratgeber</a>
       </div>
       <div class="foot-col">
-        <h5>Kontakt</h5>
+        <h2 class="foot-h">Kontakt</h2>
         <a href="tel:01785143918">0178 514 3918</a>
         <a href="https://wa.me/491785143918">WhatsApp</a>
         <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
-        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <h2 class="foot-h" style="margin-top:1.2rem;">Rechtliches</h2>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
         <a href="/agb.html">AGB</a>
@@ -567,7 +568,7 @@ table.rt td:first-child::before{display:none}
   </div>
 </footer>
 <script src="/cookie-consent.js?v=2" defer></script>
-<script src="/fertig.js?v=1" defer></script>
+<script src="/fertig.js?v=2" defer></script>
 <script src="/app.js" defer></script>
 </body>
 </html>

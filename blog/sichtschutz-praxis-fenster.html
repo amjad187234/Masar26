@@ -147,7 +147,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
 .related-card{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:.2s}
 .related-card:hover{border-color:var(--teal)}
-.related-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
+.related-card h4,.related-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
 .related-card p{font-size:13px;color:var(--muted);margin-bottom:.6rem}
 .related-card a{font-size:13px;color:var(--teal-ink);font-weight:700}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
@@ -216,11 +216,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
 .plat-grid > *,.quick-grid > *,.prob-list > *,.cmp-grid > *{min-width:0}
 </style>
-<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#fff}</style>
+<style id="kurzbox">.kurzbox{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1.2rem;flex-wrap:wrap;background:rgba(88,208,189,.1);border:1px solid rgba(88,208,189,.45);border-left:4px solid #58d0bd;border-radius:10px;padding:.9rem 1.1rem;margin:1.6rem 0}.kurzbox p{margin:0!important;font-size:15px;color:var(--navy,#132e50);line-height:1.5}.kurzbox p span{display:block;color:var(--muted,#5a7070);font-size:13.5px}.kurzbox .kb-btns{display:flex;gap:.5rem;flex-wrap:wrap}.kurzbox a{display:inline-block;padding:9px 14px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}.kurzbox .kb-go{background:#58d0bd;color:#132e50}.kurzbox .kb-wa{background:#25d366;color:#0b2e19}</style>
 <!-- schnell:start -->
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -316,7 +317,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
     <p>Wartezimmer im Erdgeschoss, Behandlungsraum zur Straße, Kabine im Kosmetikstudio: Wer von außen hineinsehen kann, fühlt sich drinnen nicht wohl. Sichtschutzfolie löst das, ohne dass es dunkel wird. Aber nicht jede Folie passt zu jedem Raum – hier die gängigen Varianten mit Vor- und Nachteilen.</p>
 
-                    <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Sichtschutz für Ihre Räume</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/praxisbeschilderung-berlin.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20m%C3%B6chte%20Sichtschutzfolie%20f%C3%BCr%20meine%20R%C3%A4ume%20in%20Berlin%20anfragen." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
+                        <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Sichtschutz für Ihre Räume</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/praxisbeschilderung-berlin.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20m%C3%B6chte%20Sichtschutzfolie%20f%C3%BCr%20meine%20R%C3%A4ume%20in%20Berlin%20anfragen." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
     <h2>Die Varianten im Überblick</h2>
 
     <h3><span class="tip-num">1</span> Milchglas- und Sandstrahlfolie</h3>
@@ -377,12 +378,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Weitere Artikel</h2>
       <div class="related-grid">
         <div class="related-card">
-          <h4>Praxisschild: Regeln & Kosten</h4>
+          <h3>Praxisschild: Regeln & Kosten</h3>
           <p>Was auf das Schild darf.</p>
           <a href="/blog/praxisschild-regeln-kosten.html">Artikel lesen →</a>
         </div>
         <div class="related-card">
-          <h4>Werbung fürs Kosmetikstudio</h4>
+          <h3>Werbung fürs Kosmetikstudio</h3>
           <p>6 Ideen und was erlaubt ist.</p>
           <a href="/blog/werbung-kosmetikstudio.html">Artikel lesen →</a>
         </div>
@@ -408,7 +409,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         </div>
       </div>
       <div class="foot-col">
-        <h5>Leistungen</h5>
+        <h2 class="foot-h">Leistungen</h2>
         <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung</a>
         <a href="/fensterfolie-berlin.html">Fensterfolien Berlin</a>
         <a href="/digital-signage-berlin.html">Digital Signage Berlin</a>
@@ -423,7 +424,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <a href="/schilder-berlin.html">Schilder</a>
       </div>
       <div class="foot-col">
-        <h5>Seiten &amp; Blog</h5>
+        <h2 class="foot-h">Seiten &amp; Blog</h2>
         <a href="/referenzen.html">Referenzen</a>
         <a href="/ueber-uns.html">Über uns</a>
         <a href="/einsatzgebiete.html">Einsatzgebiete</a>
@@ -440,11 +441,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
         <a href="/blog/aussenwerbung-berlin-ratgeber.html">Außenwerbung Ratgeber</a>
       </div>
       <div class="foot-col">
-        <h5>Kontakt</h5>
+        <h2 class="foot-h">Kontakt</h2>
         <a href="tel:01785143918">0178 514 3918</a>
         <a href="https://wa.me/491785143918">WhatsApp</a>
         <a href="mailto:info@masar-werbeagentur.de">E-Mail</a>
-        <h5 style="margin-top:1.2rem;">Rechtliches</h5>
+        <h2 class="foot-h" style="margin-top:1.2rem;">Rechtliches</h2>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
         <a href="/agb.html">AGB</a>
@@ -459,7 +460,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </footer>
 <script src="/cookie-consent.js?v=2" defer></script>
-<script src="/fertig.js?v=1" defer></script>
+<script src="/fertig.js?v=2" defer></script>
 <script src="/app.js" defer></script>
 </body>
 </html>

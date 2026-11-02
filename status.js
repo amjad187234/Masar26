@@ -19,7 +19,7 @@
     + '.st{max-width:760px;margin:0 auto;text-align:left}'
     + '.st-card{background:#fff;border:1px solid var(--border,#e0eaea);border-radius:16px;padding:1.5rem;box-shadow:0 10px 30px rgba(19,46,80,.07)}'
     + '.st-card+.st-card{margin-top:1rem}'
-    + '.st h3{font:900 clamp(1.3rem,3vw,1.7rem)/1.1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--navy,#132e50);margin:0 0 1rem}'
+    + '.st h3,.st h2{font:900 clamp(1.3rem,3vw,1.7rem)/1.1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--navy,#132e50);margin:0 0 1rem}'
     + '.st label{display:block;font:700 14px Barlow,sans-serif;color:var(--navy,#132e50);margin:.9rem 0 .4rem}.st label small{font-weight:400;color:var(--muted,#5a7070)}'
     + '.st input{width:100%;font:16px Barlow,sans-serif;border:1px solid var(--border,#e0eaea);border-radius:8px;padding:12px 14px;color:#132e50;background:#fff}'
     + '.st input:focus{outline:2px solid var(--teal,#58d0bd);outline-offset:1px}'
@@ -54,7 +54,7 @@
 
   // Formular
   var f = el('form', 'st-card');
-  f.appendChild(txt('h3', '', 'Status abfragen'));
+  f.appendChild(txt('h2', '', 'Status abfragen'));
   f.appendChild(el('label', '', 'Anfragenummer <small>(steht in der Bestätigung, z. B. ANF-2026-0012)</small>'));
   var inNr = el('input'); inNr.placeholder = 'ANF-2026-…'; inNr.autocomplete = 'off'; inNr.value = q.get('nr') || ''; inNr.maxLength = 20; f.appendChild(inNr);
   f.appendChild(el('label', '', 'Telefonnummer oder E-Mail <small>(wie in Ihrer Anfrage)</small>'));
