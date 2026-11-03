@@ -105,6 +105,12 @@ solche Festlegung im Bericht nennen.
 - Lesbarkeit (03.11.2026, Inhaber): keine sichtbare Brotkrumen-Leiste (nur BreadcrumbList-JSON-LD), keine Silbentrennung/Trennstriche;
   zu lange Überschriften werden per Skript kleiner gesetzt, Bindestrich-Wörter in Überschriften nicht getrennt – `tools/seo/umbruch.py`
   (nach `marke.py` am Ende der Pipeline).
+- KI-Leistungen (Inhaber, 03.11.2026): Chat- und WhatsApp-Assistent, Online-Termine mit Erinnerungen, E-Mails/Dokumente vorsortieren,
+  dazu Marketing und Entwicklung – **keine Telefon-/Sprach-KI, keine Preise**. Seiten `ki-fuer-arztpraxen-berlin.html` und
+  `ki-fuer-pflegedienste-berlin.html` (Generator `tools/folien/ki_pages.py`), Demo `ki-demo.js` (`data-ki-demo="praxis|pflege"`, reine Vorführung),
+  Ratgeber `blog/krankmeldung-pflegedienst-digital.html` (`tools/blog/ki_artikel.py`). Immer: KI-Hinweis (Art. 50 KI-VO, seit 02.08.2026),
+  keine medizinische Beratung + Notfall 112/116 117, AV-Vertrag, § 203 StGB, EU-Hosting, WhatsApp nur Business Platform + Einwilligung;
+  nicht „rechtssicher“/„zertifiziert“, keine Zeitersparnis-Zahlen. Akquise: keine Kalt-E-Mails (UWG § 7), Briefe per Post mit Art.-14/21-Hinweis.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).
