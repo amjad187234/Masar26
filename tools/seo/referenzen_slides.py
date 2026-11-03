@@ -43,11 +43,14 @@ KATEGORIEN = [
         ('fahrzeugfolierung-berlin-03', 'Logo und Illustration auf der Rückseite', 'Folierte Rückwand eines Imbisswagens mit Logo und Illustration'),
     ]),
     ('druck', 'Druck & Gastro-Werbung', 'Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Werkstatt.', [
+        ('menuetafel-imbiss-montiert-01', 'Imbiss: Menütafel über der Theke, fertig montiert', 'Breite schwarze Menütafel mit Döner, Pasta, Pizza und Burger über der Theke eines Imbisses'),
         ('imbisswagen-menuetafeln-01', 'Imbisswagen: große Menütafel, Aufsteller und Blenden in einem Design', 'Gelber Imbisswagen mit großer schwarzer Menütafel, zwei Aufstellern und bedruckten Blenden'),
         ('grossformatdruck-werkstatt-01', 'Blende für denselben Imbisswagen im Großformatdruck', 'Großformatdrucker druckt eine Blende mit Logo „Grill Chicken“ und „Kalte Getränke“'),
     ]),
     ('werkstatt', 'Aus der Werkstatt', 'So entstehen die Arbeiten – bevor sie an die Fassade kommen.', [
         ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten mit Logo beim Testlauf', 'Runder schwarzer Leuchtkasten mit weiß leuchtendem Logo „Feel Good Food by Omar“ in der Werkstatt'),
+        ('werkstatt-kaschieren-menuetafel-01', 'Dieselbe Menütafel: Druckfolie wird mit Heißluft und Rakel aufgezogen', 'Zwei Hände ziehen bedruckte Folie mit Heißluftföhn und Rakel auf eine schwarze Menütafel'),
+        ('werkstatt-folie-aufziehen-menuetafel-01', 'Nassverklebung: Folie wird blasenfrei auf die Tafel gerakelt', 'Bedruckte Menütafel mit Seifenwasser, eine Hand rakelt die Folie glatt'),
         ('leuchtreklame-berlin-07', 'Leuchtbuchstaben, fertig verdrahtet', 'Blau leuchtende Profilbuchstaben für einen Barbershop, aufgebaut in der Werkstatt'),
         ('leuchtreklame-berlin-02', 'Leuchtkasten mit ausgefrästen Buchstaben, vor der Montage', 'Leuchtkasten für einen Friseursalon mit hinterleuchteten Buchstaben in der Werkstatt'),
         ('neon-berlin-01', 'LED-Neonbuchstaben in der Fertigung', 'Rote LED-Neonbuchstaben auf der Werkbank, noch nicht verkabelt'),
