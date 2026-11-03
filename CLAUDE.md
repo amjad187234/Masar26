@@ -7,6 +7,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 ## Arbeitsweise
 
 - Mit dem Inhaber Arabisch (levantinisch) schreiben; Website-Texte und Kundennachrichten auf Deutsch.
+- Kundennachrichten immer als kopierbaren Codeblock (```) ausgeben, ohne Markdown-Formatierung im Text (Inhaber, 03.11.2026).
 - Entwicklung auf dem zugewiesenen `claude/…`-Branch, danach zusätzlich nach `main` pushen
   (`git push -u origin <branch> && git push origin HEAD:main`). Der Inhaber klickt in Hostinger
   selbst auf „Bereitstellen“.
