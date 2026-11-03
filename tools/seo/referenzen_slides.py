@@ -92,16 +92,16 @@ CSS = '''<style id="slides-css">
 </style>'''
 
 JS = '''<script id="slides-js">
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var ruhig = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.sl-cat').forEach(function(cat){
-    var tr = cat.querySelector('.sl-track'), items = tr.querySelectorAll('.gal-item'), dots = cat.querySelector('.sl-dots');
+    var tr = cat.querySelector('.sl-track'), items = tr.children, dots = cat.querySelector('.sl-dots');
     function breite(){ return items[0] ? items[0].getBoundingClientRect().width + 16 : tr.clientWidth; }
     function pos(){ return Math.round(tr.scrollLeft / breite()); }
     function geh(i){ var max = tr.scrollWidth - tr.clientWidth; var x = i * breite(); if (x > max + 4) x = 0; if (x < 0) x = max; tr.scrollTo({left: x, behavior: ruhig ? 'auto' : 'smooth'}); }
     cat.querySelector('.sl-prev').addEventListener('click', function(){ geh(pos() - 1); });
     cat.querySelector('.sl-next').addEventListener('click', function(){ geh(pos() + 1); });
-    items.forEach(function(it, i){ var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Bild ' + (i + 1)); b.addEventListener('click', function(){ geh(i); }); dots.appendChild(b); });
+    Array.prototype.forEach.call(items, function(it, i){ var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Bild ' + (i + 1)); b.addEventListener('click', function(){ geh(i); }); dots.appendChild(b); });
     function markieren(){ var p = Math.min(pos(), items.length - 1); if (tr.scrollLeft + tr.clientWidth >= tr.scrollWidth - 4) p = items.length - 1; dots.querySelectorAll('button').forEach(function(b, i){ b.setAttribute('aria-current', String(i === p)); }); }
     tr.addEventListener('scroll', function(){ window.requestAnimationFrame(markieren); }, {passive: true}); markieren();
     if (ruhig || items.length < 2) return;
@@ -109,10 +109,49 @@ JS = '''<script id="slides-js">
     ['mouseenter', 'focusin', 'touchstart'].forEach(function(e){ cat.addEventListener(e, function(){ halt = true; }, {passive: true}); });
     ['mouseleave', 'focusout'].forEach(function(e){ cat.addEventListener(e, function(){ halt = false; }); });
     if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ sicht = es[0].isIntersecting; }, {threshold: .4}).observe(tr);
-    setInterval(function(){ if (sicht && !halt && !document.hidden && !document.getElementById('lb').classList.contains('open')) geh(pos() + 1); }, 4500);
+    setInterval(function(){ var v = tr.querySelector('video'); if (sicht && !halt && !document.hidden && !(v && !v.paused) && !document.getElementById('lb').classList.contains('open')) geh(pos() + 1); }, 4500);
   });
-})();
+});
 </script>'''
+
+VA, VZ = '<!-- videos:start -->', '<!-- videos:ende -->'
+FILM = ('digital-signage-donuts-film', 'Produktvideo für die Menütafeln', 'Gedreht und geschnitten von uns: Zubereitung vor Ort für die Bildschirme eines Dessert-Ladens, 26 Sekunden.')
+# Menütafeln mit hellem Hintergrund (rote Imbiss-Tafeln bewusst nicht auf der Referenzseite)
+TAFELN = [
+    ('digital-signage-donuts-01', 'Handmade Donuts', 'Sortiment und Boxpreise im Wechsel mit Produktaufnahmen.'),
+    ('digital-signage-bubble-tea-01', 'Signature Bubble Tea', 'Acht Sorten mit Preisen für zwei Größen.'),
+    ('digital-signage-bubble-tea-02', 'Bubble Tea Milky Classics', 'Vier Klassiker, ruhig animiert.'),
+    ('digital-signage-restaurant-01', 'Manakisch & Teigtaschen', 'Tagesangebot mit Preisen.'),
+    ('digital-signage-restaurant-02', 'Burger', 'Vier Burger mit Preisschildern.'),
+    ('digital-signage-restaurant-03', 'Eiergerichte & Salate', 'Frühstück und Salate auf einer Tafel.'),
+]
+
+
+def dauer(name):
+    import subprocess
+    try:
+        return round(float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0',
+                                           os.path.join(ROOT, 'videos', name + '.mp4')], capture_output=True, text=True).stdout))
+    except Exception:
+        return 0
+
+
+def videokarte(name, titel, text, eager=False):
+    w, h = Image.open(os.path.join(ROOT, 'videos', name + '.webp')).size
+    return (f'<figure class="vid-card"><a class="vid-play" href="/videos/{name}.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: {html.escape(titel, quote=True)}">'
+            f'<img src="/videos/{name}.webp" alt="{html.escape(titel, quote=True)} – Standbild aus dem Video" loading="{"eager" if eager else "lazy"}" width="{w}" height="{h}">'
+            f'<span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>{html.escape(titel)}</strong>{html.escape(text)}</figcaption></figure>\n')
+
+
+def videoblock():
+    karten = ''.join(videokarte(n, t, x + (f' {dauer(n)} Sekunden.' if not x.endswith('Sekunden.') else '')) for n, t, x in TAFELN)
+    return (f'{VA}\n<style>.vid-film{{max-width:860px;margin:0 auto 2rem}}.sl-track .vid-card{{flex:0 0 calc((100% - 2rem)/3);scroll-snap-align:start;margin:0}}'
+            f'@media(max-width:900px){{.sl-track .vid-card{{flex-basis:calc((100% - 1rem)/2)}}}}@media(max-width:600px){{.sl-track .vid-card{{flex-basis:84%}}}}</style>\n'
+            f'<div class="vid-film">{videokarte(*FILM, eager=True)}</div>\n'
+            f'<div class="sl-cat" id="ref-menuetafeln"><div class="sl-head"><div><small>{len(TAFELN)} Videos</small><h3>Menütafeln</h3><p>Antippen startet das Video.</p></div>'
+            f'<div class="sl-nav"><button class="sl-prev" type="button" aria-label="Menütafeln: vorheriges Video">‹</button><button class="sl-next" type="button" aria-label="Menütafeln: nächstes Video">›</button></div></div>\n'
+            f'<div class="sl-track" role="region" aria-label="Bilderstrecke Menütafeln" tabindex="0">\n{karten}</div><div class="sl-dots"></div></div>\n{VZ}\n')
+
 
 
 def bild(name):
@@ -157,6 +196,13 @@ def main():
         # Lightbox blättert nur innerhalb der Kategorie des geöffneten Bildes
         s = s.replace("function visible(){ return items.filter(function(it){ return !it.hidden; }); }",
                       "function visible(){ var c = opener ? opener.dataset.cat : null; return items.filter(function(it){ return !it.hidden && (!c || it.dataset.cat === c); }); }")
+    if VA in s:
+        s = re.sub(re.escape(VA) + r'.*?' + re.escape(VZ) + r'\n?', videoblock(), s, flags=re.S)
+    else:
+        m = re.search(r'    <div class="vid-grid">.*?\n    </div>\n', s, flags=re.S)
+        if m: s = s[:m.start()] + videoblock() + s[m.end():]
+    s = s.replace('<p class="sec-sub">Eine Menütafel steht selten still. Zwei Beispiele – alle acht Tafeln aus drei Betrieben liegen auf der Seite zu dieser Leistung.</p>',
+                  '<p class="sec-sub">Eine Menütafel steht selten still. Oben ein Produktvideo, das wir vor Ort gedreht haben, darunter Tafeln aus unserem Studio.</p>')
     open(SEITE, 'w', encoding='utf-8').write(s)
     print(sum(len(k[3]) for k in KATEGORIEN), 'Bilder in', len(KATEGORIEN), 'Bilderstrecken')
 

@@ -578,16 +578,16 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="sl-dots"></div>
 </div>
 <script id="slides-js">
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   var ruhig = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.sl-cat').forEach(function(cat){
-    var tr = cat.querySelector('.sl-track'), items = tr.querySelectorAll('.gal-item'), dots = cat.querySelector('.sl-dots');
+    var tr = cat.querySelector('.sl-track'), items = tr.children, dots = cat.querySelector('.sl-dots');
     function breite(){ return items[0] ? items[0].getBoundingClientRect().width + 16 : tr.clientWidth; }
     function pos(){ return Math.round(tr.scrollLeft / breite()); }
     function geh(i){ var max = tr.scrollWidth - tr.clientWidth; var x = i * breite(); if (x > max + 4) x = 0; if (x < 0) x = max; tr.scrollTo({left: x, behavior: ruhig ? 'auto' : 'smooth'}); }
     cat.querySelector('.sl-prev').addEventListener('click', function(){ geh(pos() - 1); });
     cat.querySelector('.sl-next').addEventListener('click', function(){ geh(pos() + 1); });
-    items.forEach(function(it, i){ var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Bild ' + (i + 1)); b.addEventListener('click', function(){ geh(i); }); dots.appendChild(b); });
+    Array.prototype.forEach.call(items, function(it, i){ var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Bild ' + (i + 1)); b.addEventListener('click', function(){ geh(i); }); dots.appendChild(b); });
     function markieren(){ var p = Math.min(pos(), items.length - 1); if (tr.scrollLeft + tr.clientWidth >= tr.scrollWidth - 4) p = items.length - 1; dots.querySelectorAll('button').forEach(function(b, i){ b.setAttribute('aria-current', String(i === p)); }); }
     tr.addEventListener('scroll', function(){ window.requestAnimationFrame(markieren); }, {passive: true}); markieren();
     if (ruhig || items.length < 2) return;
@@ -595,9 +595,9 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     ['mouseenter', 'focusin', 'touchstart'].forEach(function(e){ cat.addEventListener(e, function(){ halt = true; }, {passive: true}); });
     ['mouseleave', 'focusout'].forEach(function(e){ cat.addEventListener(e, function(){ halt = false; }); });
     if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ sicht = es[0].isIntersecting; }, {threshold: .4}).observe(tr);
-    setInterval(function(){ if (sicht && !halt && !document.hidden && !document.getElementById('lb').classList.contains('open')) geh(pos() + 1); }, 4500);
+    setInterval(function(){ var v = tr.querySelector('video'); if (sicht && !halt && !document.hidden && !(v && !v.paused) && !document.getElementById('lb').classList.contains('open')) geh(pos() + 1); }, 4500);
   });
-})();
+});
 </script>
 <!-- slides:ende -->
   </div>
@@ -616,24 +616,22 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="6 3 20 12 6 21 6 3"/></svg>Bewegtbild</span>
       <h2 class="sec-title">Was auf den <em>Bildschirmen</em> läuft</h2>
-      <p class="sec-sub">Eine Menütafel steht selten still. Zwei Beispiele – alle acht Tafeln aus drei Betrieben liegen auf der Seite zu dieser Leistung.</p>
+      <p class="sec-sub">Eine Menütafel steht selten still. Oben ein Produktvideo, das wir vor Ort gedreht haben, darunter Tafeln aus unserem Studio.</p>
     </div>
-    <div class="vid-grid">
-      <figure class="vid-card reveal">
-        <a class="vid-play" href="/videos/digital-signage-donuts-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Handmade Donuts">
-          <img src="/videos/digital-signage-donuts-01.webp" alt="Digitale Menütafel für handgemachte Donuts mit Preisen und Produktfotos" loading="eager" width="1280" height="720">
-          <span class="vid-icon" aria-hidden="true"></span>
-        </a>
-        <figcaption><strong>Handmade Donuts</strong>Sortiment und Boxpreise im Wechsel mit Produktaufnahmen, 54 Sekunden.</figcaption>
-      </figure>
-      <figure class="vid-card reveal">
-        <a class="vid-play" href="/videos/digital-signage-imbiss-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Menütafel Imbiss, Teil 1">
-          <img src="/videos/digital-signage-imbiss-01.webp" alt="Digitale Menütafel eines Imbisses mit Burgern, Schawarma und Grillgerichten" loading="lazy" width="1280" height="720">
-          <span class="vid-icon" aria-hidden="true"></span>
-        </a>
-        <figcaption><strong>Menütafel Imbiss, Teil 1</strong>Burger, Schawarma, Vegetarisch, Grill und Salate auf einer Tafel, 14 Sekunden.</figcaption>
-      </figure>
-    </div>
+<!-- videos:start -->
+<style>.vid-film{max-width:860px;margin:0 auto 2rem}.sl-track .vid-card{flex:0 0 calc((100% - 2rem)/3);scroll-snap-align:start;margin:0}@media(max-width:900px){.sl-track .vid-card{flex-basis:calc((100% - 1rem)/2)}}@media(max-width:600px){.sl-track .vid-card{flex-basis:84%}}</style>
+<div class="vid-film"><figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-donuts-film.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Produktvideo für die Menütafeln"><img src="/videos/digital-signage-donuts-film.webp" alt="Produktvideo für die Menütafeln – Standbild aus dem Video" loading="eager" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Produktvideo für die Menütafeln</strong>Gedreht und geschnitten von uns: Zubereitung vor Ort für die Bildschirme eines Dessert-Ladens, 26 Sekunden.</figcaption></figure>
+</div>
+<div class="sl-cat" id="ref-menuetafeln"><div class="sl-head"><div><small>6 Videos</small><h3>Menütafeln</h3><p>Antippen startet das Video.</p></div><div class="sl-nav"><button class="sl-prev" type="button" aria-label="Menütafeln: vorheriges Video">‹</button><button class="sl-next" type="button" aria-label="Menütafeln: nächstes Video">›</button></div></div>
+<div class="sl-track" role="region" aria-label="Bilderstrecke Menütafeln" tabindex="0">
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-donuts-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Handmade Donuts"><img src="/videos/digital-signage-donuts-01.webp" alt="Handmade Donuts – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Handmade Donuts</strong>Sortiment und Boxpreise im Wechsel mit Produktaufnahmen. 54 Sekunden.</figcaption></figure>
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-bubble-tea-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Signature Bubble Tea"><img src="/videos/digital-signage-bubble-tea-01.webp" alt="Signature Bubble Tea – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Signature Bubble Tea</strong>Acht Sorten mit Preisen für zwei Größen. 15 Sekunden.</figcaption></figure>
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-bubble-tea-02.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Bubble Tea Milky Classics"><img src="/videos/digital-signage-bubble-tea-02.webp" alt="Bubble Tea Milky Classics – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Bubble Tea Milky Classics</strong>Vier Klassiker, ruhig animiert. 7 Sekunden.</figcaption></figure>
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-restaurant-01.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Manakisch &amp; Teigtaschen"><img src="/videos/digital-signage-restaurant-01.webp" alt="Manakisch &amp; Teigtaschen – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Manakisch &amp; Teigtaschen</strong>Tagesangebot mit Preisen. 20 Sekunden.</figcaption></figure>
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-restaurant-02.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Burger"><img src="/videos/digital-signage-restaurant-02.webp" alt="Burger – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Burger</strong>Vier Burger mit Preisschildern. 30 Sekunden.</figcaption></figure>
+<figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-restaurant-03.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Eiergerichte &amp; Salate"><img src="/videos/digital-signage-restaurant-03.webp" alt="Eiergerichte &amp; Salate – Standbild aus dem Video" loading="lazy" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Eiergerichte &amp; Salate</strong>Frühstück und Salate auf einer Tafel. 30 Sekunden.</figcaption></figure>
+</div><div class="sl-dots"></div></div>
+<!-- videos:ende -->
     <p style="text-align:center;margin-top:2rem;">
       <a href="/digital-signage-berlin.html" class="btn btn-teal">Alle Menütafeln ansehen →</a>
     </p>
