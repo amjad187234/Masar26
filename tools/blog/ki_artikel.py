@@ -60,6 +60,217 @@ ARTIKEL = [
 ]
 
 
+PRAXIS_CTA = ('Digitaler Assistent für Ihre Praxis', 'Probieren Sie unsere Demo aus oder schreiben Sie uns, welches Anliegen bei Ihnen am häufigsten kommt.', '/ki-fuer-arztpraxen-berlin.html#demo', 'Demo ansehen', 'Hallo, ich interessiere mich für einen digitalen Assistenten für unsere Praxis.', 'KI für die Arztpraxis')
+PFLEGE_CTA = ('Digitaler Assistent für Ihren Pflegedienst', 'Probieren Sie unsere Demo aus oder schreiben Sie uns, was Ihr Büro am meisten bindet.', '/ki-fuer-pflegedienste-berlin.html#demo', 'Demo ansehen', 'Hallo, ich interessiere mich für einen digitalen Assistenten für unseren Pflegedienst.', 'KI für den Pflegedienst')
+BILD_P = ('/ki-arztpraxis', 'Bildschirmfoto eines Praxis-Assistenten mit KI-Hinweis und sortiertem Anliegen für das Team', 'So sieht ein Praxis-Assistent aus: KI-Hinweis oben, das Team bekommt das Anliegen sortiert.')
+BILD_PF = ('/ki-pflegedienst', 'Bildschirmfoto eines Pflegedienst-Assistenten: Anliegen wird aufgenommen und an die zuständige Person gegeben', 'Ein Assistent für den Pflegedienst: Anliegen kommen vollständig und sortiert im Büro an.')
+W_P = [('/ki-fuer-arztpraxen-berlin.html', 'KI für Arztpraxen'), ('/ki-loesungen/', 'KI-Lösungen'), ('/praxisbeschilderung-berlin.html', 'Praxisschild')]
+W_PF = [('/ki-fuer-pflegedienste-berlin.html', 'KI für Pflegedienste'), ('/werbung-pflegedienst-berlin.html', 'Werbung für Pflegedienste'), ('/ki-loesungen/', 'KI-Lösungen')]
+Q_DSK = ('https://www.datenschutz-bayern.de/dsbk-ent/DSK_101-SN-MessengerKH.pdf', 'Datenschutzkonferenz – Messenger-Dienste im Krankenhausbereich')
+Q_116 = ('https://www.116117.de/', '116117.de – Ärztlicher Bereitschaftsdienst')
+
+NEU = [
+ dict(file='online-terminbuchung-arztpraxis.html', crumb='Online-Terminbuchung Praxis',
+  title='Online-Terminbuchung für die Arztpraxis: Worauf achten?',
+  desc='Online-Terminbuchung in der Arztpraxis: welche Termine online sinnvoll sind, Erinnerungen, Absagen, Notfälle und Datenschutz – mit Checkliste für den Start.',
+  tag='Ratgeber · KI &amp; Praxis', h1='Online-Terminbuchung für die Praxis:<br><em>Worauf es ankommt.</em>', minuten=6, bild=BILD_P,
+  intro='<p>Viele Patienten möchten ihren Termin lieber abends am Handy buchen als morgens in der Warteschleife. Für die Praxis ist das eine Chance – wenn die Buchung zu den eigenen Abläufen passt. Diese Punkte entscheiden, ob Online-Termine Ihr Team entlasten oder neue Arbeit machen.</p>',
+  body='''
+    <h2>Nicht jeder Termin gehört online</h2>
+    <p>Gut geeignet sind planbare Termine: Kontrolltermine, Impfungen, Vorsorge, Folgetermine, Erstgespräche mit fester Dauer. Akutsprechstunde, Notfälle und Termine, bei denen die Ärztin vorher entscheiden muss, bleiben besser bei Telefon und Tresen. Legen Sie fest, welche Terminarten online freigegeben sind – und wie viele Plätze pro Tag.</p>
+
+    <h2>Terminart per Auswahl, nicht per Freitext</h2>
+    <p>Ein Feld „Grund des Besuchs“ lädt dazu ein, Beschwerden ausführlich zu beschreiben. Besser ist eine kurze Auswahl („Kontrolle“, „Impfung“, „Vorsorge“). Das hält die Daten sparsam – schon ein Terminwunsch kann nach der DSGVO ein Gesundheitsdatum sein – und Ihr Team weiß sofort, wie lange der Termin dauert.</p>
+
+    <h2>Erinnerung und einfache Absage</h2>
+    <p>Eine Erinnerung vor dem Termin hilft, dass Patienten kommen oder rechtzeitig absagen. Wichtig: Die Absage muss genauso einfach sein wie die Buchung, sonst bleibt der Platz leer. Für Erinnerungen per SMS oder WhatsApp holen Sie die Einwilligung ein; der Text nennt nur Tag und Uhrzeit, nicht die Fachrichtung oder den Grund.</p>
+
+    <h2>Was mit Notfällen passiert</h2>
+    <p>Eine Buchungsseite darf Menschen mit akuten Beschwerden nicht in einen Termin in drei Wochen schicken. Ein fester Hinweis gehört dazu: im Notfall <strong>112</strong>, außerhalb der Sprechzeiten der ärztliche Bereitschaftsdienst <strong>116&nbsp;117</strong>.</p>
+
+    <h2>Datenschutz und Vertrag</h2>
+    <p>Wer die Buchung technisch betreibt, arbeitet für Ihre Praxis als Auftragsverarbeiter: Sie brauchen einen AV-Vertrag nach Art.&nbsp;28 DSGVO und – wegen der Schweigepflicht – eine Verschwiegenheitsverpflichtung nach §&nbsp;203 StGB. Hosting in der EU und feste Löschfristen gehören dazu.</p>
+
+    <h2>Checkliste für den Start</h2>
+    <ol>
+      <li>Terminarten und Online-Kontingent pro Tag festlegen.</li>
+      <li>Auswahl statt Freitext, keine Fragen zu Beschwerden.</li>
+      <li>Bestätigung sofort, Erinnerung vorher, Absage mit einem Klick.</li>
+      <li>Notfall-Hinweis mit 112 und 116 117 sichtbar platzieren.</li>
+      <li>AV-Vertrag, § 203-Verpflichtung, EU-Hosting, Löschfristen.</li>
+      <li>Datenschutzerklärung der Praxis ergänzen, Team einweisen.</li>
+    </ol>''',
+  cta=PRAXIS_CTA, weiter=W_P, quellen=QUELLEN_RECHT + [Q_116],
+  related=[('/blog/whatsapp-arztpraxis-datenschutz.html', 'WhatsApp in der Arztpraxis', 'Was erlaubt ist und wie es richtig angebunden wird.'),
+           ('/blog/ki-arztpraxis-datenschutz.html', 'KI in der Arztpraxis', 'Was rechtlich geht – Datenschutz, Schweigepflicht, KI-Verordnung.')]),
+
+ dict(file='whatsapp-arztpraxis-datenschutz.html', crumb='WhatsApp Arztpraxis',
+  title='WhatsApp in der Arztpraxis: Was ist erlaubt?',
+  desc='WhatsApp für Terminerinnerungen und Patientenfragen: warum die normale App problematisch ist, was die WhatsApp Business Platform ändert und welche Regeln gelten.',
+  tag='Ratgeber · KI &amp; Praxis', h1='WhatsApp in der Arztpraxis:<br><em>Was erlaubt ist.</em>', minuten=5, bild=BILD_P,
+  intro='<p>Patienten schreiben ohnehin per WhatsApp – also warum nicht auch der Praxis? Die Idee ist verständlich, der Weg dorthin aber nicht beliebig. Hier der Unterschied zwischen der App auf dem Praxis-Handy und einer sauberen Anbindung.</p>',
+  body='''
+    <h2>Das Problem mit der normalen App</h2>
+    <p>Die normale WhatsApp-App (auch die Business-App auf einem Handy) gleicht das Adressbuch ab und überträgt Daten an den Mutterkonzern Meta. In einer Praxis stehen im Adressbuch aber Patienten – und schon die Tatsache, dass jemand Patient ist, ist vertraulich. Datenschutzbehörden sehen das deshalb kritisch.</p>
+
+    <h2>Die WhatsApp Business Platform</h2>
+    <p>Für Unternehmen gibt es die <strong>WhatsApp Business Platform</strong> (Cloud API). Sie läuft nicht über ein Handy mit Adressbuch, sondern über eine Schnittstelle – zum Beispiel angebunden an einen digitalen Assistenten oder Ihr Terminsystem. Zusammen mit einem Anbieter mit EU-Hosting und AV-Vertrag wird WhatsApp damit für viele Praxen vertretbar.</p>
+    <p>Ehrlich gesagt bleibt ein Restrisiko: Metadaten liegen weiterhin bei Meta, ein Datentransfer in die USA ist über das EU-US-Datenschutzrahmenabkommen abgesichert. Das sollte Ihre Datenschutzinformation offen benennen.</p>
+
+    <h2>Regeln für den Alltag</h2>
+    <ul>
+      <li><strong>Nur mit Einwilligung:</strong> Patienten entscheiden selbst, ob sie WhatsApp nutzen möchten.</li>
+      <li><strong>Keine Gesundheitsangaben in der Nachricht:</strong> „Ihr Termin morgen um 10 Uhr“ – nicht „Ihr Termin in der Kardiologie“.</li>
+      <li><strong>Keine Befunde per WhatsApp.</strong> Für den Austausch unter Fachleuten gibt es KIM und den TI-Messenger.</li>
+      <li><strong>Immer eine Alternative:</strong> E-Mail, SMS oder Anruf bleiben möglich.</li>
+      <li><strong>KI-Hinweis:</strong> Antwortet ein digitaler Assistent, muss das seit August 2026 gleich zu Beginn erkennbar sein.</li>
+    </ul>
+
+    <h2>Wofür WhatsApp in der Praxis gut passt</h2>
+    <p>Terminerinnerungen, Bestätigung einer Terminverschiebung, Hinweise zu Urlaub und Vertretung, die Frage „Ist mein Rezept fertig?“ mit einer kurzen Antwort. Alles, was eine ärztliche Einschätzung braucht, gehört nicht in den Chat.</p>''',
+  cta=PRAXIS_CTA, weiter=W_P, quellen=QUELLEN_RECHT + [Q_DSK],
+  related=[('/blog/online-terminbuchung-arztpraxis.html', 'Online-Terminbuchung', 'Welche Termine online sinnvoll sind – mit Checkliste.'),
+           ('/blog/mehrsprachige-patienten-praxis.html', 'Mehrsprachige Patienten', 'Wie Verständigung in Berliner Praxen leichter wird.')]),
+
+ dict(file='mehrsprachige-patienten-praxis.html', crumb='Mehrsprachige Patienten',
+  title='Mehrsprachige Patienten in der Praxis: So klappt es',
+  desc='Patienten mit Türkisch, Arabisch, Englisch oder anderen Sprachen: Wie Berliner Praxen Termine, Aushänge, Website und digitale Assistenten verständlich machen.',
+  tag='Ratgeber · KI &amp; Praxis', h1='Mehrsprachige Patienten:<br><em>So wird Verständigung leichter.</em>', minuten=5, bild=BILD_P,
+  intro='<p>In vielen Berliner Praxen sprechen Patienten Türkisch, Arabisch, Englisch, Russisch oder Polnisch – und am Telefon wird es schnell kompliziert: Termin verwechselt, Rezept falsch verstanden, Rückruf an die falsche Nummer. Ein paar einfache Mittel helfen schon vor dem ersten Gespräch.</p>',
+  body='''
+    <h2>Organisatorisches mehrsprachig, Medizinisches persönlich</h2>
+    <p>Öffnungszeiten, Anfahrt, was zum Termin mitzubringen ist, wie man einen Termin absagt – das lässt sich gut mehrsprachig erklären. Aufklärung, Befunde und Diagnosen gehören dagegen ins persönliche Gespräch, bei Bedarf mit qualifizierter Sprachmittlung.</p>
+
+    <h2>Aushang und Schaufenster</h2>
+    <p>Ein klarer Aushang an Tür oder Fenster in den häufigsten Sprachen Ihrer Patienten wirkt sofort: Sprechzeiten, Telefonzeiten, Hinweis auf Online-Termine. Piktogramme helfen zusätzlich. Wichtig ist eine einfache Sprache auch auf Deutsch.</p>
+
+    <h2>Website in einfacher Sprache</h2>
+    <p>Kurze Sätze, klare Überschriften, die wichtigsten Infos oben: Das hilft allen, nicht nur Menschen mit anderer Muttersprache. Eine Übersetzung der Kernseiten (Termine, Anfahrt, Notfall) ist oft wirkungsvoller als eine komplett übersetzte Website.</p>
+
+    <h2>Digitaler Assistent in der Sprache des Patienten</h2>
+    <p>Ein digitaler Assistent kann Anliegen wie „Termin verschieben“ oder „Folgerezept“ in der Sprache des Patienten aufnehmen und für Ihr Team auf Deutsch zusammenfassen. Die Antwort an den Patienten kommt wieder in seiner Sprache. So gibt es weniger Missverständnisse – und Ihr Team muss nicht jede Sprache sprechen.</p>
+    <p>Dabei gilt: Der Assistent weist darauf hin, dass er eine KI ist, gibt keine medizinischen Auskünfte und verweist im Notfall an 112 bzw. 116&nbsp;117.</p>
+
+    <h2>Kleine Schritte, große Wirkung</h2>
+    <ol>
+      <li>Die drei häufigsten Sprachen Ihrer Patienten notieren.</li>
+      <li>Aushang mit Sprech- und Telefonzeiten in diesen Sprachen.</li>
+      <li>Kernseiten der Website in einfacher Sprache, wichtigste Infos übersetzt.</li>
+      <li>Terminbestätigungen in der Sprache des Patienten.</li>
+      <li>Für Aufklärung und Befunde: qualifizierte Sprachmittlung.</li>
+    </ol>''',
+  cta=PRAXIS_CTA, weiter=W_P, quellen=QUELLEN_RECHT[:1] + [Q_116],
+  related=[('/blog/whatsapp-arztpraxis-datenschutz.html', 'WhatsApp in der Arztpraxis', 'Was erlaubt ist und wie es richtig angebunden wird.'),
+           ('/blog/praxisschild-regeln-kosten.html', 'Praxisschild: Regeln & Kosten', 'Was auf das Schild gehört und was es kostet.')]),
+
+ dict(file='ki-verordnung-praxis-pflege.html', crumb='KI-Verordnung Praxis & Pflege',
+  title='KI-Verordnung: Was Praxen und Pflegedienste jetzt beachten müssen',
+  desc='EU-KI-Verordnung seit August 2026: KI-Hinweis im Chat, keine Triage, Rollen von Anbieter und Betreiber, KI-Kompetenz im Team – verständlich für Praxen und Pflegedienste.',
+  tag='Ratgeber · KI &amp; Recht', h1='KI-Verordnung für Praxis und Pflege:<br><em>Was jetzt gilt.</em>', minuten=6, bild=BILD_P,
+  intro='<p>Die EU-KI-Verordnung (Verordnung 2024/1689) gilt schrittweise. Für digitale Assistenten in Praxen und Pflegediensten ist vor allem eine Pflicht wichtig, die seit dem 2. August 2026 greift: Menschen müssen wissen, dass sie mit einer KI sprechen. Hier das Wichtigste – ohne Paragrafendschungel.</p>',
+  body='''
+    <h2>Der KI-Hinweis (Art. 50)</h2>
+    <p>Wer mit einem KI-System chattet, muss das <strong>spätestens bei der ersten Nachricht</strong> erfahren – es sei denn, es ist ohnehin offensichtlich. Für einen Chat auf der Praxis-Website oder per WhatsApp heißt das: ein klarer, fester Satz zu Beginn, zum Beispiel „Sie schreiben mit einem digitalen Assistenten (KI). Keine medizinische Beratung – im Notfall 112.“</p>
+
+    <h2>Kein Hochrisiko – solange keine Triage</h2>
+    <p>Ein Assistent, der Termine, Rezeptanfragen und organisatorische Fragen übernimmt, zählt nach der Verordnung nicht zu den Hochrisiko-Systemen. Das ändert sich, wenn er Beschwerden einschätzt, Dringlichkeit bewertet oder Patienten sortiert – dann kann er als Medizinprodukt gelten, mit deutlich strengeren Regeln. Deshalb gehört eine solche Funktion nicht in einen Praxis- oder Pflege-Assistenten.</p>
+
+    <h2>Wer ist wofür zuständig?</h2>
+    <ul>
+      <li><strong>Anbieter</strong> ist, wer das System baut und bereitstellt – er sorgt dafür, dass der KI-Hinweis technisch eingebaut ist.</li>
+      <li><strong>Betreiber</strong> ist die Praxis oder der Pflegedienst – er setzt das System ein und achtet darauf, dass es wie vorgesehen genutzt wird.</li>
+    </ul>
+
+    <h2>KI-Kompetenz im Team (Art. 4)</h2>
+    <p>Wer KI einsetzt, soll dafür sorgen, dass das eigene Personal ausreichend Bescheid weiß. Praktisch heißt das: eine kurze Einweisung, was der Assistent kann, was nicht, und wann ein Mensch übernimmt.</p>
+
+    <h2>Und die DSGVO?</h2>
+    <p>Die KI-Verordnung ersetzt die DSGVO nicht. Für Patienten- und Pflegedaten gelten weiterhin Art.&nbsp;9 DSGVO, ein AV-Vertrag nach Art.&nbsp;28 und die Schweigepflicht nach §&nbsp;203 StGB.</p>
+
+    <h2>Kurz-Check</h2>
+    <ol>
+      <li>Steht der KI-Hinweis gleich zu Beginn jedes Gesprächs?</li>
+      <li>Bewertet der Assistent keine Beschwerden und verweist im Notfall an 112?</li>
+      <li>Gibt ein Mensch Antwortentwürfe und Terminvorschläge frei?</li>
+      <li>Ist das Team eingewiesen?</li>
+      <li>Liegen AV-Vertrag und Verschwiegenheitsverpflichtung vor?</li>
+    </ol>''',
+  cta=PRAXIS_CTA, weiter=W_P + [('/ki-fuer-pflegedienste-berlin.html', 'KI für Pflegedienste')], quellen=QUELLEN_RECHT,
+  related=[('/blog/ki-arztpraxis-datenschutz.html', 'KI in der Arztpraxis', 'Was rechtlich geht – Datenschutz, Schweigepflicht, KI-Verordnung.'),
+           ('/blog/ki-pflegedienst-dokumentation.html', 'KI in der Pflegedokumentation', 'Wer haftet und was ein System sinnvoll übernehmen kann.')]),
+
+ dict(file='angehoerige-kommunikation-pflegedienst.html', crumb='Angehörige Pflegedienst',
+  title='Kommunikation mit Angehörigen im Pflegedienst',
+  desc='Angehörige rufen an, das Büro ist voll: Wie ambulante Pflegedienste Fragen von Angehörigen geordnet aufnehmen – mit Schweigepflicht, festen Wegen und digitalem Assistenten.',
+  tag='Ratgeber · KI &amp; Pflege', h1='Angehörige im Pflegedienst:<br><em>gut informiert, ohne Dauertelefon.</em>', minuten=5, bild=BILD_PF,
+  intro='<p>Angehörige wollen wissen, wann die Pflege kommt, ob sich etwas geändert hat und wen sie ansprechen können. Das ist verständlich – und im Büro oft der Grund, warum das Telefon nicht stillsteht. Mit klaren Wegen wird beides besser: die Information der Angehörigen und die Ruhe im Büro.</p>',
+  body='''
+    <h2>Erst klären: Wer darf was erfahren?</h2>
+    <p>Pflegekräfte unterliegen der Schweigepflicht (§&nbsp;203 StGB). Auskünfte über den Gesundheitszustand gibt es nur, wenn die pflegebedürftige Person einverstanden ist oder eine Vollmacht bzw. Betreuung vorliegt. Halten Sie in der Akte fest, wer Auskunft bekommen darf – das erspart Unsicherheit am Telefon.</p>
+
+    <h2>Feste Wege statt Zufall</h2>
+    <ul>
+      <li><strong>Organisatorisches</strong> (Besuchszeiten, Terminänderungen, Urlaub): schriftlich per Chat, WhatsApp oder E-Mail.</li>
+      <li><strong>Pflegerische Fragen:</strong> persönliches Gespräch mit der Pflegedienstleitung, mit festem Rückrufzeitfenster.</li>
+      <li><strong>Notfälle:</strong> 112 – nicht der Chat und nicht die Büronummer.</li>
+    </ul>
+
+    <h2>Was ein digitaler Assistent übernimmt</h2>
+    <p>Ein Assistent nimmt Fragen von Angehörigen jederzeit auf, fragt nach, worum es geht, und legt das Anliegen sortiert ins Büro: „Besuch morgen später möglich?“, „Rückruf erbeten“, „Änderung der Medikamentenabholung“. Die Antwort gibt das Büro. Der Assistent gibt selbst keine pflegerischen oder medizinischen Auskünfte und sagt gleich zu Beginn, dass er eine KI ist.</p>
+
+    <h2>Datensparsam bleiben</h2>
+    <p>Im Chat genügt, wer schreibt, für wen und worum es geht – keine Diagnosen. WhatsApp nur über die WhatsApp Business Platform mit Einwilligung, nicht über private Handys. Mit dem Dienstleister schließen Sie einen AV-Vertrag und eine Verschwiegenheitsverpflichtung ab.</p>
+
+    <h2>So starten Sie</h2>
+    <ol>
+      <li>Auskunftsberechtigte je Pflegebedürftigem in der Akte vermerken.</li>
+      <li>Wege festlegen: Organisatorisches schriftlich, Pflegerisches persönlich.</li>
+      <li>Rückrufzeitfenster der PDL bekanntgeben.</li>
+      <li>Angehörige mit einem kurzen Infoblatt über die Wege informieren.</li>
+    </ol>''',
+  cta=PFLEGE_CTA, weiter=W_PF, quellen=QUELLEN_RECHT,
+  related=[('/blog/krankmeldung-pflegedienst-digital.html', 'Krankmeldungen im Pflegedienst', 'Schneller bei der Einsatzleitung – per Chat oder WhatsApp.'),
+           ('/blog/postfach-pflegedienst-ordnen.html', 'Postfach im Pflegedienst ordnen', 'Kassen, Praxen, Bewerbungen – sortiert statt liegen geblieben.')]),
+
+ dict(file='postfach-pflegedienst-ordnen.html', crumb='Postfach Pflegedienst',
+  title='E-Mail-Postfach im Pflegedienst ordnen – mit KI',
+  desc='Kassen-Rückfragen, Arztpraxen, Bewerbungen, Angehörige: Wie ambulante Pflegedienste ihr Postfach vorsortieren und Antworten vorbereiten lassen – die Freigabe bleibt beim Team.',
+  tag='Ratgeber · KI &amp; Pflege', h1='Das Postfach im Pflegedienst:<br><em>sortiert statt liegen geblieben.</em>', minuten=5, bild=BILD_PF,
+  intro='<p>Rückfragen von Kassen, Verordnungen aus Arztpraxen, Bewerbungen, Nachrichten von Angehörigen – im Büro eines Pflegedienstes landet vieles in einem Postfach. Was nicht sofort zugeordnet wird, bleibt liegen. Ein digitaler Assistent kann vorsortieren und Antworten vorbereiten. Entscheiden und abschicken tut weiterhin Ihr Team.</p>',
+  body='''
+    <h2>Was sich gut vorsortieren lässt</h2>
+    <ul>
+      <li><strong>Kassen und Kostenträger:</strong> Rückfragen, Genehmigungen, Unterlagen – mit Zuordnung zum richtigen Vorgang.</li>
+      <li><strong>Arztpraxen:</strong> Verordnungen und Rückfragen, die schnell bei der PDL ankommen müssen.</li>
+      <li><strong>Bewerbungen:</strong> eingeordnet nach Stelle, Eingangsbestätigung als Entwurf.</li>
+      <li><strong>Angehörige:</strong> Anliegen erkannt und an die zuständige Person gegeben.</li>
+      <li><strong>Werbung und Newsletter:</strong> aussortiert, damit Wichtiges oben steht.</li>
+    </ul>
+
+    <h2>Antwortentwurf statt automatischer Antwort</h2>
+    <p>Für wiederkehrende Fälle – Eingangsbestätigung, Bitte um fehlende Unterlagen, Terminvorschlag – entsteht ein Entwurf. Eine Mitarbeiterin prüft ihn und schickt ihn ab. So bleibt die Verantwortung beim Team, und die Antwort ist trotzdem schnell da.</p>
+
+    <h2>Was nicht automatisch passieren sollte</h2>
+    <p>Pflegerische oder medizinische Einschätzungen, Zusagen zu Kapazitäten, Absagen an Bewerber und alles mit rechtlicher Wirkung gibt ein Mensch frei. Das System ergänzt Ihre Pflegesoftware und KIM, es ersetzt sie nicht.</p>
+
+    <h2>Datenschutz im Postfach</h2>
+    <p>Im Postfach stecken Gesundheits- und Bewerberdaten. Deshalb: Verarbeitung in der EU, AV-Vertrag nach Art.&nbsp;28 DSGVO, Verschwiegenheitsverpflichtung nach §&nbsp;203 StGB und feste Löschfristen – auch für Bewerbungen. Der Assistent liest nur, was er für die Sortierung braucht.</p>
+
+    <h2>So fangen Sie an</h2>
+    <ol>
+      <li>Eine Woche lang notieren, welche Arten von E-Mails am häufigsten kommen.</li>
+      <li>Für die drei häufigsten Arten Zuständigkeit und Antwortvorlage festlegen.</li>
+      <li>Vorsortierung mit Antwortentwurf für genau diese drei starten.</li>
+      <li>Nach vier Wochen prüfen und erweitern.</li>
+    </ol>''',
+  cta=PFLEGE_CTA, weiter=W_PF, quellen=QUELLEN_RECHT,
+  related=[('/blog/angehoerige-kommunikation-pflegedienst.html', 'Angehörige im Pflegedienst', 'Gut informiert, ohne Dauertelefon.'),
+           ('/blog/pflegekraefte-finden-werbung.html', 'Pflegekräfte finden', 'Wie Werbung beim Recruiting hilft.')]),
+]
+
+ARTIKEL += NEU
+
+
 def bauen(a):
     s = VORLAGE
     url = BASE + 'blog/' + a['file']
