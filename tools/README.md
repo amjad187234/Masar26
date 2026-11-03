@@ -71,3 +71,8 @@ Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referen
 `python3 tools/seo/blog_kurzbox.py` setzt in jedem Ratgeber nach der Einleitung eine kurze Angebotsbox (Text/Link aus der `.article-cta` des Artikels) – nach neuen Ratgebern ausführen.
 `python3 tools/seo/nrw_whatsapp.py` stellt die WhatsApp-Links auf NRW-Seiten (`data-region="nrw"`) auf das NRW-Team (0178 2410682) um; der Assistent nutzt dort dieselbe Nummer.
 `python3 tools/seo/schnell.py` fügt allen öffentlichen Seiten Speculation Rules (Vorladen interner Links) und weiche Seitenübergänge (View Transitions) hinzu – auch nach neuen Seiten ausführen.
+
+## Markenleitfaden
+`tools/brand/brand_guide.html` → `Masar_Markenleitfaden.pdf` (2 Seiten: Logo, Farben, Schrift, Sprache, Bildsprache, Anwendung).
+Neu erzeugen: `node tools/angebot/pdf.mjs tools/brand/brand_guide.html tools/brand/Masar_Markenleitfaden.pdf`.
+`logo_transparent.png` / `logo_negativ.png` (weiß auf Navy) liegen daneben. Claims sind nur Vorschläge, nicht festgelegt.
