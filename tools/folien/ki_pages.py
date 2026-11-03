@@ -12,9 +12,10 @@ exec(src[:src.index("\nif __name__")])
 
 
 def demo(art, text):
-    return ('Ausprobieren', 'So sieht es für Ihre <em>' + text + '</em> aus',
-            'Tippen Sie sich durch ein Beispiel. Unter jedem Gespräch sehen Sie, was bei Ihrem Team ankommt – strukturiert statt auf einem Zettel.',
-            f'    <div data-ki-demo="{art}" class="reveal"></div>')
+    """Weitere Bausteine (Online-Termin, Postfach, Wissens-Assistent) – der Chat-Assistent steht oben im Hero."""
+    return ('Weitere Bausteine', 'Noch mehr <em>zum Ausprobieren</em>',
+            'Online-Termine, ein vorsortiertes Postfach und ein Assistent für Ihre eigenen Unterlagen – so arbeiten die Bausteine für ' + text + '.',
+            f'    <div data-ki-bausteine="{art}" class="reveal"></div>')
 
 
 EIGEN = '''<section class="section" id="eigenes-system">
@@ -45,9 +46,9 @@ RECHT = '''<p><strong>Klarer KI-Hinweis:</strong> Wer mit dem Assistenten schrei
 LEISTUNGEN = lambda wer: [
   ('web', 'Chat-Assistent auf der Website', f'Beantwortet die immer gleichen Fragen und nimmt Anliegen vollständig auf – rund um die Uhr, in mehreren Sprachen.', '#demo'),
   ('phone', 'WhatsApp-Assistent', 'Für alle, die lieber schreiben: über die WhatsApp Business Platform, mit Einwilligung und EU-Anbieter.', '#datenschutz'),
-  ('karte', 'Online-Termine & Erinnerungen', f'{wer} wählen freie Zeiten selbst, bekommen eine Bestätigung und eine Erinnerung vor dem Termin.', '#kontakt'),
-  ('druck', 'E-Mails vorsortieren', 'Eingehende Nachrichten werden gelesen, eingeordnet und mit einem Antwortentwurf versehen, den Ihr Team freigibt.', '#kontakt'),
-  ('auge', 'Assistent für Ihre Unterlagen', 'Beantwortet interne Fragen aus Ihren eigenen Dokumenten – Abläufe, Richtlinien, Checklisten – und nennt die Quelle.', '#kontakt'),
+  ('karte', 'Online-Termine & Erinnerungen', f'{wer} wählen freie Zeiten selbst, bekommen eine Bestätigung und eine Erinnerung vor dem Termin.', '#bausteine'),
+  ('druck', 'E-Mails vorsortieren', 'Eingehende Nachrichten werden gelesen, eingeordnet und mit einem Antwortentwurf versehen, den Ihr Team freigibt.', '#bausteine'),
+  ('auge', 'Assistent für Ihre Unterlagen', 'Beantwortet interne Fragen aus Ihren eigenen Dokumenten – Abläufe, Richtlinien, Checklisten – und nennt die Quelle.', '#bausteine'),
   ('stern', 'Website & Marketing', 'Auf Wunsch die passende Website, Praxis- oder Firmenschild und Social Media dazu – alles aus einer Hand.', '/webdesign-berlin.html'),
 ]
 
@@ -172,7 +173,7 @@ PFLEGE['extra'] = demo('pflege', 'Angehörigen und Ihr Team')
 def nachbearbeiten(p):
     f = ROOT + p['file']; h = open(f, encoding='utf-8').read()
     # Demo-Abschnitt mit Anker, eigenes System vor „Passend dazu“, Recht-Abschnitt mit Anker, Skript
-    for text, sid in (('Ausprobieren</span>', 'demo'), ('Datenschutz &amp; Schweigepflicht</span>', 'datenschutz')):
+    for text, sid in (('Weitere Bausteine</span>', 'bausteine'), ('Datenschutz &amp; Schweigepflicht</span>', 'datenschutz')):
         i = h.find(text)
         if i > 0 and f'id="{sid}"' not in h:
             j = h.rfind('<section ', 0, i); k = h.index('>', j)
@@ -182,9 +183,14 @@ def nachbearbeiten(p):
     anker = '<section class="section bg-alt" style="padding:2.5rem 0;">'
     if 'id="eigenes-system"' not in h and anker in h:
         h = h.replace(anker, EIGEN + anker, 1)
-    h = h.replace('Foto per WhatsApp schicken', 'Per WhatsApp schreiben').replace('>Angebot anfordern</a>', '>Erstgespräch anfragen</a>', 1)
+    # Hero: Live-Demo statt Standbild
+    art = 'pflege' if 'pflege' in p['file'] else 'praxis'
+    h = re.sub(r'(<div class="hero-visual">)\s*<img class="hero-shot"[^>]*>', lambda m: m.group(1) + f'\n        <div class="hero-demo" id="demo" data-ki-demo="{art}"></div>', h, count=1)
+    if '<style id="ki-hero">' not in h:
+        h = h.replace('</head>', '<style id="ki-hero">.hero-demo{color:rgba(255,255,255,.85)}.hero-visual .hero-demo .kd{max-width:380px}.hero-visual>.hero-demo{max-width:380px!important}@media(max-width:900px){.hero-visual .kd-in{height:500px}}@media(max-width:420px){.hero-visual .kd-in{height:470px}.kd-w{max-height:104px}}</style>\n</head>', 1)
+    h = h.replace('Foto per WhatsApp schicken', 'Per WhatsApp schreiben').replace('<a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>', '<a href="#kontakt" class="btn btn-teal">Erstgespräch anfragen</a>', 1)
     if '/ki-demo.js' not in h:
-        h = h.replace('</body>', '<script src="/ki-demo.js?v=1" defer></script>\n</body>', 1)
+        h = h.replace('</body>', '<script src="/ki-demo.js?v=2" defer></script>\n</body>', 1)
     open(f, 'w', encoding='utf-8').write(h)
 
 

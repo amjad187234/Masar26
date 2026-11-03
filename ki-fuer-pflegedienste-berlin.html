@@ -438,6 +438,7 @@ table.rt td:first-child::before{display:none}
 <style id="kopf-klar">.kopf-preis{display:inline-flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;background:rgba(88,208,189,.14);border:1px solid rgba(88,208,189,.45);border-radius:10px;padding:.55rem .9rem;margin:-.6rem 0 1rem;color:#fff;font-size:14px}.kopf-preis b{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.35rem;color:#58d0bd;letter-spacing:.3px}.kopf-checks{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;gap:.4rem}.kopf-checks li{position:relative;padding-left:1.6rem;color:rgba(255,255,255,.88);font-size:15px;line-height:1.5}.kopf-checks li::before{content:"✓";position:absolute;left:0;top:0;width:1.1rem;height:1.1rem;border-radius:50%;background:#58d0bd;color:#132e50;font-weight:900;font-size:.75rem;display:flex;align-items:center;justify-content:center;margin-top:.2rem}</style>
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
 <style>@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.8rem}.hero-visual .hero-shot{width:100%;max-width:340px;height:auto;margin:0 auto;display:block;transform:none}}</style>
+<style id="ki-hero">.hero-demo{color:rgba(255,255,255,.85)}.hero-visual .hero-demo .kd{max-width:380px}.hero-visual>.hero-demo{max-width:380px!important}@media(max-width:900px){.hero-visual .kd-in{height:500px}}@media(max-width:420px){.hero-visual .kd-in{height:470px}.kd-w{max-height:104px}}</style>
 <!-- schnell:start -->
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
@@ -454,7 +455,7 @@ table.rt td:first-child::before{display:none}
   <a class="scta-txt" data-termin-link data-btn href="/termin.html?thema=Schilder%20Berlin" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid #58d0bd;background:rgba(88,208,189,.16);color:#fff;border-radius:8px;padding:9px 16px;font-weight:700;line-height:1.3"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><b style="color:#fff">Kostenlose Beratung buchen →</b></a>
   <div class="scta-btns">
     <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20digitalen%20Assistenten%20f%C3%BCr%20unseren%20Pflegedienst." target="_blank" rel="noopener noreferrer" class="scta-btn primary"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>WhatsApp</a>
-    <a href="#kontakt" class="scta-btn secondary">Erstgespräch anfragen</a>
+    <a href="#kontakt" class="scta-btn secondary">Angebot anfordern</a>
   </div>
 </div>
 
@@ -544,7 +545,7 @@ table.rt td:first-child::before{display:none}
         <h1>Die Stunde vor der ersten Tour <em>gehört wieder Ihnen.</em></h1>
         <p class="hero-sub">Krankmeldungen, Angehörige, Neuanfragen – und dazwischen soll die Planung stehen. Unser digitaler Assistent nimmt diese Anliegen per Chat und WhatsApp auf, sortiert sie und gibt Dringendes sofort an die Einsatzleitung. Entscheiden tun weiterhin Sie.</p>
         <div class="hero-btns">
-          <a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>
+          <a href="#kontakt" class="btn btn-teal">Erstgespräch anfragen</a>
           <a href="https://wa.me/491785143918?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20digitalen%20Assistenten%20f%C3%BCr%20unseren%20Pflegedienst." target="_blank" rel="noopener noreferrer" class="btn btn-outline"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.5a8 8 0 0 1-11.6 7.1L4 20.5l1.9-5.1A8 8 0 1 1 21 11.5Z"/><path d="M9 11h6M9 14h4"/></svg>Per WhatsApp schreiben</a>
         </div>
         <div class="hero-trust">
@@ -552,7 +553,7 @@ table.rt td:first-child::before{display:none}
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/ki-pflegedienst-720.webp" srcset="/ki-pflegedienst-360.webp 360w, /ki-pflegedienst-540.webp 540w, /ki-pflegedienst-720.webp 720w, /ki-pflegedienst.webp 1080w" sizes="360px" width="1080" height="1350" alt="Bildschirmfoto unseres Pflegedienst-Assistenten: Eine Krankmeldung wird früh am Morgen aufgenommen und sofort an die Einsatzleitung gegeben" loading="eager" fetchpriority="high">
+        <div class="hero-demo" id="demo" data-ki-demo="pflege"></div>
       </div>
     </div>
   </div>
@@ -614,14 +615,14 @@ table.rt td:first-child::before{display:none}
     <p class="price-note">Der Assistent ergänzt Ihre Pflegesoftware und die Telematikinfrastruktur – er ersetzt sie nicht.</p>
   </div>
 </section>
-<section class="section" id="demo">
+<section class="section" id="bausteine">
   <div class="container">
     <div class="sec-head reveal">
-      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>Ausprobieren</span>
-      <h2 class="sec-title">So sieht es für Ihre <em>Angehörigen und Ihr Team</em> aus</h2>
-      <p class="sec-sub">Tippen Sie sich durch ein Beispiel. Unter jedem Gespräch sehen Sie, was bei Ihrem Team ankommt – strukturiert statt auf einem Zettel.</p>
+      <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>Weitere Bausteine</span>
+      <h2 class="sec-title">Noch mehr <em>zum Ausprobieren</em></h2>
+      <p class="sec-sub">Online-Termine, ein vorsortiertes Postfach und ein Assistent für Ihre eigenen Unterlagen – so arbeiten die Bausteine für Angehörigen und Ihr Team.</p>
     </div>
-    <div data-ki-demo="pflege" class="reveal"></div>
+    <div data-ki-bausteine="pflege" class="reveal"></div>
   </div>
 </section>
 <section class="section">
@@ -642,17 +643,17 @@ table.rt td:first-child::before{display:none}
         <h3><span class="nw">WhatsApp-Assistent</span></h3>
         <p>Für alle, die lieber schreiben: über die WhatsApp Business Platform, mit Einwilligung und EU-Anbieter.</p>
       </a>
-      <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
+      <a href="#bausteine" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 14h4"/></svg></div>
         <h3><span class="nw">Online-Termine</span> & Erinnerungen</h3>
         <p>Angehörige und Interessenten wählen freie Zeiten selbst, bekommen eine Bestätigung und eine Erinnerung vor dem Termin.</p>
       </a>
-      <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
+      <a href="#bausteine" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="3" width="12" height="6" rx="1"/><path d="M6 14H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg></div>
         <h3><span class="nw">E-Mails</span> vorsortieren</h3>
         <p>Eingehende Nachrichten werden gelesen, eingeordnet und mit einem Antwortentwurf versehen, den Ihr Team freigibt.</p>
       </a>
-      <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
+      <a href="#bausteine" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><path d="M4 4l16 16"/></svg></div>
         <h3>Assistent für Ihre Unterlagen</h3>
         <p>Beantwortet interne Fragen aus Ihren eigenen Dokumenten – Abläufe, Richtlinien, Checklisten – und nennt die Quelle.</p>
@@ -899,6 +900,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
 <script src="/assistent.js?v=10" defer></script>
-<script src="/ki-demo.js?v=1" defer></script>
+<script src="/ki-demo.js?v=2" defer></script>
 </body>
 </html>
