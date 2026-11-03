@@ -14,7 +14,7 @@ A, Z = '<!-- slides:start -->', '<!-- slides:ende -->'
 # (Datei ohne .webp, Bildunterschrift, Alt-Text)
 KATEGORIEN = [
     ('leuchtreklame', 'Leuchtreklame', 'Leuchtkästen, Leuchtbuchstaben und Ausleger – produziert und montiert.', [
-        ('leuchtkasten-schaufenster-fahrschule-01', 'Fahrschule: Leuchtkasten über dem Schaufenster, direkt nach der Montage', 'Blauer Leuchtkasten „Fahrschule JAD“ über einem bedruckten Schaufenster, davor eine Leiter'),
+        ('leuchtkasten-schaufenster-fahrschule-01', 'Fahrschule JAD: Leuchtkasten über dem Schaufenster, direkt nach der Montage', 'Blauer Leuchtkasten „Fahrschule JAD“ über einem bedruckten Schaufenster, davor eine Leiter'),
         ('leuchtreklame-berlin-08', 'Barbershop: Fassadenanlage am Eröffnungstag', 'Fassadenbeschriftung eines Barbershops in Berlin am Eröffnungstag'),
         ('leuchtreklame-berlin-06', 'Ausleger über dem Eingang, während der Montage', 'Runder Ausleger eines Barbershops wird über dem Eingang montiert'),
         ('leuchtreklame-berlin-05', 'Hinterleuchtetes Logo im Innenraum', 'Hinterleuchtetes Logoschild eines Barbershops an einer Innenwand in Berlin'),
@@ -28,7 +28,7 @@ KATEGORIEN = [
         ('schaufensterbeschriftung-showroom-berlin-02', 'LAUFEN Berlin Gallery: Folienschrift nach Brand Guide, exakt ausgerichtet', 'Nahaufnahme eines Schaufensters mit weißer Folienschrift „BERLIN GALLERY“ und LAUFEN-Logo, dahinter Showroom mit Leuchten'),
         ('praxis-schaufenster-berlin-02', 'LIVE Physio, Berlin: Eröffnungsbeklebung, Logo-Blenden und Milchglas', 'Fertig beklebte Schaufensterfront einer neuen Physiotherapiepraxis in Berlin mit bedruckten Folien, Logo-Blenden und Milchglas'),
         ('praxis-schaufenster-berlin-01', 'LIVE Physio, Berlin: unser Team bei der Montage', 'Schaufenster einer Physiotherapiepraxis mit bedruckter Folie; zwei Monteure kleben weitere Folie'),
-        ('schaufensterfolie-fahrschule-01', 'Fahrschule: bedruckte Schaufensterfolie mit freiem Sichtfenster in der Mitte', 'Bedruckte Schaufensterfolie einer Fahrschule in Blau und Grün mit Leistungen, Website und freiem Sichtfenster'),
+        ('schaufensterfolie-fahrschule-01', 'Fahrschule JAD: bedruckte Schaufensterfolie mit freiem Sichtfenster in der Mitte', 'Bedruckte Schaufensterfolie einer Fahrschule in Blau und Grün mit Leistungen, Website und freiem Sichtfenster'),
         ('fensterbeschriftung-praxis-gold-01', 'Praxis: Schriftzug und Logo in Gold auf dem Oberlicht der Eingangstür', 'Goldene Folienschrift „Physiotherapie“ mit Logo auf dem gewölbten Oberlicht einer Eingangstür'),
         ('schaufensterbeschriftung-pflegedienst-berlin-01', 'Galileo Pflege GmbH, Berlin: Logo und Firmenname am Fenster, Öffnungszeiten an der Tür', 'Weiße Fensterbeschriftung eines ambulanten Pflegedienstes in Berlin mit Logo, Firmenname und Öffnungszeiten an der Tür'),
         ('schaufensterbeschriftung-berlin-01', 'Kioskfront, vollflächig bedruckt', 'Vollflächig bedruckte Front eines Imbiss-Kiosks in Berlin'),
@@ -43,13 +43,13 @@ KATEGORIEN = [
         ('fahrzeugfolierung-berlin-03', 'Logo und Illustration auf der Rückseite', 'Folierte Rückwand eines Imbisswagens mit Logo und Illustration'),
     ]),
     ('druck', 'Druck & Gastro-Werbung', 'Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Werkstatt.', [
-        ('menuetafel-imbiss-montiert-01', 'Imbiss: Menütafel über der Theke, fertig montiert', 'Breite schwarze Menütafel mit Döner, Pasta, Pizza und Burger über der Theke eines Imbisses'),
-        ('imbisswagen-menuetafeln-01', 'Imbisswagen: große Menütafel, Aufsteller und Blenden in einem Design', 'Gelber Imbisswagen mit großer schwarzer Menütafel, zwei Aufstellern und bedruckten Blenden'),
-        ('grossformatdruck-werkstatt-01', 'Blende für denselben Imbisswagen im Großformatdruck', 'Großformatdrucker druckt eine Blende mit Logo „Grill Chicken“ und „Kalte Getränke“'),
+        ('menuetafel-imbiss-montiert-01', 'BISSWERK: Menütafel über der Theke, fertig montiert', 'Breite schwarze Menütafel mit Döner, Pasta, Pizza und Burger über der Theke eines Imbisses'),
+        ('imbisswagen-menuetafeln-01', 'Grill Chicken: große Menütafel, Aufsteller und Blenden für den Imbisswagen', 'Gelber Imbisswagen mit großer schwarzer Menütafel, zwei Aufstellern und bedruckten Blenden'),
+        ('grossformatdruck-werkstatt-01', 'Grill Chicken: Blende für den Imbisswagen im Großformatdruck', 'Großformatdrucker druckt eine Blende mit Logo „Grill Chicken“ und „Kalte Getränke“'),
     ]),
     ('werkstatt', 'Aus der Werkstatt', 'So entstehen die Arbeiten – bevor sie an die Fassade kommen.', [
-        ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten mit Logo beim Testlauf', 'Runder schwarzer Leuchtkasten mit weiß leuchtendem Logo „Feel Good Food by Omar“ in der Werkstatt'),
-        ('werkstatt-kaschieren-menuetafel-01', 'Dieselbe Menütafel: Druckfolie wird mit Heißluft und Rakel aufgezogen', 'Zwei Hände ziehen bedruckte Folie mit Heißluftföhn und Rakel auf eine schwarze Menütafel'),
+        ('leuchtkasten-rund-werkstatt-01', 'Feel Good Food by Omar: runder Leuchtkasten beim Testlauf', 'Runder schwarzer Leuchtkasten mit weiß leuchtendem Logo „Feel Good Food by Omar“ in der Werkstatt'),
+        ('werkstatt-kaschieren-menuetafel-01', 'BISSWERK-Menütafel: Druckfolie wird mit Heißluft und Rakel aufgezogen', 'Zwei Hände ziehen bedruckte Folie mit Heißluftföhn und Rakel auf eine schwarze Menütafel'),
         ('werkstatt-folie-aufziehen-menuetafel-01', 'Nassverklebung: Folie wird blasenfrei auf die Tafel gerakelt', 'Bedruckte Menütafel mit Seifenwasser, eine Hand rakelt die Folie glatt'),
         ('leuchtreklame-berlin-07', 'Leuchtbuchstaben, fertig verdrahtet', 'Blau leuchtende Profilbuchstaben für einen Barbershop, aufgebaut in der Werkstatt'),
         ('leuchtreklame-berlin-02', 'Leuchtkasten mit ausgefrästen Buchstaben, vor der Montage', 'Leuchtkasten für einen Friseursalon mit hinterleuchteten Buchstaben in der Werkstatt'),
