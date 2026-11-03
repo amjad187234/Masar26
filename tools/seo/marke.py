@@ -1,0 +1,42 @@
+"""Markenleitfaden auf die Website anwenden (tools/brand/brand_guide.html):
+nur Navy, Teal, Teal dunkel, Grau, Off-White und Textfarbe – keine Gold- und Lila-Akzente mehr.
+Ersetzt Farbwerte in allen öffentlichen HTML-Seiten (idempotent). Farbwahl-Muster (z. B. Messestand-Farben)
+bleiben unberührt, weil sie Kundenfarben zeigen, nicht unsere Marke.
+Aufruf: python3 tools/seo/marke.py
+"""
+import os, re, glob
+
+ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+AUSNAHMEN = ('admin/', 'tools/', 'node_modules/', 'data/')
+
+ERSETZEN = [
+    # Gold-Akzent → Teal (Token-Wert, so bleiben alle var(--gold)-Stellen markenkonform)
+    (re.compile(r'--gold:\s*#f5[bc][0-9a-f]00', re.I), '--gold:#58d0bd'),
+    # Lila (früher „Digital“-Bereich) → Teal dunkel / Navy
+    (re.compile(r'--purple:\s*#7c3aed', re.I), '--purple:#177567'),
+    (re.compile(r'--purple-d:\s*#6d28d9', re.I), '--purple-d:#0e6455'),
+    (re.compile(r'rgba\(124,\s*58,\s*237,', re.I), 'rgba(23,117,103,'),
+    (re.compile(r'#1a0050', re.I), '#0e2340'),
+    (re.compile(r'#2e1065', re.I), '#132e50'),
+    (re.compile(r'#4c1d95', re.I), '#0d4a4a'),
+    (re.compile(r'#7c3aed', re.I), '#177567'),
+    (re.compile(r'#c4b5fd', re.I), '#a8eadf'),
+    # Gelbe Hinweis-Etiketten → Teal
+    (re.compile(r'background:#e8b931', re.I), 'background:#58d0bd'),
+]
+
+
+def main():
+    n = 0
+    for p in glob.glob(os.path.join(ROOT, '**', '*.html'), recursive=True):
+        if os.path.relpath(p, ROOT).startswith(AUSNAHMEN): continue
+        s = open(p, encoding='utf-8').read(); neu = s
+        for muster, ersatz in ERSETZEN:
+            neu = muster.sub(ersatz, neu)
+        if neu != s:
+            open(p, 'w', encoding='utf-8').write(neu); n += 1
+    print(n, 'Seiten an den Markenleitfaden angepasst')
+
+
+if __name__ == '__main__':
+    main()

@@ -95,6 +95,9 @@ solche Festlegung im Bericht nennen.
   Spalte `termin_wunsch`, E-Mail + Telegram, Markierung in der Übersicht; Termin bleibt bis zur Bearbeitung).
   Erinnerungsmail 24 h vorher enthält den Status-Link. Keine zusätzlichen Status-E-Mails an Kunden (Inhaber, 03.11.2026).
 - Abschluss-Animation `fertig.js` (auf allen Seiten): Ring 0→100 % gekoppelt an den echten Versand, dann Haken, „Danke!“, Anfragenummer, Farbregen. API `MasarFertig.start().done/fail`; genutzt in Assistent (WhatsApp-Knopf erst danach), Terminbuchung, danke.html und automatisch bei Formularen an /kontakt.php.
+- Marke: Markenleitfaden `tools/brand/Masar_Markenleitfaden.pdf` (Navy #132E50, Teal #58D0BD, Teal dunkel #177567 für Teal-Text auf Weiß,
+  Grau #D1D3D4, Off-White #F4F7F7, Text #1A2A2A; Barlow Condensed Black für Überschriften, Barlow für Text). Keine Gold-/Lila-Akzente;
+  `tools/seo/marke.py` setzt das auf allen Seiten durch (am Ende der Pipeline ausführen). Claim noch nicht festgelegt.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

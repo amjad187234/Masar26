@@ -66,7 +66,7 @@ Nach `nrw_staedte.py` erneut ausführen (die Fensterfolie-Städteseiten gibt es 
 `python3 tools/seo/referenzen_einbau.py` zeigt drei echte Projektfotos („Aus unserer Arbeit“) auf Leuchtreklame-, Fahrzeug-,
 Werbetechnik- und Regionsseiten.
 `python3 tools/seo/hero_klar.py` setzt auf 14 Leistungsseiten oben „ab“-Preis + drei Zusagen (und echte Fotos bei Fahrzeug/Leuchtreklame Berlin).
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py` → `a11y.py`.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py` → `a11y.py` → `marke.py` (Farben nach Markenleitfaden).
 `python3 tools/seo/a11y.py` sorgt für Barrierefreiheit nach WCAG (axe ohne Befund am 02.11.2026): echtes `<main>`, WhatsApp-Knopf/Sticky-Leiste als Landmark, Überschriftenfolge (Footer h2, Karten h3).
 `python3 tools/seo/blog_kurzbox.py` setzt in jedem Ratgeber nach der Einleitung eine kurze Angebotsbox (Text/Link aus der `.article-cta` des Artikels) – nach neuen Ratgebern ausführen.
 `python3 tools/seo/nrw_whatsapp.py` stellt die WhatsApp-Links auf NRW-Seiten (`data-region="nrw"`) auf das NRW-Team (0178 2410682) um; der Assistent nutzt dort dieselbe Nummer.
