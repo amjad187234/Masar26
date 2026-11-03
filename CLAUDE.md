@@ -38,6 +38,8 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 
 ## Preise (netto, „ab“) – nur mit Freigabe ändern
 
+Banner seit 03.11.2026 B2B-Preise (Inhaber: alte Preise ohne Gewinn); NRW-Werte im gleichen Abstand nach Marktrecherche. Werkzeug: `tools/seo/bannerpreise.py` (einmalig).
+
 | Leistung | Berlin | NRW |
 |---|---|---|
 | Schilder | 45 € | 59 € |
@@ -53,10 +55,10 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 | Aktionsfolie | 190 € | 229 € |
 | Lochfolie (m²) | 45 € | 55 € |
 | Fahrzeug-Teilbeschriftung | 290 € | 340 € |
-| PVC-Banner (m²) | 19 € | 22 € |
-| Mesh-Banner (m²) | 22 € | 25 € |
-| Blockout-Banner (m²) | 29 € | 33 € |
-| Banner-Mindestpreis | 39 € | 49 € |
+| PVC-Banner (m²) | 29 € | 34 € |
+| Mesh-Banner (m²) | 34 € | 39 € |
+| Blockout-Banner (m²) | 42 € | 48 € |
+| Banner-Mindestpreis | 79 € | 89 € |
 
 Überall gleich: Logo ab 490 €, Social Media ab 490 €/Monat, LED-Neon innen ab 249 €.
 Der Inhaber hat NRW-Preise und Preise neuer Produkte „nach Marktrecherche“ freigegeben – jede
@@ -97,7 +99,7 @@ solche Festlegung im Bericht nennen.
 - Abschluss-Animation `fertig.js` (auf allen Seiten): Ring 0→100 % gekoppelt an den echten Versand, dann Haken, „Danke!“, Anfragenummer, Farbregen. API `MasarFertig.start().done/fail`; genutzt in Assistent (WhatsApp-Knopf erst danach), Terminbuchung, danke.html und automatisch bei Formularen an /kontakt.php.
 - Marke: Markenleitfaden `tools/brand/Masar_Markenleitfaden.pdf` (Navy #132E50, Teal #58D0BD, Teal dunkel #177567 für Teal-Text auf Weiß,
   Grau #D1D3D4, Off-White #F4F7F7, Text #1A2A2A; Barlow Condensed Black für Überschriften, Barlow für Text). Keine Gold-/Lila-Akzente;
-  `tools/seo/marke.py` setzt das auf allen Seiten durch (am Ende der Pipeline ausführen). Claim noch nicht festgelegt.
+  `tools/seo/marke.py` setzt das auf allen Seiten durch (am Ende der Pipeline ausführen). Claim (03.11.2026): **„Werbung, die man sieht.“** (Footer aller Seiten, E-Mail-Signatur).
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

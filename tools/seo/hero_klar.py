@@ -15,14 +15,14 @@ SEITEN = {
     'schaufensterbeschriftung-berlin.html': ('ab 149 € netto', 'Sichtschutz ab 190 € · Lochfolie ab 45 €/m²', B_MONT),
     'fensterfolie-berlin.html': ('Sichtschutz ab 190 € netto', 'Glas wird vor der Montage geprüft', B_MONT),
     'sichtschutzfolie-berlin.html': ('ab 190 € netto', 'Milchglas nach Maß ab 240 €', B_MONT),
-    'pvc-banner-berlin.html': ('ab 19 €/m² netto', 'Mesh ab 22 €/m² · Blockout ab 29 €/m²', 'Druck in Berlin-Wedding'),
-    'aussenwerbung-berlin.html': ('Leuchtbuchstaben ab 199 €', 'Schilder ab 45 € · Banner ab 19 €/m²', B_MONT),
+    'pvc-banner-berlin.html': ('ab 29 €/m² netto', 'Mesh ab 34 €/m² · Blockout ab 42 €/m²', 'Druck in Berlin-Wedding'),
+    'aussenwerbung-berlin.html': ('Leuchtbuchstaben ab 199 €', 'Schilder ab 45 € · Banner ab 29 €/m²', B_MONT),
     'leuchtreklame-nrw.html': ('ab 229 € je Buchstabe', 'Werbesatzung Ihrer Stadt geprüft', N_MONT),
     'schilder-nrw.html': ('ab 59 € netto', 'Firmenschild ab 179 € · Praxisschild ab 459 €', N_MONT),
     'fahrzeugbeschriftung-nrw.html': ('ab 340 € netto', 'Teilbeschriftung · Entwurf inklusive', N_MONT),
     'schaufensterbeschriftung-nrw.html': ('ab 179 € netto', 'Sichtschutz ab 229 € · Lochfolie ab 55 €/m²', N_MONT),
     'fensterfolie-nrw.html': ('Sichtschutz ab 229 € netto', 'Glas wird vor der Montage geprüft', N_MONT),
-    'pvc-banner-nrw.html': ('ab 22 €/m² netto', 'Mesh ab 25 €/m² · Blockout ab 33 €/m²', N_MONT),
+    'pvc-banner-nrw.html': ('ab 34 €/m² netto', 'Mesh ab 39 €/m² · Blockout ab 48 €/m²', N_MONT),
 }
 FOTO = {
     'fahrzeugbeschriftung-berlin.html': ('fahrzeugbeschriftung-berlin-04', 'Von Masar beschrifteter Transporter mit Logo, Leistungen und Kontakt'),

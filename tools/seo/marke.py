@@ -1,13 +1,14 @@
 """Markenleitfaden auf die Website anwenden (tools/brand/brand_guide.html):
 nur Navy, Teal, Teal dunkel, Grau, Off-White und Textfarbe – keine Gold- und Lila-Akzente mehr.
 Ersetzt Farbwerte in allen öffentlichen HTML-Seiten (idempotent). Farbwahl-Muster (z. B. Messestand-Farben)
-bleiben unberührt, weil sie Kundenfarben zeigen, nicht unsere Marke.
+bleiben unberührt, weil sie Kundenfarben zeigen, nicht unsere Marke. Setzt außerdem den Claim „Werbung, die man sieht.“ über den Footer-Text.
 Aufruf: python3 tools/seo/marke.py
 """
 import os, re, glob
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 AUSNAHMEN = ('admin/', 'tools/', 'node_modules/', 'data/')
+CLAIM = '<p class="foot-claim" style="font:900 21px/1.1 \'Barlow Condensed\',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:#fff;margin:0 0 .55rem">Werbung, die <span style="color:#58d0bd">man sieht.</span></p>'
 
 ERSETZEN = [
     # Gold-Akzent → Teal (Token-Wert, so bleiben alle var(--gold)-Stellen markenkonform)
@@ -33,6 +34,8 @@ def main():
         s = open(p, encoding='utf-8').read(); neu = s
         for muster, ersatz in ERSETZEN:
             neu = muster.sub(ersatz, neu)
+        if 'foot-claim' not in neu and '<p class="foot-desc">' in neu:   # Claim (festgelegt 03.11.2026) im Footer
+            neu = neu.replace('<p class="foot-desc">', CLAIM + '\n        <p class="foot-desc">', 1)
         if neu != s:
             open(p, 'w', encoding='utf-8').write(neu); n += 1
     print(n, 'Seiten an den Markenleitfaden angepasst')

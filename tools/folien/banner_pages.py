@@ -17,7 +17,7 @@ def rows(m2, mesh, dbl, mind):
             ('Mindestpreis je Banner', 'z. B. kleine Banner für Theke, Stand oder Zaun', f'ab {mind}&nbsp;€'),
             ('Gestaltung', 'Layout nach Ihrem Logo, Druckdaten-Check inklusive', 'ab 49&nbsp;€'),
             ('Montage', 'an Gerüst, Zaun oder Fassade', 'nach Aufwand – Festpreis')]
-ROWS_B, ROWS_N = rows(19, 22, 29, 39), rows(22, 25, 33, 49)
+ROWS_B, ROWS_N = rows(29, 34, 42, 79), rows(34, 39, 48, 89)
 NOTE_B = 'Alle Preise netto zzgl. 19&nbsp;% MwSt. Ihren Festpreis bekommen wir nach Maß, Stückzahl und Ausführung – in der Regel innerhalb von 24 Stunden.'
 NOTE_N = 'Alle Preise netto zzgl. 19&nbsp;% MwSt. Ihren Festpreis inklusive Lieferung oder Montage durch unser Team in NRW bekommen Sie nach Maß und Stückzahl – in der Regel innerhalb von 24 Stunden.'
 
@@ -33,11 +33,11 @@ B = dict(finder_strip=False, hero_mobile=True, file='pvc-banner-berlin.html', cr
  parent=('Werbetechnik', 'werbetechnik.html'), area=[{"@type": "City", "name": "Berlin"}],
  img_alt='PVC-Banner mit und ohne Ösen – robust, wetterfest, in individuellen Größen',
  title='PVC-Banner Berlin: Banner drucken mit Ösen | Masar',
- desc='PVC-Banner in Berlin ab 19 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh-Banner für Gerüst und Bauzaun – Gestaltung und Montage aus einer Hand.',
+ desc='PVC-Banner in Berlin ab 29 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh-Banner für Gerüst und Bauzaun – Gestaltung und Montage aus einer Hand.',
  service_type='Bannerdruck', schema_name='PVC-Banner in Berlin',
  badge='PVC-Banner · Berlin', h1='PVC-Banner <em>Berlin</em>',
  sub='Wetterfeste Banner für Fassade, Bauzaun, Messestand, Eröffnung oder Event – mit Ösen, Hohlsaum oder ganz ohne. Wir gestalten, drucken und hängen Ihr Banner auf Wunsch bei Ihnen in Berlin auf.',
- trust='PVC-Banner ab 19 € / m² netto · Mesh · Blockout · Gestaltung & Montage',
+ trust='PVC-Banner ab 29 € / m² netto · Mesh · Blockout · Gestaltung & Montage',
  usp=['Wetterfest innen & außen', 'Mit oder ohne Ösen', 'Jede Größe', 'Angebot in 24 h'],
  wa='Hallo, ich interessiere mich für ein PVC-Banner. Größe: ',
  angles_ey='Warum ein Banner', angles_h2='Groß, günstig, <em>schnell sichtbar</em>',
@@ -77,7 +77,7 @@ B = dict(finder_strip=False, hero_mobile=True, file='pvc-banner-berlin.html', cr
  ],
  faq_h2='PVC-Banner – <em>Fragen &amp; Antworten</em>',
  faq=[
-  ('Was kostet ein PVC-Banner?', 'PVC-Banner gibt es bei uns ab 19 € pro m² netto zzgl. 19 % MwSt., inklusive Saum und Ösen. Mesh-Banner beginnen bei 22 € pro m², beidseitig bedruckte Blockout-Banner bei 29 € pro m². Der Mindestpreis je Banner liegt bei 39 € netto.'),
+  ('Was kostet ein PVC-Banner?', 'PVC-Banner gibt es bei uns ab 29 € pro m² netto zzgl. 19 % MwSt., inklusive Saum und Ösen. Mesh-Banner beginnen bei 34 € pro m², beidseitig bedruckte Blockout-Banner bei 42 € pro m². Der Mindestpreis je Banner liegt bei 79 € netto.'),
   ('Wie weit sind die Ösen auseinander?', 'Standard ist etwa alle 50 cm. Für starke Beanspruchung, etwa an Gerüsten, setzen wir die Ösen enger. Sagen Sie uns, wie das Banner befestigt wird.'),
   ('Brauche ich ein Mesh-Banner?', 'Für große Banner im Freien – an Gerüst, Bauzaun oder Fassade – empfehlen wir Mesh, weil der Wind durch das gelochte Material gehen kann. Für kleinere Banner und innen reicht PVC.'),
   ('Ist das Material schwer entflammbar?', 'Für Messen und Veranstaltungsräume verwenden wir schwer entflammbares Material (B1). Sagen Sie uns, wo das Banner hängt.'),
@@ -89,16 +89,16 @@ B = dict(finder_strip=False, hero_mobile=True, file='pvc-banner-berlin.html', cr
  form_labels=('Welches Banner?', 'Größe, Stückzahl &amp; Ort', 'Druckdaten oder Logo (optional)', 'Vektordatei oder PDF im Endformat ist ideal – aber jedes Logo oder Foto reicht für den Anfang.'),
  form_sub='Sagen Sie uns Größe, Stückzahl und wo das Banner hängt – Sie bekommen innerhalb von 24 Stunden ein Angebot.',
  subject='Anfrage PVC-Banner Berlin (Website)', msg_ph='z. B. 2 Banner 3 × 1 m für den Bauzaun, Ösen alle 50 cm, Logo und Telefonnummer, Baustelle in Berlin-Pankow',
- sticky=('PVC-Banner Berlin', 'ab 19 € / m² netto'))
+ sticky=('PVC-Banner Berlin', 'ab 29 € / m² netto'))
 B['top'] = ptab('Was kostet <em>ein PVC-Banner?</em>', ROWS_B, 'Preis', NOTE_B)
 
 N = dict(B)
 N.update(file='pvc-banner-nrw.html', crumb='PVC-Banner NRW', parent=('Werbeagentur NRW', 'werbeagentur-nrw.html'), area=AREA,
  title='PVC-Banner NRW: Banner drucken mit Ösen | Masar',
- desc='PVC-Banner in NRW ab 22 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh-Banner für Düsseldorf, Köln und das Ruhrgebiet – Montage vor Ort.',
+ desc='PVC-Banner in NRW ab 34 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh-Banner für Düsseldorf, Köln und das Ruhrgebiet – Montage vor Ort.',
  schema_name='PVC-Banner in NRW', badge='PVC-Banner · NRW', h1='PVC-Banner <em>NRW</em>',
  sub='Wetterfeste Banner für Fassade, Bauzaun, Eröffnung oder Event in ganz NRW – ob Köln, Düsseldorf, Dortmund, Essen, Bochum oder Duisburg. Mit Ösen, Hohlsaum oder ganz ohne. Wir gestalten und drucken, unser Team in NRW hängt das Banner auf Wunsch bei Ihnen auf.',
- trust='PVC-Banner ab 22 € / m² netto · Düsseldorf · Köln · Ruhrgebiet',
+ trust='PVC-Banner ab 34 € / m² netto · Düsseldorf · Köln · Ruhrgebiet',
  usp=['Team vor Ort in NRW', 'Mit oder ohne Ösen', 'Jede Größe', 'Angebot in 24 h'],
  wa='Hallo, ich interessiere mich für ein PVC-Banner in NRW. Größe: ',
  tab_note='Für Werbung am Fahrzeug siehe <a href="/fahrzeugbeschriftung-nrw.html">Fahrzeugbeschriftung NRW</a>. Banner in Berlin: <a href="/pvc-banner-berlin.html">PVC-Banner Berlin</a>.',
@@ -106,11 +106,11 @@ N.update(file='pvc-banner-nrw.html', crumb='PVC-Banner NRW', parent=('Werbeagent
  recht_html=RECHT_N,
  faq_h2='PVC-Banner NRW – <em>Fragen &amp; Antworten</em>',
  faq=[('In welchen Städten liefern und montieren Sie Banner?', 'In ganz NRW – Schwerpunkt Düsseldorf, Köln, Dortmund, Essen und Bochum, dazu Duisburg, Wuppertal, Bonn und die Städte dazwischen. Unser Team in NRW montiert vor Ort. Unser Firmensitz ist in Berlin.'),
-      ('Was kostet ein PVC-Banner in NRW?', 'PVC-Banner gibt es in NRW ab 22 € pro m² netto zzgl. 19 % MwSt., inklusive Saum und Ösen. Mesh-Banner ab 25 € pro m², Blockout-Banner ab 33 € pro m², Mindestpreis je Banner 49 € netto.')] + B['faq'][1:5] + [('Brauche ich für ein Banner eine Genehmigung?', 'Werbung für zeitlich begrenzte Aktionen bis zu zwei Monate und Werbeanlagen bis 1 m² sind in NRW in der Regel verfahrensfrei. Für größere, dauerhafte Banner an der Fassade kann eine Genehmigung nötig sein. Wir sagen Ihnen vorher, worauf Sie achten müssen.')],
+      ('Was kostet ein PVC-Banner in NRW?', 'PVC-Banner gibt es in NRW ab 34 € pro m² netto zzgl. 19 % MwSt., inklusive Saum und Ösen. Mesh-Banner ab 39 € pro m², Blockout-Banner ab 48 € pro m², Mindestpreis je Banner 89 € netto.')] + B['faq'][1:5] + [('Brauche ich für ein Banner eine Genehmigung?', 'Werbung für zeitlich begrenzte Aktionen bis zu zwei Monate und Werbeanlagen bis 1 m² sind in NRW in der Regel verfahrensfrei. Für größere, dauerhafte Banner an der Fassade kann eine Genehmigung nötig sein. Wir sagen Ihnen vorher, worauf Sie achten müssen.')],
  links=[('/werbeagentur-nrw.html', 'Werbeagentur NRW')] + [(f'/werbeagentur-{k}.html', f'Werbeagentur {v["name"]}') for k, v in C.items()] + [('/leuchtreklame-nrw.html', 'Leuchtreklame NRW')],
  form_sub='Sagen Sie uns Größe, Stückzahl und wo das Banner hängt – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team in NRW montiert auf Wunsch vor Ort.',
  subject='Anfrage PVC-Banner NRW (Website)', msg_ph='z. B. 2 Banner 3 × 1 m für den Bauzaun, Ösen alle 50 cm, Baustelle in Duisburg',
- sticky=('PVC-Banner NRW', 'ab 22 € / m² netto'), nrw=True, ph='Duisburg')
+ sticky=('PVC-Banner NRW', 'ab 34 € / m² netto'), nrw=True, ph='Duisburg')
 N['top'] = ptab('Was kostet <em>ein PVC-Banner in NRW?</em>', ROWS_N, 'Preis NRW', NOTE_N)
 
 PAGES_B = [B, N]
@@ -120,10 +120,10 @@ for k, c in ({} if True else C).items():
     p = dict(N)
     p.update(file=f'pvc-banner-{k}.html', crumb=f'PVC-Banner {n}', parent=(f'Werbeagentur {n}', c['hub']), area=[{"@type": "City", "name": n}],
      title=f'PVC-Banner {n}: Banner drucken mit Ösen | Masar',
-     desc=f'PVC-Banner in {n} ab 22 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh für Gerüst und Bauzaun – Druck und Montage vor Ort.',
+     desc=f'PVC-Banner in {n} ab 34 €/m² netto: wetterfest, mit oder ohne Ösen, Mesh für Gerüst und Bauzaun – Druck und Montage vor Ort.',
      schema_name=f'PVC-Banner in {n}', badge=f'PVC-Banner · {n}', h1=f'PVC-Banner <em>{n}</em>',
      sub=f'Wetterfeste Banner für Läden, Baustellen, Events und Vereine in {n} – von {c["lagen"]} bis {c["veedel"]}. Wir gestalten und drucken, unser Team in NRW hängt das Banner auf Wunsch bei Ihnen auf.',
-     trust=f'PVC-Banner ab 22 € / m² netto · Montage in {n}',
+     trust=f'PVC-Banner ab 34 € / m² netto · Montage in {n}',
      wa=f'Hallo, ich interessiere mich für ein PVC-Banner in {n}. Größe: ',
      angles_h2=f'Sichtbar in {n} – <em>groß und günstig</em>',
      angles=[('Große Wirkung', f'Ob Neueröffnung in {c["lagen"].split(" und ")[0]}, Baustelle in {c["veedel"].split(",")[0]} oder Betrieb {c["gewerbe"]}: Ein Banner ist schon von weitem lesbar.')] + B['angles'][1:],
@@ -132,7 +132,7 @@ for k, c in ({} if True else C).items():
      links=[('/pvc-banner-nrw.html', 'PVC-Banner NRW'), ('/' + c['hub'], f'Werbeagentur {n}'), (f'/schaufensterbeschriftung-{k}.html', f'Schaufenster {n}'), (f'/leuchtreklame-{k}.html', f'Leuchtreklame {n}')] + [(f'/pvc-banner-{kk}.html', f'PVC-Banner {vv["name"]}') for kk, vv in C.items() if kk != k],
      form_sub=f'Sagen Sie uns Größe, Stückzahl und wo das Banner hängt – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team montiert bei Ihnen in {n}.',
      subject=f'Anfrage PVC-Banner {n} (Website)', msg_ph=f'z. B. 2 Banner 3 × 1 m für den Bauzaun, Ösen alle 50 cm, Baustelle in {c["ph"]}',
-     sticky=(f'PVC-Banner {n}', 'ab 22 € / m² netto'), ph=c['ph'])
+     sticky=(f'PVC-Banner {n}', 'ab 34 € / m² netto'), ph=c['ph'])
     p['top'] = ptab(f'Was kostet <em>ein PVC-Banner in {n}?</em>', ROWS_N, 'Preis NRW', NOTE_N)
     PAGES_B.append(p)
 

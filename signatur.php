@@ -35,6 +35,7 @@ function masar_signatur_html(): string
          .   '<div style="font-size:15px;font-weight:bold;color:' . $navy . ';">Amjad Alblili</div>'
          .   '<div style="font-weight:bold;color:' . $gruen . ';">Masar Werbeagentur</div>'
          .   '<div style="font-size:12px;color:' . $grau . ';">Werbetechnik · Print · Design · Social Media</div>'
+         .   '<div style="font-size:12px;font-weight:bold;color:' . $navy . ';text-transform:uppercase;letter-spacing:.5px;padding-top:2px;">Werbung, die man sieht.</div>'
          .   '<div style="padding-top:8px;">Tel. / WhatsApp: <a href="tel:+491785143918" style="' . $link . '">0178 514 3918</a></div>'
          .   '<div><a href="mailto:info@masar-werbeagentur.de" style="' . $link . '">info@masar-werbeagentur.de</a>'
          .     ' · <a href="https://masar-werbeagentur.de/" style="' . $link . '">masar-werbeagentur.de</a></div>'
@@ -48,6 +49,7 @@ function masar_signatur_text(): string
     return "-- \n"
          . "Amjad Alblili\n"
          . "Masar Werbeagentur – Werbetechnik · Print · Design · Social Media\n"
+         . "Werbung, die man sieht.\n"
          . "Tel. / WhatsApp: 0178 514 3918\n"
          . "info@masar-werbeagentur.de · masar-werbeagentur.de\n";
 }

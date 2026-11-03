@@ -48,7 +48,7 @@
     ], d: ['Wie viele Fenster?', ['1', '2–4', '5–10', 'Mehr als 10']] },
     druck: { name: 'Druck & Banner', icon: '<path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/>', q: 'Was soll gedruckt werden?', a: [
       ['Flyer & Visitenkarten', '/print.html', null, 'Druck mit Gestaltung – Preis nach Auflage und Papier.', 'Flyer & Visitenkarten', null, '', '/print.html'],
-      ['PVC-Banner', '/pvc-banner-berlin.html', 19, 'Wetterfest, mit oder ohne Ösen, Mesh für Gerüst und Bauzaun.', 'PVC-Banner', 22, ' / m²', '/pvc-banner-nrw.html'],
+      ['PVC-Banner', '/pvc-banner-berlin.html', 29, 'Wetterfest, mit oder ohne Ösen, Mesh für Gerüst und Bauzaun.', 'PVC-Banner', 34, ' / m²', '/pvc-banner-nrw.html'],
       ['Aufkleber & Folien', '/foliendruck-berlin.html', 45, 'Klebefolie, Aufkleber und Bodenkleber.', 'Foliendruck & Aufkleber', null, '', '/foliendruck-berlin.html'],
       ['Roll-ups & Messewände', '/messebeschriftung-berlin.html', null, 'Für Messe, Event und Ladenlokal.', 'Roll-ups & Displays', null, '', '/messebeschriftung-berlin.html'],
       ['Express – heute noch', '/express-druck-berlin.html', null, 'Druck und Folie am selben Tag in Berlin.', 'Expressdruck', null, '', null]

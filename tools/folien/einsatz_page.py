@@ -30,7 +30,7 @@ ROWS = [
 ]
 PRICES = [('Firmenschild (Alu-Dibond)', 'ab 149 €', 'ab 179 €'), ('LED-Leuchtbuchstaben', 'ab 199 € / Buchstabe', 'ab 229 € / Buchstabe'),
           ('Schaufensterbeschriftung', 'ab 149 €', 'ab 179 €'), ('Sichtschutzfolie', 'ab 190 €', 'ab 229 €'),
-          ('Fahrzeug-Teilbeschriftung', 'ab 290 €', 'ab 340 €'), ('PVC-Banner', 'ab 19 € / m²', 'ab 22 € / m²')]
+          ('Fahrzeug-Teilbeschriftung', 'ab 290 €', 'ab 340 €'), ('PVC-Banner', 'ab 29 € / m²', 'ab 34 € / m²')]
 
 def build():
     js = lambda o: '<script type="application/ld+json">\n' + json.dumps(o, ensure_ascii=False, indent=2) + '\n</script>\n'
