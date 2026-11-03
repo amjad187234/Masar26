@@ -61,6 +61,8 @@ Banner seit 03.11.2026 B2B-Preise (Inhaber: alte Preise ohne Gewinn); NRW-Werte 
 | Banner-Mindestpreis | 79 € | 89 € |
 
 Überall gleich: Logo ab 490 €, Social Media ab 490 €/Monat, LED-Neon innen ab 249 €.
+Textildruck (Seite `textildruck-berlin.html`, Generator `tools/folien/textil_page.py`, 03.11.2026): nur Flex/Flock und DTF, **kein Stick**, Mindestbestellung 5 Stück;
+T-Shirt ab 15 €, Polo ab 22 €, Hoodie ab 35 €, Stofftasche ab 8 €, eigene Textilien ab 7 €/Motiv (nach Marktrecherche); Berlin + Versand deutschlandweit.
 Der Inhaber hat NRW-Preise und Preise neuer Produkte „nach Marktrecherche“ freigegeben – jede
 solche Festlegung im Bericht nennen.
 
