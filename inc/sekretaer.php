@@ -120,10 +120,8 @@ function sek_status(string $nr, string $status): bool
 {
     if (!isset(ANF_STATUS[$status])) return false;
     $db = anf_db(); if (!$db) return false;
-    $alt = $db->prepare('SELECT status FROM anfragen WHERE nr = ?'); $alt->execute([$nr]); $alt = (string) $alt->fetchColumn();
     $st = $db->prepare("UPDATE anfragen SET status = ?, geaendert = ?, erste_reaktion = COALESCE(erste_reaktion, CASE WHEN ? <> 'neu' THEN ? END) WHERE nr = ?");
     $st->execute([$status, time(), $status, time(), $nr]);
-    if ($st->rowCount() > 0 && $alt !== $status) anf_status_mail($nr);   // Kunde informieren (nur Angebot/Auftrag/Fertig, nur mit E-Mail)
     return $st->rowCount() > 0;
 }
 

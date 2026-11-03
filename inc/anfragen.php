@@ -381,28 +381,6 @@ function anf_status_link(string $nr): string
     return 'https://masar-werbeagentur.de/status.html?nr=' . rawurlencode($nr);
 }
 
-/** Bei diesen Status bekommt der Kunde automatisch eine E-Mail (nur wenn E-Mail vorhanden). */
-const ANF_STATUS_MAIL = ['angebot', 'auftrag', 'erledigt'];
-
-/** Kunden-E-Mail bei Statuswechsel (mit Hinweis für den Kunden und Status-Link). */
-function anf_status_mail(string $nr): bool
-{
-    $db = anf_db(); if (!$db) return false;
-    $st = $db->prepare('SELECT * FROM anfragen WHERE nr = ?'); $st->execute([$nr]); $r = $st->fetch();
-    if (!$r || (string) $r['email'] === '' || !in_array($r['status'], ANF_STATUS_MAIL, true)) return false;
-    $k = ANF_STATUS_KUNDE[$r['status']];
-    $hinweis = trim((string) ($r['hinweis'] ?? ''));
-    $name = trim((string) $r['name']);
-    return anf_mail((string) $r['email'], "Ihre Anfrage {$nr}: {$k[0]} – Masar Werbeagentur",
-        ($name !== '' ? "Guten Tag {$name}," : 'Guten Tag,') . "\n\n"
-        . "es gibt Neuigkeiten zu Ihrer Anfrage {$nr}" . ((string) $r['leistung'] !== '' ? ' (' . anf_kurz((string) $r['leistung'], 80) . ')' : '') . ":\n\n"
-        . "  {$k[0]}\n\n{$k[1]}\n\n"
-        . ($hinweis !== '' ? "Hinweis: {$hinweis}\n\n" : '')
-        . 'Den aktuellen Stand sehen Sie jederzeit hier: ' . anf_status_link($nr) . "\n\n"
-        . "Fragen? Antworten Sie einfach auf diese E-Mail oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n",
-        '', true);
-}
-
 /**
  * Kunde möchte den Termin verschieben oder absagen (von /status.html). Der Termin bleibt bestehen, bis wir ihn
  * bearbeiten – wir bekommen eine E-Mail und einen Telegram-Hinweis ohne Personendaten.
