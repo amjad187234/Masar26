@@ -542,6 +542,20 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
     </div>
   </div>
 
+  <!-- werkstatt-video:start -->
+  <figure class="fade-up wv" style="margin:0 0 2.5rem;border-radius:var(--radius,16px);overflow:hidden;background:var(--navy,#132e50);box-shadow:0 14px 40px rgba(19,46,80,.18)">
+    <video class="wv-v" poster="/videos/grossformatdruck-berlin.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="Großformatdrucker in unserer Werkstatt druckt Plakate" style="display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover"><source src="/videos/grossformatdruck-berlin.mp4" type="video/mp4"><source src="/videos/grossformatdruck-berlin.webm" type="video/webm"></video>
+    <figcaption style="padding:1rem 1.3rem;color:#fff;font-size:14.5px;line-height:1.6"><strong style="font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.3px;font-size:1.15rem;color:#58d0bd;display:block">Live aus unserer Werkstatt</strong>Plakate und Poster im Großformat – gedruckt in Berlin-Wedding, bevor sie zu Ihnen gehen.</figcaption>
+  </figure>
+  <script>
+  (function(){var v=document.querySelector('.wv-v');if(!v)return;
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.controls=true;return;}
+    if(!('IntersectionObserver'in window)){v.preload='auto';v.play().catch(function(){v.controls=true;});return;}
+    new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){v.preload='auto';v.play().catch(function(){v.controls=true;});}else{v.pause();}});},{threshold:.25}).observe(v);
+  })();
+  </script>
+  <!-- werkstatt-video:ende -->
+
   <!-- DESIGN INKLUSIVE BANNER -->
   <div class="design-banner fade-up">
     <div class="icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></div>
