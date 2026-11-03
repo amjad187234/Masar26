@@ -388,7 +388,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -422,7 +422,7 @@ table.rt td:first-child::before{display:none}
 .ua-card:hover,.ua-card:focus-visible{transform:translateY(-3px);box-shadow:0 10px 26px rgba(19,46,80,.12)}
 .ua-card img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--off)}
 .ua-card .b{padding:.85rem 1rem 1rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
-.ua-card h3{font-size:1.15rem;margin:0;color:var(--navy);hyphens:auto;overflow-wrap:anywhere}
+.ua-card h3{font-size:1.15rem;margin:0;color:var(--navy);hyphens:manual;overflow-wrap:anywhere}
 .ua-card p{font-size:14px;line-height:1.45;color:var(--muted);margin:0}
 .ua-card .pr{font-weight:700;color:var(--teal-ink);font-size:14.5px;margin-top:auto;padding-top:.35rem}
 .ua-card .go{display:inline-flex;align-items:center;justify-content:center;margin-top:.55rem;background:var(--teal);color:var(--navy);font-weight:700;font-size:14px;border-radius:8px;padding:.55rem .8rem}
@@ -441,6 +441,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -548,17 +552,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" class="bc-bar">
-  <div class="container">
-    <ol class="bc-list">
-      <li><a href="/">Home</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/werbeagentur-nrw.html">Werbeagentur NRW</a></li>
-      <li class="bc-sep">/</li>
-      <li><span class="bc-cur">Werbeagentur Herne</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -598,7 +591,7 @@ table.rt td:first-child::before{display:none}
       <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
         <a href="#kontakt" class="ua-card" data-betreff="Fahrzeugbeschriftung in Herne" data-as-open="fahrzeug" style="border:0;border-radius:0" aria-label="Fahrzeugbeschriftung anfragen">
           <img src="/fahrzeug-360.webp" width="360" height="450" alt="Fahrzeugbeschriftung – Masar Werbeagentur" loading="lazy" decoding="async">
-          <div class="b"><h3>Fahrzeug&shy;beschriftung</h3><p>Auto, Transporter und Flotte</p><span class="pr">ab 340 € netto</span><span class="go">Angebot anfragen →</span></div>
+          <div class="b"><h3>Fahrzeugbeschriftung</h3><p>Auto, Transporter und Flotte</p><span class="pr">ab 340 € netto</span><span class="go">Angebot anfragen →</span></div>
         </a>
         <a class="ua-more" href="/fahrzeugbeschriftung-nrw.html" aria-label="Mehr zu Fahrzeugbeschriftung">Mehr erfahren →</a>
       </div>
@@ -612,7 +605,7 @@ table.rt td:first-child::before{display:none}
       <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
         <a href="#kontakt" class="ua-card" data-betreff="PVC-Banner in Herne" data-as-open="druck:1" style="border:0;border-radius:0" aria-label="PVC-Banner anfragen">
           <img src="/pvc-banner-360.webp" width="360" height="450" alt="PVC-Banner – Masar Werbeagentur" loading="lazy" decoding="async">
-          <div class="b"><h3>PVC-Banner</h3><p>Wetterfest, mit oder ohne Ösen</p><span class="pr">ab 34 € / m² netto</span><span class="go">Angebot anfragen →</span></div>
+          <div class="b"><h3><span class="nw">PVC-Banner</span></h3><p>Wetterfest, mit oder ohne Ösen</p><span class="pr">ab 34 € / m² netto</span><span class="go">Angebot anfragen →</span></div>
         </a>
         <a class="ua-more" href="/pvc-banner-nrw.html" aria-label="Mehr zu PVC-Banner">Mehr erfahren →</a>
       </div>
@@ -727,7 +720,7 @@ table.rt td:first-child::before{display:none}
     </div></noscript>
   </div>
 </section>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 <script>
 document.querySelectorAll('[data-betreff]').forEach(function(a){a.addEventListener('click',function(){var i=document.getElementById('betreffInput');var b=a.getAttribute('data-betreff');if(i){i.value=b;}var p=document.getElementById('uaPick');if(p){p.textContent='Ausgewählt: '+b+' – ergänzen Sie einfach ein paar Stichworte.';p.className='ua-pick on';}setTimeout(function(){var n=document.getElementById('fo-name');if(n){n.focus({preventScroll:true});}},450);});});
 </script>

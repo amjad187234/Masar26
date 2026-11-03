@@ -531,7 +531,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 }
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -565,6 +565,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -664,7 +668,7 @@ table.rt td:first-child::before{display:none}
     <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Fahrzeugbeschriftung NRW · Ausschließlich für Unternehmen</div>
-        <h1>Fahrzeug&shy;beschriftung NRW&nbsp;–<em>Ihr Fuhrpark.</em>Ihre Marke.</h1>
+        <h1>Fahrzeugbeschriftung NRW&nbsp;–<em>Ihr Fuhrpark.</em>Ihre Marke.</h1>
         <p class="hero-sub">Firmenfahrzeuge beschriften lassen in NRW – in Düsseldorf, Köln, Dortmund, Essen, Bochum und Umgebung. PKW, Transporter, Sprinter &amp; Flotten, CI-konform und langlebig. Aufmaß und Montage durch unser Team vor Ort. Firmenangebot in 24h!</p><!-- kopf:start --><div class="kopf-preis"><b>ab 340 € netto</b><span>Teilbeschriftung · Entwurf inklusive</span></div><ul class="kopf-checks"><li>Festpreis nach Fotos – Angebot in der Regel in 24 Stunden</li><li>Entwurf inklusive, Genehmigung wird geprüft</li><li>Montage durch unser Team vor Ort</li></ul><!-- kopf:ende -->
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>
@@ -682,31 +686,6 @@ table.rt td:first-child::before{display:none}
 </section>
 
 <!-- BREADCRUMB -->
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbeagentur-nrw.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbeagentur NRW</span></a>
-        <meta itemprop="position" content="3">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Fahrzeugbeschriftung NRW</span>
-        <meta itemprop="position" content="4">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <!-- ROI STRIP -->
 <div style="background:var(--teal);padding:.9rem 0;">
@@ -746,7 +725,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <a href="/lkw-beschriftung-nrw.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
-        <h3>LKW-Beschriftung NRW</h3>
+        <h3><span class="nw">LKW-Beschriftung</span> NRW</h3>
         <p>Fahrerhaus, Kofferaufbau, bedruckte Plane oder Vollfolierung – unser Team montiert auf Ihrem Hof in NRW. <span style="color:var(--teal-ink);font-weight:700;">Mehr zur LKW-Beschriftung →</span></p>
       </a>
       <div class="svc-card">
@@ -756,12 +735,12 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg></div>
-        <h3>Heckscheiben-Folie</h3>
+        <h3><span class="nw">Heckscheiben-Folie</span></h3>
         <p>Sichtschutz und Werbefläche in einem: Lochfolie für Heck- und Seitenscheiben – von innen durchsichtig, von außen Ihr Firmenmotiv. Ideal für Transporter und Firmenfahrzeuge.</p>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3>Corporate-Design-Umsetzung</h3>
+        <h3><span class="nw">Corporate-Design-Umsetzung</span></h3>
         <p>Kein Fahrzeug-Layout vorhanden? Kein Problem. Wir setzen Ihre CI exakt um – Farben, Fonts, Logo nach Ihrem Styleguide. Abstimmung auf Wunsch auch auf Arabisch möglich.</p>
       </div>
     </div>
@@ -889,14 +868,14 @@ table.rt td:first-child::before{display:none}
       <div class="why-item">
         <div class="why-num">2</div>
         <div>
-          <h3>CI-Konformität – Ihre Marke, konsequent</h3>
+          <h3><span class="nw">CI-Konformität</span> – Ihre Marke, konsequent</h3>
           <p>Wir halten Ihre Corporate Identity exakt ein – Farben, Fonts, Logo nach Ihrem Styleguide. Einheitliches Erscheinungsbild für den gesamten Fuhrpark.</p>
         </div>
       </div>
       <div class="why-item">
         <div class="why-num">3</div>
         <div>
-          <h3>Ausschließlich Premium-Automotive-Folien</h3>
+          <h3>Ausschließlich <span class="nw">Premium-Automotive-Folien</span></h3>
           <p>Ausschließlich hochwertige Automotive-Folien – UV-beständig, wetterfest, rückstandsfrei entfernbar. Auch für Leasingfahrzeuge geeignet.</p>
         </div>
       </div>
@@ -1029,7 +1008,7 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Häufige Fragen</span>
-      <h2 class="sec-title">Fahrzeug&shy;beschriftung NRW – <em>Fragen von Unternehmen</em></h2>
+      <h2 class="sec-title">Fahrzeugbeschriftung NRW – <em>Fragen von Unternehmen</em></h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
@@ -1099,7 +1078,7 @@ table.rt td:first-child::before{display:none}
 <!-- CTA BAND -->
 <div class="cta-band">
   <div class="container">
-    <h2>Kostenloses Firmenangebot –<br>Fahrzeug&shy;beschriftung NRW</h2>
+    <h2>Kostenloses Firmenangebot –<br>Fahrzeugbeschriftung NRW</h2>
     <p>Antwort innerhalb von 24 Stunden · Unverbindlich · CI-konformes Design inklusive · Flottenrabatt ab 3 Fahrzeugen</p>
     <div class="btns">
       <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>
@@ -1321,6 +1300,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

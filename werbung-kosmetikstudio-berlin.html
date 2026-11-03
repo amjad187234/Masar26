@@ -432,7 +432,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -466,6 +466,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -578,17 +582,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" class="bc-bar">
-  <div class="container">
-    <ol class="bc-list">
-      <li><a href="/">Home</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/angebote/">Branchen-Angebote</a></li>
-      <li class="bc-sep">/</li>
-      <li><span class="bc-cur">Kosmetik- & Beautystudios</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -637,7 +630,7 @@ table.rt td:first-child::before{display:none}
       </a>
       <a href="/leuchtreklame-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></div>
-        <h3>LED-Neon-Schriftzug</h3>
+        <h3><span class="nw">LED-Neon-Schriftzug</span></h3>
         <p>Ihr Name, Logo oder Spruch als LED-Neon für die Wand oder das Fenster – inkl. Entwurf, mit Netzteil zum Einstecken. Ab 249 € netto.</p>
       </a>
       <a href="/schaufensterbeschriftung-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
@@ -667,7 +660,7 @@ table.rt td:first-child::before{display:none}
       </a>
       <a href="/webdesign-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
-        <h3>Website mit Online-Buchung</h3>
+        <h3>Website mit <span class="nw">Online-Buchung</span></h3>
         <p>Website mit Leistungen, Preisen und Terminbuchung – mobil optimiert und bei Google auffindbar.</p>
       </a>
     </div>
@@ -677,13 +670,13 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M7 12h5"/><path d="M15 9.4a4 4 0 1 0 0 5.2"/></svg>Pakete &amp; Preise</span>
-      <h2 class="sec-title">Studio-Pakete – <em>alles im selben Look</em></h2>
+      <h2 class="sec-title"><span class="nw">Studio-Pakete</span> – <em>alles im selben Look</em></h2>
       <p class="sec-sub">Im Paket günstiger als einzeln. Montage in Berlin weisen wir im Angebot transparent aus.</p>
     </div>
     <div class="svc-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
       <div class="svc-card" style="border:2px solid var(--border);position:relative;">
         
-        <h3>Studio-Start</h3>
+        <h3><span class="nw">Studio-Start</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 529 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 588 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Schaufensterbeschriftung (Logo, Leistungen, Öffnungszeiten)</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>LED-Neon-Schriftzug für die Fotowand</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Sichtschutzfolie für den Behandlungsraum</span></li></ul>
@@ -691,7 +684,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card" style="border:2px solid var(--teal);position:relative;">
         <span style="position:absolute;top:-12px;left:20px;background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;">Empfehlung</span>
-        <h3>Studio-Komplett</h3>
+        <h3><span class="nw">Studio-Komplett</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 1.290 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 1.458 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Alles aus dem Studio-Start</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Preislisten-Design für Empfang und Fenster</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Gutschein- oder Terminkarten-Design</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Social-Media-Vorlagen (Posts, Stories, Cover)</span></li></ul>
@@ -778,7 +771,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="why-item">
         <div class="why-num">2</div>
-        <div><h3>Entwurf im Studio-Look</h3><p>Wir gestalten Fenster, Neon, Preisliste und Karten in Ihren Farben – Sie sehen alles vorab als Entwurf.</p></div>
+        <div><h3>Entwurf im <span class="nw">Studio-Look</span></h3><p>Wir gestalten Fenster, Neon, Preisliste und Karten in Ihren Farben – Sie sehen alles vorab als Entwurf.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">3</div>

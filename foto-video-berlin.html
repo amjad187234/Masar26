@@ -416,7 +416,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -449,6 +449,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -561,26 +565,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/leistungen.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Leistungen</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Foto &amp; Video Berlin</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -613,7 +597,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg></div>
-        <h3>Food-Fotografie</h3>
+        <h3><span class="nw">Food-Fotografie</span></h3>
         <p>Speisen und Getränke appetitlich in Szene gesetzt – für Speisekarte, Lieferplattformen, Website und digitale Menütafeln.</p>
       </div>
       <div class="svc-card">

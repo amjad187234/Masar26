@@ -252,7 +252,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -279,6 +279,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -350,15 +354,8 @@ table.rt td:first-child::before{display:none}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li><li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li><li style="opacity:.4;">/</li>
-        <li style="color:#fff;">Werbeanlage Düsseldorf</li>
-      </ol>
-    </nav>
     <div class="art-tag"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Stadt-Ratgeber · Düsseldorf</div>
-    <h1>Werbeanlage in Düsseldorf:<br><em>Altstadt-Satzung</em><br>&amp; Genehmigung</h1>
+    <h1>Werbeanlage in Düsseldorf:<br><em><span class="nw">Altstadt-Satzung</span></em><br>&amp; Genehmigung</h1>
     <div class="art-meta"><span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>Oktober 2026</span><span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>6 Min. Lesezeit</span><span><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>Masar Werbeagentur</span></div>
   </div>
 </header>
@@ -374,7 +371,7 @@ table.rt td:first-child::before{display:none}
     <p>In ganz Nordrhein-Westfalen gilt die Landesbauordnung (BauO NRW). Werbeanlagen mit einer Ansichtsfläche bis 1 m² sind nach § 62 BauO NRW verfahrensfrei; mehrere Flächen nebeneinander werden zusammengerechnet. Städte dürfen aber nach § 89 BauO NRW eigene Gestaltungs- und Werbesatzungen erlassen – und genau dort wird es in Düsseldorf interessant.</p>
     <p>Wichtig ist immer der <strong>Standort der Werbeanlage</strong>, nicht der Sitz Ihrer Firma. Und „verfahrensfrei“ heißt nicht „regelfrei“: Auch ohne Antrag müssen Größe, Lage und Gestaltung zu den örtlichen Vorschriften passen.</p>
 
-    <h2>2. Die Düsseldorfer Altstadt-Satzung</h2>
+    <h2>2. Die Düsseldorfer <span class="nw">Altstadt-Satzung</span></h2>
     <p>Für den Altstadtbereich hat Düsseldorf eine eigene <strong>„Satzung über Werbeanlagen und Warenautomaten“</strong> (Stadtrecht Nr. 63.202). Sie gilt in einem fest umgrenzten Gebiet, das in einer Karte dargestellt ist – unter anderem rund um Altestadt, Stiftsplatz und Lambertusstraße.</p><p>Der wichtigste Punkt für Ladeninhaber: In diesem Gebiet ist für das Errichten und Ändern von Werbeanlagen eine <strong>Baugenehmigung nötig – auch für Anlagen bis 0,5 m²</strong> und auch für zeitlich begrenzte Werbung. Ausgenommen ist Werbung für Schluss-, Räumungs- und Jubiläumsverkäufe an der Stätte der Leistung.</p><p>Daneben gibt es eine stadtweite Satzung über Werbeanlagen mit <strong>wechselndem und bewegtem Licht</strong> (Nr. 63.201). Wer an Laufschrift oder animierte LED-Werbung denkt, sollte diese Satzung vorher kennen.</p>
     <div class="warning-box"><p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Die Königsallee grenzt an die Altstadt, steht aber nach unserer Recherche nicht ausdrücklich im Geltungsbereich der Altstadt-Satzung. Entscheidend ist die Karte der Stadt – wir prüfen das für Ihre Adresse.</p></div>
 
@@ -399,7 +396,7 @@ table.rt td:first-child::before{display:none}
     <ul><li>Ladenlokal in der Altstadt? Rechnen Sie auch für ein kleines Schild mit einem Bauantrag und planen Sie die Zeit ein.</li><li>Eröffnungs- oder Aktionsbanner in der Altstadt sind keine Ausnahme – nur Schluss-, Räumungs- und Jubiläumsverkäufe sind ausgenommen.</li><li>Für bewegte oder wechselnde Lichtwerbung zuerst die Satzung 63.201 prüfen – statische Leuchtbuchstaben sind meist der einfachere Weg.</li></ul>
 
     <h2>Häufige Fragen</h2>
-    <h3>Brauche ich in der Düsseldorfer Altstadt für ein kleines Schild eine Genehmigung?</h3><p>Ja. Die Altstadt-Satzung verlangt eine Baugenehmigung auch für Werbeanlagen bis 0,5 m².</p><h3>Gilt die Altstadt-Satzung auch auf der Kö?</h3><p>Nach unserer Recherche gehört die Königsallee nicht ausdrücklich zum Geltungsbereich. Maßgeblich ist die Karte der Stadt Düsseldorf.</p><h3>Ist animierte LED-Werbung erlaubt?</h3><p>Dafür gibt es eine eigene Satzung über Werbeanlagen mit wechselndem und bewegtem Licht. Wir prüfen vor dem Angebot, was an Ihrem Standort zulässig ist.</p>
+    <h3>Brauche ich in der Düsseldorfer Altstadt für ein kleines Schild eine Genehmigung?</h3><p>Ja. Die Altstadt-Satzung verlangt eine Baugenehmigung auch für Werbeanlagen bis 0,5 m².</p><h3>Gilt die <span class="nw">Altstadt-Satzung</span> auch auf der Kö?</h3><p>Nach unserer Recherche gehört die Königsallee nicht ausdrücklich zum Geltungsbereich. Maßgeblich ist die Karte der Stadt Düsseldorf.</p><h3>Ist animierte <span class="nw">LED-Werbung</span> erlaubt?</h3><p>Dafür gibt es eine eigene Satzung über Werbeanlagen mit wechselndem und bewegtem Licht. Wir prüfen vor dem Angebot, was an Ihrem Standort zulässig ist.</p>
 
     <div class="quellen" style="margin-top:2rem;font-size:14px;color:var(--muted)"><strong style="color:var(--navy)">Quellen (Stand Oktober 2026):</strong><ul style="margin-top:.4rem"><li><a href="https://www.duesseldorf.de/stadtrecht/6/63/63-202/" target="_blank" rel="noopener noreferrer">Düsseldorf – Satzung über Werbeanlagen und Warenautomaten für den Altstadtbereich (63.202)</a></li><li><a href="https://www.duesseldorf.de/stadtrecht/abisz/" target="_blank" rel="noopener noreferrer">Düsseldorfer Stadtrecht A bis Z</a></li></ul>
     <p style="margin-top:.6rem">Dieser Ratgeber ersetzt keine Rechtsberatung und keine Auskunft der Behörde. Satzungen ändern sich – vor dem Auftrag prüfen wir den aktuellen Stand für Ihren Standort.</p></div>

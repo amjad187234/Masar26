@@ -199,7 +199,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -237,6 +237,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -308,15 +312,6 @@ table.rt td:first-child::before{display:none}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li>
-        <li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li>
-        <li style="opacity:.4;">/</li>
-        <li style="color:#fff;">Fotowand Firmenfeier</li>
-      </ol>
-    </nav>
     <div class="art-tag"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>Ratgeber · Events &amp; Messe</div>
     <h1>Fotowand für die Firmenfeier:<br><em>Größe, Material und Fristen.</em></h1>
     <div class="art-meta">
@@ -350,7 +345,7 @@ table.rt td:first-child::before{display:none}
 
     <h2>Material: Textil mit Rahmen oder Banner?</h2>
 
-    <h3>Textilwand mit Spannrahmen oder Zipper-System</h3>
+    <h3>Textilwand mit Spannrahmen oder <span class="nw">Zipper-System</span></h3>
     <p>Bei diesen Systemen wird ein bedruckter Stoff über einen leichten Alurahmen gezogen – entweder mit einem Keder in einem Spannrahmen oder als Hülle mit Reißverschluss (Zipper). Der Stoff ist faltbar, wirft kaum Falten, wenn er gespannt ist, und lässt sich im Transportsack verstauen. Für wiederkehrende Veranstaltungen ist das praktisch: Den Rahmen behalten Sie, und für das nächste Event wird nur ein neuer Bezug gedruckt.</p>
 
     <h3>Banner oder Mesh an Gestell oder Wand</h3>
@@ -373,7 +368,7 @@ table.rt td:first-child::before{display:none}
       <li><strong>Bei Sturm abbauen:</strong> Auch gut gesicherte Systeme haben Grenzen. Planen Sie eine verantwortliche Person ein, die bei aufkommendem Wind entscheidet.</li>
     </ul>
 
-    <h2>Gestaltung: Logo-Raster und keine Spiegelungen</h2>
+    <h2>Gestaltung: <span class="nw">Logo-Raster</span> und keine Spiegelungen</h2>
 
     <p>Bewährt hat sich das <strong>„Step and Repeat“</strong>-Muster, das man von Pressewänden kennt: Logo, Veranstaltungsname oder Hashtag wiederholen sich versetzt über die ganze Fläche. Der Vorteil: Egal, welcher Ausschnitt auf dem Foto landet – das Logo ist zu sehen. Ein paar Hinweise aus der Praxis:</p>
 
@@ -398,7 +393,7 @@ table.rt td:first-child::before{display:none}
       <p><strong>Tipp:</strong> Bestellen Sie Fotowand, Roll-ups und Banner in einem Auftrag. Dann stimmen Farben und Logo überein, und Sie haben nur einen Entwurf freizugeben.</p>
     </div>
 
-    <h2>Roll-ups und Banner rund um die Feier</h2>
+    <h2><span class="nw">Roll-ups</span> und Banner rund um die Feier</h2>
 
     <p>Die Fotowand ist meist nicht das einzige Element. Häufig dazu bestellt werden:</p>
     <ul>
@@ -422,7 +417,7 @@ table.rt td:first-child::before{display:none}
     </ol>
 
     <div class="article-cta">
-      <h3>Fotowand &amp; Event-Werbung aus Berlin</h3>
+      <h3>Fotowand &amp; <span class="nw">Event-Werbung</span> aus Berlin</h3>
       <p>Schicken Sie uns Datum, Location und Logo – wir beraten Sie zu Größe und Material und erstellen Ihnen ein Angebot.</p>
       <div class="btns">
         <a href="/messebeschriftung-berlin.html" class="btn-teal">Messewände &amp; Roll-ups ansehen</a>

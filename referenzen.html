@@ -300,7 +300,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 }
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -321,6 +321,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -433,19 +437,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Referenzen</span><meta itemprop="position" content="2">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -534,7 +525,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="sl-dots"></div>
 </div>
 <div class="sl-cat reveal" id="ref-druck">
-  <div class="sl-head"><div><small>3 Bilder</small><h3>Druck & Gastro-Werbung</h3><p>Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Werkstatt.</p></div>
+  <div class="sl-head"><div><small>3 Bilder</small><h3>Druck & <span class="nw">Gastro-Werbung</span></h3><p>Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Werkstatt.</p></div>
   <div class="sl-nav"><button class="sl-prev" type="button" aria-label="Druck & Gastro-Werbung: vorheriges Bild">‹</button><button class="sl-next" type="button" aria-label="Druck & Gastro-Werbung: nächstes Bild">›</button></div></div>
   <div class="sl-track" role="region" aria-label="Bilderstrecke Druck & Gastro-Werbung" tabindex="0">
 <button class="gal-item" type="button" data-cat="druck" data-src="/referenzen/menuetafel-imbiss-montiert-01.webp" data-cap="BISSWERK: Menütafel über der Theke, fertig montiert"><img src="/referenzen/menuetafel-imbiss-montiert-01-720.webp" alt="Breite schwarze Menütafel mit Döner, Pasta, Pizza und Burger über der Theke eines Imbisses" loading="lazy" width="720" height="540"><span class="sl-cap">BISSWERK: Menütafel über der Theke, fertig montiert</span></button>
@@ -616,11 +607,11 @@ document.addEventListener('DOMContentLoaded', function(){
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="6 3 20 12 6 21 6 3"/></svg>Bewegtbild</span>
       <h2 class="sec-title">Was auf den <em>Bildschirmen</em> läuft</h2>
-      <p class="sec-sub">Eine Menütafel steht selten still. Oben ein Produktvideo, das wir vor Ort gedreht haben, darunter Tafeln aus unserem Studio.</p>
+      <p class="sec-sub">Eine Menütafel steht selten still. Oben ein Werbevideo, das wir vor Ort gedreht haben, darunter Menütafeln aus unserem Studio.</p>
     </div>
 <!-- videos:start -->
 <style>.vid-film{max-width:860px;margin:0 auto 2rem}.sl-track .vid-card{flex:0 0 calc((100% - 2rem)/3);scroll-snap-align:start;margin:0}@media(max-width:900px){.sl-track .vid-card{flex-basis:calc((100% - 1rem)/2)}}@media(max-width:600px){.sl-track .vid-card{flex-basis:84%}}</style>
-<div class="vid-film"><figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-donuts-film.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Produktvideo für die Menütafeln"><img src="/videos/digital-signage-donuts-film.webp" alt="Produktvideo für die Menütafeln – Standbild aus dem Video" loading="eager" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Produktvideo für die Menütafeln</strong>Gedreht und geschnitten von uns: Zubereitung vor Ort für die Bildschirme eines Dessert-Ladens, 26 Sekunden.</figcaption></figure>
+<div class="vid-film"><figure class="vid-card"><a class="vid-play" href="/videos/digital-signage-donuts-film.mp4" data-video data-w="1280" data-h="720" aria-label="Video abspielen: Werbevideo für CRAVÉZ Berlin"><img src="/videos/digital-signage-donuts-film.webp" alt="Werbevideo für CRAVÉZ Berlin – Standbild aus dem Video" loading="eager" width="1280" height="720"><span class="vid-icon" aria-hidden="true"></span></a><figcaption><strong>Werbevideo für CRAVÉZ Berlin</strong>Von uns gedreht und geschnitten: Cookies, Eis und Saucen direkt am Tresen – Marketingvideo für die Bildschirme im Laden und für Social Media, 26 Sekunden.</figcaption></figure>
 </div>
 <div class="sl-cat" id="ref-menuetafeln"><div class="sl-head"><div><small>6 Videos</small><h3>Menütafeln</h3><p>Antippen startet das Video.</p></div><div class="sl-nav"><button class="sl-prev" type="button" aria-label="Menütafeln: vorheriges Video">‹</button><button class="sl-next" type="button" aria-label="Menütafeln: nächstes Video">›</button></div></div>
 <div class="sl-track" role="region" aria-label="Bilderstrecke Menütafeln" tabindex="0">

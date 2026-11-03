@@ -378,7 +378,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -398,6 +398,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -502,15 +506,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);">
-      <li><a href="/" style="color:#0e6455;">Home</a></li>
-      <li style="opacity:.4;">/</li>
-      <li><span style="color:var(--navy);font-weight:600;">Branchen-Angebote</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -591,7 +586,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 6v4"/><path d="M14 14h-4"/><path d="M14 18h-4"/><path d="M14 8h-4"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg>Arztpraxen</span>
-      <h2 class="sec-title">Arztpraxen &amp; Gesundheits&shy;betriebe</h2>
+      <h2 class="sec-title">Arztpraxen &amp; Gesundheitsbetriebe</h2>
       <p class="sec-sub">Weniger Anrufe am Tresen, ohne beim Datenschutz Abkürzungen zu nehmen</p>
     </div>
     <div class="prose-block reveal">
@@ -644,7 +639,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Branche</span>
-      <h2 class="sec-title">Reinigungs&shy;<em>firmen</em></h2>
+      <h2 class="sec-title">Reinigungs<em>firmen</em></h2>
       <p class="sec-sub">Fahrzeugbeschriftung, Arbeitskleidung mit Logo, Geräte-Aufkleber, Flyer und Angebotsmappe für Hausverwaltungen – Pakete ab 729 € netto.</p>
     </div>
     <div style="text-align:center;"><a href="/werbung-reinigungsfirma-berlin.html" class="btn btn-teal">Zu den Paketen für Reinigungsfirmen →</a></div>
@@ -654,7 +649,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Branche</span>
-      <h2 class="sec-title">Fahr&shy;<em>schulen</em></h2>
+      <h2 class="sec-title">Fahr<em>schulen</em></h2>
       <p class="sec-sub">Fahrschulwagen beschriften, Schaufenster, Preisaushang nach § 32 Fahrlehrergesetz, Theorieraum und TikTok – Flottenpaket ab 790 € netto.</p>
     </div>
     <div style="text-align:center;"><a href="/werbung-fahrschule-berlin.html" class="btn btn-teal">Zu den Fahrschul-Paketen →</a></div>
@@ -664,7 +659,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow">Branche</span>
-      <h2 class="sec-title">Immobilien&shy;<em>makler</em></h2>
+      <h2 class="sec-title">Immobilien<em>makler</em></h2>
       <p class="sec-sub">Objektschilder „Zu verkaufen“, Schaufenster, Exposé-Design, Fotos und Social Media – Pakete ab 699 € netto.</p>
     </div>
     <div style="text-align:center;"><a href="/werbung-immobilienmakler-berlin.html" class="btn btn-teal">Zu den Makler-Paketen →</a></div>
@@ -737,7 +732,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>Start-ups</span>
-      <h2 class="sec-title">Start-ups &amp; Neugründungen</h2>
+      <h2 class="sec-title"><span class="nw">Start-ups</span> &amp; Neugründungen</h2>
       <p class="sec-sub">Ein Auftritt, der mitwächst – statt dreimal neu anzufangen</p>
     </div>
     <div class="prose-block reveal">

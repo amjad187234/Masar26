@@ -430,7 +430,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -463,6 +463,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -575,23 +579,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a><meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a><meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Foliendruck Berlin</span><meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -639,7 +626,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
-        <h3>Großformat-Foliendruck</h3>
+        <h3><span class="nw">Großformat-Foliendruck</span></h3>
         <p>Großflächige Folien für Messewände, Bauzäune, Fassaden und Events. Hochauflösend bis 1.440 dpi, Breiten bis 3,2 m. Für temporäre und dauerhafte Außenwerbung. Preis nach Größe &amp; Auflage.</p>
       </div>
     </div>
@@ -933,6 +920,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

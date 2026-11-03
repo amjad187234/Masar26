@@ -206,7 +206,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -222,6 +222,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -293,15 +297,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li>
-        <li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li>
-        <li style="opacity:.4;">/</li>
-        <li style="color:#fff;">Glastüren kennzeichnen</li>
-      </ol>
-    </nav>
     <div class="art-tag">Arbeitsstätten · Ratgeber</div>
     <h1>Glastüren kennzeichnen:<br><em>Pflicht, Höhe, Gestaltung</em></h1>
     <div class="art-meta">
@@ -325,7 +320,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Faustregel:</strong> Eine Markierung, die man nur sieht, wenn man sie sucht, reicht nicht. Sie muss auch im Vorbeigehen und bei Gegenlicht auffallen.</p>
     </div>
 
-    <h2>Welche Höhe? Die Werte aus DIN 18040-1</h2>
+    <h2>Welche Höhe? Die Werte aus DIN <span class="nw">18040-1</span></h2>
     <p>Für öffentlich zugängliche Gebäude beschreibt die Norm zum barrierefreien Bauen DIN 18040-1 Sicherheitsmarkierungen genauer. Sie gelten für Ganzglastüren und großflächig verglaste Türen. Die Markierungen sollen:</p>
     <ul>
       <li><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>über die gesamte Glasbreite reichen</li>
@@ -337,7 +332,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <p>Auch wenn Ihr Gebäude nicht öffentlich zugänglich ist, sind diese Werte eine gute Orientierung – die untere Markierung sehen Kinder und Menschen im Rollstuhl, die obere Erwachsene im Gehen.</p>
 
     <h2>Markierung, die gut aussieht</h2>
-    <h3><span class="tip-num">1</span> Milchglas-Streifen</h3>
+    <h3><span class="tip-num">1</span> <span class="nw">Milchglas-Streifen</span></h3>
     <p>Dezent und zeitlos: zwei mattierte Streifen in den richtigen Höhen. Für einen ausreichenden Kontrast vor hellem Hintergrund kann eine Kombination mit dunkleren Elementen nötig sein.</p>
     <h3><span class="tip-num">2</span> Logo oder Schriftzug</h3>
     <p>Ihr Logo, Ihr Name oder ein Claim als Folie – Markierung und Branding in einem. Laut ift Rosenheim lässt sich der nötige Wechselkontrast auch mit Schriftzügen, Piktogrammen oder Logos erreichen.</p>

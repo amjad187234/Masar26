@@ -292,7 +292,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -335,6 +335,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -440,7 +444,6 @@ table.rt td:first-child::before{display:none}
 </section>
 <style id="status-visual">.sv{max-width:400px;margin:0 auto}.sv-card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 30px 60px rgba(0,0,0,.35);transform:rotate(-2deg);font-family:Barlow,sans-serif;color:#132e50}.sv-nr{font:700 13px Barlow,sans-serif;letter-spacing:1.2px;color:#177567}.sv-t{font:900 34px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;margin:.3rem 0 1rem}.sv-weg{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.sv-weg i{height:10px;border-radius:5px;background:#e0eaea}.sv-weg i.an{background:#58d0bd}.sv-weg i.jetzt{box-shadow:0 0 0 4px rgba(88,208,189,.3)}.sv-l{display:flex;justify-content:space-between;font-size:12px;color:#5a7070;margin-top:6px}.sv-ok{margin-top:1rem;background:#e8f8f5;border-radius:10px;padding:10px 12px;font-weight:700;font-size:14px}</style>
 <style id="hero-mobile">@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.8rem}.hero-visual .sv{max-width:330px}}</style>
-<nav aria-label="Breadcrumb" class="bc-bar"><div class="container"><ol class="bc-list"><li><a href="/">Home</a></li><li class="bc-sep">/</li><li><span class="bc-cur">Anfrage-Status</span></li></ol></div></nav>
 <section class="section bg-alt" id="status"><div class="container">
   <div data-status></div>
   <noscript><p style="text-align:center">Fragen Sie uns einfach per <a href="https://wa.me/491785143918">WhatsApp</a> oder unter <a href="tel:01785143918">0178 514 3918</a>.</p></noscript>

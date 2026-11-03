@@ -206,7 +206,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -222,6 +222,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -293,15 +297,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li>
-        <li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li>
-        <li style="opacity:.4;">/</li>
-        <li style="color:#fff;">Werbung für Akademien</li>
-      </ol>
-    </nav>
     <div class="art-tag">Bildung · Ratgeber</div>
     <h1>Mehr Anmeldungen für<br><em>Sprachschule &amp; Akademie</em></h1>
     <div class="art-meta">
@@ -333,10 +328,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Praxistipp:</strong> Den QR-Code direkt auf die Anmeldung führen, nicht auf die Startseite – jeder zusätzliche Klick kostet Anmeldungen.</p>
     </div>
 
-    <h3><span class="tip-num">4</span> Das Google-Profil pflegen</h3>
+    <h3><span class="tip-num">4</span> Das <span class="nw">Google-Profil</span> pflegen</h3>
     <p>„Deutschkurs in der Nähe“ oder „Nachhilfe Mathe“ sind lokale Suchen. Aktuelle Fotos der Räume, Öffnungszeiten, Kursarten und echte Bewertungen entscheiden mit, wer angerufen wird. Bitten Sie zufriedene Teilnehmer nach dem Kursabschluss um eine Bewertung.</p>
 
-    <h3><span class="tip-num">5</span> Eine Website mit Online-Anmeldung</h3>
+    <h3><span class="tip-num">5</span> Eine Website mit <span class="nw">Online-Anmeldung</span></h3>
     <p>Kursübersicht mit Terminen und Preisen, ein kurzes Anmeldeformular, Kontakt per WhatsApp: Viele melden sich abends vom Handy an. Mehrsprachige Grundinformationen helfen Sprachschulen besonders.</p>
 
     <h3><span class="tip-num">6</span> Social Media mit echtem Nutzen</h3>
@@ -345,7 +340,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <h3><span class="tip-num">7</span> Kursräume, die man gern zeigt</h3>
     <p>Wandgestaltung mit Leitsprüchen oder großformatigen Bildern macht Räume freundlicher – und zum Hintergrund für Fotos, die Teilnehmer selbst teilen.</p>
 
-    <h2>Online-Kurse: Vorsicht beim Fernunterricht</h2>
+    <h2><span class="nw">Online-Kurse</span>: Vorsicht beim Fernunterricht</h2>
     <p>Strukturierte Online-Lehrgänge mit Lernkontrolle können unter das Fernunterrichtsschutzgesetz fallen und brauchen dann eine Zulassung der Staatlichen Zentralstelle für Fernunterricht (ZFU). Der Bundesgerichtshof hat 2025 entschieden, dass das auch für Online-Coachings und Mentoring-Programme gelten kann – Verträge ohne Zulassung sind nichtig (Urteil vom 12.06.2025, III ZR 109/24).</p>
 
     <div class="warning-box">

@@ -432,7 +432,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -466,6 +466,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -578,17 +582,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" class="bc-bar">
-  <div class="container">
-    <ol class="bc-list">
-      <li><a href="/">Home</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/angebote/">Branchen-Angebote</a></li>
-      <li class="bc-sep">/</li>
-      <li><span class="bc-cur">Kanzleien</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -667,7 +660,7 @@ table.rt td:first-child::before{display:none}
       </a>
       <a href="/webdesign-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></div>
-        <h3>Kanzlei-Website</h3>
+        <h3><span class="nw">Kanzlei-Website</span></h3>
         <p>Übersichtliche Website mit Tätigkeitsschwerpunkten, Team und Kontakt – mobil optimiert.</p>
       </a>
     </div>
@@ -683,7 +676,7 @@ table.rt td:first-child::before{display:none}
     <div class="svc-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
       <div class="svc-card" style="border:2px solid var(--border);position:relative;">
         
-        <h3>Kanzlei-Start</h3>
+        <h3><span class="nw">Kanzlei-Start</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 749 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 839 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Kanzleischild inkl. Gestaltung</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Tür- oder Klingelschild</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Sichtschutzfolie für einen Besprechungsraum</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Visitenkarten-Design</span></li></ul>
@@ -691,7 +684,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card" style="border:2px solid var(--teal);position:relative;">
         <span style="position:absolute;top:-12px;left:20px;background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;">Empfehlung</span>
-        <h3>Kanzlei-Auftritt</h3>
+        <h3><span class="nw">Kanzlei-Auftritt</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 2.090 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 2.349 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Corporate-Design-Paket (Logo, Visitenkarte, Briefpapier, CI-Guide)</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Kanzleischild inkl. Gestaltung</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Tür- oder Klingelschild</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Alles aus einer Hand</span></li></ul>
@@ -957,6 +950,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

@@ -432,7 +432,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -466,6 +466,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -578,17 +582,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" class="bc-bar">
-  <div class="container">
-    <ol class="bc-list">
-      <li><a href="/">Home</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/angebote/">Branchen-Angebote</a></li>
-      <li class="bc-sep">/</li>
-      <li><span class="bc-cur">Akademien & Sprachschulen</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -647,7 +640,7 @@ table.rt td:first-child::before{display:none}
       </a>
       <a href="/messebeschriftung-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z"/></svg></div>
-        <h3>Roll-ups & Infotag-Material</h3>
+        <h3><span class="nw">Roll-ups</span> & <span class="nw">Infotag-Material</span></h3>
         <p>Roll-up-Displays für Infotage und Messen ab 99 € netto, dazu Tischdisplays und Banner.</p>
       </a>
       <a href="/grafikdesign-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
@@ -683,7 +676,7 @@ table.rt td:first-child::before{display:none}
     <div class="svc-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
       <div class="svc-card" style="border:2px solid var(--border);position:relative;">
         
-        <h3>Akademie-Start</h3>
+        <h3><span class="nw">Akademie-Start</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 619 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 687 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Schaufenster- oder Eingangsbeschriftung</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Firmenschild am Haus</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Kursprogramm- oder Flyer-Design</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>1 Roll-up für Infotage</span></li></ul>
@@ -691,7 +684,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card" style="border:2px solid var(--teal);position:relative;">
         <span style="position:absolute;top:-12px;left:20px;background:var(--teal);color:var(--navy);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;">Empfehlung</span>
-        <h3>Akademie-Auftritt</h3>
+        <h3><span class="nw">Akademie-Auftritt</span></h3>
         <p style="font:900 2rem/1 'Barlow Condensed',sans-serif;color:var(--navy);margin:.6rem 0 .2rem;">ab 1.129 € <span style="font:600 13px 'Barlow',sans-serif;color:var(--muted);">netto</span></p>
         <p style="font-size:12.5px;color:var(--muted);margin-bottom:.8rem;">statt 1.267 € einzeln</p>
         <ul style="list-style:none;padding:0;margin:0 0 1rem;"><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Alles aus dem Akademie-Start</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Visitenkarten-Design</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Social-Media-Vorlagen (Posts, Stories, Cover)</span></li><li style="display:flex;gap:.5rem;margin:.35rem 0;font-size:14.5px;"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg><span>Alles im einheitlichen Design</span></li></ul>

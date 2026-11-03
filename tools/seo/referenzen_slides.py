@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>'''
 
 VA, VZ = '<!-- videos:start -->', '<!-- videos:ende -->'
-FILM = ('digital-signage-donuts-film', 'Produktvideo für die Menütafeln', 'Gedreht und geschnitten von uns: Zubereitung vor Ort für die Bildschirme eines Dessert-Ladens, 26 Sekunden.')
+FILM = ('digital-signage-donuts-film', 'Werbevideo für CRAVÉZ Berlin', 'Von uns gedreht und geschnitten: Cookies, Eis und Saucen direkt am Tresen – Marketingvideo für die Bildschirme im Laden und für Social Media, 26 Sekunden.')
 # Menütafeln mit hellem Hintergrund (rote Imbiss-Tafeln bewusst nicht auf der Referenzseite)
 TAFELN = [
     ('digital-signage-donuts-01', 'Handmade Donuts', 'Sortiment und Boxpreise im Wechsel mit Produktaufnahmen.'),
@@ -202,7 +202,7 @@ def main():
         m = re.search(r'    <div class="vid-grid">.*?\n    </div>\n', s, flags=re.S)
         if m: s = s[:m.start()] + videoblock() + s[m.end():]
     s = s.replace('<p class="sec-sub">Eine Menütafel steht selten still. Zwei Beispiele – alle acht Tafeln aus drei Betrieben liegen auf der Seite zu dieser Leistung.</p>',
-                  '<p class="sec-sub">Eine Menütafel steht selten still. Oben ein Produktvideo, das wir vor Ort gedreht haben, darunter Tafeln aus unserem Studio.</p>')
+                  '<p class="sec-sub">Eine Menütafel steht selten still. Oben ein Werbevideo, das wir vor Ort gedreht haben, darunter Menütafeln aus unserem Studio.</p>')
     open(SEITE, 'w', encoding='utf-8').write(s)
     print(sum(len(k[3]) for k in KATEGORIEN), 'Bilder in', len(KATEGORIEN), 'Bilderstrecken')
 

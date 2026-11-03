@@ -145,7 +145,7 @@ footer{background:#060e1a;padding:4rem 2rem 2rem;color:rgba(255,255,255,.45);}
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
 .svc-grid > *,.svc-grid-3 > *,.why-grid > *,.pricing-grid > *,.foot-grid > *,
 .gal > *,.form-grid > *,.overview-grid > *,.blog-grid > *,.ph-icon-grid > *,
@@ -159,6 +159,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -290,7 +294,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 
   <!-- ODR & VSBG -->
   <section class="ls" aria-labelledby="sec-odr">
-    <h2 id="sec-odr">Verbraucher&shy;streit&shy;beilegung</h2>
+    <h2 id="sec-odr">Verbraucherstreitbeilegung</h2>
     <p>Die Plattform der Europäischen Kommission zur Online-Streitbeilegung (OS-Plattform) wurde zum 20. Juli 2025 eingestellt. Ein Hinweis darauf entfällt daher.</p>
     <p>Unsere E-Mail-Adresse lautet: <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a></p>
     <div class="notice-box">

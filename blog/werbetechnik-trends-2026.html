@@ -198,7 +198,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -225,6 +225,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -296,15 +300,6 @@ table.rt td:first-child::before{display:none}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li>
-        <li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li>
-        <li style="opacity:.4;">/</li>
-        <li style="color:#fff;">LED oder Neon</li>
-      </ol>
-    </nav>
     <div class="art-tag"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"/><path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"/><circle cx="12" cy="9" r="2"/><path d="M16.2 4.8c2 2 2.26 5.11.8 7.47"/><path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"/><path d="M9.5 18h5"/><path d="m8 22 4-11 4 11"/></svg>Werbetechnik · Trends &amp; Innovationen</div>
     <h1>LED oder Neon?<br><em>Was sich für Ihr Ladenlokal rechnet.</em></h1>
     <div class="art-meta">
@@ -321,12 +316,12 @@ table.rt td:first-child::before{display:none}
     <p>Wer 2026 in Werbung am Ladenlokal investiert, steht meist vor denselben drei Fragen: LED oder Neon, Folie oder Display, günstig oder langlebig. Dieser Leitfaden geht sie der Reihe nach durch – ohne Verkaufsdruck, damit Sie beim Angebot die richtigen Fragen stellen können. Was sich zuletzt wirklich verändert hat, steht erheblich. Für Berliner Unternehmen bedeutet das: <strong>Wer jetzt die richtigen Trends erkennt, spart Geld und gewinnt Sichtbarkeit</strong>. Hier die wichtigsten Entwicklungen 2026 – kompakt, praxisnah und mit konkreten Zahlen.</p>
 
                         <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Ihr Werbetechnik-Projekt in Berlin</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/werbetechnik.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Werbetechnik%20Trends%202026" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
-    <h2>Trend 1: LED-Technologie dominiert die Außenwerbung</h2>
+    <h2>Trend 1: <span class="nw">LED-Technologie</span> dominiert die Außenwerbung</h2>
 
     <div class="trend-card">
       <div class="trend-card-header">
         <span class="trend-icon"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
-        <h3>LED-Reklame: Günstiger als je zuvor</h3>
+        <h3><span class="nw">LED-Reklame</span>: Günstiger als je zuvor</h3>
       </div>
       <p>LED hat Neon in der Werbetechnik weitgehend abgelöst: Die Module sind über die Jahre günstiger geworden, und die vom Hersteller angegebene Lebensdauer liegt deutlich über der einer Leuchtstoff- oder Neonröhre. Die konkreten Werte stehen im Datenblatt des jeweiligen Moduls – lassen Sie es sich zeigen.</p>
     </div>
@@ -387,7 +382,7 @@ table.rt td:first-child::before{display:none}
 
     <p>Für Berliner Unternehmen mit B2B-Kunden, Ausschreibungen oder ESG-Reporting ist der Nachweis umweltfreundlicher Werbemittel mittlerweile ein Wettbewerbsvorteil. Fragen Sie uns nach unserem Öko-Portfolio – wir deklarieren alle Materialien transparent.</p>
 
-    <h2>Trend 4: KI-gestütztes Design beschleunigt Projekte</h2>
+    <h2>Trend 4: <span class="nw">KI-gestütztes</span> Design beschleunigt Projekte</h2>
 
     <p>Künstliche Intelligenz hat die Designarbeit verändert – und das zugunsten der Kunden. Durch KI-gestützte Designtools können wir Entwürfe schneller erstellen, mehr Varianten testen und Freigabeprozesse deutlich verkürzen.</p>
 
@@ -402,7 +397,7 @@ table.rt td:first-child::before{display:none}
       <p><strong>Was das für Sie bedeutet:</strong> Kürzere Produktionszeiten = niedrigere Kosten. Für Standardaufträge (Fahrzeugbeschriftung, Aufkleber, Schilder) kommen wir damit schneller zum ersten Entwurf als früher. Diese Effizienz geben wir in Form günstigerer Preise an unsere Kunden weiter.</p>
     </div>
 
-    <h2>Trend 5: Fahrzeug&shy;folierung als mobile Werbung – Nachfrage steigt</h2>
+    <h2>Trend 5: Fahrzeugfolierung als mobile Werbung – Nachfrage steigt</h2>
 
     <p>Fahrzeugbeschriftung bleibt für Handwerksbetriebe, Lieferdienste und Dienstleister in Berlin eines der günstigsten Werbemittel überhaupt. Ein beklebtes Fahrzeug wird im Stadtverkehr täglich von sehr vielen Menschen gesehen und ist damit eines der kosteneffizientesten Werbemedien überhaupt.</p>
 
@@ -446,7 +441,7 @@ table.rt td:first-child::before{display:none}
     </ul>
 
     <div class="article-cta">
-      <h3>Ihr Werbetechnik-Projekt in Berlin</h3>
+      <h3>Ihr <span class="nw">Werbetechnik-Projekt</span> in Berlin</h3>
       <p>Kostenfreie Beratung zu allen Trends – wir finden die optimale Lösung für Ihr Budget</p>
       <div class="btns">
         <a href="/werbetechnik.html" class="btn-teal">Werbetechnik-Leistungen ansehen</a>
@@ -464,7 +459,7 @@ table.rt td:first-child::before{display:none}
           <a href="/blog/fahrzeugbeschriftung-kosten-berlin.html">Artikel lesen →</a>
         </div>
         <div class="related-card">
-          <h3>7 Profi-Tipps für Schaufensterbeschriftung</h3>
+          <h3>7 <span class="nw">Profi-Tipps</span> für Schaufensterbeschriftung</h3>
           <p>Mehr Laufkundschaft durch bessere Schaufensterwerbung – häufige Fehler und was wirklich funktioniert.</p>
           <a href="/blog/schaufensterbeschriftung-tipps.html">Artikel lesen →</a>
         </div>

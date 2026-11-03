@@ -450,7 +450,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -486,6 +486,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -581,7 +585,7 @@ table.rt td:first-child::before{display:none}
     <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>PVC-Banner · NRW</div>
-        <h1>PVC-Banner <em>NRW</em></h1>
+        <h1><span class="nw">PVC-Banner</span> <em>NRW</em></h1>
         <p class="hero-sub">Wetterfeste Banner für Fassade, Bauzaun, Eröffnung oder Event in ganz NRW – ob Köln, Düsseldorf, Dortmund, Essen, Bochum oder Duisburg. Mit Ösen, Hohlsaum oder ganz ohne. Wir gestalten und drucken, unser Team in NRW hängt das Banner auf Wunsch bei Ihnen auf.</p><!-- kopf:start --><div class="kopf-preis"><b>ab 34 €/m² netto</b><span>Mesh ab 39 €/m² · Blockout ab 48 €/m²</span></div><ul class="kopf-checks"><li>Festpreis nach Fotos – Angebot in der Regel in 24 Stunden</li><li>Entwurf inklusive, Genehmigung wird geprüft</li><li>Montage durch unser Team vor Ort</li></ul><!-- kopf:ende -->
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>
@@ -598,19 +602,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" class="bc-bar">
-  <div class="container">
-    <ol class="bc-list">
-      <li><a href="/">Home</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/leistungen.html">Leistungen</a></li>
-      <li class="bc-sep">/</li>
-      <li><a href="/werbeagentur-nrw.html">Werbeagentur NRW</a></li>
-      <li class="bc-sep">/</li>
-      <li><span class="bc-cur">PVC-Banner NRW</span></li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -621,7 +612,7 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M7 12h5"/><path d="M15 9.4a4 4 0 1 0 0 5.2"/></svg>Preise auf einen Blick</span>
-      <h2 class="sec-title">Was kostet <em>ein PVC-Banner in NRW?</em></h2>
+      <h2 class="sec-title">Was kostet <em>ein <span class="nw">PVC-Banner</span> in NRW?</em></h2>
     </div>
     <div class="price-scroll">
       <table class="price-table rt">
@@ -701,17 +692,17 @@ table.rt td:first-child::before{display:none}
     <div class="svc-grid">
       <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg></div>
-        <h3>PVC-Banner</h3>
+        <h3><span class="nw">PVC-Banner</span></h3>
         <p>Frontlit-Banner, einseitig bedruckt, mit Saum und Ösen.</p>
       </a>
       <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
-        <h3>Mesh-Banner</h3>
+        <h3><span class="nw">Mesh-Banner</span></h3>
         <p>Gelochtes Material für Gerüst, Bauzaun und große Fassaden.</p>
       </a>
       <a href="#kontakt" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg></div>
-        <h3>Blockout-Banner</h3>
+        <h3><span class="nw">Blockout-Banner</span></h3>
         <p>Beidseitig bedruckt, lichtundurchlässig.</p>
       </a>
       <a href="/grafikdesign-berlin.html" class="svc-card" style="text-decoration:none;color:inherit;display:block;">
@@ -788,7 +779,7 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Häufige Fragen</span>
-      <h2 class="sec-title">PVC-Banner NRW – <em>Fragen &amp; Antworten</em></h2>
+      <h2 class="sec-title"><span class="nw">PVC-Banner</span> NRW – <em>Fragen &amp; Antworten</em></h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item"><button class="faq-q">In welchen Städten liefern und montieren Sie Banner?</button><div class="faq-a"><p>In ganz NRW – Schwerpunkt Düsseldorf, Köln, Dortmund, Essen und Bochum, dazu Duisburg, Wuppertal, Bonn und die Städte dazwischen. Unser Team in NRW montiert vor Ort. Unser Firmensitz ist in Berlin.</p></div></div>
@@ -950,6 +941,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

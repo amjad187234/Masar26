@@ -100,6 +100,9 @@ solche Festlegung im Bericht nennen.
 - Marke: Markenleitfaden `tools/brand/Masar_Markenleitfaden.pdf` (Navy #132E50, Teal #58D0BD, Teal dunkel #177567 für Teal-Text auf Weiß,
   Grau #D1D3D4, Off-White #F4F7F7, Text #1A2A2A; Barlow Condensed Black für Überschriften, Barlow für Text). Keine Gold-/Lila-Akzente;
   `tools/seo/marke.py` setzt das auf allen Seiten durch (am Ende der Pipeline ausführen). Claim (03.11.2026): **„Werbung, die man sieht.“** (Footer aller Seiten, E-Mail-Signatur).
+- Lesbarkeit (03.11.2026, Inhaber): keine sichtbare Brotkrumen-Leiste (nur BreadcrumbList-JSON-LD), keine Silbentrennung/Trennstriche;
+  zu lange Überschriften werden per Skript kleiner gesetzt, Bindestrich-Wörter in Überschriften nicht getrennt – `tools/seo/umbruch.py`
+  (nach `marke.py` am Ende der Pipeline).
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).

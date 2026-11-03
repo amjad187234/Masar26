@@ -120,7 +120,7 @@
     + '.as-hint{font-size:13px;color:rgba(255,255,255,.6);margin:.9rem 0 0}.as-more{color:#58d0bd;font-weight:600}'
     + '.as-welcome{display:block;border-radius:10px;padding:.55rem .9rem;line-height:1.45}.as-welcome .as-more{color:var(--teal-ink,#177567)}'
     + '.as-merk{display:flex;gap:.55rem;align-items:flex-start;margin-top:1rem;font-size:13.5px;line-height:1.45;color:var(--muted,#5a7070)}.as-merk input{margin-top:3px;width:18px;height:18px;flex-shrink:0}.as-merk a{color:var(--teal-ink,#177567)}'
-    + '@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:1fr 1fr}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
+    + '@media(max-width:380px){.as-opt{font-size:13px;gap:.45rem;padding:.7rem .55rem}}@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (d.charAt(0) === '<' ? d : '<path d="' + d + '"/>') + '</svg>'; }   // Lucide-Markup oder einzelner Pfad

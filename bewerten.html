@@ -25,7 +25,7 @@ a{color:var(--teal)}
 .logo{margin-bottom:1.6rem;text-align:center}
 .logo img{background:rgba(255,255,255,.95);padding:10px 14px;border-radius:12px;height:62px;width:auto;box-sizing:content-box;display:block;margin:0 auto}
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:2.4rem 2rem;max-width:600px;width:100%}
-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.3rem;color:#fff;text-transform:uppercase;margin-bottom:.7rem;line-height:1.05;letter-spacing:1px;text-align:center;overflow-wrap:break-word;hyphens:auto}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.3rem;color:#fff;text-transform:uppercase;margin-bottom:.7rem;line-height:1.05;letter-spacing:1px;text-align:center;overflow-wrap:break-word;hyphens:manual}
 h1 em{color:var(--teal);font-style:normal}
 .lead{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:1.8rem;text-align:center}
 .f{margin-bottom:1.25rem}
@@ -69,6 +69,10 @@ fieldset{border:0}
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <header><div class="logo">

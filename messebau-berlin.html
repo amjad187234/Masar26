@@ -423,7 +423,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -564,6 +564,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -727,26 +731,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Messebau Berlin</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -769,12 +753,12 @@ table.rt td:first-child::before{display:none}
     <div class="svc-grid">
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg></div>
-        <h3>Messestand-Konzept &amp; Design</h3>
+        <h3><span class="nw">Messestand-Konzept</span> &amp; Design</h3>
         <p>Wir entwickeln den Stand aus Ihrer Marke, Ihrem Ziel und Ihrer Fläche: Aufteilung, Blickachsen, Besprechungsbereich und eine Botschaft, die schon aus dem Gang lesbar ist.</p>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
-        <h3>3D-Entwurf vor dem Bau</h3>
+        <h3><span class="nw">3D-Entwurf</span> vor dem Bau</h3>
         <p>Bevor gebaut wird, sehen Sie Ihren Stand als 3D-Entwurf – mit Farben, Grafik und Möblierung. Änderungen sind im Entwurf schnell gemacht, nicht erst auf der Messefläche.</p>
       </div>
       <div class="svc-card">
@@ -858,7 +842,7 @@ table.rt td:first-child::before{display:none}
       <div class="why-item">
         <div class="why-num">2</div>
         <div>
-          <h3>Konzept &amp; 3D-Entwurf</h3>
+          <h3>Konzept &amp; <span class="nw">3D-Entwurf</span></h3>
           <p>Sie erhalten einen Entwurf mit Grundriss und 3D-Ansicht. Wir passen ihn an, bis Aufteilung, Farben und Grafik stimmen.</p>
         </div>
       </div>

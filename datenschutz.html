@@ -148,7 +148,7 @@ nav.toc{position:static;top:auto;left:auto;right:auto;width:auto;height:auto;z-i
 .nav-phone svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:1050px){.nav-phone{display:none}}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* Raster-Kinder duerfen unter die Breite ihres laengsten Wortes schrumpfen */
@@ -166,6 +166,10 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -246,7 +250,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
 <div class="cw">
 
   <nav class="toc" aria-label="Inhaltsverzeichnis Datenschutzerklärung">
-    <h2>Inhalts&shy;verzeichnis</h2>
+    <h2>Inhaltsverzeichnis</h2>
     <ol>
       <li><a href="#s1">Verantwortlicher</a></li>
       <li><a href="#s1b">Datenschutzbeauftragter</a></li>
@@ -281,14 +285,14 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </section>
 
   <section class="ls" id="s1b" aria-labelledby="h1b">
-    <h2 id="h1b">2. Datenschutz&shy;beauftragter</h2>
+    <h2 id="h1b">2. Datenschutzbeauftragter</h2>
     <div class="notice-box">
       <p>Gemäß Art. 37 DSGVO ist die Bestellung eines Datenschutzbeauftragten nur unter bestimmten Voraussetzungen verpflichtend (z. B. bei regelmäßiger und systematischer Überwachung von Personen im großen Umfang oder bei umfangreicher Verarbeitung besonderer Datenkategorien nach Art. 9 DSGVO sowie i. V. m. § 38 BDSG bei mehr als 20 mit der Datenverarbeitung beschäftigten Personen). Diese Voraussetzungen liegen bei der Masar Werbeagentur als Kleinunternehmen derzeit nicht vor. Ein Datenschutzbeauftragter ist daher nicht bestellt. Für datenschutzbezogene Anfragen wenden Sie sich bitte direkt an den Verantwortlichen unter <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a>.</p>
     </div>
   </section>
 
   <section class="ls" id="s2" aria-labelledby="h2">
-    <h2 id="h2">3. Grundsätze der Daten&shy;verarbeitung</h2>
+    <h2 id="h2">3. Grundsätze der Datenverarbeitung</h2>
     <p>Wir verarbeiten personenbezogene Daten grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist. Eine regelmäßige Verarbeitung personenbezogener Daten erfolgt nur, sofern eine Rechtsgrundlage nach Art. 6 DSGVO vorliegt oder eine ausdrückliche Einwilligung der betroffenen Person gegeben wurde.</p>
     <p>Wir halten uns an die Grundsätze der Datenminimierung (Art. 5 Abs. 1 lit. c DSGVO), der Zweckbindung (Art. 5 Abs. 1 lit. b DSGVO) und der Speicherbegrenzung (Art. 5 Abs. 1 lit. e DSGVO).</p>
   </section>
@@ -305,7 +309,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </section>
 
   <section class="ls" id="s4" aria-labelledby="h4">
-    <h2 id="h4">5. Server-Logfiles</h2>
+    <h2 id="h4">5. <span class="nw">Server-Logfiles</span></h2>
     <p>Der Hosting-Anbieter dieser Website erfasst und speichert automatisch Informationen in sog. Server-Logfiles, die Ihr Browser beim Seitenaufruf automatisch übermittelt. Dabei werden folgende Daten erhoben:</p>
     <ul>
       <li>Browsertyp und Browserversion</li>
@@ -320,7 +324,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </section>
 
   <section class="ls" id="s5" aria-labelledby="h5">
-    <h2 id="h5">6. Kontaktformular &amp; E-Mail-Anfragen</h2>
+    <h2 id="h5">6. Kontaktformular &amp; <span class="nw">E-Mail-Anfragen</span></h2>
     <p>Wenn Sie uns über unser Kontaktformular oder per E-Mail kontaktieren, werden die übermittelten Daten zur Bearbeitung Ihrer Anfrage verarbeitet und gespeichert. Diese Daten werden ohne Ihre ausdrückliche Einwilligung nicht an Dritte weitergegeben.</p>
     <h3>Verarbeitete Datenkategorien</h3>
     <ul>
@@ -333,11 +337,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <h3>Formularversand über unseren Webserver</h3>
     <p>Formulareinträge werden verschlüsselt (HTTPS) an unseren Webserver bei Hostinger übertragen (siehe Abschnitt 10) und von dort als E-Mail an unser Postfach (info@masar-werbeagentur.de) zugestellt. Ein externer Formulardienst ist nicht beteiligt. Zusätzlich speichern wir Ihre Anfrage mit einer Anfragenummer in einer geschützten Datenbank auf unserem Webserver, damit keine Anfrage verloren geht und wir den Bearbeitungsstand festhalten können; Zugriff hat nur der Inhaber über eine passwortgeschützte Übersicht. Die E-Mail enthält neben Ihren Angaben die Seite, von der aus Sie das Formular abgeschickt haben, und den Zeitpunkt der Anfrage. Zum Schutz vor Missbrauch legt der Server einen Hashwert Ihrer IP-Adresse zusammen mit den Zeitpunkten Ihrer Anfragen vorübergehend im temporären Verzeichnis ab; berücksichtigt werden nur Anfragen der letzten Stunde, um die Zahl der Anfragen je Absender zu begrenzen. Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> (vorvertragliche Maßnahmen) und <span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span> (berechtigtes Interesse an einem missbrauchsfreien Betrieb).</p>
     <p><strong>Dateianhänge:</strong> In unseren Kontaktformularen können Sie optional eine Datei anhängen (etwa ein Foto des Standorts oder eine Logodatei). Diese Datei wird zusammen mit Ihren Formularangaben über unseren Webserver an unsere E-Mail-Adresse übermittelt und unterliegt denselben Grundsätzen und Löschfristen wie die übrigen Anfragedaten. Das Anhängen einer Datei ist freiwillig; bitte übermitteln Sie auf diesem Weg keine besonderen Kategorien personenbezogener Daten nach Art. 9 DSGVO.</p>
-    <h3>Anfrage-Assistent</h3>
+    <h3><span class="nw">Anfrage-Assistent</span></h3>
     <p>Mit unserem Anfrage-Assistenten stellen Sie Ihre Anfrage Schritt für Schritt zusammen. Ihre Eingaben bleiben bis zum Absenden nur in Ihrem Browser (Sitzungsspeicher, sessionStorage) und werden beim Schließen des Tabs gelöscht. Senden Sie per E-Mail, gilt das oben Beschriebene. Senden Sie per WhatsApp, übermittelt der Assistent die Zusammenfassung Ihrer Anfrage (Name, Kontaktangaben, Leistung, Ort, Zeitrahmen) vor dem Öffnen von WhatsApp an unseren Webserver, wo sie mit einer Anfragenummer gespeichert wird; die Nachricht selbst schicken Sie anschließend über WhatsApp (siehe Abschnitt 7). Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span>.</p>
     <h3>Terminbuchung (kostenlose Beratung)</h3>
     <p>Auf der Seite <a href="/termin.html">/termin.html</a> können Sie einen Beratungstermin buchen. Dabei verarbeiten wir die gewählte Beratungsart (Telefon, WhatsApp-Video oder vor Ort), Sprache, Tag und Uhrzeit, Ihren Namen, Ihre Telefonnummer, optional E-Mail-Adresse, Firma, Ort und Ihre Nachricht sowie bei Vor-Ort-Terminen Ihre Adresse. Die Daten werden auf unserem Webserver bei Hostinger (siehe Abschnitt 10) mit einer Terminnummer in unserer Anfragen-Datenbank gespeichert und per E-Mail an uns übermittelt; wenn Sie eine E-Mail-Adresse angeben, senden wir Ihnen eine Terminbestätigung und etwa 24 Stunden vor dem Termin eine Erinnerung. Zum Schutz vor Missbrauch halten wir fest, wie oft innerhalb einer Stunde von einer IP-Adresse gebucht wurde; die IP-Adresse wird dafür nur als nicht lesbarer Hashwert verwendet. Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> (Durchführung vorvertraglicher Maßnahmen auf Ihre Anfrage). Für Speicherdauer und Benachrichtigung gilt das unten Beschriebene.</p>
-    <h3>Anfrage-Status</h3>
+    <h3><span class="nw">Anfrage-Status</span></h3>
     <p>Auf <a href="/status.html">/status.html</a> können Sie den Stand Ihrer Anfrage abrufen. Dafür geben Sie Ihre Anfragenummer und die Telefonnummer oder E-Mail-Adresse aus der Anfrage ein; angezeigt werden nur Status, Leistung, Ort, Datum, ggf. Termin und ein Hinweis von uns zum Ablauf (z. B. Montagetermin) – keine Kontaktdaten. Liegt ein Beratungstermin mehr als zwei Stunden in der Zukunft, können Sie dort den Wunsch melden, ihn zu verschieben oder abzusagen; wir speichern diesen Wunsch mit Ihrer Nachricht bei der Anfrage und erhalten dazu eine E-Mail. Zum Schutz vor Missbrauch ist die Zahl der Abfragen pro IP-Adresse begrenzt (IP nur als nicht lesbarer Hashwert, höchstens eine Stunde berücksichtigt). Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span>.</p>
     <h3>„Auf diesem Gerät merken“</h3>
     <p>Wenn Sie im Anfrage-Assistenten oder bei der Terminbuchung das Häkchen „Meine Kontaktdaten auf diesem Gerät merken“ setzen, speichern wir Name, Firma, Telefon, E-Mail, Ort und Ihre Anfragenummern im lokalen Speicher Ihres Browsers (localStorage), damit Ihre nächste Anfrage schneller geht und Sie den Status mit einem Klick abrufen können. Diese Daten bleiben auf Ihrem Gerät und werden dafür nicht an uns übertragen. Sie können sie jederzeit auf der Seite Anfrage-Status („Gespeicherte Daten auf diesem Gerät löschen“), durch Entfernen des Häkchens oder über Ihre Browsereinstellungen löschen. Rechtsgrundlage ist Ihre Einwilligung (<span class="art-badge">Art. 6 Abs. 1 lit. a DSGVO</span>, § 25 Abs. 1 TDDDG).</p>
@@ -355,7 +359,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </section>
 
   <section class="ls" id="s6" aria-labelledby="h6">
-    <h2 id="h6">7. WhatsApp-Kommunikation</h2>
+    <h2 id="h6">7. <span class="nw">WhatsApp-Kommunikation</span></h2>
     <p>Auf dieser Website befindet sich ein Link zu <strong>WhatsApp</strong> (Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland). Wenn Sie auf den WhatsApp-Button klicken, werden Sie zur WhatsApp-Anwendung weitergeleitet. Die Kommunikation über WhatsApp unterliegt den Datenschutzbestimmungen von Meta Platforms. Dabei können unter anderem Ihre Telefonnummer, Nachrichteninhalte und Gerätedaten durch Meta verarbeitet werden.</p>
     <p>Ein Klick auf den WhatsApp-Button stellt eine freiwillige Kontaktaufnahme dar. Rechtsgrundlage ist <span class="art-badge">Art. 6 Abs. 1 lit. a DSGVO</span> (Einwilligung durch aktives Anklicken) sowie <span class="art-badge">Art. 6 Abs. 1 lit. b DSGVO</span> (vorvertragliche Maßnahmen). Die Datenschutzerklärung von WhatsApp/Meta finden Sie unter: <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy</a>.</p>
   </section>
@@ -379,7 +383,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
     <div class="notice-box">
       <p><strong>Keine Werbe- und Marketing-Cookies:</strong> Wir setzen derzeit keine Werbe-, Remarketing- oder Social-Media-Tracking-Skripte ein (z. B. Meta Pixel, Google Ads Conversion-Tracking, Hotjar). Eine websiteübergreifende Verfolgung von Besuchern findet nicht statt.</p>
     </div>
-    <h3>Cookie-Einstellungen im Browser</h3>
+    <h3><span class="nw">Cookie-Einstellungen</span> im Browser</h3>
     <p>Sie können Ihren Browser so konfigurieren, dass Sie über das Setzen von Cookies informiert werden, Cookies nur im Einzelfall erlauben oder Cookies generell ablehnen. Bei vollständiger Deaktivierung kann die Funktionalität einzelner Website-Bereiche eingeschränkt sein.</p>
   </section>
 
@@ -445,12 +449,12 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
   </section>
 
   <section class="ls" id="s13" aria-labelledby="h13">
-    <h2 id="h13">14. Änderungen dieser Datenschutz&shy;erklärung</h2>
+    <h2 id="h13">14. Änderungen dieser Datenschutzerklärung</h2>
     <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, um sie stets den aktuellen rechtlichen Anforderungen sowie etwaigen Änderungen unserer Leistungen anzupassen. Die jeweils aktuelle Version dieser Datenschutzerklärung ist jederzeit auf dieser Seite abrufbar. Bei wesentlichen Änderungen werden wir Sie gesondert informieren, sofern wir über Ihre Kontaktdaten verfügen.</p>
   </section>
 
   <section class="ls" id="s14" aria-labelledby="h14">
-    <h2 id="h14">15. Social-Media-Verlinkungen</h2>
+    <h2 id="h14">15. <span class="nw">Social-Media-Verlinkungen</span></h2>
     <p>Diese Website enthält Links zu unseren Social-Media-Profilen bei <strong>Instagram</strong> und <strong>Facebook</strong> (beide betrieben von Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland). Ein Klick auf diese Links öffnet die jeweilige Plattform in einem neuen Tab. Dabei werden Ihre Verbindungsdaten (u. a. IP-Adresse) an Meta übermittelt. Wir haben keinen Einfluss auf die Datenverarbeitung durch Meta.</p>
     <p>Die Verlinkung erfolgt auf Grundlage unseres berechtigten Interesses an der Außendarstellung unseres Unternehmens (<span class="art-badge">Art. 6 Abs. 1 lit. f DSGVO</span>). Datenschutzerklärungen: <a href="https://www.instagram.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
   </section>

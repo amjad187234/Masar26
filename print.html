@@ -420,6 +420,10 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -533,7 +537,7 @@ html:not(.js) .reveal,html:not(.js) .reveal-l,html:not(.js) .reveal-r,html:not(.
 <section class="section"><div class="container">
   <!-- INTRO DRUCKEREI BERLIN -->
   <div class="fade-up" style="margin-bottom:2.5rem;background:var(--off);border-left:4px solid var(--teal);padding:1.8rem 2rem;border-radius:var(--radius);">
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Professionelle Druckerei in Berlin – direkt in Berlin-Wedding</h2>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Professionelle Druckerei in Berlin – direkt in <span class="nw">Berlin-Wedding</span></h2>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Als <strong>Druckerei in Berlin</strong> bieten wir Ihnen alles aus einer Hand: <strong>Flyer drucken</strong>, <strong>Visitenkarten</strong>, <strong>Plakate</strong> und das passende <strong>Printdesign</strong>. Unser Studio mit eigener Werkstatt sitzt in Berlin-Wedding und betreut Kunden im ganzen Stadtgebiet – von Mitte über Charlottenburg bis Prenzlauer Berg. Grafik und Layout sind bei jedem Auftrag kostenlos enthalten. Kein Mehraufwand, keine versteckten Kosten – Sie fragen an und erhalten Ihr Angebot innerhalb von 24 Stunden.</p>
     <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:13px;">
       <a href="/leistungen.html" style="color:var(--teal-ink);font-weight:600;">→ Alle Leistungen</a>
@@ -734,7 +738,7 @@ section > .container > div[style*='max-width'],section > div > .container > div[
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -946,5 +950,5 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body></html>

@@ -412,7 +412,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .nav-links li.has-sub>a{white-space:nowrap}
 .nav-links li.has-sub{flex:0 0 auto}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -445,6 +445,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -540,7 +544,7 @@ table.rt td:first-child::before{display:none}
     <div class="hero-inner">
       <div>
         <div class="hero-badge"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>Messebeschriftung Berlin · Für Unternehmen &amp; Events</div>
-        <h1>Messe&shy;beschriftung Berlin&nbsp;–<em>Ihr Auftritt.</em>Perfekt inszeniert.</h1>
+        <h1>Messebeschriftung Berlin&nbsp;–<em>Ihr Auftritt.</em>Perfekt inszeniert.</h1>
         <p class="hero-sub">Roll-up Displays, Beachflags, Messewände &amp; Backdrop-Systeme für Berliner Unternehmen. CI-konformes Design, Schnelldruck, Lieferung direkt an Ihren Messestand. Firmenangebot in 24h!</p>
         <div class="hero-btns">
           <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>
@@ -557,26 +561,6 @@ table.rt td:first-child::before{display:none}
   </div>
 </section>
 
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.12);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);font-weight:600;">Messebeschriftung Berlin</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <div style="background:var(--teal);padding:.9rem 0;">
   <div class="container">
@@ -593,13 +577,13 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>Messe-Displays für Unternehmen</span>
-      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>jedes Format</em></h2>
+      <h2 class="sec-title">Messebeschriftung Berlin – <em>jedes Format</em></h2>
       <p class="sec-sub">Von kompakten Roll-up Displays bis zur großformatigen Messewand – wir produzieren alle Formate für Ihren Messeauftritt in Berlin, in Deutschland und international.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg></div>
-        <h3>Roll-up Display Berlin</h3>
+        <h3><span class="nw">Roll-up</span> Display Berlin</h3>
         <p>Der Klassiker für jeden Messestand. Einfach aufzubauen, platzsparend zu transportieren, sofort aufmerksamkeitsstark. Format 85×200 cm oder 100×200 cm. Hochauflösender Druck, stabiles Gestell. Ab 99 € netto zzgl. 19 % MwSt.</p>
       </div>
       <div class="svc-card">
@@ -609,12 +593,12 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>
-        <h3>Messewand / Pop-up-Wand</h3>
+        <h3>Messewand / <span class="nw">Pop-up-Wand</span></h3>
         <p>Großer Auftritt: Modulare Messewand-Systeme (Pop-up, Faltwand) für professionelles Hintergrundbranding. Bis 4×2 m, vollflächig bedruckt. Inkl. Transporttasche. Individuelles Angebot, Preise netto zzgl. 19 % MwSt.</p>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
-        <h3>Tisch-Display &amp; L-Banner</h3>
+        <h3><span class="nw">Tisch-Display</span> &amp; <span class="nw">L-Banner</span></h3>
         <p>Kleine Fläche, großer Effekt: Tisch-Displays (A4–A2) und L-Banner für Infocounter, Empfangsbereiche und Messetische. Ideal für Produktpräsentationen und Preisaushänge. Ab 69 € netto zzgl. 19 % MwSt.</p>
       </div>
       <div class="svc-card">
@@ -624,7 +608,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg></div>
-        <h3>Messe-Komplettpaket</h3>
+        <h3><span class="nw">Messe-Komplettpaket</span></h3>
         <p>Roll-up + Beachflag + Tisch-Display + Flyer aus einer Hand. Alle Materialien CI-konform aufeinander abgestimmt. Sammelrechnung, Rabatt auf Menge. Ideal für Berliner Unternehmen mit regelmäßigen Messeauftritten.</p>
       </div>
     </div>
@@ -635,7 +619,7 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal" style="margin-bottom:2rem;">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="M7 12h5"/><path d="M15 9.4a4 4 0 1 0 0 5.2"/></svg>Transparente Preise</span>
-      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>Preisübersicht</em></h2>
+      <h2 class="sec-title">Messebeschriftung Berlin – <em>Preisübersicht</em></h2>
     </div>
     <div style="overflow-x:auto;">
       <table class="rt" style="width:100%;border-collapse:collapse;font-size:14px;">
@@ -689,13 +673,13 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Warum Masar?</span>
-      <h2 class="sec-title">Ihr Vorteil bei der <em>Messe&shy;beschriftung</em></h2>
+      <h2 class="sec-title">Ihr Vorteil bei der <em>Messebeschriftung</em></h2>
     </div>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-num">1</div>
         <div>
-          <h3>CI-konformes Design</h3>
+          <h3><span class="nw">CI-konformes</span> Design</h3>
           <p>Alle Displays werden nach Ihrer Corporate Identity gefertigt – Farben, Fonts, Layout exakt nach Ihrem Styleguide. Markenauftritt ohne Kompromisse.</p>
         </div>
       </div>
@@ -742,7 +726,7 @@ table.rt td:first-child::before{display:none}
   <div class="container">
     <div class="sec-head reveal">
       <span class="eyebrow"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>Häufige Fragen</span>
-      <h2 class="sec-title">Messe&shy;beschriftung Berlin – <em>Fragen &amp; Antworten</em></h2>
+      <h2 class="sec-title">Messebeschriftung Berlin – <em>Fragen &amp; Antworten</em></h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
@@ -775,7 +759,7 @@ table.rt td:first-child::before{display:none}
 
 <div class="cta-band">
   <div class="container">
-    <h2>Kostenloses Angebot –<br>Messe&shy;beschriftung Berlin</h2>
+    <h2>Kostenloses Angebot –<br>Messebeschriftung Berlin</h2>
     <p>Antwort innerhalb von 24 Stunden · CI-konformes Design · Mengenrabatt für Firmen</p>
     <div class="btns">
       <a href="#kontakt" class="btn btn-teal">Firmenangebot anfordern</a>
@@ -944,6 +928,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

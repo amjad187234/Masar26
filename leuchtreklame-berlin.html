@@ -673,7 +673,7 @@ input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var
 .hero-visual .hero-shot{width:100%;max-width:min(360px,40vh);aspect-ratio:1080/1350;height:auto;object-fit:contain;background:linear-gradient(158deg,rgba(255,255,255,.06) 0%,rgba(88,208,189,.10) 52%,rgba(255,255,255,.03) 100%);border:1px solid rgba(88,208,189,.18)}
 }
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* Badge darf umbrechen - sonst schiebt es die ganze Seite am Handy nach rechts */
 .hero-badge,.ph-badge,.art-badge,.campaign-badge{max-width:100%;flex-wrap:wrap}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
@@ -706,6 +706,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -823,26 +827,6 @@ table.rt td:first-child::before{display:none}
 </section>
 
 <!-- BREADCRUMB -->
-<nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:1px solid rgba(88,208,189,.1);padding:.5rem 0;">
-  <div class="container">
-    <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:12.5px;color:var(--muted);" itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/" itemprop="item" style="color:#0e6455;"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/werbetechnik.html" itemprop="item" style="color:#0e6455;"><span itemprop="name">Werbetechnik</span></a>
-        <meta itemprop="position" content="2">
-      </li>
-      <li style="opacity:.4;">/</li>
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <span itemprop="name" style="color:var(--navy);">Leuchtreklame Berlin</span>
-        <meta itemprop="position" content="3">
-      </li>
-    </ol>
-  </div>
-</nav>
 
 <!-- LEISTUNGEN -->
 <section class="section">
@@ -855,7 +839,7 @@ table.rt td:first-child::before{display:none}
     <div class="svc-grid">
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg></div>
-        <h3>LED-Leuchtbuchstaben</h3>
+        <h3><span class="nw">LED-Leuchtbuchstaben</span></h3>
         <p>Einzelne beleuchtete Buchstaben oder Logos aus Acryl und Aluminium – innen- oder hinterleuchtend. Ideal für Fassaden und Schaufenster.</p>
       </div>
       <div class="svc-card">
@@ -865,7 +849,7 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg class="i-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></div>
-        <h3>Neon-Optik LED</h3>
+        <h3><span class="nw">Neon-Optik</span> LED</h3>
         <p>Der Look von echtem Neon, die Effizienz moderner LED-Technik. Perfekt für Restaurants, Bars, Shops und kreative Markeninszenierungen.</p>
       </div>
       <div class="svc-card">
@@ -934,7 +918,7 @@ table.rt td:first-child::before{display:none}
       <div class="why-item">
         <div class="why-num">3</div>
         <div>
-          <h3>Modernste LED-Technologie</h3>
+          <h3>Modernste <span class="nw">LED-Technologie</span></h3>
           <p>Energieeffizient, langlebig und wartungsarm – LED-Systeme sind auf langen Dauerbetrieb ausgelegt.</p>
         </div>
       </div>
@@ -1342,6 +1326,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
-<script src="/assistent.js?v=9" defer></script>
+<script src="/assistent.js?v=10" defer></script>
 </body>
 </html>

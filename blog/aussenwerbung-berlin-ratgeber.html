@@ -194,7 +194,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 /* Ueberschrift ueber die volle Breite der Kopfzeile */
 .article-header h1{max-width:none}
 /* Lange zusammengesetzte Woerter duerfen umbrechen - sonst scrollt die Seite waagerecht */
-h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}
+h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 /* .hero ist ein Flex-Container: ohne min-width:0 kann das Kind nicht unter die
    Breite des laengsten Wortes schrumpfen und schiebt die Seite nach rechts. */
 .hero > .container,.page-hero > .container,.hero-404 > .container,.article-header > .container{min-width:0}
@@ -221,6 +221,10 @@ table.rt td:first-child::before{display:none}
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
 <style id="a11y-fix">.foot-col h2.foot-h{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;margin:0 0 1rem;font-family:inherit;line-height:1.4}</style>
+<!-- umbruch:start -->
+<style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
+<script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
+<!-- umbruch:ende -->
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
@@ -292,15 +296,6 @@ table.rt td:first-child::before{display:none}
 
 <header class="article-header" id="main-content">
   <div class="container">
-    <nav aria-label="Breadcrumb" style="position:static;height:auto;z-index:auto;box-shadow:none;backdrop-filter:none;background:transparent;border-bottom:none;margin-bottom:1.5rem;">
-      <ol style="list-style:none;display:flex;flex-wrap:wrap;gap:.3rem .6rem;font-size:13px;color:rgba(255,255,255,.5);">
-        <li><a href="/" style="color:var(--teal-ink);">Home</a></li>
-        <li style="opacity:.4;">/</li>
-        <li><a href="/blog/" style="color:var(--teal-ink);">Blog</a></li>
-        <li style="opacity:.4;">/</li>
-        <li style="color:#fff;">Außenwerbung Berlin Ratgeber</li>
-      </ol>
-    </nav>
     <div class="art-tag"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Außenwerbung · Ratgeber 2026</div>
     <h1>Außenwerbung Berlin:<br><em>Genehmigungen, Kosten</em><br>&amp; Strategien 2026</h1>
     <div class="art-meta">
@@ -321,7 +316,7 @@ table.rt td:first-child::before{display:none}
     </div>
 
                         <!-- kurzbox:start --><aside class="kurzbox" aria-label="Angebot"><p><b>Außenwerbung in Berlin planen?</b><span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p><div class="kb-btns"><a class="kb-go" href="/aussenwerbung-berlin.html">Mehr erfahren →</a><a class="kb-wa" href="https://wa.me/491785143918?text=Hallo%2C%20ich%20m%C3%B6chte%20Au%C3%9Fenwerbung%20f%C3%BCr%20mein%20Unternehmen%20in%20Berlin%20planen." target="_blank" rel="noopener noreferrer">WhatsApp</a></div></aside><!-- kurzbox:ende -->
-    <h2>1. Genehmigungs&shy;pflicht – welche Behörde in Berlin?</h2>
+    <h2>1. Genehmigungspflicht – welche Behörde in Berlin?</h2>
     <p>Die Genehmigung für Außenwerbung in Berlin erteilt das jeweilige <strong>Bezirksamt – Abteilung Stadtentwicklung und Bauen</strong>. Da Berlin 12 Bezirke mit unterschiedlichen Gestaltungssatzungen hat, variieren die Anforderungen erheblich.</p>
     <p><strong>Welche Behörde ist zuständig?</strong> Zuständig ist das Bezirksamt des Standorts der Werbeanlage, nicht das Ihres Firmensitzes. Ein Unternehmen aus Mitte, das eine Filiale in Charlottenburg-Wilmersdorf betreibt, muss beim Bezirksamt Charlottenburg-Wilmersdorf den Antrag stellen.</p>
     <p><strong>Was brauchen Sie für den Antrag?</strong></p>
@@ -343,7 +338,7 @@ table.rt td:first-child::before{display:none}
       <p><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><strong>Praxistipp:</strong> Lassen Sie die Genehmigung von Ihrer Werbeagentur vorbereiten und einreichen. Erfahrene Anbieter kennen die lokalen Anforderungen, haben Musterdokumente und beschleunigen den Prozess erheblich. Bei Masar übernehmen wir den Genehmigungsservice für unsere Kunden.</p>
     </div>
 
-    <h2>2. Kosten – Fassaden&shy;beschriftung vs. Leuchtreklame</h2>
+    <h2>2. Kosten – Fassadenbeschriftung vs. Leuchtreklame</h2>
     <p>Die Kosten für Außenwerbung in Berlin variieren stark je nach Technik, Größe und Standort. Hier eine realistische Übersicht für 2026:</p>
 
     <div class="table-wrap">
@@ -416,7 +411,7 @@ table.rt td:first-child::before{display:none}
     <h3>Leuchtkasten</h3>
     <p>Beleuchteter Kasten mit bedruckter oder hinterleuchteter Front. Besonders nachts auffällig, schützt das Motiv vor Witterung. Standard in Gastronomie, Einzelhandel und Dienstleistungsbetrieben. <strong>Vorteil:</strong> Rundum-Schutz des Druckmotivs, sehr hell, gleichmäßige Ausleuchtung. <strong>Nachteil:</strong> baukastenartige Optik.</p>
 
-    <h3>Neon-Optik (LED-Neon)</h3>
+    <h3><span class="nw">Neon-Optik</span> (<span class="nw">LED-Neon</span>)</h3>
     <p>Moderner Trend: LED-Neonschläuche ersetzen die alten Gasneonröhren. Günstigerer Betrieb, langlebiger, kein Bruchrisiko. Erzeugen eine warme, aufmerksamkeitsstarke Atmosphäre – besonders beliebt in Gastronomie, Beauty und Lifestyle-Branchen.</p>
 
     <h2>4. Standortanalyse: Worauf kommt es an?</h2>
