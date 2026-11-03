@@ -76,3 +76,9 @@ Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `referen
 `tools/brand/brand_guide.html` → `Masar_Markenleitfaden.pdf` (2 Seiten: Logo, Farben, Schrift, Sprache, Bildsprache, Anwendung).
 Neu erzeugen: `node tools/angebot/pdf.mjs tools/brand/brand_guide.html tools/brand/Masar_Markenleitfaden.pdf`.
 `logo_transparent.png` / `logo_negativ.png` (weiß auf Navy) liegen daneben. Claims sind nur Vorschläge, nicht festgelegt.
+
+## Referenzen als Bilderstrecken
+`python3 tools/seo/referenzen_slides.py` baut auf `referenzen.html` je Leistung eine Slideshow (Leuchtreklame, Schaufenster & Folien,
+Fahrzeuge, Druck & Gastro-Werbung, Aus der Werkstatt, Digital Signage, Grafikdesign) – Bilder, Texte und Reihenfolge stehen in `KATEGORIEN`.
+Neue Fotos: farbkorrigiert als `referenzen/<name>.webp` (max. 1600 px) + `<name>-720.webp` ablegen, Eintrag ergänzen, Skript ausführen,
+danach `referenzen_einbau.py` (Leistungsseiten) und `a11y.py`. Nur echte, fertige Arbeiten – Visualisierungen/Mockups nicht als Referenz.
