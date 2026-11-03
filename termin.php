@@ -125,7 +125,7 @@ if ($mail !== '') {
         . "  {$wann} (" . anf_termin_dauer($art) . " Min.)\n  " . ANF_TERMIN_ARTEN[$art] . ' · ' . ANF_SPRACHEN[$spr] . "\n  Terminnummer: {$nr}\n\n"
         . $wie . "\n\nSie möchten den Termin verschieben oder absagen? Antworten Sie einfach auf diese E-Mail "
         . "oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
-        . "Stand Ihres Termins und Ihrer Anfrage: https://masar-werbeagentur.de/status.html?nr={$nr}\n\n"
+        . "Stand Ihres Termins und Ihrer Anfrage (dort können Sie den Termin auch verschieben oder absagen): " . anf_status_link($nr) . "\n\n"
         , '', true);
 }
 

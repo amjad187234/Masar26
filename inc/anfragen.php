@@ -86,7 +86,8 @@ function anf_db(): ?PDO
         $pdo->exec('CREATE INDEX IF NOT EXISTS i_stadt ON anfragen(stadt)');
         // Beratungstermine (nachgerüstet)
         $spalten = array_column($pdo->query('PRAGMA table_info(anfragen)')->fetchAll(), 'name');
-        foreach (['termin' => 'INTEGER', 'termin_dauer' => 'INTEGER', 'termin_art' => 'TEXT', 'sprache' => 'TEXT', 'erste_reaktion' => 'INTEGER'] as $sp => $typ) {
+        foreach (['termin' => 'INTEGER', 'termin_dauer' => 'INTEGER', 'termin_art' => 'TEXT', 'sprache' => 'TEXT', 'erste_reaktion' => 'INTEGER',
+                  'hinweis' => 'TEXT', 'termin_wunsch' => 'TEXT', 'termin_wunsch_zeit' => 'INTEGER'] as $sp => $typ) {
             if (!in_array($sp, $spalten, true)) $pdo->exec("ALTER TABLE anfragen ADD COLUMN $sp $typ");
         }
         $pdo->exec('CREATE INDEX IF NOT EXISTS i_termin ON anfragen(termin)');
@@ -334,7 +335,8 @@ const ANF_STATUS_KUNDE = [
  * Öffentlicher Status einer Anfrage – nur wenn Telefonnummer (mind. die letzten 6 Ziffern) oder E-Mail passt.
  * Gibt KEINE Kontaktdaten zurück, nur Status, Leistung, Stadt, Datum und ggf. Termin. null = nicht gefunden.
  */
-function anf_status_kunde(string $nr, string $kontakt): ?array
+/** Anfrage nur liefern, wenn Telefonnummer (mind. die letzten 6 Ziffern) oder E-Mail passt; sonst null. */
+function anf_kunde_pruefen(string $nr, string $kontakt): ?array
 {
     $db = anf_db(); if (!$db) return null;
     $nr = strtoupper(trim($nr)); $kontakt = trim($kontakt);
@@ -348,14 +350,85 @@ function anf_status_kunde(string $nr, string $kontakt): ?array
         $ein = preg_replace('/\D/', '', $kontakt) ?? ''; $gesp = preg_replace('/\D/', '', (string) $r['telefon']) ?? '';
         $ok = strlen($ein) >= 6 && strlen($gesp) >= 6 && substr($gesp, -6) === substr($ein, -6);   // +49 176… = 0176…
     }
-    if (!$ok) return null;
+    return $ok ? $r : null;
+}
+
+/** Termin kann vom Kunden geändert/abgesagt werden: liegt mehr als 2 h in der Zukunft, Anfrage nicht abgeschlossen. */
+function anf_termin_aenderbar(array $r): bool
+{
+    return !empty($r['termin']) && (int) $r['termin'] > time() + 2 * 3600 && !in_array($r['status'], ['verloren', 'erledigt'], true);
+}
+
+function anf_status_kunde(string $nr, string $kontakt): ?array
+{
+    $r = anf_kunde_pruefen($nr, $kontakt);
+    if (!$r) return null;
     $k = ANF_STATUS_KUNDE[$r['status']] ?? ANF_STATUS_KUNDE['neu'];
+    $wunsch = (string) ($r['termin_wunsch'] ?? '');
     return [
         'nr' => $r['nr'], 'status' => $r['status'], 'titel' => $k[0], 'text' => $k[1], 'schritt' => $k[2],
         'leistung' => (string) $r['leistung'], 'stadt' => (string) ($r['stadt'] ?? ''),
         'datum' => date('d.m.Y', (int) $r['erstellt']), 'aktualisiert' => date('d.m.Y, H:i', (int) $r['geaendert']) . ' Uhr',
         'termin' => !empty($r['termin']) ? anf_termin_text((int) $r['termin']) . ' · ' . $r['termin_art'] : '',
+        'hinweis' => (string) ($r['hinweis'] ?? ''),
+        'termin_aenderbar' => $wunsch === '' && anf_termin_aenderbar($r),
+        'termin_wunsch' => $wunsch !== '' ? ($wunsch === 'absagen' ? 'Absage' : 'Verschiebung') : '',
     ];
+}
+
+function anf_status_link(string $nr): string
+{
+    return 'https://masar-werbeagentur.de/status.html?nr=' . rawurlencode($nr);
+}
+
+/** Bei diesen Status bekommt der Kunde automatisch eine E-Mail (nur wenn E-Mail vorhanden). */
+const ANF_STATUS_MAIL = ['angebot', 'auftrag', 'erledigt'];
+
+/** Kunden-E-Mail bei Statuswechsel (mit Hinweis für den Kunden und Status-Link). */
+function anf_status_mail(string $nr): bool
+{
+    $db = anf_db(); if (!$db) return false;
+    $st = $db->prepare('SELECT * FROM anfragen WHERE nr = ?'); $st->execute([$nr]); $r = $st->fetch();
+    if (!$r || (string) $r['email'] === '' || !in_array($r['status'], ANF_STATUS_MAIL, true)) return false;
+    $k = ANF_STATUS_KUNDE[$r['status']];
+    $hinweis = trim((string) ($r['hinweis'] ?? ''));
+    $name = trim((string) $r['name']);
+    return anf_mail((string) $r['email'], "Ihre Anfrage {$nr}: {$k[0]} – Masar Werbeagentur",
+        ($name !== '' ? "Guten Tag {$name}," : 'Guten Tag,') . "\n\n"
+        . "es gibt Neuigkeiten zu Ihrer Anfrage {$nr}" . ((string) $r['leistung'] !== '' ? ' (' . anf_kurz((string) $r['leistung'], 80) . ')' : '') . ":\n\n"
+        . "  {$k[0]}\n\n{$k[1]}\n\n"
+        . ($hinweis !== '' ? "Hinweis: {$hinweis}\n\n" : '')
+        . 'Den aktuellen Stand sehen Sie jederzeit hier: ' . anf_status_link($nr) . "\n\n"
+        . "Fragen? Antworten Sie einfach auf diese E-Mail oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n",
+        '', true);
+}
+
+/**
+ * Kunde möchte den Termin verschieben oder absagen (von /status.html). Der Termin bleibt bestehen, bis wir ihn
+ * bearbeiten – wir bekommen eine E-Mail und einen Telegram-Hinweis ohne Personendaten.
+ */
+function anf_termin_wunsch(string $nr, string $kontakt, string $art, string $text): string
+{
+    $r = anf_kunde_pruefen($nr, $kontakt);
+    if (!$r) return 'nicht_gefunden';
+    if (!in_array($art, ['absagen', 'verschieben'], true)) return 'fehler';
+    if ((string) ($r['termin_wunsch'] ?? '') !== '' || !anf_termin_aenderbar($r)) return 'nicht_moeglich';
+    $text = anf_kurz(trim($text), 500);
+    $wann = anf_termin_text((int) $r['termin']);
+    $zeile = date('d.m.Y H:i') . ' – Kunde möchte den Termin ' . ($art === 'absagen' ? 'ABSAGEN' : 'VERSCHIEBEN') . ($text !== '' ? ': ' . $text : '');
+    $db = anf_db();
+    $db->prepare('UPDATE anfragen SET termin_wunsch = ?, termin_wunsch_zeit = ?, notiz = CASE WHEN COALESCE(notiz, \'\') = \'\' THEN ? ELSE notiz || char(10) || ? END WHERE nr = ?')
+       ->execute([$art, time(), $zeile, $zeile, $r['nr']]);
+    anf_mail('info@masar-werbeagentur.de', "[{$r['nr']}] Termin {$wann}: Kunde möchte " . ($art === 'absagen' ? 'absagen' : 'verschieben'),
+        $zeile . "\n\nTermin: {$wann}\nName: {$r['name']}\nTelefon: {$r['telefon']}\nE-Mail: {$r['email']}\n\n"
+        . 'Übersicht: https://masar-werbeagentur.de/admin/anfragen.php?nr=' . rawurlencode((string) $r['nr']) . "\n", (string) $r['email']);
+    $k = anf_konfig();
+    $token = (string) ($k['telegram_token'] ?? ''); $chat = (string) ($k['telegram_chat'] ?? '');
+    if ($token !== '' && $chat !== '') {   // ohne Personendaten
+        anf_telegram_senden($token, $chat, ($art === 'absagen' ? '❌ الزبون بدو يلغي الموعد ' : '🔁 الزبون بدو يأجّل الموعد ') . $r['nr'] . "\n🗓 " . $wann
+            . "\nالتفاصيل بصفحة الطلب: https://masar-werbeagentur.de/admin/anfragen.php?nr=" . rawurlencode((string) $r['nr']));
+    }
+    return 'ok';
 }
 
 /** Telegram-Hinweis ohne personenbezogene Daten. */

@@ -120,14 +120,20 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && csrf_ok()) {
     $akt = (string) ($_POST['aktion'] ?? '');
     if ($akt === 'speichern' && $nr !== '') {
         $st = (string) ($_POST['status'] ?? 'neu'); if (!isset(ANF_STATUS[$st])) $st = 'neu';
-        $db->prepare("UPDATE anfragen SET status = ?, notiz = ?, geaendert = ?, erste_reaktion = COALESCE(erste_reaktion, CASE WHEN ? <> 'neu' THEN ? END) WHERE nr = ?")->execute([$st, mb_substr((string) ($_POST['notiz'] ?? ''), 0, 5000), time(), $st, time(), $nr]);
+        $alt = $db->prepare('SELECT status, hinweis FROM anfragen WHERE nr = ?'); $alt->execute([$nr]); $alt = $alt->fetch() ?: ['status' => '', 'hinweis' => ''];
+        $hw = mb_substr(trim((string) ($_POST['hinweis'] ?? '')), 0, 500);
+        $db->prepare("UPDATE anfragen SET status = ?, notiz = ?, hinweis = ?, geaendert = ?, erste_reaktion = COALESCE(erste_reaktion, CASE WHEN ? <> 'neu' THEN ? END) WHERE nr = ?")->execute([$st, mb_substr((string) ($_POST['notiz'] ?? ''), 0, 5000), $hw, time(), $st, time(), $nr]);
+        // Kunde per E-Mail informieren: bei neuem Status Angebot/Auftrag/Fertig oder geändertem Hinweis (Häkchen, Standard an)
+        $gemailt = false;
+        if (!empty($_POST['mail_kunde']) && ($alt['status'] !== $st || (string) $alt['hinweis'] !== $hw)) $gemailt = anf_status_mail($nr);
+        if (!empty($_POST['wunsch_ok'])) $db->prepare('UPDATE anfragen SET termin_wunsch = NULL, termin_wunsch_zeit = NULL WHERE nr = ?')->execute([$nr]);
         $neu = trim((string) ($_POST['stadt'] ?? ''));
         if ($neu !== '') {   // Stadt von Hand korrigieren – Region wird daraus neu bestimmt
             [$sname, $sreg] = anf_stadt($neu);
             if ($sreg === 'Sonstige') $sname = mb_substr($neu, 0, 60);
             $db->prepare('UPDATE anfragen SET stadt = ?, region = ? WHERE nr = ?')->execute([$sname, $sreg, $nr]);
         }
-        header('Location: anfragen.php?nr=' . rawurlencode($nr) . '&ok=1'); exit;
+        header('Location: anfragen.php?nr=' . rawurlencode($nr) . '&ok=' . ($gemailt ? '2' : '1')); exit;
     }
     if ($akt === 'loeschen' && $nr !== '') {
         $db->prepare('DELETE FROM anfragen WHERE nr = ?')->execute([$nr]);
@@ -244,7 +250,12 @@ if (isset($_GET['nr'])) {
     if ($r['email'] !== '') $btn .= '<a class="btn l" href="mailto:' . h($r['email']) . '?subject=' . h(rawurlencode('Ihre Anfrage ' . $r['nr'] . ' – Masar Werbeagentur')) . '&body=' . h(rawurlencode($vorlagen['Fotos & Maße erbitten'])) . '">E-Mail schreiben</a> ';
     if ($r['telefon'] !== '') $btn .= '<a class="btn l" href="tel:' . h(preg_replace('/[^\d+]/', '', (string) $r['telefon'])) . '">Anrufen</a>';
     $opt = ''; foreach (ANF_STATUS as $k => $v) $opt .= '<option value="' . $k . '"' . ($r['status'] === $k ? ' selected' : '') . '>' . $v . '</option>';
-    seite($r['nr'], (isset($_GET['ok']) ? '<div class="ok">Gespeichert.</div>' : '')
+    $wunsch = (string) ($r['termin_wunsch'] ?? '');
+    $wunschBox = $wunsch !== '' ? '<div class="ok" style="background:#fff4e5;border-color:#f0a020;color:#7a4a00">'
+        . ($wunsch === 'absagen' ? '❌ Der Kunde möchte den Termin <b>absagen</b>' : '🔁 Der Kunde möchte den Termin <b>verschieben</b>')
+        . (!empty($r['termin_wunsch_zeit']) ? ' (gemeldet am ' . date('d.m.Y, H:i', (int) $r['termin_wunsch_zeit']) . ' Uhr)' : '') . '. Details in der Notiz. '
+        . 'Bitte Kunden kontaktieren; zum Absagen Status „Kein Auftrag“ setzen (gibt die Zeit frei).</div>' : '';
+    seite($r['nr'], (isset($_GET['ok']) ? '<div class="ok">Gespeichert.' . ($_GET['ok'] === '2' ? ' Der Kunde wurde per E-Mail informiert.' : '') . '</div>' : '') . $wunschBox
         . '<p><a href="anfragen.php">← Übersicht</a></p><div class="grid"><div>'
         . '<div class="k"><h1>' . h($r['nr']) . ' <span class="tag">📍 ' . h(($r['stadt'] ?? '') . (($r['region'] ?? '') !== '' && ($r['region'] ?? '') !== ($r['stadt'] ?? '') ? ' · ' . $r['region'] : '')) . '</span> <span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></h1>'
         . '<p class="m">' . date('d.m.Y H:i', (int) $r['erstellt']) . ' · ' . h($r['quelle']) . ($r['seite'] ? ' · <a href="' . h($r['seite']) . '" target="_blank" rel="noopener">Seite</a>' : '') . '</p>'
@@ -252,7 +263,11 @@ if (isset($_GET['nr'])) {
         . '<div class="k"><h2>Antworten</h2><div class="chips" style="gap:8px">' . ($btn ?: '<span class="m">Keine Telefonnummer oder E-Mail angegeben.</span>') . '</div></div>'
         . '<div class="k"><h2>Anfrage</h2><pre>' . h($r['zusammenfassung']) . '</pre></div></div>'
         . '<div><div class="k"><h2>Bearbeiten</h2><form method="post"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="nr" value="' . h($r['nr']) . '"><input type="hidden" name="aktion" value="speichern">'
-        . '<p><label class="m">Status</label><select name="status">' . $opt . '</select></p><p><label class="m">Stadt (bei Bedarf korrigieren)</label><input name="stadt" value="' . h($r['stadt'] ?? '') . '" placeholder="z. B. Köln oder 44137"></p><p><label class="m">Notiz</label><textarea name="notiz" placeholder="z. B. Preis genannt, Termin 26.10., Datei fehlt …">' . h($r['notiz']) . '</textarea></p><button>Speichern</button></form></div>'
+        . '<p><label class="m">Status</label><select name="status">' . $opt . '</select></p><p><label class="m">Stadt (bei Bedarf korrigieren)</label><input name="stadt" value="' . h($r['stadt'] ?? '') . '" placeholder="z. B. Köln oder 44137"></p><p><label class="m">Notiz <small>(nur intern)</small></label><textarea name="notiz" placeholder="z. B. Preis genannt, Termin 26.10., Datei fehlt …">' . h($r['notiz']) . '</textarea></p>'
+        . '<p><label class="m">Hinweis für den Kunden <small>(sieht er auf der Status-Seite)</small></label><textarea name="hinweis" rows="2" maxlength="500" placeholder="z. B. Montage am 12.11. um 10 Uhr">' . h($r['hinweis'] ?? '') . '</textarea></p>'
+        . ($r['email'] !== '' ? '<p><label style="font-weight:400"><input type="checkbox" name="mail_kunde" value="1" checked> Kunden per E-Mail informieren (bei Status Angebot gesendet, Auftrag, Erledigt)</label></p>' : '<p class="m">Keine E-Mail-Adresse – der Kunde sieht den Stand nur auf der Status-Seite.</p>')
+        . ($wunsch !== '' ? '<p><label style="font-weight:400"><input type="checkbox" name="wunsch_ok" value="1"> Terminwunsch erledigt</label></p>' : '')
+        . '<button>Speichern</button></form></div>'
         . '<div class="k"><h2>Löschen</h2><p class="m">Auf Wunsch des Kunden oder wenn die Anfrage erledigt ist (Datenschutz).</p><form method="post" onsubmit="return confirm(\'Anfrage endgültig löschen?\')"><input type="hidden" name="csrf" value="' . h(csrf()) . '"><input type="hidden" name="nr" value="' . h($r['nr']) . '"><input type="hidden" name="aktion" value="loeschen"><button class="btn r">Endgültig löschen</button></form></div></div></div>');
 }
 
@@ -306,7 +321,7 @@ $tr = '';
 foreach ($rows as $r) {
     $alt = time() - (int) $r['erstellt']; $warn = $r['status'] === 'neu' && empty($r['termin']) && $alt > 86400;
     $tr .= '<a class="karte st-' . h($r['status']) . '" href="?nr=' . h(rawurlencode($r['nr'])) . '">'
-         . '<div class="oben"><b>' . h($r['nr']) . '</b><span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></div>'
+         . '<div class="oben"><b>' . h($r['nr']) . '</b>' . (!empty($r['termin_wunsch']) ? '<span class="tag" style="background:#fff4e5;color:#7a4a00">' . ($r['termin_wunsch'] === 'absagen' ? '❌ Absage' : '🔁 Verschieben') . '</span>' : '') . '<span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></div>'
          . '<div class="was">' . h($r['leistung'] !== '' ? $r['leistung'] : 'Anfrage') . '</div>'
          . '<div class="infos"><span>📍 ' . h($r['stadt'] ?? '') . '</span>' . (!empty($r['termin']) ? '<span class="termin">📅 ' . h(anf_termin_text((int) $r['termin'])) . '</span>' : '')
          . '<span class="q">' . h($r['quelle']) . '</span></div>'

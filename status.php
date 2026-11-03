@@ -2,6 +2,7 @@
 /**
  * Anfrage-Status für Kunden: POST {nr, kontakt} → Status, Leistung, Stadt, Termin (keine Kontaktdaten).
  * Kontakt = Telefonnummer (letzte 6 Ziffern müssen passen) oder E-Mail-Adresse der Anfrage.
+ * Mit aktion = absagen|verschieben (+ text) meldet der Kunde einen Terminwunsch (Termin bleibt, bis wir ihn bearbeiten).
  */
 
 declare(strict_types=1);
@@ -27,6 +28,14 @@ $zeiten[] = $jetzt;
 $d = json_decode((string) file_get_contents('php://input'), true);
 $nr = is_array($d) && is_string($d['nr'] ?? null) ? mb_substr($d['nr'], 0, 20) : '';
 $kontakt = is_array($d) && is_string($d['kontakt'] ?? null) ? mb_substr($d['kontakt'], 0, 160) : '';
+// Termin verschieben/absagen: {nr, kontakt, aktion: "absagen"|"verschieben", text}
+$aktion = is_array($d) && is_string($d['aktion'] ?? null) ? $d['aktion'] : '';
+if ($aktion !== '') {
+    $text = is_string($d['text'] ?? null) ? mb_substr($d['text'], 0, 500) : '';
+    $e = anf_termin_wunsch($nr, $kontakt, $aktion, $text);
+    if ($e === 'nicht_gefunden') antwort(['fehler' => 'Keine Anfrage gefunden.'], 404);
+    if ($e !== 'ok') antwort(['fehler' => 'Das ist online leider nicht mehr möglich. Bitte rufen Sie uns an: 0178 514 3918.'], 409);
+}
 $r = anf_status_kunde($nr, $kontakt);
 if (!$r) antwort(['fehler' => 'Keine Anfrage gefunden. Bitte Anfragenummer (z. B. ANF-2026-0012) und die Telefonnummer oder E-Mail aus Ihrer Anfrage prüfen.'], 404);
 antwort($r);

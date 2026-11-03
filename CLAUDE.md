@@ -90,7 +90,11 @@ solche Festlegung im Bericht nennen.
   in Assistent und Terminbuchung → „Willkommen zurück“ und vorausgefüllte Felder. Anfrage-Status für Kunden:
   `status.html` + `status.js` + `status.php` (Nummer + Telefon/E-Mail, nur Status/Leistung/Ort/Termin,
   20 Abfragen/h je IP); Link in Bestätigungsmails, danke.html (?nr=), Terminbestätigung und Footer.
-  Status in der Übersicht aktuell halten – Kunden sehen ihn.
+  Status in der Übersicht aktuell halten – Kunden sehen ihn. Seit 03.11.2026: Feld „Hinweis für den Kunden“ (auf der Status-Seite
+  sichtbar), automatische Kunden-E-Mail bei Status Angebot/Auftrag/Erledigt (`anf_status_mail`, Häkchen in der Detailansicht,
+  auch über Telegram-Tasten), Kunde kann Termine > 2 h vorher auf status.html verschieben/absagen lassen (nur Wunsch:
+  Spalte `termin_wunsch`, E-Mail + Telegram, Markierung in der Übersicht; Termin bleibt bis zur Bearbeitung).
+  Erinnerungsmail 24 h vorher enthält den Status-Link.
 - Abschluss-Animation `fertig.js` (auf allen Seiten): Ring 0→100 % gekoppelt an den echten Versand, dann Haken, „Danke!“, Anfragenummer, Farbregen. API `MasarFertig.start().done/fail`; genutzt in Assistent (WhatsApp-Knopf erst danach), Terminbuchung, danke.html und automatisch bei Formularen an /kontakt.php.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`

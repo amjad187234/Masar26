@@ -44,6 +44,10 @@
     + '.st-list li b{display:block;color:var(--navy,#132e50)}.st-list li small{color:var(--muted,#5a7070)}'
     + '.st-list button{background:#e8f8f5;border:1px solid var(--teal,#58d0bd);color:var(--navy,#132e50);border-radius:8px;padding:8px 12px;font:700 13.5px Barlow,sans-serif;cursor:pointer;white-space:nowrap}'
     + '.st-weg-l{background:none;border:0;color:var(--muted,#5a7070);text-decoration:underline;font:13px Barlow,sans-serif;cursor:pointer;margin-top:.8rem;padding:0}'
+    + '.st-hw{background:rgba(88,208,189,.14);border-left:3px solid #58d0bd;border-radius:8px;padding:.7rem .9rem;margin:.2rem 0 1rem;font-size:15px;line-height:1.5}.st-hw b{display:block;color:#58d0bd;font-size:12.5px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.15rem}'
+    + '.st-tw{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 .9rem}.st-tw .st-btn{border:0;cursor:pointer;background:rgba(255,255,255,.12);color:#fff}.st-tw .st-ab{background:none;border:1px solid rgba(255,255,255,.35)}'
+    + '.st-twf{margin:0 0 1rem}.st-twf label{color:#fff}.st-twf label small{color:rgba(255,255,255,.65)}.st-twf textarea{width:100%;font:16px Barlow,sans-serif;border:0;border-radius:8px;padding:10px 12px;margin-bottom:.6rem;color:#132e50}.st-twf .st-btn{border:0;cursor:pointer}'
+    + '.st-ok{background:rgba(37,211,102,.16);border-radius:8px;padding:.7rem .9rem;color:#fff!important}'
     + '@media(max-width:560px){.st-card{padding:1.1rem}.st-weg div{font-size:10.5px}.st-info b{flex-basis:92px}}';
   css += '.st-res{animation:masarIn .45s ease both}@keyframes masarIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.st-res{animation:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
@@ -65,19 +69,24 @@
   box.appendChild(f);
   var aus = el('div'); box.appendChild(aus);
 
-  function abfragen(nr, kontakt) {
+  var letzterKontakt = '';
+  function abfragen(nr, kontakt, extra) {
     err.textContent = ''; go.disabled = true; go.textContent = 'Wird geladen …';
-    fetch('/status.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ nr: nr, kontakt: kontakt }), credentials: 'same-origin' })
+    letzterKontakt = kontakt;
+    var daten = { nr: nr, kontakt: kontakt };
+    if (extra) { daten.aktion = extra.aktion; daten.text = extra.text; }
+    return fetch('/status.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(daten), credentials: 'same-origin' })
       .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (x) {
         go.disabled = false; go.textContent = 'Status anzeigen';
-        if (!x.ok) { err.textContent = (x.j && x.j.fehler) || 'Keine Anfrage gefunden.'; return; }
-        zeigen(x.j);
+        if (!x.ok) { err.textContent = (x.j && x.j.fehler) || 'Keine Anfrage gefunden.'; return false; }
+        zeigen(x.j, extra ? 'gesendet' : '');
+        return true;
       })
       .catch(function () { go.disabled = false; go.textContent = 'Status anzeigen'; err.textContent = 'Keine Verbindung. Bitte später erneut versuchen.'; });
   }
 
-  function zeigen(j) {
+  function zeigen(j, meldung) {
     aus.innerHTML = '';
     var c = el('div', 'st-card st-res');
     c.appendChild(txt('div', 'st-nr', j.nr + ' · Anfrage vom ' + j.datum));
@@ -91,10 +100,35 @@
       Array.prototype.forEach.call(weg.children, function (d, i) { if (i < j.schritt) setTimeout(function () { d.classList.add('an'); }, 120 + i * 180); });
     }
     var ul = el('ul', 'st-info');
+    if (j.hinweis) { var hw = el('div', 'st-hw'); hw.appendChild(txt('b', '', 'Hinweis von uns')); hw.appendChild(txt('span', '', j.hinweis)); c.appendChild(hw); }
     [['Leistung', j.leistung], ['Ort', j.stadt], ['Termin', j.termin], ['Aktualisiert', j.aktualisiert]].forEach(function (z) {
       if (z[1]) ul.appendChild(el('li', '', '<b>' + z[0] + '</b><span>' + esc(z[1]) + '</span>'));
     });
     c.appendChild(ul);
+    // Termin verschieben / absagen
+    if (j.termin_wunsch) {
+      c.appendChild(txt('p', 'st-ok', (meldung ? 'Danke! ' : '') + 'Ihr Wunsch zur ' + j.termin_wunsch + ' des Termins ist bei uns eingegangen. Wir melden uns kurzfristig bei Ihnen.'));
+    } else if (j.termin_aenderbar) {
+      var tw = el('div', 'st-tw');
+      var b1 = txt('button', 'st-btn', 'Termin verschieben'); b1.type = 'button';
+      var b2 = txt('button', 'st-btn st-ab', 'Termin absagen'); b2.type = 'button';
+      tw.appendChild(b1); tw.appendChild(b2); c.appendChild(tw);
+      var fm = el('div', 'st-twf'); fm.hidden = true; c.appendChild(fm);
+      var oeffnen = function (aktion) {
+        fm.hidden = false; fm.innerHTML = '';
+        var lb = el('label', '', aktion === 'absagen' ? 'Möchten Sie uns noch etwas mitteilen? <small>(optional)</small>' : 'Wann passt es Ihnen besser? <small>(z. B. „nächste Woche vormittags“)</small>');
+        var ta = el('textarea'); ta.rows = 2; ta.maxLength = 500; lb.htmlFor = ta.id = 'st-tw-text';
+        var ok = txt('button', 'st-btn tl', aktion === 'absagen' ? 'Absage senden' : 'Wunsch senden'); ok.type = 'button';
+        ok.addEventListener('click', function () {
+          if (aktion === 'verschieben' && ta.value.trim().length < 3) { ta.focus(); return; }
+          ok.disabled = true; ok.textContent = 'Wird gesendet …';
+          abfragen(j.nr, letzterKontakt, { aktion: aktion, text: ta.value.trim() }).then(function (gut) { if (!gut) { ok.disabled = false; ok.textContent = 'Erneut senden'; } });
+        });
+        fm.appendChild(lb); fm.appendChild(ta); fm.appendChild(ok); ta.focus();
+      };
+      b1.addEventListener('click', function () { oeffnen('verschieben'); });
+      b2.addEventListener('click', function () { oeffnen('absagen'); });
+    }
     var b = el('div', 'st-btns');
     var wa = txt('a', 'st-btn gr', 'Frage per WhatsApp'); wa.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hallo, ich habe eine Frage zu meiner Anfrage ' + j.nr + '.'); wa.target = '_blank'; wa.rel = 'noopener noreferrer'; b.appendChild(wa);
     if (j.schritt === 5 || j.schritt === 0) { var nb = txt('a', 'st-btn tl', 'Neue Anfrage stellen'); nb.href = '/#kontakt'; b.appendChild(nb); }

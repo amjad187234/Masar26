@@ -120,8 +120,10 @@ function sek_status(string $nr, string $status): bool
 {
     if (!isset(ANF_STATUS[$status])) return false;
     $db = anf_db(); if (!$db) return false;
+    $alt = $db->prepare('SELECT status FROM anfragen WHERE nr = ?'); $alt->execute([$nr]); $alt = (string) $alt->fetchColumn();
     $st = $db->prepare("UPDATE anfragen SET status = ?, geaendert = ?, erste_reaktion = COALESCE(erste_reaktion, CASE WHEN ? <> 'neu' THEN ? END) WHERE nr = ?");
     $st->execute([$status, time(), $status, time(), $nr]);
+    if ($st->rowCount() > 0 && $alt !== $status) anf_status_mail($nr);   // Kunde informieren (nur Angebot/Auftrag/Fertig, nur mit E-Mail)
     return $st->rowCount() > 0;
 }
 
@@ -314,7 +316,8 @@ function sek_cron(): array
         $wann = anf_termin_text((int) $r['termin']);
         if (sek_einmal('kundenmail:' . $r['nr'], static fn() => anf_mail((string) $r['email'], "Erinnerung: Ihre Beratung am {$wann} – Masar Werbeagentur",
                 'Guten Tag ' . $r['name'] . ",\n\nwir freuen uns auf Ihre kostenlose Beratung:\n\n  {$wann}\n  " . $r['termin_art'] . ' · ' . $r['sprache'] . "\n  Terminnummer: " . $r['nr'] . "\n\n"
-                . "Falls etwas dazwischenkommt, antworten Sie einfach auf diese E-Mail oder schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
+                . "Falls etwas dazwischenkommt, können Sie den Termin hier verschieben oder absagen: " . anf_status_link((string) $r['nr']) . "\n"
+                . "Oder antworten Sie einfach auf diese E-Mail bzw. schreiben Sie uns per WhatsApp: https://wa.me/491785143918\n\n"
                 , '', true))) {
             $log[] = 'Kundenmail ' . $r['nr'];
         }
