@@ -7,8 +7,10 @@ from PIL import Image
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 A, Z = '<!-- referenzen:start -->', '<!-- referenzen:ende -->'
-LR = [('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtreklame-berlin-04', 'Zweisprachige Anlage, deutsch und arabisch')]
+LR = [('leuchtkasten-schaufenster-fahrschule-01', 'Leuchtkasten über dem Schaufenster einer Fahrschule'), ('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten beim Testlauf in der Werkstatt')]
 FZ = [('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung, fertig'), ('fahrzeugfolierung-berlin-01', 'Vollfolierung eines Imbisswagens'), ('fahrzeugbeschriftung-berlin-01', 'Folie wird auf die Schiebetür aufgezogen')]
+SF = [('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN Berlin Gallery'), ('schaufensterfolie-fahrschule-01', 'Bedruckte Schaufensterfolie mit freiem Sichtfenster'), ('fensterbeschriftung-praxis-gold-01', 'Goldene Folienschrift auf dem Oberlicht einer Praxis')]
+DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Werkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('werkstatt-farbfaecher-01', 'Farbton gemeinsam am Farbfächer auswählen')]
 MIX = [('leuchtreklame-berlin-08', 'Leuchtreklame am Eröffnungstag'), ('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung'), ('schaufensterbeschriftung-showroom-berlin-02', 'Schaufensterbeschriftung für LAUFEN Berlin Gallery')]
 SEITEN = {
     'leuchtreklame-berlin.html': ('Leuchtreklame aus unserer Werkstatt', LR),
@@ -16,6 +18,10 @@ SEITEN = {
     'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung aus unserer Werkstatt', FZ),
     'lkw-beschriftung-berlin.html': ('Fahrzeuge aus unserer Werkstatt', FZ),
     'werbetechnik.html': ('Werbetechnik aus unserer Werkstatt', MIX),
+    'schaufensterbeschriftung-berlin.html': ('Schaufenster aus unserer Werkstatt', SF),
+    'fensterfolie-berlin.html': ('Fensterfolie aus unserer Werkstatt', SF),
+    'print.html': ('Druck aus unserer Werkstatt', DR),
+    'pvc-banner-berlin.html': ('Großformatdruck aus unserer Werkstatt', DR),
     'werbeagentur-nrw.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
     'werbeagentur-hamburg.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
     'leuchtreklame-nrw.html': ('Leuchtreklame aus unserer Werkstatt in Berlin', LR),
