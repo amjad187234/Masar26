@@ -438,6 +438,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/admin/*","/*.php","/*.php?*","/tools/*","/*.pdf"]}},{"not":{"selector_matches":"[rel~=nofollow],[target=_blank]"}}]},"eagerness":"moderate"}]}</script>
 <style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>
 <!-- schnell:ende -->
+<style id="ki-hero">.hero-demo{color:rgba(255,255,255,.85);max-width:400px;margin:0 auto}.hero-visual>.hero-demo{max-width:400px!important}@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.8rem}.hero-visual .kd-in{height:500px}}@media(max-width:420px){.hero-visual .kd-in{height:470px}.kd-w{max-height:104px}}</style>
 <!-- umbruch:start -->
 <style>h1,h2,h3,h4,h5,p,li,a,span,figcaption,td,th,.sec-title,.ph-title{-webkit-hyphens:manual!important;hyphens:manual!important}.nw{white-space:nowrap}h1,h2,h3,h4,.sec-title,.ph-title{overflow-wrap:normal!important;word-break:normal!important}</style>
 <script>(function(){function fit(){document.querySelectorAll("h1,h2,h3,.sec-title,.ph-title,.hero h1").forEach(function(h){h.style.fontSize="";if(h.clientWidth<40)return;var s=parseFloat(getComputedStyle(h).fontSize),min=s*0.45,n=0;while(h.scrollWidth>h.clientWidth+1&&s>min&&n<30){s*=0.94;h.style.fontSize=s+"px";n++;}});}var t;window.addEventListener("resize",function(){clearTimeout(t);t=setTimeout(fit,150);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);document.addEventListener("DOMContentLoaded",fit);window.addEventListener("load",fit);})();</script>
@@ -541,11 +542,11 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
           <a href="tel:01785143918" class="btn btn-outline"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>0178 514 3918</a>
         </div>
         <div class="hero-trust">
-          <span class="hero-trust-txt">Für Unternehmen und Praxen · Jedes System einzeln gebaut</span>
+          <span class="hero-trust-txt">Live ausprobieren: Branche wählen und losschreiben →</span>
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/ki-loesungen.webp" srcset="/ki-loesungen-360.webp 360w, /ki-loesungen-540.webp 540w, /ki-loesungen-720.webp 720w, /ki-loesungen.webp 1080w" sizes="360px" width="1080" height="1350" alt="KI-Lösungen Berlin – KI-Agenten und Automatisierung von Masar Werbeagentur" loading="eager" fetchpriority="high">
+        <div class="hero-demo" id="demo" data-ki-loesung></div>
       </div>
     </div>
   </div>
@@ -562,6 +563,44 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
   </div>
 </div>
 
+<section class="section" id="anfrage-assistent">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Unsere Lösung</span>
+      <h2 class="sec-title">Der <span class="nw">KI-Anfrage-Assistent</span> – <em>fertig für Ihre Website</em></h2>
+      <p class="sec-sub">Ein Assistent, der rund um die Uhr Anfragen entgegennimmt, die fehlenden Angaben nachfragt, Termine bucht und Ihnen alles sortiert aufs Handy schickt. Oben können Sie ihn für Ihre Branche ausprobieren.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item"><div class="why-num">1</div><div><h3>Nimmt jede Anfrage vollständig auf</h3><p>Leistung, Umfang, Zeitraum, Fotos und Kontakt – bevor Sie zurückrufen. Auch abends und am Wochenende.</p></div></div>
+      <div class="why-item"><div class="why-num">2</div><div><h3>Bucht Termine selbst</h3><p>Besichtigung, Beratung oder Rückruf aus Ihren freien Zeiten, mit Bestätigung und Erinnerung am Vortag.</p></div></div>
+      <div class="why-item"><div class="why-num">3</div><div><h3>Spricht die Sprache Ihrer Kunden</h3><p>Anfragen auf Türkisch, Arabisch, Englisch und mehr – für Sie auf Deutsch zusammengefasst.</p></div></div>
+      <div class="why-item"><div class="why-num">4</div><div><h3>Meldet sich auf Ihrem Handy</h3><p>Jede neue Anfrage als kurze Nachricht per Telegram oder E-Mail, dazu eine Übersicht aller Anfragen mit Status.</p></div></div>
+    </div>
+    <div class="reveal" style="max-width:880px;margin:2rem auto 0;background:var(--off,#f4f7f7);border:1px solid var(--border,#e0eaea);border-radius:14px;padding:1.4rem 1.6rem">
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;text-transform:uppercase;color:var(--navy,#132e50);font-size:1.25rem;margin:0 0 .6rem">Das ist dabei</h3>
+      <ul style="margin:0;padding-left:1.2rem;line-height:1.8;color:var(--text,#1a2a2a)">
+        <li>Einrichtung auf Ihrer Website – mit Ihren Leistungen, Texten und Öffnungszeiten</li>
+        <li>Online-Terminbuchung mit Bestätigung und Erinnerung</li>
+        <li>Benachrichtigung per Telegram oder E-Mail, Übersicht aller Anfragen</li>
+        <li>Auf Wunsch WhatsApp über die WhatsApp Business Platform</li>
+        <li>Klarer KI-Hinweis im Chat (EU-KI-Verordnung), Datenschutztexte und AV-Vertrag</li>
+        <li>Einweisung Ihres Teams und Betreuung in den ersten Wochen</li>
+      </ul>
+      <p style="margin:1rem 0 0;color:var(--muted,#5a7070)">So läuft es bei uns selbst: Unser eigener <a href="/#kontakt" style="color:var(--teal-ink,#177567);font-weight:700">Anfrage-Assistent</a>, die <a href="/termin.html" style="color:var(--teal-ink,#177567);font-weight:700">Terminbuchung</a> und die <a href="/status.html" style="color:var(--teal-ink,#177567);font-weight:700">Status-Seite</a> sind jeden Tag in Betrieb.</p>
+      <p style="margin:1rem 0 0"><a href="#kontakt" class="btn btn-teal">Vorschau für meinen Betrieb anfragen</a></p>
+    </div>
+  </div>
+</section>
+<section class="section bg-alt" id="bausteine">
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Weitere Bausteine</span>
+      <h2 class="sec-title">Noch mehr <em>zum Ausprobieren</em></h2>
+      <p class="sec-sub">Online-Termine, ein vorsortiertes Postfach und ein Assistent für Ihre eigenen Unterlagen.</p>
+    </div>
+    <div data-ki-bausteine="firma" class="reveal"></div>
+  </div>
+</section>
 <section class="section">
   <div class="container">
     <div class="sec-head reveal">
@@ -1001,5 +1040,6 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
 <script src="/reveal-fallback.js" defer></script>
 <script src="/fab-offset.js" defer></script>
 <script src="/form-guard.js" defer></script>
+<script src="/ki-demo.js?v=3" defer></script>
 </body>
 </html>

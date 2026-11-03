@@ -190,7 +190,7 @@ def nachbearbeiten(p):
         h = h.replace('</head>', '<style id="ki-hero">.hero-demo{color:rgba(255,255,255,.85)}.hero-visual .hero-demo .kd{max-width:380px}.hero-visual>.hero-demo{max-width:380px!important}@media(max-width:900px){.hero-visual .kd-in{height:500px}}@media(max-width:420px){.hero-visual .kd-in{height:470px}.kd-w{max-height:104px}}</style>\n</head>', 1)
     h = h.replace('Foto per WhatsApp schicken', 'Per WhatsApp schreiben').replace('<a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>', '<a href="#kontakt" class="btn btn-teal">Erstgespräch anfragen</a>', 1)
     if '/ki-demo.js' not in h:
-        h = h.replace('</body>', '<script src="/ki-demo.js?v=2" defer></script>\n</body>', 1)
+        h = h.replace('</body>', '<script src="/ki-demo.js?v=3" defer></script>\n</body>', 1)
     open(f, 'w', encoding='utf-8').write(h)
 
 

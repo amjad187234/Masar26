@@ -2,7 +2,8 @@
  * Masar – Vorführungen digitaler Assistenten für Praxen und Pflegedienste.
  * Reine Demo im Browser: keine KI-Anfrage, keine Daten werden gesendet oder gespeichert.
  *   <div data-ki-demo="praxis|pflege"></div>          Chat-/WhatsApp-Assistent (Knöpfe + freie Eingabe)
- *   <div data-ki-bausteine="praxis|pflege"></div>     weitere Bausteine: Online-Termin, Postfach, Wissens-Assistent
+ *   <div data-ki-bausteine="praxis|pflege|firma"></div> weitere Bausteine: Online-Termin, Postfach, Wissens-Assistent
+ *   <div data-ki-loesung></div>                     Anfrage-Assistent mit Branchen-Umschalter (Handwerk, Hausverwaltung, Werkstatt, Restaurant, Praxis, Pflege)
  *   <script src="/ki-demo.js" defer></script>
  */
 (function () {
@@ -82,6 +83,85 @@
     }
   };
 
+
+  var HANDY = function (t) { return ['handy', t]; };
+  SZ.handwerk = {
+    hinweis: 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Das verbindliche Angebot erstellt der Betrieb.',
+    name: 'Anfrage-Assistent', sub: 'Beispiel: Malerbetrieb · Berlin',
+    start: 'Hallo! Ich nehme Ihre Anfrage für den Malerbetrieb auf – auch abends und am Wochenende. Worum geht es?',
+    wahl: [['Angebot anfragen', 'ang'], ['Termin vor Ort', 'vorort'], ['Preis ungefähr?', 'preis']],
+    ph: 'z. B. „Wohnzimmer streichen, ca. 25 m²“',
+    erkennen: [[/[؀-ۿ]/, 'ar'], [/preis|kost|teuer|euro|€/i, 'preis'], [/besichtig|vor ort|termin|vorbei/i, 'vorort'], [/streich|maler|tapez|wand|decke|zimmer|wohnung|fassade|m²|qm/i, 'ang']],
+    wege: {
+      ang: [['bot', 'Gern. Was soll gemacht werden?'], ['wahl', [['Wohnung streichen', 'ang2'], ['Fassade', 'ang2'], ['Büro / Laden', 'ang2']]]],
+      ang2: [['bot', 'Wie groß ungefähr?'], ['wahl', [['1 Zimmer', 'ang3'], ['2–3 Zimmer', 'ang3'], ['ganze Wohnung', 'ang3']]]],
+      ang3: [['bot', 'Bis wann soll es fertig sein? Fotos können Sie gleich hier hochladen.'], ['wahl', [['In den nächsten 4 Wochen', 'ang4'], ['Flexibel', 'ang4']]]],
+      ang4: [['bot', 'Danke! Ihre Anfrage ist vollständig. Der Betrieb meldet sich mit einem Angebot oder einem Besichtigungstermin.'],
+        HANDY('Neue Anfrage: Wohnung streichen · 2–3 Zimmer · in 4 Wochen · Fotos dabei'),
+        ['karte', ['Vollständige Anfrage', 'Leistung, Umfang, Zeitraum und Fotos auf einen Blick', 'Kein Rückruf nötig, um die Basics zu klären', 'Angebot schreibt weiterhin der Chef']]],
+      vorort: [['bot', 'Für eine Besichtigung habe ich diese Zeiten frei:'], ['wahl', [['Mo 08:00', 'vorort2'], ['Mi 16:00', 'vorort2'], ['Sa 10:00', 'vorort2']]]],
+      vorort2: [['bot', 'Eingetragen! Sie bekommen eine Bestätigung und am Vortag eine Erinnerung.'], HANDY('Besichtigung gebucht · Termin im Kalender'),
+        ['karte', ['Termin direkt im Kalender', 'aus freien Zeiten gewählt, keine Doppelbuchung', 'Erinnerung am Vortag', 'weniger Telefon-Pingpong']]],
+      preis: [['bot', 'Laut Preisliste des Betriebs beginnt Wohnungsanstrich ab 9 € pro m² Wandfläche – der genaue Preis kommt nach Besichtigung. (Beispielwert dieser Demo.)'], ['wahl', [['Angebot anfragen', 'ang']]]],
+      ar: [['bot', 'أهلاً! ممكن تكتبلي شو بدك ندهن وقديش المساحة تقريباً؟ رح أرسل طلبك للشركة بالألماني.'],
+        ['karte', ['Anfrage auf Arabisch', 'Für den Betrieb übersetzt: „Kunde möchte die Wohnung streichen lassen“', 'Antwort an den Kunden auf Arabisch', 'mehr Kunden, weniger Missverständnisse']]]
+    }
+  };
+  SZ.hausverwaltung = {
+    hinweis: 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Bei Gasgeruch, Feuer oder Rauch sofort 112.',
+    name: 'Service-Assistent', sub: 'Beispiel: Hausverwaltung · Berlin',
+    start: 'Guten Tag! Ich bin der digitale Assistent der Hausverwaltung. Was möchten Sie melden?',
+    wahl: [['Schaden melden', 'schaden'], ['Frage zur Nebenkostenabrechnung', 'nk'], ['Schlüssel / Chip verloren', 'key']],
+    ph: 'z. B. „Heizung ist kalt“',
+    erkennen: [[/gas|brand|feuer|rauch/i, 'not'], [/heiz|wasser|rohr|tropf|schimmel|licht|aufzug|kaputt|defekt|schaden/i, 'schaden'], [/nebenkost|abrechnung|betriebskost/i, 'nk'], [/schlüssel|chip|ausgesperrt/i, 'key']],
+    wege: {
+      schaden: [['bot', 'Was ist betroffen?'], ['wahl', [['Heizung', 'schaden2'], ['Wasserschaden', 'schaden2'], ['Aufzug', 'schaden2']]]],
+      schaden2: [['bot', 'Wo genau? Sie können auch ein Foto anhängen.'], ['wahl', [['Hinterhaus, 3. OG links', 'schaden3']]]],
+      schaden3: [['bot', 'Danke, ich habe ein Ticket angelegt. Der Hausmeister ist informiert und meldet sich.'], HANDY('Ticket #2481 · Heizung kalt · Hinterhaus 3. OG li. · Hausmeister zugewiesen'),
+        ['karte', ['Ticket statt Anrufkette', 'Ort, Art und Foto in einer Meldung', 'Hausmeister automatisch informiert', 'Status für Mieter jederzeit abrufbar']]],
+      nk: [['bot', 'Ihre Frage gebe ich an die Buchhaltung weiter. Sie bekommen innerhalb von drei Werktagen eine Antwort.'],
+        ['karte', ['Frage zur Abrechnung', 'Mieter, Objekt und Frage sauber zugeordnet', 'Antwortentwurf für die Buchhaltung', 'Freigabe durch einen Menschen']]],
+      key: [['bot', 'Ein neuer Schlüssel braucht eine Bestätigung. Ich bitte die Verwaltung um Rückruf – wann sind Sie erreichbar?'], ['wahl', [['Heute ab 17 Uhr', 'key2']]]],
+      key2: [['bot', 'Notiert, Sie werden zurückgerufen.'], ['karte', ['Schlüssel-Anfrage', 'Rückruf zur Identitätsprüfung', 'Keine Freigabe durch die KI', 'Sicherheit vor Bequemlichkeit']]],
+      not: [['bot', 'Bei Gasgeruch, Feuer oder Rauch: Gebäude verlassen und sofort 112 anrufen. Dieser Chat ist nicht für Notfälle gedacht.'], ['karte', ['Notfall erkannt', 'Sofortiger Hinweis auf 112', 'Kein Ticket, keine Wartezeit', 'Sicherheit zuerst']]]
+    }
+  };
+  SZ.werkstatt = {
+    hinweis: 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Verbindliche Auskünfte gibt die Werkstatt.',
+    name: 'Werkstatt-Assistent', sub: 'Beispiel: Kfz-Werkstatt · Berlin',
+    start: 'Hallo! Ich bin der digitale Assistent der Werkstatt. Wie kann ich helfen?',
+    wahl: [['Termin für Inspektion', 'insp'], ['Reifenwechsel', 'reifen'], ['Ist mein Auto fertig?', 'fertig']],
+    ph: 'z. B. „Reifen wechseln nächste Woche“',
+    erkennen: [[/reifen|winter|sommer/i, 'reifen'], [/fertig|abholen|status/i, 'fertig'], [/inspekt|service|öl|tüv|hu\b|termin/i, 'insp']],
+    wege: {
+      insp: [['bot', 'Gern. Welches Fahrzeug und welcher Kilometerstand ungefähr?'], ['wahl', [['VW Golf, ca. 60.000 km', 'insp2']]]],
+      insp2: [['bot', 'Diese Termine sind frei:'], ['wahl', [['Di 07:30 (Abgabe)', 'insp3'], ['Do 08:00 (Abgabe)', 'insp3']]]],
+      insp3: [['bot', 'Gebucht! Bestätigung und Erinnerung kommen per SMS.'], HANDY('Neuer Termin: Inspektion VW Golf · Di 07:30'),
+        ['karte', ['Termin mit Fahrzeugdaten', 'Modell und Kilometerstand vorab bekannt', 'Teile können vorbestellt werden', 'Erinnerung am Vortag']]],
+      reifen: [['bot', 'Haben Sie die Reifen bei uns eingelagert?'], ['wahl', [['Ja', 'insp2'], ['Nein, bringe sie mit', 'insp2']]]],
+      fertig: [['bot', 'Ich frage den Status ab … Ihr Fahrzeug ist fertig und kann bis 18 Uhr abgeholt werden. (Beispiel – in echt aus Ihrem Werkstattsystem.)'],
+        ['karte', ['Statusanfrage ohne Anruf', 'Antwort direkt aus dem Werkstattsystem (bei Anbindung)', 'Weniger Unterbrechungen in der Halle', 'Kunden wissen Bescheid']]]
+    }
+  };
+  SZ.gastro = {
+    hinweis: 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Bei Allergien bitte vor Ort nachfragen.',
+    name: 'Reservierungs-Assistent', sub: 'Beispiel: Restaurant · Berlin',
+    start: 'Hallo! Möchten Sie reservieren oder haben Sie eine Frage?',
+    wahl: [['Tisch reservieren', 'tisch'], ['Catering / Feier anfragen', 'cat'], ['Allergene im Menü?', 'allerg']],
+    ph: 'z. B. „Tisch für 4 am Samstag“',
+    erkennen: [[/[؀-ۿ]/, 'ar'], [/allerg|gluten|laktose|vegan|halal/i, 'allerg'], [/catering|feier|geburtstag|firmen|event/i, 'cat'], [/tisch|reserv|personen|heute|samstag|freitag/i, 'tisch']],
+    wege: {
+      tisch: [['bot', 'Für wie viele Personen?'], ['wahl', [['2', 'tisch2'], ['4', 'tisch2'], ['6+', 'tisch2']]]],
+      tisch2: [['bot', 'Diese Zeiten sind am Samstag frei:'], ['wahl', [['18:00', 'tisch3'], ['20:30', 'tisch3']]]],
+      tisch3: [['bot', 'Reserviert! Sie bekommen eine Bestätigung. Falls etwas dazwischenkommt, antworten Sie einfach ABSAGEN.'], HANDY('Neue Reservierung: Sa 20:30 · 4 Personen'),
+        ['karte', ['Reservierung im Buch', 'Personen und Uhrzeit eingetragen', 'Absage mit einer Antwort – Tisch wird frei', 'kein Telefon während des Service']]],
+      cat: [['bot', 'Wie viele Gäste und an welchem Datum?'], ['wahl', [['30 Gäste, 12.12.', 'cat2']]]],
+      cat2: [['bot', 'Danke! Die Anfrage geht an den Inhaber – er meldet sich mit einem Angebot.'], HANDY('Catering-Anfrage · 30 Gäste · 12.12.'),
+        ['karte', ['Catering-Anfrage', 'Gäste, Datum und Wünsche vollständig', 'Angebot schreibt der Inhaber', 'keine Anfrage geht im Trubel verloren']]],
+      allerg: [['bot', 'Die Allergenkennzeichnung finden Sie in der Speisekarte bei jedem Gericht. Bei schweren Allergien sprechen Sie bitte vor Ort mit dem Service.'], ['wahl', [['Tisch reservieren', 'tisch']]]],
+      ar: [['bot', 'أهلاً وسهلاً! لكم شخص بدك تحجز وأي يوم؟'], ['karte', ['Reservierung auf Arabisch', 'Für das Team: „Gast möchte reservieren“', 'Antwort auf Arabisch', 'mehr Gäste erreichen']]]
+    }
+  };
   var CSS = ''
     + '.kd{max-width:380px;width:100%;margin:0 auto;background:#0e2340;border-radius:30px;padding:10px;box-shadow:0 24px 60px rgba(0,0,0,.32);font-family:Barlow,system-ui,sans-serif;text-align:left}'
     + '.kd-in{background:#f4f7f7;border-radius:22px;overflow:hidden;display:flex;flex-direction:column;height:540px}'
@@ -95,6 +175,7 @@
     + '.kd-u{background:#58d0bd;color:#0e2340;border-bottom-right-radius:4px;align-self:flex-end;font-weight:600}'
     + '.kd-m[dir=rtl]{text-align:right}'
     + '.kd-k{align-self:stretch;background:#fff;border:2px solid #58d0bd;border-radius:14px;padding:10px 12px;font-size:13.5px;line-height:1.45;animation:kdIn .3s ease both}'
+    + '.kd-n{align-self:stretch;background:#132e50;color:#fff;border-radius:12px;padding:8px 11px;font-size:13px;line-height:1.4;animation:kdIn .3s ease both}.kd-n em{font-style:normal;display:block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#58d0bd;font-weight:700}'
     + '.kd-k em{font-style:normal;display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#177567;font-weight:700;margin-bottom:2px}'
     + '.kd-k b{display:block;color:#132e50;font-size:14.5px}.kd-k span{display:block;color:#5a7070}'
     + '.kd-w{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px 4px;background:#fff;border-top:1px solid #e0eaea;max-height:118px;overflow-y:auto}'
@@ -108,6 +189,7 @@
     + '.kb{max-width:980px;margin:0 auto;font-family:Barlow,system-ui,sans-serif}'
     + '.kb-tabs{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.2rem}'
     + '.kb-tab{border:1.5px solid #d6e2e2;background:#fff;color:#132e50;border-radius:999px;padding:10px 18px;font:700 14.5px Barlow,system-ui,sans-serif;cursor:pointer}'
+    + '.kl-tabs{margin-bottom:.8rem}.kl-tabs .kb-tab{padding:7px 12px;font-size:13px;background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.25)}.kl-tabs .kb-tab[aria-pressed=true]{background:#58d0bd;color:#0e2340;border-color:#58d0bd}'
     + '.kb-tab[aria-selected=true]{background:#132e50;border-color:#132e50;color:#fff}'
     + '.kb-p{background:#fff;border:1px solid #e0eaea;border-radius:16px;padding:1.3rem;box-shadow:0 10px 30px rgba(19,46,80,.07);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:1.3rem}'
     + '.kb-p h3{font:900 1.3rem/1.1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:#132e50;margin:0 0 .4rem}.kb-p p.kb-sub{color:#5a7070;font-size:14.5px;margin:0 0 1rem;line-height:1.5}'
@@ -133,8 +215,8 @@
     var sz = SZ[root.getAttribute('data-ki-demo')] || SZ.praxis;
     var box = el('div', 'kd'), inn = el('div', 'kd-in'), top = el('div', 'kd-top');
     top.appendChild(el('div', 'kd-av', 'M')); var tt = el('div'); tt.appendChild(el('b', '', sz.name)); tt.appendChild(el('small', '', sz.sub)); top.appendChild(tt);
-    var ki = el('div', 'kd-ki', 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Keine medizinische Beratung – im Notfall 112.');
-    var log = el('div', 'kd-log'); log.setAttribute('role', 'log'); log.setAttribute('aria-live', 'polite'); log.setAttribute('aria-label', 'Gesprächsverlauf');
+    var ki = el('div', 'kd-ki', sz.hinweis || 'Hinweis: Sie schreiben mit einem digitalen Assistenten (KI). Keine medizinische Beratung – im Notfall 112.');
+    var log = el('div', 'kd-log'); log.setAttribute('role', 'log'); log.setAttribute('aria-live', 'polite'); log.setAttribute('aria-label', 'Gesprächsverlauf'); log.tabIndex = 0;
     var wahl = el('div', 'kd-w'); wahl.setAttribute('role', 'group'); wahl.setAttribute('aria-label', 'Antwort auswählen');
     var form = el('form', 'kd-f'); var inp = el('input'); inp.type = 'text'; inp.placeholder = sz.ph; inp.setAttribute('aria-label', 'Nachricht schreiben'); inp.maxLength = 160; inp.autocomplete = 'off';
     var send = el('button', '', 'Senden'); send.type = 'submit'; form.appendChild(inp); form.appendChild(send);
@@ -163,6 +245,9 @@
         var t = teile.shift(); if (!t) return;
         if (t[0] === 'bot') bot(t[1], weiter);
         else if (t[0] === 'wahl') knoepfe(t[1]);
+        else if (t[0] === 'handy') warte(250, function () {
+          var n = el('div', 'kd-n'); n.appendChild(el('em', '', 'Nachricht aufs Handy des Inhabers')); n.appendChild(el('span', '', t[1])); log.appendChild(n); unten(); weiter();
+        });
         else if (t[0] === 'karte') warte(300, function () {
           var k = el('div', 'kd-k'); k.appendChild(el('em', '', 'So kommt es bei Ihrem Team an'));
           k.appendChild(el('b', '', t[1][0])); t[1].slice(1).forEach(function (z) { k.appendChild(el('span', '', z)); });
@@ -207,6 +292,20 @@
         ['Was gilt bei der Schlüsselübergabe?', 'Übergabe nur mit Unterschrift im Schlüsselbuch, Aufbewahrung im Schlüsseltresor, Verlust sofort an die PDL.', 'Verfahrensanweisung Schlüssel, Stand 2026'],
         ['Wer ist diese Woche Bereitschaft?', 'Laut Bereitschaftsplan KW 46: Herr D., Vertretung Frau K.', 'Bereitschaftsplan KW 46']]
     }
+  };
+
+  B.firma = {
+    termin: { arten: ['Besichtigung vor Ort', 'Beratungsgespräch', 'Rückruf'], wer: 'Kunden', ort: 'Ihr Betrieb, Berlin' },
+    mails: [
+      ['Fr. W.', 'Angebot für Badsanierung?', 'Anfrage', 'Guten Tag Frau W.,\nvielen Dank für Ihre Anfrage. Damit wir Ihnen ein Angebot machen können, schicken Sie uns bitte zwei Fotos und die ungefähren Maße.\nFreundliche Grüße'],
+      ['Lieferant GmbH', 'Rechnung Nr. 4471', 'Rechnung', 'Weitergeleitet an die Buchhaltung – keine Antwort nötig.'],
+      ['Hr. B.', 'Reklamation Auftrag 223', 'Reklamation', 'Guten Tag Herr B.,\nes tut uns leid, dass etwas nicht passt. Wir melden uns heute noch telefonisch, um einen Termin zu vereinbaren.\nFreundliche Grüße'],
+      ['J. K.', 'Bewerbung als Monteur', 'Bewerbung', 'Guten Tag,\nvielen Dank für Ihre Bewerbung. Wir haben Ihre Unterlagen erhalten und melden uns innerhalb einer Woche.\nFreundliche Grüße'],
+      ['Marketing-Tool', 'Webinar-Einladung', 'Werbung', null]
+    ],
+    wissen: [['Welche Garantie geben wir auf Montage?', 'Laut AGB 2 Jahre auf Montageleistungen, Materialgarantie nach Hersteller.', 'AGB, § 8 (Beispiel)'],
+      ['Wie läuft die Abnahme beim Kunden?', 'Abnahmeprotokoll mit Fotos in der App, Unterschrift des Kunden, Kopie per E-Mail.', 'Ablaufbeschreibung Montage (Beispiel)'],
+      ['Wer ist Ansprechpartner für Großkunden?', 'Frau R. (Vertrieb), Vertretung Herr S.', 'Organigramm 2026 (Beispiel)']]
   };
 
   function tage() {
@@ -301,7 +400,7 @@
   }
 
   function bausteine(root) {
-    var art = root.getAttribute('data-ki-bausteine') === 'pflege' ? 'pflege' : 'praxis', cfg = B[art];
+    var art = root.getAttribute('data-ki-bausteine'); if (!B[art]) art = 'praxis'; var cfg = B[art];
     var box = el('div', 'kb'), tabs = el('div', 'kb-tabs'); tabs.setAttribute('role', 'tablist'); tabs.setAttribute('aria-label', 'Bausteine');
     var panel = el('div', 'kb-p'); panel.setAttribute('role', 'tabpanel');
     var T = [['Online-Termin', function () { panelTermin(panel, cfg.termin); }], ['Postfach vorsortieren', function () { panelPost(panel, cfg.mails); }], ['Assistent für Unterlagen', function () { panelWissen(panel, cfg.wissen); }]];
@@ -315,9 +414,23 @@
     var n = el('p', 'kd-note', 'Vorführung mit Beispieldaten – es wird nichts gesendet oder gespeichert.'); n.style.maxWidth = '980px'; root.appendChild(n);
   }
 
+  function loesung(root) {
+    var L = [['Handwerk', 'handwerk'], ['Hausverwaltung', 'hausverwaltung'], ['Kfz-Werkstatt', 'werkstatt'], ['Restaurant', 'gastro'], ['Arztpraxis', 'praxis'], ['Pflegedienst', 'pflege']];
+    var tabs = el('div', 'kb-tabs kl-tabs'); tabs.setAttribute('role', 'group'); tabs.setAttribute('aria-label', 'Branche wählen');
+    var ziel = el('div'); root.innerHTML = ''; root.appendChild(tabs); root.appendChild(ziel);
+    function zeig(k) { ziel.innerHTML = ''; var d = el('div'); d.setAttribute('data-ki-demo', k); ziel.appendChild(d); chat(d); }
+    L.forEach(function (x, i) {
+      var b = el('button', 'kb-tab', x[0]); b.type = 'button'; b.setAttribute('aria-pressed', String(i === 0));
+      b.addEventListener('click', function () { tabs.querySelectorAll('.kb-tab').forEach(function (y) { y.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); zeig(x[1]); });
+      tabs.appendChild(b);
+    });
+    zeig(L[0][1]);
+  }
+
   function los() {
     if (!document.getElementById('kd-css')) { var s = el('style'); s.id = 'kd-css'; s.textContent = CSS; document.head.appendChild(s); }
-    document.querySelectorAll('[data-ki-demo]').forEach(chat);
+    document.querySelectorAll('[data-ki-loesung]').forEach(loesung);
+    document.querySelectorAll('[data-ki-demo]').forEach(function (d) { if (!d.closest('[data-ki-loesung]')) chat(d); });
     document.querySelectorAll('[data-ki-bausteine]').forEach(bausteine);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', los); else los();
