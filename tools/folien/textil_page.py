@@ -59,7 +59,7 @@ P = dict(file='textildruck-berlin.html', crumb='Textildruck', img='textildruck',
 <p><strong>Waschen:</strong> Bedruckte Textilien auf links drehen, bei höchstens 40&nbsp;°C waschen und nicht direkt auf dem Motiv bügeln. So bleibt der Druck lange schön.</p>
 <p><strong>Größen:</strong> Für Teambestellungen schicken wir Ihnen auf Wunsch eine einfache Größenliste – Sie tragen ein, wer welche Größe braucht.</p>
 <p><strong>Rechte am Motiv:</strong> Wir drucken Ihr eigenes Logo oder Motive, an denen Sie die Rechte haben. Fremde Marken, Vereinslogos oder Bilder ohne Erlaubnis drucken wir nicht.</p>
-<p><strong>Lieferzeit:</strong> In der Regel etwa 3 Wochen nach Freigabe des Entwurfs und Anzahlung. Brauchen Sie die Teile zu einem festen Termin, sagen Sie es uns bei der Anfrage.</p>''',
+<p><strong>Lieferzeit:</strong> Die Lieferzeit nennen wir Ihnen verbindlich mit dem Angebot. Brauchen Sie die Teile zu einem festen Termin, sagen Sie es uns bei der Anfrage.</p>''',
  ablauf=[
   ('Logo & Stückzahl', 'Sie schicken uns Ihr Logo, die gewünschten Teile und ungefähr, wie viele Sie brauchen – per WhatsApp oder Formular.'),
   ('Entwurf', 'Wir zeigen Ihnen, wie das Logo auf Shirt, Hoodie oder Tasche aussieht – mit Größe und Position.'),
@@ -72,7 +72,7 @@ P = dict(file='textildruck-berlin.html', crumb='Textildruck', img='textildruck',
   ('Flex oder DTF – was ist besser?', 'Das hängt vom Logo ab: Flex für klare Logos und Schriftzüge in 1–2 Farben, DTF für farbige Motive mit Verläufen und feinen Details. Wir beraten Sie gern.'),
   ('Kann ich eigene Textilien bringen?', 'Ja, ab 5 Stück. Wir bedrucken auch Ihre eigenen Shirts, Hoodies oder Jacken. Bitte sagen Sie uns vorher das Material, damit wir das passende Verfahren wählen.'),
   ('Liefern Sie auch außerhalb von Berlin?', 'Ja. Wir verschicken die fertigen Textilien in ganz Deutschland – zum Beispiel an Ihr Team in NRW oder Hamburg.'),
-  ('Wie lange dauert es?', 'In der Regel etwa 3 Wochen nach Freigabe des Entwurfs und Anzahlung. Haben Sie einen festen Termin, zum Beispiel eine Messe oder Eröffnung, planen wir danach.'),
+  ('Wie lange dauert es?', 'Die Lieferzeit nennen wir Ihnen verbindlich mit dem Angebot. Haben Sie einen festen Termin, zum Beispiel eine Messe oder Eröffnung, planen wir danach.'),
   ('Brauchen wir ein fertiges Design?', 'Nein. Ihr Logo reicht. Wir bereiten es für den Druck auf und zeigen Ihnen vorher, wie es auf dem Textil aussieht.'),
  ],
  links=[('/print.html', 'Druckerei Berlin'), ('/foliendruck-berlin.html', 'Foliendruck & Sticker'), ('/messebau-berlin.html', 'Messestand'),
