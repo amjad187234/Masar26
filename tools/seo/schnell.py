@@ -21,8 +21,11 @@ def main():
         if rel.startswith(AUSNAHMEN): continue
         s = open(p, encoding='utf-8').read()
         if '</head>' not in s: continue
-        neu = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', s, flags=re.S)
-        neu = neu.replace('</head>', BLOCK + '</head>', 1)
+        # Vorhandenen Block an seiner Stelle erneuern, sonst vor </head> einsetzen – so verschiebt sich
+        # nichts gegenüber anderen Kopf-Blöcken (a11y-fix, umbruch …) und ein zweiter Lauf ändert nichts.
+        neu, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', lambda m: BLOCK, s, count=1, flags=re.S)
+        if not k:
+            neu = neu.replace('</head>', BLOCK + '</head>', 1)
         if neu != s:
             open(p, 'w', encoding='utf-8').write(neu); n += 1
     print(n, 'Seiten aktualisiert')

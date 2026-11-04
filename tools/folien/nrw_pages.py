@@ -426,7 +426,7 @@ def nrw_fix(p):
     wa_nav = (f'<a href="https://wa.me/491785143918?text={txt}" target="_blank" rel="noopener noreferrer" class="nav-phone" aria-label="Per WhatsApp schreiben">\n'
               '      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a8.5 8.5 0 0 0-7.4 12.7L3 21l5.4-1.5A8.5 8.5 0 1 0 12 3Zm-3 7.2h6a.8.8 0 0 1 0 1.6H9a.8.8 0 0 1 0-1.6Zm0 3h4a.8.8 0 0 1 0 1.6H9a.8.8 0 0 1 0-1.6Z"/></svg>\n      WhatsApp\n    </a>')
     h, n1 = re.subn(r'<a href="tel:01785143918" class="nav-phone".*?</a>', lambda m: wa_nav, h, count=1, flags=re.S)
-    h, n2 = re.subn(r'<a href="tel:01785143918" class="mob-call-btn">.*?</a>', lambda m: '<a href="#kontakt" class="mob-call-btn"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>E-Mail</a>', h, count=1, flags=re.S)
+    h, n2 = re.subn(r'<a href="tel:01785143918" class="mob-call-btn">.*?</a>', lambda m: '<a href="#kontakt" class="mob-call-btn"><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>E-Mail</a>', h, count=1, flags=re.S)
     h = h.replace('placeholder="z. B. Berlin-Mitte"', 'placeholder="z. B. Köln-Ehrenfeld"')
     open(ROOT + p['file'], 'w', encoding='utf-8').write(h)
     return n1, n2

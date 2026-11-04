@@ -6,10 +6,10 @@ src = open(os.path.join(HERE, '..', 'branchen', 'gen_branchen.py'), encoding='ut
 exec(src[:src.index('\nimport pages')])  # HEAD_A, HEAD_B, FOOT, I, SVC, svg, esc, wa, sec …
 
 SVC.update({
- 'sonne': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
- 'schutz': '<path d="M12 3 20 6v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',
- 'thermo': '<path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0Z"/><path d="M12 9v7"/>',
- 'spiegel': '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 9 3-3M8 14l7-7M12 16l4-4"/>',
+ 'sonne': '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>',
+ 'schutz': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+ 'thermo': '<path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>',
+ 'spiegel': '<path d="m3 7 5 5-5 5V7"/><path d="m21 7-5 5 5 5V7"/><path d="M12 20v2"/><path d="M12 14v2"/><path d="M12 8v2"/><path d="M12 2v2"/>',
 })
 
 def head_f(p):
@@ -241,7 +241,7 @@ def build_f(p):
         html_out = html_out.replace('</head>', '<style>@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.8rem}.hero-visual .hero-shot{width:100%;max-width:340px;height:auto;margin:0 auto;display:block;transform:none}}</style>\n</head>', 1)
     if p['file'] == 'fensterfolie-berlin.html':
         html_out = html_out.replace('</body>', '<script src="/assistent.js?v=7" defer></script>\n</body>', 1)
-    html_out = re.sub(r'<div class="scta-txt">.*?</div>', f'<div class="scta-txt">{I["star"]}<span>{p["sticky"][0]}</span> – {p["sticky"][1]}</div>', html_out, count=1, flags=re.S)
+    html_out = re.sub(r'<(?:div|a) class="scta-txt"[^>]*>.*?</(?:div|a)>', f'<div class="scta-txt">{I["star"]}<span>{p["sticky"][0]}</span> – {p["sticky"][1]}</div>', html_out, count=1, flags=re.S)
     html_out = html_out.replace('<a href="tel:01785143918" class="scta-btn primary">', f'<a href="{w}" target="_blank" rel="noopener noreferrer" class="scta-btn primary">', 1)
     html_out = re.sub(r'(<a href="https://wa\.me/[^"]*" target="_blank" rel="noopener noreferrer" class="scta-btn primary">)<svg.*?</svg>0178 514 3918', lambda m: m.group(1) + I['wa'] + 'WhatsApp', html_out, count=1, flags=re.S)
     open(ROOT + p['file'], 'w', encoding='utf-8').write(html_out)

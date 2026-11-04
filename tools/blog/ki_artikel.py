@@ -3,7 +3,7 @@ Rechtliche Aussagen aus der Recherche vom 03.11.2026 (privat: tools/angebot/priv
 ohne Zeitersparnis-Zahlen, ohne „rechtssicher“. Aufruf: python3 tools/blog/ki_artikel.py
 """
 import os, re, json
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 VORLAGE = open(os.path.join(ROOT, 'blog', 'fotowand-firmenfeier.html'), encoding='utf-8').read()
 BASE = 'https://masar-werbeagentur.de/'
 

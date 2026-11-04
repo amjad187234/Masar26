@@ -27,7 +27,8 @@ M = {
 }
 for k, v in CITY.items():
     M[f'werbeagentur-{k}.html'] = ('', 1, v)
-    for svc, st in [('leuchtreklame', 'schild:1'), ('schilder', 'schild:0'), ('schaufensterbeschriftung', 'schaufenster'), ('fensterfolie', 'fensterfolie')]:
+    # fensterfolie-<stadt>.html gibt es seit 24.10.2026 nicht mehr (zusammengeführt zu fensterfolie-nrw.html)
+    for svc, st in [('leuchtreklame', 'schild:1'), ('schilder', 'schild:0'), ('schaufensterbeschriftung', 'schaufenster')]:
         M[f'{svc}-{k}.html'] = (st, 1, v)
 
 def inject(f, start, nrw, ort, dry=False):

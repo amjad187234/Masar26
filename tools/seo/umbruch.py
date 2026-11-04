@@ -44,8 +44,8 @@ def main():
         neu = H.sub(zusammen, neu)   # Bindestrich-Wörter (Berlin-Wedding) in Überschriften nicht am Strich umbrechen
         neu = neu.replace('&shy;', '').replace('­', '')
         neu = re.sub(r'(-webkit-)?hyphens:\s*auto', lambda m: (m.group(1) or '') + 'hyphens:manual', neu)
-        neu = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', neu, flags=re.S)
-        if '</head>' in neu:
+        neu, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', lambda m: BLOCK, neu, count=1, flags=re.S)   # an Ort und Stelle
+        if not k and '</head>' in neu:
             neu = neu.replace('</head>', BLOCK + '</head>', 1)
         if neu != s:
             open(p, 'w', encoding='utf-8').write(neu); n += 1
