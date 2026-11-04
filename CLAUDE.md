@@ -135,3 +135,8 @@ Kundennotizen (laufende Aufträge, Angebote) werden **nicht** hier, sondern priv
 **Google Doc „Masar – Kundenkartei (privat)“** im Google Drive des Inhabers (Ordner „Masar“). Fragt der Inhaber nach einem
 Kunden, zuerst dort nachlesen (Drive-Suche nach dem Titel); nach jedem neuen Angebot, Termin oder jeder Rechnung den Eintrag
 dort ergänzen. Lokale Kopie nur in `tools/angebot/privat/KUNDENKARTEI.md` (nicht im Repository).
+Seit 04.11.2026 aktuelle Fassung im selben Drive-Ordner: **„Masar – Kundenkartei (privat) – Stand 04.11.2026“** (Kundenkartei + Belegregister);
+bei Änderungen eine neue Fassung „Stand <Datum>“ hochladen. Belegregister aller Angebote/Rechnungen (Nr., Datum, netto, brutto, Datei):
+`python3 tools/angebot/privat/register.py` → `tools/angebot/privat/KUNDENREGISTER.md`. Fragt der Inhaber nach einem Kunden oder einer
+Rechnung: Kundenkartei + Register lesen und alles zusammenfassen (Kontakt, Angebote, Rechnungen, Zahlungsstand, offene Punkte).
+Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen.
