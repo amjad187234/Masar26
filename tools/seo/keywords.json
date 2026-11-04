@@ -1,0 +1,2342 @@
+{
+ "version": "2026-11",
+ "created": "2026-11-04",
+ "method": "Recherche per Websuche (Wettbewerber-Titel, Fragen-Formulierungen, Verzeichnisse) und Abgleich mit den Seiten im Repository. Keine Suchvolumen-Daten verfügbar: Priorität A/B/C ist eine qualitative Einschätzung (Umsatzbedeutung, Kaufabsicht, Wettbewerb). Vor Budgetentscheidungen mit Google Keyword-Planer und Search Console prüfen.",
+ "rules": [
+  "Preise nur aus CLAUDE.md (netto, „ab“)",
+  "NRW/Hamburg: Team vor Ort, keine Adresse/Filiale",
+  "Keine Seiten, die sich nur im Ortsnamen unterscheiden",
+  "Titel ≤ 60 Zeichen, Beschreibung 110–160 Zeichen",
+  "URL-/Navigationsänderungen nur nach Freigabe"
+ ],
+ "priority_legend": {
+  "A": "Kernumsatz, lokale Kaufabsicht",
+  "B": "wichtig/ergänzend",
+  "C": "Nische oder informativ"
+ },
+ "top20": [
+  {
+   "rank": 1,
+   "keyword": "leuchtreklame berlin",
+   "target_file": "leuchtreklame-berlin.html"
+  },
+  {
+   "rank": 2,
+   "keyword": "schilder berlin",
+   "target_file": "schilder-berlin.html"
+  },
+  {
+   "rank": 3,
+   "keyword": "fahrzeugbeschriftung berlin",
+   "target_file": "fahrzeugbeschriftung-berlin.html"
+  },
+  {
+   "rank": 4,
+   "keyword": "schaufensterbeschriftung berlin",
+   "target_file": "schaufensterbeschriftung-berlin.html"
+  },
+  {
+   "rank": 5,
+   "keyword": "werbetechnik berlin",
+   "target_file": "werbetechnik.html"
+  },
+  {
+   "rank": 6,
+   "keyword": "werbeagentur berlin",
+   "target_file": "index.html"
+  },
+  {
+   "rank": 7,
+   "keyword": "firmenschild berlin",
+   "target_file": "schilder-berlin.html"
+  },
+  {
+   "rank": 8,
+   "keyword": "sichtschutzfolie berlin",
+   "target_file": "sichtschutzfolie-berlin.html"
+  },
+  {
+   "rank": 9,
+   "keyword": "fensterfolie berlin",
+   "target_file": "fensterfolie-berlin.html"
+  },
+  {
+   "rank": 10,
+   "keyword": "schaufenster weihnachten",
+   "target_file": "schaufenster-weihnachten-black-friday.html"
+  },
+  {
+   "rank": 11,
+   "keyword": "banner drucken berlin",
+   "target_file": "pvc-banner-berlin.html"
+  },
+  {
+   "rank": 12,
+   "keyword": "textildruck berlin",
+   "target_file": "textildruck-berlin.html"
+  },
+  {
+   "rank": 13,
+   "keyword": "messebau berlin",
+   "target_file": "messebau-berlin.html"
+  },
+  {
+   "rank": 14,
+   "keyword": "messestand grüne woche 2027",
+   "target_file": "messestand-berlin-2027.html"
+  },
+  {
+   "rank": 15,
+   "keyword": "praxisschild berlin",
+   "target_file": "praxisbeschilderung-berlin.html"
+  },
+  {
+   "rank": 16,
+   "keyword": "werbetechnik nrw",
+   "target_file": "werbeagentur-nrw.html"
+  },
+  {
+   "rank": 17,
+   "keyword": "leuchtreklame köln",
+   "target_file": "leuchtreklame-koeln.html"
+  },
+  {
+   "rank": 18,
+   "keyword": "werbetechnik düsseldorf",
+   "target_file": "werbeagentur-duesseldorf.html"
+  },
+  {
+   "rank": 19,
+   "keyword": "fahrzeugbeschriftung nrw",
+   "target_file": "fahrzeugbeschriftung-nrw.html"
+  },
+  {
+   "rank": 20,
+   "keyword": "werbetechnik hamburg",
+   "target_file": "werbeagentur-hamburg.html"
+  }
+ ],
+ "keywords": [
+  {
+   "id": 1,
+   "cluster": "Übersicht",
+   "region": "Berlin",
+   "keyword": "werbeagentur berlin",
+   "secondary": [
+    "werbeagentur berlin wedding",
+    "full service werbeagentur berlin",
+    "werbeagentur für kleine unternehmen berlin"
+   ],
+   "intent": "kommerziell/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/",
+   "target_file": "index.html",
+   "current_title": "Werbeagentur Berlin: Schilder, Leuchtreklame & Folie | Masar",
+   "current_h1": "Werbeagentur Berlin – Schilder, Leuchtreklame & Beschriftung.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Titel/H1 passen. „Werbeagentur Berlin“ ist stark von Kreativ-/Kampagnenagenturen besetzt – Startseite über Werbetechnik-Begriffe (Schilder, Leuchtreklame, Folie) abgrenzen, nicht über Kampagnen."
+  },
+  {
+   "id": 2,
+   "cluster": "Übersicht",
+   "region": "Berlin",
+   "keyword": "werbetechnik berlin",
+   "secondary": [
+    "werbetechniker berlin",
+    "werbetechnik firma berlin",
+    "schilder und lichtreklame berlin",
+    "werbeanlagen berlin"
+   ],
+   "intent": "kommerziell/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/werbetechnik.html",
+   "target_file": "werbetechnik.html",
+   "current_title": "Werbetechnik Berlin: Schilder, Leuchtreklame & Montage",
+   "current_h1": "Werbetechnik Berlin – Werbung, die Tag und Nacht arbeitet.",
+   "suggested_title": null,
+   "suggested_h1": "Werbetechnik Berlin – Schilder, Leuchtreklame und Beschriftung",
+   "suggested_description": null,
+   "note": "H1 enthält heute nur einen Slogan nach dem Begriff; Leistungen in die H1 holen. Kannibalisierung mit index.html und aussenwerbung-berlin.html: werbetechnik.html = Leistungsübersicht Werbetechnik, index.html = Marke."
+  },
+  {
+   "id": 3,
+   "cluster": "Übersicht",
+   "region": "Berlin",
+   "keyword": "werbetechnik in der nähe",
+   "secondary": [
+    "werbetechnik wedding",
+    "werbeagentur wedding",
+    "schilder wedding",
+    "werbetechnik gesundbrunnen",
+    "werbetechnik reinickendorf"
+   ],
+   "intent": "lokal/navigational",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/werbetechnik-berlin-wedding.html",
+   "target_file": "werbetechnik-berlin-wedding.html",
+   "current_title": "Werbetechnik Berlin-Wedding – Ihre Werbeagentur vor Ort",
+   "current_h1": "Werbetechnik in Berlin-Wedding. Von hier aus.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "„in der Nähe“ wird vor allem über das Google-Unternehmensprofil (Kartenpaket) entschieden – Profil vollständig pflegen (Leistungen, Fotos, Beiträge), Seite als Standortseite mit Anfahrt halten."
+  },
+  {
+   "id": 4,
+   "cluster": "Übersicht",
+   "region": "Berlin",
+   "keyword": "außenwerbung berlin",
+   "secondary": [
+    "fassadenwerbung berlin",
+    "fassadenschild berlin",
+    "werbeanlage fassade berlin"
+   ],
+   "intent": "kommerziell",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/aussenwerbung-berlin.html",
+   "target_file": "aussenwerbung-berlin.html",
+   "current_title": "Außenwerbung Berlin: Fassade & Leuchtreklame | Masar",
+   "current_h1": "Außenwerbung Berlin – Ihr Standort. Ihr Markenbild.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Gegen werbetechnik.html abgrenzen: hier Fassade/Werbeanlage + Genehmigung, Link zum Ratgeber Außenwerbung."
+  },
+  {
+   "id": 5,
+   "cluster": "Leuchtreklame",
+   "region": "Berlin",
+   "keyword": "leuchtreklame berlin",
+   "secondary": [
+    "leuchtbuchstaben berlin",
+    "lichtwerbung berlin",
+    "led leuchtreklame berlin",
+    "leuchtkasten berlin",
+    "nasenschild berlin",
+    "ausleger leuchtreklame"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-berlin.html",
+   "target_file": "leuchtreklame-berlin.html",
+   "current_title": "Leuchtreklame Berlin: Leuchtbuchstaben ab 199 € | Masar",
+   "current_h1": "Leuchtreklame Berlin – maßgefertigt & energieeffizient.",
+   "suggested_title": null,
+   "suggested_h1": "Leuchtreklame Berlin – Leuchtbuchstaben, Leuchtkästen und LED-Neon",
+   "suggested_description": null,
+   "note": "Wettbewerb: Hersteller mit Online-Konfigurator und lokale Lichtwerbe-Betriebe. Vorteil Masar: Entwurf, Genehmigung und Montage aus einer Hand, Werkstatt in Berlin."
+  },
+  {
+   "id": 6,
+   "cluster": "Leuchtreklame",
+   "region": "Berlin",
+   "keyword": "leuchtreklame kosten",
+   "secondary": [
+    "was kostet leuchtreklame",
+    "leuchtbuchstaben preis",
+    "leuchtreklame preis pro buchstabe",
+    "leuchtreklame laden kosten"
+   ],
+   "intent": "informativ/kommerziell",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-berlin.html",
+   "target_file": "leuchtreklame-berlin.html",
+   "current_title": "Leuchtreklame Berlin: Leuchtbuchstaben ab 199 € | Masar",
+   "current_h1": "Leuchtreklame Berlin – maßgefertigt & energieeffizient.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "LÜCKE (teilweise): Kein Kosten-Ratgeber für Leuchtreklame (für Fahrzeug und Sonnenschutzfolie gibt es einen). Empfehlung: FAQ „Was kostet Leuchtreklame?“ auf der Leistungsseite ausbauen oder Ratgeber blog/leuchtreklame-kosten.html (Preisfaktoren, „ab 199 € je Buchstabe“, keine erfundenen Gesamtpreise)."
+  },
+  {
+   "id": 7,
+   "cluster": "Leuchtreklame",
+   "region": "Berlin",
+   "keyword": "led neon schild firma",
+   "secondary": [
+    "neon schriftzug logo",
+    "led neon berlin",
+    "neon schild laden",
+    "neonschild mit logo"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-berlin.html",
+   "target_file": "leuchtreklame-berlin.html",
+   "current_title": "Leuchtreklame Berlin: Leuchtbuchstaben ab 199 € | Masar",
+   "current_h1": "Leuchtreklame Berlin – maßgefertigt & energieeffizient.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "LED-Neon innen ab 249 € (überall gleich). Abschnitt mit Anker #led-neon auf der Seite, damit Anzeigen und interne Links direkt hinführen."
+  },
+  {
+   "id": 8,
+   "cluster": "Leuchtreklame",
+   "region": "Berlin",
+   "keyword": "leuchtreklame genehmigung berlin",
+   "secondary": [
+    "werbeanlage genehmigung berlin",
+    "werbeanlage verfahrensfrei berlin",
+    "bezirksamt werbeanlage antrag"
+   ],
+   "intent": "informativ",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/aussenwerbung-berlin-ratgeber.html",
+   "target_file": "blog/aussenwerbung-berlin-ratgeber.html",
+   "current_title": "Außenwerbung Berlin: Genehmigung & Kosten (2026)",
+   "current_h1": "Außenwerbung Berlin: Genehmigungen, Kosten & Strategien 2026",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Ratgeber deckt das ab (verfahrensfrei bis 1 m², am Geschäft bis 2,5 m²; vereinfachtes Verfahren § 63a BauO Bln). Von leuchtreklame-berlin.html prominent verlinken."
+  },
+  {
+   "id": 9,
+   "cluster": "Leuchtreklame",
+   "region": "Berlin",
+   "keyword": "led oder neon werbung",
+   "secondary": [
+    "leuchtreklame led oder neon",
+    "lichtwerbung stromverbrauch"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/werbetechnik-trends-2026.html",
+   "target_file": "blog/werbetechnik-trends-2026.html",
+   "current_title": "LED, Neon oder Folie: Was sich für Ladenlokale rechnet",
+   "current_h1": "LED oder Neon? Was sich für Ihr Ladenlokal rechnet.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 10,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "schilder berlin",
+   "secondary": [
+    "schilder drucken berlin",
+    "schildermacher berlin",
+    "werbeschild berlin",
+    "alu dibond schild berlin",
+    "schilderwerkstatt berlin"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/schilder-berlin.html",
+   "target_file": "schilder-berlin.html",
+   "current_title": "Schilder Berlin – Firmenschilder & Türschilder | Masar",
+   "current_h1": "Schilder Berlin – Ihr Name. Gut sichtbar.",
+   "suggested_title": "Schilder Berlin: Firmen- & Türschilder ab 45 € | Masar",
+   "suggested_h1": "Schilder Berlin – Firmenschilder, Türschilder und Praxisschilder",
+   "suggested_description": "Schilder in Berlin ab 45 € netto: Firmen-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gestaltet, gefertigt und vor Ort montiert.",
+   "note": "Titel heute ohne Preis; Preis im Titel hebt die Klickrate (siehe snippets.py-Regel)."
+  },
+  {
+   "id": 11,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "firmenschild berlin",
+   "secondary": [
+    "firmenschild edelstahl",
+    "firmenschild acrylglas",
+    "firmenschild außen",
+    "firmenschild mit logo",
+    "acrylglasschild"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/schilder-berlin.html",
+   "target_file": "schilder-berlin.html",
+   "current_title": "Schilder Berlin – Firmenschilder & Türschilder | Masar",
+   "current_h1": "Schilder Berlin – Ihr Name. Gut sichtbar.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Firmenschild ab 149 €, Acrylglasschild ab 240 € (Berlin). Abschnitt mit Anker #firmenschild."
+  },
+  {
+   "id": 12,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "türschild firma",
+   "secondary": [
+    "klingelschild gravur",
+    "türschild büro",
+    "briefkastenschild firma"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-berlin.html",
+   "target_file": "schilder-berlin.html",
+   "current_title": "Schilder Berlin – Firmenschilder & Türschilder | Masar",
+   "current_h1": "Schilder Berlin – Ihr Name. Gut sichtbar.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Tür-/Klingelschild ab 69 € (Berlin)."
+  },
+  {
+   "id": 13,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "3d buchstaben fassade",
+   "secondary": [
+    "einzelbuchstaben fassade",
+    "acrylbuchstaben",
+    "profilbuchstaben berlin",
+    "buchstaben für fassade"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-berlin.html",
+   "target_file": "schilder-berlin.html",
+   "current_title": "Schilder Berlin – Firmenschilder & Türschilder | Masar",
+   "current_h1": "Schilder Berlin – Ihr Name. Gut sichtbar.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Einzelbuchstaben ab 119 € (unbeleuchtet). Abgrenzung: beleuchtet → leuchtreklame-berlin.html."
+  },
+  {
+   "id": 14,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "schilder kosten",
+   "secondary": [
+    "firmenschild kosten",
+    "was kostet ein firmenschild",
+    "schild alu dibond preis"
+   ],
+   "intent": "informativ/kommerziell",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-berlin.html",
+   "target_file": "schilder-berlin.html",
+   "current_title": "Schilder Berlin – Firmenschilder & Türschilder | Masar",
+   "current_h1": "Schilder Berlin – Ihr Name. Gut sichtbar.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "LÜCKE (teilweise): kein Kosten-Ratgeber für Schilder. Empfehlung: FAQ auf schilder-berlin.html oder Ratgeber mit Preisfaktoren (Material, Größe, Montage) und den „ab“-Preisen."
+  },
+  {
+   "id": 15,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "praxisschild berlin",
+   "secondary": [
+    "praxisschild arzt",
+    "praxisschilder",
+    "schild arztpraxis",
+    "praxisbeschilderung",
+    "schild physiotherapie praxis"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/praxisbeschilderung-berlin.html",
+   "target_file": "praxisbeschilderung-berlin.html",
+   "current_title": "Praxisschilder Berlin: Schild, Tür & Sichtschutz | Masar",
+   "current_h1": "Ihre Praxis. Gut zu finden. Diskret von innen.",
+   "suggested_title": "Praxisschild Berlin ab 390 €: Schild & Sichtschutz | Masar",
+   "suggested_h1": "Praxisschild Berlin – Schild, Türschild und Sichtschutz für Ihre Praxis",
+   "suggested_description": "Praxisschild ab 390 € netto, Türschild und Sichtschutz am Fenster für Arzt- und Therapiepraxen in Berlin – gestaltet nach Berufsordnung, montiert vor Ort.",
+   "note": "ACHTUNG: Die heutige Beschreibung nennt „Pakete ab 699 €“ – dieser Preis steht nicht in der Preisliste in CLAUDE.md; vom Inhaber bestätigen lassen oder auf „Praxisschild ab 390 €“ umstellen. H1 heute ohne Suchbegriff."
+  },
+  {
+   "id": 16,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "praxisschild was muss drauf",
+   "secondary": [
+    "praxisschild vorschriften",
+    "praxisschild pflichtangaben",
+    "praxisschild größe"
+   ],
+   "intent": "informativ",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/praxisschild-regeln-kosten.html",
+   "target_file": "blog/praxisschild-regeln-kosten.html",
+   "current_title": "Praxisschild: Was darf drauf – und was kostet es? | Masar",
+   "current_h1": "Praxisschild: Was darf drauf – und was kostet es?",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 17,
+   "cluster": "Schilder",
+   "region": "Berlin",
+   "keyword": "kanzleischild berlin",
+   "secondary": [
+    "schild rechtsanwalt",
+    "kanzleischild steuerberater",
+    "kanzleischild edelstahl",
+    "kanzleischild glas"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/kanzleischild-berlin.html",
+   "target_file": "kanzleischild-berlin.html",
+   "current_title": "Kanzleischild Berlin: Anwalt & Steuerberater | Masar",
+   "current_h1": "Ihre Kanzlei. Seriös von außen. Vertraulich von innen.",
+   "suggested_title": "Kanzleischild Berlin ab 390 € – Anwalt & Steuerberater",
+   "suggested_h1": "Kanzleischild Berlin – seriös von außen, vertraulich von innen",
+   "suggested_description": "Kanzleischild ab 390 € netto für Anwälte und Steuerberater in Berlin: Edelstahl, Acryl oder Glas, dazu Türschild und Sichtschutz – gestaltet und montiert.",
+   "note": "H1 heute ohne Suchbegriff. Ratgeber blog/kanzleischild-regeln.html verlinken."
+  },
+  {
+   "id": 18,
+   "cluster": "Schaufenster",
+   "region": "Berlin",
+   "keyword": "schaufensterbeschriftung berlin",
+   "secondary": [
+    "schaufensterbeklebung berlin",
+    "schaufensterfolie berlin",
+    "fensterbeschriftung berlin",
+    "glasbeschriftung berlin",
+    "öffnungszeiten aufkleber tür"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-berlin.html",
+   "target_file": "schaufensterbeschriftung-berlin.html",
+   "current_title": "Schaufensterbeschriftung & -beklebung Berlin ab 149 € netto",
+   "current_h1": "Schaufensterbeschriftung Berlin Design & Montage inklusive.",
+   "suggested_title": null,
+   "suggested_h1": "Schaufensterbeschriftung Berlin – Design und Montage inklusive",
+   "suggested_description": null,
+   "note": "Titel passt (ab 149 €). H1: heute fehlt der Trenner zwischen Begriff und Zusatz."
+  },
+  {
+   "id": 19,
+   "cluster": "Schaufenster",
+   "region": "Berlin",
+   "keyword": "schaufenster weihnachten",
+   "secondary": [
+    "black friday schaufenster",
+    "aktionsfolie schaufenster",
+    "sale aufkleber schaufenster",
+    "weihnachtsfolie fenster geschäft",
+    "schaufenster dekorfolie"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/schaufenster-weihnachten-black-friday.html",
+   "target_file": "schaufenster-weihnachten-black-friday.html",
+   "current_title": "Schaufenster Black Friday & Weihnachten – Aktionsfolie",
+   "current_h1": "Schaufenster für Black Friday & Weihnachten Aktionsfolie, die wieder abgeht.",
+   "suggested_title": "Schaufenster Black Friday & Weihnachten: Folie ab 190 €",
+   "suggested_h1": null,
+   "suggested_description": "Aktionsfolie für Black Friday und Weihnachten ab 190 € netto – gestaltet, montiert und rückstandsfrei wieder entfernt. Berlin, NRW und Hamburg.",
+   "note": "Saison: jetzt bis ca. 20.12. Ab 27.12. Inhalt auf Januar-Sale/Neueröffnung drehen (gleiche URL, keine neue Seite). NRW/Hamburg-Preis 229 € auf der Seite nennen, wenn noch nicht vorhanden."
+  },
+  {
+   "id": 20,
+   "cluster": "Schaufenster",
+   "region": "Berlin",
+   "keyword": "lochfolie berlin",
+   "secondary": [
+    "one way vision folie",
+    "lochfolie schaufenster",
+    "lochfolie bedrucken"
+   ],
+   "intent": "transaktional",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-berlin.html",
+   "target_file": "schaufensterbeschriftung-berlin.html",
+   "current_title": "Schaufensterbeschriftung & -beklebung Berlin ab 149 € netto",
+   "current_h1": "Schaufensterbeschriftung Berlin Design & Montage inklusive.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Lochfolie ab 45 €/m² (Berlin)."
+  },
+  {
+   "id": 21,
+   "cluster": "Schaufenster",
+   "region": "Berlin",
+   "keyword": "schaufensterbeschriftung ideen",
+   "secondary": [
+    "schaufenster gestalten tipps",
+    "schaufensterwerbung ideen"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/schaufensterbeschriftung-tipps.html",
+   "target_file": "blog/schaufensterbeschriftung-tipps.html",
+   "current_title": "Schaufensterbeschriftung Berlin: 7 Profi-Tipps | Masar",
+   "current_h1": "7 Profi-Tipps für mehr Laufkundschaft durch Schaufensterbeschriftung",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 22,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "fensterfolie berlin",
+   "secondary": [
+    "fensterfolie anbringen lassen berlin",
+    "glasfolie berlin",
+    "fensterfolierung berlin",
+    "folie fenster büro"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/fensterfolie-berlin.html",
+   "target_file": "fensterfolie-berlin.html",
+   "current_title": "Fensterfolie Berlin: Sonnen- & Sichtschutz ab 190 € | Masar",
+   "current_h1": "Fensterfolie Berlin",
+   "suggested_title": null,
+   "suggested_h1": "Fensterfolie Berlin – Sonnenschutz, Sichtschutz und Sicherheit",
+   "suggested_description": null,
+   "note": "Dachseite für alle Folienarten; einzelne Folienarten zu den Unterseiten verlinken (Kannibalisierung mit sichtschutzfolie-berlin.html vermeiden: Milchglas-Begriffe gehören dorthin)."
+  },
+  {
+   "id": 23,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "sichtschutzfolie berlin",
+   "secondary": [
+    "milchglasfolie berlin",
+    "milchglasfolie büro",
+    "sichtschutzfolie büro",
+    "milchglasfolie mit logo",
+    "sichtschutz fenster praxis"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/sichtschutzfolie-berlin.html",
+   "target_file": "sichtschutzfolie-berlin.html",
+   "current_title": "Sichtschutzfolie Berlin: Milchglas ab 190 € | Masar",
+   "current_h1": "Sichtschutzfolie Berlin",
+   "suggested_title": null,
+   "suggested_h1": "Sichtschutzfolie Berlin – Milchglas, Streifen und Dekor",
+   "suggested_description": null,
+   "note": "Milchglas/Sichtschutz ab 190 €, Milchglas nach Maß ab 240 € (Berlin). Ratgeber blog/sichtschutz-praxis-fenster.html und blog/spiegelfolie-nachts.html verlinken."
+  },
+  {
+   "id": 24,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "sonnenschutzfolie berlin",
+   "secondary": [
+    "hitzeschutzfolie fenster",
+    "sonnenschutzfolie büro",
+    "sonnenschutzfolie anbringen lassen",
+    "wärmeschutzfolie fenster"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/sonnenschutzfolie-berlin.html",
+   "target_file": "sonnenschutzfolie-berlin.html",
+   "current_title": "Sonnenschutzfolie Berlin: Hitzeschutz fürs Fenster | Masar",
+   "current_h1": "Sonnenschutzfolie Berlin",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Nachfrage stark saisonal (Frühjahr/Sommer). Im Winter nur Ratgeber pflegen (blog/sonnenschutzfolie-winter.html); Anzeigen erst ab Frühjahr."
+  },
+  {
+   "id": 25,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "sonnenschutzfolie kosten",
+   "secondary": [
+    "sonnenschutzfolie innen oder außen",
+    "sonnenschutzfolie oder jalousie",
+    "hitze im büro arbeitgeber"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/sonnenschutzfolie-kosten.html",
+   "target_file": "blog/sonnenschutzfolie-kosten.html",
+   "current_title": "Was kostet Sonnenschutzfolie? Preisfaktoren erklärt | Masar",
+   "current_h1": "Was kostet Sonnenschutzfolie?",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Ratgeber-Cluster ist vollständig (Kosten, innen/außen, Jalousie, Glasfassade, Wintergarten, Montage, Winter, ASR A3.5)."
+  },
+  {
+   "id": 26,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "sicherheitsfolie berlin",
+   "secondary": [
+    "splitterschutzfolie berlin",
+    "einbruchschutzfolie schaufenster",
+    "p2a folie",
+    "durchwurfhemmende folie",
+    "splitterschutzfolie glastür"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/sicherheitsfolie-berlin.html",
+   "target_file": "sicherheitsfolie-berlin.html",
+   "current_title": "Sicherheitsfolie Berlin: Einbruch- & Splitterschutz | Masar",
+   "current_h1": "Sicherheitsfolie Berlin",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Saison: dunkle Jahreszeit (Einbruch-Thema). Keine Aussagen wie „versicherungsanerkannt“ – Versicherer entscheiden über Anerkennung (Systemprüfung). Ratgeber blog/sicherheitsfolie-splitterschutz-einbruchschutz.html."
+  },
+  {
+   "id": 27,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "glastüren kennzeichnen",
+   "secondary": [
+    "glastür markierung pflicht",
+    "glasflächen markieren asr",
+    "sicherheitsmarkierung glas"
+   ],
+   "intent": "informativ/kommerziell",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/glastueren-kennzeichnen.html",
+   "target_file": "blog/glastueren-kennzeichnen.html",
+   "current_title": "Glastüren kennzeichnen: Pflicht, Höhe & Gestaltung | Masar",
+   "current_h1": "Glastüren kennzeichnen: Pflicht, Höhe, Gestaltung",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "LÜCKE (kommerziell): Es gibt nur den Ratgeber. Empfehlung: Abschnitt „Glastüren markieren“ mit Anker auf sichtschutzfolie-berlin.html und vom Ratgeber dorthin verlinken (Büros, Praxen, Hausverwaltungen)."
+  },
+  {
+   "id": 28,
+   "cluster": "Fensterfolie",
+   "region": "Berlin",
+   "keyword": "fensterfolie mietwohnung",
+   "secondary": [
+    "sichtschutzfolie vermieter erlaubt"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/fensterfolie-mietwohnung.html",
+   "target_file": "blog/fensterfolie-mietwohnung.html",
+   "current_title": "Fensterfolie in der Mietwohnung: Ohne Vermieter erlaubt?",
+   "current_h1": "Fensterfolie in der Mietwohnung",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Privatkunden-Thema mit vielen Impressionen; über die Kurzbox zu Leistungsseiten leiten."
+  },
+  {
+   "id": 29,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "fahrzeugbeschriftung berlin",
+   "secondary": [
+    "autobeschriftung berlin",
+    "transporter beschriftung berlin",
+    "firmenwagen beschriften berlin",
+    "auto beschriften lassen berlin",
+    "fahrzeugfolierung berlin"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/fahrzeugbeschriftung-berlin.html",
+   "target_file": "fahrzeugbeschriftung-berlin.html",
+   "current_title": "Fahrzeugbeschriftung Berlin ab 290 € | Transporter & Flotte",
+   "current_h1": "Fahrzeugbeschriftung Berlin – Ihr Fuhrpark. Ihre Marke.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Titel passt (ab 290 € = Teilbeschriftung). Gesamtpreise für Transporter/Vollfolierung nur nennen, wenn der Inhaber sie freigibt."
+  },
+  {
+   "id": 30,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "flottenbeschriftung",
+   "secondary": [
+    "fuhrpark beschriftung",
+    "firmenfahrzeuge einheitlich beschriften",
+    "flotte folieren berlin"
+   ],
+   "intent": "transaktional/B2B",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/fahrzeugbeschriftung-berlin.html",
+   "target_file": "fahrzeugbeschriftung-berlin.html",
+   "current_title": "Fahrzeugbeschriftung Berlin ab 290 € | Transporter & Flotte",
+   "current_h1": "Fahrzeugbeschriftung Berlin – Ihr Fuhrpark. Ihre Marke.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Abschnitt „Flotte“ mit Anker #flotte; Fahrzeugliste als Anfrageweg."
+  },
+  {
+   "id": 31,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "fahrzeugbeschriftung kosten",
+   "secondary": [
+    "was kostet fahrzeugbeschriftung",
+    "autobeschriftung preis",
+    "transporter beschriftung preis"
+   ],
+   "intent": "informativ/kommerziell",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/blog/fahrzeugbeschriftung-kosten-berlin.html",
+   "target_file": "blog/fahrzeugbeschriftung-kosten-berlin.html",
+   "current_title": "Fahrzeugbeschriftung Kosten 2026: Preise ab 290 € netto",
+   "current_h1": "Fahrzeugbeschriftung Berlin: Was kostet es wirklich?",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Kannibalisierung mit der Leistungsseite: Ratgeber = Preisfaktoren, Leistungsseite = Angebot; gegenseitig verlinken, Leistungsseite nicht mit „Kosten“ im Titel."
+  },
+  {
+   "id": 32,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "fahrzeugfolie entfernen",
+   "secondary": [
+    "autofolie entfernen lassen berlin",
+    "beschriftung entfernen leasing",
+    "leasingrückgabe folie"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/leasingrueckgabe-fahrzeugbeschriftung-entfernen.html",
+   "target_file": "blog/leasingrueckgabe-fahrzeugbeschriftung-entfernen.html",
+   "current_title": "Leasingrückgabe: Fahrzeugbeschriftung entfernen lassen",
+   "current_h1": "Leasingrückgabe: Fahrzeugbeschriftung richtig entfernen lassen",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "LÜCKE (kommerziell): Leistung „Folie entfernen“ nur im Ratgeber. Empfehlung: Abschnitt mit Anker #entfernen auf fahrzeugbeschriftung-berlin.html (Saison Dezember/Januar: Leasingrückgaben, neue Fahrzeuge)."
+  },
+  {
+   "id": 33,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "lkw beschriftung berlin",
+   "secondary": [
+    "planendruck berlin",
+    "lkw plane bedrucken",
+    "koffer lkw beschriftung",
+    "anhänger beschriften"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/lkw-beschriftung-berlin.html",
+   "target_file": "lkw-beschriftung-berlin.html",
+   "current_title": "LKW-Beschriftung Berlin: Plane, Koffer & Fahrerhaus | Masar",
+   "current_h1": "LKW-Beschriftung Berlin",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Kein Preis in der Preisliste – keinen „ab“-Preis nennen."
+  },
+  {
+   "id": 34,
+   "cluster": "Fahrzeug",
+   "region": "Berlin",
+   "keyword": "fahrzeugbeschriftung tipps",
+   "secondary": [
+    "fahrzeugbeschriftung was muss drauf",
+    "fahrzeugwerbung ideen"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/fahrzeugbeschriftung-tipps.html",
+   "target_file": "blog/fahrzeugbeschriftung-tipps.html",
+   "current_title": "Fahrzeugbeschriftung: 7 Tipps zu Folie, Schriftgröße & Montage",
+   "current_h1": "Fahrzeugbeschriftung Berlin: 7 Tipps für maximale Wirkung auf der Straße",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 35,
+   "cluster": "Banner & Druck",
+   "region": "Berlin",
+   "keyword": "banner drucken berlin",
+   "secondary": [
+    "pvc banner berlin",
+    "bannerdruck berlin",
+    "bauzaunbanner berlin",
+    "mesh banner berlin",
+    "gerüstbanner berlin",
+    "blockout banner"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/pvc-banner-berlin.html",
+   "target_file": "pvc-banner-berlin.html",
+   "current_title": "Banner drucken Berlin: PVC-Banner ab 29 €/m² | Masar",
+   "current_h1": "PVC-Banner Berlin",
+   "suggested_title": null,
+   "suggested_h1": "PVC-Banner Berlin – gedruckt, mit Ösen, auf Wunsch montiert",
+   "suggested_description": null,
+   "note": "„banner drucken“ ohne Ort gewinnen Online-Druckereien über den Preis – nur Suchanfragen mit Ort, Montage oder Gestaltung bespielen. Preise: PVC 29 €/m², Mesh 34 €/m², Blockout 42 €/m², Mindestpreis 79 € (Berlin)."
+  },
+  {
+   "id": 36,
+   "cluster": "Banner & Druck",
+   "region": "Berlin",
+   "keyword": "aufkleber drucken berlin",
+   "secondary": [
+    "sticker drucken berlin",
+    "klebefolie bedrucken",
+    "bodenaufkleber",
+    "folienaufkleber firma"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/foliendruck-berlin.html",
+   "target_file": "foliendruck-berlin.html",
+   "current_title": "Foliendruck Berlin: Aufkleber & Klebefolie | Masar",
+   "current_h1": "Foliendruck Berlin – Ihre Werbung. Auf jeder Fläche.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "ACHTUNG: Die Seite nennt „ab 45 €“ und „ab 25 €“ – Foliendruck steht nicht in der Preisliste in CLAUDE.md (45 € ist „Schilder“). Vom Inhaber bestätigen lassen."
+  },
+  {
+   "id": 37,
+   "cluster": "Banner & Druck",
+   "region": "Berlin",
+   "keyword": "druckerei berlin",
+   "secondary": [
+    "flyer drucken berlin",
+    "visitenkarten drucken berlin",
+    "plakate drucken berlin",
+    "broschüre drucken berlin",
+    "roll up drucken berlin"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/print.html",
+   "target_file": "print.html",
+   "current_title": "Druckerei Berlin – Flyer, Visitenkarten & Print | Masar",
+   "current_h1": "Druckerei Berlin – Design inklusive.",
+   "suggested_title": "Druckerei Berlin: Flyer, Visitenkarten & Roll-ups | Masar",
+   "suggested_h1": "Druckerei Berlin – Design inklusive",
+   "suggested_description": "Flyer, Visitenkarten, Plakate, Broschüren und Roll-ups aus Berlin – auf Wunsch mit Gestaltung, Druckdaten kostenlos geprüft. Angebot anfragen.",
+   "note": "Dateiname print.html ohne Suchbegriff (nicht ändern ohne Freigabe – URL-Änderung). „Roll-up drucken Berlin“ hat heute keinen Titel-Fokus."
+  },
+  {
+   "id": 38,
+   "cluster": "Banner & Druck",
+   "region": "Berlin",
+   "keyword": "expressdruck berlin",
+   "secondary": [
+    "flyer same day berlin",
+    "druck heute abholen berlin",
+    "schnelldruck berlin"
+   ],
+   "intent": "transaktional/dringend",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/express-druck-berlin.html",
+   "target_file": "express-druck-berlin.html",
+   "current_title": "Expressdruck Berlin: Flyer & Plakate am selben Tag | Masar",
+   "current_h1": "Heute bestellt. Heute gedruckt.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Express nur Berlin."
+  },
+  {
+   "id": 39,
+   "cluster": "Textil",
+   "region": "Berlin",
+   "keyword": "textildruck berlin",
+   "secondary": [
+    "t-shirt druck berlin",
+    "t-shirts mit logo bedrucken",
+    "hoodie bedrucken berlin",
+    "arbeitskleidung bedrucken logo",
+    "polo shirt mit logo",
+    "stofftasche bedrucken"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/textildruck-berlin.html",
+   "target_file": "textildruck-berlin.html",
+   "current_title": "Textildruck Berlin: T-Shirts & Hoodies mit Logo | Masar",
+   "current_h1": "Textildruck Berlin",
+   "suggested_title": "Textildruck Berlin: T-Shirts mit Logo ab 15 € | Masar",
+   "suggested_h1": "Textildruck Berlin – T-Shirts, Hoodies und Polos mit Ihrem Logo",
+   "suggested_description": "T-Shirts ab 15 €, Polos ab 22 €, Hoodies ab 35 € mit Ihrem Logo – Flex-, Flock- und DTF-Druck ab 5 Stück, aus Berlin mit Versand deutschlandweit.",
+   "note": "Preise nach Marktrecherche (CLAUDE.md, 03.11.2026). KEIN Stick: „stickerei“, „besticken“ als ausschließende Keywords. Mindestmenge 5 Stück deutlich nennen."
+  },
+  {
+   "id": 40,
+   "cluster": "Messe",
+   "region": "Berlin",
+   "keyword": "messebau berlin",
+   "secondary": [
+    "messestand bauen lassen berlin",
+    "messestandbau berlin",
+    "messebauer berlin"
+   ],
+   "intent": "transaktional/B2B",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/messebau-berlin.html",
+   "target_file": "messebau-berlin.html",
+   "current_title": "Messebau Berlin: Messestand planen & bauen lassen | Masar",
+   "current_h1": "Messebau Berlin – Ihr Messestand. Geplant. Gebaut. Bereit.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Messebau nur Berlin. Suchende sind oft Aussteller aus ganz Deutschland/Ausland – in Ads Standort „Interesse an Berlin“ statt nur „in Berlin“."
+  },
+  {
+   "id": 41,
+   "cluster": "Messe",
+   "region": "Berlin",
+   "keyword": "messestand grüne woche 2027",
+   "secondary": [
+    "messestand fruit logistica",
+    "messestand itb",
+    "messebau grüne woche",
+    "aussteller grüne woche messestand"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/messestand-berlin-2027.html",
+   "target_file": "messestand-berlin-2027.html",
+   "current_title": "Messestand Berlin 2027: Grüne Woche, ITB & Co. | Masar",
+   "current_h1": "Messestand Berlin 2027 Jetzt planen. Rechtzeitig fertig.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Grüne Woche 15.–24.01.2027 (messen.de/Veranstalter). Bis Mitte Dezember höchste Relevanz."
+  },
+  {
+   "id": 42,
+   "cluster": "Messe",
+   "region": "Berlin",
+   "keyword": "messegrafik berlin",
+   "secondary": [
+    "messewand drucken",
+    "roll up messe",
+    "messedisplay berlin",
+    "messebeschriftung"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/messebeschriftung-berlin.html",
+   "target_file": "messebeschriftung-berlin.html",
+   "current_title": "Messebeschriftung Berlin – Displays, Banner & Messestand",
+   "current_h1": "Messebeschriftung Berlin – Ihr Auftritt. Perfekt inszeniert.",
+   "suggested_title": "Messegrafik Berlin: Roll-ups, Messewände & Banner | Masar",
+   "suggested_h1": "Messegrafik Berlin – Roll-ups, Messewände und Banner",
+   "suggested_description": "Messegrafik aus Berlin: Roll-ups, Messewände, Banner und Theken-Beschriftung – gedruckt in Berlin, Nachdruck auch während der Messe.",
+   "note": "Begriff „Messegrafik“ ist gängiger als „Messebeschriftung“; URL bleibt."
+  },
+  {
+   "id": 43,
+   "cluster": "Messe",
+   "region": "Berlin",
+   "keyword": "messeauftritt planen checkliste",
+   "secondary": [
+    "messe checkliste aussteller",
+    "messeauftritt fristen"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/messeauftritt-berlin-2027-checkliste.html",
+   "target_file": "blog/messeauftritt-berlin-2027-checkliste.html",
+   "current_title": "Messeauftritt 2027 in Berlin: Checkliste & Fristen | Masar",
+   "current_h1": "Messeauftritt 2027 in Berlin planen",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 44,
+   "cluster": "Digital Signage",
+   "region": "Berlin",
+   "keyword": "digital signage berlin",
+   "secondary": [
+    "digitale menütafel",
+    "digitales menüboard",
+    "bildschirm werbung schaufenster",
+    "digitale preistafel imbiss"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/digital-signage-berlin.html",
+   "target_file": "digital-signage-berlin.html",
+   "current_title": "Digital Signage Berlin – digitale Menütafeln | Masar",
+   "current_h1": "Die Tafel über der Theke bewegt sich.",
+   "suggested_title": null,
+   "suggested_h1": "Digital Signage Berlin – digitale Menütafeln für Ihre Theke",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff. Zielgruppe Gastronomie/Imbiss/Bäckerei."
+  },
+  {
+   "id": 45,
+   "cluster": "Design",
+   "region": "Berlin",
+   "keyword": "logo erstellen lassen berlin",
+   "secondary": [
+    "grafikdesign berlin",
+    "logodesign berlin",
+    "corporate design berlin",
+    "grafikdesigner berlin"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/grafikdesign-berlin.html",
+   "target_file": "grafikdesign-berlin.html",
+   "current_title": "Grafikdesign Berlin – Logo & Corporate Design | Masar",
+   "current_h1": "Grafikdesign Berlin – Ihre Marke. Klar gestaltet.",
+   "suggested_title": "Logo erstellen lassen Berlin ab 490 € | Grafikdesign Masar",
+   "suggested_h1": "Grafikdesign Berlin – Logo und Corporate Design",
+   "suggested_description": "Logo ab 490 € netto, Corporate Design, Geschäftsausstattung und Druckdaten aus Berlin – gestaltet für Schild, Fahrzeug und Website. Kostenlose Beratung.",
+   "note": "„logo erstellen lassen“ hat Kaufabsicht; Titel heute ohne Preis."
+  },
+  {
+   "id": 46,
+   "cluster": "Web",
+   "region": "Berlin",
+   "keyword": "webdesign berlin",
+   "secondary": [
+    "website erstellen lassen berlin",
+    "homepage erstellen lassen firma",
+    "webdesigner berlin",
+    "website für kleine unternehmen"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/webdesign-berlin.html",
+   "target_file": "webdesign-berlin.html",
+   "current_title": "Webdesign Berlin – Websites & Online-Shops | Masar",
+   "current_h1": "Eine Seite, die schnell lädt und Ihnen gehört.",
+   "suggested_title": null,
+   "suggested_h1": "Webdesign Berlin – eine Website, die schnell lädt und Ihnen gehört",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff. Kein Preis in der Preisliste – keinen nennen."
+  },
+  {
+   "id": 47,
+   "cluster": "Web",
+   "region": "Berlin",
+   "keyword": "barrierefreie website pflicht",
+   "secondary": [
+    "bfsg website",
+    "barrierefreiheitsstärkungsgesetz website kmu"
+   ],
+   "intent": "informativ",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/bfsg-website-barrierefreiheit.html",
+   "target_file": "blog/bfsg-website-barrierefreiheit.html",
+   "current_title": "BFSG 2025: Barrierefreie Website – was gilt? | Masar",
+   "current_h1": "BFSG seit 2025: Was Ihre Website können muss",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Einstieg für Webdesign-Aufträge (BFSG seit 28.06.2025)."
+  },
+  {
+   "id": 48,
+   "cluster": "Social Media",
+   "region": "Berlin",
+   "keyword": "social media agentur berlin",
+   "secondary": [
+    "instagram agentur berlin",
+    "social media betreuung kosten",
+    "social media marketing berlin",
+    "tiktok agentur berlin"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/digital.html",
+   "target_file": "digital.html",
+   "current_title": "Social Media Agentur Berlin – Instagram & TikTok | Masar",
+   "current_h1": "Social Media Agentur Berlin – Instagram, LinkedIn & TikTok.",
+   "suggested_title": "Social Media Agentur Berlin ab 490 €/Monat | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Social-Media-Betreuung in Berlin ab 490 € netto im Monat: Instagram, LinkedIn und TikTok – Planung, Fotos, Reels und Auswertung aus einer Hand.",
+   "note": "Dateiname digital.html ohne Suchbegriff (URL nur mit Freigabe ändern)."
+  },
+  {
+   "id": 49,
+   "cluster": "Foto & Video",
+   "region": "Berlin",
+   "keyword": "fotograf firma berlin",
+   "secondary": [
+    "produktfotografie berlin",
+    "food fotografie berlin",
+    "drohnenaufnahmen berlin",
+    "imagefilm berlin"
+   ],
+   "intent": "transaktional",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/foto-video-berlin.html",
+   "target_file": "foto-video-berlin.html",
+   "current_title": "Foto & Video Berlin – Drohne, Produkt- & Food-Fotografie",
+   "current_h1": "Foto & Video Berlin – Ihr Unternehmen im besten Licht.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Foto/Video nur Berlin (in NRW nur über die Marketing-Kraft in Essen, siehe Lücken)."
+  },
+  {
+   "id": 50,
+   "cluster": "KI",
+   "region": "Berlin",
+   "keyword": "ki arztpraxis",
+   "secondary": [
+    "chatbot arztpraxis",
+    "ki assistent praxis",
+    "online terminbuchung arztpraxis",
+    "whatsapp arztpraxis",
+    "praxis digitalisierung berlin"
+   ],
+   "intent": "kommerziell/B2B",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/ki-fuer-arztpraxen-berlin.html",
+   "target_file": "ki-fuer-arztpraxen-berlin.html",
+   "current_title": "KI für Arztpraxen Berlin: Chat-Assistent & Online-Termine",
+   "current_h1": "Weniger Anrufe. Mehr Zeit am Tresen.",
+   "suggested_title": null,
+   "suggested_h1": "KI für Arztpraxen in Berlin – weniger Anrufe, mehr Zeit am Tresen",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff. Viele Anbieter werben mit KI-Telefonassistenten – Masar bietet KEINE Telefon-/Sprach-KI: „telefonassistent“, „voicebot“, „ki telefon“ ausschließen. Keine Preise, nicht „rechtssicher“/„zertifiziert“."
+  },
+  {
+   "id": 51,
+   "cluster": "KI",
+   "region": "Berlin",
+   "keyword": "ki pflegedienst",
+   "secondary": [
+    "krankmeldung pflegedienst app",
+    "digitalisierung ambulanter pflegedienst",
+    "chatbot pflegedienst",
+    "pflegedienst anfragen automatisieren"
+   ],
+   "intent": "kommerziell/B2B",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/ki-fuer-pflegedienste-berlin.html",
+   "target_file": "ki-fuer-pflegedienste-berlin.html",
+   "current_title": "KI für Pflegedienste Berlin: Krankmeldungen, Anfragen & Termine",
+   "current_h1": "Die Stunde vor der ersten Tour gehört wieder Ihnen.",
+   "suggested_title": null,
+   "suggested_h1": "KI für Pflegedienste in Berlin – Krankmeldungen, Anfragen und Termine sortiert",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff."
+  },
+  {
+   "id": 52,
+   "cluster": "KI",
+   "region": "Berlin",
+   "keyword": "ki agentur berlin",
+   "secondary": [
+    "ki automatisierung kmu",
+    "ki agenten unternehmen",
+    "ki lösungen mittelstand"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/ki-loesungen/",
+   "target_file": "ki-loesungen/index.html",
+   "current_title": "KI-Lösungen Berlin – KI-Agenten & Automatisierung | Masar",
+   "current_h1": "KI, die einen Ablauf übernimmt – nicht nur redet.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 53,
+   "cluster": "KI",
+   "region": "Berlin",
+   "keyword": "ki verordnung praxis",
+   "secondary": [
+    "ki in der arztpraxis datenschutz",
+    "whatsapp arztpraxis erlaubt",
+    "online terminbuchung praxis datenschutz"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/ki-verordnung-praxis-pflege.html",
+   "target_file": "blog/ki-verordnung-praxis-pflege.html",
+   "current_title": "KI-Verordnung: Was Praxen und Pflegedienste jetzt beachten müssen",
+   "current_h1": "KI-Verordnung für Praxis und Pflege: Was jetzt gilt.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Ratgeber-Cluster KI vorhanden (8 Artikel)."
+  },
+  {
+   "id": 54,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung pflegedienst berlin",
+   "secondary": [
+    "pflegedienst auto beschriftung",
+    "pflegekräfte finden werbung"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-pflegedienst-berlin.html",
+   "target_file": "werbung-pflegedienst-berlin.html",
+   "current_title": "Werbung für Pflegedienste Berlin: Fahrzeuge & Recruiting",
+   "current_h1": "Ihr Pflegedienst. Erkannt auf jeder Tour. Gefunden von Bewerbern.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 55,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung handwerker berlin",
+   "secondary": [
+    "bauschild handwerker",
+    "handwerker fahrzeugbeschriftung"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-handwerker-berlin.html",
+   "target_file": "werbung-handwerker-berlin.html",
+   "current_title": "Werbung für Handwerker Berlin: Auto, Bauschild, Banner",
+   "current_h1": "Ihr Handwerk. Gesehen auf jeder Baustelle. Angerufen danach.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 56,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung fahrschule berlin",
+   "secondary": [
+    "fahrschulauto beschriftung",
+    "fahrschule schaufenster"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-fahrschule-berlin.html",
+   "target_file": "werbung-fahrschule-berlin.html",
+   "current_title": "Werbung für Fahrschulen Berlin: Autos & Preisaushang | Masar",
+   "current_h1": "Ihre Fahrschule. Auf jeder Übungsfahrt. Im Feed jeder Klasse.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 57,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung kosmetikstudio berlin",
+   "secondary": [
+    "kosmetikstudio schaufenster",
+    "neon schild kosmetikstudio"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-kosmetikstudio-berlin.html",
+   "target_file": "werbung-kosmetikstudio-berlin.html",
+   "current_title": "Werbung für Kosmetikstudios Berlin: Folie, Neon & Social",
+   "current_h1": "Ihr Studio. Schön von außen. Gefunden online.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 58,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung immobilienmakler berlin",
+   "secondary": [
+    "makler objektschild",
+    "verkaufsschild immobilie"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-immobilienmakler-berlin.html",
+   "target_file": "werbung-immobilienmakler-berlin.html",
+   "current_title": "Werbung für Makler Berlin: Objektschild & Exposé | Masar",
+   "current_h1": "Ihre Objekte. Gesehen vor Ort. Angefragt online.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 59,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung reinigungsfirma berlin",
+   "secondary": [
+    "reinigungsfirma bekannt machen",
+    "reinigungsfirma fahrzeugbeschriftung"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-reinigungsfirma-berlin.html",
+   "target_file": "werbung-reinigungsfirma-berlin.html",
+   "current_title": "Werbung für Reinigungsfirmen Berlin: Fahrzeuge & Kleidung",
+   "current_h1": "Ihre Reinigung. Sichtbar vor jedem Objekt. Seriös beim Kunden.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 60,
+   "cluster": "Branchen",
+   "region": "Berlin",
+   "keyword": "werbung sprachschule berlin",
+   "secondary": [
+    "werbung akademie",
+    "mehr anmeldungen sprachschule"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbung-akademie-sprachschule-berlin.html",
+   "target_file": "werbung-akademie-sprachschule-berlin.html",
+   "current_title": "Werbung für Akademien & Sprachschulen Berlin | Masar",
+   "current_h1": "Ihre Akademie. Gefunden von Teilnehmern. Gewählt von Eltern.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Branchenseite + passender Ratgeber; Ratgeber zieht die Impressionen, Branchenseite den Auftrag."
+  },
+  {
+   "id": 61,
+   "cluster": "Region",
+   "region": "Brandenburg",
+   "keyword": "werbetechnik potsdam",
+   "secondary": [
+    "schilder potsdam",
+    "leuchtreklame potsdam",
+    "fahrzeugbeschriftung potsdam",
+    "werbeagentur potsdam"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/werbetechnik-potsdam.html",
+   "target_file": "werbetechnik-potsdam.html",
+   "current_title": "Werbetechnik Potsdam: Schilder, Banner & Fahrzeuge | Masar",
+   "current_h1": "In Potsdam entscheidet oft die Genehmigung.",
+   "suggested_title": null,
+   "suggested_h1": "Werbetechnik Potsdam – Schilder, Banner und Fahrzeuge",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff. Werbesatzung-Ratgeber blog/werbeanlage-potsdam.html verlinken."
+  },
+  {
+   "id": 62,
+   "cluster": "Region",
+   "region": "Brandenburg",
+   "keyword": "werbetechnik brandenburg",
+   "secondary": [
+    "werbeagentur brandenburg",
+    "schilder brandenburg",
+    "werbetechnik berliner umland"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbetechnik-brandenburg.html",
+   "target_file": "werbetechnik-brandenburg.html",
+   "current_title": "Werbetechnik Brandenburg & Berliner Umland | Masar",
+   "current_h1": "Ihr Betrieb steht nicht in einer Ladenzeile.",
+   "suggested_title": null,
+   "suggested_h1": "Werbetechnik Brandenburg – für Betriebe im Berliner Umland",
+   "suggested_description": null,
+   "note": "H1 heute ohne Suchbegriff."
+  },
+  {
+   "id": 63,
+   "cluster": "Region",
+   "region": "Brandenburg",
+   "keyword": "werbeagentur <stadt> (Umland)",
+   "secondary": [
+    "werbeagentur bernau",
+    "werbeagentur falkensee",
+    "werbeagentur königs wusterhausen",
+    "werbeagentur teltow",
+    "werbeagentur oranienburg"
+   ],
+   "intent": "lokal",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-bernau.html",
+   "target_file": "werbeagentur-bernau.html",
+   "current_title": "Werbeagentur Bernau: Schilder, Werbetechnik & Design | Masar",
+   "current_h1": "Werbeagentur Bernau",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "15 Umland-Seiten (werbeagentur-*.html). Laut CLAUDE.md noch zu ähnlich – keine neuen Städte; zuerst echte Projekte/Fotos je Stadt. „Oranienburg“ hat keine Seite – bewusst nicht anlegen (Doorway-Risiko), Hennigsdorf-Seite deckt das Umland ab."
+  },
+  {
+   "id": 64,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik nrw",
+   "secondary": [
+    "werbeagentur nrw",
+    "werbetechnik ruhrgebiet",
+    "werbetechnik rheinland"
+   ],
+   "intent": "kommerziell",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-nrw.html",
+   "target_file": "werbeagentur-nrw.html",
+   "current_title": "Werbeagentur NRW: Schilder, Leuchtreklame & Folie | Masar",
+   "current_h1": "Werbeagentur für ganz NRW.",
+   "suggested_title": "Werbetechnik NRW: Schilder ab 59 € & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für ganz NRW – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Team vor Ort, KEINE Adresse/Filiale in NRW behaupten. „Werbetechnik“ trifft die Kaufabsicht besser als „Werbeagentur“."
+  },
+  {
+   "id": 65,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik köln",
+   "secondary": [
+    "werbeagentur köln",
+    "werbetechniker köln",
+    "werbeanlagen köln"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-koeln.html",
+   "target_file": "werbeagentur-koeln.html",
+   "current_title": "Werbeagentur & Werbetechnik Köln | Masar",
+   "current_h1": "Werbeagentur für Köln.",
+   "suggested_title": "Werbetechnik Köln: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Köln – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Lokaler Abschnitt (stadt_lokal.py) vorhanden; Titel auf „Werbetechnik“ statt „Werbeagentur“ ziehen. Keine Adresse in Köln nennen."
+  },
+  {
+   "id": 66,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame köln",
+   "secondary": [
+    "leuchtbuchstaben köln",
+    "lichtwerbung köln",
+    "leuchtkasten köln"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-koeln.html",
+   "target_file": "leuchtreklame-koeln.html",
+   "current_title": "Leuchtreklame Köln: Leuchtbuchstaben ab 229 € | Masar",
+   "current_h1": "Leuchtreklame Köln",
+   "suggested_title": "Leuchtreklame Köln: Leuchtbuchstaben ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Leuchtreklame in Köln: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.",
+   "note": "Preis 229 € = NRW-Preis Leuchtbuchstaben."
+  },
+  {
+   "id": 67,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder köln",
+   "secondary": [
+    "firmenschild köln",
+    "praxisschild köln",
+    "türschild köln"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-koeln.html",
+   "target_file": "schilder-koeln.html",
+   "current_title": "Schilder Köln: Firmenschild ab 179 € | Masar",
+   "current_h1": "Schilder Köln",
+   "suggested_title": "Schilder Köln: Firmenschild ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schilder in Köln: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.",
+   "note": "Firmenschild NRW 179 €, Tür-/Klingelschild 85 €, Praxisschild 459 €."
+  },
+  {
+   "id": 68,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung köln",
+   "secondary": [
+    "schaufensterbeklebung köln",
+    "milchglasfolie köln",
+    "fensterbeschriftung köln"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-koeln.html",
+   "target_file": "schaufensterbeschriftung-koeln.html",
+   "current_title": "Schaufensterbeschriftung Köln: Folie & Milchglas | Masar",
+   "current_h1": "Schaufensterbeschriftung Köln",
+   "suggested_title": "Schaufensterbeschriftung Köln ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schaufensterbeschriftung in Köln ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – gestaltet und vor Ort montiert.",
+   "note": "Schaufenster NRW 179 €."
+  },
+  {
+   "id": 69,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik düsseldorf",
+   "secondary": [
+    "werbeagentur düsseldorf",
+    "werbetechniker düsseldorf",
+    "werbeanlagen düsseldorf"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-duesseldorf.html",
+   "target_file": "werbeagentur-duesseldorf.html",
+   "current_title": "Werbeagentur Düsseldorf: Schilder & Leuchtreklame | Masar",
+   "current_h1": "Werbeagentur für Düsseldorf.",
+   "suggested_title": "Werbetechnik Düsseldorf: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Düsseldorf – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Lokaler Abschnitt (stadt_lokal.py) vorhanden; Titel auf „Werbetechnik“ statt „Werbeagentur“ ziehen. Keine Adresse in Düsseldorf nennen."
+  },
+  {
+   "id": 70,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame düsseldorf",
+   "secondary": [
+    "leuchtbuchstaben düsseldorf",
+    "lichtwerbung düsseldorf",
+    "leuchtkasten düsseldorf"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-duesseldorf.html",
+   "target_file": "leuchtreklame-duesseldorf.html",
+   "current_title": "Leuchtreklame Düsseldorf: Leuchtbuchstaben & Leuchtkästen",
+   "current_h1": "Leuchtreklame Düsseldorf",
+   "suggested_title": "Leuchtreklame Düsseldorf: Leuchtbuchstaben ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Leuchtreklame in Düsseldorf: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.",
+   "note": "Preis 229 € = NRW-Preis Leuchtbuchstaben."
+  },
+  {
+   "id": 71,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder düsseldorf",
+   "secondary": [
+    "firmenschild düsseldorf",
+    "praxisschild düsseldorf",
+    "türschild düsseldorf"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-duesseldorf.html",
+   "target_file": "schilder-duesseldorf.html",
+   "current_title": "Schilder Düsseldorf: Firmen-, Praxis- & Türschilder | Masar",
+   "current_h1": "Schilder Düsseldorf",
+   "suggested_title": "Schilder Düsseldorf: Firmenschild ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schilder in Düsseldorf: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.",
+   "note": "Firmenschild NRW 179 €, Tür-/Klingelschild 85 €, Praxisschild 459 €."
+  },
+  {
+   "id": 72,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung düsseldorf",
+   "secondary": [
+    "schaufensterbeklebung düsseldorf",
+    "milchglasfolie düsseldorf",
+    "fensterbeschriftung düsseldorf"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-duesseldorf.html",
+   "target_file": "schaufensterbeschriftung-duesseldorf.html",
+   "current_title": "Schaufensterbeschriftung Düsseldorf ab 179 € | Masar",
+   "current_h1": "Schaufensterbeschriftung Düsseldorf",
+   "suggested_title": "Schaufensterbeschriftung Düsseldorf ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schaufensterbeschriftung in Düsseldorf ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – gestaltet und vor Ort montiert.",
+   "note": "Schaufenster NRW 179 €."
+  },
+  {
+   "id": 73,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik dortmund",
+   "secondary": [
+    "werbeagentur dortmund",
+    "werbetechniker dortmund",
+    "werbeanlagen dortmund"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-dortmund.html",
+   "target_file": "werbeagentur-dortmund.html",
+   "current_title": "Werbeagentur & Werbetechnik Dortmund | Masar",
+   "current_h1": "Werbeagentur für Dortmund.",
+   "suggested_title": "Werbetechnik Dortmund: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Dortmund – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Lokaler Abschnitt (stadt_lokal.py) vorhanden; Titel auf „Werbetechnik“ statt „Werbeagentur“ ziehen. Keine Adresse in Dortmund nennen."
+  },
+  {
+   "id": 74,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame dortmund",
+   "secondary": [
+    "leuchtbuchstaben dortmund",
+    "lichtwerbung dortmund",
+    "leuchtkasten dortmund"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-dortmund.html",
+   "target_file": "leuchtreklame-dortmund.html",
+   "current_title": "Leuchtreklame Dortmund: Leuchtbuchstaben & Leuchtkästen",
+   "current_h1": "Leuchtreklame Dortmund",
+   "suggested_title": "Leuchtreklame Dortmund: Leuchtbuchstaben ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Leuchtreklame in Dortmund: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.",
+   "note": "Preis 229 € = NRW-Preis Leuchtbuchstaben."
+  },
+  {
+   "id": 75,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder dortmund",
+   "secondary": [
+    "firmenschild dortmund",
+    "praxisschild dortmund",
+    "türschild dortmund"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-dortmund.html",
+   "target_file": "schilder-dortmund.html",
+   "current_title": "Schilder Dortmund: Firmen-, Praxis- & Türschilder | Masar",
+   "current_h1": "Schilder Dortmund",
+   "suggested_title": "Schilder Dortmund: Firmenschild ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schilder in Dortmund: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.",
+   "note": "Firmenschild NRW 179 €, Tür-/Klingelschild 85 €, Praxisschild 459 €."
+  },
+  {
+   "id": 76,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung dortmund",
+   "secondary": [
+    "schaufensterbeklebung dortmund",
+    "milchglasfolie dortmund",
+    "fensterbeschriftung dortmund"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-dortmund.html",
+   "target_file": "schaufensterbeschriftung-dortmund.html",
+   "current_title": "Schaufensterbeschriftung Dortmund: Folie & Milchglas | Masar",
+   "current_h1": "Schaufensterbeschriftung Dortmund",
+   "suggested_title": "Schaufensterbeschriftung Dortmund ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schaufensterbeschriftung in Dortmund ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – gestaltet und vor Ort montiert.",
+   "note": "Schaufenster NRW 179 €."
+  },
+  {
+   "id": 77,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik essen",
+   "secondary": [
+    "werbeagentur essen",
+    "werbetechniker essen",
+    "werbeanlagen essen"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-essen.html",
+   "target_file": "werbeagentur-essen.html",
+   "current_title": "Werbeagentur Essen: Schilder & Leuchtreklame | Masar",
+   "current_h1": "Werbeagentur für Essen.",
+   "suggested_title": "Werbetechnik Essen: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Essen – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Lokaler Abschnitt (stadt_lokal.py) vorhanden; Titel auf „Werbetechnik“ statt „Werbeagentur“ ziehen. Keine Adresse in Essen nennen."
+  },
+  {
+   "id": 78,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame essen",
+   "secondary": [
+    "leuchtbuchstaben essen",
+    "lichtwerbung essen",
+    "leuchtkasten essen"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-essen.html",
+   "target_file": "leuchtreklame-essen.html",
+   "current_title": "Leuchtreklame Essen: Leuchtbuchstaben & Leuchtkästen | Masar",
+   "current_h1": "Leuchtreklame Essen",
+   "suggested_title": "Leuchtreklame Essen: Leuchtbuchstaben ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Leuchtreklame in Essen: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.",
+   "note": "Preis 229 € = NRW-Preis Leuchtbuchstaben."
+  },
+  {
+   "id": 79,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder essen",
+   "secondary": [
+    "firmenschild essen",
+    "praxisschild essen",
+    "türschild essen"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-essen.html",
+   "target_file": "schilder-essen.html",
+   "current_title": "Schilder Essen: Firmen-, Praxis- & Türschilder | Masar",
+   "current_h1": "Schilder Essen",
+   "suggested_title": "Schilder Essen: Firmenschild ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schilder in Essen: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.",
+   "note": "Firmenschild NRW 179 €, Tür-/Klingelschild 85 €, Praxisschild 459 €."
+  },
+  {
+   "id": 80,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung essen",
+   "secondary": [
+    "schaufensterbeklebung essen",
+    "milchglasfolie essen",
+    "fensterbeschriftung essen"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-essen.html",
+   "target_file": "schaufensterbeschriftung-essen.html",
+   "current_title": "Schaufensterbeschriftung Essen: Folie & Milchglas | Masar",
+   "current_h1": "Schaufensterbeschriftung Essen",
+   "suggested_title": "Schaufensterbeschriftung Essen ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schaufensterbeschriftung in Essen ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – gestaltet und vor Ort montiert.",
+   "note": "Schaufenster NRW 179 €."
+  },
+  {
+   "id": 81,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbetechnik bochum",
+   "secondary": [
+    "werbeagentur bochum",
+    "werbetechniker bochum",
+    "werbeanlagen bochum"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-bochum.html",
+   "target_file": "werbeagentur-bochum.html",
+   "current_title": "Werbeagentur Bochum: Schilder & Leuchtreklame | Masar",
+   "current_h1": "Werbeagentur für Bochum.",
+   "suggested_title": "Werbetechnik Bochum: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Bochum – mit Team vor Ort",
+   "suggested_description": null,
+   "note": "Lokaler Abschnitt (stadt_lokal.py) vorhanden; Titel auf „Werbetechnik“ statt „Werbeagentur“ ziehen. Keine Adresse in Bochum nennen."
+  },
+  {
+   "id": 82,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame bochum",
+   "secondary": [
+    "leuchtbuchstaben bochum",
+    "lichtwerbung bochum",
+    "leuchtkasten bochum"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-bochum.html",
+   "target_file": "leuchtreklame-bochum.html",
+   "current_title": "Leuchtreklame Bochum: Leuchtbuchstaben & Leuchtkästen",
+   "current_h1": "Leuchtreklame Bochum",
+   "suggested_title": "Leuchtreklame Bochum: Leuchtbuchstaben ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Leuchtreklame in Bochum: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.",
+   "note": "Preis 229 € = NRW-Preis Leuchtbuchstaben."
+  },
+  {
+   "id": 83,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder bochum",
+   "secondary": [
+    "firmenschild bochum",
+    "praxisschild bochum",
+    "türschild bochum"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schilder-bochum.html",
+   "target_file": "schilder-bochum.html",
+   "current_title": "Schilder Bochum: Firmen-, Praxis- & Türschilder | Masar",
+   "current_h1": "Schilder Bochum",
+   "suggested_title": "Schilder Bochum: Firmenschild ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schilder in Bochum: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.",
+   "note": "Firmenschild NRW 179 €, Tür-/Klingelschild 85 €, Praxisschild 459 €."
+  },
+  {
+   "id": 84,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung bochum",
+   "secondary": [
+    "schaufensterbeklebung bochum",
+    "milchglasfolie bochum",
+    "fensterbeschriftung bochum"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-bochum.html",
+   "target_file": "schaufensterbeschriftung-bochum.html",
+   "current_title": "Schaufensterbeschriftung Bochum ab 179 € | Masar",
+   "current_h1": "Schaufensterbeschriftung Bochum",
+   "suggested_title": "Schaufensterbeschriftung Bochum ab 179 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Schaufensterbeschriftung in Bochum ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – gestaltet und vor Ort montiert.",
+   "note": "Schaufenster NRW 179 €."
+  },
+  {
+   "id": 85,
+   "cluster": "Fensterfolie",
+   "region": "NRW",
+   "keyword": "fensterfolie nrw",
+   "secondary": [
+    "sonnenschutzfolie köln",
+    "sichtschutzfolie düsseldorf",
+    "milchglasfolie dortmund",
+    "fensterfolie essen",
+    "sicherheitsfolie bochum"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/fensterfolie-nrw.html",
+   "target_file": "fensterfolie-nrw.html",
+   "current_title": "Fensterfolie NRW: Sonnenschutz, Sichtschutz & Sicherheit",
+   "current_h1": "Fensterfolie NRW",
+   "suggested_title": "Fensterfolie NRW: Sichtschutz ab 229 € | Masar",
+   "suggested_h1": null,
+   "suggested_description": "Fensterfolie in NRW: Sichtschutz und Milchglas ab 229 € netto, Sonnenschutz- und Sicherheitsfolie – Glasprüfung und Montage durch unser Team vor Ort.",
+   "note": "Städte-Fensterfolie-Seiten wurden am 24.10.2026 zusammengeführt – nicht wieder einzeln anlegen. Milchglas/Sichtschutz NRW 229 €."
+  },
+  {
+   "id": 86,
+   "cluster": "Banner & Druck",
+   "region": "NRW",
+   "keyword": "banner drucken nrw",
+   "secondary": [
+    "pvc banner köln",
+    "banner drucken düsseldorf",
+    "bauzaunbanner dortmund",
+    "mesh banner essen"
+   ],
+   "intent": "transaktional",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/pvc-banner-nrw.html",
+   "target_file": "pvc-banner-nrw.html",
+   "current_title": "Banner drucken NRW: PVC-Banner ab 34 €/m² | Masar",
+   "current_h1": "PVC-Banner NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Städte-Bannerseiten bewusst zusammengeführt (301). PVC NRW 34 €/m², Mesh 39 €, Blockout 48 €, Mindestpreis 89 €."
+  },
+  {
+   "id": 87,
+   "cluster": "Fahrzeug",
+   "region": "NRW",
+   "keyword": "fahrzeugbeschriftung nrw",
+   "secondary": [
+    "fahrzeugbeschriftung köln",
+    "fahrzeugbeschriftung düsseldorf",
+    "autobeschriftung dortmund",
+    "transporter beschriftung essen"
+   ],
+   "intent": "transaktional",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/fahrzeugbeschriftung-nrw.html",
+   "target_file": "fahrzeugbeschriftung-nrw.html",
+   "current_title": "Fahrzeugbeschriftung NRW ab 340 € | Transporter & Flotte",
+   "current_h1": "Fahrzeugbeschriftung NRW – Ihr Fuhrpark. Ihre Marke.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Teilbeschriftung NRW ab 340 €. Keine Städteseiten nur mit Ortsnamen anlegen."
+  },
+  {
+   "id": 88,
+   "cluster": "Fahrzeug",
+   "region": "NRW",
+   "keyword": "lkw beschriftung nrw",
+   "secondary": [
+    "planendruck nrw",
+    "lkw beschriftung köln",
+    "lkw folierung ruhrgebiet"
+   ],
+   "intent": "transaktional",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/lkw-beschriftung-nrw.html",
+   "target_file": "lkw-beschriftung-nrw.html",
+   "current_title": "LKW-Beschriftung NRW: Plane, Koffer & Fahrerhaus | Masar",
+   "current_h1": "LKW-Beschriftung NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 89,
+   "cluster": "Leuchtreklame",
+   "region": "NRW",
+   "keyword": "leuchtreklame nrw",
+   "secondary": [
+    "leuchtreklame ruhrgebiet",
+    "lichtwerbung nrw"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/leuchtreklame-nrw.html",
+   "target_file": "leuchtreklame-nrw.html",
+   "current_title": "Leuchtreklame NRW: Leuchtbuchstaben & Leuchtkästen | Masar",
+   "current_h1": "Leuchtreklame NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Kannibalisierung mit werbeagentur-nrw.html gering halten: hier nur Leuchtreklame, Links zu den Städteseiten."
+  },
+  {
+   "id": 90,
+   "cluster": "Schilder",
+   "region": "NRW",
+   "keyword": "schilder nrw",
+   "secondary": [
+    "firmenschild nrw",
+    "schilder ruhrgebiet"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/schilder-nrw.html",
+   "target_file": "schilder-nrw.html",
+   "current_title": "Schilder NRW: Firmen-, Praxis- & Türschilder ab 59 € | Masar",
+   "current_h1": "Schilder NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 91,
+   "cluster": "Schaufenster",
+   "region": "NRW",
+   "keyword": "schaufensterbeschriftung nrw",
+   "secondary": [
+    "schaufensterbeschriftung ruhrgebiet"
+   ],
+   "intent": "kommerziell",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/schaufensterbeschriftung-nrw.html",
+   "target_file": "schaufensterbeschriftung-nrw.html",
+   "current_title": "Schaufensterbeschriftung NRW: Folie, Milchglas & Druck",
+   "current_h1": "Schaufensterbeschriftung NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  },
+  {
+   "id": 92,
+   "cluster": "Web",
+   "region": "NRW",
+   "keyword": "webdesign nrw",
+   "secondary": [
+    "webdesign düsseldorf",
+    "webdesign köln",
+    "website erstellen lassen essen"
+   ],
+   "intent": "transaktional",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/webdesign-nrw.html",
+   "target_file": "webdesign-nrw.html",
+   "current_title": "Webdesign NRW: Firmen-Websites zum Festpreis | Masar",
+   "current_h1": "Webdesign NRW",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Kein Preis in der Preisliste."
+  },
+  {
+   "id": 93,
+   "cluster": "Genehmigung",
+   "region": "NRW",
+   "keyword": "werbeanlage genehmigung köln",
+   "secondary": [
+    "werbesatzung köln",
+    "werbeanlage genehmigungsfrei nrw",
+    "werbeanlage 1 qm nrw",
+    "reklameaufsicht essen",
+    "gestaltungssatzung düsseldorf altstadt"
+   ],
+   "intent": "informativ",
+   "priority": "B",
+   "target_url": "https://masar-werbeagentur.de/blog/werbeanlage-koeln.html",
+   "target_file": "blog/werbeanlage-koeln.html",
+   "current_title": "Werbeanlage Köln: Satzung, Genehmigung & Kosten",
+   "current_h1": "Werbeanlage in Köln: Werbesatzungen & Genehmigung",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "19 Stadt-Ratgeber (blog/werbeanlage-<stadt>.html). NRW: verfahrensfrei bis 1 m² (§ 62 Abs. 1 Nr. 12 BauO NRW). Gute Linkziele für Anfragen „darf ich ein Schild anbringen“."
+  },
+  {
+   "id": 94,
+   "cluster": "Region",
+   "region": "NRW",
+   "keyword": "werbeagentur herne / mülheim / bottrop",
+   "secondary": [
+    "werbetechnik herne",
+    "werbetechnik mülheim an der ruhr",
+    "werbetechnik bottrop"
+   ],
+   "intent": "lokal",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-herne.html",
+   "target_file": "werbeagentur-herne.html",
+   "current_title": "Werbeagentur Herne: Schilder, Werbetechnik & Design | Masar",
+   "current_h1": "Werbeagentur Herne",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Wie Umland-Seiten: echte Projekte ergänzen, sobald vorhanden."
+  },
+  {
+   "id": 95,
+   "cluster": "Region",
+   "region": "Hamburg",
+   "keyword": "werbetechnik hamburg",
+   "secondary": [
+    "werbeagentur hamburg",
+    "werbetechniker hamburg",
+    "schilder hamburg",
+    "leuchtreklame hamburg",
+    "schaufensterbeschriftung hamburg",
+    "fahrzeugbeschriftung hamburg"
+   ],
+   "intent": "transaktional/lokal",
+   "priority": "A",
+   "target_url": "https://masar-werbeagentur.de/werbeagentur-hamburg.html",
+   "target_file": "werbeagentur-hamburg.html",
+   "current_title": "Werbeagentur Hamburg: Schilder, Leuchtreklame & Folie",
+   "current_h1": "Werbeagentur für Hamburg.",
+   "suggested_title": "Werbetechnik Hamburg: Schilder & Leuchtreklame | Masar",
+   "suggested_h1": "Werbetechnik für Hamburg – mit Team vor Ort",
+   "suggested_description": "Werbetechnik in Hamburg mit Team vor Ort: Schilder ab 59 €, Leuchtbuchstaben ab 229 €, Schaufenster- und Fahrzeugbeschriftung – in allen sieben Bezirken.",
+   "note": "Titel heute ohne Marke. Leistungs-Suchanfragen („leuchtreklame hamburg“ usw.) landen alle auf einer Seite – siehe Lücken. Keine Adresse/Filiale in Hamburg nennen."
+  },
+  {
+   "id": 96,
+   "cluster": "Genehmigung",
+   "region": "Hamburg",
+   "keyword": "werbeanlage genehmigung hamburg",
+   "secondary": [
+    "werbeanlage hamburg genehmigungsfrei",
+    "hbauo werbeanlage",
+    "sondernutzung werbung hamburg"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/werbeanlage-hamburg.html",
+   "target_file": "blog/werbeanlage-hamburg.html",
+   "current_title": "Werbeanlage Hamburg: Satzung, Genehmigung & Kosten",
+   "current_h1": "Werbeanlage in Hamburg: Bezirksamt & Sondernutzung",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Bis 1 m² genehmigungsfrei (Anlage 2 HBauO), zuständig Bezirksamt."
+  },
+  {
+   "id": 97,
+   "cluster": "Saison",
+   "region": "Berlin",
+   "keyword": "fotowand firmenfeier",
+   "secondary": [
+    "fotowand drucken",
+    "pressewand drucken berlin",
+    "eventbanner weihnachtsfeier"
+   ],
+   "intent": "transaktional/saisonal",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/fotowand-firmenfeier.html",
+   "target_file": "blog/fotowand-firmenfeier.html",
+   "current_title": "Fotowand für die Firmenfeier: Größe, Material, Fristen",
+   "current_h1": "Fotowand für die Firmenfeier: Größe, Material und Fristen.",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": "Nov./Dez. relevant. Von Ratgeber auf pvc-banner-berlin.html/print.html leiten."
+  },
+  {
+   "id": 98,
+   "cluster": "Saison",
+   "region": "Berlin",
+   "keyword": "pflegekräfte finden werbung",
+   "secondary": [
+    "pflegekräfte gewinnen ideen",
+    "recruiting pflege werbung"
+   ],
+   "intent": "informativ",
+   "priority": "C",
+   "target_url": "https://masar-werbeagentur.de/blog/pflegekraefte-finden-werbung.html",
+   "target_file": "blog/pflegekraefte-finden-werbung.html",
+   "current_title": "Pflegekräfte finden: Werbung, die Bewerbungen bringt | Masar",
+   "current_h1": "Pflegekräfte finden: Werbung, die Bewerbungen bringt",
+   "suggested_title": null,
+   "suggested_h1": null,
+   "suggested_description": null,
+   "note": null
+  }
+ ],
+ "gaps": [
+  {
+   "topic": "Leitsystem & Gebäudebeschilderung (B2B)",
+   "keywords": "leitsystem berlin, gebäudebeschilderung, mieterschilder, orientierungssystem büro, etagenschild",
+   "status": "Nur Erwähnungen auf schilder-*.html und praxisbeschilderung-berlin.html. Zielgruppe Hausverwaltungen, Bürobetreiber, öffentliche Ausschreibungen (Bieterprofil vergabekooperation.berlin).",
+   "recommendation": "Neue Seite leitsystem-berlin.html mit echten Projekten ODER großer Abschnitt mit Anker auf schilder-berlin.html. Preise nur aus der Preisliste (Tür-/Klingelschild ab 69 €, Firmenschild ab 149 €). Freigabe Inhaber."
+  },
+  {
+   "topic": "Büro-Branding / Bürobeschriftung",
+   "keywords": "büro beschriftung, glasdekor büro, logo wand empfang, wandfolie büro, office branding berlin",
+   "status": "Keine Seite; Milchglas mit Logo und Einzelbuchstaben sind vorhanden, aber verteilt (sichtschutzfolie-berlin.html, schilder-berlin.html).",
+   "recommendation": "Seite oder Abschnitt „Büro & Empfang“ (Milchglas ab 190 €, Einzelbuchstaben ab 119 €, Acrylglasschild ab 240 €). Nur mit echten Fotos."
+  },
+  {
+   "topic": "Hamburg – Leistungsseiten",
+   "keywords": "leuchtreklame hamburg, schilder hamburg, schaufensterbeschriftung hamburg, fahrzeugbeschriftung hamburg",
+   "status": "Alle Hamburger Leistungs-Suchanfragen landen auf werbeagentur-hamburg.html.",
+   "recommendation": "Zuerst Abschnitte mit Ankern (#leuchtreklame, #schilder, #schaufenster, #fahrzeuge) + FAQ auf der Hamburg-Seite. Eigene Seiten erst mit echten Hamburger Projekten und eigenem Inhalt (HBauO, Bezirksamt) – keine Seiten, die sich nur im Ortsnamen unterscheiden (CLAUDE.md)."
+  },
+  {
+   "topic": "Kosten-Ratgeber Leuchtreklame & Schilder",
+   "keywords": "leuchtreklame kosten, was kostet leuchtreklame, firmenschild kosten, schild preis",
+   "status": "Für Fahrzeug und Sonnenschutzfolie gibt es Kosten-Ratgeber, für die zwei wichtigsten Werbetechnik-Leistungen nicht.",
+   "recommendation": "Zwei Ratgeber (blog/leuchtreklame-kosten.html, blog/firmenschild-kosten.html) mit Preisfaktoren und nur den „ab“-Preisen aus CLAUDE.md – keine erfundenen Gesamtsummen."
+  },
+  {
+   "topic": "Fahrzeugfolie entfernen (Leistung)",
+   "keywords": "fahrzeugfolie entfernen berlin, beschriftung entfernen leasingrückgabe",
+   "status": "Ratgeber vorhanden; auf fahrzeugbeschriftung-berlin.html nur in den FAQ erwähnt, kein eigener Leistungsabschnitt.",
+   "recommendation": "Abschnitt mit Anker #entfernen; Saison Dezember/Januar."
+  },
+  {
+   "topic": "Glastüren markieren (Leistung)",
+   "keywords": "glastür markierung, glasflächen kennzeichnen lassen",
+   "status": "Nur Ratgeber blog/glastueren-kennzeichnen.html.",
+   "recommendation": "Abschnitt auf sichtschutzfolie-berlin.html; Ratgeber dorthin verlinken."
+  },
+  {
+   "topic": "Roll-ups",
+   "keywords": "roll up drucken berlin, roll up mit druck, rollup display",
+   "status": "Erwähnt auf print.html, messebeschriftung-berlin.html u. a., aber nirgends im Titel.",
+   "recommendation": "Titel von messebeschriftung-berlin.html oder print.html um „Roll-ups“ ergänzen (siehe Tabelle); keine eigene Seite nötig."
+  },
+  {
+   "topic": "Content & Video in Essen",
+   "keywords": "social media agentur essen, content marketing essen, imagefilm essen",
+   "status": "In Essen gibt es laut Inhaber eine Marketing-Kraft (Content, Video); keine Seite dazu, digital.html ist Berlin.",
+   "recommendation": "Vor jeder Seite Inhaber fragen: Umfang, Preise, Fotos. Bis dahin Abschnitt auf werbeagentur-essen.html."
+  },
+  {
+   "topic": "Fremdsprachige Suche",
+   "keywords": "sign maker berlin, signage company berlin (EN); tabela berlin (TR); Werbeagentur arabisch/türkisch Berlin",
+   "status": "Beratung in DE/EN/AR/TR wird angeboten, aber es gibt keine Inhalte in diesen Sprachen.",
+   "recommendation": "Entscheidung Inhaber: eine kurze englische Seite (hreflang) oder ein Sprachabschnitt auf ueber-uns.html. Keine maschinell übersetzten Massenseiten."
+  },
+  {
+   "topic": "Nicht angebotene Leistungen (nur Inhaber fragen)",
+   "keywords": "werbepylon, werbeturm, magnetschild auto, stickerei",
+   "status": "Kommen auf der Website nicht vor (Stick ist ausdrücklich ausgeschlossen).",
+   "recommendation": "Nur aufnehmen, wenn der Inhaber die Leistung bestätigt. Bis dahin als ausschließende Keywords in Ads."
+  }
+ ],
+ "cannibalization": [
+  {
+   "pages": "index.html / werbetechnik.html / aussenwerbung-berlin.html / werbetechnik-berlin-wedding.html",
+   "split": "Marke + „Werbeagentur Berlin“ / Leistungsübersicht „Werbetechnik Berlin“ / Fassade + Genehmigung / Standort „Wedding, in der Nähe“"
+  },
+  {
+   "pages": "fensterfolie-berlin.html / sichtschutzfolie-berlin.html / schaufensterbeschriftung-berlin.html",
+   "split": "Dachseite Folienarten / Milchglas & Sichtschutz / Werbung auf Glas (Logo, Öffnungszeiten)"
+  },
+  {
+   "pages": "messebau-berlin.html / messestand-berlin-2027.html / messebeschriftung-berlin.html",
+   "split": "Standbau ganzjährig / Messen 2027 (saisonal) / Messegrafik & Roll-ups"
+  },
+  {
+   "pages": "fahrzeugbeschriftung-berlin.html / blog/fahrzeugbeschriftung-kosten-berlin.html",
+   "split": "Angebot (ab 290 €) / „Kosten“, „Preis“, „was kostet“"
+  },
+  {
+   "pages": "print.html / express-druck-berlin.html",
+   "split": "„Druckerei Berlin“ / „heute“, „express“, „same day“"
+  },
+  {
+   "pages": "werbeagentur-nrw.html / leuchtreklame-nrw.html / schilder-nrw.html",
+   "split": "NRW gesamt / nur Leuchtreklame / nur Schilder – jeweils auf die Städteseiten verlinken"
+  }
+ ],
+ "exclude": [
+  {
+   "keywords": "laternenwerbung",
+   "reason": "wird laut CLAUDE.md nicht angeboten"
+  },
+  {
+   "keywords": "ki telefonassistent, voicebot, ki telefon arztpraxis",
+   "reason": "keine Telefon-/Sprach-KI (Inhaber, 03.11.2026)"
+  },
+  {
+   "keywords": "stickerei, besticken, bestickt",
+   "reason": "Textildruck nur Flex/Flock und DTF, kein Stick"
+  },
+  {
+   "keywords": "messebau köln / düsseldorf / hamburg",
+   "reason": "Messebau nur Berlin"
+  },
+  {
+   "keywords": "expressdruck köln / hamburg",
+   "reason": "Express nur Berlin"
+  },
+  {
+   "keywords": "fotograf köln / düsseldorf / hamburg",
+   "reason": "Foto/Video nicht in NRW/Hamburg (Ausnahme: Marketing-Kraft Essen, erst nach Rücksprache)"
+  },
+  {
+   "keywords": "kostenlos, gratis, selber machen, diy, anleitung, vorlage, kaufen, meterware, rolle, plotter",
+   "reason": "Selbermacher/Material-Käufer"
+  },
+  {
+   "keywords": "job, jobs, ausbildung, gehalt, stellenangebot",
+   "reason": "Bewerber statt Kunden"
+  }
+ ]
+}
