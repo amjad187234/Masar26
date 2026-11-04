@@ -8,6 +8,8 @@ Nur Meta-Tags neu setzen (Bild existiert schon):
 Neu erzeugte Seiten (Generatoren in tools/folien) haben zuerst logo.png als og:image –
 danach für jede betroffene Seite „meta“ (oder „add“ bei neuen Seiten) ausführen.
 Einträge werden in tools/og/cards.json gesammelt.
+Alle Seiten mit logo.png zurück auf ihr vorhandenes og/-Bild stellen (läuft auch in snippets.py):
+  python3 tools/og/og_cards.py sync [--dry]
 """
 import json, os, re, sys, html, subprocess
 
@@ -85,6 +87,29 @@ def meta(f, h):
     open(p, 'w', encoding='utf-8').write(s)
 
 
+def sync(dry=False):
+    """Seiten, die (nach dem Neu-Erzeugen) wieder logo.png als og:image haben, auf ihr vorhandenes
+    og/<seite>.jpg zurückstellen. Überschrift für og:image:alt aus cards.json, sonst aus og:title."""
+    import glob
+    reg = json.load(open(REG, encoding='utf-8')) if os.path.exists(REG) else {}
+    n = 0
+    for p in sorted(glob.glob(ROOT + '*.html') + glob.glob(ROOT + '*/*.html')):
+        f = p[len(ROOT):]
+        if f.startswith(('tools/', 'admin/')): continue
+        s = open(p, encoding='utf-8').read()
+        m = re.search(r'<meta property="og:image" content="([^"]*)"', s)
+        if not m or not m.group(1).endswith(('/logo.png', '/logo.webp')): continue
+        if not os.path.exists(ROOT + og_name(f)): continue
+        if f in reg: h = reg[f][2]
+        else:
+            t = re.search(r'<meta property="og:title" content="([^"]*)"', s)
+            h = html.unescape(t.group(1)).split(' | ')[0] if t else f
+        n += 1
+        print(('würde setzen ' if dry else 'setze ') + f + ' → ' + og_name(f))
+        if not dry: meta(f, h)
+    return n
+
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if len(a) == 6 and a[0] == 'add':
@@ -98,5 +123,7 @@ if __name__ == '__main__':
     elif len(a) == 3 and a[0] == 'meta':
         meta(a[1], a[2])
         print('ok')
+    elif a and a[0] == 'sync':
+        print(sync('--dry' in a), 'Seiten: Logo-Vorschaubild durch eigenes og/-Bild ersetzt')
     else:
         print(__doc__)

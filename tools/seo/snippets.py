@@ -82,6 +82,37 @@ S = {
    'Werbung für Makler: Objektschilder, Schaufenster, Exposé, Fotos und Social Media – und welche Pflichtangaben § 87 GEG in Immobilienanzeigen verlangt.'),
  'blog/index.html': ('Werbetechnik-Blog: Ratgeber, Preise & Regeln | Masar',
    'Ratgeber zu Schildern, Leuchtreklame, Folien und Fahrzeugbeschriftung: ehrliche Preise, Genehmigungen in Berlin, NRW und Hamburg – mit Quellen.'),
+ # 04.11.2026 (seo_check.py): Titel > 60 bzw. Beschreibung > 160 Zeichen gekürzt – Inhalt unverändert, nur Fakten von der Seite
+ 'ki-fuer-arztpraxen-berlin.html': ('KI für Arztpraxen Berlin: Chat-Assistent & Online-Termine',
+   'Digitaler Assistent für Berliner Praxen: Fragen beantworten, Termine und Rezeptwünsche online aufnehmen, E-Mails vorsortieren – mit KI-Hinweis und EU-Hosting.'),
+ 'ki-fuer-pflegedienste-berlin.html': ('KI für Pflegedienste Berlin: Krankmeldungen & Anfragen',
+   'Digitaler Assistent für Pflegedienste in Berlin: Krankmeldungen, Angehörigen-Fragen und Neuanfragen per Chat aufnehmen, E-Mails vorsortieren – Sie entscheiden.'),
+ 'textildruck-berlin.html': ('Textildruck Berlin: T-Shirts & Hoodies mit Logo | Masar',
+   'Textildruck in Berlin für Firmen: T-Shirts, Hoodies, Polos und Taschen mit Logo – Flex- und DTF-Druck ab 5 Stück, Gestaltung inklusive, Versand deutschlandweit.'),
+ 'foto-video-berlin.html': ('Foto & Video Berlin – Drohne, Produkt- & Food-Fotografie',
+   'Foto- und Videoproduktion für Unternehmen in Berlin: Drohnenaufnahmen, Social-Media-Content, Food- und Produktfotos, Werbefilme und Schnitt. Angebot in 24 h.'),
+ 'lkw-beschriftung-berlin.html': ('LKW-Beschriftung Berlin: Plane, Koffer & Fahrerhaus | Masar',
+   'LKW-Beschriftung in Berlin: Fahrerhaus, Kofferaufbau, bedruckte Plane oder Vollfolierung – mit Gestaltung, Produktion und Montage bei Ihnen vor Ort.'),
+ 'webdesign-berlin.html': ('Webdesign Berlin – Websites & Online-Shops | Masar',
+   'Websites, Landingpages und Online-Shops für Berliner Firmen – direkt programmiert oder mit WordPress. Barrierearm, DSGVO-konform und zur Übergabe in Ihre Hand.'),
+ 'ueber-uns.html': ('Über uns – Ein Team, alle Gewerke | Masar Werbeagentur',
+   'Gestalter, Handwerker und Entwickler unter einem Dach in Berlin-Wedding: Werbetechnik, Druck, Design, Web und KI – ein Ansprechpartner für alles.'),
+ 'blog/angehoerige-kommunikation-pflegedienst.html': ('Kommunikation mit Angehörigen im Pflegedienst',
+   'Wie ambulante Pflegedienste Fragen von Angehörigen geordnet aufnehmen: mit Schweigepflicht, festen Wegen und digitalem Assistenten – ohne Dauertelefon.'),
+ 'blog/digitale-menuetafel-gestalten.html': ('Digitale Menütafel gestalten: Was funktioniert | Masar',
+   'Digitale Menütafeln in der Gastronomie: wie viele Positionen auf eine Seite gehören, wie lange sie stehen bleiben muss und welche Fehler oft passieren.'),
+ 'blog/krankmeldung-pflegedienst-digital.html': ('Krankmeldungen im Pflegedienst digital aufnehmen',
+   'Krankmeldung um sechs, Tour um sieben: Wie ambulante Pflegedienste Krankmeldungen per Chat oder WhatsApp aufnehmen – schnell, vollständig, datenschutzgerecht.'),
+ 'blog/postfach-pflegedienst-ordnen.html': ('E-Mail-Postfach im Pflegedienst ordnen – mit KI',
+   'Kassen, Arztpraxen, Bewerbungen, Angehörige: Wie Pflegedienste ihr Postfach vorsortieren und Antworten vorbereiten lassen – die Freigabe bleibt beim Team.'),
+ 'blog/whatsapp-arztpraxis-datenschutz.html': ('WhatsApp in der Arztpraxis: Was ist erlaubt?',
+   'WhatsApp für Terminerinnerungen und Patientenfragen: warum die normale App problematisch ist, was die WhatsApp Business Platform ändert und was gilt.'),
+ 'blog/fahrzeugbeschriftung-tipps.html': ('Fahrzeugbeschriftung: 7 Tipps zu Folie, Schrift & Montage',
+   'Cast- oder Kalanderfolie, wie groß die Schrift sein muss, Profi oder selbst kleben: 7 Tipps aus der Berliner Werkstatt – mit Checkliste und Kostenüberblick.'),
+}
+# Nur den Titel kürzen (Beschreibung bleibt wörtlich – Rechtsthema)
+NUR_TITEL = {
+ 'blog/ki-verordnung-praxis-pflege.html': 'KI-Verordnung: Was Praxen und Pflegedienste beachten müssen',
 }
 
 
@@ -103,7 +134,15 @@ def main(dry=False):
         s = setze(s, 'og:title', t, 'property'); s = setze(s, 'og:description', d, 'property')
         s = setze(s, 'twitter:title', t); s = setze(s, 'twitter:description', d)
         open(p, 'w', encoding='utf-8').write(s)
-    print(len(S), 'Seiten', 'geprüft' if dry else 'aktualisiert', '–', fehler, 'Längenhinweise')
+    for f, t in NUR_TITEL.items():
+        if len(t) > 60: print(f'LÄNGE {len(t):3}/---  {f}'); fehler += 1
+        p = os.path.join(ROOT, f)
+        if dry or not os.path.exists(p): continue
+        s = open(p, encoding='utf-8').read()
+        s = re.sub(r'<title>.*?</title>', '<title>' + html.escape(t, quote=False) + '</title>', s, count=1, flags=re.S)
+        s = setze(s, 'og:title', t, 'property'); s = setze(s, 'twitter:title', t)
+        open(p, 'w', encoding='utf-8').write(s)
+    print(len(S) + len(NUR_TITEL), 'Seiten', 'geprüft' if dry else 'aktualisiert', '–', fehler, 'Längenhinweise')
     # Zweiter Durchgang: übrige Titel über 60 Zeichen – Markenzusatz „ | Masar“ weglassen
     import glob
     gekuerzt = 0
@@ -122,6 +161,12 @@ def main(dry=False):
             s = re.sub(rf'(<meta {a}="{n}" content=")[^"]*', lambda mm: mm.group(1) + html.escape(neu, quote=True), s, count=1)
         open(p, 'w', encoding='utf-8').write(s)
     print(gekuerzt, 'weitere Titel gekürzt')
+    # Vorschaubilder und strukturierte Daten nach dem Neu-Erzeugen wiederherstellen (beides idempotent)
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'og'))
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import og_cards, strukturdaten
+    print(og_cards.sync(dry), 'Seiten: og:image vom Logo auf eigenes Vorschaubild')
+    strukturdaten.main(dry)
 
 
 if __name__ == '__main__':

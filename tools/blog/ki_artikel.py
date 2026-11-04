@@ -293,7 +293,7 @@ def bauen(a):
     s = re.sub(r'\d+ Min\. Lesezeit', f'{a["minuten"]} Min. Lesezeit', s, count=1)
     b, alt, cap = a['bild']
     fig = (f'\n    <figure class="art-figure">\n      <img src="{b}-720.webp" srcset="{b}-360.webp 360w, {b}-540.webp 540w, {b}-720.webp 720w, {b}.webp 1080w" '
-           f'sizes="(max-width:600px) 92vw, 420px" width="720" height="900" alt="{alt}" loading="eager">\n      <figcaption>{cap}</figcaption>\n    </figure>\n')
+           f'sizes="(max-width:600px) 92vw, 420px" width="720" height="900" alt="{alt}" loading="eager" fetchpriority="high">\n      <figcaption>{cap}</figcaption>\n    </figure>\n')
     t, p, ziel, ziel_txt, wa_txt, thema = a['cta']
     from urllib.parse import quote
     weiter = ' · '.join(f'<a href="{h}" style="color:var(--teal);font-weight:700;">{x}</a>' for h, x in a['weiter'])

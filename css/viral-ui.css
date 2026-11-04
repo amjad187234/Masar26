@@ -12,10 +12,10 @@
 :target { scroll-margin-top: 90px; }
 [id]    { scroll-margin-top: 90px; }
 
-/* ─── Page-level fade-in ───────────────────────────────────────── */
-@keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
-body { animation: pageFadeIn .3s ease both; }
-@media (prefers-reduced-motion: reduce) { body { animation: none; } }
+/* ─── Page-level fade-in: entfernt (04.11.2026) ─────────────────
+   body startete mit opacity:0 – Chrome meldete dadurch erst spät bzw. gar keinen
+   First/Largest Contentful Paint (Core Web Vitals). Weiche Seitenwechsel kommen
+   jetzt über View Transitions (tools/seo/schnell.py). */
 
 /* ─── Spring hover — cards & CTAs ─────────────────────────────── */
 .service-card,
