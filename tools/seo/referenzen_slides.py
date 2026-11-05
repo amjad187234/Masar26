@@ -16,12 +16,18 @@ KATEGORIEN = [
     ('leuchtreklame', 'Leuchtreklame', 'Leuchtkästen, Leuchtbuchstaben und Ausleger – produziert und montiert.', [
         ('leuchtkasten-schaufenster-fahrschule-01', 'Fahrschule JAD: Leuchtkasten über dem Schaufenster, direkt nach der Montage', 'Blauer Leuchtkasten „Fahrschule JAD“ über einem bedruckten Schaufenster, davor eine Leiter'),
         ('leuchtreklame-berlin-08', 'Barbershop: Fassadenanlage am Eröffnungstag', 'Fassadenbeschriftung eines Barbershops in Berlin am Eröffnungstag'),
-        ('leuchtreklame-berlin-06', 'Ausleger über dem Eingang, während der Montage', 'Runder Ausleger eines Barbershops wird über dem Eingang montiert'),
         ('leuchtreklame-berlin-05', 'Hinterleuchtetes Logo im Innenraum', 'Hinterleuchtetes Logoschild eines Barbershops an einer Innenwand in Berlin'),
         ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft', 'Goldfarbene Fassadenbeschriftung eines Juweliers in Berlin'),
         ('leuchtreklame-berlin-04', 'Zweisprachige Anlage, deutsch und arabisch', 'Zweisprachige Leuchtwerbung für einen Eventsaal, deutsch und arabisch'),
         ('leuchtreklame-berlin-01', 'Leuchtlogo und Thekenfront in einem Food-Court', 'Leuchtendes Logo und beleuchtete Thekenfront eines Dessert-Ladens in Berlin'),
         ('leuchtreklame-berlin-03', 'Leuchtlogo über der Theke, daneben die Menü-Bildschirme', 'Rundes Leuchtlogo über einer Café-Theke neben zwei Menü-Bildschirmen'),
+    ]),
+    ('leuchtlogos', 'Runde Leuchtlogos & Ausleger', 'Ihr Logo als Leuchtkasten – rund oder eckig, einseitig oder als doppelseitiger Ausleger.', [
+        ('leuchtlogo-rund-bside-01', 'The B-Side Events, Berlin-Wedding: runder Leuchtausleger beim Lichttest', 'Runder, beleuchteter Ausleger mit dem Logo „The B-Side Events – Berlin Wedding“, Schallplatte und Tonarm, im Dunkeln leuchtend'),
+        ('leuchtlogo-rund-burgereat-01', 'Burger Eat: runder Leuchtkasten mit Fotodruck, eingeschaltet', 'Runder Leuchtkasten mit Burger, Pommes und Getränk und dem Schriftzug „Burger Eat“, hell leuchtend'),
+        ('leuchtlogo-rund-bside-burgereat-01', 'Zwei doppelseitige Ausleger mit Wandhalter, fertig zur Montage', 'Zwei runde Leuchtausleger „The B-Side Events“ und „Burger Eat“ mit schwarzem Wandhalter und Kabel, an eine Wand gelehnt'),
+        ('leuchtreklame-berlin-06', 'Ausleger über dem Eingang, während der Montage', 'Runder Ausleger eines Barbershops wird über dem Eingang montiert'),
+        ('leuchtkasten-rund-werkstatt-01', 'Feel Good Food by Omar: runder Leuchtkasten beim Testlauf', 'Runder schwarzer Leuchtkasten mit weiß leuchtendem Logo „Feel Good Food by Omar“ in der Werkstatt'),
     ]),
     ('schaufenster', 'Schaufenster & Folien', 'Beschriftung, Druckfolie und Milchglas – von innen oder außen verklebt.', [
         ('schaufensterbeschriftung-showroom-berlin-01', 'LAUFEN Berlin Gallery: weiße Schrift und Logo auf beiden Schaufenstern und der Tür, von innen montiert', 'Showroom-Front in Berlin mit weißer Folienschrift „BERLIN GALLERY“ und LAUFEN-Logo auf zwei großen Schaufenstern und der Eingangstür'),
@@ -48,7 +54,6 @@ KATEGORIEN = [
         ('grossformatdruck-werkstatt-01', 'Grill Chicken: Blende für den Imbisswagen im Großformatdruck', 'Großformatdrucker druckt eine Blende mit Logo „Grill Chicken“ und „Kalte Getränke“'),
     ]),
     ('werkstatt', 'Aus der Werkstatt', 'So entstehen die Arbeiten – bevor sie an die Fassade kommen.', [
-        ('leuchtkasten-rund-werkstatt-01', 'Feel Good Food by Omar: runder Leuchtkasten beim Testlauf', 'Runder schwarzer Leuchtkasten mit weiß leuchtendem Logo „Feel Good Food by Omar“ in der Werkstatt'),
         ('werkstatt-kaschieren-menuetafel-01', 'BISSWERK-Menütafel: Druckfolie wird mit Heißluft und Rakel aufgezogen', 'Zwei Hände ziehen bedruckte Folie mit Heißluftföhn und Rakel auf eine schwarze Menütafel'),
         ('werkstatt-folie-aufziehen-menuetafel-01', 'Nassverklebung: Folie wird blasenfrei auf die Tafel gerakelt', 'Bedruckte Menütafel mit Seifenwasser, eine Hand rakelt die Folie glatt'),
         ('leuchtreklame-berlin-07', 'Leuchtbuchstaben, fertig verdrahtet', 'Blau leuchtende Profilbuchstaben für einen Barbershop, aufgebaut in der Werkstatt'),

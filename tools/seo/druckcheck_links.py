@@ -37,7 +37,7 @@ def kbox(wrap):
     inner = (f'<p style="margin:0;display:flex;gap:.8rem;align-items:flex-start;background:#f4f7f7;border:1px solid #e0eaea;border-left:4px solid #58d0bd;'
              f'border-radius:10px;padding:1rem 1.2rem;font-size:15.5px;line-height:1.6;color:#1a2a2a">{K_ICON}<span><strong>Wie wirkt Ihr Schild an der Fassade?</strong> '
              f'Planen Sie es im <a href="/leuchtbuchstaben-konfigurator.html" style="color:#177567;font-weight:700">kostenlosen Konfigurator</a> – '
-             f'Schrift, Farben, Größe und Lesbarkeit, mit Vorschau bei Tag und Nacht, auch auf Ihrem eigenen Foto.</span></p>')
+             f'Schrift, Farben, Größe und Lesbarkeit, mit Vorschau bei Tag und Nacht. Oder sehen Sie Ihr Logo als <a href="/leuchtlogo-berlin.html" style="color:#177567;font-weight:700">runden Leuchtkasten</a>.</span></p>')
     if wrap:
         return f'{KA}\n<div class="konfig-hinweis" style="max-width:1100px;margin:2rem auto;padding:0 16px;box-sizing:border-box">{inner}</div>\n{KZ}\n'
     return f'{KA}\n    <div class="konfig-hinweis" style="margin:2rem 0">{inner}</div>\n    {KZ}\n    '

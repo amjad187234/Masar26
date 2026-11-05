@@ -170,3 +170,11 @@ unbeleuchtet), 7 Schriften (selbst gehostet in `/fonts/konfig/`, OFL, Lizenz in 
 Fassadenfoto (wird nicht hochgeladen), Ansicht aus der Entfernung, Lesbarkeit nach USSC (LI 30 ft/in, ×0,83/×0,67), Genehmigungshinweis je Region.
 **Keine Preisberechnung** (Inhaber, 24.10.2026). „Festpreis-Angebot anfordern“ füllt das Formular und hängt die Vorschau als PNG an.
 Verlinkt über `tools/seo/druckcheck_links.py` (Marker `konfig-hinweis`).
+
+## Leuchtlogo mit Vorschau
+
+`python3 tools/folien/leuchtlogo_page.py` erzeugt `leuchtlogo-berlin.html` (Stil kf-* aus `konfigurator_page.py`), Werkzeug `/leuchtlogo.js`:
+eigenes Logo hochladen (Rand wird automatisch beschnitten, weißer Hintergrund optional entfernt; Standard: Masar-Logo), rund (Ø cm) oder eckig
+(B × H cm), an der Wand oder als doppelseitiger Ausleger, Rahmen- und Frontfarbe, Lichtfarbe, Ansicht Tag / Nacht / Vergleich mit Schieberegler,
+eigenes Wandfoto (nicht hochgeladen), Maße, Ansichtsfläche + Genehmigungshinweis. Keine Preise für Leuchtkästen (nicht freigegeben).
+Galerie aus echten Fotos (`referenzen/leuchtlogo-rund-*`, Kategorie „Runde Leuchtlogos & Ausleger“ in `referenzen_slides.py`).

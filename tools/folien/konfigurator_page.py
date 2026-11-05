@@ -237,7 +237,7 @@ P = dict(file='leuchtbuchstaben-konfigurator.html', crumb='Konfigurator', img='k
   ('Sind die Preise im Konfigurator enthalten?', 'Nein. Sie bekommen nach Ihrem Entwurf ein Festpreis-Angebot – in der Regel innerhalb von 24 Stunden. Startpreise stehen weiter oben auf dieser Seite.'),
   ('Kann ich mein Logo einsetzen?', 'Im Konfigurator planen Sie den Schriftzug. Ihr Logo bauen wir im Entwurf ein – schicken Sie es einfach mit der Anfrage.'),
  ],
- links=[('/leuchtreklame-berlin.html', 'Leuchtreklame Berlin'), ('/schilder-berlin.html', 'Schilder Berlin'), ('/blog/aussenwerbung-berlin-ratgeber.html', 'Ratgeber Genehmigung'),
+ links=[('/leuchtlogo-berlin.html', 'Leuchtlogo rund &amp; eckig'), ('/leuchtreklame-berlin.html', 'Leuchtreklame Berlin'), ('/schilder-berlin.html', 'Schilder Berlin'), ('/blog/aussenwerbung-berlin-ratgeber.html', 'Ratgeber Genehmigung'),
         ('/blog/leuchtreklame-strom-betriebszeiten.html', 'Leuchtreklame: Strom &amp; Betriebszeiten'), ('/druckdaten-check.html', 'Druckdaten-Check')],
  form_opts=['Leuchtbuchstaben', 'Einzelbuchstaben (unbeleuchtet)', 'Leuchtkasten', 'Firmenschild', 'Ausleger / Nasenschild', 'Schaufensterbeschriftung'],
  form_labels=('Welche Schildart?', 'Ihr Entwurf &amp; Wunsch', 'Vorschau oder Fassadenfoto', 'Mit „Festpreis-Angebot anfordern“ im Konfigurator wird die Vorschau hier automatisch angehängt.'),
