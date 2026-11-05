@@ -156,3 +156,12 @@ eingebettete Schriften, Farbraum (RGB/CMYK/PDF-X), Sonderfarben/Schneidekontur, 
 pdf.js 4.10.38 liegt selbst gehostet unter `/js/pdfjs/` (als `.js`, weil `.mjs` per `.htaccess` gesperrt ist; Lizenz in `/lizenzen/`).
 Richtwerte stehen doppelt (Tabelle im Generator und `TYP` in `druckcheck.js`) – gleich halten. `tools/seo/druckcheck_links.py` setzt
 Hinweis-Kästen auf Druck-Seiten und passenden Ratgebern.
+
+## Kostenloses Werkzeug: Leuchtbuchstaben-Konfigurator
+
+`python3 tools/folien/konfigurator_page.py` erzeugt `leuchtbuchstaben-konfigurator.html`; die Vorschau macht `/konfigurator.js` (Canvas, im Browser).
+5 Schildarten (Buchstaben, Leuchtkasten, Firmenschild, Ausleger, Schaufenster), Buchstaben in 3 Ausführungen (frontleuchtend, rückleuchtend/Halo,
+unbeleuchtet), 7 Schriften (selbst gehostet in `/fonts/konfig/`, OFL, Lizenz in `/lizenzen/`), Farben, Lichtfarbe, Tag/Nacht, Maße, eigenes
+Fassadenfoto (wird nicht hochgeladen), Ansicht aus der Entfernung, Lesbarkeit nach USSC (LI 30 ft/in, ×0,83/×0,67), Genehmigungshinweis je Region.
+**Keine Preisberechnung** (Inhaber, 24.10.2026). „Festpreis-Angebot anfordern“ füllt das Formular und hängt die Vorschau als PNG an.
+Verlinkt über `tools/seo/druckcheck_links.py` (Marker `konfig-hinweis`).
