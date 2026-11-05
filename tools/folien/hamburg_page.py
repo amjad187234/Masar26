@@ -8,7 +8,10 @@ import os, re
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 src = open(os.path.join(ROOT, 'werbeagentur-nrw.html'), encoding='utf-8').read()
-s = src
+# Referenzen-Block der NRW-Seite entfernen – referenzen_einbau.py setzt ihn auf der Hamburg-Seite neu ein
+s = re.sub(r'<!-- referenzen:start -->.*?<!-- referenzen:ende -->\n?', '', src, flags=re.S)
+# Hamburg hat kein eigenes WhatsApp-Team: nrw_whatsapp.py stellt nur NRW-Seiten auf 0178 2410682 um
+s = s.replace('wa.me/491782410682', 'wa.me/491785143918')
 
 
 def ersetze(alt, neu, anzahl=1):
@@ -84,10 +87,13 @@ ersetze('Düsseldorf, Köln, Dortmund, Essen und die Städte dazwischen: Unser T
 # Bild im Hero (auch mobil sichtbar)
 block('<div class="hero-logo-frame">', '      </div>\n    </div>\n  </div>\n</section>',
       '<img class="hero-shot-hh" src="/leuchtreklamen-720.webp" srcset="/leuchtreklamen-360.webp 360w, /leuchtreklamen-540.webp 540w, /leuchtreklamen-720.webp 720w, /leuchtreklamen.webp 1080w" sizes="(max-width: 900px) 80vw, 400px" alt="Leuchtreklame und Außenwerbung in Hamburg – Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">\n')
-ersetze('</head>', '<style id="hero-mobile">.hero-shot-hh{display:block;border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,.4);width:100%;max-width:400px;height:auto;margin:0 auto}@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.6rem}.hero-shot-hh{max-width:340px;width:100%;margin:0 auto}}</style>\n</head>')
+_HM = '<style id="hero-mobile">.hero-shot-hh{display:block;border-radius:16px;box-shadow:0 22px 60px rgba(0,0,0,.4);width:100%;max-width:400px;height:auto;margin:0 auto}@media(max-width:900px){.hero-visual{display:block!important;margin-top:1.6rem}.hero-shot-hh{max-width:340px;width:100%;margin:0 auto}}</style>\n'
+# vor den Kopf-Blöcken der Nachbearbeitung (schnell/a11y/umbruch) einsetzen, damit die Reihenfolge stabil bleibt
+_VOR = '<!-- schnell:start -->' if '<!-- schnell:start -->' in s else '</head>'
+ersetze(_VOR, _HM + _VOR)
 
 # Breadcrumb, Laufband
-ersetze('    <span>Werbeagentur NRW</span>', '    <span>Werbeagentur Hamburg</span>')
+s = s.replace('    <span>Werbeagentur NRW</span>', '    <span>Werbeagentur Hamburg</span>')   # sichtbare Brotkrumen entfernt umbruch.py (03.11.2026)
 s = s.replace('<span class="hi">Werbeagentur NRW</span>', '<span class="hi">Werbeagentur Hamburg</span>')
 
 # Abschnitt „Was wir machen“

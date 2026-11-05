@@ -45,18 +45,23 @@ def main():
         p = os.path.join(ROOT, f)
         if not os.path.exists(p): continue
         s = open(p, encoding='utf-8').read()
-        s = re.sub(re.escape(A) + r'.*?' + re.escape(Z), '', s, flags=re.S)
-        s = re.sub(re.escape(A2) + r'.*?' + re.escape(Z2), '', s, flags=re.S)
-        m = re.search(r'<p class="hero-sub">.*?</p>', s, re.S)
-        if not m: print('kein hero-sub:', f); continue
+        alt = s
         preis_blk = f'{A}<div class="kopf-preis"><b>{preis}</b><span>{zusatz}</span></div>{Z}'
         checks = (f'<ul class="kopf-checks"><li>Festpreis nach Fotos – Angebot in der Regel in 24 Stunden</li>'
                   f'<li>Entwurf inklusive, Genehmigung wird geprüft</li><li>{montage}</li></ul>')
-        s = s[:m.end()] + preis_blk + s[m.end():]
+        # Vorhandenen Preis-Block an Ort und Stelle erneuern (z. B. bleibt ein Saison-Hinweis davor stehen)
+        s, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z), lambda m: preis_blk, s, count=1, flags=re.S)
+        if not k:
+            m = re.search(r'<p class="hero-sub">.*?</p>', s, re.S)
+            if not m: print('kein hero-sub:', f); continue
+            s = s[:m.end()] + preis_blk + s[m.end():]
         # Zusagen unter die Knöpfe (UX 04.11.2026): so liegt „Angebot anfordern“ am Handy im ersten Bildschirm
-        b = re.search(r'<div class="hero-btns">.*?</div>', s, re.S)
-        if b: s = s[:b.end()] + f'{A2}{checks}{Z2}' + s[b.end():]
-        else: s = s.replace(preis_blk, preis_blk + f'{A2}{checks}{Z2}', 1)
+        zus = f'{A2}{checks}{Z2}'
+        s, k = re.subn(re.escape(A2) + r'.*?' + re.escape(Z2), lambda m: zus, s, count=1, flags=re.S)
+        if not k:
+            b = re.search(r'<div class="hero-btns">.*?</div>', s, re.S)
+            if b: s = s[:b.end()] + zus + s[b.end():]
+            else: s = s.replace(preis_blk, preis_blk + zus, 1)
         if 'id="kopf-klar"' in s:
             s = re.sub(r'<style id="kopf-klar">.*?</style>', lambda _: CSS, s, count=1, flags=re.S)
         else:
@@ -66,7 +71,8 @@ def main():
             s = re.sub(r'<img class="hero-shot"[^>]*>',
                        f'<img class="hero-shot" src="/referenzen/{name}.webp" srcset="/referenzen/{name}-480.webp 480w, /referenzen/{name}.webp 1200w" '
                        f'sizes="360px" width="1080" height="1080" alt="{alt}" loading="eager" fetchpriority="high" style="aspect-ratio:1/1;object-fit:cover">', s, count=1)
-        open(p, 'w', encoding='utf-8').write(s); n += 1
+        n += 1
+        if s != alt: open(p, 'w', encoding='utf-8').write(s)
     print(n, 'Seiten mit klarem Kopf')
 
 

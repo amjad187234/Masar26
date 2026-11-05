@@ -9,7 +9,7 @@ import html, os, re, sys, urllib.parse
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))).rstrip('/') + '/'
 BTN = ("text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1.5px solid #58d0bd;background:rgba(88,208,189,.16);color:#fff;border-radius:8px;padding:9px 16px;font-weight:700;line-height:1.3")
 CAL = ('<svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
-       '<path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>')
+       '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>')   # Lucide „calendar“ wie auf den Live-Seiten
 ALLGEMEIN = {'Masar Werbeagentur', ''}
 
 

@@ -36,6 +36,9 @@ def main():
             neu = muster.sub(ersatz, neu)
         if 'foot-claim' not in neu and '<p class="foot-desc">' in neu:   # Claim (festgelegt 03.11.2026) im Footer
             neu = neu.replace('<p class="foot-desc">', CLAIM + '\n        <p class="foot-desc">', 1)
+        if 'foot-claim' not in neu:   # schlichter Footer der Rechtsseiten (Impressum, Datenschutz, AGB): <div class="fb"> … <p>
+            neu = re.sub(r'(<footer[^>]*>\s*<div class="fi">\s*<div class="fb">\s*<div class="fl">.*?</div>\s*)<p>',
+                         lambda m: m.group(1) + CLAIM + '\n      <p>', neu, count=1, flags=re.S)
         if neu != s:
             open(p, 'w', encoding='utf-8').write(neu); n += 1
     print(n, 'Seiten an den Markenleitfaden angepasst')

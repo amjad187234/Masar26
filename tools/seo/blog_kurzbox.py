@@ -19,22 +19,26 @@ def main():
     n = 0
     for p in glob.glob(os.path.join(ROOT, 'blog', '*.html')):
         s = open(p, encoding='utf-8').read()
-        s = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', s, flags=re.S)
+        alt = s
         cta = re.search(r'<div class="article-cta">\s*<h3>(.*?)</h3>.*?<a href="(/[^"]+)"[^>]*class="btn-teal"[^>]*>.*?(?:<a href="(https://wa\.me/[^"]+)")?', s, re.S)
         body = s.find('<main class="article-body">')
         if not cta or body < 0: continue
         h2 = s.find('<h2', body)
         if h2 < 0: continue
-        titel, link = cta.group(1).strip(), cta.group(2)
+        titel, link = re.sub(r'<span class="nw">(.*?)</span>', r'\1', cta.group(1).strip()), cta.group(2)   # ohne umbruch.py-Spans
         wa = re.search(r'<div class="article-cta">.*?<a href="(https://wa\.me/[^"]+)"', s, re.S)
         wa_btn = f'<a class="kb-wa" href="{wa.group(1)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>' if wa else ''
         box = (f'{A}<aside class="kurzbox" aria-label="Angebot"><p><b>{titel}</b>'
                f'<span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p>'
-               f'<div class="kb-btns"><a class="kb-go" href="{link}">Mehr erfahren →</a>{wa_btn}</div></aside>{Z}\n    ')
-        s = s[:h2] + box + s[h2:]
+               f'<div class="kb-btns"><a class="kb-go" href="{link}">Mehr erfahren →</a>{wa_btn}</div></aside>{Z}')
+        # Vorhandene Box an Ort und Stelle erneuern (früher: entfernen + neu einsetzen → Einrückung wuchs bei jedem Lauf)
+        s, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z), lambda m: box, s, count=1, flags=re.S)
+        if not k:
+            s = s[:h2] + box + '\n    ' + s[h2:]
         if 'id="kurzbox"' not in s:
             s = s.replace('</head>', CSS + '\n</head>', 1)
-        open(p, 'w', encoding='utf-8').write(s); n += 1
+        n += 1
+        if s != alt: open(p, 'w', encoding='utf-8').write(s)
     print(n, 'Ratgeber mit Kurzbox')
 
 

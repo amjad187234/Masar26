@@ -117,7 +117,8 @@ def build():
     out = HEAD_A + meta + js(page) + js(bc) + js(fq) + HEAD_B
     out = out.replace('</head>', css + '\n</head>', 1) + body + '\n' + FOOT
     import re as _re
-    out = _re.sub(r'<div class="scta-txt">.*?</div>', f'<div class="scta-txt">{I["star"]}<span>Masar Werbeagentur</span> – Berlin, Brandenburg &amp; NRW</div>', out, count=1, flags=_re.S)
+    out = _re.sub(r'<(?:div|a) class="scta-txt"[^>]*>.*?</(?:div|a)>', f'<div class="scta-txt">{I["star"]}<span>Masar Werbeagentur</span> – Berlin, Brandenburg &amp; NRW</div>', out, count=1, flags=_re.S)
+    out = out.replace('href="#kontakt"', 'href="#anfrage"')   # die Seite hat kein #kontakt, die Anfrage steht unter #anfrage
     open(ROOT + F, 'w', encoding='utf-8').write(out)
     return F, len(out), len(TITLE), len(DESC)
 

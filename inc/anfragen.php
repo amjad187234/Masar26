@@ -286,6 +286,11 @@ function anf_mail(string $an, string $betreff, string $text, string $antwort_an 
 {
     $k = anf_konfig();
     $von = (string) ($k['from'] ?? 'website@masar-werbeagentur.de');
+    // Adressen kommen teils aus Kundeneingaben: nur gültige, einzeilige Adressen in die Kopfzeilen (Header-Injection)
+    $an = trim($an);
+    if (preg_match('/[\r\n]/', $an) || !filter_var($an, FILTER_VALIDATE_EMAIL)) return false;
+    $antwort_an = trim($antwort_an);
+    if ($antwort_an !== '' && (preg_match('/[\r\n]/', $antwort_an) || !filter_var($antwort_an, FILTER_VALIDATE_EMAIL))) $antwort_an = '';
     $kopf = [
         'From: =?UTF-8?B?' . base64_encode('Masar Werbeagentur') . '?= <' . $von . '>',
         'Reply-To: ' . ($antwort_an !== '' ? $antwort_an : 'info@masar-werbeagentur.de'),

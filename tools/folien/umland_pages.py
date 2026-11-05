@@ -264,7 +264,7 @@ document.querySelectorAll('[data-betreff]').forEach(function(a){{a.addEventListe
 '''
     out = head(c, url, title, desc, faq).replace('</head>', CSS + '\n</head>', 1) + body + '\n' + FOOT
     if NRW: out = out.replace('"name": "Brandenburg & Umland", "item": "' + BASE + 'werbetechnik-brandenburg.html"', '"name": "Werbeagentur NRW", "item": "' + BASE + 'werbeagentur-nrw.html"')
-    out = re.sub(r'<div class="scta-txt">.*?</div>', f'<div class="scta-txt">{I["star"]}<span>Werbeagentur {esc(s)}</span> – Angebot in 24 h</div>', out, count=1, flags=re.S)
+    out = re.sub(r'<(?:div|a) class="scta-txt"[^>]*>.*?</(?:div|a)>', f'<div class="scta-txt">{I["star"]}<span>Werbeagentur {esc(s)}</span> – Angebot in 24 h</div>', out, count=1, flags=re.S)
     if NRW:
         waN = wa(f'Hallo, ich habe eine Anfrage für {s}: ')
         out = re.sub(r'<a href="tel:01785143918" class="nav-phone".*?</a>', lambda m: f'<a href="{waN}" target="_blank" rel="noopener noreferrer" class="nav-phone" aria-label="Per WhatsApp schreiben">WhatsApp</a>', out, count=1, flags=re.S)

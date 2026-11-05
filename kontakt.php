@@ -246,7 +246,7 @@ $absender_name = '=?UTF-8?B?' . base64_encode('Masar Website') . '?=';
 $nachricht_id = '<' . bin2hex(random_bytes(12)) . '@masar-werbeagentur.de>';
 $kopf = [
     'From: ' . $absender_name . ' <' . ABSENDER . '>',
-    'Reply-To: ' . einzeilig($name) . ' <' . $email . '>',
+    'Reply-To: =?UTF-8?B?' . base64_encode(einzeilig($name)) . '?= <' . $email . '>',   // Name kodiert: Komma/Anführungszeichen/Umlaute
     'Date: ' . date('r'),
     'Message-ID: ' . $nachricht_id,
     'X-Mailer: Masar Kontaktformular',

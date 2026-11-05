@@ -7,6 +7,32 @@ lassen sie sich gefahrlos an einer Kopie testen.
 Voraussetzungen: Python 3 (+ Pillow für `nrw_pages.py`), Node mit Playwright
 (lokal oder global, `npm root -g`), Chromium unter `/opt/pw-browsers/chromium` oder Playwright-Standard.
 
+## Ein Befehl: bauen und prüfen
+
+```
+python3 tools/build_all.py --check   # Probelauf in einer Kopie + zweiter Lauf: muss „Idempotent“ melden
+python3 tools/build_all.py           # alles im Repository: Generatoren → OG erhalten → Nachbearbeitung
+python3 tools/check_site.py          # Links, Anker, Bilder/Skripte, doppelte IDs, alt, <main>, Sitemap, ?v=, Blöcke
+node tools/smoke_test.mjs            # Browser-Rauchtest 390/1280 px (startet php -S selbst)
+```
+
+- `build_all.py` führt alle Generatoren und die Nachbearbeitung in der Reihenfolge unten aus, bricht beim ersten
+  Fehler ab und zeigt je Schritt, wie viele Dateien er geändert hat. `--dry` arbeitet nur in einer temporären Kopie
+  und listet die Dateien, die sich ändern würden; `--check` macht danach einen zweiten Lauf und meldet Exit 1, wenn
+  der noch etwas ändert (so fallen Skripte auf, die Blöcke bei jedem Lauf verschieben). `--only post` (nur
+  Nachbearbeitung), `--only a11y,marke`, `--skip ki_artikel`, `--list`, `-v`. Der interne Schritt `og` setzt die
+  OG-Vorschaubilder (og:image/twitter:image) wieder ein, die die Seiten vor dem Lauf hatten – die Generatoren
+  kennen sie nicht. Nicht enthalten: `og_cards.py add` (neue Vorschaubilder), `bannerpreise.py` (einmalig), Angebote.
+- Regel für alle Nachbearbeitungs-Skripte: einen vorhandenen Marker-Block **an Ort und Stelle** ersetzen und nur
+  neu einsetzen, wenn er fehlt – nie „entfernen und am Ende wieder anhängen“ (sonst wandern Blöcke bei jedem Lauf).
+- `check_site.py` ändert nichts und endet mit Exit 1 bei Befunden; `--nur links,ids`, `--max 20`, `--list`.
+  Ausnahmen: die QR-Landingpages (`qr.html`, `qr/index.html`) haben eine eigene Mini-Fußzeile ohne Claim und ohne `<main>`.
+- `smoke_test.mjs` prüft wichtige Seiten auf JS-Fehler, fehlende eigene Dateien, waagerechtes Scrollen (nennt das zu
+  breite Element) und ob Assistent, Terminbuchung, Status, KI-Demo und KI-Bausteine aufgebaut werden und auf den ersten
+  Klick reagieren. Externe Hosts werden blockiert. `--all` (alle Sitemap-Seiten), `--pages a.html,b.html`,
+  `--base http://…` (vorhandener Server), `--shots ordner/` (Bildschirmfotos). PHP-Endpunkte laufen dabei echt –
+  `termin.php`/`bewertung.php` können in `data/` Dateien anlegen (per `.gitignore` ausgeschlossen).
+
 ## Seitengeneratoren
 
 Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
@@ -22,6 +48,13 @@ Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
 | `folien/umland_pages.py` | `werbeagentur-<stadt>.html` (15 Brandenburg + Herne, Mülheim, Bottrop) |
 | `folien/einsatz_page.py` | `einsatzgebiete.html` |
 | `folien/hamburg_page.py` | `werbeagentur-hamburg.html` (aus `werbeagentur-nrw.html`) |
+| `folien/ki_pages.py` | `ki-fuer-arztpraxen-berlin.html`, `ki-fuer-pflegedienste-berlin.html` |
+| `folien/textil_page.py` | `textildruck-berlin.html` |
+| `blog/stadt_ratgeber.py`, `blog/ki_artikel.py` | Stadt-Ratgeber und KI-Ratgeber im Blog (siehe unten) |
+
+Die Generatoren übernehmen Kopf, Navigation und Fußzeile aus `schilder-berlin.html`, aber ohne das offene `<main>` und
+ohne die Kopf-Blöcke der Nachbearbeitung (`kopf-klar`, `a11y-fix`, `schnell`, `umbruch`) – die setzt die Kette selbst.
+Am einfachsten alles über `build_all.py` laufen lassen.
 
 Aufruf jeweils `python3 tools/folien/<skript>.py`. Danach immer:
 
@@ -32,8 +65,9 @@ Aufruf jeweils `python3 tools/folien/<skript>.py`. Danach immer:
 3. Neue Seiten in `sitemap.xml`, ggf. `llms.txt` und `einsatzgebiete.html` eintragen, IndexNow melden.
 
 Hinweis: Die Generatoren wurden am 15.10.2026 aus dem Verlauf wiederhergestellt und geprüft
-(Inhalt identisch mit den Live-Seiten; die Live-Seiten haben zusätzlich OG-Meta und
-`<style id="hero-mobile">` – diese nach dem Neu-Erzeugen erhalten bzw. wieder einsetzen).
+(Inhalt identisch mit den Live-Seiten). Seit 05.11.2026 erzeugen sie die Lucide-Symbole der Live-Seiten,
+`<style id="hero-mobile">` kommt aus der Vorlage, die OG-Angaben erhält `build_all.py` (Schritt `og`).
+Ein kompletter Neuaufbau mit `build_all.py` ändert die Seiten nicht mehr inhaltlich (nur Leerraum/Reihenfolge im Kopf).
 Nicht wiederhergestellt: die Datenmodule der älteren Seiten (`branchen/pages.py`,
 `folien/folien_pages.py`) – `gen_branchen.py`/`gen_folien.py` dienen nur noch als Bibliothek.
 
@@ -77,7 +111,7 @@ Werbetechnik- und Regionsseiten.
 PVC-Banner Berlin/NRW, Textildruck, Grafikdesign) vor den FAQ einen belegten Wissens-Abschnitt mit Link zum passenden Ratgeber
 (Marker `<!-- wissen:start -->`, idempotent) und einen Link-Chip in „Passend dazu“ (auch Schilder Berlin/NRW, LKW Berlin).
 Hintergrund: `docs/wettbewerb-2026-11.md`.
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `wissen_abschnitte.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py` → `partner_hinweis.py` → `a11y.py` → `marke.py` (Farben nach Markenleitfaden) → `umbruch.py` (ohne Brotkrumen-Leiste und Silbentrennung) → `sitemap_lastmod.py` → zum Schluss `seo_check.py`.
+Reihenfolge nach dem Neu-Erzeugen (so in `build_all.py`): Generatoren → OG erhalten → `add_assistent.py` → `sticky_termin.py` → `stadt_lokal.py` → `wissen_abschnitte.py` → `referenzen_slides.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `blog_kurzbox.py` → `schnell.py` → `nrw_whatsapp.py` → `partner_hinweis.py` → `a11y.py` → `marke.py` (Farben nach Markenleitfaden, Claim) → `umbruch.py` (ohne Brotkrumen-Leiste und Silbentrennung) → `sitemap_lastmod.py` → zum Schluss `seo_check.py`.
 `snippets.py` stellt am Ende auch die Vorschaubilder wieder her (`og_cards.py sync`: Seiten, die nach dem Neu-Erzeugen wieder `logo.png`
 als og:image haben, bekommen ihr vorhandenes `og/<seite>.jpg`) und ruft `strukturdaten.py` auf (Artikel-JSON-LD mit Vorschaubild statt Logo,
 `@id …/#identity` für author/publisher). `schnell.py` ergänzt außerdem `srcset` an Galerie-Bildern („Aus unserer Arbeit“) und entfernt das
