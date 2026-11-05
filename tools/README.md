@@ -147,3 +147,12 @@ Neu erzeugen: `node tools/angebot/pdf.mjs tools/brand/brand_guide.html tools/bra
 Fahrzeuge, Druck & Gastro-Werbung, Aus der Werkstatt, Digital Signage, Grafikdesign) – Bilder, Texte und Reihenfolge stehen in `KATEGORIEN`.
 Neue Fotos: farbkorrigiert als `referenzen/<name>.webp` (max. 1600 px) + `<name>-720.webp` ablegen, Eintrag ergänzen, Skript ausführen,
 danach `referenzen_einbau.py` (Leistungsseiten) und `a11y.py`. Nur echte, fertige Arbeiten – Visualisierungen/Mockups nicht als Referenz.
+
+## Kostenloses Werkzeug: Druckdaten-Check
+
+`python3 tools/folien/druckcheck_page.py` erzeugt `druckdaten-check.html` (Layout wie `build_f`). Die Prüfung macht `/druckcheck.js`
+komplett im Browser (keine Übertragung): Format + Beschnitt, Maßstab, effektive Bildauflösung je Bild (pdf.js-Operatorliste),
+eingebettete Schriften, Farbraum (RGB/CMYK/PDF-X), Sonderfarben/Schneidekontur, Texte zu nah am Schnitt, Vorschau mit Linien; dazu Pixel-Rechner.
+pdf.js 4.10.38 liegt selbst gehostet unter `/js/pdfjs/` (als `.js`, weil `.mjs` per `.htaccess` gesperrt ist; Lizenz in `/lizenzen/`).
+Richtwerte stehen doppelt (Tabelle im Generator und `TYP` in `druckcheck.js`) – gleich halten. `tools/seo/druckcheck_links.py` setzt
+Hinweis-Kästen auf Druck-Seiten und passenden Ratgebern.
