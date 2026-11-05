@@ -111,6 +111,14 @@
     },
     {
       "@type": "Question",
+      "name": "Was prüft der Check genau?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Format und Beschnitt (bei PDFs auch über die hinterlegte TrimBox, den Rahmen des Endformats), die Auflösung jedes Bildes im Endformat, eingebettete Schriften, Farbraum (RGB, CMYK, PDF/X) und Sonderfarben, den Abstand von Texten zur Schnittkante, Haarlinien unter 0,25 pt und Schrift unter 6 pt im Endformat. Alle Bilder sehen Sie in einer Liste, jede Seite in einer großen Ansicht mit Zoom."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Was bedeutet dpi bzw. ppi?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -146,7 +154,7 @@
       "name": "Ersetzt der Check eine Prüfung durch die Druckerei?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Er findet die häufigsten Fehler automatisch, kann aber nicht alles beurteilen – etwa Rechtschreibung, Farbwirkung oder ob das Layout gefällt. Für einen zweiten Blick schicken Sie uns die Datei."
+        "text": "Er findet die häufigsten Fehler automatisch, kann aber nicht alles beurteilen – etwa Farbauftrag, Überdrucken, Rechtschreibung, Farbwirkung oder ob das Layout gefällt. Für einen zweiten Blick schicken Sie uns die Datei."
       }
     }
   ]
@@ -460,12 +468,17 @@ table.rt td:first-child::before{display:none}
 .dc-priv{font-size:14px;color:var(--muted);margin-top:.9rem;display:flex;gap:.5rem;align-items:flex-start}
 .dc-priv svg{flex:none;margin-top:.15rem;stroke:var(--teal-ink)}
 .dc-busy{display:flex;align-items:center;gap:.8rem;padding:1.2rem;font-weight:700;color:var(--navy)}
+.dc-busy-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:.5rem}
+.dc-prog{width:100%;max-width:420px;height:10px;accent-color:#177567}
 .dc-spin{width:26px;height:26px;border-radius:50%;border:3px solid var(--border);border-top-color:var(--teal-ink);animation:dcs 0.8s linear infinite}
 @keyframes dcs{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.dc-spin{animation:none}}
 .dc-verdict{display:flex;gap:1rem;align-items:flex-start;border-radius:14px;padding:1.2rem 1.3rem;margin-bottom:1rem;border:1px solid}
 .dc-verdict strong{display:block;font-size:1.3rem;color:var(--navy);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.3px}
 .dc-verdict p{margin:.2rem 0 .3rem}
+.dc-count{display:flex;flex-wrap:wrap;gap:.4rem;margin:.1rem 0 .5rem}
+.dc-c{font-size:13px;font-weight:700;padding:.1rem .6rem;border-radius:20px;background:#fff;border:1px solid var(--border)}
+.dc-c.dc-ok{color:#177567}.dc-c.dc-warn{color:#8a5100}.dc-c.dc-bad{color:#b3261e}
 .dc-verdict small{color:var(--muted);font-size:13px;overflow-wrap:anywhere}
 .dc-verdict:focus{outline:3px solid var(--navy);outline-offset:3px}
 .dc-ic{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:17px}
@@ -480,16 +493,31 @@ table.rt td:first-child::before{display:none}
 .dc-ok .dc-tag{color:#177567}.dc-warn .dc-tag{color:#8a5100}.dc-bad .dc-tag{color:#b3261e}
 .dc-h3{margin:1.6rem 0 .4rem;color:var(--navy)}
 .dc-legend{font-size:13.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:.3rem .9rem;align-items:center;margin-bottom:.8rem}
-.dc-legend span{display:inline-block;width:22px;height:0;border-top:3px dashed;vertical-align:middle;margin-right:-.5rem}
+.dc-li{display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap}
+.dc-legend i{display:inline-block;width:22px;height:0;border-top:3px dashed}
 .dc-legend .dc-l1{border-color:#d63b3b}.dc-legend .dc-l2{border-color:#177567}.dc-legend .dc-l3{border:0;height:12px;background:rgba(19,46,80,.28)}
+.dc-legend .dc-m{width:16px;height:12px;border:2px solid}
+.dc-legend .dc-m-edge{border-color:#d63b3b;background:rgba(214,59,59,.18)}.dc-legend .dc-m-hair{border-color:#c25e00;background:rgba(194,94,0,.16)}
+.dc-legend .dc-m-small{border-color:#132e50;background:rgba(19,46,80,.14)}.dc-legend .dc-m-img{border:3px dashed #b3261e}
 .dc-thumbs{display:flex;flex-wrap:wrap;gap:1rem}
-.dc-thumb{margin:0;max-width:100%}
-.dc-thumb canvas{display:block;max-width:100%;height:auto;border:1px solid var(--border);border-radius:6px;box-shadow:0 8px 24px rgba(19,46,80,.12);background:#fff}
-.dc-thumb figcaption{font-size:13px;color:var(--muted);margin-top:.4rem}
+.dc-thumb{margin:0;max-width:100%;padding:0;border:0;background:none;font:inherit;text-align:left;cursor:zoom-in;border-radius:8px}
+.dc-thumb canvas{display:block;max-width:100%;height:auto;border:1px solid var(--border);border-radius:6px;box-shadow:0 8px 24px rgba(19,46,80,.12);background:#fff;transition:box-shadow .15s}
+.dc-thumb:hover canvas{box-shadow:0 10px 30px rgba(19,46,80,.28)}
+.dc-thumb:focus-visible{outline:3px solid var(--navy);outline-offset:4px}
+.dc-cap{display:block;font-size:13px;color:var(--muted);margin-top:.4rem}
+.dc-imgs{margin-top:1rem;background:#fff;border:1px solid var(--border);border-radius:12px;padding:0 1rem .4rem}
+.dc-imgs summary{cursor:pointer;font-weight:700;color:var(--navy);padding:.8rem 0;min-height:44px}
+.dc-imgs summary:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.dc-tw{overflow-x:auto;max-width:100%}
+.dc-tw:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.dc-tab{width:100%;border-collapse:collapse;font-size:14px}
+.dc-tab th,.dc-tab td{padding:.45rem .6rem;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap}
+.dc-tab th{color:var(--navy);background:var(--off)}
+.dc-st{font-weight:700}.dc-st.dc-ok{color:#177567}.dc-st.dc-warn{color:#8a5100}.dc-st.dc-bad{color:#b3261e}
 .dc-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
 .dc-actions .btn{flex:1 1 240px;justify-content:center;text-align:center}
 .dc-btn2{background:var(--navy);color:#fff;border:2px solid var(--navy)}
-.dc-again{flex:1 1 180px;font:inherit;font-weight:700;padding:.85rem 1rem;border-radius:10px;border:2px solid var(--border);background:#fff;color:var(--navy);cursor:pointer;min-height:48px}
+.dc-print,.dc-again{flex:1 1 180px;font:inherit;font-weight:700;padding:.85rem 1rem;border-radius:10px;border:2px solid var(--border);background:#fff;color:var(--navy);cursor:pointer;min-height:48px}
 .dc-small{font-size:13.5px;color:var(--muted);margin-top:.8rem}
 .dc-calc{max-width:920px;margin:2rem auto 0;background:var(--off);border:1px solid var(--border);border-radius:16px;padding:1.5rem}
 .dc-calc h3{color:var(--navy);margin:0 0 1rem}
@@ -500,6 +528,60 @@ table.rt td:first-child::before{display:none}
 .dc-calc .dc-f-s{flex:1 1 90px}
 .dc-calc output{display:block;font-weight:800;color:var(--teal-ink);font-size:1.1rem}
 @media(max-width:600px){.dc-form,.dc-calc{padding:1rem}.dc-drop{padding:1.5rem .8rem}}
+html.dc-lb-open{overflow:hidden}
+.dc-lb{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#0e2340;color:#fff;flex-direction:column}
+.dc-lb[open]{display:flex}
+.dc-lb::backdrop{background:rgba(14,35,64,.85)}
+.dc-lb-bar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;padding:.6rem .8rem;background:#132e50}
+.dc-lb .dc-lb-t{flex:1 1 220px;margin:0;font:700 16px/1.3 Barlow,sans-serif;color:#fff;text-transform:none;letter-spacing:0;min-width:0}
+.dc-lb-grp{display:flex;align-items:center;gap:.3rem}
+.dc-lb-grp[hidden]{display:none}
+.dc-lb button{font:inherit;font-weight:700;font-size:18px;min-width:44px;min-height:44px;padding:0 .6rem;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.dc-lb button:hover{background:rgba(255,255,255,.18)}
+.dc-lb button:disabled{opacity:.45;cursor:default}
+.dc-lb .dc-lb-fit{font-size:14px}
+.dc-lb button:focus-visible,.dc-lb input:focus-visible,.dc-lb-view:focus-visible{outline:3px solid #58d0bd;outline-offset:2px}
+.dc-lb-z{min-width:4.3em;text-align:center;font-size:14px;font-variant-numeric:tabular-nums}
+.dc-lb-opts{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem;padding:.3rem .9rem;font-size:14px}
+.dc-lb-opts label{display:flex;align-items:center;gap:.45rem;min-height:40px;cursor:pointer}
+.dc-lb-opts input{width:20px;height:20px;accent-color:#58d0bd;margin:0}
+.dc-lb-view{flex:1;min-height:0;overflow:auto;display:flex;padding:12px;touch-action:none;cursor:grab;background:#2a3f5a}
+.dc-lb-view.drag{cursor:grabbing}
+.dc-lb-stage{margin:auto;position:relative;flex:none;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.dc-lb-stage canvas{position:absolute;top:0;left:0;display:block}
+.dc-lb-help{margin:0;padding:.45rem .9rem;font-size:13px;color:#d1d3d4}
+@media(max-width:600px){.dc-lb-help{display:none}.dc-lb .dc-lb-t{flex-basis:100%;font-size:15px}.dc-lb-bar{gap:.4rem;padding:.5rem}}
+#dc-report{display:none}
+@media print{
+html.dc-printing body>*:not(#dc-report){display:none!important}
+html.dc-printing body{background:#fff!important;margin:0!important;padding:0!important}
+html.dc-printing #dc-report{display:block;color:#1a2a2a;font:10.5pt/1.45 Barlow,Arial,sans-serif}
+#dc-report *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@page{size:A4;margin:14mm}
+.dcr-head{display:flex;align-items:center;gap:10px;border-bottom:3px solid #58d0bd;padding-bottom:8px;margin-bottom:12px}
+.dcr-head img{width:14mm;height:14mm;object-fit:contain}
+.dcr-head strong{display:block;font:900 17pt/1 'Barlow Condensed',sans-serif;text-transform:uppercase;color:#132e50}
+.dcr-head span{font-size:9pt;font-weight:700;color:#177567}
+.dcr-head p{margin:0 0 0 auto;text-align:right;font-size:9pt;color:#132e50}
+.dcr-h1{font:900 21pt/1.1 'Barlow Condensed',sans-serif;text-transform:uppercase;color:#132e50;margin:0 0 8px}
+.dcr-h2{font:900 15pt/1.1 'Barlow Condensed',sans-serif;text-transform:uppercase;color:#132e50;margin:8mm 0 3mm;break-after:avoid}
+.dcr-meta{border-collapse:collapse;margin:0 0 10px}
+.dcr-meta th{text-align:left;padding:2px 16px 2px 0;color:#132e50;vertical-align:top}
+.dcr-meta td{padding:2px 0}
+#dc-report .dc-verdict,#dc-report .dc-list li,#dc-report tr{break-inside:avoid}
+#dc-report .dc-verdict{padding:10px 12px}
+#dc-report .dc-list{gap:4px}
+#dc-report .dc-list li{padding:6px 10px}
+#dc-report .dc-list p{font-size:10pt}
+#dc-report .dc-imgs summary{list-style:none;padding:6px 0}
+#dc-report .dc-imgs summary::-webkit-details-marker{display:none}
+#dc-report .dc-tw{overflow:visible}
+.dcr-shots{display:flex;flex-wrap:wrap;gap:6mm}
+.dcr-shots figure{margin:0;break-inside:avoid}
+.dcr-shots img{display:block;max-width:82mm;max-height:105mm;border:1px solid #d1d3d4}
+.dcr-shots figcaption{font-size:9pt;color:#555;margin-top:2px}
+.dcr-foot{margin-top:8mm;padding-top:4px;border-top:1px solid #d1d3d4;font-size:8.5pt;color:#555}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -512,6 +594,16 @@ table.rt td:first-child::before{display:none}
   "inLanguage": "de",
   "isAccessibleForFree": true,
   "description": "Druckdaten kostenlos online prüfen: Auflösung (ppi), Beschnitt, Format, Schriften und Farben Ihrer PDF oder Ihres Bildes – sofort im Browser, ohne Upload.",
+  "featureList": [
+    "Format und Beschnitt (auch TrimBox)",
+    "Bildauflösung je Bild",
+    "Eingebettete Schriften",
+    "Farbraum und Sonderfarben",
+    "Sicherheitsabstand zur Schnittkante",
+    "Haarlinien und kleine Schrift",
+    "Vorschau mit Zoom",
+    "Prüfbericht zum Drucken"
+  ],
   "offers": {
     "@type": "Offer",
     "price": "0",
@@ -860,11 +952,11 @@ table.rt td:first-child::before{display:none}
       </div>
       <div class="why-item">
         <div class="why-num">3</div>
-        <div><h3>Ergebnis lesen</h3><p>Grün passt, Orange ist ein Hinweis, Rot sollten Sie ändern. Die Vorschau zeigt Schnittkante und Sicherheitsabstand.</p></div>
+        <div><h3>Ergebnis lesen</h3><p>Grün passt, Orange ist ein Hinweis, Rot sollten Sie ändern. Ein Klick auf die Vorschau öffnet die Seite groß – mit Zoom, Schnittkante und markierten Problemstellen.</p></div>
       </div>
       <div class="why-item">
         <div class="why-num">4</div>
-        <div><h3>Drucken lassen</h3><p>Schicken Sie uns die Datei mit dem Ergebnis per WhatsApp oder Formular – Sie bekommen ein Angebot.</p></div>
+        <div><h3>Drucken lassen</h3><p>Schicken Sie uns die Datei mit dem Ergebnis per WhatsApp oder Formular – Sie bekommen ein Angebot. Den Prüfbericht können Sie drucken oder als PDF speichern.</p></div>
       </div>
     </div>
   </div>
@@ -877,11 +969,12 @@ table.rt td:first-child::before{display:none}
     </div>
     <div class="faq-wrap">
       <div class="faq-item"><button class="faq-q">Wird meine Datei hochgeladen?</button><div class="faq-a"><p>Nein. Die Prüfung läuft vollständig in Ihrem Browser. Die Datei verlässt Ihr Gerät nicht und wird von uns weder gespeichert noch gesehen – erst wenn Sie sie uns selbst schicken.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Was prüft der Check genau?</button><div class="faq-a"><p>Format und Beschnitt (bei PDFs auch über die hinterlegte TrimBox, den Rahmen des Endformats), die Auflösung jedes Bildes im Endformat, eingebettete Schriften, Farbraum (RGB, CMYK, PDF/X) und Sonderfarben, den Abstand von Texten zur Schnittkante, Haarlinien unter 0,25 pt und Schrift unter 6 pt im Endformat. Alle Bilder sehen Sie in einer Liste, jede Seite in einer großen Ansicht mit Zoom.</p></div></div>
       <div class="faq-item"><button class="faq-q">Was bedeutet dpi bzw. ppi?</button><div class="faq-a"><p>Die Zahl gibt an, wie viele Pixel auf einen Zoll (2,54 cm) kommen. Für Flyer und Visitenkarten sind 300 ppi am Endformat üblich, für Plakate ab A2 und Roll-ups reichen meist 150 ppi, für große Banner etwa 100 ppi.</p></div></div>
       <div class="faq-item"><button class="faq-q">Was ist Beschnitt?</button><div class="faq-a"><p>Eine Zugabe rund um das Endformat, meist 3 mm je Seite. Farben und Bilder, die bis zum Rand gehen, laufen in diese Zugabe hinein. Sie wird beim Schneiden entfernt – so entstehen keine weißen Ränder.</p></div></div>
       <div class="faq-item"><button class="faq-q">Muss meine Datei in CMYK sein?</button><div class="faq-a"><p>Nicht unbedingt. Gedruckt wird in CMYK; RGB-Dateien rechnen wir um. Sehr leuchtende Farben wie Neongrün oder kräftiges Blau können dabei etwas matter werden. Wer die Farben selbst steuern will, exportiert als PDF/X-4 in CMYK.</p></div></div>
       <div class="faq-item"><button class="faq-q">Welche Dateien kann ich prüfen?</button><div class="faq-a"><p>PDF, JPG, PNG und WebP bis 200 MB. Bei PDF-Dateien werden die ersten 30 Seiten geprüft. AI-, EPS-, PSD- oder TIFF-Dateien können Sie uns direkt schicken – wir prüfen sie kostenlos.</p></div></div>
-      <div class="faq-item"><button class="faq-q">Ersetzt der Check eine Prüfung durch die Druckerei?</button><div class="faq-a"><p>Er findet die häufigsten Fehler automatisch, kann aber nicht alles beurteilen – etwa Rechtschreibung, Farbwirkung oder ob das Layout gefällt. Für einen zweiten Blick schicken Sie uns die Datei.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Ersetzt der Check eine Prüfung durch die Druckerei?</button><div class="faq-a"><p>Er findet die häufigsten Fehler automatisch, kann aber nicht alles beurteilen – etwa Farbauftrag, Überdrucken, Rechtschreibung, Farbwirkung oder ob das Layout gefällt. Für einen zweiten Blick schicken Sie uns die Datei.</p></div></div>
     </div>
   </div>
 </section>
@@ -1032,6 +1125,6 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 <script src="/fab-offset.js?v=2" defer></script>
 <script src="/form-guard.js?v=2" defer></script>
 <script src="/assistent.js?v=11" defer></script>
-<script src="/druckcheck.js?v=1" defer></script>
+<script src="/druckcheck.js?v=2" defer></script>
 </body>
 </html>
