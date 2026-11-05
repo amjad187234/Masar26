@@ -53,7 +53,7 @@ S = {
  'schilder-koeln.html': ('Schilder Köln: Firmenschild ab 179 € | Masar',
    'Schilder in Köln: Firmenschilder ab 179 € netto, Praxis-, Tür- und Klingelschilder aus Alu-Dibond, Acryl und Edelstahl – gefertigt und vor Ort montiert.'),
  'leuchtreklame-koeln.html': ('Leuchtreklame Köln: Leuchtbuchstaben ab 229 € | Masar',
-   'Leuchtreklame in Köln: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch unser Team vor Ort.'),
+   'Leuchtreklame in Köln: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Werbesatzung geprüft, Montage durch eingetragene Partnerbetriebe.'),
  'schaufensterbeschriftung-duesseldorf.html': ('Schaufensterbeschriftung Düsseldorf ab 179 € | Masar',
    'Schaufensterbeschriftung in Düsseldorf ab 179 € netto: Logo, Öffnungszeiten, Milchglas und Lochfolie für Läden und Praxen – vor Ort montiert.'),
  'schaufensterbeschriftung-bochum.html': ('Schaufensterbeschriftung Bochum ab 179 € | Masar',

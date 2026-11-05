@@ -60,7 +60,8 @@ L.update(file='leuchtreklame-nrw.html', crumb='Leuchtreklame NRW', img='leuchtre
  desc='Leuchtreklame in NRW: Leuchtbuchstaben, Leuchtkästen und LED-Neon für Düsseldorf, Köln und das Ruhrgebiet – Genehmigung geprüft, Montage vor Ort.',
  service_type='Leuchtreklame', schema_name='Leuchtreklame in NRW',
  badge='Leuchtreklame · NRW', h1='Leuchtreklame <em>NRW</em>',
- sub='Leuchtbuchstaben, Leuchtkästen und LED-Neon für Läden, Praxen, Restaurants und Betriebe zwischen Rhein und Ruhr. Wir gestalten, produzieren und klären vorab, was an Ihrer Fassade erlaubt ist – unser Team in NRW misst auf und montiert bei Ihnen vor Ort.',
+ sub='Leuchtbuchstaben, Leuchtkästen und LED-Neon für Läden, Praxen, Restaurants und Betriebe zwischen Rhein und Ruhr. Wir gestalten, klären vorab, was an Ihrer Fassade erlaubt ist, und koordinieren alles Weitere – unser Team in NRW misst bei Ihnen auf, Bau, Montage und Anschluss übernehmen eingetragene Partnerbetriebe.',
+ svc_sub='Alles aus einer Hand – Gestaltung und Koordination durch uns, Bau, Montage und Anschluss durch eingetragene Partnerbetriebe.',
  trust='Düsseldorf · Köln · Dortmund · Essen · Bochum',
  usp=['Team vor Ort in NRW', 'Genehmigung geprüft', 'Gestaltung bis Montage', 'Angebot in 24 h'],
  wa='Hallo, ich interessiere mich für eine Leuchtreklame in NRW. Ich schicke Ihnen ein Foto der Fassade.',
@@ -72,7 +73,7 @@ L.update(file='leuchtreklame-nrw.html', crumb='Leuchtreklame NRW', img='leuchtre
   ('Sparsame LED-Technik', 'Moderne LED verbraucht wenig Strom und hält lange. Auf Wunsch mit Zeitschaltuhr, damit die Reklame nur leuchtet, wenn sie gesehen wird.'),
   ('Ein Ansprechpartner', 'Gestaltung, Genehmigungsfrage, Produktion, Elektroanschluss-Vorbereitung und Montage – Sie müssen nicht mehrere Firmen koordinieren.'),
  ],
- gallery=dict(h2='Leuchtreklame <em>aus unserer Werkstatt</em>', sub='So sehen Arbeiten aus, die wir gebaut und montiert haben.', note=BERLIN_NOTE, items=[
+ gallery=dict(h2='Leuchtreklame <em>aus unseren Projekten</em>', sub='So sehen Projekte aus, die wir geplant und mit unseren Partnerbetrieben umgesetzt haben.', note=BERLIN_NOTE, items=[
   ref('leuchtreklame-berlin-07', 'Blau leuchtende Profilbuchstaben für einen Barbershop, aufgebaut in der Werkstatt', 'Profilbuchstaben mit LED – vor der Montage in der Werkstatt aufgebaut und geprüft.'),
   ref('leuchtreklame-berlin-02', 'Leuchtkasten für einen Friseursalon mit hinterleuchteten Buchstaben in der Werkstatt', 'Leuchtkasten mit hinterleuchteten Buchstaben für einen Friseursalon.'),
   ref('leuchtreklame-berlin-06', 'Runder Ausleger eines Barbershops wird über dem Eingang montiert', 'Montage eines runden Auslegers über dem Eingang.'),
@@ -100,15 +101,15 @@ L.update(file='leuchtreklame-nrw.html', crumb='Leuchtreklame NRW', img='leuchtre
  preis_html='''<p>Leuchtbuchstaben berechnen wir in NRW ab 229&nbsp;€ pro Buchstabe netto zzgl. 19&nbsp;% MwSt. Leuchtkästen und größere Fassadenanlagen kalkulieren wir nach Größe, Bauart und Montageaufwand.</p>
 <p>Für Ihr Projekt bekommen Sie ein <strong>Festpreis-Angebot</strong> nach einem Foto der Fassade und den ungefähren Maßen – kostenlos und in der Regel innerhalb von 24 Stunden. Vor der Produktion misst unser Team in NRW vor Ort nach.</p>''',
  recht_ey='Gut zu wissen', recht_h2='Genehmigung <em>in NRW</em>', recht_sub=None,
- recht_html=BAUO + '<p><strong>Strom:</strong> Für die Leuchtreklame braucht es einen Stromanschluss in der Nähe. Den Anschluss an das Hausnetz übernimmt eine Elektrofachkraft; wir sagen Ihnen vorher genau, was vorbereitet sein muss.</p>',
+ recht_html=BAUO + '<p><strong>Strom:</strong> Für die Leuchtreklame braucht es einen Stromanschluss in der Nähe. Den Anschluss an das Hausnetz übernimmt ein eingetragener Elektrofachbetrieb aus unserem Partnernetz; wir sagen Ihnen vorher genau, was vorbereitet sein muss.</p>',
  ablauf=[
   ('Foto & Wunsch', 'Sie schicken uns ein Foto der Fassade, Ihr Logo und ungefähre Maße – per WhatsApp oder E-Mail.'),
   ('Entwurf & Prüfung', 'Wir zeigen Ihnen die Reklame als Fotomontage an Ihrer Fassade und prüfen, ob eine Genehmigung nötig ist.'),
   ('Aufmaß & Festpreis', 'Unser Team in NRW misst vor Ort nach. Sie bekommen ein schriftliches Festpreis-Angebot.'),
-  ('Produktion & Montage', 'Nach Ihrer Freigabe produzieren wir und montieren am vereinbarten Termin bei Ihnen.'),
+  ('Produktion & Montage', 'Nach Ihrer Freigabe fertigt ein eingetragener Partnerbetrieb die Anlage und montiert sie am vereinbarten Termin bei Ihnen.'),
  ],
  faq=[
-  ('In welchen Städten in NRW montieren Sie Leuchtreklame?', 'Schwerpunkt sind Düsseldorf, Köln, Dortmund, Essen und Bochum, dazu Duisburg, Wuppertal, Bonn und die Städte dazwischen. Unser Team in NRW kommt für Aufmaß und Montage zu Ihnen. Unser Firmensitz ist in Berlin.'),
+  ('In welchen Städten in NRW montieren Sie Leuchtreklame?', 'Schwerpunkt sind Düsseldorf, Köln, Dortmund, Essen und Bochum, dazu Duisburg, Wuppertal, Bonn und die Städte dazwischen. Unser Team in NRW kommt zum Aufmaß zu Ihnen, die Montage übernimmt ein eingetragener Partnerbetrieb. Unser Firmensitz ist in Berlin.'),
   ('Brauche ich eine Genehmigung für meine Leuchtreklame?', 'Bis 1 m² Ansichtsfläche ist eine Werbeanlage in NRW in der Regel verfahrensfrei, größere Anlagen brauchen meist eine Baugenehmigung. Örtliche Satzungen und Denkmalschutz können weitere Vorgaben machen. Wir prüfen das für Ihre Adresse, bevor Sie bestellen.'),
   ('Wie lange dauert es bis zur Montage?', 'Das hängt von Bauart und Genehmigung ab. Den Zeitplan nennen wir Ihnen im Angebot. Ist eine Baugenehmigung nötig, richtet sich der Termin nach der Bearbeitungszeit der Stadt.'),
   ('Wie viel Strom verbraucht eine LED-Leuchtreklame?', 'LED-Technik ist sparsam. Den Verbrauch Ihrer Anlage nennen wir Ihnen im Angebot. Mit einer Zeitschaltuhr leuchtet die Reklame nur, wann Sie es möchten.'),
@@ -118,7 +119,7 @@ L.update(file='leuchtreklame-nrw.html', crumb='Leuchtreklame NRW', img='leuchtre
  links=[('/leuchtreklame-berlin.html', 'Leuchtreklame: Bauarten & Beispiele'), ('/schilder-nrw.html', 'Schilder NRW')] + [('/leuchtreklame-koeln.html', 'Leuchtreklame Köln'), ('/leuchtreklame-duesseldorf.html', 'Leuchtreklame Düsseldorf'), ('/leuchtreklame-dortmund.html', 'Leuchtreklame Dortmund'), ('/leuchtreklame-essen.html', 'Leuchtreklame Essen'), ('/leuchtreklame-bochum.html', 'Leuchtreklame Bochum')] + CITY_LINKS[:1],
  form_opts=['3D-Leuchtbuchstaben', 'Leuchtkasten', 'Ausleger / Nasenschild', 'LED-Neon', 'Umbau einer vorhandenen Reklame'],
  form_labels=('Welche Leuchtreklame?', 'Fassade &amp; Wunsch', 'Foto der Fassade (optional)', 'Ein Foto der Fassade von vorn und ungefähre Maße reichen für ein erstes Angebot. Ihr Logo können Sie gleich mitschicken.'),
- form_sub='Schicken Sie uns ein Foto der Fassade und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team in NRW misst auf und montiert bei Ihnen vor Ort.',
+ form_sub='Schicken Sie uns ein Foto der Fassade und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team in NRW misst bei Ihnen auf, die Montage übernimmt ein eingetragener Partnerbetrieb.',
  subject='Anfrage Leuchtreklame NRW (Website)', msg_ph='z. B. Leuchtbuchstaben „Café Rhein“ über dem Eingang, Fassade ca. 5 m breit, Altbau in Köln-Ehrenfeld',
  sticky=('Leuchtreklame NRW', 'Team vor Ort, Genehmigung geprüft'))
 L['faq_h2'] = 'Leuchtreklame NRW – <em>Fragen &amp; Antworten</em>'
@@ -412,7 +413,8 @@ D.update(file='webdesign-nrw.html', crumb='Webdesign NRW', img='webdesign', tab_
  sticky=('Webdesign NRW', 'Abstimmung online, Festpreis'))
 D['faq_h2'] = 'Webdesign NRW – <em>Fragen &amp; Antworten</em>'
 
-L['top'] = price_top('Was kostet <em>Leuchtreklame in NRW?</em>', None, ROWS_L, PRICE_NOTE)
+PRICE_NOTE_L = PRICE_NOTE.replace('Montage durch unser Team in NRW', 'Montage durch eingetragene Partnerbetriebe')  # Leuchtreklame: Bau/Montage durch eingetragene Betriebe (HwO)
+L['top'] = price_top('Was kostet <em>Leuchtreklame in NRW?</em>', None, ROWS_L, PRICE_NOTE_L)
 S['top'] = price_top('Was kostet <em>ein Schild in NRW?</em>', None, ROWS_S, PRICE_NOTE)
 F['top'] = price_top('Was kostet <em>Fensterfolie in NRW?</em>', None, ROWS_F, PRICE_NOTE)
 W['top'] = price_top('Was kostet <em>eine Schaufensterbeschriftung in NRW?</em>', None, ROWS_W, PRICE_NOTE)

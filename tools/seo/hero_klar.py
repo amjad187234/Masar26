@@ -8,16 +8,17 @@ ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname
 A, Z = '<!-- kopf:start -->', '<!-- kopf:ende -->'
 B_MONT = 'Montage durch unser Team in Berlin'
 N_MONT = 'Montage durch unser Team vor Ort'
+L_MONT = 'Bau und Montage durch eingetragene Partnerbetriebe'  # Leuchtreklame: zulassungspflichtiges Handwerk (HwO), siehe partner_hinweis.py
 SEITEN = {
     'fahrzeugbeschriftung-berlin.html': ('ab 290 € netto', 'Teilbeschriftung · Entwurf inklusive', B_MONT),
-    'leuchtreklame-berlin.html': ('ab 199 € je Buchstabe', 'LED-Neon innen ab 249 €', B_MONT),
+    'leuchtreklame-berlin.html': ('ab 199 € je Buchstabe', 'LED-Neon innen ab 249 €', L_MONT),
     'schilder-berlin.html': ('ab 45 € netto', 'Firmenschild ab 149 € · Praxisschild ab 390 €', B_MONT),
     'schaufensterbeschriftung-berlin.html': ('ab 149 € netto', 'Sichtschutz ab 190 € · Lochfolie ab 45 €/m²', B_MONT),
     'fensterfolie-berlin.html': ('Sichtschutz ab 190 € netto', 'Glas wird vor der Montage geprüft', B_MONT),
     'sichtschutzfolie-berlin.html': ('ab 190 € netto', 'Milchglas nach Maß ab 240 €', B_MONT),
     'pvc-banner-berlin.html': ('ab 29 €/m² netto', 'Mesh ab 34 €/m² · Blockout ab 42 €/m²', 'Druck in Berlin-Wedding'),
-    'aussenwerbung-berlin.html': ('Leuchtbuchstaben ab 199 €', 'Schilder ab 45 € · Banner ab 29 €/m²', B_MONT),
-    'leuchtreklame-nrw.html': ('ab 229 € je Buchstabe', 'Werbesatzung Ihrer Stadt geprüft', N_MONT),
+    'aussenwerbung-berlin.html': ('Leuchtbuchstaben ab 199 €', 'Schilder ab 45 € · Banner ab 29 €/m²', L_MONT),
+    'leuchtreklame-nrw.html': ('ab 229 € je Buchstabe', 'Werbesatzung Ihrer Stadt geprüft', L_MONT),
     'schilder-nrw.html': ('ab 59 € netto', 'Firmenschild ab 179 € · Praxisschild ab 459 €', N_MONT),
     'fahrzeugbeschriftung-nrw.html': ('ab 340 € netto', 'Teilbeschriftung · Entwurf inklusive', N_MONT),
     'schaufensterbeschriftung-nrw.html': ('ab 179 € netto', 'Sichtschutz ab 229 € · Lochfolie ab 55 €/m²', N_MONT),
@@ -26,7 +27,7 @@ SEITEN = {
 }
 FOTO = {
     'fahrzeugbeschriftung-berlin.html': ('fahrzeugbeschriftung-berlin-04', 'Von Masar beschrifteter Transporter mit Logo, Leistungen und Kontakt'),
-    'leuchtreklame-berlin.html': ('leuchtreklame-berlin-09', 'Von Masar montierte Fassadenschrift über einem Ladengeschäft in Berlin'),
+    'leuchtreklame-berlin.html': ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft in Berlin – ein Projekt von Masar'),
 }
 CSS = ('<style id="kopf-klar">.kopf-preis{display:inline-flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;background:rgba(88,208,189,.14);'
        'border:1px solid rgba(88,208,189,.45);border-radius:10px;padding:.55rem .9rem;margin:-.6rem 0 1rem;color:#fff;font-size:14px}'

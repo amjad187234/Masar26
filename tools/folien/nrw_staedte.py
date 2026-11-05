@@ -53,9 +53,9 @@ for k, c in C.items():
      area=[{"@type": "City", "name": n}],
      img_alt=f'Beispiel-Visualisierung: Leuchtreklame mit beleuchteten Buchstaben an einer Ladenfassade in {n}',
      title=f'Leuchtreklame {n}: Leuchtbuchstaben & Leuchtkästen | Masar',
-     desc=f'Leuchtreklame in {n}: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Genehmigung geprüft, Montage durch unser Team vor Ort.',
+     desc=f'Leuchtreklame in {n}: LED-Leuchtbuchstaben ab 229 € netto, Leuchtkästen und Ausleger – Genehmigung geprüft, Montage durch eingetragene Partnerbetriebe.',
      schema_name=f'Leuchtreklame in {n}', badge=f'Leuchtreklame · {n}', h1=f'Leuchtreklame <em>{n}</em>',
-     sub=f'Leuchtbuchstaben, Leuchtkästen und Ausleger für Läden, Praxen und Restaurants in {n} – von {c["lagen"]} bis {c["veedel"]}. Wir gestalten, klären die Genehmigung und unser Team in NRW montiert bei Ihnen vor Ort.',
+     sub=f'Leuchtbuchstaben, Leuchtkästen und Ausleger für Läden, Praxen und Restaurants in {n} – von {c["lagen"]} bis {c["veedel"]}. Wir gestalten, klären die Genehmigung und koordinieren Bau und Montage mit eingetragenen Partnerbetrieben vor Ort.',
      trust=f'LED-Leuchtbuchstaben ab 229 € / Buchstabe netto · Montage in {n}',
      wa=f'Hallo, ich interessiere mich für eine Leuchtreklame in {n}. Ich schicke Ihnen ein Foto der Fassade.',
      angles_h2=f'Sichtbar in {n} – <em>auch am Abend</em>',
@@ -66,14 +66,14 @@ for k, c in C.items():
      recht_h2=f'Genehmigung <em>in {n}</em>',
      recht_html=BAUO + c['regel'],
      faq_h2=f'Leuchtreklame {n} – <em>Fragen &amp; Antworten</em>',
-     faq=[(f'Montieren Sie Leuchtreklame in ganz {n}?', f'Ja. Unser Team in NRW kommt für Aufmaß und Montage zu Ihnen – zum Beispiel nach {c["veedel"]}. Unser Firmensitz ist in Berlin.'),
+     faq=[(f'Montieren Sie Leuchtreklame in ganz {n}?', f'Ja. Unser Team in NRW kommt zum Aufmaß zu Ihnen, die Montage übernimmt ein eingetragener Partnerbetrieb – zum Beispiel nach {c["veedel"]}. Unser Firmensitz ist in Berlin.'),
           c['faq_lokal'],
           ('Was kostet eine Leuchtreklame?', 'LED-Leuchtbuchstaben beginnen in NRW ab 229 € pro Buchstabe netto zzgl. 19 % MwSt. Leuchtkästen und Ausleger kalkulieren wir nach Größe. Den Festpreis inklusive Montage bekommen Sie nach einem Foto der Fassade.')] + L['faq'][2:5],
      links=[('/leuchtreklame-nrw.html', 'Leuchtreklame NRW'), (f'/schilder-{k}.html', f'Schilder {n}'), (f'/schaufensterbeschriftung-{k}.html', f'Schaufenster {n}'), ('/fensterfolie-nrw.html', 'Fensterfolie NRW'), ('/' + c['hub'], f'Werbeagentur {n}')] + [(u, f'Leuchtreklame {t}') for u, t in city_links('leuchtreklame', k)],
-     form_sub=f'Schicken Sie uns ein Foto der Fassade und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Unser Team montiert bei Ihnen in {n}.',
+     form_sub=f'Schicken Sie uns ein Foto der Fassade und Ihr Logo – Sie bekommen innerhalb von 24 Stunden ein Angebot. Die Montage in {n} übernimmt ein eingetragener Partnerbetrieb.',
      subject=f'Anfrage Leuchtreklame {n} (Website)', msg_ph=f'z. B. Leuchtbuchstaben über dem Eingang, Fassade ca. 5 m breit, Ladenlokal in {c["ph"]}',
      sticky=(f'Leuchtreklame {n}', 'ab 229 € / Buchstabe netto'), ph=c['ph'])
-    p['top'] = price_top(f'Was kostet <em>Leuchtreklame in {n}?</em>', None, ROWS_L, PRICE_NOTE)
+    p['top'] = price_top(f'Was kostet <em>Leuchtreklame in {n}?</em>', None, ROWS_L, PRICE_NOTE_L)
     PAGES_C.append(p)
     # ------------------------------------------------ Schilder {Stadt}
     p = dict(S)

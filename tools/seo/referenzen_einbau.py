@@ -13,8 +13,8 @@ SF = [('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN
 DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Werkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('menuetafel-imbiss-montiert-01', 'Menütafel über der Theke eines Imbisses')]
 MIX = [('leuchtreklame-berlin-08', 'Leuchtreklame am Eröffnungstag'), ('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung'), ('schaufensterbeschriftung-showroom-berlin-02', 'Schaufensterbeschriftung für LAUFEN Berlin Gallery')]
 SEITEN = {
-    'leuchtreklame-berlin.html': ('Leuchtreklame aus unserer Werkstatt', LR),
-    'aussenwerbung-berlin.html': ('Außenwerbung aus unserer Werkstatt', LR),
+    'leuchtreklame-berlin.html': ('Leuchtreklame aus unseren Projekten', LR),
+    'aussenwerbung-berlin.html': ('Außenwerbung aus unseren Projekten', LR),
     'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung aus unserer Werkstatt', FZ),
     'lkw-beschriftung-berlin.html': ('Fahrzeuge aus unserer Werkstatt', FZ),
     'werbetechnik.html': ('Werbetechnik aus unserer Werkstatt', MIX),
@@ -24,7 +24,7 @@ SEITEN = {
     'pvc-banner-berlin.html': ('Großformatdruck aus unserer Werkstatt', DR),
     'werbeagentur-nrw.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
     'werbeagentur-hamburg.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
-    'leuchtreklame-nrw.html': ('Leuchtreklame aus unserer Werkstatt in Berlin', LR),
+    'leuchtreklame-nrw.html': ('Leuchtreklame aus unseren Projekten in Berlin', LR),
     'fahrzeugbeschriftung-nrw.html': ('Fahrzeuge aus unserer Werkstatt in Berlin', FZ),
 }
 

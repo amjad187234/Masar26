@@ -77,7 +77,7 @@ Werbetechnik- und Regionsseiten.
 PVC-Banner Berlin/NRW, Textildruck, Grafikdesign) vor den FAQ einen belegten Wissens-Abschnitt mit Link zum passenden Ratgeber
 (Marker `<!-- wissen:start -->`, idempotent) und einen Link-Chip in „Passend dazu“ (auch Schilder Berlin/NRW, LKW Berlin).
 Hintergrund: `docs/wettbewerb-2026-11.md`.
-Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `wissen_abschnitte.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py` → `a11y.py` → `marke.py` (Farben nach Markenleitfaden) → `umbruch.py` (ohne Brotkrumen-Leiste und Silbentrennung) → `sitemap_lastmod.py` → zum Schluss `seo_check.py`.
+Reihenfolge nach dem Neu-Erzeugen: Generatoren → `stadt_lokal.py` → `wissen_abschnitte.py` → `referenzen_einbau.py` → `hero_klar.py` → `snippets.py` → `schnell.py` → `nrw_whatsapp.py` → `partner_hinweis.py` → `a11y.py` → `marke.py` (Farben nach Markenleitfaden) → `umbruch.py` (ohne Brotkrumen-Leiste und Silbentrennung) → `sitemap_lastmod.py` → zum Schluss `seo_check.py`.
 `snippets.py` stellt am Ende auch die Vorschaubilder wieder her (`og_cards.py sync`: Seiten, die nach dem Neu-Erzeugen wieder `logo.png`
 als og:image haben, bekommen ihr vorhandenes `og/<seite>.jpg`) und ruft `strukturdaten.py` auf (Artikel-JSON-LD mit Vorschaubild statt Logo,
 `@id …/#identity` für author/publisher). `schnell.py` ergänzt außerdem `srcset` an Galerie-Bildern („Aus unserer Arbeit“) und entfernt das
@@ -94,6 +94,10 @@ verwaiste Seiten, fast gleiche Seiten (`aehnlich`, ≥ 60 % gleicher Haupttext �
 lastmod aktuell, robots.txt, llms.txt-Links.
 `python3 tools/seo/sitemap_lastmod.py` setzt `<lastmod>` nur, wenn sich der sichtbare Haupttext einer Seite geändert hat (Hash-Speicher
 `tools/seo/inhalt_hashes.json`; Technik-, Farb- oder Fußzeilen-Änderungen zählen nicht). `--dry` zeigt nur an, `--git` berechnet die Startwerte neu.
+`python3 tools/seo/partner_hinweis.py` legt offen, wer was ausführt (Inhaber, 05.11.2026): Footer-Zeile auf allen Seiten, Hinweis-Kasten vor dem
+Kontaktformular auf Leuchtreklame-, Messe-, Fahrzeug-, Schilder- und Regionsseiten, und auf Leuchtreklame-Seiten keine eigene Herstellung/Montage
+beleuchteter Anlagen (Bau/Montage durch in die Handwerksrolle eingetragene Partnerbetriebe, Anschluss durch eingetragenen Elektrofachbetrieb).
+Neue Seiten mit Montage-Versprechen hier eintragen (`art_fuer`). Impressum-Abschnitt `#leistungserbringung`, AGB § 3.4.
 `python3 tools/seo/a11y.py` sorgt für Barrierefreiheit nach WCAG (axe ohne Befund am 02.11.2026): echtes `<main>`, WhatsApp-Knopf/Sticky-Leiste als Landmark, Überschriftenfolge (Footer h2, Karten h3).
 `python3 tools/seo/blog_kurzbox.py` setzt in jedem Ratgeber nach der Einleitung eine kurze Angebotsbox (Text/Link aus der `.article-cta` des Artikels) – nach neuen Ratgebern ausführen.
 `python3 tools/seo/nrw_whatsapp.py` stellt die WhatsApp-Links auf NRW-Seiten (`data-region="nrw"`) auf das NRW-Team (0178 2410682) um; der Assistent nutzt dort dieselbe Nummer.

@@ -27,6 +27,8 @@ FIRMA = ('Amjad Alblili<br>Bristolstraße 19E · 13349 Berlin<br>'
 HINWEISE = [
     'Vor der Produktion erhalten Sie die Reinzeichnung zur Freigabe.',
     'Montage außerhalb Berlins und Zusatzarbeiten nach Absprache und gesonderter Berechnung.',
+    'Arbeiten, die eine Eintragung in die Handwerksrolle oder eine Elektrofachkraft erfordern (z. B. Bau und Montage beleuchteter Anlagen, '
+    'elektrischer Anschluss), führen eingetragene Partnerbetriebe in unserem Auftrag aus; Ihr Vertragspartner bleiben wir.',
     'Es gelten unsere AGB: masar-werbeagentur.de/agb.html',
 ]
 
