@@ -123,7 +123,7 @@
     + '.as-hint{font-size:13px;color:rgba(255,255,255,.6);margin:.9rem 0 0}.as-more{color:#58d0bd;font-weight:600}'
     + '.as-welcome{display:block;border-radius:10px;padding:.55rem .9rem;line-height:1.45}.as-welcome .as-more{color:var(--teal-ink,#177567)}'
     + '.as-merk{display:flex;gap:.55rem;align-items:flex-start;margin-top:1rem;font-size:13.5px;line-height:1.45;color:var(--muted,#5a7070)}.as-merk input{margin-top:3px;width:18px;height:18px;flex-shrink:0}.as-merk a{color:var(--teal-ink,#177567)}'
-    + '@media(max-width:380px){.as-opt{font-size:13px;gap:.45rem;padding:.7rem .55rem}}@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
+    + '@media(max-width:380px){.as-opt{font-size:13px;gap:.45rem;padding:.7rem .55rem}}@media(max-width:440px){.as-grid .as-opt:has(svg){flex-direction:column;align-items:flex-start;justify-content:center;gap:.35rem}.as-grid .as-opt:has(svg):after{position:absolute;top:.5rem;right:.6rem}.as-grid .as-opt{position:relative}}.as-ferr{display:block;color:#b3261e;font:600 13.5px/1.4 Barlow,sans-serif;margin:.35rem 0 0}.as-ferr:empty{display:none}@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (d.charAt(0) === '<' ? d : '<path d="' + d + '"/>') + '</svg>'; }   // Lucide-Markup oder einzelner Pfad
@@ -275,14 +275,18 @@
       if (type === 'email' || type === 'tel') { inp.spellcheck = false; inp.setAttribute('autocapitalize', 'off'); }
       inp.addEventListener('input', function () {
         s[k] = inp.value.slice(0, max); save();
-        if (inp.getAttribute('aria-invalid') === 'true' && gueltig(k)) { inp.removeAttribute('aria-invalid'); var e = box.querySelector('.as-err'); if (e) e.textContent = ''; }
+        if (inp.getAttribute('aria-invalid') === 'true' && gueltig(k)) { inp.removeAttribute('aria-invalid'); var e = box.querySelector('.as-err'); if (e) e.textContent = ''; var fe = inp.nextElementSibling; if (fe && fe.classList.contains('as-ferr')) fe.textContent = ''; }
       });
       // E-Mail beim Verlassen des Feldes prüfen (nicht schon beim Tippen)
       if (type === 'email') inp.addEventListener('blur', function () {
-        var e = box.querySelector('.as-err');
-        if (!gueltig(k)) { inp.setAttribute('aria-invalid', 'true'); inp.setAttribute('aria-describedby', e.id); e.textContent = 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.'; }
+        if (!gueltig(k)) feldFehler(inp, 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.');
       });
       wrap.appendChild(lab); wrap.appendChild(inp); (parent || box).appendChild(wrap);
+    }
+    function feldFehler(inp, text) {
+      var fe = inp.nextElementSibling && inp.nextElementSibling.classList.contains('as-ferr') ? inp.nextElementSibling : null;
+      if (!fe) { fe = el('span', 'as-ferr'); fe.id = inp.id + '-fehler'; inp.insertAdjacentElement('afterend', fe); }
+      fe.textContent = text; inp.setAttribute('aria-invalid', 'true'); inp.setAttribute('aria-describedby', fe.id);
     }
     function gueltig(k) { return k === 'name' ? s.name.trim().length > 1 : k === 'mail' ? (!s.mail.trim() || MAIL.test(s.mail.trim())) : true; }
     function nav(back, ok, label, msg) {
@@ -298,7 +302,10 @@
           // Fehler am Feld bzw. an der Frage zeigen und dorthin springen
           if (r && r.nodeType === 1) {
             if (r.classList.contains('as-row')) { r.classList.add('as-miss'); r.setAttribute('aria-describedby', err.id); r.firstChild.focus(); }
-            else { r.setAttribute('aria-invalid', 'true'); r.setAttribute('aria-describedby', err.id); r.focus(); }
+            else {
+              // Meldung zusätzlich direkt unter dem Feld (die Sammelmeldung steht weiter unten beim Knopf)
+              feldFehler(r, err.textContent); r.focus();
+            }
           }
         });
         n.appendChild(g);

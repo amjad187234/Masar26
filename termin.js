@@ -44,7 +44,7 @@
     + '.tm-in:focus{outline:2px solid var(--navy,#132e50);outline-offset:1px;box-shadow:0 0 0 4px rgba(88,208,189,.6)}.tm-in[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 1px #b3261e}.tm-chk input[aria-invalid="true"]{outline:2px solid #b3261e;outline-offset:2px}textarea.tm-in{min-height:84px;resize:vertical}'
     + '.tm-two{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}'
     + '.tm-chk{display:flex;gap:.55rem;align-items:flex-start;font-size:14px;line-height:1.45;color:var(--muted,#5a7070);margin-top:1rem}.tm-chk input{margin-top:3px;width:18px;height:18px}'
-    + '.tm-err{color:#b3261e;font-size:14px;margin:.6rem 0 0;min-height:1em}'
+    + '.tm-err{color:#b3261e;font-size:14px;margin:.6rem 0 0;min-height:1em}.tm-ferr{display:block;color:#b3261e;font:600 13.5px/1.4 Barlow,sans-serif;margin:.35rem 0 0}.tm-ferr:empty{display:none}'
     + '.tm-sum{background:#e8f8f5;border:1px solid var(--teal,#58d0bd);border-radius:10px;padding:.8rem 1rem;font-size:15px;color:var(--navy,#132e50);margin-bottom:1rem}'
     + '.tm-nav{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}'
     + '.tm-back{background:none;border:0;color:var(--muted,#5a7070);font:600 14px Barlow,sans-serif;cursor:pointer;padding:.6rem 0;text-decoration:underline}'
@@ -220,7 +220,7 @@
     i.id = 'tm-' + key; i.name = key;
     if (pflicht) i.setAttribute('aria-required', 'true');
     if (typ === 'email' || typ === 'tel') { i.spellcheck = false; i.setAttribute('autocapitalize', 'off'); }
-    i.addEventListener('input', function () { if (i.getAttribute('aria-invalid') === 'true') { i.removeAttribute('aria-invalid'); var e = box.querySelector('.tm-err[role=alert]'); if (e) e.textContent = ''; } });
+    i.addEventListener('input', function () { if (i.getAttribute('aria-invalid') === 'true') { i.removeAttribute('aria-invalid'); var e = box.querySelector('.tm-err[role=alert]'); if (e) e.textContent = ''; var fe = i.nextElementSibling; if (fe && fe.classList.contains('tm-ferr')) fe.textContent = ''; } });
     i.placeholder = ph || ''; i.value = s[key] || '';
     i.addEventListener('input', function () { s[key] = i.value; });
     w.appendChild(i); return w;
@@ -261,7 +261,15 @@
       // Fehler am Feld markieren, Fokus dorthin, Meldung vorlesen
       function fehler(sel, text) {
         var f = box.querySelector(sel); err.textContent = text;
-        if (f) { f.setAttribute('aria-invalid', 'true'); f.setAttribute('aria-describedby', err.id); f.focus(); }
+        if (!f) return;
+        f.setAttribute('aria-invalid', 'true'); f.setAttribute('aria-describedby', err.id);
+        // Meldung auch direkt unter dem Feld zeigen – die Sammelmeldung steht unten beim Knopf
+        if (f.type !== 'checkbox') {
+          var fe = f.nextElementSibling && f.nextElementSibling.classList.contains('tm-ferr') ? f.nextElementSibling : null;
+          if (!fe) { fe = el('span', 'tm-ferr'); fe.setAttribute('aria-hidden', 'true'); f.insertAdjacentElement('afterend', fe); }
+          fe.textContent = text;
+        }
+        f.focus();
       }
       err.id = 'tm-err-kontakt';
       if (s.name.trim().length < 2) return fehler('#tm-name', 'Bitte Ihren Namen angeben (Vor- und Nachname).');
