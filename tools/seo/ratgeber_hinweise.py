@@ -11,19 +11,22 @@ R = {
     'kosten': ('/blog/leuchtreklame-kosten-berlin.html', 'Was kostet Leuchtreklame? Preise & 7 Prüfpunkte'),
     'stopper': ('/blog/kundenstopper-erlaubnis.html', 'Kundenstopper: Erlaubnis in Berlin, Hamburg, NRW'),
     'fehler': ('/blog/werbung-teure-fehler.html', 'Teure Fehler in der Werbung'),
+    'check': ('/genehmigungs-check.html', 'Kostenloser Genehmigungs-Check'),
     'google': ('/blog/google-unternehmensprofil-abzocke.html', 'Google-Profil: Abzocke-Anrufe erkennen'),
 }
 SEITEN = {
-    'schilder-berlin.html': ['eroeffnung', 'miete', 'stopper'],
-    'schaufensterbeschriftung-berlin.html': ['eroeffnung', 'stopper'],
-    'leuchtreklame-berlin.html': ['kosten', 'miete'],
-    'leuchtreklame-nrw.html': ['kosten', 'miete'],
-    'aussenwerbung-berlin.html': ['miete', 'stopper', 'kosten'],
+    'werbeagentur-nrw.html': ['check'],
+    'pvc-banner-berlin.html': ['check'],
+    'schilder-berlin.html': ['check', 'eroeffnung', 'miete', 'stopper'],
+    'schaufensterbeschriftung-berlin.html': ['check', 'eroeffnung', 'stopper'],
+    'leuchtreklame-berlin.html': ['check', 'kosten', 'miete'],
+    'leuchtreklame-nrw.html': ['check', 'kosten', 'miete'],
+    'aussenwerbung-berlin.html': ['check', 'miete', 'stopper', 'kosten'],
     'print.html': ['stopper', 'fehler'],
     'grafikdesign-berlin.html': ['fehler'],
     'webdesign-berlin.html': ['google', 'fehler'],
     'digital.html': ['google', 'fehler'],
-    'werbeagentur-hamburg.html': ['stopper'],
+    'werbeagentur-hamburg.html': ['check', 'stopper'],
 }
 
 
