@@ -6,6 +6,7 @@ import os, re
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 A, Z = '<!-- kopf:start -->', '<!-- kopf:ende -->'
+A2, Z2 = '<!-- kopf-zusagen:start -->', '<!-- kopf-zusagen:ende -->'
 B_MONT = 'Montage durch unser Team in Berlin'
 N_MONT = 'Montage durch unser Team vor Ort'
 SEITEN = {
@@ -31,7 +32,7 @@ FOTO = {
 CSS = ('<style id="kopf-klar">.kopf-preis{display:inline-flex;align-items:baseline;gap:.5rem;flex-wrap:wrap;background:rgba(88,208,189,.14);'
        'border:1px solid rgba(88,208,189,.45);border-radius:10px;padding:.55rem .9rem;margin:-.6rem 0 1rem;color:#fff;font-size:14px}'
        '.kopf-preis b{font-family:"Barlow Condensed",sans-serif;font-weight:800;font-size:1.35rem;color:#58d0bd;letter-spacing:.3px}'
-       '.kopf-checks{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;gap:.4rem}'
+       '.kopf-checks{list-style:none;margin:0 0 1.4rem;padding:0;display:grid;gap:.4rem}.hero-btns+.kopf-checks{margin-top:1.3rem}'
        '.kopf-checks li{position:relative;padding-left:1.6rem;color:rgba(255,255,255,.88);font-size:15px;line-height:1.5}'
        '.kopf-checks li::before{content:"✓";position:absolute;left:0;top:0;width:1.1rem;height:1.1rem;border-radius:50%;background:#58d0bd;color:#132e50;'
        'font-weight:900;font-size:.75rem;display:flex;align-items:center;justify-content:center;margin-top:.2rem}</style>')
@@ -44,13 +45,20 @@ def main():
         if not os.path.exists(p): continue
         s = open(p, encoding='utf-8').read()
         s = re.sub(re.escape(A) + r'.*?' + re.escape(Z), '', s, flags=re.S)
+        s = re.sub(re.escape(A2) + r'.*?' + re.escape(Z2), '', s, flags=re.S)
         m = re.search(r'<p class="hero-sub">.*?</p>', s, re.S)
         if not m: print('kein hero-sub:', f); continue
-        blk = (f'{A}<div class="kopf-preis"><b>{preis}</b><span>{zusatz}</span></div>'
-               f'<ul class="kopf-checks"><li>Festpreis nach Fotos – Angebot in der Regel in 24 Stunden</li>'
-               f'<li>Entwurf inklusive, Genehmigung wird geprüft</li><li>{montage}</li></ul>{Z}')
-        s = s[:m.end()] + blk + s[m.end():]
-        if 'id="kopf-klar"' not in s:
+        preis_blk = f'{A}<div class="kopf-preis"><b>{preis}</b><span>{zusatz}</span></div>{Z}'
+        checks = (f'<ul class="kopf-checks"><li>Festpreis nach Fotos – Angebot in der Regel in 24 Stunden</li>'
+                  f'<li>Entwurf inklusive, Genehmigung wird geprüft</li><li>{montage}</li></ul>')
+        s = s[:m.end()] + preis_blk + s[m.end():]
+        # Zusagen unter die Knöpfe (UX 04.11.2026): so liegt „Angebot anfordern“ am Handy im ersten Bildschirm
+        b = re.search(r'<div class="hero-btns">.*?</div>', s, re.S)
+        if b: s = s[:b.end()] + f'{A2}{checks}{Z2}' + s[b.end():]
+        else: s = s.replace(preis_blk, preis_blk + f'{A2}{checks}{Z2}', 1)
+        if 'id="kopf-klar"' in s:
+            s = re.sub(r'<style id="kopf-klar">.*?</style>', lambda _: CSS, s, count=1, flags=re.S)
+        else:
             s = s.replace('</head>', CSS + '\n</head>', 1)
         if f in FOTO:
             name, alt = FOTO[f]

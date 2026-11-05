@@ -83,9 +83,11 @@ CSS = '''<style id="slides-css">
 .sl-track .gal-item:hover{transform:none}
 .sl-track .gal-item img{aspect-ratio:4/3;object-fit:cover;height:auto}
 .sl-cap{display:block;padding:.65rem .85rem;font-size:13.5px;line-height:1.45;color:var(--muted);text-align:left;background:#fff}
-.sl-dots{display:flex;gap:6px;justify-content:center;margin-top:.4rem}
-.sl-dots button{width:8px;height:8px;border-radius:4px;border:0;background:var(--border);padding:0;cursor:pointer;transition:width .25s,background .25s}
-.sl-dots button[aria-current="true"]{width:22px;background:var(--teal)}
+.sl-dots{display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin-top:.2rem}
+.sl-dots button{width:24px;height:24px;border:0;background:none;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.sl-dots button::before{content:"";width:8px;height:8px;border-radius:4px;background:#8fa3a3;transition:width .25s,background .25s}
+.sl-dots button[aria-current="true"]{width:34px}
+.sl-dots button[aria-current="true"]::before{width:22px;background:var(--teal)}
 @media(max-width:900px){.sl-track .gal-item{flex-basis:calc((100% - 1rem)/2)}}
 @media(max-width:600px){.sl-track .gal-item{flex-basis:84%}.sl-nav{display:none}}
 @media(prefers-reduced-motion:reduce){.sl-track{scroll-behavior:auto}}
