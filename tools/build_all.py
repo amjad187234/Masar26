@@ -51,6 +51,7 @@ SCHRITTE = [
     ('partnerwerkstatt', 'post', 'seo/partnerwerkstatt.py', 'Keine eigene Werkstatt behaupten (Partnerwerkstatt)'),
     ('partner_hinweis', 'post', 'seo/partner_hinweis.py', 'Offenlegung Partnerbetriebe'),
     ('druckcheck_links', 'post', 'seo/druckcheck_links.py', 'Hinweise auf Druckdaten-Check und Konfigurator'),
+    ('brutto', 'post', 'seo/brutto.py', 'Bruttopreis neben jeden Netto-Preis (PAngV)'),
     ('a11y', 'post', 'seo/a11y.py', 'Barrierefreiheit (main, Landmarks, Überschriften)'),
     ('marke', 'post', 'seo/marke.py', 'Farben nach Markenleitfaden + Claim'),
     ('umbruch', 'post', 'seo/umbruch.py', 'Ohne Brotkrumen-Leiste und Silbentrennung'),
@@ -59,7 +60,7 @@ SCHRITTE = [
 NAMEN = [s[0] for s in SCHRITTE]
 # Dateien, deren Änderungen gezählt werden (Bilder erzeugen nur referenzen_einbau.py, die zählen mit)
 ZAEHLEN = ('.html', '.xml', '.txt', '.webp', '.jpg', '.png')
-OHNE = ('.git', 'node_modules', '__pycache__', os.path.join('tools', 'angebot', 'privat'))
+OHNE = ('.git', '.claude', 'node_modules', '__pycache__', os.path.join('tools', 'angebot', 'privat'))
 
 OG = re.compile(r'<meta property="og:image[^>]*>\n?')
 TW = re.compile(r'<meta name="twitter:image" content="[^"]*">')

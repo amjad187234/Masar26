@@ -43,6 +43,9 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 
 ## Preise (netto, „ab“) – nur mit Freigabe ändern
 
+Seit 05.11.2026 (Privatkunden, PAngV) steht neben jedem Netto-Preis automatisch der Bruttopreis: `tools/seo/brutto.py` (in `build_all.py`).
+Preise im Text immer als netto schreiben, das Skript ergänzt „(… € brutto)“. Keine Reichweiten-Zahlen wie „70.000 Blickkontakte“ (ohne Quelle entfernt).
+
 Banner seit 03.11.2026 B2B-Preise (Inhaber: alte Preise ohne Gewinn); NRW-Werte im gleichen Abstand nach Marktrecherche. Werkzeug: `tools/seo/bannerpreise.py` (einmalig).
 
 | Leistung | Berlin | NRW |
