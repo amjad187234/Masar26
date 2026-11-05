@@ -58,7 +58,10 @@ def main():
         p = os.path.join(ROOT, f)
         if not os.path.exists(p): continue
         s = open(p, encoding='utf-8').read()
-        s = re.sub(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', '', s, flags=re.S)
+        blk = block(titel, bilder)
+        s, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z) + r'\n?', lambda m: blk, s, count=1, flags=re.S)
+        if k:   # vorhandenen Block an seiner Stelle erneuern (nichts verschieben)
+            open(p, 'w', encoding='utf-8').write(s); n += 1; continue
         for anker in ['<!-- lokal:start -->', '<!-- CONTACT -->']:
             if anker in s:
                 i = s.index(anker); break
@@ -66,7 +69,7 @@ def main():
             m = re.search(r'<(section|div)[^>]*id="kontakt"', s)
             if not m: print('kein Anker:', f); continue
             i = m.start()
-        s = s[:i] + block(titel, bilder) + s[i:]
+        s = s[:i] + blk + s[i:]
         open(p, 'w', encoding='utf-8').write(s); n += 1
     print(n, 'Seiten mit Referenzen')
 
