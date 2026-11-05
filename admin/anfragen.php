@@ -166,8 +166,10 @@ if (isset($_GET['export'])) {
     header('Content-Disposition: attachment; filename="anfragen-' . date('Y-m-d') . '.csv"');
     $o = fopen('php://output', 'w'); fwrite($o, "\xEF\xBB\xBF");
     fputcsv($o, ['Nr', 'Datum', 'Status', 'Quelle', 'Name', 'Firma', 'E-Mail', 'Telefon', 'Ort', 'Stadt', 'Region', 'Leistung', 'Notiz'], ';');
+    // Kundeneingaben, die mit = + - @ (oder Tab/CR) beginnen, würde Excel als Formel ausführen → mit ' entschärfen
+    $zelle = static fn($v): string => preg_match('/^[=+\-@\t\r]/', (string) $v) ? "'" . $v : (string) $v;
     foreach ($db->query('SELECT * FROM anfragen ORDER BY id DESC') as $r)
-        fputcsv($o, [$r['nr'], date('d.m.Y H:i', (int) $r['erstellt']), ANF_STATUS[$r['status']] ?? $r['status'], $r['quelle'], $r['name'], $r['firma'], $r['email'], $r['telefon'], $r['ort'], $r['stadt'] ?? '', $r['region'] ?? '', $r['leistung'], $r['notiz']], ';');
+        fputcsv($o, array_map($zelle, [$r['nr'], date('d.m.Y H:i', (int) $r['erstellt']), ANF_STATUS[$r['status']] ?? $r['status'], $r['quelle'], $r['name'], $r['firma'], $r['email'], $r['telefon'], $r['ort'], $r['stadt'] ?? '', $r['region'] ?? '', $r['leistung'], $r['notiz']]), ';');
     exit;
 }
 
@@ -254,7 +256,7 @@ if (isset($_GET['nr'])) {
     seite($r['nr'], (isset($_GET['ok']) ? '<div class="ok">Gespeichert.</div>' : '') . $wunschBox
         . '<p><a href="anfragen.php">← Übersicht</a></p><div class="grid"><div>'
         . '<div class="k"><h1>' . h($r['nr']) . ' <span class="tag">📍 ' . h(($r['stadt'] ?? '') . (($r['region'] ?? '') !== '' && ($r['region'] ?? '') !== ($r['stadt'] ?? '') ? ' · ' . $r['region'] : '')) . '</span> <span class="tag ' . h($r['status']) . '">' . h(ANF_STATUS[$r['status']] ?? $r['status']) . '</span></h1>'
-        . '<p class="m">' . date('d.m.Y H:i', (int) $r['erstellt']) . ' · ' . h($r['quelle']) . ($r['seite'] ? ' · <a href="' . h($r['seite']) . '" target="_blank" rel="noopener">Seite</a>' : '') . '</p>'
+        . '<p class="m">' . date('d.m.Y H:i', (int) $r['erstellt']) . ' · ' . h($r['quelle']) . (preg_match('~^https?://~i', (string) $r['seite']) ? ' · <a href="' . h($r['seite']) . '" target="_blank" rel="noopener">Seite</a>' : '') . '</p>'
         . '<table>' . (!empty($r['termin']) ? '<tr><th>Termin</th><td><b>📅 ' . h(anf_termin_text((int) $r['termin'])) . '</b> (' . (int) $r['termin_dauer'] . ' Min.)<br>' . h($r['termin_art'] ?? '') . ' · ' . h($r['sprache'] ?? '') . '</td></tr>' : '') . '<tr><th>Name</th><td>' . h($r['name']) . ($r['firma'] ? ' (' . h($r['firma']) . ')' : '') . '</td></tr><tr><th>Telefon</th><td>' . h($r['telefon']) . '</td></tr><tr><th>E-Mail</th><td>' . h($r['email']) . '</td></tr><tr><th>Ort</th><td>' . h($r['ort']) . '</td></tr><tr><th>Leistung</th><td>' . h($r['leistung']) . '</td></tr></table></div>'
         . '<div class="k"><h2>Antworten</h2><div class="chips" style="gap:8px">' . ($btn ?: '<span class="m">Keine Telefonnummer oder E-Mail angegeben.</span>') . '</div></div>'
         . '<div class="k"><h2>Anfrage</h2><pre>' . h($r['zusammenfassung']) . '</pre></div></div>'

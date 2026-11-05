@@ -28,6 +28,10 @@ function masar_smtp_senden(array $cfg, string $von_adresse, string $an, string $
     if ($host === '' || $user === '' || $pass === '') {
         return false;
     }
+    // Adressen landen in SMTP-Befehlen: Zeilenumbrüche oder spitze Klammern wären Befehls-Einschleusung
+    if (preg_match('/[\r\n<>]/', $von_adresse . $an)) {
+        return false;
+    }
 
     $ziel = ($secure === 'ssl' ? 'ssl://' : '') . $host . ':' . $port;
     $fp = @stream_socket_client($ziel, $errno, $errstr, 15);
@@ -91,7 +95,8 @@ function masar_smtp_senden(array $cfg, string $von_adresse, string $an, string $
         return false;
     }
 
-    // Punkte am Zeilenanfang verdoppeln (SMTP-Vorgabe)
+    // Zeilenenden einheitlich CRLF (nackte LF lehnen viele SMTP-Server ab), Punkte am Zeilenanfang verdoppeln (SMTP-Vorgabe)
+    $rumpf = preg_replace('/\r?\n/', "\r\n", $rumpf) ?? $rumpf;
     $daten = $kopf . "\r\n\r\n" . preg_replace('/^\./m', '..', $rumpf);
     fwrite($fp, $daten . "\r\n.\r\n");
     $ok = $code($lesen($fp)) === 250;
