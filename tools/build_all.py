@@ -51,6 +51,7 @@ SCHRITTE = [
     ('nrw_whatsapp', 'post', 'seo/nrw_whatsapp.py', 'WhatsApp NRW-Team auf NRW-Seiten'),
     ('partnerwerkstatt', 'post', 'seo/partnerwerkstatt.py', 'Keine eigene Werkstatt behaupten (Partnerwerkstatt)'),
     ('partner_hinweis', 'post', 'seo/partner_hinweis.py', 'Offenlegung Partnerbetriebe'),
+    ('ratgeber_hinweise', 'post', 'seo/ratgeber_hinweise.py', 'Hinweise auf Ratgeber der Marktrecherche'),
     ('druckcheck_links', 'post', 'seo/druckcheck_links.py', 'Hinweise auf Druckdaten-Check und Konfigurator'),
     ('brutto', 'post', 'seo/brutto.py', 'Bruttopreis neben jeden Netto-Preis (PAngV)'),
     ('schrift_fallback', 'post', 'seo/schrift_fallback.py', 'Ausweichschrift mit angepassten Maßen (CLS)'),

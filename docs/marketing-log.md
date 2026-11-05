@@ -5,3 +5,10 @@
 - Saisonseite: „drei Wochen ab Freigabe“ entfernt (3 Wochen gelten nur für Schilder/Leuchtreklame, CLAUDE.md) → „Lieferzeit verbindlich mit dem Angebot“.
 - Meta-Beschreibungen gekürzt (KI-Verordnung, Werbung auf Autoscheiben) – seo_check ohne Längen-Hinweis.
 - Markt-Radar angelegt (`docs/markt-radar.md`).
+
+## 05.11.2026 (Nacht, Marktrecherche mit 4 Agenten)
+- Berichte: docs/markt-2026-11/ (Fehler & Kosten, Wettbewerber-Lücken, Suchnachfrage, Rechtsfallen).
+- 6 neue Ratgeber (tools/blog/markt_ratgeber.py): Kundenstopper-Erlaubnis, Leuchtreklame-Kosten + 7 Prüfpunkte, Teure Fehler in der Werbung,
+  Ladeneröffnung-Checkliste, Werbeschild am Mietobjekt, Google-Profil-Abzocke; Hinweis-Kästen auf 10 Leistungsseiten (tools/seo/ratgeber_hinweise.py).
+- Ausweichschriften gegen CLS (tools/seo/schrift_fallback.py), Bruttopreis gleich groß wie netto, Kennzeichen auf Referenzfoto unkenntlich,
+  Bußgeldangabe im Außenwerbung-Ratgeber mit Paragraf, Genehmigungs-FAQ Schaufenster/Außenwerbung präzisiert, Thermobruch-FAQ Sichtschutzfolie.

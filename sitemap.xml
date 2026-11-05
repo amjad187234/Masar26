@@ -45,7 +45,7 @@
   <!-- Webdesign -->
   <url>
     <loc>https://masar-werbeagentur.de/webdesign-berlin.html</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -1083,6 +1083,27 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/blog/werbung-teure-fehler.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/ladeneroeffnung-werbung-checkliste.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/werbeschild-mietobjekt-vermieter.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://masar-werbeagentur.de/blog/google-unternehmensprofil-abzocke.html</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

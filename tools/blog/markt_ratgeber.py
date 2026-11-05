@@ -178,6 +178,148 @@ ARTIKEL = [
            ('/blog/kundenstopper-erlaubnis.html', 'Kundenstopper: Erlaubnis', 'Was auf dem Gehweg erlaubt ist.')],
   index=('Recht', 'Teure Fehler in der Werbung: Bilder, Logos, Preise', 'Bilderklau, fremde Marken, Preisangaben, Branchenbuch-Fallen, Werbe-E-Mails und Impressum – und wie Sie sie vermeiden.'),
   llms='Teure Fehler in der Werbung: Bilder, Logos, Preise'),
+ dict(file='ladeneroeffnung-werbung-checkliste.html', og=('schaufenster.webp', 'Ratgeber Eröffnung', 'Ladeneröffnung: Werbung', 'Checkliste mit Fristen'), crumb='Ladeneröffnung: Checkliste',
+  title='Ladeneröffnung: Werbe-Checkliste mit Fristen (Berlin)',
+  desc='Schild, Schaufenster, Preisaushang, Google-Profil: Was Sie vor der Eröffnung Ihres Ladens erledigen sollten – rückwärts geplant ab dem ersten Tag.',
+  tag='Ratgeber · Eröffnung', h1='Ladeneröffnung:<br><em>die Werbe-Checkliste.</em>', minuten=7,
+  bild=('/schaufenster', 'Schaufenster eines Ladens mit Beschriftung', 'Am Eröffnungstag sollte alles hängen – Schild, Schaufenster und Öffnungszeiten.'),
+  intro='<p>Der Mietvertrag ist unterschrieben, der Eröffnungstermin steht – und dann fällt auf, dass das Schild noch fehlt. Die meisten Verzögerungen bei Neueröffnungen entstehen bei Genehmigung und Lieferzeit. Planen Sie deshalb rückwärts: vom Eröffnungstag zum ersten Entwurf.</p>',
+  body="""
+    <h2>Rückwärts planen</h2>
+    <ul>
+      <li><strong>Eröffnungstag:</strong> Schild hängt, Schaufenster beklebt, Öffnungszeiten an der Tür, Preise ausgehängt, Google-Profil aktiv.</li>
+      <li><strong>Eine Woche vorher:</strong> Schaufensterfolie und Öffnungszeiten montieren, Flyer und Plakate drucken.</li>
+      <li><strong>Mehrere Wochen vorher:</strong> Schild bzw. Leuchtreklame freigeben. Bei uns rechnen Sie bei Schildern und Leuchtreklame mit rund 3 Wochen nach Freigabe und Anzahlung.</li>
+      <li><strong>Noch früher:</strong> klären, ob eine Genehmigung nötig ist, und den Vermieter fragen.</li>
+    </ul>
+
+    <h2>Genehmigung: verfahrensfrei oder Antrag?</h2>
+    <p>In Berlin sind Werbeanlagen bis 1 m² Ansichtsfläche verfahrensfrei, an der Stätte der Leistung – also am eigenen Geschäft – bis 2,5 m² (§ 61 Abs. 1 BauO Bln). Größere Anlagen brauchen eine Genehmigung beim Bezirksamt; dafür werden unter anderem eine Zeichnung mit Maßen und ein Lageplan verlangt. Die Gewerbeanmeldung ersetzt keine Baugenehmigung. Mehr dazu im Ratgeber <a href="/blog/aussenwerbung-berlin-ratgeber.html">Außenwerbung in Berlin</a>.</p>
+
+    <h2>Vermieter fragen</h2>
+    <p>Unabhängig vom Bauamt muss meist auch der Vermieter oder die Eigentümergemeinschaft zustimmen. Klären Sie Größe, Position, Beleuchtung und den Rückbau beim Auszug schriftlich. Siehe <a href="/blog/werbeschild-mietobjekt-vermieter.html">Werbeschild am gemieteten Laden</a>.</p>
+
+    <h2>Schaufenster: Öffnungszeiten und „Bald eröffnet“</h2>
+    <p>Während des Umbaus wirbt das Schaufenster schon: Eine Folie mit „Bald eröffnet“, Logo und Eröffnungsdatum macht neugierig und verdeckt die Baustelle. Zur Eröffnung kommen Öffnungszeiten, Kontaktdaten und Ihr Angebot dazu – siehe <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung Berlin</a>.</p>
+
+    <h2>Preisaushang nicht vergessen</h2>
+    <p>Gaststätten müssen ein Preisverzeichnis neben dem Eingang aushängen (§ 13 Preisangabenverordnung). Auch viele Dienstleister wie Friseure brauchen ein Preisverzeichnis im Geschäft. Preise für Privatkunden immer inklusive Mehrwertsteuer angeben.</p>
+
+    <h2>Kundenstopper und Gehweg</h2>
+    <p>Ein Aufsteller auf dem Gehweg braucht eine Sondernutzungserlaubnis – in Berlin vom Bezirksamt, in Hamburg sind Kundenstopper meist gar nicht erlaubt. Details: <a href="/blog/kundenstopper-erlaubnis.html">Kundenstopper: Erlaubnis</a>.</p>
+
+    <h2>Google-Profil vor der Eröffnung</h2>
+    <p>Legen Sie Ihr kostenloses Google-Unternehmensprofil rechtzeitig an – mit Öffnungszeiten, Fotos und Eröffnungsdatum. Vorsicht vor Anrufen, die dafür Geld verlangen: <a href="/blog/google-unternehmensprofil-abzocke.html">Google-Profil: Abzocke erkennen</a>.</p>
+
+    <h2>Muss der Firmenname außen dran?</h2>
+    <p>Ein häufiger Irrtum: Die frühere Pflicht, Namen und Anschrift am Laden anzubringen (§ 15a Gewerbeordnung), wurde 2009 aufgehoben. Ein Schild ist also keine Pflicht – aber die beste Werbung, die Sie haben.</p>
+
+    <div class="tip-box">
+      <p><strong>Kurz-Checkliste:</strong> Genehmigung geklärt · Vermieter zugestimmt · Schild freigegeben · Schaufenster „Bald eröffnet“ · Öffnungszeiten an der Tür · Preisaushang · Flyer gedruckt · Google-Profil angelegt.</p>
+    </div>
+""",
+  cta=('Alles für Ihre Eröffnung', 'Schild, Leuchtreklame, Schaufenster, Flyer und Google-Profil aus einer Hand – mit einem Ansprechpartner in Berlin.', '/schilder-berlin.html', 'Schilder ansehen', 'Hallo, ich eröffne bald einen Laden und brauche Schild, Schaufenster und Flyer.', 'Eröffnung'),
+  weiter=[('/schilder-berlin.html', 'Schilder Berlin'), ('/schaufensterbeschriftung-berlin.html', 'Schaufenster'), ('/print.html', 'Druckerei')],
+  quellen=[('https://gesetze.co/BE/BauO_Bln/61', '§ 61 BauO Bln – Verfahrensfreie Bauvorhaben'),
+           ('https://service.berlin.de/dienstleistung/350896/', 'service.berlin.de – Genehmigung Werbeanlage'),
+           ('https://www.gesetze-im-internet.de/pangv_2022/__13.html', '§ 13 PAngV – Gaststätten, Beherbergungsbetriebe'),
+           ('https://www.it-recht-kanzlei.de/ladengeschaeft-pflichtangaben.html', 'IT-Recht Kanzlei – Pflichtangaben am Ladengeschäft')],
+  hinweis=W.HINWEIS_RECHT,
+  related=[('/blog/kundenstopper-erlaubnis.html', 'Kundenstopper: Erlaubnis', 'Was auf dem Gehweg erlaubt ist.'),
+           ('/blog/leuchtreklame-kosten-berlin.html', 'Was kostet Leuchtreklame?', 'Startpreise und 7 Prüfpunkte.')],
+  index=('Eröffnung', 'Ladeneröffnung: Werbe-Checkliste mit Fristen', 'Genehmigung, Vermieter, Schild, Schaufenster, Preisaushang und Google-Profil – rückwärts geplant ab dem Eröffnungstag.'),
+  llms='Ladeneröffnung: Werbe-Checkliste mit Fristen'),
+
+ dict(file='werbeschild-mietobjekt-vermieter.html', og=('schilder.webp', 'Ratgeber Mietrecht', 'Werbeschild am Mietobjekt', 'Vermieter, WEG und Rückbau'), crumb='Werbeschild am Mietobjekt',
+  title='Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau',
+  desc='Brauchen Sie für Ihr Ladenschild die Zustimmung des Vermieters oder der Eigentümer? Was im Gewerbemietvertrag stehen sollte und wer beim Auszug zurückbaut.',
+  tag='Ratgeber · Mietrecht', h1='Werbeschild am<br><em>gemieteten Laden.</em>', minuten=5,
+  bild=('/schilder', 'Firmenschild an einer Hausfassade', 'Vor dem Schild steht oft eine Frage an den Vermieter.'),
+  intro='<p>Für ein Schild an der Fassade gibt es zwei getrennte Fragen: Erlaubt es das Bauamt – und erlaubt es der Eigentümer des Hauses? Wer nur die erste klärt, riskiert Streit und im schlimmsten Fall den Abbau. Hier ein Überblick für Gewerbemieter.</p>',
+  body="""
+    <h2>Zwei getrennte Fragen</h2>
+    <p>Die <strong>Baugenehmigung</strong> regelt, ob die Werbeanlage öffentlich-rechtlich zulässig ist. Die <strong>Zustimmung des Eigentümers</strong> regelt, ob Sie an seinem Haus bauen dürfen. Das eine ersetzt das andere nicht.</p>
+
+    <h2>Was der Gewerbemietvertrag regeln sollte</h2>
+    <ul>
+      <li>Wo darf das Schild hin, wie groß darf es sein, darf es leuchten?</li>
+      <li>Wer zahlt Strom und Wartung?</li>
+      <li>Wer baut beim Auszug zurück und repariert die Fassade?</li>
+      <li>Darf nach dem Auszug ein Hinweisschild auf die neue Adresse hängen?</li>
+    </ul>
+    <p>Steht im Vertrag eine abschließende Regelung zur Werbung, gilt sie. Fehlt eine Regelung, kommt es auf den Einzelfall an – Fachbeiträge verweisen dann auf das, was am Ort üblich ist. Werbung, die den Charakter des Hauses verunstaltet, muss ein Vermieter nicht dulden.</p>
+
+    <h2>Eigentümergemeinschaft (WEG)</h2>
+    <p>Gehört das Haus einer Eigentümergemeinschaft, ist ein Schild an der Fassade meist eine bauliche Veränderung, über die die Gemeinschaft beschließt (§ 20 WEG). Fragen Sie früh über die Hausverwaltung an – Beschlüsse brauchen Zeit bis zur nächsten Versammlung.</p>
+
+    <h2>So fragen Sie an</h2>
+    <p>Schicken Sie dem Vermieter oder der Hausverwaltung eine kurze Anfrage mit:</p>
+    <ul>
+      <li>einer <strong>Visualisierung</strong> des Schilds an der Fassade (zum Beispiel aus unserem <a href="/leuchtbuchstaben-konfigurator.html">Konfigurator</a>),</li>
+      <li>Maßen, Material, Beleuchtung und Befestigung,</li>
+      <li>dem Hinweis, wer montiert und wer beim Auszug zurückbaut.</li>
+    </ul>
+    <p>Lassen Sie sich die Zustimmung schriftlich geben.</p>
+
+    <div class="tip-box">
+      <p><strong>Checkliste:</strong> Mietvertrag gelesen · Zustimmung des Vermieters bzw. WEG schriftlich · Genehmigung geklärt · Rückbau geregelt · Stromanschluss geklärt.</p>
+    </div>
+""",
+  cta=('Schild mit Visualisierung', 'Wir erstellen Ihnen eine Visualisierung für die Anfrage beim Vermieter und prüfen die Genehmigung mit.', '/schilder-berlin.html', 'Schilder ansehen', 'Hallo, ich brauche ein Schild für meinen gemieteten Laden und eine Visualisierung für den Vermieter.', 'Schilder'),
+  weiter=[('/schilder-berlin.html', 'Schilder Berlin'), ('/leuchtreklame-berlin.html', 'Leuchtreklame'), ('/blog/aussenwerbung-berlin-ratgeber.html', 'Genehmigung in Berlin')],
+  quellen=[('https://www.haufe.de/id/beitrag/aussenwerbung-HI625574.html', 'Haufe – Außenwerbung im Mietrecht'),
+           ('https://www.gesetze-im-internet.de/woeigg/__20.html', '§ 20 WEG – Bauliche Veränderungen'),
+           ('https://www.mietrechtsiegen.de/werbung-im-aussenbereich-anbringung-hinweisschild-nach-mietvertragsbeendigung/', 'AG Hamburg, 44 C 275/18 – Hinweisschild nach Mietende')],
+  hinweis=W.HINWEIS_RECHT,
+  related=[('/blog/ladeneroeffnung-werbung-checkliste.html', 'Ladeneröffnung: Checkliste', 'Alles für den ersten Tag.'),
+           ('/blog/fensterfolie-mietwohnung.html', 'Fensterfolie in der Mietwohnung', 'Was Mieter dürfen.')],
+  index=('Mietrecht', 'Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau', 'Was im Gewerbemietvertrag stehen sollte, wann die Eigentümergemeinschaft zustimmt und wer beim Auszug zurückbaut.'),
+  llms='Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau'),
+
+ dict(file='google-unternehmensprofil-abzocke.html', og=('social-media.webp', 'Ratgeber Online', 'Google-Profil: Abzocke', 'Kostenlos – so erkennen Sie teure Anrufe'), crumb='Google-Profil: Abzocke',
+  title='Google-Unternehmensprofil: Abzocke-Anrufe erkennen',
+  desc='Ihr Google-Eintrag ist kostenlos. So erkennen Sie teure Anrufe angeblicher Google-Partner, was Sie bei einer Zusage tun und wie Sie Ihr Profil richtig pflegen.',
+  tag='Ratgeber · Online', h1='Google-Profil:<br><em>Abzocke erkennen.</em>', minuten=5,
+  bild=('/social-media', 'Smartphone mit Online-Profil eines Unternehmens', 'Das Google-Profil ist kostenlos – wer dafür Geld verlangt, ist nicht Google.'),
+  intro='<p>„Ihr Google-Eintrag läuft ab“, „Sie werden gesperrt“, „Nur heute zum Sonderpreis“: Solche Anrufe erreichen viele Ladenbesitzer, Praxen und Handwerker. Dabei ist das Google-Unternehmensprofil kostenlos. Hier erfahren Sie, wie Sie die Maschen erkennen und Ihr Profil selbst richtig pflegen.</p>',
+  body="""
+    <h2>Das Profil kostet nichts</h2>
+    <p>Ein Google-Unternehmensprofil anzulegen, zu bestätigen und zu pflegen ist kostenlos. Wer am Telefon Geld für einen „Eintrag“, eine „Verlängerung“ oder eine „Top-Platzierung“ verlangt, verkauft eine Leistung eines Drittanbieters – oft mit langer Laufzeit.</p>
+
+    <h2>Alarmzeichen</h2>
+    <ul>
+      <li>Drohung mit Löschung oder Sperrung des Eintrags,</li>
+      <li>sehr kurze Fristen und Druck, sofort zuzusagen,</li>
+      <li>Anrufer nennt sich „Google-Partner“, der Anbieter sitzt aber im Ausland,</li>
+      <li>Bestätigung per Tastendruck oder „Ja“ am Telefon, danach kommt eine Rechnung.</li>
+    </ul>
+    <p>Die IHKs warnen regelmäßig vor solchen Maschen und vor ähnlichen Formularfallen per Post.</p>
+
+    <h2>Schon zugesagt?</h2>
+    <p>Nicht vorschnell zahlen. Bitten Sie schriftlich um den Vertragsnachweis, widersprechen Sie schriftlich und holen Sie sich Rat – etwa bei Ihrer IHK oder einem Anwalt. Bewahren Sie alle Unterlagen auf.</p>
+
+    <h2>Profil richtig pflegen</h2>
+    <ul>
+      <li><strong>Öffnungszeiten</strong> aktuell halten, auch an Feiertagen.</li>
+      <li><strong>Echte Fotos</strong> von Laden, Schild und Team – Kunden erkennen Sie daran vor Ort wieder.</li>
+      <li><strong>Kein Ladengeschäft?</strong> Betriebe ohne Kundenverkehr am Standort können die Adresse ausblenden und ein Einzugsgebiet angeben; für die Bestätigung braucht Google trotzdem eine Adresse.</li>
+      <li>Auf <strong>Bewertungen</strong> freundlich antworten – auch auf kritische.</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Gut sichtbar vor Ort:</strong> Ein klares Schild und eine beschriftete Tür helfen Kunden, Sie zu finden – und passen zu dem, was sie vorher im Netz gesehen haben.</p>
+    </div>
+""",
+  cta=('Online und vor Ort sichtbar', 'Website, Social Media und das passende Schild – damit Kunden Sie im Netz finden und vor Ort wiedererkennen.', '/digital.html', 'Social Media ansehen', 'Hallo, ich möchte online besser gefunden werden und habe eine Frage.', 'Online'),
+  weiter=[('/digital.html', 'Social Media'), ('/webdesign-berlin.html', 'Webdesign'), ('/schilder-berlin.html', 'Schilder')],
+  quellen=[('https://support.google.com/business/answer/2853879?hl=de', 'Google-Hilfe – Adresse ausblenden, Einzugsgebiet angeben'),
+           ('https://www.ihk-muenchen.de/ratgeber/recht/werbung-fairer-wettbewerb/abzocke-unserioese-maschen/', 'IHK München – Abzocke und unseriöse Maschen'),
+           ('https://www.ihk.de/osnabrueck/recht-und-fair-play/recht/adressbuchschwindel-1074078', 'IHK Osnabrück – Adressbuchschwindel')],
+  hinweis='Hinweis: Allgemeine Informationen, keine Rechtsberatung. Stand der Google-Hilfe: November 2026.',
+  related=[('/blog/werbung-teure-fehler.html', 'Teure Fehler in der Werbung', 'Bilder, Logos, Preise und Abzocke.'),
+           ('/blog/ladeneroeffnung-werbung-checkliste.html', 'Ladeneröffnung: Checkliste', 'Alles für den ersten Tag.')],
+  index=('Online', 'Google-Unternehmensprofil: Abzocke-Anrufe erkennen', 'Das Profil ist kostenlos – so erkennen Sie teure Anrufe, was bei einer Zusage hilft und wie Sie Ihr Profil pflegen.'),
+  llms='Google-Unternehmensprofil: Abzocke-Anrufe erkennen'),
 ]
 
 
