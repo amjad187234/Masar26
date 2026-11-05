@@ -35,6 +35,7 @@ SCHRITTE = [
     ('druckcheck', 'gen', 'folien/druckcheck_page.py', 'druckdaten-check.html (kostenloses Werkzeug)'),
     ('stadt_ratgeber', 'gen', 'blog/stadt_ratgeber.py', 'blog/werbeanlage-<stadt>.html'),
     ('ki_artikel', 'gen', 'blog/ki_artikel.py', 'KI-Ratgeber im Blog'),
+    ('markt_ratgeber', 'gen', 'blog/markt_ratgeber.py', 'Ratgeber aus der Marktrecherche 11/2026'),
     ('werbetechnik_ratgeber', 'gen', 'blog/werbetechnik_ratgeber.py', '5 Ratgeber Werbetechnik'),
     ('og', 'gen', None, 'OG-Vorschaubilder der Seiten von vor dem Lauf wieder einsetzen'),
     ('add_assistent', 'post', 'add_assistent.py', 'Anfrage-Assistent in den Kontaktbereich'),

@@ -17,8 +17,9 @@ EINH = (rf'(?:{SP}?/{SP}?(?:m²|Monat|Buchstabe|Buchst\.|Stück|Fahrzeug)'
 TOK = re.compile(rf'(?<![\d.,])(?:(?P<ab>[Aa]b){SP})?(?P<n>{NUM}){SP}?€(?P<e>{EINH})(?P<net>,?{SP}netto)?(?P<z>{SP}?zzgl\.{SP}?(?:19{SP}?%{SP}?)?(?:MwSt\.?|Umsatzsteuer))?'
                  rf'(?!{SP}?(?:/{SP}?(?:h\b|Std)|inkl|brutto|Brutto|einzeln))')
 SPAN = re.compile(r' ?<span class="brutto">\([^<]*\)</span>')
-CSS = ('<style id="brutto-css">.brutto{font-size:.8em;font-weight:600;white-space:nowrap}'
-       '.price-val .brutto,.ph-stat-num .brutto,.stat-num .brutto,.pkg-price .brutto,.price .brutto{display:block;font-size:clamp(13px,.4em,17px);margin-top:.15rem}</style>')
+CSS = ('<style id="brutto-css">.brutto{white-space:nowrap}'
+       '.price-val .brutto,.ph-stat-num .brutto,.stat-num .brutto,.pkg-price .brutto,.price .brutto,td .brutto{display:block}table.rt td:has(.brutto){flex-wrap:wrap;row-gap:0}table.rt td .brutto{flex:1 0 100%;text-align:right}</style>')
+# Brutto bewusst gleich groß wie netto (Rechtsrecherche 05.11.2026: Gesamtpreis darf gegenüber Verbrauchern nicht in den Hintergrund treten)
 
 
 def euro(d):
