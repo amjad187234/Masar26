@@ -151,8 +151,13 @@ danach `referenzen_einbau.py` (Leistungsseiten) und `a11y.py`. Nur echte, fertig
 ## Kostenloses Werkzeug: Druckdaten-Check
 
 `python3 tools/folien/druckcheck_page.py` erzeugt `druckdaten-check.html` (Layout wie `build_f`). Die Prüfung macht `/druckcheck.js`
-komplett im Browser (keine Übertragung): Format + Beschnitt, Maßstab, effektive Bildauflösung je Bild (pdf.js-Operatorliste),
-eingebettete Schriften, Farbraum (RGB/CMYK/PDF-X), Sonderfarben/Schneidekontur, Texte zu nah am Schnitt, Vorschau mit Linien; dazu Pixel-Rechner.
+komplett im Browser (keine Übertragung): Format + Beschnitt (TrimBox/BleedBox aus den Seitenobjekten, auch in Objekt-Streams; ohne
+TrimBox wird aus der Seitengröße geschätzt, TrimBox = MediaBox zählt als „keine“), Maßstab, effektive Bildauflösung je Bild
+(pdf.js-Operatorliste, Bildliste schwächstes zuerst), eingebettete Schriften, Haarlinien < 0,25 pt und Schrift < 6 pt im Endformat
+(× Maßstab; Linien/Texte komplett außerhalb des Endformats zählen nicht), Farbraum (RGB/CMYK/PDF-X; Flate + ASCII85),
+Sonderfarben/Schneidekontur, Texte zu nah am Schnitt. Vorschau mit Linien und Markierungen, große Ansicht (`<dialog>`, Zoom,
+Verschieben, Seiten blättern, Linien ein/aus), Prüfbericht über `window.print()` (Druck-CSS `html.dc-printing #dc-report`); dazu Pixel-Rechner.
+Nicht erkennbar: Gesamtfarbauftrag, Überdrucken, weiße Linien auf Weiß, Schriften in Mustern/Type3.
 pdf.js 4.10.38 liegt selbst gehostet unter `/js/pdfjs/` (als `.js`, weil `.mjs` per `.htaccess` gesperrt ist; Lizenz in `/lizenzen/`).
 Richtwerte stehen doppelt (Tabelle im Generator und `TYP` in `druckcheck.js`) – gleich halten. `tools/seo/druckcheck_links.py` setzt
 Hinweis-Kästen auf Druck-Seiten und passenden Ratgebern.
