@@ -195,7 +195,7 @@ ARTIKEL = [
       <li>Standsicherheit des Zauns mit Verleiher oder Bauleitung klären.</li>
       <li>Genehmigung und Sondernutzung vorher klären – je nach Land, Größe und Dauer.</li>
     </ol>''',
-  cta=('Banner aus unserer Werkstatt', 'PVC-, Mesh- und Blockout-Banner mit Gestaltung und auf Wunsch Montage – PVC-Banner ab 29 € pro m² netto in Berlin, ab 34 € in NRW.', '/pvc-banner-berlin.html', 'PVC-Banner ansehen', 'Hallo, ich brauche Bauzaunbanner. Anzahl und Größe: ', 'PVC-Banner'),
+  cta=('Banner aus Berlin', 'PVC-, Mesh- und Blockout-Banner mit Gestaltung und auf Wunsch Montage – PVC-Banner ab 29 € pro m² netto in Berlin, ab 34 € in NRW.', '/pvc-banner-berlin.html', 'PVC-Banner ansehen', 'Hallo, ich brauche Bauzaunbanner. Anzahl und Größe: ', 'PVC-Banner'),
   weiter=[('/pvc-banner-berlin.html', 'PVC-Banner Berlin'), ('/pvc-banner-nrw.html', 'PVC-Banner NRW'), ('/werbung-handwerker-berlin.html', 'Werbung für Handwerker')],
   quellen=[('https://bauportal.nrw/werbeanlagen-bauen-nordrhein-westfalen', 'Bauportal.NRW – Werbeanlagen bauen in Nordrhein-Westfalen'),
            ('https://www.duisburg.de/vv/produkte/pro_du/dez_vii/errichtung_von_werbeanlagen.php', 'Stadt Duisburg – Errichtung von Werbeanlagen'),

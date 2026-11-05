@@ -73,9 +73,9 @@ def art_fuer(rel):
 LICHT_ERSETZEN = [
     ('So sehen Arbeiten aus, die wir gebaut und montiert haben.',
      'So sehen Projekte aus, die wir geplant und mit unseren Partnerbetrieben umgesetzt haben.'),
-    ('Leuchtreklame <em>aus unserer Werkstatt</em>', 'Leuchtreklame <em>aus unseren Projekten</em>'),
-    ('Leuchtreklame aus unserer Werkstatt', 'Leuchtreklame aus unseren Projekten'),
-    ('Außenwerbung aus unserer Werkstatt', 'Außenwerbung aus unseren Projekten'),
+    ('Leuchtreklame <em>aus unseren Projekten</em>', 'Leuchtreklame <em>aus unseren Projekten</em>'),
+    ('Leuchtreklame aus unseren Projekten', 'Leuchtreklame aus unseren Projekten'),
+    ('Außenwerbung aus unseren Projekten', 'Außenwerbung aus unseren Projekten'),
     ('Alles aus einer Hand – Gestaltung, Produktion und Montage durch unser Team in NRW.',
      'Alles aus einer Hand – Gestaltung und Koordination durch uns, Bau, Montage und Anschluss durch eingetragene Partnerbetriebe.'),
     ('Nach Ihrer Freigabe produzieren wir und montieren am vereinbarten Termin bei Ihnen.',

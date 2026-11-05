@@ -64,7 +64,7 @@ P = dict(file='textildruck-berlin.html', crumb='Textildruck', img='textildruck',
   ('Logo & Stückzahl', 'Sie schicken uns Ihr Logo, die gewünschten Teile und ungefähr, wie viele Sie brauchen – per WhatsApp oder Formular.'),
   ('Entwurf', 'Wir zeigen Ihnen, wie das Logo auf Shirt, Hoodie oder Tasche aussieht – mit Größe und Position.'),
   ('Festpreis & Größen', 'Sie bekommen ein schriftliches Angebot und eine Größenliste für Ihr Team.'),
-  ('Produktion & Lieferung', 'Wir bedrucken die Textilien in unserer Werkstatt und liefern sie aus – in Berlin oder per Versand.'),
+  ('Produktion & Lieferung', 'Wir bedrucken die Textilien in unserer Partnerwerkstatt und liefern sie aus – in Berlin oder per Versand.'),
  ],
  faq_h2='Textildruck – <em>Fragen &amp; Antworten</em>',
  faq=[

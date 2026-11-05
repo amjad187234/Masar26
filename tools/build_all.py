@@ -47,6 +47,7 @@ SCHRITTE = [
     ('blog_kurzbox', 'post', 'seo/blog_kurzbox.py', 'Kurze Angebotsbox in Ratgebern'),
     ('schnell', 'post', 'seo/schnell.py', 'Speculation Rules + View Transitions'),
     ('nrw_whatsapp', 'post', 'seo/nrw_whatsapp.py', 'WhatsApp NRW-Team auf NRW-Seiten'),
+    ('partnerwerkstatt', 'post', 'seo/partnerwerkstatt.py', 'Keine eigene Werkstatt behaupten (Partnerwerkstatt)'),
     ('partner_hinweis', 'post', 'seo/partner_hinweis.py', 'Offenlegung Partnerbetriebe'),
     ('druckcheck_links', 'post', 'seo/druckcheck_links.py', 'Hinweis auf den kostenlosen Druckdaten-Check'),
     ('a11y', 'post', 'seo/a11y.py', 'Barrierefreiheit (main, Landmarks, Überschriften)'),

@@ -35,6 +35,11 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 - Zahlung: Überweisung.
 - Angebote (Inhaber, 27.10.2026): Anzahlung **immer 60 %**. Lieferzeit **3 Wochen nach Freigabe und Anzahlung nur bei Schildern/Leuchtreklame (Firmenschilder)** – bei Folien, Druck usw. keine 3 Wochen nennen (Inhaber, 04.11.2026).
 - Sprachen der Beratung: Deutsch, Englisch, Arabisch, Türkisch (Türkisch vom Inhaber am 15.10.2026 bestätigt).
+- Recht/Arbeitsweise (Inhaber, 05.11.2026): **keine eigene Werkstatt** behaupten – Masar hat ein Studio in Berlin-Wedding, gefertigt
+  (Druck, Plott, Schilder, Folien) wird in einer **Partnerwerkstatt** (`tools/seo/partnerwerkstatt.py`); beleuchtete Anlagen bauen und
+  montieren eingetragene Partnerbetriebe. Kunden: **B2B und Privatkunden** (AGB § 1, Widerrufsbelehrung § 8). Zahlung **60 % Anzahlung,
+  40 % nach Lieferung/Montage** (7 Tage). **Keine Garantien** – nur gesetzliche Gewährleistung **2 Jahre** (AGB § 11). Inhaber hat
+  Ausbildung als Mediengestalter (Abschluss vorhanden).
 
 ## Preise (netto, „ab“) – nur mit Freigabe ändern
 

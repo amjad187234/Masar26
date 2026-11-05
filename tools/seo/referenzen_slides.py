@@ -42,7 +42,7 @@ KATEGORIEN = [
         ('fahrzeugfolierung-berlin-02', 'Menütafel direkt auf die Klappe foliert', 'Auf den Imbisswagen folierte Speisekarte mit Preisen'),
         ('fahrzeugfolierung-berlin-03', 'Logo und Illustration auf der Rückseite', 'Folierte Rückwand eines Imbisswagens mit Logo und Illustration'),
     ]),
-    ('druck', 'Druck & Gastro-Werbung', 'Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Werkstatt.', [
+    ('druck', 'Druck & Gastro-Werbung', 'Menütafeln, Kundenstopper, Blenden und Plakate – gedruckt in unserer Partnerwerkstatt.', [
         ('menuetafel-imbiss-montiert-01', 'BISSWERK: Menütafel über der Theke, fertig montiert', 'Breite schwarze Menütafel mit Döner, Pasta, Pizza und Burger über der Theke eines Imbisses'),
         ('imbisswagen-menuetafeln-01', 'Grill Chicken: große Menütafel, Aufsteller und Blenden für den Imbisswagen', 'Gelber Imbisswagen mit großer schwarzer Menütafel, zwei Aufstellern und bedruckten Blenden'),
         ('grossformatdruck-werkstatt-01', 'Grill Chicken: Blende für den Imbisswagen im Großformatdruck', 'Großformatdrucker druckt eine Blende mit Logo „Grill Chicken“ und „Kalte Getränke“'),

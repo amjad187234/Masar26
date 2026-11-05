@@ -15,7 +15,7 @@ S = {
  'werbetechnik.html': ('Werbetechnik Berlin: Schilder, Leuchtreklame & Montage',
    'Werbetechnik für Berliner Firmen: Schilder ab 45 €, Leuchtbuchstaben ab 199 €, Fahrzeug- und Schaufensterbeschriftung – Entwurf, Fertigung, Montage.'),
  'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung Berlin ab 290 € | Transporter & Flotte',
-   'Auto, Transporter oder ganze Flotte in Berlin beschriften lassen: Entwurf inklusive, Montage in unserer Werkstatt im Wedding, Festpreis nach Fotos.'),
+   'Auto, Transporter oder ganze Flotte in Berlin beschriften lassen: Entwurf inklusive, Montage in unserer Partnerwerkstatt in Berlin, Festpreis nach Fotos.'),
  'fensterfolie-berlin.html': ('Fensterfolie Berlin: Sonnen- & Sichtschutz ab 190 € | Masar',
    'Fensterfolie in Berlin – auch Neukölln, Tempelhof, Schöneberg: Sonnenschutz, Sichtschutz ab 190 €, Sicherheitsfolie. Glasprüfung, Montage, Festpreis.'),
  'pvc-banner-berlin.html': ('Banner drucken Berlin: PVC-Banner ab 29 €/m² | Masar',
@@ -35,7 +35,7 @@ S = {
  'praxisbeschilderung-berlin.html': ('Praxisschilder Berlin: Schild, Tür & Sichtschutz | Masar',
    'Praxisschild, Türschild, Sprechzeiten und Sichtschutz am Fenster für Arzt- und Therapiepraxen in Berlin – gestaltet und montiert. Pakete ab 699 € netto.'),
  'referenzen.html': ('Referenzen: Leuchtreklame & Fahrzeugbeschriftung Berlin',
-   'Echte Projekte aus unserer Werkstatt: Leuchtreklame, Fahrzeugbeschriftung und Vollfolierung, Schaufenster, Digital Signage – Fotos aus Berlin.'),
+   'Echte Projekte aus unserer Arbeit: Leuchtreklame, Fahrzeugbeschriftung und Vollfolierung, Schaufenster, Digital Signage – Fotos aus Berlin.'),
  'werbetechnik-potsdam.html': ('Werbetechnik Potsdam: Schilder, Banner & Fahrzeuge | Masar',
    'Werbetechnik in Potsdam: Schilder ab 45 €, Banner, Fahrzeugbeklebung, Leuchtreklame und Schaufenster – Werbesatzung geprüft, Montage vor Ort.'),
  'werbeagentur-koeln.html': ('Werbeagentur & Werbetechnik Köln | Masar',
@@ -108,7 +108,7 @@ S = {
  'blog/whatsapp-arztpraxis-datenschutz.html': ('WhatsApp in der Arztpraxis: Was ist erlaubt?',
    'WhatsApp für Terminerinnerungen und Patientenfragen: warum die normale App problematisch ist, was die WhatsApp Business Platform ändert und was gilt.'),
  'blog/fahrzeugbeschriftung-tipps.html': ('Fahrzeugbeschriftung: 7 Tipps zu Folie, Schrift & Montage',
-   'Cast- oder Kalanderfolie, wie groß die Schrift sein muss, Profi oder selbst kleben: 7 Tipps aus der Berliner Werkstatt – mit Checkliste und Kostenüberblick.'),
+   'Cast- oder Kalanderfolie, wie groß die Schrift sein muss, Profi oder selbst kleben: 7 Tipps aus der Praxis – mit Checkliste und Kostenüberblick.'),
 }
 # Nur den Titel kürzen (Beschreibung bleibt wörtlich – Rechtsthema)
 NUR_TITEL = {

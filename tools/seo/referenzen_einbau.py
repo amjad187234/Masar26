@@ -10,22 +10,22 @@ A, Z = '<!-- referenzen:start -->', '<!-- referenzen:ende -->'
 LR = [('leuchtkasten-schaufenster-fahrschule-01', 'Leuchtkasten über dem Schaufenster einer Fahrschule'), ('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten beim Testlauf in der Werkstatt')]
 FZ = [('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung, fertig'), ('fahrzeugfolierung-berlin-01', 'Vollfolierung eines Imbisswagens'), ('fahrzeugbeschriftung-berlin-01', 'Folie wird auf die Schiebetür aufgezogen')]
 SF = [('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN Berlin Gallery'), ('schaufensterfolie-fahrschule-01', 'Bedruckte Schaufensterfolie mit freiem Sichtfenster'), ('fensterbeschriftung-praxis-gold-01', 'Goldene Folienschrift auf dem Oberlicht einer Praxis')]
-DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Werkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('menuetafel-imbiss-montiert-01', 'Menütafel über der Theke eines Imbisses')]
+DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Partnerwerkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('menuetafel-imbiss-montiert-01', 'Menütafel über der Theke eines Imbisses')]
 MIX = [('leuchtreklame-berlin-08', 'Leuchtreklame am Eröffnungstag'), ('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung'), ('schaufensterbeschriftung-showroom-berlin-02', 'Schaufensterbeschriftung für LAUFEN Berlin Gallery')]
 SEITEN = {
     'leuchtreklame-berlin.html': ('Leuchtreklame aus unseren Projekten', LR),
     'aussenwerbung-berlin.html': ('Außenwerbung aus unseren Projekten', LR),
-    'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung aus unserer Werkstatt', FZ),
-    'lkw-beschriftung-berlin.html': ('Fahrzeuge aus unserer Werkstatt', FZ),
-    'werbetechnik.html': ('Werbetechnik aus unserer Werkstatt', MIX),
-    'schaufensterbeschriftung-berlin.html': ('Schaufenster aus unserer Werkstatt', SF),
-    'fensterfolie-berlin.html': ('Fensterfolie aus unserer Werkstatt', SF),
-    'print.html': ('Druck aus unserer Werkstatt', DR),
-    'pvc-banner-berlin.html': ('Großformatdruck aus unserer Werkstatt', DR),
-    'werbeagentur-nrw.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
-    'werbeagentur-hamburg.html': ('Beispiele aus unserer Werkstatt in Berlin', MIX),
+    'fahrzeugbeschriftung-berlin.html': ('Fahrzeugbeschriftung aus unseren Projekten', FZ),
+    'lkw-beschriftung-berlin.html': ('Fahrzeuge aus unseren Projekten', FZ),
+    'werbetechnik.html': ('Werbetechnik aus unseren Projekten', MIX),
+    'schaufensterbeschriftung-berlin.html': ('Schaufenster aus unseren Projekten', SF),
+    'fensterfolie-berlin.html': ('Fensterfolie aus unseren Projekten', SF),
+    'print.html': ('Druck aus unseren Projekten', DR),
+    'pvc-banner-berlin.html': ('Großformatdruck aus unseren Projekten', DR),
+    'werbeagentur-nrw.html': ('Beispiele aus unseren Projekten in Berlin', MIX),
+    'werbeagentur-hamburg.html': ('Beispiele aus unseren Projekten in Berlin', MIX),
     'leuchtreklame-nrw.html': ('Leuchtreklame aus unseren Projekten in Berlin', LR),
-    'fahrzeugbeschriftung-nrw.html': ('Fahrzeuge aus unserer Werkstatt in Berlin', FZ),
+    'fahrzeugbeschriftung-nrw.html': ('Fahrzeuge aus unseren Projekten in Berlin', FZ),
 }
 
 

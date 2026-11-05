@@ -303,7 +303,7 @@
       ['J. K.', 'Bewerbung als Monteur', 'Bewerbung', 'Guten Tag,\nvielen Dank für Ihre Bewerbung. Wir haben Ihre Unterlagen erhalten und melden uns innerhalb einer Woche.\nFreundliche Grüße'],
       ['Marketing-Tool', 'Webinar-Einladung', 'Werbung', null]
     ],
-    wissen: [['Welche Garantie geben wir auf Montage?', 'Laut AGB 2 Jahre auf Montageleistungen, Materialgarantie nach Hersteller.', 'AGB, § 8 (Beispiel)'],
+    wissen: [['Wie lange gilt die Gewährleistung auf Montage?', 'Laut AGB 2 Jahre gesetzliche Gewährleistung – eine zusätzliche Garantie geben wir nicht.', 'AGB, § 11 (Beispiel)'],
       ['Wie läuft die Abnahme beim Kunden?', 'Abnahmeprotokoll mit Fotos in der App, Unterschrift des Kunden, Kopie per E-Mail.', 'Ablaufbeschreibung Montage (Beispiel)'],
       ['Wer ist Ansprechpartner für Großkunden?', 'Frau R. (Vertrieb), Vertretung Herr S.', 'Organigramm 2026 (Beispiel)']]
   };

@@ -10,7 +10,7 @@ F = 'einsatzgebiete.html'; URL = BASE + F
 TITLE = 'Einsatzgebiete: Berlin, Brandenburg & NRW | Masar'
 DESC = 'Masar Werbeagentur: Studio in Berlin-Wedding, Einsatz in Berlin, Brandenburg und NRW (Montageteam, keine Filiale). Welche Leistung wo – mit allen Stadtseiten.'
 FAQ = [
- ('Wo sitzt Masar Werbeagentur?', 'Unser Studio mit Werkstatt ist in der Bristolstraße 19E, 13349 Berlin-Wedding. Das ist unser einziger Standort. Besuche nach Terminvereinbarung, Montag bis Samstag 08:00–20:00 Uhr.'),
+ ('Wo sitzt Masar Werbeagentur?', 'Unser Studio ist in der Bristolstraße 19E, 13349 Berlin-Wedding. Das ist unser einziger Standort. Besuche nach Terminvereinbarung, Montag bis Samstag 08:00–20:00 Uhr.'),
  ('Haben Sie eine Niederlassung in NRW?', 'Nein. In Nordrhein-Westfalen arbeitet ein eigenes Montageteam für uns, das Aufmaß, Montage und Beschriftung vor Ort übernimmt. Anfragen aus NRW laufen über dieselbe Nummer, dieselbe E-Mail und denselben Anfrage-Assistenten.'),
  ('Welche Leistungen gibt es nur in Berlin?', 'Messebau und Expressdruck (Druck und Folie am selben Tag) bieten wir nur in Berlin an. Foto- und Videoaufnahmen machen wir in Berlin, nicht in NRW.'),
  ('Kostet die Anfahrt nach Brandenburg extra?', 'Die Anfahrt ist im Festpreis enthalten und dort einzeln ausgewiesen. Sie wissen vorher genau, was Sie zahlen. Für reine Druck- und Designaufträge fällt keine Anfahrt an.'),
@@ -82,14 +82,14 @@ def build():
   <div class="container"><div style="max-width:820px">
     <div class="hero-badge">{I['star']}Standort &amp; Einsatzgebiete</div>
     <h1>Wo wir <em>für Sie arbeiten</em></h1>
-    <p class="hero-sub">Masar Werbeagentur hat einen Standort: unser Studio mit Werkstatt in Berlin-Wedding. Von hier aus arbeiten wir in Berlin und Brandenburg; für Werbetechnik, Druck und Design in Nordrhein-Westfalen gibt es ein eigenes Montageteam – ohne Niederlassung.</p>
+    <p class="hero-sub">Masar Werbeagentur hat einen Standort: unser Studio in Berlin-Wedding. Von hier aus arbeiten wir in Berlin und Brandenburg; für Werbetechnik, Druck und Design in Nordrhein-Westfalen gibt es ein eigenes Montageteam – ohne Niederlassung.</p>
     <div class="hero-btns"><a href="#anfrage" class="btn btn-teal">Anfrage starten</a><a href="{w}" target="_blank" rel="noopener noreferrer" class="btn btn-outline">{I['wa']}WhatsApp</a></div>
   </div></div>
 </section>
 <nav aria-label="Breadcrumb" class="bc-bar"><div class="container"><ol class="bc-list"><li><a href="/">Home</a></li><li class="bc-sep">/</li><li><span class="bc-cur">Einsatzgebiete</span></li></ol></div></nav>
 '''
     body += sec('Auf einen Blick', 'Masar Werbeagentur <em>– das Unternehmen</em>', None, f'''    <div class="eg-fact">
-      <div><b>Standort</b><span>Bristolstraße 19E, 13349 Berlin-Wedding – Studio und Werkstatt, unser einziger Standort.</span></div>
+      <div><b>Standort</b><span>Bristolstraße 19E, 13349 Berlin-Wedding – unser Studio und einziger Standort.</span></div>
       <div><b>Inhaber</b><span>Amjad Alblili, Mediengestalter</span></div>
       <div><b>Kontakt</b><span>Telefon / WhatsApp 0178 514 3918<br>info@masar-werbeagentur.de</span></div>
       <div><b>Erreichbar</b><span>Montag bis Samstag, 08:00–20:00 Uhr; Besuche vor Ort nach Vereinbarung</span></div>
