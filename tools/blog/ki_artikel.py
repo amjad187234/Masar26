@@ -165,7 +165,7 @@ NEU = [
 
  dict(file='ki-verordnung-praxis-pflege.html', crumb='KI-Verordnung Praxis & Pflege',
   title='KI-Verordnung: Was Praxen und Pflegedienste jetzt beachten müssen',
-  desc='EU-KI-Verordnung seit August 2026: KI-Hinweis im Chat, keine Triage, Rollen von Anbieter und Betreiber, KI-Kompetenz im Team – verständlich für Praxen und Pflegedienste.',
+  desc='EU-KI-Verordnung seit August 2026: KI-Hinweis im Chat, keine Triage, Rollen von Anbieter und Betreiber, KI-Kompetenz – verständlich für Praxen und Pflege.',
   tag='Ratgeber · KI &amp; Recht', h1='KI-Verordnung für Praxis und Pflege:<br><em>Was jetzt gilt.</em>', minuten=6, bild=BILD_P,
   intro='<p>Die EU-KI-Verordnung (Verordnung 2024/1689) gilt schrittweise. Für digitale Assistenten in Praxen und Pflegediensten ist vor allem eine Pflicht wichtig, die seit dem 2. August 2026 greift: Menschen müssen wissen, dass sie mit einer KI sprechen. Hier das Wichtigste – ohne Paragrafendschungel.</p>',
   body='''

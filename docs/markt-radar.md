@@ -1,0 +1,13 @@
+# Markt-Radar (Website-Marketing)
+
+Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise übernehmen.
+
+## 05.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche „Werbetechnik Berlin Schaufenster Weihnachten 2026“ (Branchenverzeichnisse sellwerk.de, gelbeseiten.de) | Berliner Mitbewerber werben in Verzeichnissen allgemein mit Schaufenster-/Fassadenbeschriftung, **keine sichtbaren Saison-Aktionen** für Black Friday/Weihnachten. | Unsere Saisonseite `schaufenster-weihnachten-black-friday.html` ist ein Vorteil – aktuell halten, Termine bis Ostern 2027 ergänzt. |
+| Websuche Leuchtbuchstaben-Anbieter (heinze.de, startbase.de) | Ein neuer Anbieter (Darmstadt) wirbt mit **offenen Preisen je Buchstabe nach Buchstabenhöhe**; in Berlin kein Konfigurator gefunden. | Unser neuer Konfigurator (`leuchtbuchstaben-konfigurator.html`) hat in Berlin kaum Konkurrenz → intern stark verlinken. Preisdarstellung je Höhe wäre eine Entscheidung des Inhabers (nicht umgesetzt). |
+| gruenewoche.de, expofp.com (Messe Berlin) | Grüne Woche **15.–24.01.2027**, Fruit Logistica **3.–5.02.2027**, ITB **16.–18.03.2027** (eine Quelle nennt abweichend 9.–11.03., schwächer belegt). | Daten stehen bereits auf `messestand-berlin-2027.html` und im Messe-Ratgeber – passt. Messe-Anfragen für Januar laufen jetzt (Freigabe vor Weihnachten). |
+| Kalender | Black Friday 27.11.2026, 1. Advent 29.11., Valentinstag So 14.02.2027, Ostersonntag 28.03.2027. | Valentinstag und Ostern in die Saisonseite aufgenommen. |
+| Google Ads Transparency Center / Meta Ad Library | In dieser Runde nicht abgefragt (kein direkter Zugriff aus dem Container geprüft). | Nächste Runde versuchen. |

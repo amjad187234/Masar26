@@ -92,7 +92,7 @@ ARTIKEL = [
 
  dict(file='werbung-autoscheiben-erlaubt.html', og=('fahrzeug.webp', 'Ratgeber Fahrzeug', 'Werbung auf Autoscheiben', 'Was am Firmenwagen erlaubt ist'), crumb='Werbung auf Autoscheiben',
   title='Werbung auf Autoscheiben: Was ist erlaubt?',
-  desc='Heckscheibe, Seitenscheiben, Frontscheibe: Wo Lochfolie und Schriftzüge am Firmenwagen erlaubt sind und was Bauartgenehmigung und Außenspiegel damit zu tun haben.',
+  desc='Heckscheibe, Seitenscheiben, Frontscheibe: Wo Lochfolie und Schriftzüge am Firmenwagen erlaubt sind und welche Rolle Bauartgenehmigung und Spiegel spielen.',
   tag='Ratgeber · Fahrzeug', h1='Werbung auf Autoscheiben:<br><em>Was erlaubt ist.</em>', minuten=5,
   bild=('/fahrzeug', 'Grafik eines weißen Transporters mit Logo-Beschriftung an Seite und Front', 'Die Karosserie ist die beste Werbefläche – bei den Scheiben gelten eigene Regeln.'),
   intro='<p>Die Telefonnummer groß auf der Heckscheibe, das Logo auf der Seitenscheibe: Viele Betriebe möchten die Glasflächen ihres Firmenwagens mitnutzen. Das geht – aber nicht überall. Scheiben gehören zur Verkehrssicherheit, und dafür gibt es klare Regeln.</p>',
