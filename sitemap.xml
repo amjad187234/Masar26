@@ -77,14 +77,14 @@
   <!-- Hauptlandingpages (High-intent, weekly refresh) -->
   <url>
     <loc>https://masar-werbeagentur.de/leuchtreklame-berlin.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://masar-werbeagentur.de/fahrzeugbeschriftung-berlin.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -127,7 +127,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/textildruck-berlin.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -141,7 +141,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/grafikdesign-berlin.html</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -156,7 +156,7 @@
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -276,7 +276,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/fahrzeugbeschriftung-nrw.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -591,7 +591,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/leuchtreklame-nrw.html</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -711,13 +711,13 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/pvc-banner-berlin.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/pvc-banner-nrw.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -962,12 +962,12 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/schaufenster-weihnachten-black-friday.html</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/blog/messeauftritt-berlin-2027-checkliste.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -1061,7 +1061,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/blog/fotowand-firmenfeier.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
