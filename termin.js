@@ -41,10 +41,10 @@
     + '.tm-time:hover,.tm-time[aria-pressed="true"]{border-color:var(--teal,#58d0bd);background:#e8f8f5}'
     + '.tm-sub{display:block;font:700 14px Barlow,sans-serif;color:var(--navy,#132e50);margin:1.1rem 0 .45rem}.tm-sub small{font-weight:400;color:var(--muted,#5a7070)}'
     + '.tm-in{width:100%;font:16px Barlow,sans-serif;border:1px solid var(--border,#e0eaea);border-radius:8px;padding:12px 14px;background:#fff;color:#132e50}'
-    + '.tm-in:focus{outline:2px solid var(--teal,#58d0bd);outline-offset:1px}textarea.tm-in{min-height:84px;resize:vertical}'
+    + '.tm-in:focus{outline:2px solid var(--navy,#132e50);outline-offset:1px;box-shadow:0 0 0 4px rgba(88,208,189,.6)}.tm-in[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 1px #b3261e}.tm-chk input[aria-invalid="true"]{outline:2px solid #b3261e;outline-offset:2px}textarea.tm-in{min-height:84px;resize:vertical}'
     + '.tm-two{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}'
     + '.tm-chk{display:flex;gap:.55rem;align-items:flex-start;font-size:14px;line-height:1.45;color:var(--muted,#5a7070);margin-top:1rem}.tm-chk input{margin-top:3px;width:18px;height:18px}'
-    + '.tm-err{color:#b3261e;font-size:14px;margin:.6rem 0 0;min-height:1em}'
+    + '.tm-err{color:#b3261e;font-size:14px;margin:.6rem 0 0;min-height:1em}.tm-ferr{display:block;color:#b3261e;font:600 13.5px/1.4 Barlow,sans-serif;margin:.35rem 0 0}.tm-ferr:empty{display:none}'
     + '.tm-sum{background:#e8f8f5;border:1px solid var(--teal,#58d0bd);border-radius:10px;padding:.8rem 1rem;font-size:15px;color:var(--navy,#132e50);margin-bottom:1rem}'
     + '.tm-nav{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}'
     + '.tm-back{background:none;border:0;color:var(--muted,#5a7070);font:600 14px Barlow,sans-serif;cursor:pointer;padding:.6rem 0;text-decoration:underline}'
@@ -113,8 +113,12 @@
   function frage(t) { var h = txt('h3', 'tm-q', t); h.tabIndex = -1; box.appendChild(h); return h; }
   function nav(weiter, ok) {
     var n = el('div', 'tm-nav');
-    if (step > 0) { var b = txt('button', 'tm-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { step--; render(); }); n.appendChild(b); } else n.appendChild(el('span'));
-    if (weiter) { var g = txt('button', 'tm-go', weiter); g.type = 'button'; g.disabled = !ok; g.addEventListener('click', function () { step++; render(); box.querySelector('.tm-q').focus(); }); n.appendChild(g); }
+    if (step > 0) { var b = txt('button', 'tm-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { step--; render(); box.querySelector('.tm-q').focus(); }); n.appendChild(b); } else n.appendChild(el('span'));
+    // Kein ausgegrauter Knopf (man weiß sonst nicht, was fehlt): beim Tippen sagen, was noch fehlt
+    if (weiter) { var g = txt('button', 'tm-go', weiter); g.type = 'button'; g.addEventListener('click', function () {
+      var fehlt = typeof ok === 'function' ? ok() : '';
+      if (fehlt) { var e = box.querySelector('.tm-err'); if (e) e.textContent = fehlt; return; }
+      step++; render(); box.querySelector('.tm-q').focus(); }); n.appendChild(g); }
     box.appendChild(n);
   }
 
@@ -151,8 +155,12 @@
     box.appendChild(el('span', 'tm-sub', 'Tag <small>(' + artName(s.art) + ', ' + (s.art === 'vorort' ? '60' : '30') + ' Min.)</small>'));
     var days = el('div', 'tm-days'); box.appendChild(days);
     var zeitWrap = el('div'); box.appendChild(zeitWrap);
-    var err = el('p', 'tm-err'); box.appendChild(err);
-    nav('Weiter zu Ihren Daten', !!(s.tag && s.zeit));
+    var err = el('p', 'tm-err'); err.setAttribute('role', 'alert'); box.appendChild(err);
+    nav('Weiter zu Ihren Daten', function () {
+      if (!s.tag) { var d = days.querySelector('.tm-day:not([disabled])'); if (d) d.focus(); return 'Bitte zuerst einen Tag wählen.'; }
+      if (!s.zeit) { var z = zeitWrap.querySelector('.tm-time'); if (z) z.focus(); return 'Bitte noch eine Uhrzeit wählen.'; }
+      return '';
+    });
     var go = box.querySelector('.tm-go');
 
     function zeiten() {
@@ -167,10 +175,13 @@
         var g = el('div', 'tm-times');
         z.forEach(function (u) {
           g.appendChild(opt('tm-time', u, s.zeit === u, function () {
-            s.zeit = u; Array.prototype.forEach.call(g.children, function (c) { c.setAttribute('aria-pressed', c.textContent === u ? 'true' : 'false'); }); go.disabled = false;
+            s.zeit = u; Array.prototype.forEach.call(g.children, function (c) { c.setAttribute('aria-pressed', c.textContent === u ? 'true' : 'false'); }); err.textContent = '';
+            go.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
           }));
         });
         zeitWrap.appendChild(g);
+        // Am Handy liegen die Uhrzeiten oft unterhalb des Bildschirms: sichtbar machen
+        if (window.innerWidth < 700) g.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       }).catch(function () { lade.textContent = 'Die Zeiten konnten nicht geladen werden. Bitte später erneut versuchen oder anrufen: 0178 514 3918.'; });
     }
 
@@ -179,7 +190,7 @@
       liste.forEach(function (t) {
         var d = datum(t.tag);
         var b = opt('tm-day', TAGE[d.getDay()] + '<b>' + d.getDate() + '</b><small>' + MON[d.getMonth()] + '</small>', s.tag === t.tag, function () {
-          s.tag = t.tag; s.zeit = null; go.disabled = true;
+          s.tag = t.tag; s.zeit = null; err.textContent = '';
           Array.prototype.forEach.call(days.children, function (c) { c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
           zeiten();
         });
@@ -204,7 +215,12 @@
     w.appendChild(el('span', 'tm-sub', label + (pflicht ? '' : ' <small>(optional)</small>')));
     var i = el(typ === 'area' ? 'textarea' : 'input', 'tm-in');
     if (typ !== 'area') i.type = typ;
-    if (typ === 'tel') i.autocomplete = 'tel'; if (typ === 'email') i.autocomplete = 'email'; if (key === 'name') i.autocomplete = 'name';
+    var ac = { name: 'name', tel: 'tel', mail: 'email', firma: 'organization', adresse: 'street-address', ort: 'address-level2' }[key];
+    if (ac) i.autocomplete = ac;
+    i.id = 'tm-' + key; i.name = key;
+    if (pflicht) i.setAttribute('aria-required', 'true');
+    if (typ === 'email' || typ === 'tel') { i.spellcheck = false; i.setAttribute('autocapitalize', 'off'); }
+    i.addEventListener('input', function () { if (i.getAttribute('aria-invalid') === 'true') { i.removeAttribute('aria-invalid'); var e = box.querySelector('.tm-err[role=alert]'); if (e) e.textContent = ''; var fe = i.nextElementSibling; if (fe && fe.classList.contains('tm-ferr')) fe.textContent = ''; } });
     i.placeholder = ph || ''; i.value = s[key] || '';
     i.addEventListener('input', function () { s[key] = i.value; });
     w.appendChild(i); return w;
@@ -231,6 +247,8 @@
     mk.querySelector('input').addEventListener('change', function (e) { s.merken = e.target.checked; });
     box.appendChild(mk);
     var ck = el('label', 'tm-chk', '<input type="checkbox"> <span>Ich bin einverstanden, dass meine Angaben zur Terminvereinbarung gespeichert und verarbeitet werden (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>).</span>');
+    ck.querySelector('input').id = 'tm-consent';
+    ck.querySelector('input').addEventListener('change', function (e) { if (e.target.checked) { e.target.removeAttribute('aria-invalid'); err.textContent = ''; } });
     box.appendChild(ck);
     var err = el('p', 'tm-err'); err.setAttribute('role', 'alert'); box.appendChild(err);
     var n = el('div', 'tm-nav');
@@ -240,11 +258,25 @@
 
     go.addEventListener('click', function () {
       err.textContent = '';
-      if (s.name.trim().length < 2) { err.textContent = 'Bitte Ihren Namen angeben.'; return; }
-      if (s.tel.replace(/\D/g, '').length < 6) { err.textContent = 'Bitte eine Telefonnummer angeben.'; return; }
-      if (s.mail.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.mail.trim())) { err.textContent = 'Bitte eine gültige E-Mail-Adresse angeben.'; return; }
-      if (s.art === 'vorort' && !/\b1[0-4]\d{3}\b/.test(s.adresse)) { err.textContent = 'Bitte Straße und Berliner Postleitzahl angeben.'; return; }
-      if (!ck.querySelector('input').checked) { err.textContent = 'Bitte der Datenschutzerklärung zustimmen.'; return; }
+      // Fehler am Feld markieren, Fokus dorthin, Meldung vorlesen
+      function fehler(sel, text) {
+        var f = box.querySelector(sel); err.textContent = text;
+        if (!f) return;
+        f.setAttribute('aria-invalid', 'true'); f.setAttribute('aria-describedby', err.id);
+        // Meldung auch direkt unter dem Feld zeigen – die Sammelmeldung steht unten beim Knopf
+        if (f.type !== 'checkbox') {
+          var fe = f.nextElementSibling && f.nextElementSibling.classList.contains('tm-ferr') ? f.nextElementSibling : null;
+          if (!fe) { fe = el('span', 'tm-ferr'); fe.setAttribute('aria-hidden', 'true'); f.insertAdjacentElement('afterend', fe); }
+          fe.textContent = text;
+        }
+        f.focus();
+      }
+      err.id = 'tm-err-kontakt';
+      if (s.name.trim().length < 2) return fehler('#tm-name', 'Bitte Ihren Namen angeben (Vor- und Nachname).');
+      if (s.tel.replace(/\D/g, '').length < 6) return fehler('#tm-tel', 'Bitte eine Telefonnummer angeben – darüber erreichen wir Sie zum Termin.');
+      if (s.mail.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.mail.trim())) return fehler('#tm-mail', 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.');
+      if (s.art === 'vorort' && !/\b1[0-4]\d{3}\b/.test(s.adresse)) return fehler('#tm-adresse', 'Bitte Straße, Hausnummer und Berliner Postleitzahl angeben (z. B. Bristolstraße 19, 13349).');
+      if (!ck.querySelector('input').checked) return fehler('#tm-consent', 'Bitte der Datenschutzerklärung zustimmen.');
       go.disabled = true; go.textContent = 'Wird gebucht …';
       var fx = window.MasarFertig ? MasarFertig.start({ titel: 'Termin wird gebucht' }) : null;
       fetch('/termin.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({

@@ -22,7 +22,7 @@
     + '.st h3,.st h2{font:900 clamp(1.3rem,3vw,1.7rem)/1.1 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--navy,#132e50);margin:0 0 1rem}'
     + '.st label{display:block;font:700 14px Barlow,sans-serif;color:var(--navy,#132e50);margin:.9rem 0 .4rem}.st label small{font-weight:400;color:var(--muted,#5a7070)}'
     + '.st input{width:100%;font:16px Barlow,sans-serif;border:1px solid var(--border,#e0eaea);border-radius:8px;padding:12px 14px;color:#132e50;background:#fff}'
-    + '.st input:focus{outline:2px solid var(--teal,#58d0bd);outline-offset:1px}'
+    + '.st input:focus,.st textarea:focus{outline:2px solid var(--navy,#132e50);outline-offset:1px;box-shadow:0 0 0 4px rgba(88,208,189,.6)}.st input[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 1px #b3261e}'
     + '.st-go{margin-top:1.1rem;background:var(--navy,#132e50);color:#fff;border:0;border-radius:8px;padding:13px 22px;font:700 15px Barlow,sans-serif;cursor:pointer;width:100%}.st-go[disabled]{opacity:.5}'
     + '.st-err{color:#b3261e;font-size:14px;margin:.7rem 0 0;min-height:1em}'
     + '.st-res{background:linear-gradient(135deg,#132e50,#0e2340);color:#fff;border:0}'
@@ -48,7 +48,7 @@
     + '.st-tw{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 .9rem}.st-tw .st-btn{border:0;cursor:pointer;background:rgba(255,255,255,.12);color:#fff}.st-tw .st-ab{background:none;border:1px solid rgba(255,255,255,.35)}'
     + '.st-twf{margin:0 0 1rem}.st-twf label{color:#fff}.st-twf label small{color:rgba(255,255,255,.65)}.st-twf textarea{width:100%;font:16px Barlow,sans-serif;border:0;border-radius:8px;padding:10px 12px;margin-bottom:.6rem;color:#132e50}.st-twf .st-btn{border:0;cursor:pointer}'
     + '.st-ok{background:rgba(37,211,102,.16);border-radius:8px;padding:.7rem .9rem;color:#fff!important}'
-    + '@media(max-width:560px){.st-card{padding:1.1rem}.st-weg div{font-size:10.5px}.st-info b{flex-basis:92px}}';
+    + '@media(max-width:560px){.st-card{padding:1.1rem}.st-weg div{font-size:11px}.st-info b{flex-basis:92px}}';
   css += '.st-res{animation:masarIn .45s ease both}@keyframes masarIn{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){.st-res{animation:none}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
@@ -59,13 +59,24 @@
   // Formular
   var f = el('form', 'st-card');
   f.appendChild(txt('h2', '', 'Status abfragen'));
-  f.appendChild(el('label', '', 'Anfragenummer <small>(steht in der Bestätigung, z. B. ANF-2026-0012)</small>'));
-  var inNr = el('input'); inNr.placeholder = 'ANF-2026-…'; inNr.autocomplete = 'off'; inNr.value = q.get('nr') || ''; inNr.maxLength = 20; f.appendChild(inNr);
-  f.appendChild(el('label', '', 'Telefonnummer oder E-Mail <small>(wie in Ihrer Anfrage)</small>'));
-  var inK = el('input'); inK.placeholder = 'z. B. 0176 … oder name@firma.de'; inK.autocomplete = 'tel'; inK.maxLength = 160;
+  // Beschriftungen mit den Feldern verknüpfen (Antippen der Beschriftung setzt den Fokus, Screenreader lesen sie vor)
+  var lNr = el('label', '', 'Anfragenummer <small>(steht in der Bestätigung, z. B. ANF-2026-0012)</small>'); lNr.htmlFor = 'st-nr'; f.appendChild(lNr);
+  var inNr = el('input'); inNr.id = 'st-nr'; inNr.placeholder = 'ANF-2026-…'; inNr.autocomplete = 'off'; inNr.value = q.get('nr') || ''; inNr.maxLength = 20;
+  inNr.spellcheck = false; inNr.setAttribute('autocapitalize', 'characters'); inNr.setAttribute('aria-required', 'true'); f.appendChild(inNr);
+  var lK = el('label', '', 'Telefonnummer oder E-Mail <small>(wie in Ihrer Anfrage)</small>'); lK.htmlFor = 'st-kontakt'; f.appendChild(lK);
+  var inK = el('input'); inK.id = 'st-kontakt'; inK.placeholder = 'z. B. 0176 … oder name@firma.de'; inK.autocomplete = 'tel'; inK.maxLength = 160;
+  inK.spellcheck = false; inK.setAttribute('autocapitalize', 'off'); inK.setAttribute('aria-required', 'true');
   inK.value = kunde ? (kunde.tel || kunde.mail || '') : ''; f.appendChild(inK);
   var go = txt('button', 'st-go', 'Status anzeigen'); go.type = 'submit'; f.appendChild(go);
-  var err = el('p', 'st-err'); err.setAttribute('role', 'alert'); f.appendChild(err);
+  var err = el('p', 'st-err'); err.setAttribute('role', 'alert'); err.id = 'st-err'; f.appendChild(err);
+  [inNr, inK].forEach(function (i) { i.addEventListener('input', function () { if (i.getAttribute('aria-invalid')) { i.removeAttribute('aria-invalid'); err.textContent = ''; } }); });
+  function fehler(i, t) { err.textContent = t; i.setAttribute('aria-invalid', 'true'); i.setAttribute('aria-describedby', 'st-err'); i.focus(); }
+  // Schreibweisen wie „anf 2026 12“, „2026-12“ oder „ANF20260012“ in das Format ANF-2026-0012 bringen
+  function nummer(v) {
+    var t = v.toUpperCase().replace(/\s+/g, '');
+    var m = /^(?:ANF)?-?(\d{4})-?(\d{1,4})$/.exec(t);
+    return m ? 'ANF-' + m[1] + '-' + ('000' + m[2]).slice(-4) : t;
+  }
   box.appendChild(f);
   var aus = el('div'); box.appendChild(aus);
 
@@ -140,9 +151,10 @@
 
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var nr = inNr.value.trim().toUpperCase().replace(/\s+/g, '');
-    if (!/^ANF-\d{4}-\d{4}$/.test(nr)) { err.textContent = 'Bitte die Anfragenummer im Format ANF-2026-0012 eingeben.'; return; }
-    if (inK.value.trim().length < 5) { err.textContent = 'Bitte Telefonnummer oder E-Mail aus Ihrer Anfrage eingeben.'; return; }
+    var nr = nummer(inNr.value.trim());
+    if (!/^ANF-\d{4}-\d{4}$/.test(nr)) return fehler(inNr, 'Bitte die Anfragenummer im Format ANF-2026-0012 eingeben – sie steht in Ihrer Bestätigung.');
+    inNr.value = nr;
+    if (inK.value.trim().length < 5) return fehler(inK, 'Bitte die Telefonnummer oder E-Mail-Adresse eingeben, die Sie bei der Anfrage angegeben haben.');
     abfragen(nr, inK.value.trim());
   });
 

@@ -75,6 +75,7 @@
   var WER = ['Firma', 'Privat'];
   var WANN = ['So schnell wie möglich', 'In den nächsten Wochen', 'Erst mal Preis-Info'];
   var STEPS = ['Leistung', 'Auswahl', 'Details', 'Zeit & Ort', 'Kontakt', 'Prüfen'];
+  var MAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   var css = ''
     + '.as{max-width:860px;margin:0 auto;background:#fff;border:1px solid var(--border,#e0eaea);border-radius:16px;padding:1.6rem;box-shadow:0 10px 30px rgba(19,46,80,.07);text-align:left;scroll-margin-top:96px}'
@@ -93,7 +94,9 @@
     + '.as-sub small{font-weight:400;color:var(--muted,#5a7070)}'
     + '.as-row{display:flex;flex-wrap:wrap;gap:.5rem}.as-row .as-opt{width:auto;min-height:44px;padding:.6rem 1rem}'
     + '.as-in{width:100%;font:16px Barlow,sans-serif;border:1px solid var(--border,#e0eaea);border-radius:8px;padding:12px 14px;margin-top:.2rem;background:#fff;color:#132e50}'
-    + '.as-in:focus{outline:2px solid var(--teal,#58d0bd);outline-offset:1px}'
+    + '.as-in:focus{outline:2px solid var(--navy,#132e50);outline-offset:1px;box-shadow:0 0 0 4px rgba(88,208,189,.6)}'
+    + '.as-in[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 1px #b3261e}'
+    + '.as-row.as-miss .as-opt{border-color:#b3261e;border-style:dashed}'
     + 'textarea.as-in{min-height:90px;resize:vertical}'
     + '.as-two{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}'
     + '.as-err{color:#b3261e;font-size:13.5px;margin:.4rem 0 0;min-height:1em}'
@@ -108,7 +111,7 @@
     + '.as-list{list-style:none;margin:.2rem 0 1rem;padding:0;border-top:1px solid rgba(255,255,255,.12)}'
     + '.as-list li{display:flex;gap:.8rem;align-items:baseline;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px}'
     + '.as-list b{flex:0 0 108px;color:rgba(255,255,255,.6);font-weight:600}.as-list span{flex:1;color:#fff}'
-    + '.as-edit{background:none;border:0;color:#58d0bd;font:600 13px Barlow,sans-serif;cursor:pointer;text-decoration:underline;padding:0}'
+    + '.as-edit{background:none;border:0;color:#58d0bd;font:600 13.5px Barlow,sans-serif;cursor:pointer;text-decoration:underline;padding:.5rem .4rem;margin:-.5rem -.4rem;min-height:36px}'
     + '.as-send{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:.4rem}'
     + '.as-card{background:rgba(255,255,255,.07);border-radius:10px;padding:1rem;display:flex;flex-direction:column;gap:.6rem}'
     + '.as-card h5{margin:0;font:700 15px Barlow,sans-serif;color:#fff}.as-card p{margin:0;font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.5}'
@@ -120,7 +123,7 @@
     + '.as-hint{font-size:13px;color:rgba(255,255,255,.6);margin:.9rem 0 0}.as-more{color:#58d0bd;font-weight:600}'
     + '.as-welcome{display:block;border-radius:10px;padding:.55rem .9rem;line-height:1.45}.as-welcome .as-more{color:var(--teal-ink,#177567)}'
     + '.as-merk{display:flex;gap:.55rem;align-items:flex-start;margin-top:1rem;font-size:13.5px;line-height:1.45;color:var(--muted,#5a7070)}.as-merk input{margin-top:3px;width:18px;height:18px;flex-shrink:0}.as-merk a{color:var(--teal-ink,#177567)}'
-    + '@media(max-width:380px){.as-opt{font-size:13px;gap:.45rem;padding:.7rem .55rem}}@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
+    + '@media(max-width:380px){.as-opt{font-size:13px;gap:.45rem;padding:.7rem .55rem}}@media(max-width:440px){.as-grid .as-opt:has(svg){flex-direction:column;align-items:flex-start;justify-content:center;gap:.35rem}.as-grid .as-opt:has(svg):after{position:absolute;top:.5rem;right:.6rem}.as-grid .as-opt{position:relative}}.as-ferr{display:block;color:#b3261e;font:600 13.5px/1.4 Barlow,sans-serif;margin:.35rem 0 0}.as-ferr:empty{display:none}@media(max-width:620px){.as{padding:1.1rem}.as-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.as-opt{font-size:14.5px;padding:.8rem .75rem}.as-two,.as-send{grid-template-columns:1fr}.as-list b{flex-basis:88px}.as-nav .as-go{margin-right:64px}}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
   function ico(d) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (d.charAt(0) === '<' ? d : '<path d="' + d + '"/>') + '</svg>'; }   // Lucide-Markup oder einzelner Pfad
@@ -216,13 +219,13 @@
         box.appendChild(row(tt.d[1], 'detail'));
         if (s.thema !== 'design' && s.thema !== 'web') { box.appendChild(txt('span', 'as-sub', 'Gibt es schon ein Logo bzw. Druckdaten?')); box.appendChild(row(LOGO, 'logo')); }
         field('Kurz beschreiben', 'optional', 'info', 'textarea', 'z. B. Maße, Text, Farben, Wunsch – Stichworte reichen.', 500);
-        nav(true, function () { return !!s.detail; }, 'Weiter →', 'Bitte eine Antwort zu „' + tt.d[0] + '“ wählen.');
+        nav(true, function () { return s.detail ? true : box.querySelector('.as-row'); }, 'Weiter →', 'Bitte eine Antwort zu „' + tt.d[0] + '“ wählen.');
       } else if (step === 4) {
         box.appendChild(head('Wann und wo?'));
         box.appendChild(txt('span', 'as-sub', 'Für wen?')); box.appendChild(row(WER, 'wer'));
         box.appendChild(txt('span', 'as-sub', 'Wann?')); box.appendChild(row(WANN, 'wann'));
         field('Ort oder Bezirk', 'optional', 'ort', 'input', hh ? 'z. B. Hamburg-Altona' : nrw ? 'z. B. Essen-Rüttenscheid' : 'z. B. Berlin-Wedding', 60, 'address-level2');
-        nav(true, function () { return s.wer && s.wann; }, 'Weiter →', 'Bitte „Für wen?“ und „Wann?“ wählen.');
+        nav(true, function () { var r = box.querySelectorAll('.as-row'); return s.wer && s.wann ? true : (!s.wer ? r[0] : r[1]); }, 'Weiter →', function () { return !s.wer && !s.wann ? 'Bitte „Für wen?“ und „Wann?“ wählen.' : !s.wer ? 'Bitte „Für wen?“ wählen.' : 'Bitte „Wann?“ wählen.'; });
       } else if (step === 5) {
         box.appendChild(head('Wie erreichen wir Sie?'));
         var two = el('div', 'as-two'); box.appendChild(two);
@@ -234,7 +237,14 @@
         mc.addEventListener('change', function () { s.merken = mc.checked; save(); });
         mk.appendChild(mc); mk.appendChild(el('span', '', 'Meine Kontaktdaten <b>auf diesem Gerät</b> merken – für die nächste Anfrage und den <a href="/status.html" target="_blank" rel="noopener">Anfrage-Status</a>. Jederzeit löschbar, wird nicht an uns übertragen.'));
         box.appendChild(mk);
-        nav(true, function () { if (s.name.trim().length > 1) { merken(); return true; } return false; }, 'Zur Zusammenfassung →', 'Bitte Ihren Namen eintragen.');
+        nav(true, function () {
+          var fn = box.querySelector('#as-name-' + idx), fm = box.querySelector('#as-mail-' + idx);
+          if (s.name.trim().length < 2) return fn;
+          if (s.mail.trim() && !MAIL.test(s.mail.trim())) return fm;
+          merken(); return true;
+        }, 'Zur Zusammenfassung →', function () {
+          return s.name.trim().length < 2 ? 'Bitte Ihren Namen eintragen (Vor- und Nachname).' : 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.';
+        });
       } else {
         result();
       }
@@ -245,8 +255,15 @@
     function opt(html, on, fn) { var b = el('button', 'as-opt', html); b.type = 'button'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.addEventListener('click', fn); return b; }
     function row(list, k) {
       var r = el('div', 'as-row'); r.setAttribute('role', 'group');
+      // Gruppe mit ihrer Frage verknüpfen (Screenreader liest „Für wen?, Gruppe“)
+      var lab = box.lastElementChild;
+      if (lab && lab.classList.contains('as-sub')) { lab.id = lab.id || 'as-l-' + idx + '-' + k; r.setAttribute('aria-labelledby', lab.id); }
       list.forEach(function (v) {
-        r.appendChild(opt(v, s[k] === v, function () { s[k] = v; save(); Array.prototype.forEach.call(r.children, function (b) { b.setAttribute('aria-pressed', b.textContent === v ? 'true' : 'false'); }); var e = box.querySelector('.as-err'); if (e) e.textContent = ''; }));
+        r.appendChild(opt(v, s[k] === v, function () {
+          s[k] = v; save(); r.classList.remove('as-miss');
+          Array.prototype.forEach.call(r.children, function (b) { b.setAttribute('aria-pressed', b.textContent === v ? 'true' : 'false'); });
+          var e = box.querySelector('.as-err'); if (e) e.textContent = '';
+        }));
       });
       return r;
     }
@@ -254,14 +271,45 @@
       var wrap = el('div'); var id = 'as-' + k + '-' + idx;
       var lab = el('label', 'as-sub', label + ' <small>(' + hint + ')</small>'); lab.setAttribute('for', id);
       var inp = el(tag, 'as-in'); inp.id = id; if (tag === 'input') inp.type = type || 'text'; inp.placeholder = ph; inp.maxLength = max; inp.value = s[k] || ''; if (ac) inp.autocomplete = ac;
-      inp.addEventListener('input', function () { s[k] = inp.value.slice(0, max); save(); });
+      if (hint === 'Pflicht') inp.setAttribute('aria-required', 'true');
+      if (type === 'email' || type === 'tel') { inp.spellcheck = false; inp.setAttribute('autocapitalize', 'off'); }
+      inp.addEventListener('input', function () {
+        s[k] = inp.value.slice(0, max); save();
+        if (inp.getAttribute('aria-invalid') === 'true' && gueltig(k)) { inp.removeAttribute('aria-invalid'); var e = box.querySelector('.as-err'); if (e) e.textContent = ''; var fe = inp.nextElementSibling; if (fe && fe.classList.contains('as-ferr')) fe.textContent = ''; }
+      });
+      // E-Mail beim Verlassen des Feldes prüfen (nicht schon beim Tippen)
+      if (type === 'email') inp.addEventListener('blur', function () {
+        if (!gueltig(k)) feldFehler(inp, 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.');
+      });
       wrap.appendChild(lab); wrap.appendChild(inp); (parent || box).appendChild(wrap);
     }
+    function feldFehler(inp, text) {
+      var fe = inp.nextElementSibling && inp.nextElementSibling.classList.contains('as-ferr') ? inp.nextElementSibling : null;
+      if (!fe) { fe = el('span', 'as-ferr'); fe.id = inp.id + '-fehler'; inp.insertAdjacentElement('afterend', fe); }
+      fe.textContent = text; inp.setAttribute('aria-invalid', 'true'); inp.setAttribute('aria-describedby', fe.id);
+    }
+    function gueltig(k) { return k === 'name' ? s.name.trim().length > 1 : k === 'mail' ? (!s.mail.trim() || MAIL.test(s.mail.trim())) : true; }
     function nav(back, ok, label, msg) {
-      var err = el('p', 'as-err'); err.setAttribute('role', 'alert');
+      var err = el('p', 'as-err'); err.setAttribute('role', 'alert'); err.id = 'as-err-' + idx;
       var n = el('div', 'as-nav');
       if (back) { var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(Math.max(minStep, step - 1)); }); n.appendChild(b); } else n.appendChild(el('span'));
-      if (ok) { var g = el('button', 'as-go', label); g.type = 'button'; g.addEventListener('click', function () { if (ok()) go(step + 1); else err.textContent = msg; }); n.appendChild(g); }
+      if (ok) {
+        var g = el('button', 'as-go', label); g.type = 'button';
+        g.addEventListener('click', function () {
+          var r = ok();
+          if (r === true) { go(step + 1); return; }
+          err.textContent = typeof msg === 'function' ? msg() : msg;
+          // Fehler am Feld bzw. an der Frage zeigen und dorthin springen
+          if (r && r.nodeType === 1) {
+            if (r.classList.contains('as-row')) { r.classList.add('as-miss'); r.setAttribute('aria-describedby', err.id); r.firstChild.focus(); }
+            else {
+              // Meldung zusätzlich direkt unter dem Feld (die Sammelmeldung steht weiter unten beim Knopf)
+              feldFehler(r, err.textContent); r.focus();
+            }
+          }
+        });
+        n.appendChild(g);
+      }
       box.appendChild(err); box.appendChild(n);
     }
     function lines() {
@@ -285,7 +333,7 @@
       var ul = el('ul', 'as-list');
       L.forEach(function (l) {
         var li = el('li'); li.appendChild(txt('b', '', l[0])); li.appendChild(txt('span', '', l[1]));
-        if (l[2] >= minStep) { var e = el('button', 'as-edit', 'ändern'); e.type = 'button'; e.addEventListener('click', function () { go(l[2]); }); li.appendChild(e); }
+        if (l[2] >= minStep) { var e = el('button', 'as-edit', 'ändern'); e.type = 'button'; e.setAttribute('aria-label', l[0] + ' ändern'); e.addEventListener('click', function () { go(l[2]); }); li.appendChild(e); }
         ul.appendChild(li);
       });
       res.appendChild(ul);
@@ -334,9 +382,9 @@
       var mb = el('button', 'as-btn as-mail', 'Anfrage per E-Mail senden'); mb.type = 'submit'; c2.appendChild(mb);
       var me = el('p', 'as-err'); me.style.color = '#ffb4ab'; me.setAttribute('role', 'alert'); c2.appendChild(me);
       c2.addEventListener('submit', function (ev) {
-        var ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s.mail.trim());
-        if (!ok) { ev.preventDefault(); me.innerHTML = 'Für den Versand per E-Mail brauchen wir Ihre E-Mail-Adresse – <button type="button" class="as-edit">jetzt eintragen</button>.'; me.querySelector('button').addEventListener('click', function () { go(5); }); return; }
-        if (!cb.checked) { ev.preventDefault(); me.textContent = 'Bitte der Datenverarbeitung zustimmen.'; return; }
+        var ok = MAIL.test(s.mail.trim());
+        if (!ok) { ev.preventDefault(); me.innerHTML = 'Für den Versand per E-Mail brauchen wir Ihre E-Mail-Adresse – <button type="button" class="as-edit">jetzt eintragen</button>.'; me.querySelector('button').addEventListener('click', function () { go(5); var m = box.querySelector('#as-mail-' + idx); if (m) m.focus(); }); me.querySelector('button').focus(); return; }
+        if (!cb.checked) { ev.preventDefault(); me.textContent = 'Bitte der Datenverarbeitung zustimmen.'; cb.setAttribute('aria-invalid', 'true'); cb.setAttribute('aria-describedby', me.id = 'as-me-' + idx); cb.focus(); return; }
         try { sessionStorage.removeItem(key); if (s.merken) sessionStorage.setItem('masar-merken-leistung', T[s.thema].name + ' – ' + a[0]); } catch (e) {}
       });
       send.appendChild(c2);
@@ -345,6 +393,9 @@
       var hint = el('p', 'as-hint', 'Antwort in der Regel innerhalb von 24 Stunden. Lieber persönlich sprechen? <a class="as-more" href="/termin.html">Kostenlose Beratung buchen →</a>' + (pg && pg !== location.pathname ? ' <a class="as-more" href="' + pg + '">Mehr zu ' + a[4] + ' →</a>' : ''));
       res.appendChild(hint);
       box.appendChild(res);
+      // Lange Leistungsnamen (z. B. „Schaufensterbeschriftung“) am Handy kleiner setzen statt über den Rand laufen zu lassen
+      var fs = parseFloat(getComputedStyle(h).fontSize), n0 = 0;
+      while (h.scrollWidth > h.clientWidth + 1 && fs > 15 && n0++ < 20) { fs *= 0.93; h.style.fontSize = fs + 'px'; }
       var n = el('div', 'as-nav'); var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(5); }); n.appendChild(b);
       var r = el('button', 'as-skip', 'Neue Anfrage starten'); r.type = 'button'; r.addEventListener('click', function () { try { sessionStorage.removeItem(key); } catch (e) {} s = { thema: T[sv[0]] ? sv[0] : null, wahl: null, detail: null, logo: null, info: '', wer: null, wann: null, ort: root.getAttribute('data-ort') || '', name: s.name, tel: s.tel, mail: s.mail, firma: s.firma, merken: s.merken }; minStep = T[sv[0]] ? 2 : 1; go(minStep); });
       n.appendChild(r); box.appendChild(n);

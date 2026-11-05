@@ -288,20 +288,40 @@ const Nav = {
     // Hamburger
     const ham = document.getElementById('hamburger');
     const mob = document.getElementById('mobNav');
-    ham?.addEventListener('click', () => {
-      const isOpen = mob?.classList.toggle('open');
-      ham.setAttribute('aria-expanded', String(!!isOpen));
+    const setMenu = (open) => {
+      if (!ham || !mob) return;
+      mob.classList.toggle('open', open);
+      ham.setAttribute('aria-expanded', String(open));
+      ham.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    };
+    ham?.addEventListener('click', () => setMenu(!mob?.classList.contains('open')));
+    // Escape schließt das Mobilmenü und gibt den Fokus an den Menüknopf zurück
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mob?.classList.contains('open')) { setMenu(false); ham.focus(); }
     });
+
+    // Beim Tippen in ein Formularfeld (Handy-Tastatur offen) die fixen Leisten ausblenden
+    const feld = el => el && el.matches && el.matches('input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=submit]):not([type=button]),textarea,select');
+    document.addEventListener('focusin', e => { if (feld(e.target)) document.body.classList.add('tippt'); });
+    document.addEventListener('focusout', e => { if (feld(e.target)) setTimeout(() => { if (!feld(document.activeElement)) document.body.classList.remove('tippt'); }, 120); });
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
-        const target = document.querySelector(a.getAttribute('href'));
+        const href = a.getAttribute('href');
+        if (href.length < 2 || e.defaultPrevented) return;
+        let target = null;
+        try { target = document.getElementById(decodeURIComponent(href.slice(1))) || document.querySelector(href); } catch (err) { return; }
         if (!target) return;
         e.preventDefault();
         const offset = target.getBoundingClientRect().top + window.scrollY - 90;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-        mob?.classList.remove('open');
+        const ruhig = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: offset, behavior: ruhig ? 'auto' : 'smooth' });
+        // Tastatur/Screenreader: Fokus mit ans Ziel nehmen, sonst geht es beim nächsten Tab oben weiter
+        if (!target.matches('a,button,input,select,textarea,[tabindex]')) target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        if (history.replaceState) history.replaceState(null, '', a.getAttribute('href'));
+        setMenu(false);
       });
     });
   }
