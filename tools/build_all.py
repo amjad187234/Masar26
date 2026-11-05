@@ -31,7 +31,6 @@ SCHRITTE = [
     ('hamburg', 'gen', 'folien/hamburg_page.py', 'werbeagentur-hamburg.html (aus werbeagentur-nrw.html)'),
     ('ki_pages', 'gen', 'folien/ki_pages.py', 'KI für Arztpraxen / Pflegedienste'),
     ('textil', 'gen', 'folien/textil_page.py', 'textildruck-berlin.html'),
-    ('leuchtlogo', 'gen', 'folien/leuchtlogo_page.py', 'leuchtlogo-berlin.html (Leuchtlogo mit Vorschau)'),
     ('konfigurator', 'gen', 'folien/konfigurator_page.py', 'leuchtbuchstaben-konfigurator.html (kostenloses Werkzeug)'),
     ('druckcheck', 'gen', 'folien/druckcheck_page.py', 'druckdaten-check.html (kostenloses Werkzeug)'),
     ('stadt_ratgeber', 'gen', 'blog/stadt_ratgeber.py', 'blog/werbeanlage-<stadt>.html'),

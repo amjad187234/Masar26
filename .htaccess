@@ -29,6 +29,8 @@ ServerSignature Off
 
   # Umbenennung NRW-Seiten (Werbetechnik → Werbeagentur), 301 dauerhaft
   RewriteRule ^werbetechnik-nrw\.html$ /werbeagentur-nrw.html [R=301,L]
+  # Leuchtlogo-Seite am 05.11.2026 auf Wunsch des Inhabers entfernt
+  RewriteRule ^leuchtlogo-berlin\.html$ /leuchtreklame-berlin.html [R=301,L]
   RewriteRule ^werbetechnik-duesseldorf\.html$ /werbeagentur-duesseldorf.html [R=301,L]
   RewriteRule ^werbetechnik-koeln\.html$ /werbeagentur-koeln.html [R=301,L]
   RewriteRule ^werbetechnik-dortmund\.html$ /werbeagentur-dortmund.html [R=301,L]
