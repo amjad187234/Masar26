@@ -18,6 +18,8 @@
   var RAHMEN = { '#15181c': 'Schwarz', '#f2f2f0': 'Weiß', '#a7adb3': 'Silber' };
 
   /* ---------- Logo laden & aufbereiten ---------- */
+  function dataUrl(f, cb) { var r = new FileReader(); r.onload = function () { cb(r.result); }; r.onerror = function () { cb(null); }; r.readAsDataURL(f); }
+
   var logo = null, logoName = 'Masar-Logo (Beispiel)', faceAuto = '#ffffff';
   function trim(img, weiss) {
     var c = document.createElement('canvas'), w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
@@ -261,13 +263,13 @@
   $('#ll-masse').addEventListener('click', function (e) { S.masse = !S.masse; e.currentTarget.setAttribute('aria-pressed', String(S.masse)); render(); });
   $('#ll-logo').addEventListener('change', function (e) {
     var f = e.target.files[0]; if (!f) return;
-    var url = URL.createObjectURL(f); ladeLogo(url, f.name);
+    dataUrl(f, function (u) { if (u) ladeLogo(u, f.name); else $('#ll-logoname').textContent = 'Datei konnte nicht gelesen werden.'; });
   });
   $('#ll-weiss').addEventListener('change', function () { if (rohLogo) { logo = trim(rohLogo, $('#ll-weiss').checked); render(); } });
   $('#ll-foto').addEventListener('change', function (e) {
     var f = e.target.files[0]; if (!f) return; var im = new Image();
     im.onload = function () { var k = Math.min(1, 2400 / Math.max(im.width, im.height)), c = document.createElement('canvas'); c.width = Math.round(im.width * k); c.height = Math.round(im.height * k); c.getContext('2d').drawImage(im, 0, 0, c.width, c.height); foto = c; S.pos = { x: 0.5, y: 0.4 }; $('#ll-fotowrap').hidden = false; $('#ll-wandwrap').hidden = true; render(); };
-    im.src = URL.createObjectURL(f);
+    dataUrl(f, function (u) { if (u) im.src = u; });
   });
   $('#ll-demo').addEventListener('click', function () { foto = null; S.pos = null; $('#ll-fotowrap').hidden = true; $('#ll-wandwrap').hidden = false; $('#ll-foto').value = ''; render(); });
 

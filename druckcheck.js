@@ -473,10 +473,12 @@
   function checkImage(file, buf, z) {
     var u8 = new Uint8Array(buf);
     return new Promise(function (res, rej) {
-      var url = URL.createObjectURL(file), im = new Image();
-      im.onload = function () { res({ img: im, url: url }); };
+      // als data:-URL laden – die CSP der Website erlaubt keine blob:-Bilder
+      var im = new Image(), rd = new FileReader();
+      im.onload = function () { res({ img: im, url: im.src }); };
       im.onerror = function () { rej(new Error('bild')); };
-      im.src = url;
+      rd.onload = function () { im.src = rd.result; }; rd.onerror = function () { rej(new Error('bild')); };
+      rd.readAsDataURL(file);
     }).then(function (r) {
       var w = r.img.naturalWidth, h = r.img.naturalHeight, c = [];
       var land = w >= h, W = land === (z.W >= z.H) ? z.W : z.H, H = W === z.W ? z.H : z.W;

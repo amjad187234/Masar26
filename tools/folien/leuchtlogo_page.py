@@ -173,6 +173,6 @@ if __name__ == '__main__':
     s = s.replace('<a href="#kontakt" class="btn btn-teal">Angebot anfordern</a>', '<a href="#vorschau" class="btn btn-teal">Mein Logo ansehen</a>', 1)
     s = s.replace('Kostenloses Angebot <em>anfordern</em>', 'Festpreis-Angebot <em>für Ihr Leuchtlogo</em>', 1)
     s = s.replace('</head>', LCSS + '\n<script type="application/ld+json">\n' + json.dumps(APP, ensure_ascii=False, indent=2) + '\n</script>\n</head>', 1)
-    s = s.replace('</body>', '<script src="/leuchtlogo.js?v=3" defer></script>\n</body>', 1)
+    s = s.replace('</body>', '<script src="/leuchtlogo.js?v=4" defer></script>\n</body>', 1)
     open(path, 'w', encoding='utf-8').write(s)
     print(f, len(s))

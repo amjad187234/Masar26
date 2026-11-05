@@ -351,15 +351,16 @@
   $('#kf-nacht').addEventListener('click', function (e) { var b = e.currentTarget; S.nacht = !S.nacht; b.setAttribute('aria-pressed', String(S.nacht)); b.lastChild.textContent = S.nacht ? ' Tag' : ' Nacht'; render(); });
   $('#kf-masse').addEventListener('click', function (e) { var b = e.currentTarget; S.masse = !S.masse; b.setAttribute('aria-pressed', String(S.masse)); render(); });
 
-  // Eigenes Foto
+  // Eigenes Foto (als data:-URL – die CSP erlaubt keine blob:-Bilder)
+  function dataUrl(f, cb) { var r = new FileReader(); r.onload = function () { cb(r.result); }; r.onerror = function () { cb(null); }; r.readAsDataURL(f); }
   $('#kf-foto').addEventListener('change', function (e) {
     var f = e.target.files[0]; if (!f) return;
     var img = new Image(); img.onload = function () {
       var max = 2400, k = Math.min(1, max / Math.max(img.width, img.height)), c = document.createElement('canvas');
       c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-      foto = c; S.pos = { x: 0.5, y: 0.3 }; $('#kf-fotowrap').hidden = false; $('#kf-wandwrap').hidden = true; URL.revokeObjectURL(img.src); render();
+      foto = c; S.pos = { x: 0.5, y: 0.3 }; $('#kf-fotowrap').hidden = false; $('#kf-wandwrap').hidden = true; render();
     };
-    img.src = URL.createObjectURL(f);
+    dataUrl(f, function (u) { if (u) img.src = u; });
   });
   $('#kf-demo').addEventListener('click', function () { foto = null; S.pos = null; $('#kf-fotowrap').hidden = true; $('#kf-wandwrap').hidden = false; $('#kf-foto').value = ''; render(); });
 
