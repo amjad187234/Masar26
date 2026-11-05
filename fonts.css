@@ -97,3 +97,8 @@
   --font-sans: 'Barlow', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-condensed: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
 }
+
+/* fallback:start */
+@font-face{font-family:'Barlow Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('Helvetica');size-adjust:94.4%;ascent-override:105.9%;descent-override:21.2%;line-gap-override:0%}
+@font-face{font-family:'Barlow Condensed Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('Arial');font-weight:100 900;size-adjust:76.9%;ascent-override:130%;descent-override:26%;line-gap-override:0%}
+/* fallback:ende */

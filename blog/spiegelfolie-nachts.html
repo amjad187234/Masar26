@@ -90,7 +90,7 @@
 :root{--teal:#58d0bd;--teal-ink:#177567;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#58d0bd;--r:10px;--nav-h:94px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
+body{font-family:'Barlow','Barlow Fallback',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:800px;margin:0 auto;padding:0 24px}
@@ -99,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1160px;margin:0 auto;padding:0 24px}
 .nav-logo{display:flex;align-items:center;gap:.6rem}
 .nav-logo img{height:72px;width:auto}
-.nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
+.nav-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
@@ -122,12 +122,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .article-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(88,208,189,.1) 0%,transparent 60%);pointer-events:none}
 .article-header .container{position:relative;z-index:2}
 .art-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:1.2rem}
-.article-header h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:1rem;letter-spacing:1px}
+.article-header h1{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:1rem;letter-spacing:1px}
 .article-header h1 em{color:var(--teal);font-style:normal}
 .art-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
 .article-body{padding:3.5rem 0 5rem}
-.article-body h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--navy);text-transform:uppercase;margin:2.5rem 0 .8rem;line-height:1.1}
-.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 .6rem}
+.article-body h2{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.8rem;color:var(--navy);text-transform:uppercase;margin:2.5rem 0 .8rem;line-height:1.1}
+.article-body h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 .6rem}
 .article-body p{font-size:16px;color:#2a3a3a;line-height:1.85;margin-bottom:1.2rem}
 .article-body ul,.article-body ol{margin:0 0 1.2rem 1.4rem}
 .article-body li{font-size:16px;color:#2a3a3a;line-height:1.8;margin-bottom:.3rem}
@@ -136,9 +136,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .tip-box p{margin-bottom:0;font-size:15px}
 .warning-box{background:rgba(245,184,0,.08);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1.5rem 0}
 .warning-box p{margin-bottom:0;font-size:15px}
-.tip-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--teal);color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;margin-right:.6rem;flex-shrink:0;vertical-align:middle}
+.tip-num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--teal);color:var(--navy);font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.2rem;margin-right:.6rem;flex-shrink:0;vertical-align:middle}
 .article-cta{background:linear-gradient(135deg,var(--navy) 0%,#0d4a4a 100%);border-radius:var(--r);padding:2.5rem;text-align:center;margin:3rem 0}
-.article-cta h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:#fff;text-transform:uppercase;margin-bottom:.6rem}
+.article-cta h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.8rem;color:#fff;text-transform:uppercase;margin-bottom:.6rem}
 .article-cta p{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
 .article-cta .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .article-cta .btn-teal{background:var(--teal);color:var(--navy);padding:13px 24px;border-radius:8px;font-weight:700;font-size:15px}
@@ -147,14 +147,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
 .related-card{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:.2s}
 .related-card:hover{border-color:var(--teal)}
-.related-card h4,.related-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
+.related-card h4,.related-card h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
 .related-card p{font-size:13px;color:var(--muted);margin-bottom:.6rem}
 .related-card a{font-size:13px;color:var(--teal-ink);font-weight:700}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
 .foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .foot-logo img{height:48px;width:auto}
-.foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
+.foot-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
 .foot-desc{font-size:14px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
 .foot-social{display:flex;gap:.8rem}
 .fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
@@ -365,7 +365,7 @@ h1,h2,h3,h4{overflow-wrap:break-word;-webkit-hyphens:manual;hyphens:manual}
     </div>
 
     <div class="related-posts">
-      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Weitere Artikel</h2>
+      <h2 style="font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Weitere Artikel</h2>
       <div class="related-grid">
         <div class="related-card">
           <h3>Sonnenschutzfolie innen oder außen?</h3>

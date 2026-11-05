@@ -208,7 +208,7 @@
 :root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#58d0bd;--r:10px;--nav-h:94px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
-body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
+body{font-family:'Barlow','Barlow Fallback',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:1160px;margin:0 auto;padding:0 24px}
@@ -216,7 +216,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1160px;margin:0 auto;padding:0 24px}
 .nav-logo{display:flex;align-items:center;gap:.6rem}
 .nav-logo img{height:72px;width:auto}
-.nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
+.nav-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:15px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
@@ -236,7 +236,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .hero-lines{position:absolute;top:0;right:0;bottom:0;width:40%;opacity:.04;background:repeating-linear-gradient(-20deg,transparent,transparent 28px,rgba(88,208,189,1) 28px,rgba(88,208,189,1) 29px);pointer-events:none}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4rem 0;position:relative;z-index:2}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.5rem}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:1.12;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;letter-spacing:1px}
+.hero h1{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2.8rem,5.5vw,4.5rem);line-height:1.12;color:#fff;text-transform:uppercase;margin-bottom:1.2rem;letter-spacing:1px}
 .hero h1 em{color:var(--teal);font-style:normal;display:block}
 .hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:2.2rem;max-width:500px}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -255,7 +255,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .section{padding:5rem 0}
 .sec-head{text-align:center;margin-bottom:3rem}
 .eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy);line-height:1.1;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.2rem);color:var(--navy);line-height:1.1;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.8px}
 .sec-title em{color:var(--teal-ink);font-style:normal}
 .sec-sub{font-size:16px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
@@ -263,40 +263,40 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .svc-card.vis{opacity:1;transform:none}
 .svc-card:hover{background:var(--off);border-color:var(--teal);transform:translateY(-4px);box-shadow:0 8px 24px rgba(88,208,189,.12)}
 .svc-icon{font-size:2.4rem;margin-bottom:1rem;color:var(--teal-ink)}
-.svc-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.6px}
+.svc-card h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.6px}
 .svc-card p{font-size:15.5px;color:var(--muted);line-height:1.7}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0}
 .why-item{display:flex;gap:1.2rem;align-items:flex-start;opacity:0;transform:translateY(20px);transition:opacity .38s ease,transform .38s ease}
 .why-item.vis{opacity:1;transform:none}
-.why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem}
-.why-item h4,.why-item h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
+.why-num{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal);color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-size:1.2rem}
+.why-item h4,.why-item h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy);margin-bottom:.3rem;text-transform:uppercase;letter-spacing:.6px}
 .why-item p{font-size:15.5px;color:var(--muted);line-height:1.65}
 .faq-wrap{max-width:780px;margin:2rem auto 0}
 .faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow',sans-serif;font-size:16.5px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--navy);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:16.5px;font-weight:600;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
 .faq-q::after{content:'+';font-size:1.4rem;color:var(--teal-ink);transition:.2s;flex-shrink:0}
 .faq-q.open::after{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
 .faq-a p{padding:0 0 1.2rem;font-size:15.5px;color:var(--muted);line-height:1.75}
 .faq-q.open+.faq-a{max-height:400px}
 .cta-band{background:linear-gradient(135deg,rgba(88,208,189,.15) 0%,rgba(88,208,189,.05) 100%);border-top:1px solid rgba(88,208,189,.2);border-bottom:1px solid rgba(88,208,189,.2);padding:3.5rem 0;text-align:center}
-.cta-band h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--navy);text-transform:uppercase;margin-bottom:.8rem;letter-spacing:.8px}
+.cta-band h2{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--navy);text-transform:uppercase;margin-bottom:.8rem;letter-spacing:.8px}
 .cta-band p{color:var(--muted);margin-bottom:2rem;font-size:16px}
 .cta-band .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .form-wrap{max-width:720px;margin:0 auto}
 .fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem}
 .fg label{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.5px}
-.fg input,.fg select,.fg textarea{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow',sans-serif;font-size:15px;width:100%;transition:border .2s}
+.fg input,.fg select,.fg textarea{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:15px;width:100%;transition:border .2s}
 .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--teal)}
 .fg textarea{min-height:120px;resize:vertical}
-.submit-btn{width:100%;background:var(--teal);color:var(--navy);border:none;border-radius:8px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Barlow',sans-serif}
+.submit-btn{width:100%;background:var(--teal);color:var(--navy);border:none;border-radius:8px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Barlow','Barlow Fallback',sans-serif}
 .submit-btn:hover{background:#3db8a6;transform:translateY(-2px)}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
 .foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .foot-logo img{height:48px;width:auto}
-.foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
+.foot-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
 .foot-desc{font-size:15px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
 .foot-social{display:flex;gap:.8rem}
 .fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
@@ -316,7 +316,7 @@ footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 
 .scta-txt{font-size:14px;font-weight:600;color:#fff}
 .scta-txt span{color:var(--teal)}
 .scta-btns{display:flex;gap:.7rem;flex-wrap:wrap}
-.scta-btn{padding:9px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Barlow',sans-serif;transition:.2s}
+.scta-btn{padding:9px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:'Barlow','Barlow Fallback',sans-serif;transition:.2s}
 .scta-btn.primary{background:var(--teal);color:var(--navy)}
 .scta-btn.secondary{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff}
 .reveal,.reveal-l,.reveal-r{opacity:0;transition:opacity .38s ease,transform .38s ease}
@@ -409,7 +409,7 @@ body:has(.mob-nav.open) #stickyCta{display:none}
 /* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
 .foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
 /* Datei-Auswahl: eigener Knopf statt Browser-Standard */
-input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
 input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
 /* Pfeil bleibt in derselben Zeile wie "Werbetechnik" */
 .nav-links li.has-sub>a{white-space:nowrap}
@@ -738,7 +738,7 @@ table.rt td:first-child::before{display:none}
         </div>
         <div class="fg">
           <label for="cf-produkt">Gewünschte Leistung</label>
-          <select id="cf-produkt" name="produkt" style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow',sans-serif;font-size:15px;width:100%;appearance:none;">
+          <select id="cf-produkt" name="produkt" style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:15px;width:100%;appearance:none;">
             <option value="">Bitte wählen...</option>
             <option>Drohnenaufnahmen</option>
             <option>Foto &amp; Video für Social Media</option>
@@ -750,7 +750,7 @@ table.rt td:first-child::before{display:none}
           </select>
         </div>
         <div class="fg"><label for="cf-nachricht">Ihr Anliegen</label><textarea id="cf-nachricht" name="nachricht" placeholder="Was soll entstehen? Wofür werden die Aufnahmen genutzt? Ort, Wunschtermin, Besonderheiten …"></textarea></div>
-        <div class="fg"><label for="ms-datei">Datei anhängen (optional)</label><input type="file" id="ms-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
+        <div class="fg"><label for="ms-datei">Datei anhängen (optional)</label><input type="file" id="ms-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
         <div style="display:flex;gap:.75rem;align-items:flex-start;margin-bottom:1rem;">
           <input type="checkbox" id="ms-consent" name="consent" required style="width:18px;height:18px;accent-color:var(--teal);margin-top:3px;flex-shrink:0;">
           <label for="ms-consent" style="font-size:12px;color:var(--muted);line-height:1.65;">Ich habe die <a href="/datenschutz.html" style="color:#0e6455;">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>

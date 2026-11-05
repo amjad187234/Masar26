@@ -52,6 +52,7 @@ SCHRITTE = [
     ('partner_hinweis', 'post', 'seo/partner_hinweis.py', 'Offenlegung Partnerbetriebe'),
     ('druckcheck_links', 'post', 'seo/druckcheck_links.py', 'Hinweise auf Druckdaten-Check und Konfigurator'),
     ('brutto', 'post', 'seo/brutto.py', 'Bruttopreis neben jeden Netto-Preis (PAngV)'),
+    ('schrift_fallback', 'post', 'seo/schrift_fallback.py', 'Ausweichschrift mit angepassten Maßen (CLS)'),
     ('a11y', 'post', 'seo/a11y.py', 'Barrierefreiheit (main, Landmarks, Überschriften)'),
     ('marke', 'post', 'seo/marke.py', 'Farben nach Markenleitfaden + Claim'),
     ('umbruch', 'post', 'seo/umbruch.py', 'Ohne Brotkrumen-Leiste und Silbentrennung'),

@@ -129,7 +129,7 @@
 :root{--teal:#58d0bd;--teal-ink:#177567;--navy:#132e50;--navy3:#0e2340;--off:#f4f7f7;--text:#1a2a2a;--muted:#5a7070;--border:#e0eaea;--gold:#58d0bd;--r:10px;--nav-h:94px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
+body{font-family:'Barlow','Barlow Fallback',sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{max-width:800px;margin:0 auto;padding:0 24px}
@@ -138,7 +138,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1160px;margin:0 auto;padding:0 24px}
 .nav-logo{display:flex;align-items:center;gap:.6rem}
 .nav-logo img{height:72px;width:auto}
-.nav-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
+.nav-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);letter-spacing:2px;display:none}
 .nav-links{display:flex;list-style:none;gap:1.1rem}
 .nav-links a{font-size:13px;font-weight:600;letter-spacing:.5px;color:var(--navy);transition:color .2s;position:relative;padding-bottom:4px}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s}
@@ -161,12 +161,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .article-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(88,208,189,.1) 0%,transparent 60%);pointer-events:none}
 .article-header .container{position:relative;z-index:2}
 .art-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,208,189,.12);border:1px solid rgba(88,208,189,.3);color:var(--teal);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:1.2rem}
-.article-header h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:1rem;letter-spacing:1px}
+.article-header h1{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.5rem);color:#fff;text-transform:uppercase;line-height:1.1;margin-bottom:1rem;letter-spacing:1px}
 .article-header h1 em{color:var(--teal);font-style:normal}
 .art-meta{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
 .article-body{padding:3.5rem 0 5rem}
-.article-body h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:var(--navy);text-transform:uppercase;margin:2.5rem 0 .8rem;line-height:1.1}
-.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 .6rem}
+.article-body h2{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.8rem;color:var(--navy);text-transform:uppercase;margin:2.5rem 0 .8rem;line-height:1.1}
+.article-body h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:1.3rem;color:var(--navy);text-transform:uppercase;margin:2rem 0 .6rem}
 .article-body p{font-size:16px;color:#2a3a3a;line-height:1.85;margin-bottom:1.2rem}
 .article-body ul,.article-body ol{margin:0 0 1.2rem 1.4rem}
 .article-body li{font-size:16px;color:#2a3a3a;line-height:1.8;margin-bottom:.3rem}
@@ -183,7 +183,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .price-table .price-col{color:var(--teal-ink);font-weight:700}.price-table th.price-col{color:#fff}
 .table-wrap{overflow-x:auto;margin:1.5rem 0}
 .article-cta{background:linear-gradient(135deg,var(--navy) 0%,#0d4a4a 100%);border-radius:var(--r);padding:2.5rem;text-align:center;margin:3rem 0}
-.article-cta h3{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.8rem;color:#fff;text-transform:uppercase;margin-bottom:.6rem}
+.article-cta h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.8rem;color:#fff;text-transform:uppercase;margin-bottom:.6rem}
 .article-cta p{color:rgba(255,255,255,.65);margin-bottom:1.5rem}
 .article-cta .btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .article-cta .btn-teal{background:var(--teal);color:var(--navy);padding:13px 24px;border-radius:8px;font-weight:700;font-size:15px}
@@ -192,14 +192,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1.5rem}
 .related-card{background:var(--off);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem;transition:.2s}
 .related-card:hover{border-color:var(--teal)}
-.related-card h4,.related-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
+.related-card h4,.related-card h3{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:1.1rem;color:var(--navy);margin-bottom:.4rem;text-transform:uppercase}
 .related-card p{font-size:13px;color:var(--muted);margin-bottom:.6rem}
 .related-card a{font-size:13px;color:var(--teal-ink);font-weight:700}
 footer{background:#080f1a;border-top:1px solid rgba(88,208,189,.1);padding:3rem 0 1.5rem}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
 .foot-logo{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
 .foot-logo img{height:48px;width:auto}
-.foot-logo-txt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
+.foot-logo-txt{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.4rem;color:var(--teal);letter-spacing:2px;display:none}
 .foot-desc{font-size:14px;color:#8fa4c0;line-height:1.75;margin-bottom:1.2rem}
 .foot-social{display:flex;gap:.8rem}
 .fsoc{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:.2s}
@@ -412,7 +412,7 @@ table.rt td:first-child::before{display:none}
     </div>
 
     <div class="related-posts">
-      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Ratgeber für weitere Städte</h2>
+      <h2 style="font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;">Ratgeber für weitere Städte</h2>
       <div class="related-grid">
         <div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Köln</h3><p>Köln hat für viele Veedel eigene Werbesatzungen – dort ist oft schon ab 0,5 m² ein Antrag …</p><a href="/blog/werbeanlage-koeln.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Düsseldorf</h3><p>In der Düsseldorfer Altstadt braucht schon ein Schild unter 0,5 m² eine Baugenehmigung. …</p><a href="/blog/werbeanlage-duesseldorf.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Dortmund</h3><p>Am Westen- und Ostenhellweg ist jede Werbeanlage genehmigungspflichtig. Was die …</p><a href="/blog/werbeanlage-dortmund.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Essen</h3><p>Wer genehmigt Werbung in Essen, was kostet der Antrag und was bedeutet die geplante …</p><a href="/blog/werbeanlage-essen.html">Artikel lesen →</a></div><div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Bochum</h3><p>Seit April 2024 gilt in der Bochumer Innenstadt die Gestaltungssatzung Nr. 1000 Gb – auch …</p><a href="/blog/werbeanlage-bochum.html">Artikel lesen →</a></div>
         <div class="related-card"><h3><svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Berlin</h3><p>Außenwerbung in Berlin: Genehmigung, Kosten und Strategien …</p><a href="/blog/aussenwerbung-berlin-ratgeber.html">Artikel lesen →</a></div>

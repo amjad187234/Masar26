@@ -67,7 +67,7 @@ body { animation: pageFadeIn .3s ease both; }
 .kinetic-marquee {
   display: inline-block;
   animation: marqueeRoll 30s linear infinite;
-  font-family: 'Barlow Condensed','Arial Narrow',sans-serif;
+  font-family: 'Barlow Condensed','Barlow Condensed Fallback','Arial Narrow',sans-serif;
   font-weight: 900;
   font-size: clamp(1rem, 2.8vw, 1.5rem);
   text-transform: uppercase;
@@ -202,7 +202,7 @@ nav.scrolled {
   display: inline-flex; align-items: center; justify-content: center;
   width: 72px; height: 72px; border-radius: 50%;
   background: linear-gradient(135deg, #f5c000, #f59000);
-  color: #0a1628; font-family:'Barlow Condensed',sans-serif;
+  color: #0a1628; font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;
   font-weight: 900; font-size: 1.9rem;
   box-shadow: 0 0 32px rgba(245,192,0,.4);
   margin: 0 auto 1.1rem;
@@ -220,7 +220,7 @@ nav.scrolled {
   padding: 4px 14px; border-radius: 20px; margin-bottom: 1rem;
 }
 .exit-headline {
-  font-family: 'Barlow Condensed','Arial Narrow',sans-serif;
+  font-family: 'Barlow Condensed','Barlow Condensed Fallback','Arial Narrow',sans-serif;
   font-weight: 900; font-size: clamp(1.7rem,4.5vw,2.4rem);
   text-transform: uppercase; color: #fff; line-height: 1.05;
   margin-bottom: .8rem;
@@ -231,7 +231,7 @@ nav.scrolled {
   display: block; width: 100%;
   background: #58d0bd; color: #132e50;
   padding: 14px; border-radius: 10px;
-  font-family: 'Barlow Condensed',sans-serif;
+  font-family: 'Barlow Condensed','Barlow Condensed Fallback',sans-serif;
   font-weight: 900; font-size: 16px; letter-spacing: .5px;
   text-transform: uppercase; text-decoration: none; border: none;
   cursor: pointer; margin-bottom: .6rem;

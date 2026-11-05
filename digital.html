@@ -23,7 +23,7 @@
 <style>
 :root{--teal:#58d0bd;--teal-ink:#177567;--teal-d:#3ab8a5;--navy:#132e50;--navy2:#1e4275;--navy3:#0d1f3c;--white:#fff;--off:#f5f8f8;--text:#1a2a2a;--muted:#5a7070;--border:#e2ecec;--purple:#177567;--purple-d:#0e6455;--nav-h:94px;--radius:12px;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{font-family:'Barlow','Barlow Fallback',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 .container{max-width:1240px;margin:0 auto;padding:0 2rem;}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal);color:var(--navy);padding:13px 28px;border-radius:6px;font-weight:700;font-size:14px;transition:all .25s;border:2px solid var(--teal);}
 .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px);}
@@ -31,7 +31,7 @@ body{font-family:'Barlow',sans-serif;background:#fff;color:var(--text);overflow-
 .btn-purple:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15);}
 .section{padding:5rem 0;}.section.bg-off{background:var(--off);}
 .sec-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal-ink);margin-bottom:.8rem;}
-.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
+.sec-title{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;color:var(--navy);line-height:1.12;margin-bottom:.6rem;;letter-spacing:.8px}
 .sec-title em{color:var(--purple);font-style:normal;}
 .sec-title.white{color:#fff;}.sec-title.white em{color:#a8eadf;}
 .sec-sub{font-size:16.5px;color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:2rem;}
@@ -44,7 +44,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:var(--nav-h);}
 .nav-logo{display:flex;align-items:center;gap:10px;}
 .nav-logo img{height:72px;width:auto;object-fit:contain;}
-.nav-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:30px;color:var(--navy);letter-spacing:2px;display:none;}
+.nav-logo-fb{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:30px;color:var(--navy);letter-spacing:2px;display:none;}
 .nav-links{display:flex;gap:1.1rem;list-style:none;align-items:center;}
 .nav-links a{color:var(--navy);font-size:15px;font-weight:600;transition:color .2s;position:relative;padding-bottom:4px;text-decoration:none;}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--teal);transition:width .3s;}
@@ -62,11 +62,11 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70%,rgba(23,117,103,.2),transparent 58%);pointer-events:none;pointer-events:none;}
 .ph-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
 .ph-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;margin-bottom:1.2rem;}
-.ph-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
+.ph-title{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.06;color:#fff;text-transform:uppercase;margin-bottom:1rem;;letter-spacing:1px}
 .ph-title em{color:#a8eadf;font-style:normal;}
 .ph-sub{font-size:16px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:2rem;}
 .ph-stats{display:flex;gap:2rem;flex-wrap:wrap;}
-.ph-stat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:#a8eadf;line-height:1;}
+.ph-stat-num{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:2rem;color:#a8eadf;line-height:1;}
 .ph-stat-lbl{font-size:11px;color:rgba(255,255,255,.5);}
 .ph-platforms{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;}
 .ph-plat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:1.2rem;text-align:center;transition:all .3s;}
@@ -78,7 +78,7 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .svc-detail-grid.rev{direction:rtl;}.svc-detail-grid.rev>*{direction:ltr;}
 .svc-icon-big{font-size:5rem;margin-bottom:1.2rem;}
 .svc-tag{display:inline-block;background:rgba(23,117,103,.1);color:var(--purple);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:.8rem;}
-.svc-d-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;color:var(--navy);margin-bottom:.8rem;line-height:1;;letter-spacing:.6px}
+.svc-d-title{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;color:var(--navy);margin-bottom:.8rem;line-height:1;;letter-spacing:.6px}
 .svc-d-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:1.2rem;}
 .svc-feats{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.4rem;}
 .svc-feat{font-size:13px;display:flex;align-items:center;gap:.5rem;color:var(--text);}
@@ -88,15 +88,15 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .plat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;transition:all .3s;}
 .plat-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(23,117,103,.1);border-color:rgba(23,117,103,.25);}
 .plat-icon{font-size:2.8rem;margin-bottom:.8rem;}
-.plat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
+.plat-name{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
 .plat-desc{font-size:13px;color:var(--muted);line-height:1.6;}
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .price-card{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:2rem;position:relative;transition:all .3s;}
 .price-card.featured{border-color:var(--purple);box-shadow:0 16px 48px rgba(23,117,103,.15);}
 .price-card:hover{transform:translateY(-3px);}
 .price-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px;white-space:nowrap;}
-.price-name{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;;letter-spacing:.6px}
-.price-val{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:var(--purple);line-height:1;}
+.price-name{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:1.3rem;text-transform:uppercase;color:var(--navy);margin-bottom:.3rem;;letter-spacing:.6px}
+.price-val{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:2rem;color:var(--purple);line-height:1;}
 .price-period{font-size:12px;color:var(--muted);margin-bottom:1rem;}
 .price-list{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem;}
 .price-list li{font-size:13px;color:var(--text);list-style:none;display:flex;align-items:flex-start;gap:.4rem;}
@@ -111,14 +111,14 @@ nav{position:fixed;top:0;width:100%;z-index:500;background:rgba(255,255,255,.97)
 .faq-a.open{display:block;}
 .cta-strip{background:linear-gradient(135deg,#0e2340,#132e50,#177567);padding:5rem 0;text-align:center;position:relative;overflow:hidden;}
 .cta-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50%,rgba(23,117,103,.2),transparent 65%);pointer-events:none;}
-.cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.5rem);color:#fff;text-transform:uppercase;margin-bottom:.8rem;position:relative;z-index:1;;letter-spacing:.8px}
+.cta-title{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(2rem,4vw,3.5rem);color:#fff;text-transform:uppercase;margin-bottom:.8rem;position:relative;z-index:1;;letter-spacing:.8px}
 .cta-title em{color:#a8eadf;font-style:normal;}
 .cta-sub{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:2rem;position:relative;z-index:1;}
 footer{background:#060e1a;padding:4rem 0 2rem;}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.06);}
 .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
 .foot-logo img{height:48px;object-fit:contain;}
-.foot-logo-fb{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:26px;color:var(--teal);letter-spacing:2px;display:none;}
+.foot-logo-fb{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:26px;color:var(--teal);letter-spacing:2px;display:none;}
 .foot-desc{font-size:13px;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:1.2rem;}
 .foot-social{display:flex;gap:.7rem;}
 .fsoc{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;transition:all .25s;text-decoration:none;}
@@ -179,7 +179,7 @@ select:focus-visible,textarea:focus-visible{
 .mk-inner{max-width:680px;margin:0 auto;padding:0 24px}
 .mk-head{text-align:center;margin-bottom:2.2rem}
 .mk-ey{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#177567;margin-bottom:.7rem}
-.mk-head h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(1.8rem,4.5vw,2.6rem);text-transform:uppercase;color:#132e50;line-height:1.05;margin:0 0 .6rem;letter-spacing:.8px}
+.mk-head h2{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:clamp(1.8rem,4.5vw,2.6rem);text-transform:uppercase;color:#132e50;line-height:1.05;margin:0 0 .6rem;letter-spacing:.8px}
 .mk-head p{font-size:15.5px;color:#5a7070;line-height:1.75;margin:0}
 .mk-fast{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.2rem}
 .mk-btn{display:inline-flex;align-items:center;gap:.5rem;padding:13px 22px;border-radius:8px;font-size:14.5px;font-weight:700;text-decoration:none}
@@ -189,13 +189,13 @@ select:focus-visible,textarea:focus-visible{
 .mk-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .mk-fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
 .mk-fg label{font-size:13px;font-weight:600;color:#5a7070;letter-spacing:.4px}
-.mk-fg input,.mk-fg select,.mk-fg textarea{border:1px solid #e2ecec;border-radius:8px;padding:12px 14px;font-family:'Barlow',sans-serif;font-size:15px;color:#1a2a2a;background:#fff;width:100%}
+.mk-fg input,.mk-fg select,.mk-fg textarea{border:1px solid #e2ecec;border-radius:8px;padding:12px 14px;font-family:'Barlow','Barlow Fallback',sans-serif;font-size:15px;color:#1a2a2a;background:#fff;width:100%}
 .mk-fg input:focus,.mk-fg select:focus,.mk-fg textarea:focus{outline:none;border-color:#58d0bd;box-shadow:0 0 0 3px rgba(88,208,189,.18)}
 .mk-fg textarea{min-height:110px;resize:vertical}
 .mk-consent{display:flex;gap:.7rem;align-items:flex-start;margin:.4rem 0 1.2rem;font-size:13px;color:#5a7070;line-height:1.6}
 .mk-consent input{margin-top:3px;flex-shrink:0;width:17px;height:17px}
 .mk-consent a{color:#177567;font-weight:600}
-.mk-submit{width:100%;background:#58d0bd;color:#132e50;border:none;border-radius:8px;padding:15px;font-family:'Barlow',sans-serif;font-size:16px;font-weight:700;cursor:pointer}
+.mk-submit{width:100%;background:#58d0bd;color:#132e50;border:none;border-radius:8px;padding:15px;font-family:'Barlow','Barlow Fallback',sans-serif;font-size:16px;font-weight:700;cursor:pointer}
 .mk-submit:hover{background:#3db8a6}
 .mk-note{text-align:center;font-size:12px;color:#5a7070;margin:.7rem 0 0}
 @media(max-width:600px){.mk-row{grid-template-columns:1fr}.mk-fg input,.mk-fg select,.mk-fg textarea{font-size:16px}}
@@ -255,7 +255,7 @@ a{text-decoration:none}
 /* Logo in der Fusszeile: heller Untergrund, sonst verschwindet das dunkle Zeichen */
 .foot-logo img{background:rgba(255,255,255,.94);padding:6px 9px;border-radius:8px;height:52px;box-sizing:content-box}
 /* Datei-Auswahl: eigener Knopf statt Browser-Standard */
-input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
+input[type=file]::file-selector-button{margin-right:12px;padding:7px 14px;border:1px solid var(--border);border-radius:6px;background:var(--off);color:var(--navy);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;transition:background .2s}
 input[type=file]::file-selector-button:hover{background:#e6f2f0;border-color:var(--teal)}
 /* Bildflaeche der Service-Bloecke: Symbol in Markenfarbe statt Schwarz */
 .svc-visual{color:var(--teal-ink)}
@@ -651,7 +651,7 @@ table.rt td:first-child::before{display:none}
 <!-- LOKALE SOCIAL MEDIA BERLIN INTRO -->
 <section class="section bg-off"><div class="container">
   <div style="max-width:860px;margin:0 auto;background:#fff;border-left:4px solid var(--purple);padding:1.8rem 2rem;border-radius:var(--radius);">
-    <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Social Media Marketing Berlin – Lokale Strategie für Ihren Erfolg</h2>
+    <h2 style="font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:900;font-size:1.5rem;color:var(--navy);text-transform:uppercase;margin-bottom:.6rem;">Social Media Marketing Berlin – Lokale Strategie für Ihren Erfolg</h2>
     <p style="font-size:14px;color:var(--muted);line-height:1.85;">Als <strong>Social Media Agentur Berlin</strong> kennen wir den lokalen Markt: die Kieze, die Zielgruppen und das, was hier tatsächlich funktioniert. Ob <strong>Instagram Marketing Berlin</strong> für Ihre Gastronomie in Mitte, <strong>TikTok Agentur Berlin</strong> für Ihren Einzelhandel in Prenzlauer Berg oder <strong>Social Media Marketing Berlin</strong> für Ihren Handwerksbetrieb in Wedding – wir entwickeln eine Strategie, die zu Ihrem Standort und Ihrer Zielgruppe passt. Unser Studio sitzt in Berlin-Wedding und betreut Kunden aus dem ganzen Stadtgebiet.</p>
     <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;font-size:13px;">
       <a href="/#social" style="color:var(--teal-ink);font-weight:600;">→ Social Media auf der Startseite</a>
@@ -691,9 +691,9 @@ table.rt td:first-child::before{display:none}
         <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Kanalempfehlung nach Betriebsart</caption>
         <thead>
           <tr>
-            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Betrieb</th>
-            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Wo es sich meistens lohnt</th>
-            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Wo eher nicht</th>
+            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Betrieb</th>
+            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Wo es sich meistens lohnt</th>
+            <th scope="col" style="background:var(--navy);color:#fff;font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:1.4px;text-transform:uppercase;padding:13px 16px;text-align:left;">Wo eher nicht</th>
           </tr>
         </thead>
         <tbody>
@@ -732,11 +732,11 @@ table.rt td:first-child::before{display:none}
     </div>
 
     <div style="max-width:760px;margin:2.5rem 0 0;">
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin-bottom:1rem;">Wann Social Media nicht die erste Maßnahme ist</h3>
+      <h3 style="font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:600;font-size:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin-bottom:1rem;">Wann Social Media nicht die erste Maßnahme ist</h3>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;">Wenn jemand in Berlin nach Ihrer Leistung sucht, landet er zuerst bei Google – nicht bei Instagram. Ein gepflegtes <strong style="color:var(--navy);">Google-Unternehmensprofil</strong> mit aktuellen Fotos, korrekten Öffnungszeiten und Bewertungen bringt in den meisten Fällen mehr Anfragen als ein neuer Social-Media-Kanal. Dasselbe gilt für ein Schild über der Tür und einen beschrifteten Transporter: Sie arbeiten jeden Tag, ohne dass jemand etwas posten muss.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;">Deshalb fragen wir im ersten Gespräch, was bei Ihnen schon steht. Wenn das Profil leer ist und die Website nicht überzeugt, fangen wir dort an – auch wenn das für uns der kleinere Auftrag ist.</p>
 
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin:2rem 0 1rem;">Die drei häufigsten Fehlentscheidungen</h3>
+      <h3 style="font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:600;font-size:1.5rem;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin:2rem 0 1rem;">Die drei häufigsten Fehlentscheidungen</h3>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Auf allen Kanälen gleichzeitig starten.</strong> Vier Profile, die nach zwei Monaten stillstehen, wirken schlechter als eines, das läuft. Wir fangen mit einem an und nehmen den nächsten erst dazu, wenn der erste trägt.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Posten, weil der Plan es vorsieht.</strong> Drei Beiträge pro Woche ohne Anlass sind Pflichterfüllung, und man sieht es ihnen an. Besser weniger Beiträge, die etwas zeigen: eine fertige Arbeit, eine neue Karte, eine offene Stelle.</p>
       <p style="font-size:15.5px;color:var(--muted);line-height:1.85;margin-bottom:1rem;"><strong style="color:var(--navy);">Menschen fotografieren, ohne zu fragen.</strong> Kunden, Gäste, Patienten, Mitarbeiter: Für erkennbare Personen brauchen Sie eine Einwilligung, und in Praxen und Pflegediensten kommt die Schweigepflicht dazu. Ein gutes Bild ist kein Argument gegen diese Regel – wir planen Aufnahmen von vornherein so, dass sie nicht zum Problem werden.</p>
@@ -835,7 +835,7 @@ table.rt td:first-child::before{display:none}
         </select>
       </div>
       <div class="mk-fg"><label for="dg-nachricht">Ihr Anliegen</label><textarea id="dg-nachricht" name="nachricht" placeholder="Maße, Stückzahl, Standort, Zeitrahmen – je konkreter, desto genauer das Angebot."></textarea></div>
-      <div class="mk-fg"><label for="dg-datei">Datei anhängen (optional)</label><input type="file" id="dg-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
+      <div class="mk-fg"><label for="dg-datei">Datei anhängen (optional)</label><input type="file" id="dg-datei" name="attachment" accept="image/*,.pdf,.svg,.ai,.eps,.zip" style="background:#fff;border:1px dashed var(--border);border-radius:8px;padding:11px 14px;color:var(--muted);font-family:'Barlow','Barlow Fallback',sans-serif;font-size:14px;width:100%;cursor:pointer;"><p style="font-size:12.5px;color:var(--muted);line-height:1.6;margin-top:.45rem;">Optional. Foto vom Standort, vom Fahrzeug oder Ihr Logo hilft uns beim Angebot. Große Druckdaten schicken Sie bitte per E-Mail oder WeTransfer.</p></div>
       <div class="mk-consent">
         <input type="checkbox" id="dg-consent" name="consent" required>
         <label for="dg-consent">Ich habe die <a href="/datenschutz.html">Datenschutzerklärung</a> zur Kenntnis genommen und stimme der Verarbeitung meiner Daten zu (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;b DSGVO). *</label>

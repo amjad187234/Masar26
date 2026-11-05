@@ -20,12 +20,12 @@
 :root{--teal:#58d0bd;--navy:#132e50;--navy3:#0e2340;--gold:#58d0bd;--teal-ink:#177567;--err:#ff8a7a}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px}
-body{font-family:'Barlow',sans-serif;background:var(--navy3);color:#e8f0fb;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem 1rem}
+body{font-family:'Barlow','Barlow Fallback',sans-serif;background:var(--navy3);color:#e8f0fb;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem 1rem}
 a{color:var(--teal)}
 .logo{margin-bottom:1.6rem;text-align:center}
 .logo img{background:rgba(255,255,255,.95);padding:10px 14px;border-radius:12px;height:62px;width:auto;box-sizing:content-box;display:block;margin:0 auto}
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(88,208,189,.2);border-radius:16px;padding:2.4rem 2rem;max-width:600px;width:100%}
-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:2.3rem;color:#fff;text-transform:uppercase;margin-bottom:.7rem;line-height:1.05;letter-spacing:1px;text-align:center;overflow-wrap:break-word;hyphens:manual}
+h1{font-family:'Barlow Condensed','Barlow Condensed Fallback',sans-serif;font-weight:800;font-size:2.3rem;color:#fff;text-transform:uppercase;margin-bottom:.7rem;line-height:1.05;letter-spacing:1px;text-align:center;overflow-wrap:break-word;hyphens:manual}
 h1 em{color:var(--teal);font-style:normal}
 .lead{color:rgba(255,255,255,.72);line-height:1.7;margin-bottom:1.8rem;text-align:center}
 .f{margin-bottom:1.25rem}
@@ -47,7 +47,7 @@ fieldset{border:0}
 .radio{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;font-size:15px;color:rgba(255,255,255,.85);margin-bottom:.4rem;cursor:pointer}
 .radio input,.check input{margin-top:.25rem;accent-color:var(--teal);width:18px;height:18px;flex-shrink:0}
 .check{display:flex;gap:.6rem;align-items:flex-start;font-weight:400;font-size:14px;line-height:1.55;color:rgba(255,255,255,.8);cursor:pointer}
-.btn{display:block;width:100%;padding:15px 24px;border-radius:8px;font-weight:700;font-size:16px;font-family:'Barlow',sans-serif;background:var(--teal);color:var(--navy);border:0;cursor:pointer;transition:.2s;margin-top:.6rem}
+.btn{display:block;width:100%;padding:15px 24px;border-radius:8px;font-weight:700;font-size:16px;font-family:'Barlow','Barlow Fallback',sans-serif;background:var(--teal);color:var(--navy);border:0;cursor:pointer;transition:.2s;margin-top:.6rem}
 .btn:hover{background:#3db8a6}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .note{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-top:1.2rem;text-align:center}
