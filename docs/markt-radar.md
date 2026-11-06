@@ -11,3 +11,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | gruenewoche.de, expofp.com (Messe Berlin) | Grüne Woche **15.–24.01.2027**, Fruit Logistica **3.–5.02.2027**, ITB **16.–18.03.2027** (eine Quelle nennt abweichend 9.–11.03., schwächer belegt). | Daten stehen bereits auf `messestand-berlin-2027.html` und im Messe-Ratgeber – passt. Messe-Anfragen für Januar laufen jetzt (Freigabe vor Weihnachten). |
 | Kalender | Black Friday 27.11.2026, 1. Advent 29.11., Valentinstag So 14.02.2027, Ostersonntag 28.03.2027. | Valentinstag und Ostern in die Saisonseite aufgenommen. |
 | Google Ads Transparency Center / Meta Ad Library | In dieser Runde nicht abgefragt (kein direkter Zugriff aus dem Container geprüft). | Nächste Runde versuchen. |
+
+## 06.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Black Friday Werbetechnik Berlin | Weiterhin keine sichtbaren Saison-Aktionen Berliner Werbetechnik-Betriebe; Black Friday 27.11.2026, Cyber Monday 30.11. (discoup.com) | Saisonseite bleibt Alleinstellung, keine Änderung nötig. |
+| Grüne Woche 2027 (pfalz.de Ausstellereinladung, gruenewoche.de) | Aussteller-Anmeldeschluss war 14.08.2026; Standbau-Fristen nicht öffentlich gefunden; Termin 15.–24.01.2027 | Keine erfundene Frist auf der Messeseite; bestehender Hinweis „Freigabe vor Weihnachten“ passt. |
+| Google Ads Transparency / Meta Ad Library | nicht abgefragt (aus dem Container nicht erreichbar, siehe Bericht wettbewerber-luecken.md) | – |

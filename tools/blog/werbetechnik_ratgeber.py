@@ -180,7 +180,7 @@ ARTIKEL = [
     <ul>
       <li><strong>NRW:</strong> Werbeanlagen bis 1&nbsp;m² und Werbeanlagen, die erkennbar nur vorübergehend für höchstens zwei Monate angebracht werden, sind verfahrensfrei – nicht im Außenbereich (§&nbsp;62 Abs.&nbsp;1 Nr.&nbsp;12 BauO NRW).</li>
       <li><strong>Brandenburg:</strong> Auch hier sind vorübergehende Werbeanlagen für höchstens zwei Monate verfahrensfrei, außer im Außenbereich (§&nbsp;61 BbgBO).</li>
-      <li><strong>Berlin:</strong> Verfahrensfrei sind Werbeanlagen bis 1&nbsp;m² Ansichtsfläche, an der Stätte der Leistung bis 2,5&nbsp;m² (§&nbsp;61 Abs.&nbsp;1 BauO Bln). Für größere Banner oder Fremdwerbung fragen Sie vorher beim Bezirksamt nach.</li>
+      <li><strong>Berlin:</strong> Verfahrensfrei sind Werbeanlagen bis 1&nbsp;m² Ansichtsfläche, an der Stätte der Leistung bis 2,5&nbsp;m² (§&nbsp;61 Abs.&nbsp;1 BauO Bln). Für größere Banner oder Fremdwerbung fragen Sie vorher beim Bezirksamt nach. Werbung an Gerüsten und Bauzäunen ist in Berlin laut Merkblatt des Bezirksamts Neukölln seit 2010 nicht mehr verfahrensfrei und nur befristet zulässig.</li>
       <li><strong>Hamburg:</strong> Bis 1&nbsp;m² genehmigungsfrei, darüber meist Baugenehmigung; zuständig ist das Bezirksamt.</li>
     </ul>
     <p>Verfahrensfrei heißt nicht, dass alles erlaubt ist: Örtliche Satzungen, Denkmalschutz und die Verkehrssicherheit gelten weiter. Ein Banner darf zum Beispiel nicht die Sicht an Ausfahrten oder Kreuzungen verdecken. Steht der Bauzaun auf dem Gehweg oder der Straße, braucht er ohnehin eine Erlaubnis zur Sondernutzung – klären Sie mit dem Straßenamt, ob Werbung daran erlaubt ist.</p>
@@ -201,6 +201,7 @@ ARTIKEL = [
            ('https://www.duisburg.de/vv/produkte/pro_du/dez_vii/errichtung_von_werbeanlagen.php', 'Stadt Duisburg – Errichtung von Werbeanlagen'),
            ('https://www.anwalt24.de/gesetze/bbgbo-1/61', '§ 61 BbgBO – Verfahrensfreie Vorhaben'),
            ('https://www.anwalt24.de/gesetze/bauo_bln/61', '§ 61 BauO Bln – Verfahrensfreie Bauvorhaben'),
+           ('https://www.berlin.de/ba-neukoelln/politik-und-verwaltung/aemter/stadtentwicklungsamt/stadtplanung/planungsrechtliche-auskuenfte/260708_merkblatt_werbeanlagen-neukoelln.pdf', 'Bezirksamt Neukölln – Merkblatt Werbeanlagen (PDF)'),
            ('https://dokumente.hamburg.de/resource/blob/190466/267e443ff2b54e7ceb473a937b58a180/bpd-werbeanlagen-data.pdf', 'Hamburg – Bauprüfdienst Werbeanlagen'),
            ('https://www.ihk.de/hamburg/produktmarken/beratung-service/recht-und-steuern/wirtschaftsrecht/gewerberecht/aussenwerbung-1156810', 'Handelskammer Hamburg – Außenwerbung')],
   hinweis=HINWEIS_RECHT,

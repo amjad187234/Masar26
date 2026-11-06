@@ -12,3 +12,8 @@
   Ladeneröffnung-Checkliste, Werbeschild am Mietobjekt, Google-Profil-Abzocke; Hinweis-Kästen auf 10 Leistungsseiten (tools/seo/ratgeber_hinweise.py).
 - Ausweichschriften gegen CLS (tools/seo/schrift_fallback.py), Bruttopreis gleich groß wie netto, Kennzeichen auf Referenzfoto unkenntlich,
   Bußgeldangabe im Außenwerbung-Ratgeber mit Paragraf, Genehmigungs-FAQ Schaufenster/Außenwerbung präzisiert, Thermobruch-FAQ Sichtschutzfolie.
+
+## 06.11.2026
+- Hamburg-Seite: FAQ Genehmigung um Kundenstopper ergänzt (laut Stadt grundsätzlich nicht gestattet, Alternative Schaufenster).
+- Bauzaunbanner-Ratgeber: Berlin – Gerüst-/Bauzaunwerbung seit 2010 nicht verfahrensfrei (Merkblatt BA Neukölln, Quelle ergänzt).
+- Digital Signage: FAQ Preisverzeichnis am Eingang (§ 13 PAngV).
