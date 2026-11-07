@@ -17,3 +17,7 @@
 - Hamburg-Seite: FAQ Genehmigung um Kundenstopper ergänzt (laut Stadt grundsätzlich nicht gestattet, Alternative Schaufenster).
 - Bauzaunbanner-Ratgeber: Berlin – Gerüst-/Bauzaunwerbung seit 2010 nicht verfahrensfrei (Merkblatt BA Neukölln, Quelle ergänzt).
 - Digital Signage: FAQ Preisverzeichnis am Eingang (§ 13 PAngV).
+
+## 07.11.2026
+- Hinweis-Kasten „Leasingrückgabe: Beschriftung richtig entfernen“ auf Fahrzeugbeschriftung Berlin/NRW, LKW-Beschriftung, Werbung Handwerker.
+- Fahrzeugbeschriftung NRW: FAQ Handwerkerparkausweis (Quelle Stadt Köln).

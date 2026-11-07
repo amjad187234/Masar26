@@ -19,3 +19,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | Websuche Black Friday Werbetechnik Berlin | Weiterhin keine sichtbaren Saison-Aktionen Berliner Werbetechnik-Betriebe; Black Friday 27.11.2026, Cyber Monday 30.11. (discoup.com) | Saisonseite bleibt Alleinstellung, keine Änderung nötig. |
 | Grüne Woche 2027 (pfalz.de Ausstellereinladung, gruenewoche.de) | Aussteller-Anmeldeschluss war 14.08.2026; Standbau-Fristen nicht öffentlich gefunden; Termin 15.–24.01.2027 | Keine erfundene Frist auf der Messeseite; bestehender Hinweis „Freigabe vor Weihnachten“ passt. |
 | Google Ads Transparency / Meta Ad Library | nicht abgefragt (aus dem Container nicht erreichbar, siehe Bericht wettbewerber-luecken.md) | – |
+
+## 07.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Werbeanlagen-Satzungen 2026 | Neue/überarbeitete Regeln in Karlsruhe (Entwurf 03/2026, u. a. digitale Schaufenster) und Stuttgart (Leitfaden 06/2026, Satzung Bad Cannstatt 07/2026); für Berlin nichts Neues gefunden | Kein Handlungsbedarf für Berlin/NRW/Hamburg-Seiten; Thema „digitale Schaufenster“ beobachten (Digital Signage). |
+| Websuche IHK Berlin BFSG-Beispiel | Beispiel aus dem Suchbericht nicht bestätigt | Nicht auf die Website übernommen. |
+| Saison | Leasingrückgaben häufen sich zum Jahreswechsel (Bericht fehler-und-kosten.md) | Leasing-Ratgeber jetzt von 4 Fahrzeugseiten verlinkt. |

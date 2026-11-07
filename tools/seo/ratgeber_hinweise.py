@@ -12,9 +12,14 @@ R = {
     'stopper': ('/blog/kundenstopper-erlaubnis.html', 'Kundenstopper: Erlaubnis in Berlin, Hamburg, NRW'),
     'fehler': ('/blog/werbung-teure-fehler.html', 'Teure Fehler in der Werbung'),
     'check': ('/genehmigungs-check.html', 'Kostenloser Genehmigungs-Check'),
+    'leasing': ('/blog/leasingrueckgabe-fahrzeugbeschriftung-entfernen.html', 'Leasingrückgabe: Beschriftung richtig entfernen'),
     'google': ('/blog/google-unternehmensprofil-abzocke.html', 'Google-Profil: Abzocke-Anrufe erkennen'),
 }
 SEITEN = {
+    'fahrzeugbeschriftung-berlin.html': ['leasing'],
+    'fahrzeugbeschriftung-nrw.html': ['leasing'],
+    'lkw-beschriftung-berlin.html': ['leasing'],
+    'werbung-handwerker-berlin.html': ['leasing'],
     'werbeagentur-nrw.html': ['check'],
     'pvc-banner-berlin.html': ['check'],
     'schilder-berlin.html': ['check', 'eroeffnung', 'miete', 'stopper'],
