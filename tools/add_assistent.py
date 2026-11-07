@@ -18,6 +18,7 @@ M = {
  'express-druck-berlin.html': ('druck:4', 0, ''), 'messebeschriftung-berlin.html': ('messe:1', 0, ''),
  'grafikdesign-berlin.html': ('design:0', 0, ''), 'digital-signage-berlin.html': ('design:2', 0, ''),
  'webdesign-berlin.html': ('web:0', 0, ''), 'digital.html': ('web:3', 0, ''),
+ 'werbung-gastronomie-berlin.html': ('', 0, ''),
  'werbetechnik-potsdam.html': ('', 0, 'Potsdam'), 'werbetechnik-brandenburg.html': ('', 0, ''), 'werbetechnik-berlin-wedding.html': ('', 0, 'Berlin-Wedding'),
  # NRW
  'werbeagentur-nrw.html': ('', 1, ''), 'leuchtreklame-nrw.html': ('schild:1', 1, ''), 'schilder-nrw.html': ('schild:0', 1, ''),

@@ -21,7 +21,7 @@
   <!-- Über uns -->
   <url>
     <loc>https://masar-werbeagentur.de/ueber-uns.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -168,7 +168,7 @@
   <!-- Blog -->
   <url>
     <loc>https://masar-werbeagentur.de/blog/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -333,7 +333,7 @@
   <!-- Landingpage-Verzeichnisse -->
   <url>
     <loc>https://masar-werbeagentur.de/angebote/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -436,6 +436,12 @@
   <url>
     <loc>https://masar-werbeagentur.de/werbung-fahrschule-berlin.html</loc>
     <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://masar-werbeagentur.de/werbung-gastronomie-berlin.html</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
