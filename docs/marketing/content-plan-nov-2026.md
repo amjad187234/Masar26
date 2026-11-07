@@ -415,4 +415,4 @@ Allgemein: Hochformat 9:16, Tageslicht, ruhige Kamera (Handy auf Stativ). Kunden
 - 5–7 s: derselbe Ausschnitt, Moment des Einschaltens in der Dämmerung.
 - 7–15 s: langsamer Schwenk auf die leuchtenden Buchstaben, Nahaufnahme der Kante.
 - 15–20 s: Tipp-Text „Dämmerungsschalter und Zeitschaltuhr sparen Strom“ (aus blog/leuchtreklame-strom-betriebszeiten.html) + Abspann.
-- Bei einem Kunden drehen, der zustimmt; im Text „gebaut von unserem eingetragenen Partnerbetrieb“ statt „aus unserer Werkstatt“.
+- Bei einem Kunden drehen, der zustimmt; im Text „gebaut von unserem eingetragenen Partnerbetrieb“ statt „aus unseren Projekten“.
