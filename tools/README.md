@@ -170,3 +170,9 @@ unbeleuchtet), 7 Schriften (selbst gehostet in `/fonts/konfig/`, OFL, Lizenz in 
 Fassadenfoto (wird nicht hochgeladen), Ansicht aus der Entfernung, Lesbarkeit nach USSC (LI 30 ft/in, ×0,83/×0,67), Genehmigungshinweis je Region.
 **Keine Preisberechnung** (Inhaber, 24.10.2026). „Festpreis-Angebot anfordern“ füllt das Formular und hängt die Vorschau als PNG an.
 Verlinkt über `tools/seo/druckcheck_links.py` (Marker `konfig-hinweis`).
+
+## Werbevideos
+
+`TMPDIR_VIDEO=<ordner> node tools/video/werbevideos.mjs [name]` rendert 3 Werbevideos (16:9, 15 s, ohne Ton) aus echten Referenzfotos:
+Leuchtreklame, Schaufenster, Fahrzeugbeschriftung → `videos/werbung-*.mp4|webm|webp`. Bild für Bild mit Chromium, dann ffmpeg. Keine Preise im Video.
+Eingebaut über `tools/seo/werbevideo_einbau.py` (direkt nach dem Seitenkopf, startet stumm beim Sichtbarwerden, bei „weniger Bewegung“ nur mit Bedienelementen).
