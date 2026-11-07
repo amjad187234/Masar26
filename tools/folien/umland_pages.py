@@ -30,7 +30,7 @@ NRW_CITIES = [
 NRW_NEAR = [('/werbeagentur-nrw.html', 'NRW'), ('/werbeagentur-essen.html', 'Essen'), ('/werbeagentur-bochum.html', 'Bochum'), ('/werbeagentur-dortmund.html', 'Dortmund'), ('/werbeagentur-duesseldorf.html', 'Düsseldorf'), ('/werbeagentur-koeln.html', 'Köln')]
 SERV_NRW = [
  ('Schilder', 'Firmen-, Praxis- und Türschilder aus Alu, Acryl und Edelstahl', 'ab 59 €', 'schilder', '/schilder-nrw.html'),
- ('Leuchtreklame', 'Leuchtbuchstaben, Leuchtkästen und LED-Neon', 'ab 229 € / Buchstabe', 'leuchtreklamen', '/leuchtreklame-nrw.html'),
+ ('Leuchtreklame', 'Leuchtbuchstaben, Leuchtkästen und LED-Neon', 'ab 179 € / Buchstabe', 'leuchtreklamen', '/leuchtreklame-nrw.html'),
  ('Schaufenster', 'Beschriftung, Milchglas und Druckfolie', 'ab 179 €', 'schaufenster', '/schaufensterbeschriftung-nrw.html'),
  ('Fahrzeugbeschriftung', 'Auto, Transporter und Flotte', 'ab 340 €', 'fahrzeug', '/fahrzeugbeschriftung-nrw.html'),
  ('Fensterfolie', 'Sichtschutz, Sonnenschutz, Sicherheit', 'Sichtschutz ab 229 €', 'fensterfolie', '/fensterfolie-nrw.html'),
@@ -44,7 +44,7 @@ SERV_NRW = [
 # Leistungen: (Titel, Kurztext, Preis, Bild, Detailseite)
 SERV = [
  ('Schilder', 'Firmen-, Praxis- und Türschilder aus Alu, Acryl und Edelstahl', 'ab 45 €', 'schilder', '/schilder-berlin.html'),
- ('Leuchtreklame', 'Leuchtbuchstaben, Leuchtkästen und LED-Neon', 'ab 199 € / Buchstabe', 'leuchtreklamen', '/leuchtreklame-berlin.html'),
+ ('Leuchtreklame', 'Leuchtbuchstaben, Leuchtkästen und LED-Neon', 'ab 149 € / Buchstabe', 'leuchtreklamen', '/leuchtreklame-berlin.html'),
  ('Schaufenster', 'Beschriftung, Milchglas und Druckfolie', 'ab 149 €', 'schaufenster', '/schaufensterbeschriftung-berlin.html'),
  ('Fahrzeugbeschriftung', 'Auto, Transporter und Flotte', 'ab 290 €', 'fahrzeug', '/fahrzeugbeschriftung-berlin.html'),
  ('Fensterfolie', 'Sichtschutz, Sonnenschutz, Sicherheit', 'Sichtschutz ab 190 €', 'fensterfolie', '/fensterfolie-berlin.html'),
@@ -257,7 +257,7 @@ def build(c):
     </div></noscript>
   </div>
 </section>
-{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=11" defer></script>'}
+{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=12" defer></script>'}
 <script>
 document.querySelectorAll('[data-betreff]').forEach(function(a){{a.addEventListener('click',function(){{var i=document.getElementById('betreffInput');var b=a.getAttribute('data-betreff');if(i){{i.value=b;}}var p=document.getElementById('uaPick');if(p){{p.textContent='Ausgewählt: '+b+' – ergänzen Sie einfach ein paar Stichworte.';p.className='ua-pick on';}}setTimeout(function(){{var n=document.getElementById('fo-name');if(n){{n.focus({{preventScroll:true}});}}}},450);}});}});
 </script>

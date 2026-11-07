@@ -46,6 +46,8 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
 Seit 05.11.2026 (Privatkunden, PAngV) steht neben jedem Netto-Preis automatisch der Bruttopreis: `tools/seo/brutto.py` (in `build_all.py`).
 Preise im Text immer als netto schreiben, das Skript ergänzt „(… € brutto)“. Keine Reichweiten-Zahlen wie „70.000 Blickkontakte“ (ohne Quelle entfernt).
 
+Leuchtbuchstaben (149/179 €) und Praxis-/Kanzleischild (290/339 €) seit 07.11.2026 nach Wettbewerbsvergleich gesenkt (Inhaber: „wie die Konkurrenz … mach das Passende“), Werkzeug `tools/seo/preise_2026_11.py` (einmalig), Berichte `docs/markt-2026-11/wettbewerb-*.md`.
+
 Banner seit 03.11.2026 B2B-Preise (Inhaber: alte Preise ohne Gewinn); NRW-Werte im gleichen Abstand nach Marktrecherche. Werkzeug: `tools/seo/bannerpreise.py` (einmalig).
 
 | Leistung | Berlin | NRW |
@@ -55,8 +57,8 @@ Banner seit 03.11.2026 B2B-Preise (Inhaber: alte Preise ohne Gewinn); NRW-Werte 
 | Firmenschild | 149 € | 179 € |
 | Einzelbuchstaben | 119 € | 139 € |
 | Acrylglasschild | 240 € | 289 € |
-| Praxis-/Kanzleischild | 390 € | 459 € |
-| Leuchtbuchstaben (je Buchstabe) | 199 € | 229 € |
+| Praxis-/Kanzleischild | 290 € | 339 € |
+| Leuchtbuchstaben (je Buchstabe) | 149 € | 179 € |
 | Schaufensterbeschriftung | 149 € | 179 € |
 | Milchglas/Sichtschutz | 190 € | 229 € |
 | Milchglas nach Maß | 240 € | 289 € |

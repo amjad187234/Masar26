@@ -213,7 +213,7 @@ P = dict(file='leuchtbuchstaben-konfigurator.html', crumb='Konfigurator', img='k
  ],
  preis_h2='Was kostet <em>mein Schild?</em>',
  preis_html=table('Startpreise Schilder', ['Leistung', 'Berlin', 'NRW'], [
-     ['Leuchtbuchstaben (je Buchstabe)', 'ab 199&nbsp;€', 'ab 229&nbsp;€'], ['Einzelbuchstaben', 'ab 119&nbsp;€', 'ab 139&nbsp;€'],
+     ['Leuchtbuchstaben (je Buchstabe)', 'ab 149&nbsp;€', 'ab 179&nbsp;€'], ['Einzelbuchstaben', 'ab 119&nbsp;€', 'ab 139&nbsp;€'],
      ['Firmenschild', 'ab 149&nbsp;€', 'ab 179&nbsp;€'], ['Schaufensterbeschriftung', 'ab 149&nbsp;€', 'ab 179&nbsp;€']]) + '''
 <p style="margin-top:1.2rem">Alle Preise netto zzgl. 19&nbsp;% MwSt., Startpreise für einfache Ausführungen. Den genauen Preis bestimmen Größe, Material, Licht, Montage und Genehmigung. Schicken Sie uns Ihren Entwurf aus dem Konfigurator – Sie bekommen ein <strong>Festpreis-Angebot</strong>, in der Regel innerhalb von 24 Stunden.</p>''',
  recht_ey='So rechnen wir', recht_h2='Lesbarkeit und <em>Genehmigung</em>', recht_sub=None,

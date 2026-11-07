@@ -22,9 +22,9 @@ I = {
     'wa': '<svg class="i-inline" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>',
 }
 
-NRW_PREISE = [('Firmenschild', 'ab 179 €'), ('Leuchtbuchstaben', 'ab 229 € je Buchstabe'), ('Schaufensterbeschriftung', 'ab 179 €'),
+NRW_PREISE = [('Firmenschild', 'ab 179 €'), ('Leuchtbuchstaben', 'ab 179 € je Buchstabe'), ('Schaufensterbeschriftung', 'ab 179 €'),
               ('Milchglas / Sichtschutz', 'ab 229 €'), ('Fahrzeug-Teilbeschriftung', 'ab 340 €')]
-BER_PREISE = [('Firmenschild', 'ab 149 €'), ('Leuchtbuchstaben', 'ab 199 € je Buchstabe'), ('Schaufensterbeschriftung', 'ab 149 €'),
+BER_PREISE = [('Firmenschild', 'ab 149 €'), ('Leuchtbuchstaben', 'ab 149 € je Buchstabe'), ('Schaufensterbeschriftung', 'ab 149 €'),
               ('Milchglas / Sichtschutz', 'ab 190 €'), ('Fahrzeug-Teilbeschriftung', 'ab 290 €')]
 NRW_GEB = ('Die Baugenehmigungsgebühr richtet sich in NRW nach dem Allgemeinen Gebührentarif (AVerwGebO NRW): '
            'für Werbeanlagen 10 % der Herstellungssumme, mindestens 100 €. Bei einer Leuchtreklame für 3.000 € sind das also rund 300 €.')

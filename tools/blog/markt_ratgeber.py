@@ -79,7 +79,7 @@ ARTIKEL = [
     <div class="table-wrap"><table class="rt">
       <thead><tr><th>Leistung</th><th>Berlin</th><th>NRW &amp; Hamburg</th></tr></thead>
       <tbody>
-        <tr><td data-label="Leistung">Leuchtbuchstaben (je Buchstabe)</td><td data-label="Berlin">ab 199 € netto</td><td data-label="NRW &amp; Hamburg">ab 229 € netto</td></tr>
+        <tr><td data-label="Leistung">Leuchtbuchstaben (je Buchstabe)</td><td data-label="Berlin">ab 149 € netto</td><td data-label="NRW &amp; Hamburg">ab 179 € netto</td></tr>
         <tr><td data-label="Leistung">Einzelbuchstaben unbeleuchtet (je Buchstabe)</td><td data-label="Berlin">ab 119 € netto</td><td data-label="NRW &amp; Hamburg">ab 139 € netto</td></tr>
         <tr><td data-label="Leistung">LED-Neon für innen</td><td data-label="Berlin">ab 249 € netto</td><td data-label="NRW &amp; Hamburg">ab 249 € netto</td></tr>
         <tr><td data-label="Leistung">Firmenschild (Alu-Dibond)</td><td data-label="Berlin">ab 149 € netto</td><td data-label="NRW &amp; Hamburg">ab 179 € netto</td></tr>
@@ -97,7 +97,7 @@ ARTIKEL = [
       <li><strong>Gestaltung:</strong> Liegt Ihr Logo als Vektordatei vor, oder muss es erst aufbereitet werden?</li>
     </ul>
     <div class="tip-box">
-      <p><strong>Rechenbeispiel (nur Startpreise):</strong> Ein Schriftzug mit 8 Leuchtbuchstaben beginnt in Berlin bei 8 × 199 € = 1.592 € netto. Wie groß die Buchstaben sein sollten und wie es an Ihrer Fassade wirkt, sehen Sie im <a href="/leuchtbuchstaben-konfigurator.html">Leuchtbuchstaben-Konfigurator</a>.</p>
+      <p><strong>Rechenbeispiel (nur Startpreise):</strong> Ein Schriftzug mit 8 Leuchtbuchstaben beginnt in Berlin bei 8 × 149 € = 1.192 € netto. Wie groß die Buchstaben sein sollten und wie es an Ihrer Fassade wirkt, sehen Sie im <a href="/leuchtbuchstaben-konfigurator.html">Leuchtbuchstaben-Konfigurator</a>.</p>
     </div>
 
     <h2>Billig online bestellen? 7 Prüfpunkte</h2>

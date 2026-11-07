@@ -28,7 +28,7 @@ def price_top(h2, sub, rows, note):
     <div style="text-align:center;margin-top:1.4rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap"><a href="#kontakt" class="btn btn-teal">Festpreis anfragen</a></div>''')
 
 PRICE_NOTE = 'Alle Preise netto zzgl. 19&nbsp;% MwSt., Startpreise für einfache Ausführungen. Ihren verbindlichen Festpreis inklusive Montage durch unser Team in NRW bekommen Sie nach Foto und Maßen – in der Regel innerhalb von 24 Stunden.'
-ROWS_L = [('LED-Leuchtbuchstaben', 'einzeln montiert, LED, Front- oder Rückleuchter', 'ab 229&nbsp;€ / Buchstabe'),
+ROWS_L = [('LED-Leuchtbuchstaben', 'einzeln montiert, LED, Front- oder Rückleuchter', 'ab 179&nbsp;€ / Buchstabe'),
           ('Leuchtkasten', 'ein- oder zweiseitig, bedruckte oder gefräste Front', 'nach Größe – Festpreis'),
           ('Ausleger (Nasenschild)', 'beidseitig sichtbar, quer zur Fassade', 'nach Größe – Festpreis'),
           ('Umbau auf LED', 'vorhandene Reklame mit neuer Technik oder Front', 'nach Foto – Festpreis')]
@@ -37,7 +37,7 @@ ROWS_S = [('Hinweis- / Sicherheitsschild', 'Alu oder Kunststoff, A4/A5', 'ab 59&
           ('Firmenschild', 'Alu-Dibond 3 mm, bis 1 m², laminiert', 'ab 179&nbsp;€'),
           ('Einzelbuchstaben (unbeleuchtet)', 'Acryl, Alu oder Edelstahl, pro Buchstabe', 'ab 139&nbsp;€'),
           ('Acrylglasschild', 'rückseitig bedruckt, mit Abstandshaltern', 'ab 289&nbsp;€'),
-          ('Praxis- / Kanzleischild', 'hochwertige Ausführung inkl. Gestaltung', 'ab 459&nbsp;€')]
+          ('Praxis- / Kanzleischild', 'hochwertige Ausführung inkl. Gestaltung', 'ab 339&nbsp;€')]
 ROWS_W = [('Schaufensterbeschriftung', 'Logo, Öffnungszeiten, Kontakt als Plottfolie', 'ab 179&nbsp;€'),
           ('Milchglas- / Sichtschutzfolie', 'Teilfläche oder ganze Scheibe, mit Logo oder Muster', 'ab 229&nbsp;€'),
           ('Aktions- / Eröffnungsfolie', '„Bald hier“, Sale, Saison – rückstandslos entfernbar', 'ab 229&nbsp;€'),
@@ -98,7 +98,7 @@ L.update(file='leuchtreklame-nrw.html', crumb='Leuchtreklame NRW', img='leuchtre
   ('schild', 'Schilder ohne Licht', 'Firmen-, Praxis- und Türschilder aus Alu-Dibond, Acryl oder Edelstahl.', '/schilder-nrw.html'),
  ],
  preis_h2='Was kostet <em>Leuchtreklame in NRW?</em>',
- preis_html='''<p>Leuchtbuchstaben berechnen wir in NRW ab 229&nbsp;€ pro Buchstabe netto zzgl. 19&nbsp;% MwSt. Leuchtkästen und größere Fassadenanlagen kalkulieren wir nach Größe, Bauart und Montageaufwand.</p>
+ preis_html='''<p>Leuchtbuchstaben berechnen wir in NRW ab 179&nbsp;€ pro Buchstabe netto zzgl. 19&nbsp;% MwSt. Leuchtkästen und größere Fassadenanlagen kalkulieren wir nach Größe, Bauart und Montageaufwand.</p>
 <p>Für Ihr Projekt bekommen Sie ein <strong>Festpreis-Angebot</strong> nach einem Foto der Fassade und den ungefähren Maßen – kostenlos und in der Regel innerhalb von 24 Stunden. Vor der Produktion misst unser Team in NRW vor Ort nach.</p>''',
  recht_ey='Gut zu wissen', recht_h2='Genehmigung <em>in NRW</em>', recht_sub=None,
  recht_html=BAUO + '<p><strong>Strom:</strong> Für die Leuchtreklame braucht es einen Stromanschluss in der Nähe. Den Anschluss an das Hausnetz übernimmt ein eingetragener Elektrofachbetrieb aus unserem Partnernetz; wir sagen Ihnen vorher genau, was vorbereitet sein muss.</p>',

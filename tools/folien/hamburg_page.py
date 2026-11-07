@@ -37,7 +37,7 @@ s = s.replace('Werbeagentur in NRW mit eigenem Team vor Ort: Schilder, Leuchtrek
 s = s.replace('Werbeagentur NRW: Werbetechnik, Druck &amp; Design | Masar', 'Werbeagentur Hamburg: Werbetechnik, Druck &amp; Design | Masar')
 # Titel und Beschreibung fest setzen (die NRW-Vorlage wird von tools/seo/snippets.py umgeschrieben)
 HH_T = 'Werbeagentur Hamburg: Schilder, Leuchtreklame & Folie'
-HH_D = 'Werbetechnik in Hamburg mit eigenem Team vor Ort: Schilder ab 59 €, Leuchtbuchstaben ab 229 €, Schaufenster- und Fahrzeugbeschriftung. Angebot in 24 h.'
+HH_D = 'Werbetechnik in Hamburg mit eigenem Team vor Ort: Schilder ab 59 €, Leuchtbuchstaben ab 179 €, Schaufenster- und Fahrzeugbeschriftung. Angebot in 24 h.'
 s = re.sub(r'<title>.*?</title>', '<title>' + HH_T.replace('&', '&amp;') + '</title>', s, count=1, flags=re.S)
 for _n, _a in [('description', 'name'), ('og:description', 'property'), ('twitter:description', 'name')]:
     s = re.sub(rf'(<meta {_a}="{_n}" content=")[^"]*', lambda m: m.group(1) + HH_D, s, count=1)
@@ -216,7 +216,7 @@ s = s.replace('<li><a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a></li
 s = s.replace('  <a href="/fahrzeugbeschriftung-nrw.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a>', '  <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-berlin.html">LKW-Beschriftung</a>')
 
 s = s.replace('<!-- CONTACT -->', '<div class="reveal" style="max-width:760px;width:calc(100% - 32px);margin:2rem auto 2.5rem;padding:1.1rem 1.4rem;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:10px;background:#fff;font-size:15px;line-height:1.7"><strong style="color:var(--navy)">Ratgeber:</strong> Welche Satzungen gelten in Hamburg, wer genehmigt und was kostet es? <a href="/blog/werbeanlage-hamburg.html" style="color:var(--teal-ink);font-weight:700">Werbeanlage in Hamburg – zum Artikel →</a></div>\n<!-- CONTACT -->', 1)
-s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=11', s)   # Region hamburg braucht die neue Version
+s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=12', s)   # Region hamburg braucht die neue Version
 
 assert 'Düsseldorf' not in s.split('<footer')[0], 'NRW-Stadt im Inhalt übrig'
 open(os.path.join(ROOT, 'werbeagentur-hamburg.html'), 'w', encoding='utf-8').write(s)

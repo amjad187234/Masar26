@@ -14,7 +14,7 @@ FAQ = [
  ('Haben Sie eine Niederlassung in NRW?', 'Nein. In Nordrhein-Westfalen arbeitet ein eigenes Montageteam für uns, das Aufmaß, Montage und Beschriftung vor Ort übernimmt. Anfragen aus NRW laufen über dieselbe Nummer, dieselbe E-Mail und denselben Anfrage-Assistenten.'),
  ('Welche Leistungen gibt es nur in Berlin?', 'Messebau und Expressdruck (Druck und Folie am selben Tag) bieten wir nur in Berlin an. Foto- und Videoaufnahmen machen wir in Berlin, nicht in NRW.'),
  ('Kostet die Anfahrt nach Brandenburg extra?', 'Die Anfahrt ist im Festpreis enthalten und dort einzeln ausgewiesen. Sie wissen vorher genau, was Sie zahlen. Für reine Druck- und Designaufträge fällt keine Anfahrt an.'),
- ('Gelten in NRW andere Preise?', 'Ja. In NRW arbeitet ein eigenes Montageteam vor Ort, deshalb liegen die Startpreise dort leicht über Berlin – zum Beispiel Firmenschild ab 179 € statt ab 149 € netto, LED-Leuchtbuchstaben ab 229 € statt ab 199 € pro Buchstabe.'),
+ ('Gelten in NRW andere Preise?', 'Ja. In NRW arbeitet ein eigenes Montageteam vor Ort, deshalb liegen die Startpreise dort leicht über Berlin – zum Beispiel Firmenschild ab 179 € statt ab 149 € netto, LED-Leuchtbuchstaben ab 179 € statt ab 149 € pro Buchstabe.'),
  ('Wie schnell bekomme ich ein Angebot?', 'In der Regel innerhalb von 24 Stunden. Ein Foto vom Ort und Ihr Logo reichen für ein erstes Angebot; den verbindlichen Festpreis nennen wir nach Fotos oder Aufmaß.'),
  ('In welchen Sprachen beraten Sie?', 'Auf Deutsch, Englisch, Arabisch und Türkisch.'),
 ]
@@ -28,7 +28,7 @@ ROWS = [
  ('Foto & Video', '✓', 'auf Anfrage', '–'),
  ('Grafikdesign, Webdesign, Social Media, KI', '✓', '✓ (online)', '✓ (online)'),
 ]
-PRICES = [('Firmenschild (Alu-Dibond)', 'ab 149 €', 'ab 179 €'), ('LED-Leuchtbuchstaben', 'ab 199 € / Buchstabe', 'ab 229 € / Buchstabe'),
+PRICES = [('Firmenschild (Alu-Dibond)', 'ab 149 €', 'ab 179 €'), ('LED-Leuchtbuchstaben', 'ab 149 € / Buchstabe', 'ab 179 € / Buchstabe'),
           ('Schaufensterbeschriftung', 'ab 149 €', 'ab 179 €'), ('Sichtschutzfolie', 'ab 190 €', 'ab 229 €'),
           ('Fahrzeug-Teilbeschriftung', 'ab 290 €', 'ab 340 €'), ('PVC-Banner', 'ab 29 € / m²', 'ab 34 € / m²')]
 
@@ -112,7 +112,7 @@ def build():
   <div data-assistent></div>
   <noscript><p style="text-align:center">Schreiben Sie uns an <a href="mailto:info@masar-werbeagentur.de">info@masar-werbeagentur.de</a> oder per <a href="{w}">WhatsApp</a>.</p></noscript>
 </div></section>
-{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=11" defer></script>'}
+{'' if 'assistent.js' in FOOT else '<script src="/assistent.js?v=12" defer></script>'}
 '''
     out = HEAD_A + meta + js(page) + js(bc) + js(fq) + HEAD_B
     out = out.replace('</head>', css + '\n</head>', 1) + body + '\n' + FOOT
