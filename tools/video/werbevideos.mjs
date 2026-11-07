@@ -86,13 +86,58 @@ ${v.szenen.map(([, , satz], i) => `<div class="satz" style="--t0:${INTRO + i * S
 </body></html>`;
 }
 
+function htmlReel(v) {
+  const u = p => 'file://' + path.join(ROOT, p);
+  const T = INTRO + v.szenen.length * SZENE + OUTRO;
+  const sc = v.szenen.map(([img, cap], i) => `<div class="sc" style="--t0:${INTRO + i * SZENE}s"><div class="ph"><img src="${u('referenzen/' + img + '.webp')}"></div><div class="cap">${cap}</div></div>`).join('');
+  const satz = v.szenen.map(([, , s], i) => `<div class="satz" style="--t0:${INTRO + i * SZENE}s">${s}</div>`).join('');
+  const bars = v.szenen.map((_, i) => `<i style="--t0:${INTRO + i * SZENE}s"></i>`).join('');
+  return `<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BC;src:url(${u('fonts/barlow-condensed-black.woff2')})}
+@font-face{font-family:BS;src:url(${u('fonts/barlow-semibold.woff2')})}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#132e50;font-family:BS,sans-serif;color:#fff;position:relative}
+.lines{position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(88,208,189,.06) 0 3px,transparent 3px 70px)}
+.top{position:absolute;left:80px;right:160px;top:210px}
+.eb{font-size:30px;letter-spacing:5px;text-transform:uppercase;color:#58d0bd;opacity:0;animation:fadeup .6s ease-out .15s forwards}
+h1{font-family:BC;font-size:132px;line-height:.92;text-transform:uppercase;margin:.2em 0 .25em;opacity:0;animation:fadeup .7s ease-out .3s forwards}
+h1 em{font-style:normal;color:#58d0bd}
+.sub{font-size:36px;color:#d1d3d4;opacity:0;animation:fadeup .6s ease-out .55s forwards}
+.satz{position:absolute;left:80px;right:160px;top:700px;font-size:46px;line-height:1.2;opacity:0;animation:satz ${SZENE}s ease-in-out var(--t0) both}
+.bars{position:absolute;left:80px;top:810px;display:flex;gap:12px}
+.bars i{display:block;width:80px;height:6px;border-radius:3px;background:rgba(255,255,255,.18);position:relative;overflow:hidden}
+.bars i::after{content:"";position:absolute;inset:0;background:#58d0bd;transform-origin:left;transform:scaleX(0);animation:bar ${SZENE}s linear var(--t0) forwards}
+.right{position:absolute;left:0;right:0;top:870px;height:1050px}
+.sc{position:absolute;inset:0;opacity:0;animation:sc ${SZENE + .5}s ease-in-out var(--t0) both}
+.ph{position:absolute;inset:0;overflow:hidden;clip-path:polygon(0 7%,100% 0,100% 100%,0 100%)}
+.ph img{width:100%;height:100%;object-fit:cover;animation:kb ${SZENE + .6}s linear var(--t0) both}
+.cap{position:absolute;left:80px;top:110px;max-width:760px;background:rgba(14,35,64,.9);border-left:6px solid #58d0bd;padding:14px 22px;font-size:30px;border-radius:8px}
+.out{position:absolute;inset:0;background:#132e50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 90px 200px;opacity:0;animation:fadein .6s ease-out ${T - OUTRO}s forwards}
+.out img{width:240px;height:240px;object-fit:contain;background:#fff;border-radius:36px;padding:16px;margin-bottom:44px}
+.out .c{font-family:BC;font-size:118px;line-height:.95;text-transform:uppercase}.out .c em{font-style:normal;color:#58d0bd;display:block}
+.out .k{font-size:40px;margin-top:30px;color:#d1d3d4;line-height:1.4}
+.out .btn{margin-top:44px;background:#58d0bd;color:#132e50;font-size:42px;padding:22px 44px;border-radius:18px}
+@keyframes fadeup{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes sc{0%{opacity:0}12%{opacity:1}88%{opacity:1}100%{opacity:0}}
+@keyframes satz{0%{opacity:0;transform:translateY(20px)}14%{opacity:1;transform:none}86%{opacity:1}100%{opacity:0}}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+@keyframes bar{to{transform:scaleX(1)}}
+</style></head><body><div class="lines"></div><div class="right">${sc}</div>
+<div class="top"><div class="eb">${v.eyebrow}</div><h1>${v.titel}</h1><div class="sub">${v.sub}</div></div>
+${satz}<div class="bars">${bars}</div>
+<div class="out"><img src="${u('logo.webp')}"><div class="c">Werbung, die <em>man sieht.</em></div><div class="k">masar-werbeagentur.de<br>0178 514 3918</div><div class="btn">${v.cta}</div></div>
+</body></html>`;
+}
+
+const REEL = process.env.FORMAT === 'reel';
 const nur = process.argv[2];
 const b = await chromium.launch();
 for (const v of VIDEOS.filter(x => !nur || x.name === nur)) {
   const T = INTRO + v.szenen.length * SZENE + OUTRO, N = Math.round(T * FPS);
-  const dir = path.join(TMP, v.name); fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
-  const f = path.join(dir, 'video.html'); fs.writeFileSync(f, html(v));
-  const p = await b.newPage({ viewport: { width: 1280, height: 720 } });
+  const dir = path.join(TMP, v.name + (REEL ? '-reel' : '')); fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
+  const f = path.join(dir, 'video.html'); fs.writeFileSync(f, REEL ? htmlReel(v) : html(v));
+  const p = await b.newPage({ viewport: REEL ? { width: 1080, height: 1920 } : { width: 1280, height: 720 } });
   await p.goto('file://' + f); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(400);
   await p.evaluate(() => document.getAnimations().forEach(a => a.pause()));
   for (let i = 0; i < N; i++) {
@@ -101,6 +146,14 @@ for (const v of VIDEOS.filter(x => !nur || x.name === nur)) {
     await p.screenshot({ path: path.join(dir, `f${String(i).padStart(4, '0')}.jpg`), type: 'jpeg', quality: 92 });
   }
   await p.close();
+  if (REEL) {
+    const rd = path.join(OUT, 'reels'); fs.mkdirSync(rd, { recursive: true });
+    const stumm = path.join(dir, 'stumm.mp4'), wav = path.join(dir, 'musik.wav'), mp4 = path.join(rd, v.name + '-reel.mp4');
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(dir, 'f%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '21', '-preset', 'slow', stumm]);
+    execFileSync('python3', [path.join(ROOT, 'tools', 'video', 'musik.py'), wav, String(T), String(VIDEOS.indexOf(v))]);
+    execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', stumm, '-i', wav, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', mp4]);
+    console.log(v.name, N, 'Bilder →', mp4); continue;
+  }
   const mp4 = path.join(OUT, v.name + '.mp4'), webm = path.join(OUT, v.name + '.webm'), poster = path.join(OUT, v.name + '.webp');
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(dir, 'f%04d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '23', '-preset', 'slow', '-movflags', '+faststart', mp4]);
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', path.join(dir, 'f%04d.jpg'), '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '38', '-row-mt', '1', webm]);
