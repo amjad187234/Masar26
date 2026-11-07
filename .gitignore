@@ -51,3 +51,6 @@ data/*.json
 tools/angebot/privat/
 tools/og/jobs.json
 __pycache__/
+
+# ─── Claude-Arbeitskopien ─────────────────────────────────────
+.claude/worktrees/

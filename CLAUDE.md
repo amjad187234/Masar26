@@ -121,6 +121,7 @@ solche Festlegung im Bericht nennen.
   Ratgeber `blog/krankmeldung-pflegedienst-digital.html` (`tools/blog/ki_artikel.py`). Immer: KI-Hinweis (Art. 50 KI-VO, seit 02.08.2026),
   keine medizinische Beratung + Notfall 112/116 117, AV-Vertrag, § 203 StGB, EU-Hosting, WhatsApp nur Business Platform + Einwilligung;
   nicht „rechtssicher“/„zertifiziert“, keine Zeitersparnis-Zahlen. Akquise: keine Kalt-E-Mails (UWG § 7), Briefe per Post mit Art.-14/21-Hinweis.
+- Marketing-Skills (Inhaber, 07.11.2026): 53 Skills aus github.com/coreyhaines31/marketingskills (MIT) in `.claude/skills/` (z. B. seo-audit, ai-seo, copywriting, cro, social, ads, local-relevante Ideen). Allgemein/SaaS-lastig – CLAUDE.md-Regeln gehen vor (keine Kalt-E-Mails, keine erfundenen Zahlen/Bewertungen, keine Garantien). `.claude/.htaccess` sperrt den Ordner auf dem Server.
 - SEO/KI-Suche: JSON-LD `LocalBusiness` mit `@id https://masar-werbeagentur.de/#identity` in
   `index.html`, `llms.txt`, `sitemap.xml`, IndexNow über `/indexnow.php`, Seite `einsatzgebiete.html`
   (im Footer aller Seiten verlinkt).
