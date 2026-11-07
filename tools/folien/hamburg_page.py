@@ -62,18 +62,25 @@ FAQ_ORT_A = 'In allen sieben Bezirken: Hamburg-Mitte, Altona, Eimsbüttel, Hambu
 FAQ_STO_F = 'Haben Sie einen Standort in Hamburg?'
 FAQ_STO_A = 'Unser Firmensitz mit Studio ist in Berlin-Wedding. In Hamburg arbeitet ein eigenes Team für uns, das Aufmaß, Montage und Beschriftung vor Ort übernimmt. Anfragen laufen über dieselbe Nummer, dieselbe E-Mail und dasselbe Formular.'
 FAQ_GEN_A = 'Das hängt von Größe, Anbringung und Lage ab. In Hamburg gilt die Hamburgische Bauordnung (HBauO): Werbeanlagen mit einer Ansichtsfläche bis 1 m² brauchen nach Anlage 2 zur HBauO keine Genehmigung, größere in der Regel eine Baugenehmigung. Zusätzlich können Erhaltungsverordnungen und Vorgaben des Bezirks gelten, und Werbeanlagen auf öffentlichem Grund brauchen immer eine Sondernutzungserlaubnis. Kundenstopper auf dem Gehweg sind laut Stadt Hamburg bis auf wenige Ausnahmen grundsätzlich nicht gestattet – die Alternative ist Werbung im Schaufenster. Wir klären das vor dem Angebot und bereiten den Antrag mit Ihnen vor.'
-FAQ_MESSE_F = 'Bieten Sie in Hamburg auch Messebau an?'
-FAQ_MESSE_A = 'Nein – Messebau machen wir nur in Berlin. Für Hamburg übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.'
+FAQ_NICHT_F = 'Welche Leistungen bieten Sie in Hamburg nicht an?'
+FAQ_NICHT_A = 'Foto- und Videoproduktion, Messebau und Express-Druck gibt es nur in Berlin. Für Hamburg übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.'
 alt_faq = re.findall(r'"text": "(Schwerpunkt sind Düsseldorf.*?)"', s)[0]
 s = s.replace(alt_faq, FAQ_ORT_A)
 s = s.replace('Wo genau sind Sie in NRW tätig?', FAQ_ORT_F)
 s = s.replace('Haben Sie einen Standort in NRW?', FAQ_STO_F)
 s = s.replace('Unser Firmensitz mit Studio ist in Berlin-Wedding. In NRW arbeitet ein eigenes Team für uns, das Aufmaß, Montage und Beschriftung vor Ort übernimmt. Anfragen laufen über dieselbe Nummer, dieselbe E-Mail und dasselbe Formular.', FAQ_STO_A)
-gen_alt = 'Das hängt von Größe, Beleuchtung, Anbringung und Lage ab. In NRW gilt die Landesbauordnung NRW: Werbeanlagen bis 1 m² Ansichtsfläche sind verfahrensfrei, größere oder auskragende Anlagen meist nicht – und alles, was in den Gehweg ragt, braucht eine Sondernutzungserlaubnis. Wir klären das vor dem Angebot und bereiten den Antrag mit Ihnen vor.'
+gen_alt = 'Das hängt von Größe, Beleuchtung, Anbringung und Lage ab. In NRW sind Werbeanlagen bis 1 m² Ansichtsfläche nach § 62 Abs. 1 Nr. 12 BauO NRW verfahrensfrei; mehrere nebeneinander angebrachte Flächen werden dabei zusammengerechnet. Größere oder auskragende Anlagen brauchen meist eine Genehmigung – und alles, was in den Gehweg ragt, eine Sondernutzungserlaubnis. Wir klären das vor dem Angebot und bereiten den Antrag mit Ihnen vor.'
 assert s.count(gen_alt) == 2
 s = s.replace(gen_alt, FAQ_GEN_A)
-s = s.replace('Bieten Sie in NRW auch Messebau an?', FAQ_MESSE_F)
-s = s.replace('Nein – Messebau machen wir nur in Berlin. Für NRW übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.', FAQ_MESSE_A)
+s = s.replace('Welche Leistungen bieten Sie in NRW nicht an?', FAQ_NICHT_F)
+ersetze('Foto- und Videoproduktion, Messebau und Express-Druck gibt es nur in Berlin. Für NRW übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.', FAQ_NICHT_A, 2)
+# Weitere FAQ (07.11.2026): Beratung ohne Büro, Fertigung/Montage – Hamburg hat kein eigenes WhatsApp-Team, daher Firmennummer
+ersetze('Wie läuft die Beratung, wenn Sie in NRW kein Büro haben?', 'Wie läuft die Beratung, wenn Sie in Hamburg kein Büro haben?', 2)
+ersetze('Am einfachsten per WhatsApp an unser NRW-Team (', 'Am einfachsten per WhatsApp (', 2)
+ersetze('>0178 2410682</a>)', '>0178 514 3918</a>)')
+ersetze('(0178 2410682)', '(0178 514 3918)')
+ersetze('Wer fertigt und montiert in NRW?', 'Wer fertigt und montiert in Hamburg?', 2)
+ersetze('Aufmaß, Montage und Beschriftung vor Ort übernimmt unser Team in NRW.', 'Aufmaß, Montage und Beschriftung vor Ort übernimmt unser Team in Hamburg.', 2)
 
 # Termin-Link und Assistent
 s = s.replace('/termin.html?region=nrw', '/termin.html?region=hamburg')

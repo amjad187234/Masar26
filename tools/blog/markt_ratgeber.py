@@ -3,6 +3,9 @@ Wettbewerber nicht gut beantworten. Baut mit den Funktionen aus werbetechnik_rat
 
 Regeln: Preise nur aus CLAUDE.md, Rechtliches nur mit Quelle (Stand 11/2026, „keine Rechtsberatung“), keine Garantien,
 keine Lieferzeit-Zusagen außer bei Schildern/Leuchtreklame. Zahlen aus Behörden-/Gerichtsquellen; Kanzlei-Angaben als solche gekennzeichnet.
+Optional je Artikel: faq=[(Frage, Antwort-HTML)] → Abschnitt „Häufige Fragen“ + FAQPage-JSON-LD (Antwort mit Bruttopreis
+wie brutto.py, ohne HTML); bild_varianten/bild_masse für Bilder ohne -360/-540/-720-Größen (z. B. aus referenzen/);
+datum (veröffentlicht) und geaendert (dateModified).
 Aufruf: python3 tools/blog/markt_ratgeber.py
 """
 import os, re, importlib.util
@@ -116,6 +119,17 @@ ARTIKEL = [
     <h2>Laufende Kosten</h2>
     <p>LED-Anlagen brauchen wenig Strom, die Betriebsstunden sind der größte Hebel. Wie Sie den Verbrauch selbst ausrechnen und was Zeitschaltuhr und Dämmerungsschalter bringen, steht im Ratgeber <a href="/blog/leuchtreklame-strom-betriebszeiten.html">Leuchtreklame: Strom und Schaltzeiten</a>.</p>
 ''',
+  geaendert='2026-11-07',
+  faq=[('Was kostet ein Leuchtbuchstabe?',
+        'Bei uns ab 149 € netto je Buchstabe in Berlin und ab 179 € netto je Buchstabe in NRW und Hamburg. Höhe, Ausführung (front- oder rückleuchtend) und Montage bestimmen den genauen Preis – den nennen wir als Festpreis, nachdem wir Fotos und Maße gesehen haben.'),
+       ('Brauche ich für Leuchtreklame eine Genehmigung?',
+        'Das hängt von der Größe ab. In Berlin sind Werbeanlagen bis 1 m² Ansichtsfläche verfahrensfrei, am eigenen Geschäft bis 2,5 m² (§ 61 Abs. 1 BauO Bln); größere Anlagen brauchen eine Genehmigung beim Bezirksamt. In NRW und Hamburg liegt die Grenze bei 1 m². Ragt ein Ausleger über den Gehweg, kommt meist eine Sondernutzungserlaubnis dazu. Eine erste Einschätzung gibt der <a href="/genehmigungs-check.html">Genehmigungs-Check</a>.'),
+       ('Wie lange dauert es, bis die Leuchtreklame hängt?',
+        'Bei uns rechnen Sie bei Leuchtreklame mit rund 3 Wochen nach Freigabe und Anzahlung. Ist eine Genehmigung nötig, kommt die Bearbeitungszeit beim Amt dazu – klären Sie sie deshalb früh.'),
+       ('Wer schließt die Leuchtreklame an den Strom an?',
+        'Der feste Anschluss gehört in die Hände einer Elektrofachkraft. Bei uns übernimmt ihn ein eingetragener Elektrofachbetrieb.'),
+       ('Wie viel Strom verbraucht eine Leuchtreklame?',
+        'LED-Anlagen brauchen wenig Strom; entscheidend sind Leistung und Betriebsstunden. Wie Sie den Verbrauch selbst ausrechnen, steht im Ratgeber <a href="/blog/leuchtreklame-strom-betriebszeiten.html">Leuchtreklame: Strom und Schaltzeiten</a>.')],
   cta=('Festpreis für Ihre Leuchtreklame', 'Schicken Sie uns ein Foto Ihrer Fassade und den gewünschten Schriftzug – Sie bekommen ein Festpreis-Angebot, in der Regel innerhalb von 24 Stunden.', '/leuchtreklame-berlin.html', 'Leuchtreklame Berlin', 'Hallo, ich möchte wissen, was eine Leuchtreklame für mein Geschäft kostet. Ich schicke ein Foto der Fassade.', 'Leuchtreklame'),
   weiter=[('/leuchtreklame-berlin.html', 'Leuchtreklame Berlin'), ('/leuchtreklame-nrw.html', 'Leuchtreklame NRW'), ('/leuchtbuchstaben-konfigurator.html', 'Konfigurator')],
   quellen=[('https://www.gov.uk/product-safety-alerts-reports-recalls/product-safety-report-led-vape-shop-sign-2312-0076', 'UK Office for Product Safety and Standards – Product Safety Report LED Shop Sign'),
@@ -188,7 +202,7 @@ ARTIKEL = [
     <h2>Rückwärts planen</h2>
     <ul>
       <li><strong>Eröffnungstag:</strong> Schild hängt, Schaufenster beklebt, Öffnungszeiten an der Tür, Preise ausgehängt, Google-Profil aktiv.</li>
-      <li><strong>Eine Woche vorher:</strong> Schaufensterfolie und Öffnungszeiten montieren, Flyer und Plakate drucken.</li>
+      <li><strong>Eine Woche vorher:</strong> Schaufensterfolie und Öffnungszeiten montieren, Flyer, Plakate und Eröffnungsbanner drucken.</li>
       <li><strong>Mehrere Wochen vorher:</strong> Schild bzw. Leuchtreklame freigeben. Bei uns rechnen Sie bei Schildern und Leuchtreklame mit rund 3 Wochen nach Freigabe und Anzahlung.</li>
       <li><strong>Noch früher:</strong> klären, ob eine Genehmigung nötig ist, und den Vermieter fragen.</li>
     </ul>
@@ -201,6 +215,9 @@ ARTIKEL = [
 
     <h2>Schaufenster: Öffnungszeiten und „Bald eröffnet“</h2>
     <p>Während des Umbaus wirbt das Schaufenster schon: Eine Folie mit „Bald eröffnet“, Logo und Eröffnungsdatum macht neugierig und verdeckt die Baustelle. Zur Eröffnung kommen Öffnungszeiten, Kontaktdaten und Ihr Angebot dazu – siehe <a href="/schaufensterbeschriftung-berlin.html">Schaufensterbeschriftung Berlin</a>.</p>
+
+    <h2>Banner zur Neueröffnung</h2>
+    <p>Bis das feste Schild hängt – oder zusätzlich zum Eröffnungstag –, macht ein Banner mit „Neueröffnung“ und Datum auf Sie aufmerksam. PVC-Banner gibt es bei uns ab 29 €/m² netto, der Mindestpreis liegt bei 79 € netto. Klären Sie auch beim Banner vorher mit Vermieter und Bezirksamt, wo und wie lange es hängen darf. Mehr dazu: <a href="/pvc-banner-berlin.html#neueroeffnung">Banner zur Neueröffnung</a>.</p>
 
     <h2>Preisaushang nicht vergessen</h2>
     <p>Gaststätten müssen ein Preisverzeichnis neben dem Eingang aushängen (§ 13 Preisangabenverordnung). Auch viele Dienstleister wie Friseure brauchen ein Preisverzeichnis im Geschäft. Preise für Privatkunden immer inklusive Mehrwertsteuer angeben.</p>
@@ -218,6 +235,17 @@ ARTIKEL = [
       <p><strong>Kurz-Checkliste:</strong> Genehmigung geklärt · Vermieter zugestimmt · Schild freigegeben · Schaufenster „Bald eröffnet“ · Öffnungszeiten an der Tür · Preisaushang · Flyer gedruckt · Google-Profil angelegt.</p>
     </div>
 """,
+  geaendert='2026-11-07',
+  faq=[('Wie früh sollte ich das Ladenschild bestellen?',
+        'Mehrere Wochen vor der Eröffnung. Bei Schildern und Leuchtreklame rechnen Sie bei uns mit rund 3 Wochen nach Freigabe und Anzahlung. Ob eine Genehmigung nötig ist, sollten Sie noch früher klären.'),
+       ('Brauche ich für mein Ladenschild eine Genehmigung?',
+        'In Berlin sind Werbeanlagen bis 1 m² Ansichtsfläche verfahrensfrei, am eigenen Geschäft bis 2,5 m² (§ 61 Abs. 1 BauO Bln). Größere Anlagen brauchen eine Genehmigung beim Bezirksamt. Eine erste Einschätzung gibt der <a href="/genehmigungs-check.html">Genehmigungs-Check</a>.'),
+       ('Muss der Firmenname außen am Laden stehen?',
+        'Nein. Die frühere Pflicht nach § 15a Gewerbeordnung wurde 2009 aufgehoben. Ein Schild ist trotzdem die wichtigste Werbung am Standort.'),
+       ('Darf ich zur Eröffnung einen Kundenstopper auf den Gehweg stellen?',
+        'Auf dem öffentlichen Gehweg nur mit Sondernutzungserlaubnis. In Berlin stellen Sie den Antrag beim Bezirksamt; in Hamburg sind Kundenstopper laut Stadt bis auf wenige Ausnahmen nicht gestattet. Details: <a href="/blog/kundenstopper-erlaubnis.html">Kundenstopper: Erlaubnis</a>.'),
+       ('Wie mache ich auf die Neueröffnung aufmerksam?',
+        'Zum Beispiel mit einer Schaufensterfolie „Bald eröffnet“, einem <a href="/pvc-banner-berlin.html#neueroeffnung">Banner zur Neueröffnung</a>, Flyern für die Nachbarschaft und einem aktuellen Google-Unternehmensprofil mit Eröffnungsdatum.')],
   cta=('Alles für Ihre Eröffnung', 'Schild, Leuchtreklame, Schaufenster, Flyer und Google-Profil aus einer Hand – mit einem Ansprechpartner in Berlin.', '/schilder-berlin.html', 'Schilder ansehen', 'Hallo, ich eröffne bald einen Laden und brauche Schild, Schaufenster und Flyer.', 'Eröffnung'),
   weiter=[('/schilder-berlin.html', 'Schilder Berlin'), ('/schaufensterbeschriftung-berlin.html', 'Schaufenster'), ('/print.html', 'Druckerei')],
   quellen=[('https://gesetze.co/BE/BauO_Bln/61', '§ 61 BauO Bln – Verfahrensfreie Bauvorhaben'),
@@ -229,6 +257,88 @@ ARTIKEL = [
            ('/blog/leuchtreklame-kosten-berlin.html', 'Was kostet Leuchtreklame?', 'Startpreise und 7 Prüfpunkte.')],
   index=('Eröffnung', 'Ladeneröffnung: Werbe-Checkliste mit Fristen', 'Genehmigung, Vermieter, Schild, Schaufenster, Preisaushang und Google-Profil – rückwärts geplant ab dem Eröffnungstag.'),
   llms='Ladeneröffnung: Werbe-Checkliste mit Fristen'),
+
+ # Freigabe Inhaber (seo-chancen.md Nr. 8); Preise aus CLAUDE.md, Stand 07.11.2026 (Praxis-/Kanzleischild 290/339 €)
+ dict(file='firmenschild-kosten-berlin.html', og=('referenzen/leuchtreklame-berlin-09.webp', 'Ratgeber Schilder', 'Was kostet ein Firmenschild?', 'Preise, Material und Genehmigung'), crumb='Firmenschild: Kosten',
+  datum='2026-11-07',
+  title='Firmenschild Kosten Berlin: Preise, Material, Genehmigung',
+  desc='Was kostet ein Firmenschild in Berlin? Startpreise vom Klingelschild bis zum Praxisschild, was den Preis bestimmt und wann Sie eine Genehmigung brauchen.',
+  tag='Ratgeber · Schilder', h1='Was kostet ein<br><em>Firmenschild?</em>', minuten=6,
+  bild=('/referenzen/leuchtreklame-berlin-09', 'Fassadenschild mit goldener Schrift über dem Eingang eines Juweliers in Berlin', 'Fassadenschild für einen Juwelier in Berlin – Größe, Material und Montage bestimmen den Preis.'),
+  bild_varianten=[('-480', 480), ('', 1080)], bild_masse=(1080, 1080),
+  intro='<p>„Was kostet ein Firmenschild?“ – darauf gibt es keine Pauschalantwort, denn ein Klingelschild und ein Schild über die ganze Ladenbreite sind zwei verschiedene Dinge. Hier sind unsere Startpreise, die Punkte, die den Preis bestimmen, und eine Checkliste, mit der Sie schneller zu einem verbindlichen Angebot kommen.</p>',
+  body='''
+    <h2>Unsere Startpreise</h2>
+    <div class="table-wrap"><table class="rt">
+      <thead><tr><th>Leistung</th><th>Berlin</th><th>NRW &amp; Hamburg</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Leistung">Schild, z.&nbsp;B. Hinweisschild</td><td data-label="Berlin">ab 45 € netto</td><td data-label="NRW &amp; Hamburg">ab 59 € netto</td></tr>
+        <tr><td data-label="Leistung">Tür- oder Klingelschild</td><td data-label="Berlin">ab 69 € netto</td><td data-label="NRW &amp; Hamburg">ab 85 € netto</td></tr>
+        <tr><td data-label="Leistung">Firmenschild (Alu-Dibond)</td><td data-label="Berlin">ab 149 € netto</td><td data-label="NRW &amp; Hamburg">ab 179 € netto</td></tr>
+        <tr><td data-label="Leistung">Acrylglasschild</td><td data-label="Berlin">ab 240 € netto</td><td data-label="NRW &amp; Hamburg">ab 289 € netto</td></tr>
+        <tr><td data-label="Leistung">Praxis- oder Kanzleischild</td><td data-label="Berlin">ab 290 € netto</td><td data-label="NRW &amp; Hamburg">ab 339 € netto</td></tr>
+        <tr><td data-label="Leistung">Einzelbuchstaben unbeleuchtet (je Buchstabe)</td><td data-label="Berlin">ab 119 € netto</td><td data-label="NRW &amp; Hamburg">ab 139 € netto</td></tr>
+        <tr><td data-label="Leistung">Leuchtbuchstaben (je Buchstabe)</td><td data-label="Berlin">ab 149 € netto</td><td data-label="NRW &amp; Hamburg">ab 179 € netto</td></tr>
+      </tbody>
+    </table></div>
+    <p>Das sind Startpreise für einfache Ausführungen. Gravierte Edelstahl- und Messingschilder kalkulieren wir individuell. Den genauen Preis nennen wir Ihnen als Festpreis, nachdem wir Fotos und Maße gesehen haben.</p>
+
+    <h2>Was den Preis bestimmt</h2>
+    <ul>
+      <li><strong>Material:</strong> Alu-Dibond ist leicht, formstabil und rostfrei – der Standard für Firmenschilder an Fassaden. Acrylglas mit Abstandshaltern wirkt hochwertiger, Edelstahl und Messing sind die edelste Wahl, etwa für Praxis- und Kanzleieingänge. Forex (PVC) eignet sich eher für innen oder für kurze Zeit.</li>
+      <li><strong>Größe und Form:</strong> Ein rechteckiges Schild ist günstiger als eine konturgefräste Sonderform.</li>
+      <li><strong>Ausführung:</strong> Digitaldruck, Folienschrift oder Gravur – oder statt eines Schilds einzelne Buchstaben an der Wand.</li>
+      <li><strong>Gestaltung:</strong> Liegt Ihr Logo als Vektordatei vor, oder muss es erst aufbereitet werden? Siehe <a href="/blog/logo-dateien-werbetechnik.html">Logo-Dateien für Schild, Folie und Druck</a>.</li>
+      <li><strong>Montage:</strong> Untergrund (Putz, Klinker, Beton, Glas oder Holz), Höhe und Zugang. Hängt das Schild hoch, braucht es eventuell eine Hubarbeitsbühne.</li>
+      <li><strong>Genehmigung:</strong> Größere Anlagen brauchen eine Genehmigung – dafür fallen Gebühren beim Amt an.</li>
+    </ul>
+    <div class="tip-box">
+      <p><strong>Rechenbeispiel (nur Startpreise):</strong> Ein Schriftzug aus 6 unbeleuchteten Einzelbuchstaben beginnt in Berlin bei 6 × 119 € = 714 € netto. Ein Firmenschild aus Alu-Dibond beginnt bei 149 € netto. Wie ein Schriftzug an Ihrer Fassade wirkt, sehen Sie im <a href="/leuchtbuchstaben-konfigurator.html">Leuchtbuchstaben-Konfigurator</a>.</p>
+    </div>
+
+    <h2>Schild, Buchstaben oder Leuchtreklame?</h2>
+    <p>Ein <strong>Schild</strong> ist meist die günstigste Lösung und schnell getauscht, wenn sich etwas ändert. <strong>Einzelbuchstaben</strong> wirken plastischer und hochwertiger, kosten aber je Buchstabe. Soll Ihr Name auch abends gut zu sehen sein, sind <strong>Leuchtbuchstaben</strong> die Wahl – Preise und Prüfpunkte dazu im Ratgeber <a href="/blog/leuchtreklame-kosten-berlin.html">Was kostet Leuchtreklame?</a>. Für Arztpraxen und Kanzleien gibt es eigene Regeln, was auf dem Schild stehen muss: <a href="/blog/praxisschild-regeln-kosten.html">Praxisschild: Regeln und Kosten</a>.</p>
+
+    <h2>Genehmigung: kurz geprüft</h2>
+    <p>In Berlin sind Werbeanlagen bis 1 m² Ansichtsfläche verfahrensfrei, an der Stätte der Leistung – also am eigenen Geschäft – bis 2,5 m² (§ 61 Abs. 1 BauO Bln). Verfahrensfrei heißt aber nicht regelfrei: Denkmalschutz, Bebauungsplan und bei Auslegern über dem Gehweg das Straßenrecht gelten trotzdem. Größere Anlagen brauchen eine Baugenehmigung beim Bezirksamt.</p>
+    <p>In NRW sind Werbeanlagen bis 1 m² verfahrensfrei (§ 62 Abs. 1 Nr. 12 BauO NRW); Flächen nebeneinander werden zusammengerechnet, und viele Städte haben eigene Gestaltungssatzungen. In Hamburg ist bis 1 m² keine Baugenehmigung nötig (Anlage 2 HBauO), größere Anlagen brauchen meist eine Baugenehmigung beim Bezirksamt.</p>
+    <p>Ob Ihr Schild darunter fällt, zeigt unser kostenloser <a href="/genehmigungs-check.html">Genehmigungs-Check</a>. Unabhängig vom Amt muss meist auch der Vermieter zustimmen – siehe <a href="/blog/werbeschild-mietobjekt-vermieter.html">Werbeschild am gemieteten Laden</a>.</p>
+
+    <h2>Ablauf und Lieferzeit</h2>
+    <p>Sie schicken uns ein Foto der Stelle, ungefähre Maße und Ihr Logo. Wir schlagen Material und Größe vor, Sie bekommen einen Entwurf und ein Festpreis-Angebot. Gefertigt wird in unserer Partnerwerkstatt. Bei Schildern rechnen Sie mit rund 3 Wochen nach Freigabe und Anzahlung. Bezahlt wird per Überweisung: 60 % Anzahlung, 40 % nach Lieferung bzw. Montage.</p>
+
+    <h2>Checkliste vor der Anfrage</h2>
+    <ul>
+      <li><strong>Foto und Maße:</strong> Wo soll das Schild hin, wie viel Platz ist da?</li>
+      <li><strong>Innen oder außen:</strong> Davon hängt das Material ab.</li>
+      <li><strong>Logo-Datei:</strong> Am besten als Vektordatei (PDF, SVG oder EPS).</li>
+      <li><strong>Untergrund:</strong> Putz, Klinker, Glas oder Holz – und wie hoch hängt es?</li>
+      <li><strong>Genehmigung:</strong> Größe mit dem Genehmigungs-Check geprüft?</li>
+      <li><strong>Vermieter:</strong> Zustimmung schriftlich eingeholt?</li>
+      <li><strong>Termin:</strong> Bis wann muss das Schild hängen – etwa zur Eröffnung? Siehe <a href="/blog/ladeneroeffnung-werbung-checkliste.html">Ladeneröffnung: Checkliste</a>.</li>
+    </ul>
+''',
+  faq=[('Was kostet ein Firmenschild in Berlin?',
+        'Bei uns beginnt ein Firmenschild aus Alu-Dibond in Berlin ab 149 € netto, ein Tür- oder Klingelschild ab 69 € netto, ein Acrylglasschild ab 240 € netto und ein Praxis- oder Kanzleischild ab 290 € netto. Den genauen Preis nennen wir als Festpreis, nachdem wir Fotos und Maße gesehen haben.'),
+       ('Was kostet ein Firmenschild in NRW oder Hamburg?',
+        'In NRW und Hamburg beginnt ein Firmenschild aus Alu-Dibond bei uns ab 179 € netto, ein Tür- oder Klingelschild ab 85 € netto, ein Acrylglasschild ab 289 € netto und ein Praxis- oder Kanzleischild ab 339 € netto.'),
+       ('Welches Material eignet sich für ein Schild draußen?',
+        'Für außen eignen sich Alu-Dibond, Acrylglas und Edelstahl. Alu-Dibond ist der Standard für Fassaden, Edelstahl und Messing sind die edelste Wahl. Forex (PVC) eignet sich eher für innen oder für kurze Zeit.'),
+       ('Brauche ich für ein Firmenschild eine Genehmigung?',
+        'In Berlin sind Werbeanlagen bis 1 m² Ansichtsfläche verfahrensfrei, am eigenen Geschäft bis 2,5 m² (§ 61 Abs. 1 BauO Bln). In NRW und Hamburg liegt die Grenze bei 1 m². Größere Anlagen brauchen eine Genehmigung; Denkmalschutz und Satzungen können strengere Regeln setzen. Eine erste Einschätzung gibt der <a href="/genehmigungs-check.html">Genehmigungs-Check</a>.'),
+       ('Wie lange dauert die Herstellung eines Firmenschilds?',
+        'Bei Schildern rechnen Sie bei uns mit rund 3 Wochen nach Freigabe und Anzahlung.')],
+  cta=('Festpreis für Ihr Firmenschild', 'Schicken Sie uns ein Foto der Stelle und Ihr Logo – Sie bekommen einen Vorschlag für Material und Größe und ein Festpreis-Angebot, in der Regel innerhalb von 24 Stunden.', '/schilder-berlin.html', 'Schilder Berlin', 'Hallo, ich möchte wissen, was ein Firmenschild für mein Geschäft kostet. Ich schicke ein Foto der Stelle.', 'Schilder'),
+  weiter=[('/schilder-berlin.html', 'Schilder Berlin'), ('/schilder-nrw.html', 'Schilder NRW'), ('/werbeagentur-hamburg.html', 'Hamburg'), ('/genehmigungs-check.html', 'Genehmigungs-Check')],
+  quellen=[('https://gesetze.co/BE/BauO_Bln/61', '§ 61 BauO Bln – Verfahrensfreie Bauvorhaben'),
+           ('https://service.berlin.de/dienstleistung/350896/', 'service.berlin.de – Genehmigung Werbeanlage'),
+           ('https://www.stadt-koeln.de/artikel/74042/index.html', 'Stadt Köln – Werbeanlagen (§ 62 BauO NRW)'),
+           ('https://dokumente.hamburg.de/resource/blob/190466/267e443ff2b54e7ceb473a937b58a180/bpd-werbeanlagen-data.pdf', 'Hamburg – Bauprüfdienst Werbeanlagen (PDF)')],
+  hinweis='Hinweis: Preise sind Startpreise der Masar Werbeagentur (netto zzgl. 19 % MwSt.). Rechtliche Hinweise sind allgemein und keine Rechtsberatung; verbindlich ist die Auskunft der zuständigen Behörde.',
+  related=[('/blog/leuchtreklame-kosten-berlin.html', 'Was kostet Leuchtreklame?', 'Startpreise und 7 Prüfpunkte.'),
+           ('/blog/praxisschild-regeln-kosten.html', 'Praxisschild: Regeln und Kosten', 'Was auf das Schild muss und was es kostet.')],
+  index=('Schilder', 'Firmenschild Kosten Berlin: Preise, Material, Genehmigung', 'Startpreise vom Klingelschild bis zum Praxisschild, was den Preis bestimmt, Genehmigung in Berlin, NRW und Hamburg und eine Checkliste.'),
+  llms='Was kostet ein Firmenschild? (Berlin, NRW, Hamburg)'),
 
  dict(file='werbeschild-mietobjekt-vermieter.html', og=('schilder.webp', 'Ratgeber Mietrecht', 'Werbeschild am Mietobjekt', 'Vermieter, WEG und Rückbau'), crumb='Werbeschild am Mietobjekt',
   title='Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau',
@@ -323,6 +433,49 @@ ARTIKEL = [
 ]
 
 
+# --- Ergänzungen zu W.bauen: FAQ (+ FAQPage), Bild mit eigenen Größen, Datum je Artikel ---------------------
+import json, html as _html
+_bspec = importlib.util.spec_from_file_location('brutto', os.path.join(HERE, '..', 'seo', 'brutto.py'))
+BRUTTO = importlib.util.module_from_spec(_bspec); _bspec.loader.exec_module(BRUTTO)
+
+
+def _klartext(antwort):
+    """FAQ-Antwort für JSON-LD: Bruttopreis wie auf der Seite (brutto.py), ohne HTML."""
+    t = BRUTTO.bearbeiten(antwort)
+    t = re.sub(r'<[^>]+>', '', t)
+    return re.sub(r'\s+', ' ', _html.unescape(t)).strip()
+
+
+def bauen(a, vorlage):
+    W.DATUM = a.get('datum', '2026-11-05')
+    datei, _ = W.bauen(a, vorlage)
+    p = os.path.join(W.ROOT, 'blog', datei)
+    s = open(p, encoding='utf-8').read()
+    if a.get('geaendert'):
+        s = re.sub(r'"dateModified": "[^"]*"', f'"dateModified": "{a["geaendert"]}"', s, count=1)
+    if a.get('bild_varianten'):
+        b = a['bild'][0]; bw, bh = a.get('bild_masse', (1080, 1080))
+        varianten = a['bild_varianten']
+        srcset = ', '.join(f'{b}{suf}.webp {w}w' for suf, w in varianten)
+        klein = next((suf for suf, w in varianten if w >= 480), varianten[-1][0])
+        s = re.sub(r'(<figure class="art-figure">\s*<img )src="[^"]*" srcset="[^"]*"(.*?)width="720" height="900"',
+                   lambda m: f'{m.group(1)}src="{b}{klein}.webp" srcset="{srcset}"{m.group(2)}width="720" height="{round(720 * bh / bw)}"',
+                   s, count=1, flags=re.S)
+        if '/og/' not in re.search(r'<meta property="og:image" content="([^"]*)', s).group(1):
+            s = re.sub(r'(<meta property="og:image:width" content=")[^"]*', rf'\g<1>{bw}', s, count=1)
+            s = re.sub(r'(<meta property="og:image:height" content=")[^"]*', rf'\g<1>{bh}', s, count=1)
+    if a.get('faq'):
+        faq_html = '\n    <h2>Häufige Fragen</h2>\n' + ''.join(f'    <h3>{q}</h3>\n    <p>{x}</p>\n' for q, x in a['faq'])
+        s = s.replace('\n\n    <div class="article-cta">', '\n' + faq_html + '\n    <div class="article-cta">', 1)
+        ld = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+            {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': _klartext(x)}} for q, x in a['faq']]}
+        skript = '<script type="application/ld+json">\n' + json.dumps(ld, ensure_ascii=False, indent=2) + '\n</script>\n'
+        i = s.index('"@type": "BreadcrumbList"'); i = s.index('</script>', i) + len('</script>\n')
+        s = s[:i] + skript + s[i:]
+    open(p, 'w', encoding='utf-8').write(s)
+    return datei, len(s)
+
+
 def llms():
     p = os.path.join(W.ROOT, 'llms.txt'); s = open(p, encoding='utf-8').read()
     neu = [a for a in ARTIKEL if f'blog/{a["file"]})' not in s]
@@ -336,7 +489,8 @@ def llms():
 if __name__ == '__main__':
     vorlage = open(W.VORLAGE_DATEI, encoding='utf-8').read()
     for a in ARTIKEL:
-        print(W.bauen(a, vorlage))
+        print(bauen(a, vorlage))
+    W.DATUM = max(a.get('datum', '2026-11-05') for a in ARTIKEL)   # nur für neu eingetragene Sitemap-Einträge
     W.ARTIKEL = ARTIKEL
     W.eintragen()
     llms()

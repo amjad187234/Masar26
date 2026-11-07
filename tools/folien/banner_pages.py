@@ -113,6 +113,35 @@ N.update(file='pvc-banner-nrw.html', crumb='PVC-Banner NRW', parent=('Werbeagent
  sticky=('PVC-Banner NRW', 'ab 34 € / m² netto'), nrw=True, ph='Duisburg')
 N['top'] = ptab('Was kostet <em>ein PVC-Banner in NRW?</em>', ROWS_N, 'Preis NRW', NOTE_N)
 
+# Abschnitt „Banner zur Neueröffnung“ (nur Berlin, Anker #neueroeffnung) – SEO-Chancen 07.11.2026, Maßnahme 6.
+# Keine neuen Preise: nur die m²-Preise und der Mindestpreis aus der Preistabelle oben.
+NEUER = ('Neueröffnung', 'Banner zur <em>Neueröffnung</em>',
+ 'Solange umgebaut wird, sieht man von außen nur Papier im Fenster oder einen Bauzaun. Ein Banner sagt schon vorher, was hier bald aufmacht.',
+ '''    <div class="blog-prose" style="max-width:820px;margin:0 auto;">
+<p><strong>Vorher: „Bald hier“.</strong> Ein Banner mit Name, Logo und „Eröffnung am …“ am Bauzaun, am Gerüst oder innen hinter der Schaufensterscheibe macht Nachbarn und Passanten schon während des Umbaus neugierig. Am Zaun oder Gerüst nehmen wir Mesh mit Ösen, hinter der Scheibe reicht PVC. Soll die Werbung direkt aufs Glas, ist eine <a href="/schaufensterbeschriftung-berlin.html" style="color:var(--teal-ink);font-weight:700;">Schaufensterbeschriftung</a> die bessere Wahl.</p>
+<p><strong>Am großen Tag: das Eröffnungsbanner.</strong> Wenig Text, große Schrift: Name, „Neueröffnung“, Datum und höchstens ein Angebot. Mehr liest im Vorbeigehen niemand. Wir gestalten das Banner so, dass es aus der Entfernung lesbar ist, und schicken Ihnen vorher eine Vorschau.</p>
+<p><strong>Draußen bei Wind: Mesh.</strong> Ein geschlossenes Banner am Bauzaun oder an der Fassade fängt viel Wind. Mesh ist gelocht und lässt ihn durch – für große Flächen im Freien die sicherere Wahl.</p>
+    </div>
+    <div class="price-scroll" style="max-width:820px;margin:1.4rem auto 0;">
+      <table class="price-table rt">
+        <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Beispielgrößen für Banner zur Neueröffnung</caption>
+        <thead><tr><th scope="col">Einsatz</th><th scope="col">Größe zum Beispiel</th><th scope="col">Material</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Einsatz">Hinter der Schaufensterscheibe</td><td data-label="Größe">2 × 1 m</td><td data-label="Material">PVC-Banner, einseitig</td></tr>
+          <tr><td data-label="Einsatz">Bauzaunfeld</td><td data-label="Größe">3 × 1 m</td><td data-label="Material">Mesh-Banner mit Ösen</td></tr>
+          <tr><td data-label="Einsatz">Fassade über dem Eingang</td><td data-label="Größe">4 × 1 m</td><td data-label="Material">PVC oder Mesh, je nach Wind</td></tr>
+          <tr><td data-label="Einsatz">Freistehend, von beiden Seiten sichtbar</td><td data-label="Größe">2 × 1 m</td><td data-label="Material">Blockout-Banner, beidseitig</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="blog-prose" style="max-width:820px;margin:1.4rem auto 0;">
+<p><strong>Was es kostet:</strong> Berechnet wird nach Fläche – PVC-Banner ab 29&nbsp;€ / m² netto, Mesh ab 34&nbsp;€ / m² netto, Blockout ab 42&nbsp;€ / m² netto, mindestens 79&nbsp;€ netto je Banner. Die Größen oben sind nur Beispiele – jedes Maß ist möglich. Ihren Festpreis bekommen Sie mit dem Angebot.</p>
+<p><strong>Zeitplan:</strong> Bestellen Sie das „Bald hier“-Banner, sobald Name und Eröffnungstag feststehen – je länger es hängt, desto mehr Menschen sehen es. Das Eröffnungsbanner können Sie gleich mitbestellen, dann passt alles zusammen. Den Liefertermin nennen wir Ihnen im Angebot.</p>
+<p><strong>Genehmigung:</strong> Ob ein Banner an Fassade oder Zaun genehmigungsfrei ist, hängt von Größe, Ort und Dauer ab. Prüfen Sie das vorab mit dem <a href="/genehmigungs-check.html" style="color:var(--teal-ink);font-weight:700;">kostenlosen Genehmigungs-Check</a> – oder fragen Sie uns.</p>
+<p>Was zur Eröffnung sonst noch dazugehört – Schild, Schaufenster, Flyer: <a href="/blog/ladeneroeffnung-werbung-checkliste.html" style="color:var(--teal-ink);font-weight:700;">Checkliste: Werbung zur Ladeneröffnung →</a></p>
+    </div>''')
+B['extra'] = NEUER   # nach N = dict(B) gesetzt: gilt nur für Berlin
+
 PAGES_B = [B, N]
 # Städteseiten PVC-Banner am 13.10.2026 in pvc-banner-nrw.html zusammengeführt (301 in .htaccess)
 for k, c in ({} if True else C).items():
@@ -139,6 +168,12 @@ for k, c in ({} if True else C).items():
 if __name__ == '__main__':
     for p in PAGES_B:
         r = build_f(p)
+        if p.get('extra') is NEUER:
+            # build_f setzt für „extra“ keine id – Anker #neueroeffnung hier ergänzen
+            h = open(ROOT + p['file'], encoding='utf-8').read()
+            i = h.rindex('<section class="section"', 0, h.index('Banner zur <em>Neueröffnung</em>'))
+            h = h[:i] + '<section id="neueroeffnung" class="section"' + h[i + len('<section class="section"'):]
+            open(ROOT + p['file'], 'w', encoding='utf-8').write(h)
         if p.get('nrw'):
             nrw_fix(p)
             h = open(ROOT + p['file'], encoding='utf-8').read().replace('placeholder="z. B. Köln-Ehrenfeld"', f'placeholder="z. B. {p["ph"]}"')
