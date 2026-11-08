@@ -145,7 +145,26 @@ def auswahl(only, skip):
     return [n for n in NAMEN if n in gew and n not in weg]   # immer in der festen Reihenfolge
 
 
+# Eigenständige Kundenseiten (eigenes Design, noindex): die Pipeline darf sie nicht anfassen –
+# kein Seiten-Hinweis, keine Skripte, kein Footer. Sie werden während des Builds aus dem Baum genommen.
+EIGENSTAENDIG = ('destadsmuur',)
+
+
 def lauf(root, namen, verbose=False, titel=''):
+    """Führt die Schritte in root aus (eigenständige Ordner vorübergehend ausgelagert)."""
+    import tempfile
+    lager = tempfile.mkdtemp(prefix='masar-eigen-'); weg = []
+    try:
+        for d in EIGENSTAENDIG:
+            q = os.path.join(root, d)
+            if os.path.isdir(q): shutil.move(q, os.path.join(lager, d)); weg.append(d)
+        return _lauf(root, namen, verbose, titel)
+    finally:
+        for d in weg: shutil.move(os.path.join(lager, d), os.path.join(root, d))
+        shutil.rmtree(lager, ignore_errors=True)
+
+
+def _lauf(root, namen, verbose=False, titel=''):
     """Führt die Schritte in root aus. Gibt (ok, Liste geänderter Dateien) zurück."""
     tools = os.path.join(root, 'tools')
     env = dict(os.environ, MASAR_ROOT=root, PYTHONDONTWRITEBYTECODE='1')

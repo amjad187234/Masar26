@@ -22,7 +22,7 @@ import argparse, collections, html.parser, os, re, sys, urllib.parse
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(HERE, '..'))).rstrip('/')
 BASE = 'https://masar-werbeagentur.de'
-OHNE = ('tools/', 'admin/', 'data/', 'node_modules/', 'uploads/', '.git/', '.claude/')
+OHNE = ('tools/', 'admin/', 'data/', 'node_modules/', 'uploads/', '.git/', '.claude/', 'destadsmuur/')  # destadsmuur: eigenständige Kundenseite
 PRUEFUNGEN = ['links', 'anker', 'dateien', 'ids', 'alt', 'main', 'sitemap', 'versionen', 'bloecke']
 # QR-Landingpages (noindex) mit eigener Mini-Fußzeile: ohne Claim und ohne <main> erlaubt
 SONDERSEITEN = {'qr.html', 'qr/index.html'}

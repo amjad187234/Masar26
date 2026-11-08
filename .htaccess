@@ -27,6 +27,9 @@ ServerSignature Off
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^qr/?$ /qr/index.html [L]
 
+  # Eigenständige Kundenseite De Stadsmuur Barber (Linkseite, noindex): ohne Schrägstrich → mit
+  RewriteRule ^destadsmuur$ /destadsmuur/ [R=301,L]
+
   # Umbenennung NRW-Seiten (Werbetechnik → Werbeagentur), 301 dauerhaft
   RewriteRule ^werbetechnik-nrw\.html$ /werbeagentur-nrw.html [R=301,L]
   # Leuchtlogo-Seite am 05.11.2026 auf Wunsch des Inhabers entfernt
@@ -279,3 +282,10 @@ ErrorDocument 500 /500.html
 #   $secret = getenv('STRIPE_WEBHOOK_SECRET');
 #
 # ════════════════════════════════════════════════════════════════
+
+# De Stadsmuur Barber: nicht in Suchmaschinen (zusätzlich zur meta-robots-Angabe in der Seite)
+<IfModule mod_headers.c>
+  <If "%{REQUEST_URI} =~ m#^/destadsmuur(/|$)#">
+    Header always set X-Robots-Tag "noindex, nofollow"
+  </If>
+</IfModule>
