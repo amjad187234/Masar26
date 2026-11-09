@@ -151,4 +151,4 @@ bei Änderungen eine neue Fassung „Stand <Datum>“ hochladen. Belegregister a
 `python3 tools/angebot/privat/register.py` → `tools/angebot/privat/KUNDENREGISTER.md`. Fragt der Inhaber nach einem Kunden oder einer
 Rechnung: Kundenkartei + Register lesen und alles zusammenfassen (Kontakt, Angebote, Rechnungen, Zahlungsstand, offene Punkte).
 PDF-Sicherung aller Angebote/Rechnungen (Stand 04.11.2026) im Drive-Unterordner **„Masar – Belege (privat)“** als Masar_Belege_Teil1–6.zip
-(Uploads von hier max. ca. 3 MB je Datei). Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen.
+(Uploads von hier max. ca. 3 MB je Datei). Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen. **Seit 09.11.2026 (Inhaber verärgert über Datenverlust): jedes neue Angebot/jede Rechnung als PDF sofort in den Drive-Ordner „Masar“ hochladen und die Kundenkartei dort ergänzen (Nachtrag-Dokument), nicht erst am Ende.** Stempel muss nach einem Neustart neu vom Inhaber kommen (privat/stempel.png).
