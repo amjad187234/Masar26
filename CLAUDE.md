@@ -143,7 +143,7 @@ solche Festlegung im Bericht nennen.
 - Inhaber: `admin_pass_hash` und Telegram einrichten, E-Mail-Versand testen.
 
 Kundennotizen (laufende Aufträge, Angebote) werden **nicht** hier, sondern privat geführt:
-**Google Doc „Masar – Kundenkartei (privat)“** im Google Drive des Inhabers (Ordner „SAMMNOT“, darin Unterordner „Masar – Belege (privat)“). Fragt der Inhaber nach einem
+**Google Doc „Masar – Kundenkartei (privat)“** im Google Drive des Inhabers (Ordner „MASAR WERBEAGENTUR / Kunden & Belege (privat)“, darin „Masar – Belege (privat)“; seit 09.11.2026). Fragt der Inhaber nach einem
 Kunden, zuerst dort nachlesen (Drive-Suche nach dem Titel); nach jedem neuen Angebot, Termin oder jeder Rechnung den Eintrag
 dort ergänzen. Lokale Kopie nur in `tools/angebot/privat/KUNDENKARTEI.md` (nicht im Repository).
 Seit 04.11.2026 aktuelle Fassung im selben Drive-Ordner: **„Masar – Kundenkartei (privat) – Stand 04.11.2026“** (Kundenkartei + Belegregister);
@@ -151,4 +151,4 @@ bei Änderungen eine neue Fassung „Stand <Datum>“ hochladen. Belegregister a
 `python3 tools/angebot/privat/register.py` → `tools/angebot/privat/KUNDENREGISTER.md`. Fragt der Inhaber nach einem Kunden oder einer
 Rechnung: Kundenkartei + Register lesen und alles zusammenfassen (Kontakt, Angebote, Rechnungen, Zahlungsstand, offene Punkte).
 PDF-Sicherung aller Angebote/Rechnungen (Stand 04.11.2026) im Drive-Unterordner **„Masar – Belege (privat)“** als Masar_Belege_Teil1–6.zip
-(Uploads von hier max. ca. 3 MB je Datei). Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen. **Seit 09.11.2026 (Inhaber verärgert über Datenverlust): jedes neue Angebot/jede Rechnung als PDF sofort in den Drive-Ordner „SAMMNOT“ (bei der Kundenkartei) hochladen und die Kundenkartei dort ergänzen (Nachtrag-Dokument), nicht erst am Ende.** Stempel muss nach einem Neustart neu vom Inhaber kommen (privat/stempel.png).
+(Uploads von hier max. ca. 3 MB je Datei). Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen. **Seit 09.11.2026 (Inhaber verärgert über Datenverlust): jedes neue Angebot/jede Rechnung als PDF sofort in den Drive-Ordner „MASAR WERBEAGENTUR / Kunden & Belege (privat)“ hochladen und die Kundenkartei dort ergänzen (Nachtrag-Dokument), nicht erst am Ende.** Stempel muss nach einem Neustart neu vom Inhaber kommen (privat/stempel.png).
