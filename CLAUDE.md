@@ -152,3 +152,7 @@ bei Änderungen eine neue Fassung „Stand <Datum>“ hochladen. Belegregister a
 Rechnung: Kundenkartei + Register lesen und alles zusammenfassen (Kontakt, Angebote, Rechnungen, Zahlungsstand, offene Punkte).
 PDF-Sicherung aller Angebote/Rechnungen (Stand 04.11.2026) im Drive-Unterordner **„Masar – Belege (privat)“** als Masar_Belege_Teil1–6.zip
 (Uploads von hier max. ca. 3 MB je Datei). Achtung: Der Cloud-Container ist flüchtig – privat/ geht verloren, wenn er neu startet; die PDFs müssen zusätzlich beim Inhaber liegen. **Seit 09.11.2026 (Inhaber verärgert über Datenverlust): jedes neue Angebot/jede Rechnung als PDF sofort in den Drive-Ordner „MASAR WERBEAGENTUR / Kunden & Belege (privat)“ hochladen und die Kundenkartei dort ergänzen (Nachtrag-Dokument), nicht erst am Ende.** Stempel muss nach einem Neustart neu vom Inhaber kommen (privat/stempel.png).
+
+Belegablage (Inhaber, 09.11.2026): Vom Inhaber geschickte Belege getrennt im Drive-Ordner „MASAR WERBEAGENTUR / Kunden & Belege (privat)“ ablegen –
+**Ausgaben/Eingangsrechnungen** → Unterordner „Ausgaben – Eingangsrechnungen (privat)“, **eigene Kundenrechnungen** → „Kundenrechnungen – Ausgangsrechnungen (privat)“.
+Dateiname: `JJJJ-MM-TT_<Lieferant oder Kunde>_<Nr.>_<Betrag brutto>.pdf`. Auf Wunsch „gib mir die Belege“: je Ordner eine ZIP-Datei (Ausgaben.zip, Kundenrechnungen.zip) erzeugen und senden, optional nach Monat/Zeitraum.
