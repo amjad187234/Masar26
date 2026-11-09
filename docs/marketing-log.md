@@ -21,3 +21,12 @@
 ## 07.11.2026
 - Hinweis-Kasten „Leasingrückgabe: Beschriftung richtig entfernen“ auf Fahrzeugbeschriftung Berlin/NRW, LKW-Beschriftung, Werbung Handwerker.
 - Fahrzeugbeschriftung NRW: FAQ Handwerkerparkausweis (Quelle Stadt Köln).
+
+## 07.–08.11.2026 (mit dem Inhaber)
+- Preise Leuchtbuchstaben 149/179 €, Praxis-/Kanzleischild 290/339 € (Freigabe Inhaber), „Was im Preis enthalten ist“ auf drei Seiten.
+- Neue Seiten: Ratgeber `blog/firmenschild-kosten-berlin.html`, `werbung-gastronomie-berlin.html`; Abschnitte Reparatur/LED-Umrüstung und Leuchtkasten/Ausleger (Leuchtreklame), Banner zur Neueröffnung; FAQs Kosten-/Eröffnungs-Ratgeber, NRW, Hamburg; FAQ beleuchtete Hausnummer.
+- Liefer-/Zahlungs-FAQ auf 9 Seiten korrigiert, „eigener Plotter“ → Partnerwerkstatt; Startseite Leuchtlogo-Video; Referenz Türbeschriftung (Praxis).
+- Eigenständige Kundenseite `/destadsmuur/` (noindex, von der Pipeline ausgenommen).
+
+## 09.11.2026
+- Interne Links zu den neuen Seiten: Gastronomie-Seite von Leuchtreklame, Print, Digital Signage und Werbetechnik; Firmenschild-Kosten-Ratgeber von Schilder Berlin und Werbetechnik (`tools/seo/ratgeber_hinweise.py`).

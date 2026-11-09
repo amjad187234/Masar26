@@ -27,3 +27,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | Websuche Werbeanlagen-Satzungen 2026 | Neue/überarbeitete Regeln in Karlsruhe (Entwurf 03/2026, u. a. digitale Schaufenster) und Stuttgart (Leitfaden 06/2026, Satzung Bad Cannstatt 07/2026); für Berlin nichts Neues gefunden | Kein Handlungsbedarf für Berlin/NRW/Hamburg-Seiten; Thema „digitale Schaufenster“ beobachten (Digital Signage). |
 | Websuche IHK Berlin BFSG-Beispiel | Beispiel aus dem Suchbericht nicht bestätigt | Nicht auf die Website übernommen. |
 | Saison | Leasingrückgaben häufen sich zum Jahreswechsel (Bericht fehler-und-kosten.md) | Leasing-Ratgeber jetzt von 4 Fahrzeugseiten verlinkt. |
+
+## 09.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Werbetechnik Berlin Weihnachten/Schaufenster (sellwerk.de, gelbeseiten.de, textilwirtschaft.de, berliner-zeitung.de) | Berliner Werbetechnik-Betriebe zeigen weiterhin **keine Saison-Aktionen** online; Weihnachtsschaufenster sind redaktionell Thema (Visual Merchandising), nicht in Anbieter-Angeboten. | Saisonseite `schaufenster-weihnachten-black-friday.html` bleibt Alleinstellung (bereits von 7+ Seiten verlinkt). Black Friday 27.11. – noch 2,5 Wochen. |
+| Amt für Statistik Berlin-Brandenburg (Pressemitteilungen/Berichte Gewerbeanmeldungen 2026) | 1. Hj. 2026: 22.306 Gewerbeanmeldungen in Berlin (−0,5 % ggü. Vorjahr), Einzelhandel 80,3 % der Handelsanmeldungen; Gastronomie rund 265–355 Anmeldungen pro Monat. | Gastronomie und Einzelhandel bleiben die größten Zielgruppen für Eröffnungswerbung → neue Gastro-Seite intern verlinkt; Eröffnungs-Checkliste/Banner-Abschnitt passen zum Jahresbeginn. Keine Zahlen auf die Website übernommen. |
+| Google Ads Transparency / Meta Ad Library | nicht abgefragt (aus dem Container nicht erreichbar) | – |
