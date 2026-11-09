@@ -156,3 +156,4 @@ PDF-Sicherung aller Angebote/Rechnungen (Stand 04.11.2026) im Drive-Unterordner 
 Belegablage (Inhaber, 09.11.2026): Vom Inhaber geschickte Belege getrennt im Drive-Ordner „MASAR WERBEAGENTUR / Kunden & Belege (privat)“ ablegen –
 **Ausgaben/Eingangsrechnungen** → Unterordner „Ausgaben – Eingangsrechnungen (privat)“, **eigene Kundenrechnungen** → „Kundenrechnungen – Ausgangsrechnungen (privat)“.
 Dateiname: `JJJJ-MM-TT_<Lieferant oder Kunde>_<Nr.>_<Betrag brutto>.pdf`. Auf Wunsch „gib mir die Belege“: je Ordner eine ZIP-Datei (Ausgaben.zip, Kundenrechnungen.zip) erzeugen und senden, optional nach Monat/Zeitraum.
+**Nie Belege/Dateien im Drive löschen, verschieben in den Papierkorb oder überschreiben – nur auf ausdrücklichen Befehl des Inhabers (09.11.2026).** Korrigierte Fassungen als neue Datei daneben ablegen.
