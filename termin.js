@@ -90,7 +90,7 @@
       if (reg === 'hamburg') { if (!s.ort) s.ort = 'Hamburg'; s.gebiet = 'Hamburg'; }
       var st = /(Köln|Düsseldorf|Dortmund|Essen|Bochum|Herne|Mülheim an der Ruhr|Bottrop)$/.exec(q);
       if (st && !s.ort) s.ort = st[1];
-      s.nrw = true;
+      s.nrw = true; s.waNr = (reg === 'hamburg') ? '491785143918' : '491782410682';
     }
   } catch (e) {}
   var step = 0, tageCache = {};
@@ -253,7 +253,7 @@
     var err = el('p', 'tm-err'); err.setAttribute('role', 'alert'); box.appendChild(err);
     var n = el('div', 'tm-nav');
     var b = txt('button', 'tm-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { step--; render(); }); n.appendChild(b);
-    var go = txt('button', 'tm-go', 'Termin verbindlich buchen'); go.type = 'button'; n.appendChild(go);
+    var go = txt('button', 'tm-go', 'Kostenlosen Termin buchen'); go.type = 'button'; n.appendChild(go);
     box.appendChild(n);
 
     go.addEventListener('click', function () {
@@ -289,10 +289,10 @@
           return;
         }
         if (fx) fx.fail((x.j && x.j.fehler) || '');
-        go.disabled = false; go.textContent = 'Termin verbindlich buchen';
+        go.disabled = false; go.textContent = 'Kostenlosen Termin buchen';
         err.textContent = (x.j && x.j.fehler) || 'Das hat leider nicht geklappt. Bitte rufen Sie uns an: 0178 514 3918.';
         if (x.j && x.j.vergeben) { delete tageCache[s.art]; s.zeit = null; setTimeout(function () { step = 2; render(); }, 1800); }
-      }).catch(function () { if (fx) fx.fail('Keine Verbindung.'); go.disabled = false; go.textContent = 'Termin verbindlich buchen'; err.textContent = 'Keine Verbindung. Bitte später erneut versuchen oder anrufen: 0178 514 3918.'; });
+      }).catch(function () { if (fx) fx.fail('Keine Verbindung.'); go.disabled = false; go.textContent = 'Kostenlosen Termin buchen'; err.textContent = 'Keine Verbindung. Bitte später erneut versuchen oder anrufen: 0178 514 3918.'; });
     });
   }
 
@@ -319,12 +319,12 @@
     ok.appendChild(txt('h4', '', 'Termin gebucht – danke!'));
     ok.appendChild(txt('p', 'tm-big', j.termin));
     ok.appendChild(txt('p', '', artName(s.art) + ' · ' + sprName(s.sprache) + ' · Terminnummer ' + j.nr));
-    ok.appendChild(txt('p', '', s.art === 'vorort' ? 'Wir kommen zu Ihnen: ' + s.adresse + '.' : 'Wir melden uns zum Termin unter ' + s.tel + '.'
+    ok.appendChild(txt('p', '', (s.art === 'vorort' ? 'Wir kommen zu Ihnen: ' + s.adresse + '.' : 'Wir melden uns zum Termin unter ' + s.tel + '.')
       + (s.mail ? ' Eine Bestätigung ist per E-Mail unterwegs.' : '')));
     var btns = el('div', 'tm-btns');
     var cal = txt('a', 'tm-btn', 'In Kalender eintragen'); cal.href = ics(j); cal.download = 'Termin-Masar-' + j.nr + '.ics'; btns.appendChild(cal);
     var stl = txt('a', 'tm-btn', 'Status ansehen'); stl.href = '/status.html?nr=' + encodeURIComponent(j.nr); btns.appendChild(stl);
-    var wa = txt('a', 'tm-btn tm-wa', 'Verschieben per WhatsApp'); wa.href = 'https://wa.me/491785143918?text=' + encodeURIComponent('Hallo, ich möchte meinen Beratungstermin ' + j.nr + ' (' + j.termin + ') verschieben.');
+    var wa = txt('a', 'tm-btn tm-wa', 'Verschieben per WhatsApp'); wa.href = 'https://wa.me/' + (s.waNr || '491785143918') + '?text=' + encodeURIComponent('Hallo, ich möchte meinen Beratungstermin ' + j.nr + ' (' + j.termin + ') verschieben.');
     wa.target = '_blank'; wa.rel = 'noopener noreferrer'; btns.appendChild(wa);
     ok.appendChild(btns);
     box.appendChild(ok);

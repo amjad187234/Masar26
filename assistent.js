@@ -102,6 +102,7 @@
     + '.as-err{color:#b3261e;font-size:13.5px;margin:.4rem 0 0;min-height:1em}'
     + '.as-nav{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}'
     + '.as-back{background:none;border:0;color:var(--muted,#5a7070);font:600 14px Barlow,sans-serif;cursor:pointer;padding:.6rem 0;text-decoration:underline}'
+    + 'body.as-sicht #stickyCta{transform:translateY(110%)!important}body.as-sicht a.wa{display:none!important}'
     + '.as-go{background:var(--navy,#132e50);color:#fff;border:0;border-radius:8px;padding:13px 22px;font:700 15px Barlow,sans-serif;cursor:pointer}.as-go[disabled]{opacity:.4;cursor:not-allowed}'
     + '.as-skip{background:none;border:0;color:var(--teal-ink,#177567);font:600 14px Barlow,sans-serif;cursor:pointer;padding:.6rem 0}'
     + '.as-res{border-radius:12px;background:linear-gradient(135deg,#132e50,#0e2340);color:#fff;padding:1.4rem}'
@@ -172,6 +173,8 @@
     var step = minStep;
     if (s.thema && s.wahl != null && store(key)) step = Math.max(minStep, 3);
     var box = el('div', 'as'); root.appendChild(box);
+    document.querySelectorAll('[data-paket]').forEach(function (a) { a.addEventListener('click', function () { var pk = 'Paket „' + a.getAttribute('data-paket') + '“'; if ((s.info || '').indexOf(pk) < 0) { s.info = pk + (s.info ? ' – ' + s.info : ''); store(key, s); } }); });
+    if ('IntersectionObserver' in window) { try { new IntersectionObserver(function (es) { document.body.classList.toggle('as-sicht', es[0].isIntersecting); }, { threshold: 0.15 }).observe(root); } catch (e) {} }
     var live = el('p'); live.setAttribute('aria-live', 'polite'); live.style.cssText = 'position:absolute;left:-9999px'; root.appendChild(live);
 
     function A() { return s.thema != null && s.wahl != null ? T[s.thema].a[s.wahl] : null; }
@@ -231,19 +234,24 @@
         var two = el('div', 'as-two'); box.appendChild(two);
         field('Name', 'Pflicht', 'name', 'input', 'Vor- und Nachname', 80, 'name', two);
         field('Firma', 'optional', 'firma', 'input', 'falls gewerblich', 80, 'organization', two);
-        field('Telefon / WhatsApp', 'optional', 'tel', 'input', '+49 …', 40, 'tel', two, 'tel');
-        field('E-Mail', 'für Antwort per E-Mail', 'mail', 'input', 'info@beispiel.de', 100, 'email', two, 'email');
+        field('Telefon / WhatsApp', 'eines von beiden reicht', 'tel', 'input', '+49 …', 40, 'tel', two, 'tel');
+        field('E-Mail', 'eines von beiden reicht', 'mail', 'input', 'info@beispiel.de', 100, 'email', two, 'email');
         var mk = el('label', 'as-merk'); var mc = el('input'); mc.type = 'checkbox'; mc.checked = !!s.merken;
         mc.addEventListener('change', function () { s.merken = mc.checked; save(); });
         mk.appendChild(mc); mk.appendChild(el('span', '', 'Meine Kontaktdaten <b>auf diesem Gerät</b> merken – für die nächste Anfrage und den <a href="/status.html" target="_blank" rel="noopener">Anfrage-Status</a>. Jederzeit löschbar, wird nicht an uns übertragen.'));
         box.appendChild(mk);
         nav(true, function () {
-          var fn = box.querySelector('#as-name-' + idx), fm = box.querySelector('#as-mail-' + idx);
+          var fn = box.querySelector('#as-name-' + idx), fm = box.querySelector('#as-mail-' + idx), ft = box.querySelector('#as-tel-' + idx);
           if (s.name.trim().length < 2) return fn;
+          if (!s.tel.trim() && !s.mail.trim()) return ft;
+          if (s.tel.trim() && s.tel.replace(/\D/g, '').length < 6) return ft;
           if (s.mail.trim() && !MAIL.test(s.mail.trim())) return fm;
           merken(); return true;
         }, 'Zur Zusammenfassung →', function () {
-          return s.name.trim().length < 2 ? 'Bitte Ihren Namen eintragen (Vor- und Nachname).' : 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.';
+          return s.name.trim().length < 2 ? 'Bitte Ihren Namen eintragen (Vor- und Nachname).'
+            : (!s.tel.trim() && !s.mail.trim()) ? 'Bitte Telefon/WhatsApp oder E-Mail angeben – eines von beiden reicht, damit wir antworten können.'
+            : (s.tel.trim() && s.tel.replace(/\D/g, '').length < 6) ? 'Die Telefonnummer scheint unvollständig – bitte vollständig eingeben.'
+            : 'Die E-Mail-Adresse scheint unvollständig – bitte im Format name@firma.de eingeben oder das Feld leer lassen.';
         });
       } else {
         result();
@@ -292,7 +300,7 @@
     function nav(back, ok, label, msg) {
       var err = el('p', 'as-err'); err.setAttribute('role', 'alert'); err.id = 'as-err-' + idx;
       var n = el('div', 'as-nav');
-      if (back) { var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(Math.max(minStep, step - 1)); }); n.appendChild(b); } else n.appendChild(el('span'));
+      if (back && step > minStep) { var b = el('button', 'as-back', '← Zurück'); b.type = 'button'; b.addEventListener('click', function () { go(Math.max(minStep, step - 1)); }); n.appendChild(b); } else n.appendChild(el('span'));
       if (ok) {
         var g = el('button', 'as-go', label); g.type = 'button';
         g.addEventListener('click', function () {
@@ -346,7 +354,9 @@
       c1.appendChild(el('p', '', 'Die Nachricht ist fertig vorbereitet. Fotos können Sie in WhatsApp direkt anhängen. Ihre Angaben speichern wir mit einer Anfragenummer zur Bearbeitung (<a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>).'));
       var w = el('a', 'as-btn as-wa', '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp öffnen');
       w.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg); w.target = '_blank'; w.rel = 'noopener noreferrer';
+      var gespNr = null;
       w.addEventListener('click', function (ev) {
+        if (gespNr !== null) { ev.preventDefault(); var t2 = gespNr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + gespNr + '):') : msg; var u2 = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(t2); var w2 = null; try { w2 = window.open(u2, '_blank', 'noopener'); } catch (e) {} if (!w2) location.href = u2; return; }
         // Anfrage zuerst speichern (Nummer für die Übersicht), dann WhatsApp mit Anfragenummer öffnen
         if (!window.fetch) return;
         ev.preventDefault();
@@ -357,6 +367,7 @@
         function open(nr) {
           if (done) return; done = true;
           if (s.merken && nr) kAnfrage(nr, T[s.thema].name + ' – ' + a[0]);
+          gespNr = nr || ''; w.textContent = 'WhatsApp erneut öffnen' + (nr ? ' (' + nr + ')' : '');
           var text = nr ? msg.replace('hier meine Anfrage:', 'hier meine Anfrage (' + nr + '):') : msg;
           var url = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(text);
           try { sessionStorage.removeItem(key); } catch (e) {}

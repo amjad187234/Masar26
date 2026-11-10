@@ -96,7 +96,7 @@ S = {
  'webdesign-berlin.html': ('Webdesign Berlin – Websites & Online-Shops | Masar',
    'Websites, Landingpages und Online-Shops für Berliner Firmen – direkt programmiert oder mit WordPress. Barrierearm, DSGVO-konform und zur Übergabe in Ihre Hand.'),
  'ueber-uns.html': ('Über uns – Ein Team, alle Gewerke | Masar Werbeagentur',
-   'Gestalter, Handwerker und Entwickler unter einem Dach in Berlin-Wedding: Werbetechnik, Druck, Design, Web und KI – ein Ansprechpartner für alles.'),
+   'Gestalter, Handwerker und Entwickler in einem Team in Berlin-Wedding: Werbetechnik, Druck, Design, Web und KI – ein Ansprechpartner für alles.'),
  'blog/angehoerige-kommunikation-pflegedienst.html': ('Kommunikation mit Angehörigen im Pflegedienst',
    'Wie ambulante Pflegedienste Fragen von Angehörigen geordnet aufnehmen: mit Schweigepflicht, festen Wegen und digitalem Assistenten – ohne Dauertelefon.'),
  'blog/digitale-menuetafel-gestalten.html': ('Digitale Menütafel gestalten: Was funktioniert | Masar',

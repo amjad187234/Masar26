@@ -274,7 +274,7 @@
     rows.push(['Lesbar bis ca.', r10(lb[0]) + '–' + r10(lb[1]) + ' m']);
     $('#kf-tab').innerHTML = rows.map(function (r) { return '<tr><th scope="row">' + r[0] + '</th><td>' + r[1] + '</td></tr>'; }).join('');
     var g = fl <= 1 ? 'Mit ' + zahl(fl, 2) + ' m² liegt die Fläche bei 1 m² oder darunter. ' : 'Mit ' + zahl(fl, 2) + ' m² liegt die Fläche über 1 m². ';
-    $('#kf-gen').innerHTML = '<strong>Genehmigung:</strong> ' + g + REGION[S.region] + ' <a href="/blog/aussenwerbung-berlin-ratgeber.html">Mehr im Ratgeber</a>';
+    $('#kf-gen').innerHTML = '<strong>Genehmigung:</strong> ' + g + REGION[S.region] + ' <a href="' + ({berlin:'/blog/aussenwerbung-berlin-ratgeber.html',hamburg:'/blog/werbeanlage-hamburg.html',nrw:'/blog/werbeanlage-koeln.html'}[S.region] || '/blog/aussenwerbung-berlin-ratgeber.html') + '">Mehr im Ratgeber</a>';
     // drei Größen nach Abstand
     $$('.kf-opt3 button').forEach(function (b, i) {
       var h = hAusAbstand(S.dist, i), bb = block(h);
@@ -389,7 +389,7 @@
   });
   $('#kf-wa').addEventListener('click', function () {
     var t = 'Hallo, ich habe im Konfigurator auf Ihrer Website ein Schild geplant:\n' + zusammenfassung() + '\nBitte um ein Festpreis-Angebot. Die Vorschau schicke ich als Bild.';
-    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    window.open('https://wa.me/' + ((S.region === 'nrw') ? '491782410682' : WA) + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
   });
   $('#kf-anfrage').addEventListener('click', function () {
     var ta = document.getElementById('fo-nachricht'), fi = document.getElementById('fo-datei'), sel = document.getElementById('fo-folie');

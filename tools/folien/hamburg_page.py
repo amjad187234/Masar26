@@ -89,8 +89,8 @@ ersetze('data-region="nrw"', 'data-region="hamburg" data-ort="Hamburg"')
 # Hero
 ersetze('<div class="hero-badge">✦ Werbeagentur · Nordrhein-Westfalen</div>', '<div class="hero-badge">✦ Werbeagentur · Hamburg</div>')
 ersetze('<h1>Werbeagentur<em>für ganz</em>NRW.</h1>', '<h1>Werbeagentur<em>für</em>Hamburg.</h1>')
-ersetze('Düsseldorf, Köln, Dortmund, Essen und die Städte dazwischen: Unser Team in NRW misst bei Ihnen auf, produziert und montiert – von der Schaufensterfolie bis zur Leuchtreklame, vom einzelnen Transporter bis zur Website.',
-        'Von Altona bis Wandsbek, von Eimsbüttel bis Harburg: Unser Team in Hamburg misst bei Ihnen auf, produziert und montiert – von der Schaufensterfolie bis zur Leuchtreklame, vom einzelnen Transporter bis zur Website.')
+ersetze('Düsseldorf, Köln, Dortmund, Essen und die Städte dazwischen: Unser Team in NRW misst bei Ihnen auf und montiert – gefertigt wird in unserer Partnerwerkstatt. Von der Schaufensterfolie bis zur Leuchtreklame, vom einzelnen Transporter bis zur Website.',
+        'Von Altona bis Wandsbek, von Eimsbüttel bis Harburg: Unser Team in Hamburg misst bei Ihnen auf und montiert – gefertigt wird in unserer Partnerwerkstatt. Von der Schaufensterfolie bis zur Leuchtreklame, vom einzelnen Transporter bis zur Website.')
 # Bild im Hero (auch mobil sichtbar)
 block('<div class="hero-logo-frame">', '      </div>\n    </div>\n  </div>\n</section>',
       '<img class="hero-shot-hh" src="/leuchtreklamen-720.webp" srcset="/leuchtreklamen-360.webp 360w, /leuchtreklamen-540.webp 540w, /leuchtreklamen-720.webp 720w, /leuchtreklamen.webp 1080w" sizes="(max-width: 900px) 80vw, 400px" alt="Leuchtreklame und Außenwerbung in Hamburg – Masar Werbeagentur" loading="eager" fetchpriority="high" width="1080" height="1350">\n')
@@ -223,7 +223,7 @@ s = s.replace('<li><a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a></li
 s = s.replace('  <a href="/fahrzeugbeschriftung-nrw.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a>', '  <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-berlin.html">LKW-Beschriftung</a>')
 
 s = s.replace('<!-- CONTACT -->', '<div class="reveal" style="max-width:760px;width:calc(100% - 32px);margin:2rem auto 2.5rem;padding:1.1rem 1.4rem;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:10px;background:#fff;font-size:15px;line-height:1.7"><strong style="color:var(--navy)">Ratgeber:</strong> Welche Satzungen gelten in Hamburg, wer genehmigt und was kostet es? <a href="/blog/werbeanlage-hamburg.html" style="color:var(--teal-ink);font-weight:700">Werbeanlage in Hamburg – zum Artikel →</a></div>\n<!-- CONTACT -->', 1)
-s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=12', s)   # Region hamburg braucht die neue Version
+s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=13', s)   # Region hamburg braucht die neue Version
 
 assert 'Düsseldorf' not in s.split('<footer')[0], 'NRW-Stadt im Inhalt übrig'
 open(os.path.join(ROOT, 'werbeagentur-hamburg.html'), 'w', encoding='utf-8').write(s)

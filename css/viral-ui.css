@@ -16,8 +16,6 @@
 /* Bleibt bewusst (Test 04.11.2026): ohne die Einblendung werden Schriftwechsel und
    die Überschriften-Anpassung (umbruch.py) als Layout-Verschiebung sichtbar
    (CLS am Desktop bis 0,14 statt 0). */
-@keyframes pageFadeIn { from { opacity:0; } to { opacity:1; } }
-body { animation: pageFadeIn .3s ease both; }
 @media (prefers-reduced-motion: reduce) { body { animation: none; } }
 
 /* ─── Spring hover — cards & CTAs ─────────────────────────────── */

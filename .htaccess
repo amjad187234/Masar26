@@ -148,6 +148,8 @@ AddDefaultCharset UTF-8
   ExpiresByType image/webp                   "access plus 6 months"
   ExpiresByType image/avif                   "access plus 6 months"
   ExpiresByType image/svg+xml                "access plus 6 months"
+  ExpiresByType video/mp4                    "access plus 6 months"
+  ExpiresByType video/webm                   "access plus 6 months"
   ExpiresByType image/x-icon                 "access plus 1 year"
   ExpiresByType image/vnd.microsoft.icon     "access plus 1 year"
 

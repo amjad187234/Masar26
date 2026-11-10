@@ -109,7 +109,7 @@
       e.punkte.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
       '<p class="gc-links"><strong>Mehr dazu:</strong> ' + e.links.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + '</a>'; }).join(' · ') + '</p>' +
       '<p class="gc-hinweis">Keine Rechtsberatung – eine erste Einordnung nach den Regeln mit Stand 11/2026. Verbindlich ist die Auskunft der Bauaufsicht bzw. des Bezirksamts. Wir klären die Genehmigung bei jedem Angebot mit.</p>' +
-      '<div class="gc-act"><a class="btn btn-teal" href="#kontakt" id="gc-anfrage">Genehmigung mit uns klären</a><a class="btn gc-btn2" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + WA + '?text=' + encodeURIComponent(zusammen(e)) + '">Per WhatsApp fragen</a><button type="button" class="gc-again" id="gc-neu">Neu starten</button></div></div>';
+      '<div class="gc-act"><a class="btn btn-teal" href="#kontakt" id="gc-anfrage">Genehmigung mit uns klären</a><a class="btn gc-btn2" target="_blank" rel="noopener noreferrer" href="https://wa.me/' + ((A.region === 'nrw') ? '491782410682' : WA) + '?text=' + encodeURIComponent(zusammen(e)) + '">Per WhatsApp fragen</a><button type="button" class="gc-again" id="gc-neu">Neu starten</button></div></div>';
     out.hidden = false;
     $('#gc-anfrage').addEventListener('click', function () { var ta = document.getElementById('fo-nachricht'); if (ta) ta.value = zusammen(e) + '\n\n' + (ta.value || ''); });
     $('#gc-neu').addEventListener('click', function () { FRAGEN.forEach(function (k) { A[k] = null; }); $$('[data-v]').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); }); zeige(); root.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
