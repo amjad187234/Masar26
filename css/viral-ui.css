@@ -382,7 +382,7 @@ nav li a,.nav-links a,.subnav a,footer li a{text-decoration:none}
 @media (prefers-reduced-motion:reduce){.hamburger span{transition:none}}
 .svc-link{padding:.55rem 0;margin-top:.3rem!important}
 .social-more{padding:.45rem 0}
-.foot-legal a{display:inline-block;padding:.45rem 0}
+.foot-legal a{display:inline-block;padding:.45rem 0;min-width:24px;min-height:24px}
 @media (pointer:coarse){footer .foot-col a{padding:.4rem 0;margin-bottom:0!important}}
 .hero-badge,.ph-badge,.eyebrow,.sec-eyebrow,.price-badge,.mk-ey,.hero-trust-txt,.kb-lbl,
 footer .foot-col h2.foot-h,footer .foot-col h5{font-size:12px!important}
