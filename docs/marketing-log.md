@@ -38,3 +38,4 @@
 - Vollprüfung aller 185 Seiten (mobil + Desktop): keine Konsolenfehler, keine 404, kein Überlauf, axe ohne Verstöße auf 20 Kernseiten, interne Links/Anker/Canonicals/JSON-LD in Ordnung; Assistent, Terminbuchung, Status, Werkzeuge laden fehlerfrei.
 - Ladezeit: Startseite mobil 3,1 MB → 1,1 MB (Video 640×800, lädt erst bei Sichtbarkeit), Referenzen 2,5 MB → 0,5 MB (720er-Vorschauen), Umland-Seiten 0,8 → 0,4 MB (Kategorie-Bilder neu komprimiert, 3,7 → 2,4 MB gesamt).
 - Lesbarkeit: Kacheltext 11 → 12,5 px (10 Seiten), Footer-Links Mindestgröße, zwei Hero-Bilder mit srcset.
+- Startseite mobil: Anfrage-Tasten auf dem ersten Bildschirm (vor den Zusagen), Überschrift 33 px; LocalBusiness-Schema um Beratungssprachen ergänzt; Arbeitsliste Verzeichnis-Einträge (docs/markt-2026-11/verzeichnisse-eintraege.md).
