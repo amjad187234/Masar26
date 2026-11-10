@@ -13,6 +13,7 @@ Unterschriften, Passwörter oder Tokens committen. `kontakt-config.php` liegt nu
   selbst auf „Bereitstellen“.
 - Kein Force-Push, kein Umschreiben der Historie.
 - Größere Änderungen an URLs, Navigation oder noindex nur nach Freigabe.
+- **Vollmacht für die Website (Inhaber, 10.11.2026):** Preise, neue Seiten/Ratgeber, Rechts- und Leistungstexte darf Claude selbst entscheiden und umsetzen („entscheide du, du hast alle meine Infos“). Grenzen bleiben: nichts erfinden (Zahlen, Bewertungen, Referenzen, Fähigkeiten), Rechtliches mit Quelle prüfen, nur Leistungen nennen, die hier dokumentiert sind; jede Preis-/Leistungsentscheidung im Bericht nennen und hier festhalten. **Kundendateien, Kundenkartei, Belege (Drive, `tools/angebot/privat`, Anfragen-Datenbank) nie anfassen.**
 - Nie Zahlen, Fähigkeiten, Bewertungen, Referenzen oder Rechtsaussagen erfinden; Rechtliches mit Quellen prüfen.
 - Keine Bank-Zugangsdaten annehmen.
 - Bei neuen Seiten immer Bilder einsetzen (auch mobil sichtbar, `<style id="hero-mobile">`) und auf
