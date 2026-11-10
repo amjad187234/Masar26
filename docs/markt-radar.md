@@ -35,3 +35,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | Websuche Werbetechnik Berlin Weihnachten/Schaufenster (sellwerk.de, gelbeseiten.de, textilwirtschaft.de, berliner-zeitung.de) | Berliner Werbetechnik-Betriebe zeigen weiterhin **keine Saison-Aktionen** online; Weihnachtsschaufenster sind redaktionell Thema (Visual Merchandising), nicht in Anbieter-Angeboten. | Saisonseite `schaufenster-weihnachten-black-friday.html` bleibt Alleinstellung (bereits von 7+ Seiten verlinkt). Black Friday 27.11. – noch 2,5 Wochen. |
 | Amt für Statistik Berlin-Brandenburg (Pressemitteilungen/Berichte Gewerbeanmeldungen 2026) | 1. Hj. 2026: 22.306 Gewerbeanmeldungen in Berlin (−0,5 % ggü. Vorjahr), Einzelhandel 80,3 % der Handelsanmeldungen; Gastronomie rund 265–355 Anmeldungen pro Monat. | Gastronomie und Einzelhandel bleiben die größten Zielgruppen für Eröffnungswerbung → neue Gastro-Seite intern verlinkt; Eröffnungs-Checkliste/Banner-Abschnitt passen zum Jahresbeginn. Keine Zahlen auf die Website übernommen. |
 | Google Ads Transparency / Meta Ad Library | nicht abgefragt (aus dem Container nicht erreichbar) | – |
+
+## 10.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| inside-digital.de (Black Friday 2026), ms-aktuell.de | Black Friday 27.11.2026, Cyber Monday 30.11.; Rabattaktionen starten Wochen vorher; im stationären Handel Tendenz steigend. Für Preisermäßigungs-Werbung gilt § 11 PAngV. | Saisonseite: FAQ zu Rabatt-Angaben auf dem Schaufenster (§ 11 PAngV, Quelle gesetze-im-internet.de) ergänzt. Abweichende Angaben zur „Black Week“ (20.–27.11. vs. 23.–29.11.) – Seite unverändert gelassen, da Definition je Quelle schwankt. |
+| Google Ads Transparency / Meta Ad Library | nicht abgefragt (aus dem Container nicht erreichbar) | – |

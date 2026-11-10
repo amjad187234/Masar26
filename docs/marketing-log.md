@@ -30,3 +30,6 @@
 
 ## 09.11.2026
 - Interne Links zu den neuen Seiten: Gastronomie-Seite von Leuchtreklame, Print, Digital Signage und Werbetechnik; Firmenschild-Kosten-Ratgeber von Schilder Berlin und Werbetechnik (`tools/seo/ratgeber_hinweise.py`).
+
+## 10.11.2026
+- Saisonseite Schaufenster Black Friday & Weihnachten: FAQ „Rabatt-Angaben auf dem Schaufenster“ mit § 11 PAngV (Quelle) inkl. FAQPage-JSON-LD.
