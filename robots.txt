@@ -13,7 +13,17 @@ Disallow: /data/
 Disallow: /uploads/
 Disallow: /config.php
 Disallow: /mail.php
+Disallow: /mailer.php
 Disallow: /indexnow.php
+Disallow: /cron.php
+Disallow: /telegram.php
+Disallow: /kontakt.php
+Disallow: /anfrage-log.php
+Disallow: /status.php
+Disallow: /termin.php
+Disallow: /bewertung.php
+Disallow: /signatur.php
+Disallow: /email-signatur.php
 Disallow: /danke.html
 Disallow: /qr/
 Disallow: /qr.html

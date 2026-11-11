@@ -62,6 +62,7 @@ SCHRITTE = [
     ('marke', 'post', 'seo/marke.py', 'Farben nach Markenleitfaden + Claim'),
     ('umbruch', 'post', 'seo/umbruch.py', 'Ohne Brotkrumen-Leiste und Silbentrennung'),
     ('sitemap_lastmod', 'post', 'seo/sitemap_lastmod.py', 'lastmod nur bei geändertem Haupttext'),
+    ('datemod_sync', 'post', 'seo/datemod_sync.py', 'JSON-LD dateModified = sitemap lastmod'),
 ]
 NAMEN = [s[0] for s in SCHRITTE]
 # Dateien, deren Änderungen gezählt werden (Bilder erzeugen nur referenzen_einbau.py, die zählen mit)

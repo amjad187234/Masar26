@@ -24,6 +24,13 @@ ERSETZEN = [
     (re.compile(r'#c4b5fd', re.I), '#a8eadf'),
     # Gelbe Hinweis-Etiketten → Teal
     (re.compile(r'background:#e8b931', re.I), 'background:#58d0bd'),
+    # Brauner Verlauf (Druck-Kachel leistungen.html) → Navy/Teal dunkel
+    (re.compile(r'linear-gradient\(135deg,\s*#451a03,\s*#854d0e\)', re.I), 'linear-gradient(135deg,#132e50,#177567)'),
+    # Footer-Social: color für Icons mit stroke="currentColor" (Instagram) ergänzen, damit sie wie Facebook/WhatsApp (fill) aussehen – idempotent
+    (re.compile(r'fill:rgba\(255,255,255,\.45\);\s*transition:fill \.25s;'),
+     'fill:rgba(255,255,255,.45);color:rgba(255,255,255,.45);transition:fill .25s,color .25s;'),
+    (re.compile(r'fill:rgba\(255,255,255,\.45\);\}'), 'fill:rgba(255,255,255,.45);color:rgba(255,255,255,.45);}'),
+    (re.compile(r'\.fsoc:hover svg\s*\{\s*fill:var\(--teal\);\s*\}'), '.fsoc:hover svg{fill:var(--teal);color:var(--teal)}'),
 ]
 
 

@@ -134,6 +134,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--nav-h);backgrou
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:start}
 .gal-item{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--off);border:1px solid var(--border);cursor:zoom-in;padding:0;transition:transform .25s,box-shadow .25s,border-color .25s;display:block;width:100%}
 .gal-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(88,208,189,.18);border-color:var(--teal)}
+.gal-item,.sl-nav button{font-family:inherit}
 /* Kein festes Format: jede Kachel ist so hoch wie ihr Bild.
    width/height am Tag geben das Seitenverhältnis vor, damit vor dem Laden nichts springt. */
 .gal-item img{width:100%;height:auto;display:block}
@@ -727,7 +728,7 @@ document.addEventListener('DOMContentLoaded', function(){
           <span class="foot-logo-txt">MASAR</span>
         </div>
         <p class="foot-claim" style="font:900 21px/1.1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px;color:#fff;margin:0 0 .55rem">Werbung, die <span style="color:#58d0bd">man sieht.</span></p>
-        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service Werbeagentur in Berlin.</p>
+        <p class="foot-desc">Kreative Vision. Digitale Lösungen.<br>Von der Leuchtreklame bis zum viralen Reel – Ihre Full-Service-Werbeagentur in Berlin.</p>
         <div class="foot-social">
           <a href="https://www.instagram.com/masar.werbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           <a href="https://www.facebook.com/masarwerbeagentur/" target="_blank" rel="noopener noreferrer" class="fsoc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>

@@ -15,7 +15,7 @@ EINH = (rf'(?:{SP}?/{SP}?(?:m²|Monat|Buchstabe|Buchst\.|Stück|Fahrzeug)'
         rf'|{SP}(?:pro|je){SP}(?:m²|Monat|Buchstabe|Stück|Fahrzeug|Motiv|Seite)'
         rf'|{SP}für{SP}\d+{SP}Stück)?')
 TOK = re.compile(rf'(?<![\d.,])(?:(?P<ab>[Aa]b){SP})?(?P<n>{NUM}){SP}?€(?P<e>{EINH})(?P<net>,?{SP}netto)?(?P<z>{SP}?zzgl\.{SP}?(?:19{SP}?%{SP}?)?(?:MwSt\.?|Umsatzsteuer))?'
-                 rf'(?!{SP}?(?:/{SP}?(?:h\b|Std)|inkl|brutto|Brutto|einzeln))')
+                 rf'(?(net)|(?!{SP}?inkl))(?!{SP}?(?:/{SP}?(?:h\b|Std)|brutto|Brutto|einzeln))')
 SPAN = re.compile(r' ?<span class="brutto">\([^<]*\)</span>')
 CSS = ('<style id="brutto-css">.brutto{white-space:nowrap}'
        '.price-val .brutto,.ph-stat-num .brutto,.stat-num .brutto,.pkg-price .brutto,.price .brutto,td .brutto{display:block}table.rt td:has(.brutto){flex-wrap:wrap;row-gap:0}table.rt td .brutto{flex:1 0 100%;text-align:right}</style>')

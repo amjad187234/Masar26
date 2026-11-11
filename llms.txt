@@ -1,17 +1,43 @@
 # Masar Werbeagentur
 
-> Full-Service-Werbeagentur aus Berlin-Wedding für Unternehmen: Werbetechnik (Leuchtreklame, Schilder, Schaufenster- und Fahrzeugbeschriftung, LKW-Beschriftung), Fensterfolien (Sonnenschutz, Sichtschutz, Sicherheit), Messebau, Druck, Grafikdesign, Webdesign, Social Media und KI-Lösungen. Gestaltung, Produktion und Montage aus einer Hand. Angebot in der Regel innerhalb von 24 Stunden.
+> Full-Service-Werbeagentur aus Berlin-Wedding für Unternehmen: Werbetechnik (Leuchtreklame, Schilder, Schaufenster- und Fahrzeugbeschriftung, LKW-Beschriftung), Fensterfolien (Sonnenschutz, Sichtschutz, Sicherheit), Messebau, Druck, Grafikdesign, Webdesign, Social Media und KI-Lösungen. Gestaltung und Projektsteuerung aus einer Hand; die Fertigung (Druck, Plott, Schilder, Folien) übernimmt eine Partnerwerkstatt, beleuchtete Anlagen bauen und montieren eingetragene Partnerbetriebe. Angebot in der Regel innerhalb von 24 Stunden.
 
 - Adresse: Bristolstraße 19E, 13349 Berlin (Wedding)
 - Telefon / WhatsApp: +49 178 514 3918 (0178 514 3918)
 - E-Mail: info@masar-werbeagentur.de
-- Öffnungszeiten: Montag bis Samstag, 08:00–20:00 Uhr
+- Erreichbarkeit: Montag bis Samstag, 08:00–20:00 Uhr (Telefon/WhatsApp/E-Mail)
+- Kostenlose Beratungstermine: Montag bis Freitag 09:00–18:00, Samstag 10:00–14:00 Uhr (Telefon, WhatsApp-Video oder vor Ort in Berlin)
 - Inhaber: Amjad Alblili, Mediengestalter
 - Standort: einziger Standort ist das Studio in Berlin-Wedding – keine Filialen oder Niederlassungen in anderen Städten.
 - Leistungserbringung: Masar plant, gestaltet, koordiniert und steuert Projekte. Arbeiten, für die eine Eintragung in die Handwerksrolle oder eine besondere Qualifikation nötig ist (Bau und Montage beleuchteter Werbeanlagen, elektrische Anschlüsse durch einen eingetragenen Elektrofachbetrieb, Montagen mit Hubarbeitsbühne, Messestand-Bauteile), führen qualifizierte Partnerbetriebe im Auftrag von Masar aus. Keine Eintragung in die Handwerksrolle. Details: https://masar-werbeagentur.de/impressum.html#leistungserbringung
 - Einsatzgebiet: Berlin, Potsdam und Brandenburg (betreut aus Berlin); Werbetechnik, Druck und Design auch in Nordrhein-Westfalen und Hamburg über eigene Teams vor Ort (ohne Niederlassung). Messebau und Expressdruck nur in Berlin; Foto und Video in Berlin; in NRW nur Content und Video in Essen nach Absprache, nicht in Hamburg. Übersicht: https://masar-werbeagentur.de/einsatzgebiete.html
 - Sprachen: Deutsch, Englisch, Arabisch, Türkisch
-- Preise: alle genannten Preise netto zzgl. 19 % MwSt.; individuelle Projekte als Festpreis nach Fotos oder Aufmaß. In NRW gelten eigene, leicht höhere Preise (z. B. Firmenschild ab 179 €, LED-Leuchtbuchstaben ab 179 € pro Buchstabe, Fahrzeug-Teilbeschriftung ab 340 €).
+- Preise: alle genannten Preise netto zzgl. 19 % MwSt.; individuelle Projekte als Festpreis nach Fotos oder Aufmaß. In NRW gelten eigene, leicht höhere Preise; in Hamburg gelten dieselben Preise wie in NRW.
+
+## Preise (netto, ab) – Stand November 2026
+
+Alle Preise netto zzgl. 19 % MwSt. (für Privatkunden weist die Website zusätzlich den Bruttopreis aus). Format: Berlin / NRW (Hamburg wie NRW).
+
+- Schilder: ab 45 € / 59 €
+- Tür- und Klingelschild: ab 69 € / 85 €
+- Firmenschild: ab 149 € / 179 €
+- Einzelbuchstaben: ab 119 € / 139 €
+- Acrylglasschild: ab 240 € / 289 €
+- Praxis- und Kanzleischild: ab 290 € (NRW/Hamburg ab 339 €)
+- Leuchtbuchstaben (je Buchstabe): ab 149 € / 179 €
+- Schaufensterbeschriftung: ab 149 € / 179 €
+- Milchglas-/Sichtschutzfolie: ab 190 € / 229 €
+- Milchglasfolie nach Maß: ab 240 € / 289 €
+- Aktionsfolie: ab 190 € / 229 €
+- Lochfolie (pro m²): ab 45 € / 55 €
+- Fahrzeug-Teilbeschriftung: ab 290 € / 340 €
+- PVC-Banner (pro m²): ab 29 € / 34 €
+- Mesh-Banner (pro m²): ab 34 € / 39 €
+- Blockout-Banner (pro m²): ab 42 € / 48 €
+- Banner-Mindestpreis: 79 € / 89 €
+- Überall gleich: Logo-Design ab 490 €, Social-Media-Betreuung ab 490 €/Monat, LED-Neon für innen ab 249 €
+- Textildruck (nur Flex/Flock und DTF, Mindestbestellung 5 Stück): T-Shirt ab 15 €, Polo ab 22 €, Hoodie ab 35 €, Stofftasche ab 8 €, eigene Textilien ab 7 €/Motiv
+- Zahlung: 60 % Anzahlung, 40 % nach Lieferung/Montage (7 Tage). Lieferzeit rund 3 Wochen nach Freigabe und Anzahlung nur bei Schildern/Leuchtreklame.
 
 ## Werbetechnik
 
@@ -54,7 +80,7 @@
 - [KI-Lösungen](https://masar-werbeagentur.de/ki-loesungen/): KI-Agenten und Automatisierung, u. a. für Arztpraxen und Pflegedienste
 - [KI für Arztpraxen](https://masar-werbeagentur.de/ki-fuer-arztpraxen-berlin.html): Chat- und WhatsApp-Assistent, Online-Termine mit Erinnerung, E-Mails vorsortieren – mit KI-Hinweis, keine medizinische Beratung, AV-Vertrag und § 203 StGB
 - [KI für Pflegedienste](https://masar-werbeagentur.de/ki-fuer-pflegedienste-berlin.html): Krankmeldungen, Angehörigen-Fragen und Neuanfragen per Chat/WhatsApp aufnehmen und sortieren
-- Ratgeber Werbetechnik: [Leuchtreklame: Stromkosten, Schaltzeiten, Nachbarn](https://masar-werbeagentur.de/blog/leuchtreklame-strom-betriebszeiten.html), [Werbung auf Autoscheiben: Was ist erlaubt?](https://masar-werbeagentur.de/blog/werbung-autoscheiben-erlaubt.html), [Bauzaunbanner: Material, Befestigung, Genehmigung](https://masar-werbeagentur.de/blog/bauzaunbanner-ratgeber.html), [Arbeitskleidung bedrucken: Verfahren, Wäsche, Bestellung](https://masar-werbeagentur.de/blog/arbeitskleidung-bedrucken.html), [Logo-Dateien für Schild, Folie und Druck](https://masar-werbeagentur.de/blog/logo-dateien-werbetechnik.html), [Kundenstopper: Erlaubnis in Berlin, Hamburg und NRW](https://masar-werbeagentur.de/blog/kundenstopper-erlaubnis.html), [Leuchtreklame Kosten Berlin: Preise & 7 Prüfpunkte](https://masar-werbeagentur.de/blog/leuchtreklame-kosten-berlin.html), [Teure Fehler in der Werbung: Bilder, Logos, Preise](https://masar-werbeagentur.de/blog/werbung-teure-fehler.html), [Ladeneröffnung: Werbe-Checkliste mit Fristen](https://masar-werbeagentur.de/blog/ladeneroeffnung-werbung-checkliste.html), [Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau](https://masar-werbeagentur.de/blog/werbeschild-mietobjekt-vermieter.html), [Google-Unternehmensprofil: Abzocke-Anrufe erkennen](https://masar-werbeagentur.de/blog/google-unternehmensprofil-abzocke.html), [Was kostet ein Firmenschild? (Berlin, NRW, Hamburg)](https://masar-werbeagentur.de/blog/firmenschild-kosten-berlin.html)
+- Ratgeber Werbetechnik: [Leuchtreklame: Stromkosten, Schaltzeiten, Nachbarn](https://masar-werbeagentur.de/blog/leuchtreklame-strom-betriebszeiten.html), [Werbung auf Autoscheiben: Was ist erlaubt?](https://masar-werbeagentur.de/blog/werbung-autoscheiben-erlaubt.html), [Bauzaunbanner: Material, Befestigung, Genehmigung](https://masar-werbeagentur.de/blog/bauzaunbanner-ratgeber.html), [Arbeitskleidung bedrucken: Verfahren, Wäsche, Bestellung](https://masar-werbeagentur.de/blog/arbeitskleidung-bedrucken.html), [Logo-Dateien für Schild, Folie und Druck](https://masar-werbeagentur.de/blog/logo-dateien-werbetechnik.html), [Kundenstopper: Erlaubnis in Berlin, Hamburg und NRW](https://masar-werbeagentur.de/blog/kundenstopper-erlaubnis.html), [Leuchtreklame Kosten Berlin: Preise & 7 Prüfpunkte](https://masar-werbeagentur.de/blog/leuchtreklame-kosten-berlin.html), [Teure Fehler in der Werbung: Bilder, Logos, Preise](https://masar-werbeagentur.de/blog/werbung-teure-fehler.html), [Ladeneröffnung: Werbe-Checkliste mit Fristen](https://masar-werbeagentur.de/blog/ladeneroeffnung-werbung-checkliste.html), [Werbeschild am gemieteten Laden: Vermieter, WEG, Rückbau](https://masar-werbeagentur.de/blog/werbeschild-mietobjekt-vermieter.html), [Google-Unternehmensprofil: Abzocke-Anrufe erkennen](https://masar-werbeagentur.de/blog/google-unternehmensprofil-abzocke.html), [Was kostet ein Firmenschild? (Berlin, NRW, Hamburg)](https://masar-werbeagentur.de/blog/firmenschild-kosten-berlin.html), [Fahrzeugbeschriftung Kosten (Preise ab 290 € netto)](https://masar-werbeagentur.de/blog/fahrzeugbeschriftung-kosten-berlin.html), [Praxisschild: Regeln und Kosten](https://masar-werbeagentur.de/blog/praxisschild-regeln-kosten.html), [Was kostet Sonnenschutzfolie?](https://masar-werbeagentur.de/blog/sonnenschutzfolie-kosten.html)
 - Ratgeber KI in Praxis & Pflege: [Online-Terminbuchung](https://masar-werbeagentur.de/blog/online-terminbuchung-arztpraxis.html), [WhatsApp in der Arztpraxis](https://masar-werbeagentur.de/blog/whatsapp-arztpraxis-datenschutz.html), [Mehrsprachige Patienten](https://masar-werbeagentur.de/blog/mehrsprachige-patienten-praxis.html), [KI-Verordnung](https://masar-werbeagentur.de/blog/ki-verordnung-praxis-pflege.html), [Angehörige im Pflegedienst](https://masar-werbeagentur.de/blog/angehoerige-kommunikation-pflegedienst.html), [Postfach im Pflegedienst](https://masar-werbeagentur.de/blog/postfach-pflegedienst-ordnen.html), [Krankmeldungen](https://masar-werbeagentur.de/blog/krankmeldung-pflegedienst-digital.html)
 
 ## Branchen
