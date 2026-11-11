@@ -20,16 +20,20 @@ def main():
     for p in glob.glob(os.path.join(ROOT, 'blog', '*.html')):
         s = open(p, encoding='utf-8').read()
         alt = s
-        cta = re.search(r'<div class="article-cta">\s*<h3>(.*?)</h3>.*?<a href="(/[^"]+)"[^>]*class="btn-teal"[^>]*>.*?(?:<a href="(https://wa\.me/[^"]+)")?', s, re.S)
+        cta = re.search(r'<div class="article-cta">\s*<h3>(.*?)</h3>\s*(?:<p>(.*?)</p>)?.*?<a href="(/[^"]+)"[^>]*class="btn-teal"[^>]*>.*?(?:<a href="(https://wa\.me/[^"]+)")?', s, re.S)
         body = s.find('<main class="article-body">')
         if not cta or body < 0: continue
         h2 = s.find('<h2', body)
         if h2 < 0: continue
-        titel, link = re.sub(r'<span class="nw">(.*?)</span>', r'\1', cta.group(1).strip()), cta.group(2)   # ohne umbruch.py-Spans
+        entw = lambda t: re.sub(r'<span class="nw">(.*?)</span>', r'\1', t.strip())   # ohne umbruch.py-Spans
+        titel, link = entw(cta.group(1)), cta.group(3)
+        # Beschreibung aus der vorhandenen .article-cta übernehmen – passt je Ratgeber (KI, Textildruck, Schild …);
+        # kein neuer Text/Preis. Fallback nur, wenn der Artikel keine Beschreibung hat.
+        beschr = entw(cta.group(2)) if cta.group(2) else 'Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.'
         wa = re.search(r'<div class="article-cta">.*?<a href="(https://wa\.me/[^"]+)"', s, re.S)
         wa_btn = f'<a class="kb-wa" href="{wa.group(1)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>' if wa else ''
         box = (f'{A}<aside class="kurzbox" aria-label="Angebot"><p><b>{titel}</b>'
-               f'<span>Wir übernehmen Gestaltung, Fertigung und Montage – Festpreis nach Fotos, Angebot in der Regel in 24 Stunden.</span></p>'
+               f'<span>{beschr}</span></p>'
                f'<div class="kb-btns"><a class="kb-go" href="{link}">Mehr erfahren →</a>{wa_btn}</div></aside>{Z}')
         # Vorhandene Box an Ort und Stelle erneuern (früher: entfernen + neu einsetzen → Einrückung wuchs bei jedem Lauf)
         s, k = re.subn(re.escape(A) + r'.*?' + re.escape(Z), lambda m: box, s, count=1, flags=re.S)
