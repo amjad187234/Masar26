@@ -137,9 +137,31 @@ solche Festlegung im Bericht nennen.
   (`tools/seo/stadt_lokal.py`). Online-Preisrechner am 24.10.2026 auf Wunsch des Inhabers wieder entfernt – nicht neu einbauen.
 - Umland-Seiten `werbeagentur-*` (Brandenburg + Herne, Mülheim, Bottrop) sind sich noch ähnlich –
   echte Projekte/Fotos je Stadt ergänzen, sobald vorhanden.
+- Team-Audit 10.–11.11.2026 umgesetzt (alle 20 Sofort-Maßnahmen + Teile der Entscheidungen): u. a.
+  brutto.py-Reihenfolge, llms.txt-Preistabelle, robots.txt-Sperren, Markenfarben (Druck-Kachel, Instagram-Icon),
+  `tools/seo/datemod_sync.py` (JSON-LD dateModified = sitemap lastmod, am Ende der Pipeline nach sitemap_lastmod),
+  interne Kontextlinks auf schwach verlinkte Seiten.
+- NRW-/Hamburg-Kopf (11.11.2026): Hauptknopf „Projekt anfragen“ führt direkt zum Anfrage-Assistenten (#kontakt) –
+  größter Hebel für Anfragen (Team-Audit). Startseite Assistent-Überschrift ehrlich „In wenigen Schritten …“.
+- Mehrsprachigkeit sichtbar gemacht (11.11.2026, war nur im Schema): Startseite-Hero und NRW-/Hamburg-Kopf nennen
+  „Beratung auf Deutsch, Englisch, Arabisch & Türkisch“ – Alleinstellung ggü. Wettbewerb (Wettbewerbsanalyse `docs/markt-2026-11/`).
+- `schilder-berlin.html` für Privatkunden geöffnet (11.11.2026): „Firmenangebot“ → „Kostenloses Angebot“, Meta/Badge
+  „für Unternehmen & Privatkunden“ (Tür-/Klingel-/Praxisschilder betreffen auch Private; AGB deckt B2B+Privat).
+- Preiskonsistenz (11.11.2026): irreführende Unter-Listenpreise korrigiert – Blog-Fahrzeug „Schriftzug + Logo“ 80 → 290 €
+  (Liste Teilbeschriftung), `schaufensterbeschriftung-tipps` „Folien ab 80 €“ → 149 € (Liste Schaufensterbeschriftung).
 
 ## Offen
 
+- **Freigabe nötig – empfohlen (11.11.2026): Umland-Seiten `werbeagentur-*` (18 Brandenburg + Herne/Mülheim/Bottrop)
+  zu einer Regionalseite zusammenführen (301), wie bei pvc-banner/fensterfolie.** Grund: 83–87 % gleicher Text =
+  Doorway-Cluster, den Google unterdrückt → erklärt „keine Anfragen aus Städteseiten“. Echte Differenzierung ohne
+  erfundene Projekte/Fotos nicht möglich; eine Genehmigungs-Rechtsangabe je Stadt ist nicht sicher belegbar (BbgBO
+  § uneindeutig). URL-/Navigationsänderung → nur nach Freigabe.
+- **Entscheidung Inhaber: Wird Dresden wirklich bedient?** Steht in FAQ/Schema von ~20 Seiten, aber nicht in
+  einsatzgebiete.html/llms.txt/CLAUDE.md. Falls nein: überall entfernen; falls ja: in Einsatzgebiete/llms/Schema ergänzen.
+- Offen aus Audit (Freigabe/Entscheidung): Sticky-Leiste – „Angebot anfordern“ überall als Hauptknopf (statt Anruf);
+  Keyword in die H1 der Slogan-Seiten (Praxisschild/Kanzleischild); Fahrzeugseite „Ausschließlich für Unternehmen“
+  (werden Privatfahrzeuge beklebt?); Navigation NRW-Seiten (Fensterfolie/Schaufenster/Webdesign auf NRW-Seiten zeigen).
 - Phase 3: Angebote/Rechnungen aus der Anfragen-Übersicht; Phase 4: automatische Erinnerungen.
 - Inhaber: `admin_pass_hash` und Telegram einrichten, E-Mail-Versand testen.
 
