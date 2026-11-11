@@ -95,7 +95,7 @@ STAEDTE = [
   faq=[('Ist ein kleines Schild am Westenhellweg genehmigungsfrei?', 'Nein. Laut Stadt Dortmund sind Werbeanlagen im Bereich von Gestaltungssatzungen wie am Westenhellweg immer baugenehmigungspflichtig.'),
        ('Wer ist in Dortmund zuständig?', 'Das Stadtplanungs- und Bauordnungsamt; bei Denkmälern zusätzlich die Untere Denkmalbehörde, für Werbung auf öffentlichem Grund das Tiefbauamt.'),
        ('Was regelt die Hellweg-Satzung?', 'Anzahl, Lage, Größe und Ausführung von Werbeanlagen sowie Vordächer und Sonnenschutzdächer.')],
-  quellen=[('Stadt Dortmund – Infoblatt Werbeanlagen (PDF)', 'https://www.dortmund.de/dortmund/projekte/rathaus/verwaltung/stadtplanungs-und-bauordnungsamt/downloads/bauordnung/infoblaetter/informationsblatt-werbeanlagen.pdf'),
+  quellen=[('Stadt Dortmund – Infoblatt Werbeanlagen (PDF)', 'https://www.dortmund.de/dortmund/projekte/rathaus/verwaltung/stadtplanungs-und-bauordnungsamt/downloads/bauordnung/infoblaetter/infoblatt_werbeanlagen.pdf'),
            ('Stadt Dortmund – Bauantrag Werbeanlagen', 'https://www.dortmund.de/services/bauantrag-werbeanlagen.html'),
            ('Stadt Dortmund – Gestaltungssatzungen', 'https://www.dortmund.de/themen/planen-und-bauen/stadtplanung/baurechtliche-satzungen/gestaltungssatzungen/')]),
 

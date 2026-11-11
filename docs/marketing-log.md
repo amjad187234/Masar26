@@ -39,3 +39,8 @@
 - Ladezeit: Startseite mobil 3,1 MB → 1,1 MB (Video 640×800, lädt erst bei Sichtbarkeit), Referenzen 2,5 MB → 0,5 MB (720er-Vorschauen), Umland-Seiten 0,8 → 0,4 MB (Kategorie-Bilder neu komprimiert, 3,7 → 2,4 MB gesamt).
 - Lesbarkeit: Kacheltext 11 → 12,5 px (10 Seiten), Footer-Links Mindestgröße, zwei Hero-Bilder mit srcset.
 - Startseite mobil: Anfrage-Tasten auf dem ersten Bildschirm (vor den Zusagen), Überschrift 33 px; LocalBusiness-Schema um Beratungssprachen ergänzt; Arbeitsliste Verzeichnis-Einträge (docs/markt-2026-11/verzeichnisse-eintraege.md).
+
+## 11.11.2026 (Marketing-Runde)
+- Marktbeobachtung: kein Berliner Werbetechnik-Wettbewerber mit Black-Friday-/Weihnachts-Aktion online (Saisonseite bleibt Alleinstellung); niedrige Bewertungsfrequenz der Wettbewerber → Bewertungsbitte als Chance (docs/markt-radar.md).
+- `blog_kurzbox.py`: Angebotsbox übernimmt jetzt den Beschreibungssatz des jeweiligen Ratgebers aus der `.article-cta` statt des festen „Gestaltung, Fertigung und Montage“ – passt nun auch zu KI-, Textildruck- und Logo-Ratgebern (Punkt 7 aus wettbewerb-2026-11.md, 69 Ratgeber).
+- Dortmund-Infoblatt-URL vereinheitlicht: `stadt_ratgeber.py` auf `infoblatt_werbeanlagen.pdf` (per Websuche als aktuelle Fassung bestätigt) statt der veralteten `informationsblatt-werbeanlagen.pdf` (Punkt 6 aus wettbewerb-2026-11.md); Seite werbeanlage-dortmund neu erzeugt.
