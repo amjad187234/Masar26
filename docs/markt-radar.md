@@ -49,3 +49,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Websuche „Werbetechnik Berlin Schaufenster Black Friday/Weihnachten 2026 Aktion“ (sellwerk.de, werkenntdenbesten.de, berlin.de/ba-ts) | Weiterhin **kein** Berliner Werbetechnik-Betrieb mit sichtbaren Black-Friday-/Weihnachts-Aktionen online; graphicline (Berlin) laut werkenntdenbesten.de nur +4 Bewertungen in 12 Monaten. Black Friday 27.11. (16 Tage), Weihnachtsmärkte Dez. gelistet. | Saisonseite `schaufenster-weihnachten-black-friday.html` bleibt Alleinstellung. Niedrige Bewertungs-Frequenz der Wettbewerber bestätigt die Chance „systematische Bewertungsbitte“ (bewertungskarte.py + Telegram „Wie war's?“ bereits vorhanden) – als Vorschlag an den Inhaber. Keine fremden Preise übernommen. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 12.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Grüne Woche 2027 (messen.de, gruenewoche.de Stand Services, pfalz.de Ausstellereinladung) | Termin 15.–24.01.2027 bestätigt (ein Blog nennt abweichend 16.–25.01.); Aufbau-/Standbau-Fristen weiterhin nicht öffentlich. Noch rund 9 Wochen – Aussteller planen jetzt Grafik, Banner, Team-Kleidung. | Keine Frist auf die Seite übernommen. `messestand-berlin-2027.html` war intern schwach verlinkt (4 Seiten) → jetzt von 8 Seiten (Hinweis-Kasten). |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |

@@ -44,3 +44,6 @@
 - Marktbeobachtung: kein Berliner Werbetechnik-Wettbewerber mit Black-Friday-/Weihnachts-Aktion online (Saisonseite bleibt Alleinstellung); niedrige Bewertungsfrequenz der Wettbewerber → Bewertungsbitte als Chance (docs/markt-radar.md).
 - `blog_kurzbox.py`: Angebotsbox übernimmt jetzt den Beschreibungssatz des jeweiligen Ratgebers aus der `.article-cta` statt des festen „Gestaltung, Fertigung und Montage“ – passt nun auch zu KI-, Textildruck- und Logo-Ratgebern (Punkt 7 aus wettbewerb-2026-11.md, 69 Ratgeber).
 - Dortmund-Infoblatt-URL vereinheitlicht: `stadt_ratgeber.py` auf `infoblatt_werbeanlagen.pdf` (per Websuche als aktuelle Fassung bestätigt) statt der veralteten `informationsblatt-werbeanlagen.pdf` (Punkt 6 aus wettbewerb-2026-11.md); Seite werbeanlage-dortmund neu erzeugt.
+
+## 12.11.2026 (Marketing-Runde)
+- Saison Grüne Woche (15.–24.01.2027): Hinweis-Kasten „Gut zu wissen“ verlinkt jetzt `messestand-berlin-2027.html` von PVC-Banner Berlin, Print, Werbetechnik und Messebeschriftung (neu mit Kasten); `textildruck-berlin.html` von Fahrzeugbeschriftung Berlin, Werbung Handwerker, Print und Messebeschriftung (`tools/seo/ratgeber_hinweise.py`). Eingehende Links: Messestand 4 → 8, Textildruck 5 → 8.
