@@ -14,7 +14,8 @@ Felder (JSON):
   box_titel, box_text, bild (optional, Pfad relativ zur JSON-Datei),
   positionen: [[Leistung, Beschreibung (Zeilen mit \\n), Netto], …],
   anzahlung: Prozent (Standard 60; 0 = Zahlung komplett nach Lieferung),
-  zahlungsziel_tage (Standard 7), hinweise: [..], summe_zusatz (Zeile unter der MwSt.)
+  zahlungsziel_tage (Standard 7), hinweise: [..], summe_zusatz (Zeile unter der MwSt.),
+  kopf (Überschrift statt „ANGEBOT“, z. B. „RICHTANGEBOT“), b2b: true (Netto groß, Brutto klein), total_titel (optional)
 Rechnet Netto, 19 % MwSt., Brutto und Anzahlung/Rest selbst (auf Cent gerundet, Rest = Brutto − Anzahlung).
 """
 import json, os, sys, html, shutil, subprocess
@@ -90,6 +91,10 @@ def bauen(d, aus):
         pay = f'<tr><td class="k">Zahlung</td><td>nach Lieferung/Montage – zahlbar innerhalb von {tage} Tagen ohne Abzug</td><td class="r">{eur(brutto)}</td></tr>'
         note = 'Betrag brutto inkl. 19 % MwSt. Die Bankverbindung finden Sie auf der Rechnung.'
 
+    # B2B: Netto steht groß, Brutto klein darunter
+    total = (f'<small>{e(d.get("total_titel", "Gesamtpreis netto"))}</small><b>{eur(netto)}</b>'
+             f'<small style="display:block;margin-top:1.5mm;opacity:.9">zzgl. 19 % MwSt. · brutto {eur(brutto)}</small>'
+             if d.get('b2b') else f'<small>{e(d.get("total_titel", "Gesamtpreis brutto"))}</small><b>{eur(brutto)}</b>')
     hinw = ''.join(f'<li>{e(h)}</li>' for h in d.get('hinweise', HINWEISE))
     css = open(os.path.join(HERE, 'angebot.css'), encoding='utf-8').read().replace('{ROOT}', ROOT)
     nr = e(d['nr'])
@@ -102,7 +107,7 @@ def bauen(d, aus):
   <div class="brand"><b>MASAR</b><span>WERBEAGENTUR BERLIN</span></div>
   <div class="addr">{FIRMA}</div>
 </div>
-<div class="title"><h1>ANGEBOT</h1><div class="sub">{e(d['titel'])}<br>{e(d.get('untertitel', d['kunde']))}</div></div>
+<div class="title"><h1>{e(d.get('kopf', 'ANGEBOT'))}</h1><div class="sub">{e(d['titel'])}<br>{e(d.get('untertitel', d['kunde']))}</div></div>
 <table class="meta">
   <tr><td class="k">Kunde / Objekt</td><td>{e(d['kunde'])}</td><td class="k k2">Angebots-Nr.</td><td>{nr}</td></tr>
   <tr><td class="k">Montageort</td><td>{e(d.get('ort', ''))}</td><td class="k k2">Angebotsdatum</td><td>{e(d['datum'])}</td></tr>
@@ -121,7 +126,7 @@ def bauen(d, aus):
     <tr><td>19 % MwSt.</td><td class="r">{eur(mwst)}</td></tr>
     <tr><td>{e(d.get('summe_zusatz', 'inkl. Lieferung und Montage in Berlin'))}</td><td class="r">✓</td></tr>
   </table>
-  <div class="total"><small>Gesamtpreis brutto</small><b>{eur(brutto)}</b></div>
+  <div class="total">{total}</div>
 </div>
 <h2>Zahlungsbedingungen</h2>
 <table class="pay">
