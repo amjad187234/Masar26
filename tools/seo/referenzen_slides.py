@@ -58,7 +58,6 @@ KATEGORIEN = [
         ('werkstatt-folie-aufziehen-menuetafel-01', 'Nassverklebung: Folie wird blasenfrei auf die Tafel gerakelt', 'Bedruckte Menütafel mit Seifenwasser, eine Hand rakelt die Folie glatt'),
         ('leuchtreklame-berlin-07', 'Leuchtbuchstaben, fertig verdrahtet', 'Blau leuchtende Profilbuchstaben für einen Barbershop, aufgebaut in der Werkstatt'),
         ('leuchtreklame-berlin-02', 'Leuchtkasten mit ausgefrästen Buchstaben, vor der Montage', 'Leuchtkasten für einen Friseursalon mit hinterleuchteten Buchstaben in der Werkstatt'),
-        ('neon-berlin-01', 'LED-Neonbuchstaben in der Fertigung', 'Rote LED-Neonbuchstaben auf der Werkbank, noch nicht verkabelt'),
         ('werkstatt-farbfaecher-01', 'Farbton wählen wir gemeinsam am Folien-Farbfächer aus', 'Aufgefächerter Farbfächer für Klebefolien in der Hand, viele Farbtöne von Grün bis Gelb'),
     ]),
     ('displays', 'Digital Signage', 'Menü-Bildschirme mit Inhalten von uns.', [
