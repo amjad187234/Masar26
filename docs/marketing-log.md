@@ -47,3 +47,6 @@
 
 ## 12.11.2026 (Marketing-Runde)
 - Saison Grüne Woche (15.–24.01.2027): Hinweis-Kasten „Gut zu wissen“ verlinkt jetzt `messestand-berlin-2027.html` von PVC-Banner Berlin, Print, Werbetechnik und Messebeschriftung (neu mit Kasten); `textildruck-berlin.html` von Fahrzeugbeschriftung Berlin, Werbung Handwerker, Print und Messebeschriftung (`tools/seo/ratgeber_hinweise.py`). Eingehende Links: Messestand 4 → 8, Textildruck 5 → 8.
+
+## 13.11.2026 (Marketing-Runde)
+- Saison Black Friday/Weihnachten (noch 2 Wochen): Hinweis-Kasten verlinkt die Saisonseite jetzt auch von `werbetechnik.html`, `werbung-gastronomie-berlin.html` und `werbung-kosmetikstudio-berlin.html` (beide neu mit Kasten, dazu Eröffnungs-Checkliste) – `tools/seo/ratgeber_hinweise.py`. Eingehende Links Saisonseite: 8 → 11.

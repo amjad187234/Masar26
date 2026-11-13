@@ -56,3 +56,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Websuche Grüne Woche 2027 (messen.de, gruenewoche.de Stand Services, pfalz.de Ausstellereinladung) | Termin 15.–24.01.2027 bestätigt (ein Blog nennt abweichend 16.–25.01.); Aufbau-/Standbau-Fristen weiterhin nicht öffentlich. Noch rund 9 Wochen – Aussteller planen jetzt Grafik, Banner, Team-Kleidung. | Keine Frist auf die Seite übernommen. `messestand-berlin-2027.html` war intern schwach verlinkt (4 Seiten) → jetzt von 8 Seiten (Hinweis-Kasten). |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 13.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche HDE-Weihnachtsprognose 2026 (ms-aktuell.de, lebensmittelpraxis.de, fashionunited.de) | Händler erwarten ein verhaltenes Weihnachtsgeschäft (laut HDE-Befragung rechnen rund zwei Drittel mit einem schlechteren Ergebnis als im Vorjahr); Geschenkbudgets stabil, Kunden achten auf den Preis; Gutscheine weit vorn. Black Friday in 2 Wochen. | Stationäre Läden müssen stärker auffallen → Saisonseite `schaufenster-weihnachten-black-friday.html` jetzt auch von Werbetechnik, Gastronomie- und Kosmetikstudio-Seite verlinkt (11 eingehende Links). Keine Zahlen auf die Website übernommen. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
