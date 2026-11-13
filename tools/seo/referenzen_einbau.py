@@ -7,7 +7,7 @@ from PIL import Image
 
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 A, Z = '<!-- referenzen:start -->', '<!-- referenzen:ende -->'
-LR = [('leuchtkasten-schaufenster-fahrschule-01', 'Leuchtkasten über dem Schaufenster einer Fahrschule'), ('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten beim Testlauf in der Werkstatt')]
+LR = [('leuchtlogo-rund-bside-montiert-01', 'Runder Leuchtausleger an der Fassade, montiert'), ('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten beim Testlauf in der Werkstatt')]
 FZ = [('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung, fertig'), ('fahrzeugfolierung-berlin-01', 'Vollfolierung eines Imbisswagens'), ('fahrzeugbeschriftung-berlin-01', 'Folie wird auf die Schiebetür aufgezogen')]
 SF = [('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN Berlin Gallery'), ('schaufensterfolie-fahrschule-01', 'Bedruckte Schaufensterfolie mit freiem Sichtfenster'), ('fensterbeschriftung-praxis-gold-01', 'Goldene Folienschrift auf dem Oberlicht einer Praxis')]
 DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Partnerwerkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('menuetafel-imbiss-montiert-01', 'Menütafel über der Theke eines Imbisses')]

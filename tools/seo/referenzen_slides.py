@@ -14,7 +14,6 @@ A, Z = '<!-- slides:start -->', '<!-- slides:ende -->'
 # (Datei ohne .webp, Bildunterschrift, Alt-Text)
 KATEGORIEN = [
     ('leuchtreklame', 'Leuchtreklame', 'Leuchtkästen, Leuchtbuchstaben und Ausleger – produziert und montiert.', [
-        ('leuchtkasten-schaufenster-fahrschule-01', 'Fahrschule JAD: Leuchtkasten über dem Schaufenster, direkt nach der Montage', 'Blauer Leuchtkasten „Fahrschule JAD“ über einem bedruckten Schaufenster, davor eine Leiter'),
         ('leuchtreklame-berlin-08', 'Barbershop: Fassadenanlage am Eröffnungstag', 'Fassadenbeschriftung eines Barbershops in Berlin am Eröffnungstag'),
         ('leuchtreklame-berlin-05', 'Hinterleuchtetes Logo im Innenraum', 'Hinterleuchtetes Logoschild eines Barbershops an einer Innenwand in Berlin'),
         ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft', 'Goldfarbene Fassadenbeschriftung eines Juweliers in Berlin'),
@@ -37,6 +36,7 @@ KATEGORIEN = [
         ('praxis-schaufenster-berlin-02', 'LIVE Physio, Berlin: Eröffnungsbeklebung, Logo-Blenden und Milchglas', 'Fertig beklebte Schaufensterfront einer neuen Physiotherapiepraxis in Berlin mit bedruckten Folien, Logo-Blenden und Milchglas'),
         ('praxis-schaufenster-berlin-01', 'LIVE Physio, Berlin: unser Team bei der Montage', 'Schaufenster einer Physiotherapiepraxis mit bedruckter Folie; zwei Monteure kleben weitere Folie'),
         ('schaufensterfolie-fahrschule-01', 'Fahrschule JAD: bedruckte Schaufensterfolie mit freiem Sichtfenster in der Mitte', 'Bedruckte Schaufensterfolie einer Fahrschule in Blau und Grün mit Leistungen, Website und freiem Sichtfenster'),
+        ('schaufensterfolie-fahrschule-montage-01', 'Fahrschule JAD: Schaufensterfolie direkt nach der Montage', 'Schaufenster einer Fahrschule mit frisch verklebter, bedruckter Folie in Blau und Grün, davor eine Leiter'),
         ('fensterbeschriftung-praxis-gold-01', 'Praxis: Schriftzug und Logo in Gold auf dem Oberlicht der Eingangstür', 'Goldene Folienschrift „Physiotherapie“ mit Logo auf dem gewölbten Oberlicht einer Eingangstür'),
         ('schaufensterbeschriftung-pflegedienst-berlin-01', 'Galileo Pflege GmbH, Berlin: Logo und Firmenname am Fenster, Öffnungszeiten an der Tür', 'Weiße Fensterbeschriftung eines ambulanten Pflegedienstes in Berlin mit Logo, Firmenname und Öffnungszeiten an der Tür'),
         ('schaufensterbeschriftung-berlin-01', 'Kioskfront, vollflächig bedruckt', 'Vollflächig bedruckte Front eines Imbiss-Kiosks in Berlin'),

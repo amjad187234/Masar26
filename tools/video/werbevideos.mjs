@@ -16,9 +16,9 @@ const VIDEOS = [
   { name: 'werbung-leuchtreklame-berlin', eyebrow: 'Leuchtreklame · Berlin', titel: 'Leuchtreklame,<br><em>die man sieht.</em>', sub: 'Entwurf · Genehmigung · Montage',
     szenen: [
       ['leuchtreklame-berlin-08', 'Fassadenanlage am Eröffnungstag', 'Sichtbar – bei Tag und Nacht.'],
-      ['leuchtlogo-rund-bside-01', 'The B-Side Events: runder Leuchtausleger', 'Ihr Logo als Leuchtkasten.'],
+      ['leuchtlogo-rund-bside-montiert-01', 'The B-Side Events: runder Leuchtausleger', 'Ihr Logo als Leuchtkasten.'],
       ['leuchtreklame-berlin-07', 'Leuchtbuchstaben, fertig verdrahtet', 'Gebaut von eingetragenen Partnerbetrieben.'],
-      ['leuchtkasten-schaufenster-fahrschule-01', 'Fahrschule JAD: Leuchtkasten über dem Fenster', 'Die Genehmigung prüfen wir mit.']],
+      ['leuchtreklame-berlin-04', 'Zweisprachige Leuchtwerbung für einen Eventsaal', 'Die Genehmigung prüfen wir mit.']],
     cta: 'Festpreis-Angebot nach Fotos' },
   { name: 'werbung-schaufenster-berlin', eyebrow: 'Schaufenster · Folien', titel: 'Schaufenster,<br><em>die verkaufen.</em>', sub: 'Beschriftung · Milchglas · Aktionsfolie',
     szenen: [

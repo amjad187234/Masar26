@@ -6,6 +6,7 @@ Aufruf: python3 tools/seo/werbevideo_einbau.py
 import os, re
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))).rstrip('/')
 A, Z = '<!-- werbevideo:start -->', '<!-- werbevideo:ende -->'
+V = '2'   # nach neu gerenderten Videos erhöhen (Videos werden 6 Monate im Browser gehalten)
 SEITEN = {
     'leuchtreklame-berlin.html': ('werbung-leuchtreklame-berlin', 'Leuchtreklame aus unseren Projekten', 'Fassadenanlagen, Leuchtausleger und Leuchtbuchstaben – geplant von uns, gebaut von eingetragenen Partnerbetrieben.', 'Video: Leuchtreklame-Projekte von Masar in Berlin'),
     'schaufensterbeschriftung-berlin.html': ('werbung-schaufenster-berlin', 'Schaufenster aus unseren Projekten', 'Beschriftung, Milchglas und bedruckte Folie – für Praxen, Fahrschulen, Pflegedienste und Läden.', 'Video: Schaufenster-Projekte von Masar in Berlin'),
@@ -22,7 +23,7 @@ def block(name, titel, text, label):
             f'<figure style="margin:0 auto;max-width:1000px;border-radius:16px;overflow:hidden;background:#132e50;box-shadow:0 14px 40px rgba(19,46,80,.18)">'
             f'<video class="mv-v" poster="/videos/{name}.webp" width="1280" height="720" muted loop playsinline preload="none" aria-label="{label}" '
             f'style="display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover">'
-            f'<source src="/videos/{name}.webm" type="video/webm"><source src="/videos/{name}.mp4" type="video/mp4"></video>'
+            f'<source src="/videos/{name}.webm?v={V}" type="video/webm"><source src="/videos/{name}.mp4?v={V}" type="video/mp4"></video>'
             f'<figcaption style="padding:1rem 1.3rem;color:#fff;font-size:15px;line-height:1.6"><strong style="font-family:\'Barlow Condensed\',\'Barlow Condensed Fallback\',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.3px;font-size:1.15rem;color:#58d0bd;display:block">{titel}</strong>{text}</figcaption>'
             f'</figure>\n</div></section>\n{SKRIPT}\n{Z}\n')
 
