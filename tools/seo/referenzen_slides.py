@@ -18,6 +18,7 @@ KATEGORIEN = [
         ('leuchtreklame-berlin-08', 'Barbershop: Fassadenanlage am Eröffnungstag', 'Fassadenbeschriftung eines Barbershops in Berlin am Eröffnungstag'),
         ('leuchtreklame-berlin-05', 'Hinterleuchtetes Logo im Innenraum', 'Hinterleuchtetes Logoschild eines Barbershops an einer Innenwand in Berlin'),
         ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft', 'Goldfarbene Fassadenbeschriftung eines Juweliers in Berlin'),
+        ('buchstaben-3d-innen-01', '3D-Buchstaben aus Acryl über einem Saaleingang, montiert', 'Grüne 3D-Buchstaben „BBK LINDE – Begegnung – Beratung – Kultur“ an einer weißen Wand über einer Holztür'),
         ('leuchtreklame-berlin-04', 'Zweisprachige Anlage, deutsch und arabisch', 'Zweisprachige Leuchtwerbung für einen Eventsaal, deutsch und arabisch'),
         ('leuchtreklame-berlin-01', 'Leuchtlogo und Thekenfront in einem Food-Court', 'Leuchtendes Logo und beleuchtete Thekenfront eines Dessert-Ladens in Berlin'),
         ('leuchtreklame-berlin-03', 'Leuchtlogo über der Theke, daneben die Menü-Bildschirme', 'Rundes Leuchtlogo über einer Café-Theke neben zwei Menü-Bildschirmen'),
