@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>'''
 
 VA, VZ = '<!-- videos:start -->', '<!-- videos:ende -->'
-FILM = ('digital-signage-donuts-film', 'Werbevideo für CRAVÉZ Berlin', 'Von uns gedreht und geschnitten: Cookies, Eis und Saucen direkt am Tresen – Marketingvideo für die Bildschirme im Laden und für Social Media, 26 Sekunden.')
+FILM = ('digital-signage-cravez-film', 'Werbevideo für CRAVÉZ Berlin', 'Von uns gedreht und geschnitten: Cookies, Eis und Saucen direkt am Tresen – Marketingvideo für die Bildschirme im Laden und für Social Media, 24 Sekunden.')
 # Menütafeln mit hellem Hintergrund (rote Imbiss-Tafeln bewusst nicht auf der Referenzseite)
 TAFELN = [
     ('digital-signage-donuts-01', 'Handmade Donuts', 'Sortiment und Boxpreise im Wechsel mit Produktaufnahmen.'),
