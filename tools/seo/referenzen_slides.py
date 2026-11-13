@@ -24,6 +24,7 @@ KATEGORIEN = [
         ('leuchtreklame-berlin-03', 'Leuchtlogo über der Theke, daneben die Menü-Bildschirme', 'Rundes Leuchtlogo über einer Café-Theke neben zwei Menü-Bildschirmen'),
     ]),
     ('leuchtlogos', 'Runde Leuchtlogos & Ausleger', 'Ihr Logo als Leuchtkasten – rund oder eckig, einseitig oder als doppelseitiger Ausleger.', [
+        ('leuchtlogo-rund-bside-montiert-01', 'The B-Side Events, Berlin-Wedding: runder Leuchtausleger an der Fassade, montiert', 'Runder, leuchtender Ausleger mit dem Logo „The B-Side Events – Berlin Wedding“ an einer Betonfassade, daneben ein Baum im Herbstlaub'),
         ('leuchtlogo-rund-bside-01', 'The B-Side Events, Berlin-Wedding: runder Leuchtausleger beim Lichttest', 'Runder, beleuchteter Ausleger mit dem Logo „The B-Side Events – Berlin Wedding“, Schallplatte und Tonarm, im Dunkeln leuchtend'),
         ('leuchtlogo-rund-burgereat-01', 'Burger Eat: runder Leuchtkasten mit Fotodruck, eingeschaltet', 'Runder Leuchtkasten mit Burger, Pommes und Getränk und dem Schriftzug „Burger Eat“, hell leuchtend'),
         ('leuchtlogo-rund-bside-burgereat-01', 'Zwei doppelseitige Ausleger mit Wandhalter, fertig zur Montage', 'Zwei runde Leuchtausleger „The B-Side Events“ und „Burger Eat“ mit schwarzem Wandhalter und Kabel, an eine Wand gelehnt'),
