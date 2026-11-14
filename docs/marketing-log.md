@@ -50,3 +50,12 @@
 
 ## 13.11.2026 (Marketing-Runde)
 - Saison Black Friday/Weihnachten (noch 2 Wochen): Hinweis-Kasten verlinkt die Saisonseite jetzt auch von `werbetechnik.html`, `werbung-gastronomie-berlin.html` und `werbung-kosmetikstudio-berlin.html` (beide neu mit Kasten, dazu Eröffnungs-Checkliste) – `tools/seo/ratgeber_hinweise.py`. Eingehende Links Saisonseite: 8 → 11.
+
+## 13.11.2026 (mit dem Inhaber)
+- Startseite: Leuchtlogo-Video aus dem Kopfbereich entfernt, Logo wieder eingesetzt.
+- Referenzen: Foto „LED-Neonbuchstaben in der Fertigung“ entfernt; neu: 3D-Buchstaben über einem Saaleingang, The B-Side Events (Ausleger an der Fassade, montiert – vom Inhaber bearbeitetes Foto).
+- Korrektur Fahrschule JAD: nur die Schaufensterfolie ist von uns – Foto in „Schaufenster & Folien“ verschoben, auf Leuchtreklame-/Außenwerbung-Seiten ersetzt, Werbevideo Leuchtreklame ohne diese Szene neu gerendert (Video-URLs `?v=2`).
+- CRAVÉZ-Werbevideo beginnt direkt mit der Cookie-Szene (Vorspann mit Bildfehlern entfernt, 24 s).
+
+## 14.11.2026 (Marketing-Runde)
+- Saison Firmenfeiern: Hinweis-Kasten verlinkt den Ratgeber „Fotowand für die Firmenfeier“ jetzt von der Saisonseite (neu mit Kasten), Express-Druck (neu), Print und Messebeschriftung – `tools/seo/ratgeber_hinweise.py`. Eingehende Links: 3 → 7.

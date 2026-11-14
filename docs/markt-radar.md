@@ -63,3 +63,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Websuche HDE-Weihnachtsprognose 2026 (ms-aktuell.de, lebensmittelpraxis.de, fashionunited.de) | Händler erwarten ein verhaltenes Weihnachtsgeschäft (laut HDE-Befragung rechnen rund zwei Drittel mit einem schlechteren Ergebnis als im Vorjahr); Geschenkbudgets stabil, Kunden achten auf den Preis; Gutscheine weit vorn. Black Friday in 2 Wochen. | Stationäre Läden müssen stärker auffallen → Saisonseite `schaufenster-weihnachten-black-friday.html` jetzt auch von Werbetechnik, Gastronomie- und Kosmetikstudio-Seite verlinkt (11 eingehende Links). Keine Zahlen auf die Website übernommen. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 14.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Firmenweihnachtsfeier 2026 (pressebox.de/teamgeist, tageskarte.io, firma.de) | Keine belastbare Umfrage für 2026 gefunden; Berichte gemischt (Firmen sparen, Feiern finden aber statt, Trend zu gemeinsamen Mitmach-Formaten). Saison der Firmenfeiern beginnt jetzt. | Ratgeber `blog/fotowand-firmenfeier.html` war nur von 3 Seiten verlinkt → jetzt von 7 (Saisonseite, Express-Druck, Print, Messebeschriftung). Keine Zahlen übernommen. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
