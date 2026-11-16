@@ -180,3 +180,16 @@ Belegablage (Inhaber, 09.11.2026): Vom Inhaber geschickte Belege getrennt im Dri
 **Ausgaben/Eingangsrechnungen** → Unterordner „Ausgaben – Eingangsrechnungen (privat)“, **eigene Kundenrechnungen** → „Kundenrechnungen – Ausgangsrechnungen (privat)“.
 Dateiname: `JJJJ-MM-TT_<Lieferant oder Kunde>_<Nr.>_<Betrag brutto>.pdf`. Auf Wunsch „gib mir die Belege“: je Ordner eine ZIP-Datei (Ausgaben.zip, Kundenrechnungen.zip) erzeugen und senden, optional nach Monat/Zeitraum.
 **Nie Belege/Dateien im Drive löschen, verschieben in den Papierkorb oder überschreiben – nur auf ausdrücklichen Befehl des Inhabers (09.11.2026).** Korrigierte Fassungen als neue Datei daneben ablegen.
+
+**Dauerhafte Ablage und Wiederherstellung (Inhaber, 16.11.2026: „Rechnungen und Dateien müssen immer vorhanden und verfügbar sein“).**
+Das Google Drive ist das Archiv, der Cloud-Rechner nur Arbeitsplatz. Ordner unter „MASAR WERBEAGENTUR / Kunden & Belege (privat)“:
+„Angebote (privat)“ (jedes Angebot einzeln), „Kundenrechnungen – Ausgangsrechnungen (privat)“, „Ausgaben – Eingangsrechnungen (privat)“,
+„Arbeitsdateien – Quellen und Stempel (privat)“ (JSON/Skripte der Angebote und Rechnungen + `stempel.png`, als ZIP „Masar_Arbeitsdateien_<Datum>.zip“),
+dazu im Hauptordner Kundenkartei-Nachträge, Kundendateien und das **„Masar – Belegverzeichnis (privat) – Stand <Datum>“** (Liste aller Belege).
+Regeln: (1) Jede neue PDF sofort einzeln im passenden Ordner ablegen, Dateiname `JJJJ-MM-TT_Kunde_Nr_Brutto.pdf`; keine ZIP-Sammlungen für Belege.
+(2) Nach jeder neuen oder geänderten Unterlage die Quelldateien als neue ZIP in „Arbeitsdateien“ hochladen (nur Text + Stempel, unter 3 MB) und das Belegverzeichnis
+als neue Fassung ablegen. (3) Nach einem Neustart zuerst wiederherstellen: Drive-Tool `download_file_content` speichert Binärdateien direkt auf die Platte
+(Pfad steht im Ergebnis) – neueste „Masar_Arbeitsdateien_*.zip“ holen und nach `tools/angebot/privat/` entpacken; einzelne PDFs bei Bedarf genauso holen.
+Der Stempel muss also nicht mehr neu vom Inhaber kommen. (4) Uploads sind auf ca. 3 MB je Datei begrenzt – größere Bilder vorher verkleinern.
+(5) Weiterhin nie etwas im Drive löschen, verschieben oder überschreiben. Vor dem Schreiben einer Rechnung/Zahl aus der Kundenkartei: mit der PDF abgleichen
+(Fehler 16.11.2026: eine nie gestellte Rechnung stand als „vorbereitet“ in der Kartei).
