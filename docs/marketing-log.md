@@ -59,3 +59,6 @@
 
 ## 14.11.2026 (Marketing-Runde)
 - Saison Firmenfeiern: Hinweis-Kasten verlinkt den Ratgeber „Fotowand für die Firmenfeier“ jetzt von der Saisonseite (neu mit Kasten), Express-Druck (neu), Print und Messebeschriftung – `tools/seo/ratgeber_hinweise.py`. Eingehende Links: 3 → 7.
+
+## 16.11.2026 (Marketing-Runde)
+- `praxisbeschilderung-berlin.html`: neue FAQ „Wir übernehmen eine bestehende Praxis. Was muss an der Beschilderung geändert werden?“ (sichtbar und im FAQPage-JSON-LD, Link zum Ratgeber Praxisschild: Regeln & Kosten) – Anlass: viele Praxisübernahmen in Berlin (docs/markt-radar.md).

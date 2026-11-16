@@ -70,3 +70,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Websuche Firmenweihnachtsfeier 2026 (pressebox.de/teamgeist, tageskarte.io, firma.de) | Keine belastbare Umfrage für 2026 gefunden; Berichte gemischt (Firmen sparen, Feiern finden aber statt, Trend zu gemeinsamen Mitmach-Formaten). Saison der Firmenfeiern beginnt jetzt. | Ratgeber `blog/fotowand-firmenfeier.html` war nur von 3 Seiten verlinkt → jetzt von 7 (Saisonseite, Express-Druck, Print, Messebeschriftung). Keine Zahlen übernommen. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 16.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Ärzteblatt (KV-Berlin-Umfrage 04/2026), Berliner Sparkasse Ratgeber Heilberufe (Websuche 14.11.) | Fast jede zweite Berliner Praxis denkt über Aufgabe nach; wer sich niederlässt, übernimmt in vielen Fachgruppen eine bestehende Praxis (gesperrte Planungsbereiche). | Praxisübernahme = neuer Name an Schild, Tür und Fenster. `praxisbeschilderung-berlin.html`: FAQ „Wir übernehmen eine bestehende Praxis …“ ergänzt (sichtbar + FAQPage-JSON-LD), mit Verweis auf den Ratgeber Praxisschild. Keine Zahlen auf die Website übernommen. |
+| Amt für Statistik Berlin-Brandenburg (Monatsberichte 2026), messen.de | Berlin: rund 270–355 Gastronomie- und 480–650 Einzelhandels-Anmeldungen je Monat (Jan.–Juni 2026); Messen Q1 2027: Grüne Woche 15.–24.01., Fruit Logistica 03.–05.02., ITB voraussichtlich 16.–18.03. | Bestätigt die Schwerpunkte Gastronomie/Eröffnung und Messe (Seiten vorhanden, zuletzt intern stärker verlinkt). Vorschläge an den Inhaber (14.11.): Seite für Agenturen (Umsetzungspartner), Abschnitt Demontage bei Auszug – neue Seiten/Leistungsaussagen, daher nur vorgeschlagen. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
