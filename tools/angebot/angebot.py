@@ -96,6 +96,23 @@ def bauen(d, aus):
              f'<small style="display:block;margin-top:1.5mm;opacity:.9">zzgl. 19 % MwSt. · brutto {eur(brutto)}</small>'
              if d.get('b2b') else f'<small>{e(d.get("total_titel", "Gesamtpreis brutto"))}</small><b>{eur(brutto)}</b>')
     hinw = ''.join(f'<li>{e(h)}</li>' for h in d.get('hinweise', HINWEISE))
+    # optionale zweite Seite mit Entwürfen: "bilder": [["datei.jpg", "Bildunterschrift"], ...]
+    seite2 = ''
+    if d.get('bilder'):
+        zellen = ''
+        for datei, text in d['bilder']:
+            src = os.path.join(os.path.dirname(d['_pfad']), datei)
+            ziel = os.path.join(aus, os.path.basename(datei))
+            if os.path.abspath(src) != os.path.abspath(ziel):
+                shutil.copyfile(src, ziel)
+            zellen += (f'<figure style="margin:0;display:flex;flex-direction:column;min-height:0">'
+                       f'<div style="flex:1;min-height:0;background:#f4f7f7;border-radius:2mm;overflow:hidden;display:flex;align-items:center;justify-content:center">'
+                       f'<img src="{e(os.path.basename(datei))}" style="max-width:100%;max-height:100%;object-fit:contain"></div>'
+                       f'<figcaption style="font-weight:600;color:#132e50;padding:1.5mm 0 0;font-size:8.5pt">{e(text)}</figcaption></figure>')
+        seite2 = (f'<div class="page" style="display:flex;flex-direction:column;page-break-before:always">'
+                  f'<h2 style="margin-top:0">{e(d.get("bilder_titel", "Entwürfe"))} · Angebot {e(d["nr"])}</h2>'
+                  f'<div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:5mm;margin-top:3mm">{zellen}</div>'
+                  f'<p class="note" style="margin-top:3mm">{e(d.get("bilder_hinweis", "Die Abbildungen sind Entwürfe zur Veranschaulichung; Farben und Details können in der Ausführung leicht abweichen."))}</p></div>')
     css = open(os.path.join(HERE, 'angebot.css'), encoding='utf-8').read().replace('{ROOT}', ROOT)
     nr = e(d['nr'])
     return f'''<!doctype html>
@@ -154,7 +171,7 @@ def bauen(d, aus):
     </div>
   </div>
 </div>
-</div></body></html>
+</div>{seite2}</body></html>
 ''', (netto, mwst, brutto, anz, rest)
 
 
