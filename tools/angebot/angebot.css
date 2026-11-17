@@ -70,3 +70,23 @@ h2{font:600 9.2pt 'Barlow',sans-serif;color:#2bb39f;text-transform:uppercase;let
 .sign2 .st img{display:block;width:33mm;margin:0 auto -1.5mm;mix-blend-mode:multiply;position:relative;z-index:1}
 .sign2 .st .cap{border-top:1px solid #8a99a8}
 .sign2 .cap{font-size:6.9pt;color:var(--muted);padding-top:.8mm}
+.seite0{display:flex;flex-direction:column;page-break-after:always}
+.karten{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4mm;margin-top:1mm}
+.karte{border:1px solid var(--line);display:flex;flex-direction:column;min-height:0;background:#fff}
+.karte .kb{flex:1;min-height:0;overflow:hidden;display:flex}
+.karte .kb img{width:100%;height:100%;display:block}
+.karte .kx{padding:2.4mm 3mm 2.2mm;border-top:2px solid var(--teal)}
+.kp+.kp{margin-top:1.8mm;padding-top:1.8mm;border-top:1px solid var(--line)}
+.kt{display:flex;justify-content:space-between;align-items:baseline;gap:3mm}
+.kt b{font:600 9.6pt 'Barlow',sans-serif;color:var(--navy)}
+.kt span{font:600 10.5pt 'Barlow',sans-serif;color:#177567;white-space:nowrap}
+.kp ul{margin:.8mm 0 0 3.2mm;font-size:7.6pt;color:#33485c;line-height:1.35}
+.kes{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm}
+.ke{background:var(--rowbg);border:1px solid var(--line);padding:2mm 2.6mm;display:flex;flex-direction:column;gap:.5mm}
+.ke b{font-weight:600;color:var(--navy);font-size:8.4pt}
+.ke span{font-size:7.4pt;color:var(--muted);flex:1}
+.ke i{font-style:normal;font-weight:600;color:#177567;font-size:9pt}
+.kband{margin-top:3mm;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:3.2mm 6mm}
+.kband small{display:block;font-weight:600;font-size:7.6pt;text-transform:uppercase;letter-spacing:.4px;color:var(--teal)}
+.kband b{font:300 19pt/1.15 'Barlow',sans-serif}
+.kband .kr{text-align:right;font-size:8.6pt;line-height:1.5}

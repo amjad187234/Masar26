@@ -113,13 +113,46 @@ def bauen(d, aus):
                   f'<h2 style="margin-top:0">{e(d.get("bilder_titel", "Entwürfe"))} · Angebot {e(d["nr"])}</h2>'
                   f'<div style="flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:5mm;margin-top:3mm">{zellen}</div>'
                   f'<p class="note" style="margin-top:3mm">{e(d.get("bilder_hinweis", "Die Abbildungen sind Entwürfe zur Veranschaulichung; Farben und Details können in der Ausführung leicht abweichen."))}</p></div>')
+    # optionale erste Seite „Überblick“ mit Bildkarten:
+    # "karten": [{"bild": "x.jpg", "fit": "cover|contain", "posten": [["Titel", "Zeile 1\nZeile 2", "450"], ...]}, ...]
+    # "karten_extra": [["Titel", "Text", "118" | "Geschenk"], ...]
+    seite0 = ''
+    if d.get('karten'):
+        def preis(v):
+            try:
+                return eur(cent(v))
+            except ValueError:
+                return e(v)
+        kk = ''
+        for k in d['karten']:
+            src = os.path.join(os.path.dirname(d['_pfad']), k['bild'])
+            ziel = os.path.join(aus, os.path.basename(k['bild']))
+            if os.path.abspath(src) != os.path.abspath(ziel):
+                shutil.copyfile(src, ziel)
+            posten = ''.join(
+                f'<div class="kp"><div class="kt"><b>{e(t)}</b><span>{preis(pr)}</span></div>'
+                f'<ul>{"".join(f"<li>{e(z)}</li>" for z in str(txt).split(chr(10)))}</ul></div>'
+                for t, txt, pr in k['posten'])
+            kk += (f'<div class="karte"><div class="kb" style="background:{e(k.get("grund", "#f4f7f7"))}">'
+                   f'<img src="{e(os.path.basename(k["bild"]))}" style="object-fit:{e(k.get("fit", "cover"))};object-position:{e(k.get("pos", "center"))}"></div>'
+                   f'<div class="kx">{posten}</div></div>')
+        ex = ''.join(f'<div class="ke"><b>{e(t)}</b><span>{e(txt)}</span><i>{preis(pr)}</i></div>'
+                     for t, txt, pr in d.get('karten_extra', []))
+        seite0 = (f'<div class="page seite0"><div class="head"><div class="brand"><b>MASAR</b><span>WERBEAGENTUR BERLIN</span></div>'
+                  f'<div class="addr">{FIRMA}</div></div>'
+                  f'<div class="title"><h1>{e(d.get("karten_titel", "IHR PAKET"))}</h1><div class="sub">{e(d["titel"])}<br>{e(d.get("untertitel", d["kunde"]))}</div></div>'
+                  f'<div class="karten">{kk}</div>'
+                  + (f'<h2>{e(d.get("karten_extra_titel", "Außerdem im Paket"))}</h2><div class="kes">{ex}</div>' if ex else '')
+                  + f'<div class="kband"><div><small>{e(d.get("karten_band", "Ihr Paketpreis"))}</small><b>{eur(netto)} netto</b></div>'
+                    f'<div class="kr">{eur(brutto)} brutto inkl. 19 % MwSt.<br>{e(d.get("karten_band_text", ""))}</div></div>'
+                  + f'<p class="note">{e(d.get("karten_hinweis", "Die Abbildungen sind Entwürfe zur Veranschaulichung; Farben und Details können in der Ausführung leicht abweichen. Alle Einzelpreise netto zzgl. 19 % MwSt. – Details, Zahlungsbedingungen und Auftragserteilung auf Seite 2."))}</p></div>')
     css = open(os.path.join(HERE, 'angebot.css'), encoding='utf-8').read().replace('{ROOT}', ROOT)
     nr = e(d['nr'])
     return f'''<!doctype html>
 <html lang="de"><head><meta charset="utf-8">
 <title>Angebot {nr} – {e(d['titel'])}</title>
 <style>
-{css}</style></head><body><div class="page">
+{css}</style></head><body>{seite0}<div class="page">
 <div class="head">
   <div class="brand"><b>MASAR</b><span>WERBEAGENTUR BERLIN</span></div>
   <div class="addr">{FIRMA}</div>
