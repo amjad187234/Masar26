@@ -62,3 +62,6 @@
 
 ## 16.11.2026 (Marketing-Runde)
 - `praxisbeschilderung-berlin.html`: neue FAQ „Wir übernehmen eine bestehende Praxis. Was muss an der Beschilderung geändert werden?“ (sichtbar und im FAQPage-JSON-LD, Link zum Ratgeber Praxisschild: Regeln & Kosten) – Anlass: viele Praxisübernahmen in Berlin (docs/markt-radar.md).
+
+## 17.11.2026 (Marketing-Runde)
+- `schaufensterbeschriftung-berlin.html`: neue FAQ „Kann eine Schaufensterbeschriftung auch im Winter montiert werden?“ (sichtbar und im FAQPage-JSON-LD; innen ganzjährig, außen trocken und laut Herstellerdatenblättern über +8 °C) – Saisonfrage vor Winterterminen (docs/markt-radar.md).

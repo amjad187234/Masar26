@@ -78,3 +78,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | Ärzteblatt (KV-Berlin-Umfrage 04/2026), Berliner Sparkasse Ratgeber Heilberufe (Websuche 14.11.) | Fast jede zweite Berliner Praxis denkt über Aufgabe nach; wer sich niederlässt, übernimmt in vielen Fachgruppen eine bestehende Praxis (gesperrte Planungsbereiche). | Praxisübernahme = neuer Name an Schild, Tür und Fenster. `praxisbeschilderung-berlin.html`: FAQ „Wir übernehmen eine bestehende Praxis …“ ergänzt (sichtbar + FAQPage-JSON-LD), mit Verweis auf den Ratgeber Praxisschild. Keine Zahlen auf die Website übernommen. |
 | Amt für Statistik Berlin-Brandenburg (Monatsberichte 2026), messen.de | Berlin: rund 270–355 Gastronomie- und 480–650 Einzelhandels-Anmeldungen je Monat (Jan.–Juni 2026); Messen Q1 2027: Grüne Woche 15.–24.01., Fruit Logistica 03.–05.02., ITB voraussichtlich 16.–18.03. | Bestätigt die Schwerpunkte Gastronomie/Eröffnung und Messe (Seiten vorhanden, zuletzt intern stärker verlinkt). Vorschläge an den Inhaber (14.11.): Seite für Agenturen (Umsetzungspartner), Abschnitt Demontage bei Auszug – neue Seiten/Leistungsaussagen, daher nur vorgeschlagen. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 17.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Berliner Werbetechnik-Anbieter, Aktionen November 2026 (Branchenverzeichnisse, Anbieterprofile) | Weiterhin keine Saison-/Weihnachtsaktion eines Berliner Wettbewerbers für Schaufensterbeschriftung auffindbar. | Saisonseite bleibt Alleinstellung; keine Änderung nötig. |
+| ORAFOL-Datenblätter (ORACAL 651/451, Websuche) und Verarbeitungshinweise VH 1 | Hersteller nennen für Plotterfolien eine Verklebetemperatur über +8 °C; Winter ist für Außenmontage wetterabhängig – Frage, die Kunden vor Dezember-/Januar-Terminen haben. | `schaufensterbeschriftung-berlin.html`: FAQ „Kann eine Schaufensterbeschriftung auch im Winter montiert werden?“ (sichtbar + FAQPage-JSON-LD). |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
