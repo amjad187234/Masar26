@@ -86,3 +86,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 | Websuche Berliner Werbetechnik-Anbieter, Aktionen November 2026 (Branchenverzeichnisse, Anbieterprofile) | Weiterhin keine Saison-/Weihnachtsaktion eines Berliner Wettbewerbers für Schaufensterbeschriftung auffindbar. | Saisonseite bleibt Alleinstellung; keine Änderung nötig. |
 | ORAFOL-Datenblätter (ORACAL 651/451, Websuche) und Verarbeitungshinweise VH 1 | Hersteller nennen für Plotterfolien eine Verklebetemperatur über +8 °C; Winter ist für Außenmontage wetterabhängig – Frage, die Kunden vor Dezember-/Januar-Terminen haben. | `schaufensterbeschriftung-berlin.html`: FAQ „Kann eine Schaufensterbeschriftung auch im Winter montiert werden?“ (sichtbar + FAQPage-JSON-LD). |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 18.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Winterschlussverkauf 2027 (fashionunited.de, lebensmittelzeitung.net, textilwirtschaft.de, Verbraucherportale) | Seit 2004 kein gesetzlicher Termin; traditioneller Start am letzten Montag im Januar = 25.01.2027, Dauer laut HDE-Angaben der Vorjahre meist rund zwei Wochen; eine HDE-Mitteilung für 2027 liegt noch nicht vor. | Nächster Anlass nach Weihnachten (in 9–10 Wochen). Saisonseite `schaufenster-weihnachten-black-friday.html`: FAQ „Wann beginnt der Winterschlussverkauf 2027?“ (sichtbar + FAQPage-JSON-LD), ohne Dauer-/Rabattzahlen. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |

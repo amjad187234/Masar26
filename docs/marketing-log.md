@@ -65,3 +65,6 @@
 
 ## 17.11.2026 (Marketing-Runde)
 - `schaufensterbeschriftung-berlin.html`: neue FAQ „Kann eine Schaufensterbeschriftung auch im Winter montiert werden?“ (sichtbar und im FAQPage-JSON-LD; innen ganzjährig, außen trocken und laut Herstellerdatenblättern über +8 °C) – Saisonfrage vor Winterterminen (docs/markt-radar.md).
+
+## 18.11.2026 (Marketing-Runde)
+- Saison Januar-Sale: `schaufenster-weihnachten-black-friday.html` – neue FAQ „Wann beginnt der Winterschlussverkauf 2027?“ (sichtbar und im FAQPage-JSON-LD; kein gesetzlicher Termin, traditionell letzter Montag im Januar = 25.01.2027) – docs/markt-radar.md.
