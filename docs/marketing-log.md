@@ -68,3 +68,6 @@
 
 ## 18.11.2026 (Marketing-Runde)
 - Saison Januar-Sale: `schaufenster-weihnachten-black-friday.html` – neue FAQ „Wann beginnt der Winterschlussverkauf 2027?“ (sichtbar und im FAQPage-JSON-LD; kein gesetzlicher Termin, traditionell letzter Montag im Januar = 25.01.2027) – docs/markt-radar.md.
+
+## 19.11.2026 (Marketing-Runde)
+- `leuchtreklame-berlin.html`: neue FAQ „Können Sie ein vorhandenes Leuchtschild mit neuem Namen bekleben?“ (sichtbar und im FAQPage-JSON-LD; alte Folie entfernen, neues Motiv auf lichtdurchlässiger Folie, Gehäuse und Beleuchtung bleiben, Prüfung vor Ort; kein Preis) – Anlass: Anfragen nach Geschäftsübernahmen (docs/markt-radar.md).

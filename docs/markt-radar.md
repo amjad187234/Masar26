@@ -93,3 +93,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Websuche Winterschlussverkauf 2027 (fashionunited.de, lebensmittelzeitung.net, textilwirtschaft.de, Verbraucherportale) | Seit 2004 kein gesetzlicher Termin; traditioneller Start am letzten Montag im Januar = 25.01.2027, Dauer laut HDE-Angaben der Vorjahre meist rund zwei Wochen; eine HDE-Mitteilung für 2027 liegt noch nicht vor. | Nächster Anlass nach Weihnachten (in 9–10 Wochen). Saisonseite `schaufenster-weihnachten-black-friday.html`: FAQ „Wann beginnt der Winterschlussverkauf 2027?“ (sichtbar + FAQPage-JSON-LD), ohne Dauer-/Rabattzahlen. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 19.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Eigene Anfragen der letzten zwei Wochen (ohne Namen) und Websuche „Leuchtkasten neu bekleben Berlin“ (Branchenverzeichnisse, Anbieterseiten) | Nach Geschäftsübernahmen wird gezielt nach dem Neubekleben vorhandener Leuchtschilder gefragt; in der Websuche fand sich kein Berliner Anbieter mit einer klaren Antwort auf genau diese Frage. Passt zu den vielen Übernahmen (Radar 16.11.). | `leuchtreklame-berlin.html`: FAQ „Können Sie ein vorhandenes Leuchtschild mit neuem Namen bekleben?“ (sichtbar + FAQPage-JSON-LD), ohne Preis. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |

@@ -149,6 +149,8 @@ solche Festlegung im Bericht nennen.
   „für Unternehmen & Privatkunden“ (Tür-/Klingel-/Praxisschilder betreffen auch Private; AGB deckt B2B+Privat).
 - Preiskonsistenz (11.11.2026): irreführende Unter-Listenpreise korrigiert – Blog-Fahrzeug „Schriftzug + Logo“ 80 → 290 €
   (Liste Teilbeschriftung), `schaufensterbeschriftung-tipps` „Folien ab 80 €“ → 149 € (Liste Schaufensterbeschriftung).
+- Leistungsaussage (19.11.2026, Vollmacht): Neubekleben vorhandener Leuchtschilder/Leuchtkästen nach Geschäftsübernahme (alte Folie entfernen,
+  neues Motiv auf lichtdurchlässiger Folie, Beleuchtung bleibt) – als FAQ auf `leuchtreklame-berlin.html`, ohne Preis; wird so bereits angeboten.
 
 ## Offen
 
