@@ -100,3 +100,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Eigene Anfragen der letzten zwei Wochen (ohne Namen) und Websuche „Leuchtkasten neu bekleben Berlin“ (Branchenverzeichnisse, Anbieterseiten) | Nach Geschäftsübernahmen wird gezielt nach dem Neubekleben vorhandener Leuchtschilder gefragt; in der Websuche fand sich kein Berliner Anbieter mit einer klaren Antwort auf genau diese Frage. Passt zu den vielen Übernahmen (Radar 16.11.). | `leuchtreklame-berlin.html`: FAQ „Können Sie ein vorhandenes Leuchtschild mit neuem Namen bekleben?“ (sichtbar + FAQPage-JSON-LD), ohne Preis. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 20.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Eigene Anfrage dieser Woche (ohne Namen) | Kurzfristige Event-Anfragen: Logo-Folienplott zur Selbstmontage mit Übertragungsfolie, Abholung am nächsten Tag, Folie soll wieder ablösbar sein. Die Express-Seite beantwortete bisher nur Plott mit Montage. | `express-druck-berlin.html`: FAQ „Kann ich einen Logo-Folienplott zur Selbstmontage abholen, zum Beispiel für ein Event?“ (sichtbar + FAQPage-JSON-LD), ohne Preis und ohne Zeitzusage. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |

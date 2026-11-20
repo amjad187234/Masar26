@@ -71,3 +71,6 @@
 
 ## 19.11.2026 (Marketing-Runde)
 - `leuchtreklame-berlin.html`: neue FAQ „Können Sie ein vorhandenes Leuchtschild mit neuem Namen bekleben?“ (sichtbar und im FAQPage-JSON-LD; alte Folie entfernen, neues Motiv auf lichtdurchlässiger Folie, Gehäuse und Beleuchtung bleiben, Prüfung vor Ort; kein Preis) – Anlass: Anfragen nach Geschäftsübernahmen (docs/markt-radar.md).
+
+## 20.11.2026 (Marketing-Runde)
+- `express-druck-berlin.html`: neue FAQ „Kann ich einen Logo-Folienplott zur Selbstmontage abholen, zum Beispiel für ein Event?“ (sichtbar und im FAQPage-JSON-LD; Plott entgittert mit Übertragungsfolie, Vektordatei, ablösbare Folie auf Wunsch; kein Preis) – Anlass: kurzfristige Event-Anfrage (docs/markt-radar.md).
