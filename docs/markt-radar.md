@@ -107,3 +107,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Eigene Anfrage dieser Woche (ohne Namen) | Kurzfristige Event-Anfragen: Logo-Folienplott zur Selbstmontage mit Übertragungsfolie, Abholung am nächsten Tag, Folie soll wieder ablösbar sein. Die Express-Seite beantwortete bisher nur Plott mit Montage. | `express-druck-berlin.html`: FAQ „Kann ich einen Logo-Folienplott zur Selbstmontage abholen, zum Beispiel für ein Event?“ (sichtbar + FAQPage-JSON-LD), ohne Preis und ohne Zeitzusage. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 21.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Eigene Aufträge und Anfragen im November (ohne Namen) | Mehrfach gefragt: Schaufenster vor einer Neueröffnung vollflächig abdecken („Opening Soon“), Schriftzug zur Eröffnung entfernen, Fläche später. Die Seite Schaufensterbeschriftung beantwortete das bisher nicht ausdrücklich. | `schaufensterbeschriftung-berlin.html`: FAQ „Bekleben Sie Schaufenster auch vor einer Neueröffnung („Opening Soon“)?“ (sichtbar + FAQPage-JSON-LD), ohne Preis. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |

@@ -74,3 +74,6 @@
 
 ## 20.11.2026 (Marketing-Runde)
 - `express-druck-berlin.html`: neue FAQ „Kann ich einen Logo-Folienplott zur Selbstmontage abholen, zum Beispiel für ein Event?“ (sichtbar und im FAQPage-JSON-LD; Plott entgittert mit Übertragungsfolie, Vektordatei, ablösbare Folie auf Wunsch; kein Preis) – Anlass: kurzfristige Event-Anfrage (docs/markt-radar.md).
+
+## 21.11.2026 (Marketing-Runde)
+- `schaufensterbeschriftung-berlin.html`: neue FAQ „Bekleben Sie Schaufenster auch vor einer Neueröffnung („Opening Soon“)?“ (sichtbar und im FAQPage-JSON-LD; vollflächige Abdeckung während des Umbaus, Schriftzug, Entfernen zur Eröffnung auch in zwei Schritten; Berlin, NRW, Hamburg; kein Preis) – docs/markt-radar.md.
