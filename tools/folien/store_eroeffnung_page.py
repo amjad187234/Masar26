@@ -183,7 +183,7 @@ def main():
         </div>
       </div>
       <div class="hero-visual">
-        <img class="hero-shot" src="/referenzen/praxis-schaufenster-berlin-01-720.webp" srcset="/referenzen/praxis-schaufenster-berlin-01-720.webp 720w, /referenzen/praxis-schaufenster-berlin-01.webp 1200w" sizes="(max-width:900px) 340px, 360px" width="720" height="900" alt="Zwei Monteure bekleben die Schaufenster eines neuen Ladens vor der Eröffnung mit bedruckter Folie" fetchpriority="high" style="aspect-ratio:4/5;object-fit:cover;object-position:38% center">
+        <img class="hero-shot" src="/opening-soon-front.webp" srcset="/opening-soon-front-360.webp 360w, /opening-soon-front-540.webp 540w, /opening-soon-front-720.webp 720w, /opening-soon-front.webp 1080w" sizes="(max-width:900px) 340px, 360px" width="1080" height="1350" alt="Illustration: Ladenfront vor der Eröffnung – farbige Folie auf allen Scheiben, darauf Markenname, „Opening Soon“ und Webadresse" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -200,12 +200,11 @@ def main():
     <div class="svc-grid" role="list">{karten}
     </div>
     <figure class="ideen-foto ideen-foto--breit">
-      <a href="/referenzen.html" style="display:block"><img src="/referenzen/praxis-schaufenster-berlin-02-720.webp" srcset="/referenzen/praxis-schaufenster-berlin-02-720.webp 720w, /referenzen/praxis-schaufenster-berlin-02.webp 1200w" sizes="(max-width:700px) 100vw, 500px" width="720" height="432" alt="Schaufensterfront vor der Eröffnung: bedruckte Folie mit Ankündigung auf allen Scheiben, Logo-Blenden darüber" loading="lazy"></a>
+      <img src="/opening-soon-phasen-720.webp" srcset="/opening-soon-phasen-720.webp 720w, /opening-soon-phasen.webp 1600w" sizes="(max-width:700px) 100vw, 500px" width="720" height="432" alt="Illustration in drei Schritten: vor der Eröffnung Farbfläche mit Logo und Schriftzug, zur Eröffnung nur noch die Farbfläche, danach freies Glas" loading="lazy">
       <figcaption>
-        <span class="eyebrow" style="margin-bottom:.6rem">Aus unserer Arbeit</span>
-        <strong>Ankündigung auf der ganzen Front</strong>
-        Bedruckte Folie auf allen Scheiben, Logo-Blenden darüber – so stand diese Front in Berlin in den Wochen vor der Eröffnung. Zur Eröffnung haben wir die Ankündigung abgenommen und die dauerhafte Folierung angebracht.
-        <a href="/referenzen.html" style="display:block;margin-top:.8rem;color:var(--teal-ink);font-weight:700">Weitere Referenzen ansehen →</a>
+        <span class="eyebrow" style="margin-bottom:.6rem">So läuft es</span>
+        <strong>Eine Front, drei Phasen</strong>
+        Vor der Eröffnung trägt die Front Ihre Farbe, Ihr Logo und den Schriftzug. Am Eröffnungstag nehmen wir die Schrift ab, die Farbfläche kann bleiben. Später entfernen wir auch sie – das Glas ist wieder frei. Die Abbildung ist eine Illustration mit Beispielmarke.
       </figcaption>
     </figure>
   </div>
