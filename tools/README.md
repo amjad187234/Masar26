@@ -51,6 +51,7 @@ Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
 | `folien/ki_pages.py` | `ki-fuer-arztpraxen-berlin.html`, `ki-fuer-pflegedienste-berlin.html` |
 | `folien/textil_page.py` | `textildruck-berlin.html` |
 | `branchen/gastro_page.py` | `werbung-gastronomie-berlin.html` (Kopf/Fußzeile aus `werbung-fahrschule-berlin.html`, baut Brutto und Assistent selbst ein) |
+| `folien/store_eroeffnung_page.py` | `schaufensterfolie-store-eroeffnung.html` (Opening Soon, mit englischem Abschnitt) aus der Saisonseite |
 | `blog/stadt_ratgeber.py`, `blog/ki_artikel.py` | Stadt-Ratgeber und KI-Ratgeber im Blog (siehe unten) |
 
 Die Generatoren übernehmen Kopf, Navigation und Fußzeile aus `schilder-berlin.html`, aber ohne das offene `<main>` und

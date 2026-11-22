@@ -77,3 +77,7 @@
 
 ## 21.11.2026 (Marketing-Runde)
 - `schaufensterbeschriftung-berlin.html`: neue FAQ „Bekleben Sie Schaufenster auch vor einer Neueröffnung („Opening Soon“)?“ (sichtbar und im FAQPage-JSON-LD; vollflächige Abdeckung während des Umbaus, Schriftzug, Entfernen zur Eröffnung auch in zwei Schritten; Berlin, NRW, Hamburg; kein Preis) – docs/markt-radar.md.
+
+## 22.11.2026 (mit dem Inhaber)
+- Neue Zielgruppen-Seite `schaufensterfolie-store-eroeffnung.html` („Schaufensterfolie zur Store-Eröffnung – Opening Soon“): für Marken, Filialisten, Visual Merchandising und Ladenbau; Leistung, Ablauf, Checkliste „Was wir vorab brauchen“, englischer Abschnitt für internationale Marken, 7 FAQ (FAQPage), Service-Schema, Vorschaubild. Generator `tools/folien/store_eroeffnung_page.py`.
+- Verlinkt aus Hinweis-Kästen auf Schaufensterbeschriftung Berlin, Saisonseite, Werbeagentur Hamburg und NRW sowie aus der FAQ „Opening Soon“; eingetragen in sitemap.xml und llms.txt. Nicht in der Navigation.

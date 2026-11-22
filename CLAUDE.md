@@ -151,6 +151,11 @@ solche Festlegung im Bericht nennen.
   (Liste Teilbeschriftung), `schaufensterbeschriftung-tipps` „Folien ab 80 €“ → 149 € (Liste Schaufensterbeschriftung).
 - Leistungsaussage (19.11.2026, Vollmacht): Neubekleben vorhandener Leuchtschilder/Leuchtkästen nach Geschäftsübernahme (alte Folie entfernen,
   neues Motiv auf lichtdurchlässiger Folie, Beleuchtung bleibt) – als FAQ auf `leuchtreklame-berlin.html`, ohne Preis; wird so bereits angeboten.
+- Neue Seite (22.11.2026, Vollmacht; Inhaber: „Leute ansprechen, die so eine Leistung suchen“): `schaufensterfolie-store-eroeffnung.html` –
+  Schaufensterfolie vor der Store-Eröffnung („Opening Soon“) für Marken, Filialisten, Visual Merchandising, Ladenbau; mit englischem Abschnitt
+  (`#english`). Generator `tools/folien/store_eroeffnung_page.py` (Vorlage Saisonseite, in `build_all.py`). Keine neuen Preise (nur Listenpreise
+  Aktionsfolie/Beschriftung), keine Kundennamen; Projektfotos Hamburg erst nach Erlaubnis des Kunden zeigen. Nicht in der Navigation (nur
+  Kontextlinks, Sitemap, llms.txt).
 
 ## Offen
 
