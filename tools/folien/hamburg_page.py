@@ -10,7 +10,7 @@ ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname
 src = open(os.path.join(ROOT, 'werbeagentur-nrw.html'), encoding='utf-8').read()
 # Referenzen-Block der NRW-Seite entfernen – referenzen_einbau.py setzt ihn auf der Hamburg-Seite neu ein
 s = re.sub(r'<!-- referenzen:start -->.*?<!-- referenzen:ende -->\n?', '', src, flags=re.S)
-# Hamburg hat kein eigenes WhatsApp-Team: nrw_whatsapp.py stellt nur NRW-Seiten auf 0178 2410682 um
+# WhatsApp: seit 23.11.2026 überall die Firmennummer (nrw_whatsapp.py), auch auf der NRW-Vorlage
 s = s.replace('wa.me/491782410682', 'wa.me/491785143918')
 
 
@@ -74,11 +74,8 @@ assert s.count(gen_alt) == 2
 s = s.replace(gen_alt, FAQ_GEN_A)
 s = s.replace('Welche Leistungen bieten Sie in NRW nicht an?', FAQ_NICHT_F)
 ersetze('Foto- und Videoproduktion, Messebau und Express-Druck gibt es nur in Berlin. Für NRW übernehmen wir Schilder, Leuchtreklame, Fahrzeug- und Schaufensterbeschriftung, Folien, Banner, Druck, Textildruck, Grafik- und Webdesign.', FAQ_NICHT_A, 2)
-# Weitere FAQ (07.11.2026): Beratung ohne Büro, Fertigung/Montage – Hamburg hat kein eigenes WhatsApp-Team, daher Firmennummer
+# Weitere FAQ (07.11.2026): Beratung ohne Büro, Fertigung/Montage
 ersetze('Wie läuft die Beratung, wenn Sie in NRW kein Büro haben?', 'Wie läuft die Beratung, wenn Sie in Hamburg kein Büro haben?', 2)
-ersetze('Am einfachsten per WhatsApp an unser NRW-Team (', 'Am einfachsten per WhatsApp (', 2)
-ersetze('>0178 2410682</a>)', '>0178 514 3918</a>)')
-ersetze('(0178 2410682)', '(0178 514 3918)')
 ersetze('Wer fertigt und montiert in NRW?', 'Wer fertigt und montiert in Hamburg?', 2)
 ersetze('Aufmaß, Montage und Beschriftung vor Ort übernimmt unser Team in NRW.', 'Aufmaß, Montage und Beschriftung vor Ort übernimmt unser Team in Hamburg.', 2)
 
@@ -223,7 +220,7 @@ s = s.replace('<li><a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a></li
 s = s.replace('  <a href="/fahrzeugbeschriftung-nrw.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-nrw.html">LKW-Beschriftung</a>', '  <a href="/fahrzeugbeschriftung-berlin.html">Fahrzeugbeschriftung</a>\n  <a href="/lkw-beschriftung-berlin.html">LKW-Beschriftung</a>')
 
 s = s.replace('<!-- CONTACT -->', '<div class="reveal" style="max-width:760px;width:calc(100% - 32px);margin:2rem auto 2.5rem;padding:1.1rem 1.4rem;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:10px;background:#fff;font-size:15px;line-height:1.7"><strong style="color:var(--navy)">Ratgeber:</strong> Welche Satzungen gelten in Hamburg, wer genehmigt und was kostet es? <a href="/blog/werbeanlage-hamburg.html" style="color:var(--teal-ink);font-weight:700">Werbeanlage in Hamburg – zum Artikel →</a></div>\n<!-- CONTACT -->', 1)
-s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=13', s)   # Region hamburg braucht die neue Version
+s = re.sub(r'/assistent\.js\?v=\d+', '/assistent.js?v=14', s)   # Region hamburg braucht die neue Version
 
 assert 'Düsseldorf' not in s.split('<footer')[0], 'NRW-Stadt im Inhalt übrig'
 open(os.path.join(ROOT, 'werbeagentur-hamburg.html'), 'w', encoding='utf-8').write(s)

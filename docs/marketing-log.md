@@ -85,3 +85,6 @@
 
 ## 23.11.2026 (Marketing-Runde)
 - Interne Links zur neuen Seite `schaufensterfolie-store-eroeffnung.html`: Hinweis-Kasten jetzt auch auf Werbetechnik, Außenwerbung Berlin, Sichtschutzfolie Berlin und Schaufensterbeschriftung NRW (`tools/seo/ratgeber_hinweise.py`). Eingehende Links: 4 → 8.
+
+## 23.11.2026 (mit dem Inhaber)
+- WhatsApp überall auf die Firmennummer 0178 514 3918 umgestellt: 32 NRW-Seiten, Anfrage-Assistent, Terminbuchung, Leuchtbuchstaben-Konfigurator und Genehmigungs-Check (vorher Nummer des NRW-Teams). `tools/seo/nrw_whatsapp.py` hält das fest; Skript-Versionen erhöht (assistent.js v14, termin.js v11, konfigurator.js v3, genehmigung.js v2).

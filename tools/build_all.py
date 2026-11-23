@@ -51,7 +51,7 @@ SCHRITTE = [
     ('snippets', 'post', 'seo/snippets.py', 'Titel und Beschreibung'),
     ('blog_kurzbox', 'post', 'seo/blog_kurzbox.py', 'Kurze Angebotsbox in Ratgebern'),
     ('schnell', 'post', 'seo/schnell.py', 'Speculation Rules + View Transitions'),
-    ('nrw_whatsapp', 'post', 'seo/nrw_whatsapp.py', 'WhatsApp NRW-Team auf NRW-Seiten'),
+    ('nrw_whatsapp', 'post', 'seo/nrw_whatsapp.py', 'WhatsApp überall Firmennummer (NRW-Nummer entfernen)'),
     ('partnerwerkstatt', 'post', 'seo/partnerwerkstatt.py', 'Keine eigene Werkstatt behaupten (Partnerwerkstatt)'),
     ('partner_hinweis', 'post', 'seo/partner_hinweis.py', 'Offenlegung Partnerbetriebe'),
     ('werbevideo_einbau', 'post', 'seo/werbevideo_einbau.py', 'Werbevideos auf Leuchtreklame-, Schaufenster- und Fahrzeugseite'),

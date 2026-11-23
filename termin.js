@@ -90,7 +90,7 @@
       if (reg === 'hamburg') { if (!s.ort) s.ort = 'Hamburg'; s.gebiet = 'Hamburg'; }
       var st = /(Köln|Düsseldorf|Dortmund|Essen|Bochum|Herne|Mülheim an der Ruhr|Bottrop)$/.exec(q);
       if (st && !s.ort) s.ort = st[1];
-      s.nrw = true; s.waNr = (reg === 'hamburg') ? '491785143918' : '491782410682';
+      s.nrw = true; s.waNr = '491785143918';
     }
   } catch (e) {}
   var step = 0, tageCache = {};

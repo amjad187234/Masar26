@@ -17,7 +17,7 @@
   var roots = document.querySelectorAll('[data-assistent]');
   if (!roots.length) return;
 
-  var WA = '491785143918', WA_NRW = '491782410682'; // NRW-Team (Inhaber, 28.10.2026)
+  var WA = '491785143918', WA_NRW = WA; // seit 23.11.2026 wieder überall die Firmennummer (Inhaber)
 
   // a: [Auswahl, Seite Berlin, ab-Preis Berlin, Hinweis, Titel, ab-Preis NRW, Einheit, Seite NRW]
   var T = {

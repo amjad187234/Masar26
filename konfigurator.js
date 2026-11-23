@@ -389,7 +389,7 @@
   });
   $('#kf-wa').addEventListener('click', function () {
     var t = 'Hallo, ich habe im Konfigurator auf Ihrer Website ein Schild geplant:\n' + zusammenfassung() + '\nBitte um ein Festpreis-Angebot. Die Vorschau schicke ich als Bild.';
-    window.open('https://wa.me/' + ((S.region === 'nrw') ? '491782410682' : WA) + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(t), '_blank', 'noopener');
   });
   $('#kf-anfrage').addEventListener('click', function () {
     var ta = document.getElementById('fo-nachricht'), fi = document.getElementById('fo-datei'), sel = document.getElementById('fo-folie');
