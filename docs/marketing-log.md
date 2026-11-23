@@ -88,3 +88,4 @@
 
 ## 23.11.2026 (mit dem Inhaber)
 - WhatsApp überall auf die Firmennummer 0178 514 3918 umgestellt: 32 NRW-Seiten, Anfrage-Assistent, Terminbuchung, Leuchtbuchstaben-Konfigurator und Genehmigungs-Check (vorher Nummer des NRW-Teams). `tools/seo/nrw_whatsapp.py` hält das fest; Skript-Versionen erhöht (assistent.js v14, termin.js v11, konfigurator.js v3, genehmigung.js v2).
+- Referenz Oscar Jacobson, Hamburg (Erlaubnis des Kunden vom 23.11.2026, Fotos vom Inhaber): fünf bearbeitete Projektfotos auf `referenzen.html` (Schaufenster & Folien, an erster Stelle), `werbeagentur-hamburg.html` („Aus unserem Projekt in Hamburg“ statt Berliner Beispielen), erstes Bild auf Schaufensterbeschriftung und Fensterfolie Berlin; auf `schaufensterfolie-store-eroeffnung.html` ersetzen die Fotos die Illustrationen (Hero, Projektkasten, Vorschaubild), die Phasen-Grafik bleibt beim Ablauf.

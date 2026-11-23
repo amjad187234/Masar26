@@ -9,9 +9,10 @@ ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname
 A, Z = '<!-- referenzen:start -->', '<!-- referenzen:ende -->'
 LR = [('leuchtlogo-rund-bside-montiert-01', 'Runder Leuchtausleger an der Fassade, montiert'), ('leuchtreklame-berlin-08', 'Leuchtreklame, montiert am Eröffnungstag'), ('leuchtreklame-berlin-09', 'Fassadenschrift über einem Ladengeschäft'), ('leuchtkasten-rund-werkstatt-01', 'Runder Leuchtkasten beim Testlauf in der Werkstatt')]
 FZ = [('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung, fertig'), ('fahrzeugfolierung-berlin-01', 'Vollfolierung eines Imbisswagens'), ('fahrzeugbeschriftung-berlin-01', 'Folie wird auf die Schiebetür aufgezogen')]
-SF = [('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN Berlin Gallery'), ('schaufensterfolie-fahrschule-01', 'Bedruckte Schaufensterfolie mit freiem Sichtfenster'), ('fensterbeschriftung-praxis-gold-01', 'Goldene Folienschrift auf dem Oberlicht einer Praxis')]
+SF = [('schaufensterfolie-store-hamburg-01', 'Store-Front vor der Eröffnung: Oscar Jacobson, Hamburg'), ('schaufensterbeschriftung-showroom-berlin-02', 'Folienschrift für LAUFEN Berlin Gallery'), ('schaufensterfolie-fahrschule-01', 'Bedruckte Schaufensterfolie mit freiem Sichtfenster')]
 DR = [('grossformatdruck-werkstatt-01', 'Großformatdruck in unserer Partnerwerkstatt'), ('imbisswagen-menuetafeln-01', 'Menütafel, Aufsteller und Blenden für einen Imbisswagen'), ('menuetafel-imbiss-montiert-01', 'Menütafel über der Theke eines Imbisses')]
 MIX = [('leuchtreklame-berlin-08', 'Leuchtreklame am Eröffnungstag'), ('fahrzeugbeschriftung-berlin-04', 'Transporter mit Seitenbeschriftung'), ('schaufensterbeschriftung-showroom-berlin-02', 'Schaufensterbeschriftung für LAUFEN Berlin Gallery')]
+HH = [('schaufensterfolie-store-hamburg-01', 'Oscar Jacobson, Hamburg: Store-Front vor der Eröffnung'), ('schaufensterfolie-store-hamburg-02', 'Logo und „Opening Soon“ als Folienplott'), ('schaufensterfolie-store-hamburg-03', 'Folie wird von innen verklebt')]
 SEITEN = {
     'leuchtreklame-berlin.html': ('Leuchtreklame aus unseren Projekten', LR),
     'aussenwerbung-berlin.html': ('Außenwerbung aus unseren Projekten', LR),
@@ -23,7 +24,7 @@ SEITEN = {
     'print.html': ('Druck aus unseren Projekten', DR),
     'pvc-banner-berlin.html': ('Großformatdruck aus unseren Projekten', DR),
     'werbeagentur-nrw.html': ('Beispiele aus unseren Projekten in Berlin', MIX),
-    'werbeagentur-hamburg.html': ('Beispiele aus unseren Projekten in Berlin', MIX),
+    'werbeagentur-hamburg.html': ('Aus unserem Projekt in Hamburg', HH),
     'leuchtreklame-nrw.html': ('Leuchtreklame aus unseren Projekten in Berlin', LR),
     'fahrzeugbeschriftung-nrw.html': ('Fahrzeuge aus unseren Projekten in Berlin', FZ),
 }

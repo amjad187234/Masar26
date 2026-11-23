@@ -154,9 +154,11 @@ solche Festlegung im Bericht nennen.
 - Neue Seite (22.11.2026, Vollmacht; Inhaber: „Leute ansprechen, die so eine Leistung suchen“): `schaufensterfolie-store-eroeffnung.html` –
   Schaufensterfolie vor der Store-Eröffnung („Opening Soon“) für Marken, Filialisten, Visual Merchandising, Ladenbau; mit englischem Abschnitt
   (`#english`). Generator `tools/folien/store_eroeffnung_page.py` (Vorlage Saisonseite, in `build_all.py`). Keine neuen Preise (nur Listenpreise
-  Aktionsfolie/Beschriftung), keine Kundennamen. Bilder (Inhaber, 22.11.2026): **keine echten Fotos**, nur eigene Illustrationen mit Beispielmarke
-  (`opening-soon-front*.webp`, `opening-soon-phasen*.webp`, erzeugt mit `tools/folien/store_eroeffnung_bilder.py`) – echte Projektfotos erst einsetzen,
-  wenn der Kunde zugestimmt und der Inhaber sie geschickt hat. Nicht in der Navigation (nur
+  Aktionsfolie/Beschriftung), keine Kundennamen. Bilder: seit 23.11.2026 echte Projektfotos **Oscar Jacobson, Hamburg** (Kunde hat die Veröffentlichung auf der Website am 23.11.2026 schriftlich erlaubt,
+  Fotos vom Inhaber): `referenzen/schaufensterfolie-store-hamburg-01…05` (+ `-720`), Hero `opening-soon-hamburg-hero*.webp`; die Illustration
+  „Eine Front, drei Phasen“ (`opening-soon-phasen*.webp`, `tools/folien/store_eroeffnung_bilder.py`) bleibt als Erklärgrafik. Das Projekt steht auch auf
+  `referenzen.html` (Schaufenster & Folien), auf `werbeagentur-hamburg.html` („Aus unserem Projekt in Hamburg“) und als erstes Bild auf den
+  Schaufenster-/Fensterfolie-Seiten. Erlaubnis gilt für die Website – für Social Media gesondert fragen. Nicht in der Navigation (nur
   Kontextlinks, Sitemap, llms.txt).
 
 ## Offen
