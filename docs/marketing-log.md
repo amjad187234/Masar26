@@ -82,3 +82,6 @@
 - Neue Zielgruppen-Seite `schaufensterfolie-store-eroeffnung.html` („Schaufensterfolie zur Store-Eröffnung – Opening Soon“): für Marken, Filialisten, Visual Merchandising und Ladenbau; Leistung, Ablauf, Checkliste „Was wir vorab brauchen“, englischer Abschnitt für internationale Marken, 7 FAQ (FAQPage), Service-Schema, Vorschaubild. Generator `tools/folien/store_eroeffnung_page.py`.
 - Verlinkt aus Hinweis-Kästen auf Schaufensterbeschriftung Berlin, Saisonseite, Werbeagentur Hamburg und NRW sowie aus der FAQ „Opening Soon“; eingetragen in sitemap.xml und llms.txt. Nicht in der Navigation.
 - Bilder der neuen Seite auf Wunsch des Inhabers ersetzt: statt Referenzfotos zwei eigene Illustrationen mit Beispielmarke (Front vor der Eröffnung; „Eine Front, drei Phasen“), auch im Vorschaubild. Echte Projektfotos folgen erst nach Zustimmung des Kunden.
+
+## 23.11.2026 (Marketing-Runde)
+- Interne Links zur neuen Seite `schaufensterfolie-store-eroeffnung.html`: Hinweis-Kasten jetzt auch auf Werbetechnik, Außenwerbung Berlin, Sichtschutzfolie Berlin und Schaufensterbeschriftung NRW (`tools/seo/ratgeber_hinweise.py`). Eingehende Links: 4 → 8.

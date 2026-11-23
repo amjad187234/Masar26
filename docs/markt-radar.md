@@ -114,3 +114,10 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Eigene Aufträge und Anfragen im November (ohne Namen) | Mehrfach gefragt: Schaufenster vor einer Neueröffnung vollflächig abdecken („Opening Soon“), Schriftzug zur Eröffnung entfernen, Fläche später. Die Seite Schaufensterbeschriftung beantwortete das bisher nicht ausdrücklich. | `schaufensterbeschriftung-berlin.html`: FAQ „Bekleben Sie Schaufenster auch vor einer Neueröffnung („Opening Soon“)?“ (sichtbar + FAQPage-JSON-LD), ohne Preis. |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 23.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Eigene Seitenprüfung (interne Verlinkung, `seo_check.py`) | Die neue Seite „Schaufensterfolie zur Store-Eröffnung“ war nur von 4 Seiten aus erreichbar; neue Seiten ohne interne Links werden langsam gefunden. Black Week läuft (23.–29.11.), danach rücken Neueröffnungen zum Jahresbeginn in den Blick. | Hinweis-Kasten verlinkt die Seite jetzt zusätzlich von Werbetechnik, Außenwerbung Berlin, Sichtschutzfolie Berlin und Schaufensterbeschriftung NRW (8 eingehende Links). |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
