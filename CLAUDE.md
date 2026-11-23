@@ -158,7 +158,10 @@ solche Festlegung im Bericht nennen.
   Fotos vom Inhaber): `referenzen/schaufensterfolie-store-hamburg-01…05` (+ `-720`), Hero `opening-soon-hamburg-hero*.webp`; die Illustration
   „Eine Front, drei Phasen“ (`opening-soon-phasen*.webp`, `tools/folien/store_eroeffnung_bilder.py`) bleibt als Erklärgrafik. Das Projekt steht auch auf
   `referenzen.html` (Schaufenster & Folien), auf `werbeagentur-hamburg.html` („Aus unserem Projekt in Hamburg“) und als erstes Bild auf den
-  Schaufenster-/Fensterfolie-Seiten. Erlaubnis gilt für die Website – für Social Media gesondert fragen. Nicht in der Navigation (nur
+  Schaufenster-/Fensterfolie-Seiten. Erlaubnis gilt für die Website – für Social Media gesondert fragen.
+  Seit 23.11.2026 (Inhaber: „alle sollen das Projekt auf allen Seiten sehen“): Projektvideo `videos/folienplott-store-hamburg.mp4` (14 s, hochkant,
+  Abziehen der Übertragungsfolie) im Kasten „Projekt im Fokus“ oben auf `referenzen.html` (`referenzen_slides.py`) und auf der Store-Eröffnungsseite;
+  `referenzen_einbau.py` setzt das Projekt als erste Karte in jeden „Aus unserer Arbeit“-Block (Konstante `PROJEKT`, höchstens vier Karten). Nicht in der Navigation (nur
   Kontextlinks, Sitemap, llms.txt).
 
 ## Offen

@@ -38,8 +38,12 @@ def vorschau(name):
     return f'/referenzen/{name}-480.webp', w, h
 
 
+PROJEKT = ('schaufensterfolie-store-hamburg-01', 'Oscar Jacobson, Hamburg: Store-Front vor der Eröffnung')   # auf jeder Seite an erster Stelle (Inhaber, 23.11.2026)
+
+
 def block(titel, bilder):
     karten = ''
+    if all(n != PROJEKT[0] for n, _ in bilder): bilder = [PROJEKT] + list(bilder)[:3]   # höchstens vier Karten, damit keine einzelne umbricht
     for name, cap in bilder:
         url, w, h = vorschau(name)
         karten += (f'<figure style="margin:0;background:#fff;border:1px solid var(--border,#e0eaea);border-radius:12px;overflow:hidden">'

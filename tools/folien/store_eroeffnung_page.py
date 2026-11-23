@@ -208,6 +208,14 @@ def main():
         <a href="/referenzen.html" style="display:block;margin-top:.8rem;color:var(--teal-ink);font-weight:700">Weitere Referenzen ansehen →</a>
       </figcaption>
     </figure>
+    <figure class="ideen-foto" style="grid-template-columns:minmax(0,240px) minmax(0,1fr)">
+      <video controls muted playsinline preload="none" poster="/videos/folienplott-store-hamburg.webp" width="720" height="1280" aria-label="Video: Die Übertragungsfolie wird vom Schriftzug „Opening Soon“ abgezogen" style="display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:#132e50"><source src="/videos/folienplott-store-hamburg.mp4" type="video/mp4"></video>
+      <figcaption>
+        <span class="eyebrow" style="margin-bottom:.6rem">Video · 14 Sekunden</span>
+        <strong>So kommt die Schrift aufs Glas</strong>
+        Logo und „Opening Soon“ schneiden wir als Folienplott und setzen sie von außen auf die Scheibe. Im Video ziehen wir die Übertragungsfolie ab – die Buchstaben bleiben exakt ausgerichtet stehen.
+      </figcaption>
+    </figure>
   </div>
 </section>
 

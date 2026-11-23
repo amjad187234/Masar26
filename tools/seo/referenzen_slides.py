@@ -102,6 +102,14 @@ CSS = '''<style id="slides-css">
 @media(max-width:900px){.sl-track .gal-item{flex-basis:calc((100% - 1rem)/2)}}
 @media(max-width:600px){.sl-track .gal-item{flex-basis:84%}.sl-nav{display:none}}
 @media(prefers-reduced-motion:reduce){.sl-track{scroll-behavior:auto}}
+.ref-fokus{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:1.8rem;align-items:center;background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.4rem;margin:0 0 2.2rem}
+.ref-fokus-v{margin:0;border-radius:12px;overflow:hidden}
+.ref-fokus-v img,.ref-fokus-v video{width:100%;height:auto;display:block;aspect-ratio:9/16;object-fit:cover}
+.ref-fokus-t small{color:var(--teal-ink);font-weight:700;letter-spacing:.6px;text-transform:uppercase;font-size:13px}
+.ref-fokus-t h3{font:900 clamp(1.6rem,3.4vw,2.3rem)/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase;color:var(--navy);margin:.3rem 0 .7rem}
+.ref-fokus-t p{color:var(--muted);font-size:15.5px;line-height:1.65;margin:0 0 .8rem}
+.ref-fokus-t a{color:var(--teal-ink);font-weight:700}
+@media(max-width:700px){.ref-fokus{grid-template-columns:1fr;padding:1rem}.ref-fokus-v{max-width:240px;margin:0 auto}}
 </style>'''
 
 JS = '''<script id="slides-js">
@@ -192,7 +200,15 @@ def block():
   <div class="sl-dots"></div>
 </div>''')
     nav = ''.join(f'<a class="filter-btn" href="#ref-{k}">{t}<span class="filter-count">{len(b)}</span></a>' for k, t, _, b in KATEGORIEN)
-    return (f'{A}\n{CSS}\n<div class="filters" role="navigation" aria-label="Zu einer Leistung springen">{nav}</div>\n'
+    fokus = ('<div class="ref-fokus" id="ref-oscar-jacobson-hamburg">'
+             '<figure class="vid-card ref-fokus-v"><a class="vid-play" href="/videos/folienplott-store-hamburg.mp4" data-video data-w="720" data-h="1280" aria-label="Video abspielen: Folienplott für Oscar Jacobson, Hamburg">'
+             '<img src="/videos/folienplott-store-hamburg.webp" alt="Schriftzug „Oscar Jacobson – Opening Soon“ auf rot folierter Scheibe – Standbild aus dem Video" loading="lazy" width="720" height="1280">'
+             '<span class="vid-icon" aria-hidden="true"></span></a></figure>'
+             '<div class="ref-fokus-t"><small>Neu · Projekt im Fokus</small><h3>Oscar Jacobson, Hamburg</h3>'
+             '<p>Store-Eröffnung am Kaufmannshaus: Wir haben die komplette Front vor der Eröffnung foliert – rote, lichtdurchlässige Folie von innen auf allen Scheiben, '
+             'Logo, „Opening Soon“ und Webadresse als Folienplott von außen. Im Video: Die Übertragungsfolie wird abgezogen, die Schrift bleibt auf dem Glas. 14 Sekunden.</p>'
+             '<p><a href="#ref-schaufenster">Fotos vom Projekt ansehen ↓</a> · <a href="/schaufensterfolie-store-eroeffnung.html">Schaufensterfolie zur Store-Eröffnung →</a></p></div></div>\n')
+    return (f'{A}\n{CSS}\n{fokus}<div class="filters" role="navigation" aria-label="Zu einer Leistung springen">{nav}</div>\n'
             + '\n'.join(teile) + f'\n{JS}\n{Z}\n')
 
 
