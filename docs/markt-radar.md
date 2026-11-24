@@ -121,3 +121,11 @@ Knappe Beobachtungen für die Website. Keine Kundennamen, keine fremden Preise �
 |---|---|---|
 | Eigene Seitenprüfung (interne Verlinkung, `seo_check.py`) | Die neue Seite „Schaufensterfolie zur Store-Eröffnung“ war nur von 4 Seiten aus erreichbar; neue Seiten ohne interne Links werden langsam gefunden. Black Week läuft (23.–29.11.), danach rücken Neueröffnungen zum Jahresbeginn in den Blick. | Hinweis-Kasten verlinkt die Seite jetzt zusätzlich von Werbetechnik, Außenwerbung Berlin, Sichtschutzfolie Berlin und Schaufensterbeschriftung NRW (8 eingehende Links). |
 | Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
+
+## 24.11.2026
+
+| Quelle | Erkenntnis | Folgerung für die Website |
+|---|---|---|
+| Websuche Berliner Werbetechnik-Anbieter, Aktionen Black Week/Weihnachten (sellwerk.de, gelbeseiten.de, kennstdueinen.de, heinze.de) | Auch in der Black Week keine Saisonaktion eines Berliner Wettbewerbers für Schaufensterbeschriftung auffindbar; nur allgemeine Firmenprofile. | Saisonseite bleibt Alleinstellung; keine Änderung nötig. |
+| Eigene Anfrage aus NRW in dieser Woche (ohne Namen) | Nach einer Geschäftsübernahme wird auch in NRW gefragt, ob ein vorhandener Leuchtkasten neu beklebt werden kann, statt ihn zu ersetzen. Die NRW-Seiten nannten bisher nur „neue Front oder LED“. | FAQ „Können Sie meine alte Reklame umbauen?“ auf `leuchtreklame-nrw.html` und den fünf Städteseiten um das Neubekleben ergänzt (wie Berlin seit 19.11.), ohne Preis. |
+| Google Ads Transparency / Meta Ad Library | aus dem Container nicht erreichbar (unverändert) | – |
