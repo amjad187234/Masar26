@@ -1,4 +1,4 @@
 
 
-## 25.11.2026 (Marketing-Runde)
-- `express-druck-berlin.html`: neue FAQ „Drucken Sie auch einzelne Aufkleber in Sonderformaten für draußen, die sich wieder ablösen lassen?“ (sichtbar und im FAQPage-JSON-LD; Digitaldruck auf wetterfester Folie, Zuschnitt auf Format, Einzelstücke, ablösbare Folie auf Wunsch, Hinweis zu Druckdaten; kein Preis) – Anlass: kurzfristige Veranstaltungs-Anfrage (docs/markt-radar.md).
+## 26.11.2026 (Marketing-Runde)
+- `messebeschriftung-berlin.html`: neue FAQ „Fertigen Sie auch Fotowände für Firmenfeiern und Weihnachtsfeiern?“ (sichtbar und im FAQPage-JSON-LD; Textilwand für innen, Platte mit Stützen und Gewichten für draußen, auf Wunsch mit Ausschnitt; Link zum Ratgeber „Fotowand für die Firmenfeier“; kein Preis) – Anlass: Anfragen vor den Weihnachtsfeiern (docs/markt-radar.md).
