@@ -165,6 +165,8 @@ solche Festlegung im Bericht nennen.
   `referenzen_einbau.py` setzt das Projekt als erste Karte in jeden „Aus unserer Arbeit“-Block (Konstante `PROJEKT`, höchstens vier Karten). Nicht in der Navigation (nur
   Kontextlinks, Sitemap, llms.txt).
 
+- KI-Sichtbarkeit (27.11.2026, Inhaber: „Masar soll in der KI-Suche erscheinen, als Beispiel für Kunden“): Baseline und monatliche Messliste in `docs/ki-sichtbarkeit.md`. Befund: Markenname findet die Website nicht (Verwechslung mit „MASAR“ Bagdad); Technik gut, es fehlen Verzeichnisse, Kartenprofile und Bewertungen. Umgesetzt: „Auf einen Blick“ auf `ueber-uns.html`, `alternateName`/`slogan` im Schema der Startseite. Keine Garantien zur KI-Nennung zusagen.
+
 ## Offen
 
 - **Freigabe nötig – empfohlen (11.11.2026): Umland-Seiten `werbeagentur-*` (18 Brandenburg + Herne/Mülheim/Bottrop)
