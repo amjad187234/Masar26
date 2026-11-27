@@ -62,6 +62,8 @@ SCHRITTE = [
     ('a11y', 'post', 'seo/a11y.py', 'Barrierefreiheit (main, Landmarks, Überschriften)'),
     ('marke', 'post', 'seo/marke.py', 'Farben nach Markenleitfaden + Claim'),
     ('umbruch', 'post', 'seo/umbruch.py', 'Ohne Brotkrumen-Leiste und Silbentrennung'),
+    ('vorschau', 'post', 'seo/vorschau.py', 'Vorschau-Rechte: volle Auszüge und große Bilder in Suche und KI-Antworten'),
+    ('entitaet', 'post', 'seo/entitaet.py', 'Firmenangaben im JSON-LD widerspruchsfrei (eine @id, ein Datensatz)'),
     ('sitemap_lastmod', 'post', 'seo/sitemap_lastmod.py', 'lastmod nur bei geändertem Haupttext'),
     ('datemod_sync', 'post', 'seo/datemod_sync.py', 'JSON-LD dateModified = sitemap lastmod'),
     ('ki_dateien', 'post', 'seo/ki_dateien.py', 'preise.md, llms-full.txt und Verweise im <head> (für KI-Assistenten)'),

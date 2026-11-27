@@ -1,6 +1,11 @@
 # Masar Werbeagentur Berlin
 # Such- und KI-Crawler sind ausdruecklich willkommen.
 # Gesperrt sind nur interne Pfade ohne Inhalt fuer Besucher.
+# Das gilt fuer alle, auch fuer OAI-SearchBot, ChatGPT-User, GPTBot, Claude-SearchBot,
+# Claude-User, ClaudeBot, PerplexityBot, Googlebot, Google-Extended, Bingbot und Applebot.
+# Bewusst keine eigenen Gruppen je Crawler: eine eigene Gruppe wuerde die Sperren unten
+# fuer diesen Crawler aufheben.
+# Ueberblick fuer KI-Assistenten: /llms.txt · Preise als Text: /preise.md
 
 User-agent: *
 Allow: /

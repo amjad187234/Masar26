@@ -75,3 +75,5 @@ Quellen: Skill `.claude/skills/ai-seo` (Referenz `agent-readiness.md`) und eine 
 - Zuvor am selben Tag: „Auf einen Blick“ auf `ueber-uns.html`, `alternateName`/`slogan` im Schema.
 
 Der größere Hebel liegt weiter außerhalb der Website (Liste oben: Unternehmensprofil, Bing Places, Bewertungen, Verzeichnisse). Keine Zusage, dass eine KI Masar nennt.
+
+Vollständiges Audit mit Vorher/Nachher, Quellen und offenen Punkten: `docs/ki-suche-audit-2026-11.md`.

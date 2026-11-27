@@ -43,6 +43,10 @@ def text(seite):
     m = re.search(r'<main\b.*?</main>', s, re.S)
     b = m.group(0) if m else re.search(r'<body.*?</body>', s, re.S).group(0)
     b = re.sub(r'<!--.*?-->', '', b, flags=re.S)
+    # FAQ-Fragen stehen in <button class="faq-q"> – als Frage behalten, bevor alle Knöpfe entfallen
+    b = re.sub(r'<button[^>]*class="[^"]*faq-q[^"]*"[^>]*>(.*?)</button>', lambda m: '\n\n**' + re.sub(r'<[^>]+>', ' ', m.group(1)).strip() + '**\n\n', b, flags=re.S)
+    # Knopf-Links (Aufrufe wie „Angebot anfordern“) sind kein Inhalt
+    b = re.sub(r'<a\b[^>]*class="[^"]*\bbtn[^"]*"[^>]*>.*?</a>', ' ', b, flags=re.S)
     for tag in ('script', 'style', 'nav', 'header', 'footer', 'form', 'svg', 'noscript', 'select', 'button', 'picture', 'video', 'details'):
         b = re.sub(rf'<{tag}\b.*?</{tag}>', ' ', b, flags=re.S)
     b = re.sub(r'<h1[^>]*>(.*?)</h1>', lambda m: '\n\n### ' + m.group(1) + '\n\n', b, flags=re.S)

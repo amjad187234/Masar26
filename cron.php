@@ -9,6 +9,7 @@
 declare(strict_types=1);
 
 require_once __DIR__ . '/inc/sekretaer.php';
+require_once __DIR__ . '/inc/indexnow.php';
 
 header('Content-Type: text/plain; charset=UTF-8');
 header('X-Robots-Tag: noindex');
@@ -17,4 +18,7 @@ if (PHP_SAPI !== 'cli') {
     if ($k === '' || !hash_equals($k, (string) ($_GET['k'] ?? ''))) { http_response_code(403); exit('403'); }
 }
 $log = sek_cron();
+// Geänderte Seiten an IndexNow melden, sobald sitemap.xml neu ist (nach jedem „Bereitstellen“)
+$in = indexnow_auto();
+if ($in !== '') { $log[] = $in; }
 echo 'ok ' . date('d.m.Y H:i') . ($log ? ': ' . implode(', ', $log) : '') . "\n";

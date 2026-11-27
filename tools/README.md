@@ -182,3 +182,10 @@ Eingebaut über `tools/seo/werbevideo_einbau.py` (direkt nach dem Seitenkopf, st
 ## KI-Dateien
 
 `tools/seo/ki_dateien.py` (letzter Schritt in `build_all.py`): erzeugt `preise.md` (Preisliste als Text, aus dem Abschnitt „Preise“ in `llms.txt`) und `llms-full.txt` (llms.txt + sichtbarer Text der wichtigsten Seiten) und setzt die Verweise im `<head>` von Startseite, Leistungen und Über uns. Preise nur in `llms.txt` pflegen. Messung und Stand: `docs/ki-sichtbarkeit.md`.
+
+Weitere Werkzeuge für Suche und KI-Suche (Bericht `docs/ki-suche-audit-2026-11.md`):
+
+- `tools/seo/entitaet.py` (Pipeline): Firmenangaben im JSON-LD widerspruchsfrei – `WebSite`-Knoten, Inhaber mit @id, Leistungskatalog mit allen Listenpreisen (Liste `LISTENPREISE` bei Preisänderungen anpassen), `provider` nur als Verweis.
+- `tools/seo/vorschau.py` (Pipeline): Robots-Angabe mit vollen Auszügen und großen Vorschaubildern auf allen indexierbaren Seiten.
+- `tools/seo/ki_logs.py access.log`: zählt Crawler-Abrufe und Besuche aus KI-Antworten im Server-Protokoll (Protokoll nicht committen).
+- `inc/indexnow.php`: gemeinsame IndexNow-Logik; `cron.php` meldet geänderte Seiten von selbst, `/indexnow.php` bleibt für den Handaufruf.
