@@ -46,6 +46,10 @@ ServerSignature Off
   # Umland-Seiten zusammengeführt (27.11.2026, zu ähnlicher Text)
   RewriteRule ^werbeagentur-(beelitz|bernau|brandenburg-havel|eberswalde|falkensee|frankfurt-oder|fuerstenwalde|hennigsdorf|jueterbog|koenigs-wusterhausen|luckenwalde|neuruppin|rathenow|teltow-kleinmachnow|zossen)\.html$ /werbetechnik-brandenburg.html [R=301,L]
   RewriteRule ^werbeagentur-(herne|muelheim|bottrop)\.html$ /werbeagentur-nrw.html [R=301,L]
+  # Geratene Adressen (Besucher, Suchmaschinen, KI-Agenten) zur richtigen Seite – laut Server-Protokoll 27.11.2026 häufig 404
+  RewriteRule ^(kontakt|contact|contact-us)(\.html)?/?$ /#kontakt [R=301,NE,L]
+  RewriteRule ^(ueber-uns|uber-uns|about|about-us)/?$ /ueber-uns.html [R=301,L]
+  RewriteRule ^(impressum|datenschutz|agb|leistungen|referenzen|termin)/?$ /$1.html [R=301,L]
 
   # Kurzlink zum Teilen: masar-werbeagentur.de/google-bewertung → Google-Bewertungsformular
   RewriteRule ^google-bewertung/?$ https://g.page/r/CWpWcEIfYCo-ECE/review [R=302,L]

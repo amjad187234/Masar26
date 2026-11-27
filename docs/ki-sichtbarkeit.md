@@ -77,3 +77,25 @@ Quellen: Skill `.claude/skills/ai-seo` (Referenz `agent-readiness.md`) und eine 
 Der größere Hebel liegt weiter außerhalb der Website (Liste oben: Unternehmensprofil, Bing Places, Bewertungen, Verzeichnisse). Keine Zusage, dass eine KI Masar nennt.
 
 Vollständiges Audit mit Vorher/Nachher, Quellen und offenen Punkten: `docs/ki-suche-audit-2026-11.md`.
+
+## Erste Messung aus dem Server-Protokoll (20.–27.11.2026, vor dem Bereitstellen der Änderungen vom 27.11.)
+
+Quelle: Hostinger → Analysen → Zugriffsprotokolle, Export als CSV (6.001 Zeilen, die Datei liegt nicht im Repository).
+Das Format hat keinen Referrer; Besuche aus ChatGPT sind am Zusatz `utm_source=chatgpt.com` erkennbar.
+
+| Wer | Abrufe | Ergebnis |
+|---|---|---|
+| ChatGPT-User (ChatGPT ruft eine Seite für einen Nutzer ab) | 47, davon 29-mal die Startseite, jeden Tag 4–10 | alle beantwortet |
+| Besucher mit `utm_source=chatgpt.com` (Mensch klickt in ChatGPT auf Masar) | 13 | Expressdruck 4, Digital Signage 3, Schilder, Referenzen, Über uns, NRW-Seiten |
+| OAI-SearchBot (Index der ChatGPT-Suche) | 40 | alle beantwortet |
+| Googlebot / Bingbot | 193 / 92 | alle beantwortet |
+| PerplexityBot / Claude-User / DuckAssistBot | 11 / 3 / 6 | beantwortet (PerplexityBot einmal 403 auf robots.txt) |
+| GPTBot (Training) | 86 | **85-mal 429** – Hostinger bremst ihn wegen zu vieler Abrufe auf einmal |
+| PetalBot (Huawei) | 330 | 230-mal 403 durch Hostinger – für Deutschland ohne Belang |
+
+Folgerungen: Die Such- und Nutzer-Crawler der KI-Dienste kommen durch. ChatGPT nennt Masar bereits und schickt Besucher.
+`llms-full.txt` und `preise.md` wurden noch nicht abgerufen (erst seit dem 27.11. online). Antwortzeit HTML: Median 6 ms, 95 % unter 20 ms (Serverzeit).
+Geratene Adressen wie `/kontakt`, `/impressum`, `/about` liefen ins Leere – seit 27.11.2026 Weiterleitungen in `.htaccess`.
+GPTBot-Bremse: nur bei Hostinger zu ändern; betrifft das Training, nicht die ChatGPT-Suche.
+Nächste Messung: Export „7 Tage“ etwa am 04.12.2026 und mit dieser Tabelle vergleichen.
+
