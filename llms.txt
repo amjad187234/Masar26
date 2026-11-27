@@ -13,6 +13,7 @@
 - Einsatzgebiet: Berlin, Potsdam und Brandenburg (betreut aus Berlin); Werbetechnik, Druck und Design auch in Nordrhein-Westfalen und Hamburg über eigene Teams vor Ort (ohne Niederlassung). Messebau und Expressdruck nur in Berlin; Foto und Video in Berlin; in NRW nur Content und Video in Essen nach Absprache, nicht in Hamburg. Übersicht: https://masar-werbeagentur.de/einsatzgebiete.html
 - Sprachen: Deutsch, Englisch, Arabisch, Türkisch
 - Preise: alle genannten Preise netto zzgl. 19 % MwSt.; individuelle Projekte als Festpreis nach Fotos oder Aufmaß. In NRW gelten eigene, leicht höhere Preise; in Hamburg gelten dieselben Preise wie in NRW.
+- Maschinenlesbar: Preisliste als Text https://masar-werbeagentur.de/preise.md · alle Kerninhalte in einer Datei https://masar-werbeagentur.de/llms-full.txt
 
 ## Preise (netto, ab) – Stand November 2026
 

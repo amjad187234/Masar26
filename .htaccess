@@ -76,10 +76,11 @@ ServerSignature Off
 # ─── DIRECTORY INDEX ───────────────────────────────────────────
 DirectoryIndex index.html index.php
 
-# Zeichensatz für Text-Dateien (robots.txt, llms.txt), damit Umlaute korrekt ankommen
+# Zeichensatz für Text-Dateien (robots.txt, llms.txt, llms-full.txt, preise.md), damit Umlaute korrekt ankommen
 AddDefaultCharset UTF-8
 <IfModule mod_mime.c>
-  AddCharset UTF-8 .txt .xml
+  AddCharset UTF-8 .txt .xml .md
+  AddType text/markdown .md
 </IfModule>
 
 # ─── SECURITY HEADERS ──────────────────────────────────────────

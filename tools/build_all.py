@@ -64,6 +64,7 @@ SCHRITTE = [
     ('umbruch', 'post', 'seo/umbruch.py', 'Ohne Brotkrumen-Leiste und Silbentrennung'),
     ('sitemap_lastmod', 'post', 'seo/sitemap_lastmod.py', 'lastmod nur bei geändertem Haupttext'),
     ('datemod_sync', 'post', 'seo/datemod_sync.py', 'JSON-LD dateModified = sitemap lastmod'),
+    ('ki_dateien', 'post', 'seo/ki_dateien.py', 'preise.md, llms-full.txt und Verweise im <head> (für KI-Assistenten)'),
 ]
 NAMEN = [s[0] for s in SCHRITTE]
 # Dateien, deren Änderungen gezählt werden (Bilder erzeugen nur referenzen_einbau.py, die zählen mit)

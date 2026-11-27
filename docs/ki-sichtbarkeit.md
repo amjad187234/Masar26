@@ -57,3 +57,21 @@ Jeden Monat dieselben Fragen in ChatGPT (mit Suche), Perplexity und Google stell
 | Monat | genannt (von 36 Abfragen je Plattform) | Bemerkung |
 |---|---|---|
 | Nov. 2026 | Baseline per Websuche: 0 von 3 Testsuchen | siehe oben |
+
+## Recherche 27.11.2026 – was für lokale Betriebe zählt
+
+Quellen: Skill `.claude/skills/ai-seo` (Referenz `agent-readiness.md`) und eine Websuche zu lokaler KI-Sichtbarkeit (Anbieter-Studien von soci.ai, cheers.tech, whitespark; Erfahrungsbericht auf dev.to; arXiv 2604.07585). Die Studien stammen überwiegend von Anbietern – als Richtung lesen, nicht als gesicherte Zahl.
+
+- Googles KI-Antworten stützen sich bei lokalen Fragen vor allem auf das Google-Unternehmensprofil und die Website des Betriebs.
+- ChatGPT und Perplexity stützen sich stärker auf Verzeichnisse, Bestenlisten und Bewertungen.
+- Für die Website selbst: Inhalte im HTML ohne JavaScript lesbar, Preise als Text, Fakten sichtbar und im Schema gleich, `llms.txt` und eine Gesamtdatei, Verweise darauf im `<head>`.
+
+## Umgesetzt am 27.11.2026 (Website)
+
+- `preise.md` – Preisliste als reiner Text.
+- `llms-full.txt` – Überblick, Preise und sichtbarer Text von 28 Kernseiten in einer Datei.
+- Verweise auf `llms.txt`, `preise.md`, `llms-full.txt` im `<head>` von Startseite, Leistungen, Über uns; Zeile „Maschinenlesbar“ in `llms.txt`.
+- Werkzeug `tools/seo/ki_dateien.py` (letzter Schritt in `build_all.py`); `.htaccess`: UTF-8 und `text/markdown` für `.md`.
+- Zuvor am selben Tag: „Auf einen Blick“ auf `ueber-uns.html`, `alternateName`/`slogan` im Schema.
+
+Der größere Hebel liegt weiter außerhalb der Website (Liste oben: Unternehmensprofil, Bing Places, Bewertungen, Verzeichnisse). Keine Zusage, dass eine KI Masar nennt.

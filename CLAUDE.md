@@ -165,7 +165,7 @@ solche Festlegung im Bericht nennen.
   `referenzen_einbau.py` setzt das Projekt als erste Karte in jeden „Aus unserer Arbeit“-Block (Konstante `PROJEKT`, höchstens vier Karten). Nicht in der Navigation (nur
   Kontextlinks, Sitemap, llms.txt).
 
-- KI-Sichtbarkeit (27.11.2026, Inhaber: „Masar soll in der KI-Suche erscheinen, als Beispiel für Kunden“): Baseline und monatliche Messliste in `docs/ki-sichtbarkeit.md`. Befund: Markenname findet die Website nicht (Verwechslung mit „MASAR“ Bagdad); Technik gut, es fehlen Verzeichnisse, Kartenprofile und Bewertungen. Umgesetzt: „Auf einen Blick“ auf `ueber-uns.html`, `alternateName`/`slogan` im Schema der Startseite. Keine Garantien zur KI-Nennung zusagen.
+- KI-Sichtbarkeit (27.11.2026, Inhaber: „Masar soll in der KI-Suche erscheinen, als Beispiel für Kunden“): Baseline und monatliche Messliste in `docs/ki-sichtbarkeit.md`. Befund: Markenname findet die Website nicht (Verwechslung mit „MASAR“ Bagdad); Technik gut, es fehlen Verzeichnisse, Kartenprofile und Bewertungen. Umgesetzt: „Auf einen Blick“ auf `ueber-uns.html`, `alternateName`/`slogan` im Schema der Startseite. Keine Garantien zur KI-Nennung zusagen. Maschinenlesbare Dateien (27.11.2026): `preise.md` und `llms-full.txt` aus `tools/seo/ki_dateien.py` (letzter Pipeline-Schritt, Verweise im `<head>` von Startseite/Leistungen/Über uns) – Preise nur in `llms.txt` pflegen, die Dateien entstehen daraus.
 
 ## Offen
 

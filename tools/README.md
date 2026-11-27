@@ -178,3 +178,7 @@ Verlinkt über `tools/seo/druckcheck_links.py` (Marker `konfig-hinweis`).
 `TMPDIR_VIDEO=<ordner> node tools/video/werbevideos.mjs [name]` rendert 3 Werbevideos (16:9, 15 s, ohne Ton) aus echten Referenzfotos:
 Leuchtreklame, Schaufenster, Fahrzeugbeschriftung → `videos/werbung-*.mp4|webm|webp`. Bild für Bild mit Chromium, dann ffmpeg. Keine Preise im Video.
 Eingebaut über `tools/seo/werbevideo_einbau.py` (direkt nach dem Seitenkopf, startet stumm beim Sichtbarwerden, bei „weniger Bewegung“ nur mit Bedienelementen).
+
+## KI-Dateien
+
+`tools/seo/ki_dateien.py` (letzter Schritt in `build_all.py`): erzeugt `preise.md` (Preisliste als Text, aus dem Abschnitt „Preise“ in `llms.txt`) und `llms-full.txt` (llms.txt + sichtbarer Text der wichtigsten Seiten) und setzt die Verweise im `<head>` von Startseite, Leistungen und Über uns. Preise nur in `llms.txt` pflegen. Messung und Stand: `docs/ki-sichtbarkeit.md`.
