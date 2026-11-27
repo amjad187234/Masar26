@@ -29,7 +29,15 @@
   <!-- KI für Pflegedienste -->
   <url>
     <loc>https://masar-werbeagentur.de/ki-fuer-pflegedienste-berlin.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- KI für Handwerker -->
+  <url>
+    <loc>https://masar-werbeagentur.de/ki-fuer-handwerker-berlin.html</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -37,7 +45,7 @@
   <!-- KI für Arztpraxen -->
   <url>
     <loc>https://masar-werbeagentur.de/ki-fuer-arztpraxen-berlin.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -45,7 +53,7 @@
   <!-- Webdesign -->
   <url>
     <loc>https://masar-werbeagentur.de/webdesign-berlin.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -340,7 +348,7 @@
 
   <url>
     <loc>https://masar-werbeagentur.de/ki-loesungen/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -429,7 +437,7 @@
   </url>
   <url>
     <loc>https://masar-werbeagentur.de/werbung-handwerker-berlin.html</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>

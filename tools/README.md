@@ -48,7 +48,7 @@ Kette: `branchen/gen_branchen.py` (Grundgerüst: Kopf, Navigation, Fußzeile aus
 | `folien/umland_pages.py` | `werbeagentur-<stadt>.html` (15 Brandenburg + Herne, Mülheim, Bottrop) |
 | `folien/einsatz_page.py` | `einsatzgebiete.html` |
 | `folien/hamburg_page.py` | `werbeagentur-hamburg.html` (aus `werbeagentur-nrw.html`) |
-| `folien/ki_pages.py` | `ki-fuer-arztpraxen-berlin.html`, `ki-fuer-pflegedienste-berlin.html` |
+| `folien/ki_pages.py` | `ki-fuer-arztpraxen-berlin.html`, `ki-fuer-pflegedienste-berlin.html`, `ki-fuer-handwerker-berlin.html` |
 | `folien/textil_page.py` | `textildruck-berlin.html` |
 | `branchen/gastro_page.py` | `werbung-gastronomie-berlin.html` (Kopf/Fußzeile aus `werbung-fahrschule-berlin.html`, baut Brutto und Assistent selbst ein) |
 | `folien/store_eroeffnung_page.py` | `schaufensterfolie-store-eroeffnung.html` (Opening Soon, mit englischem Abschnitt) aus der Saisonseite |

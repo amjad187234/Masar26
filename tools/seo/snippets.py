@@ -83,9 +83,11 @@ S = {
  'blog/index.html': ('Werbetechnik-Blog: Ratgeber, Preise & Regeln | Masar',
    'Ratgeber zu Schildern, Leuchtreklame, Folien und Fahrzeugbeschriftung: ehrliche Preise, Genehmigungen in Berlin, NRW und Hamburg – mit Quellen.'),
  # 04.11.2026 (seo_check.py): Titel > 60 bzw. Beschreibung > 160 Zeichen gekürzt – Inhalt unverändert, nur Fakten von der Seite
- 'ki-fuer-arztpraxen-berlin.html': ('KI für Arztpraxen Berlin: Chat-Assistent & Online-Termine',
+ 'ki-fuer-arztpraxen-berlin.html': ('Praxis-Telefon entlasten: KI für Arztpraxen Berlin | Masar',
    'Digitaler Assistent für Berliner Praxen: Fragen beantworten, Termine und Rezeptwünsche online aufnehmen, E-Mails vorsortieren – mit KI-Hinweis und EU-Hosting.'),
- 'ki-fuer-pflegedienste-berlin.html': ('KI für Pflegedienste Berlin: Krankmeldungen & Anfragen',
+ 'ki-fuer-handwerker-berlin.html': ('KI für Handwerker Berlin: Anfragen & Termine automatisch',
+   'KI-Assistent für Handwerker in Berlin: Anfragen vollständig aufnehmen, Besichtigungen online buchen, Nachricht aufs Handy – das Angebot schreiben Sie.'),
+ 'ki-fuer-pflegedienste-berlin.html': ('Krankmeldungen digital: KI für Pflegedienste Berlin',
    'Digitaler Assistent für Pflegedienste in Berlin: Krankmeldungen, Angehörigen-Fragen und Neuanfragen per Chat aufnehmen, E-Mails vorsortieren – Sie entscheiden.'),
  'textildruck-berlin.html': ('Textildruck Berlin: T-Shirts & Hoodies mit Logo | Masar',
    'Textildruck in Berlin für Firmen: T-Shirts, Hoodies, Polos und Taschen mit Logo – Flex- und DTF-Druck ab 5 Stück, Gestaltung inklusive, Versand deutschlandweit.'),
