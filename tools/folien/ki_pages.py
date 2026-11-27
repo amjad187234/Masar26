@@ -39,6 +39,18 @@ EIGEN = '''<section class="section" id="eigenes-system">
 </section>
 '''
 
+GENERATOR = '''<section class="section bg-alt" id="generator" hidden>
+  <div class="container">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Kostenlos ausprobieren</span>
+      <h2 class="sec-title">Ein Assistent für <em>Ihre Website – in einer Minute</em></h2>
+      <p class="sec-sub">Geben Sie die Adresse Ihrer Website ein. Der Assistent liest Ihre öffentlichen Seiten und beantwortet Fragen so, wie es Ihre Kunden erleben würden. Eine Vorführung – nichts wird auf Ihrer Website verändert.</p>
+    </div>
+    <div data-ki-generator class="reveal"></div>
+  </div>
+</section>
+'''
+
 RECHT = '''<p><strong>Klarer KI-Hinweis:</strong> Wer mit dem Assistenten schreibt, erfährt gleich zu Beginn, dass es ein digitaler Assistent ist – so verlangt es die EU-KI-Verordnung (Art.&nbsp;50) seit dem 2.&nbsp;August&nbsp;2026.</p>
 <p><strong>Keine medizinische Beratung:</strong> Der Assistent stellt keine Diagnose, bewertet keine Beschwerden und fragt nicht nach Symptomen. Bei Notfall-Wörtern verweist er sofort an 112{bereit}.</p>
 <p><strong>So wenig Daten wie möglich:</strong> Terminart per Auswahl statt Freitext, feste Löschfristen, Hosting und KI-Modell in der EU. Was nicht gebraucht wird, wird nicht erfasst.</p>
@@ -261,6 +273,10 @@ def nachbearbeiten(p):
     anker = '<section class="section bg-alt" style="padding:2.5rem 0;">'
     if 'id="eigenes-system"' not in h and anker in h:
         h = h.replace(anker, EIGEN + anker, 1)
+    # Chatbot-Generator (Versuch): nur auf der Handwerker-Seite; bleibt unsichtbar, bis der Server ihn freigibt
+    if 'handwerker' in p['file'] and 'data-ki-generator' not in h:
+        h = h.replace('<section class="section" id="eigenes-system">', GENERATOR + '<section class="section" id="eigenes-system">', 1)
+        h = h.replace('</body>', '<script src="/ki-generator.js?v=1" defer></script>\n</body>', 1)
     # Hero: Live-Demo statt Standbild
     art = 'pflege' if 'pflege' in p['file'] else 'handwerk' if 'handwerker' in p['file'] else 'praxis'
     h = re.sub(r'(<div class="hero-visual">)\s*<img class="hero-shot"[^>]*>', lambda m: m.group(1) + f'\n        <div class="hero-demo" id="demo" data-ki-demo="{art}"></div>', h, count=1)

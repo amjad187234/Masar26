@@ -25,6 +25,7 @@ Disallow: /telegram.php
 Disallow: /kontakt.php
 Disallow: /anfrage-log.php
 Disallow: /status.php
+Disallow: /ki-generator.php
 Disallow: /termin.php
 Disallow: /bewertung.php
 Disallow: /signatur.php

@@ -38,4 +38,12 @@ return [
     // Token von @BotFather, Chat-ID über /admin/anfragen.php → Einstellungen → „Chat-ID suchen“
     // 'telegram_token' => '123456789:ABC…',
     // 'telegram_chat'  => '123456789',
+
+    // ── KI-Chatbot-Generator (Versuch) ──
+    // Ohne Schlüssel bleibt der Generator auf der Website unsichtbar. Schlüssel aus der Anthropic Console;
+    // dort zusätzlich ein monatliches Ausgabenlimit setzen. Prüfung: /admin/ki-check.php
+    // 'anthropic_key'       => 'sk-ant-…',
+    // 'ki_generator_budget' => 10,                  // Obergrenze je Monat (ca. Euro), danach pausiert der Generator
+    // 'ki_generator_model'  => 'claude-haiku-5-5',  // günstigstes Modell (Standard)
+    // 'ki_generator_aus'    => true,                // Notschalter
 ];

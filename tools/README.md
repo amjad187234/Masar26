@@ -189,3 +189,8 @@ Weitere Werkzeuge für Suche und KI-Suche (Bericht `docs/ki-suche-audit-2026-11.
 - `tools/seo/vorschau.py` (Pipeline): Robots-Angabe mit vollen Auszügen und großen Vorschaubildern auf allen indexierbaren Seiten.
 - `tools/seo/ki_logs.py access.log`: zählt Crawler-Abrufe und Besuche aus KI-Antworten im Server-Protokoll (Protokoll nicht committen).
 - `inc/indexnow.php`: gemeinsame IndexNow-Logik; `cron.php` meldet geänderte Seiten von selbst, `/indexnow.php` bleibt für den Handaufruf.
+
+## KI-Chatbot-Generator (Versuch)
+
+`inc/ki_generator.php`, `ki-generator.php`, `ki-generator.js`, `/admin/ki-check.php`. Einrichtung in `kontakt-config.php` (siehe `kontakt-config.sample.php`): `anthropic_key`, optional `ki_generator_budget`, `ki_generator_model`, `ki_generator_aus`. Ohne Schlüssel bleibt der Abschnitt unsichtbar. Nach dem Eintragen `/admin/ki-check.php` öffnen und den Verbindungstest ausführen.
+
