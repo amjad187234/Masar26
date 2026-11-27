@@ -64,18 +64,19 @@ def build():
 .eg-fact div{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:1.1rem 1.2rem}
 .eg-fact b{display:block;color:var(--navy);font-size:15px;margin-bottom:.25rem}.eg-fact span{color:var(--muted);font-size:15px;line-height:1.55}
 .eg-city{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem}
-.eg-city a{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--navy);font-weight:700}
-.eg-city a small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:.15rem}
+.eg-city a,.eg-city span{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--navy);font-weight:700}
+.eg-city a small,.eg-city span small{display:block;font-weight:400;color:var(--muted);font-size:13px;margin-top:.15rem}
 .eg-city a:hover{border-color:var(--teal)}
 </style>'''
     def tbl(cols, rows, cap):
         th = ''.join(f'<th scope="col">{c}</th>' for c in cols)
         tr = ''.join('<tr>' + ''.join(f'<td data-label="{cols[i]}">{v}</td>' for i, v in enumerate(r)) + '</tr>' for r in rows)
         return f'<div class="price-scroll"><table class="price-table rt"><caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">{cap}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
-    bb = ''.join(f'<a href="/werbeagentur-{c["slug"]}.html">{c["name"]}<small>{c["kreis"]}{"" if c["km"] in (0, None) else " · ca. " + str(c["km"]) + " km"}</small></a>' for c in CITIES)
+    bb = ''.join(f'<span>{c["name"]}<small>{c["kreis"]}{"" if c["km"] in (0, None) else " · ca. " + str(c["km"]) + " km"}</small></span>' for c in CITIES)
     nrw_c = [('werbeagentur-koeln', 'Köln'), ('werbeagentur-duesseldorf', 'Düsseldorf'), ('werbeagentur-dortmund', 'Dortmund'), ('werbeagentur-essen', 'Essen'),
-             ('werbeagentur-bochum', 'Bochum'), ('werbeagentur-herne', 'Herne'), ('werbeagentur-muelheim', 'Mülheim an der Ruhr'), ('werbeagentur-bottrop', 'Bottrop')]
-    nn = ''.join(f'<a href="/{u}.html">{n}<small>Montageteam NRW</small></a>' for u, n in nrw_c)
+             ('werbeagentur-bochum', 'Bochum')]
+    nrw_o = ['Herne', 'Mülheim an der Ruhr', 'Bottrop']   # ohne eigene Seite (27.11.2026 zusammengeführt)
+    nn = ''.join(f'<a href="/{u}.html">{n}<small>Montageteam NRW</small></a>' for u, n in nrw_c) + ''.join(f'<span>{n}<small>Montageteam NRW</small></span>' for n in nrw_o)
     w = wa('Hallo, ich habe eine Anfrage: ')
     body = f'''<section class="hero" id="main-content" role="main" tabindex="-1" style="min-height:auto;padding-bottom:3rem">
   <div class="hero-lines"></div>
@@ -102,7 +103,7 @@ def build():
     body += sec('Leistungen je Region', 'Was wir <em>wo anbieten</em>', 'Nicht jede Leistung gibt es überall – hier steht, was gilt.', tbl(['Leistung', 'Berlin', 'Brandenburg', 'NRW'], ROWS, 'Leistungen je Region') + '<p class="price-note">Montageteam NRW: Aufmaß, Montage und Beschriftung vor Ort – unser Firmensitz bleibt Berlin.</p>', alt=True, icon='tag')
     body += sec('Preise', 'Berlin &amp; Brandenburg <em>oder NRW</em>', 'Startpreise netto zzgl. 19 % MwSt.; Festpreis nach Fotos oder Aufmaß.', tbl(['Leistung', 'Berlin & Brandenburg', 'NRW'], PRICES, 'Startpreise je Region') + '<p class="price-note">Bei Montage außerhalb Berlins ist die Anfahrt im Festpreis enthalten und einzeln ausgewiesen.</p>', icon='tag')
     body += sec('Berlin', 'Berlin <em>– alle Bezirke</em>', 'Von unserem Studio im Wedding sind wir in der ganzen Stadt unterwegs.', '''    <div class="blog-prose" style="max-width:820px;margin:0 auto"><p>Mitte, Friedrichshain-Kreuzberg, Pankow, Charlottenburg-Wilmersdorf, Spandau, Steglitz-Zehlendorf, Tempelhof-Schöneberg, Neukölln, Treptow-Köpenick, Marzahn-Hellersdorf, Lichtenberg und Reinickendorf. Mehr zu unserem Standort: <a href="/werbetechnik-berlin-wedding.html">Werbetechnik Berlin-Wedding</a>.</p></div>''', alt=True, icon='check')
-    body += sec('Brandenburg', 'Brandenburg <em>&amp; Berliner Umland</em>', 'Betreut aus Berlin – Montage vor Ort.', f'    <div class="eg-city"><a href="/werbetechnik-potsdam.html">Potsdam<small>Landeshauptstadt</small></a><a href="/werbetechnik-brandenburg.html">Brandenburg – Übersicht<small>alle Regionen</small></a>{bb}</div>', icon='check')
+    body += sec('Brandenburg', 'Brandenburg <em>&amp; Berliner Umland</em>', 'Betreut aus Berlin – Montage vor Ort.', f'    <div class="eg-city"><a href="/werbetechnik-potsdam.html">Potsdam<small>Landeshauptstadt</small></a><a href="/werbetechnik-brandenburg.html">Brandenburg – Übersicht<small>alle Regionen</small></a>{bb}<span>Dresden<small>Sachsen · betreut aus Berlin</small></span></div>', icon='check')
     body += sec('Nordrhein-Westfalen', 'NRW <em>– mit eigenem Montageteam</em>', 'Keine Niederlassung, aber ein Team vor Ort. Messebau, Expressdruck und Foto/Video bieten wir in NRW nicht an.', f'    <div class="eg-city"><a href="/werbeagentur-nrw.html">Werbeagentur NRW<small>Übersicht</small></a>{nn}</div>', alt=True, icon='check')
     body += sec('Hamburg', 'Hamburg <em>– mit eigenem Team vor Ort</em>', 'Keine Niederlassung, aber ein Team vor Ort. Messebau, Expressdruck und Foto/Video bieten wir in Hamburg nicht an.', '    <div class="eg-city"><a href="/werbeagentur-hamburg.html">Werbeagentur Hamburg<small>Übersicht · alle sieben Bezirke</small></a></div>', icon='check')
     fqh = ''.join(f'\n      <div class="faq-item"><button class="faq-q">{q}</button><div class="faq-a"><p>{a}</p></div></div>' for q, a in FAQ)

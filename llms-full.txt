@@ -3,6 +3,7 @@
 > Full-Service-Werbeagentur aus Berlin-Wedding für Unternehmen: Werbetechnik (Leuchtreklame, Schilder, Schaufenster- und Fahrzeugbeschriftung, LKW-Beschriftung), Fensterfolien (Sonnenschutz, Sichtschutz, Sicherheit), Messebau, Druck, Grafikdesign, Webdesign, Social Media und KI-Lösungen. Gestaltung und Projektsteuerung aus einer Hand; die Fertigung (Druck, Plott, Schilder, Folien) übernimmt eine Partnerwerkstatt, beleuchtete Anlagen bauen und montieren eingetragene Partnerbetriebe. Angebot in der Regel innerhalb von 24 Stunden.
 
 - Adresse: Bristolstraße 19E, 13349 Berlin (Wedding)
+- Google-Unternehmensprofil (Karte, Bewertungen): https://maps.app.goo.gl/kZ53GHfQ9HxUvxHg8
 - Telefon / WhatsApp: +49 178 514 3918 (0178 514 3918)
 - E-Mail: info@masar-werbeagentur.de
 - Erreichbarkeit: Montag bis Samstag, 08:00–20:00 Uhr (Telefon/WhatsApp/E-Mail)
@@ -10,7 +11,7 @@
 - Inhaber: Amjad Alblili, Mediengestalter
 - Standort: einziger Standort ist das Studio in Berlin-Wedding – keine Filialen oder Niederlassungen in anderen Städten.
 - Leistungserbringung: Masar plant, gestaltet, koordiniert und steuert Projekte. Arbeiten, für die eine Eintragung in die Handwerksrolle oder eine besondere Qualifikation nötig ist (Bau und Montage beleuchteter Werbeanlagen, elektrische Anschlüsse durch einen eingetragenen Elektrofachbetrieb, Montagen mit Hubarbeitsbühne, Messestand-Bauteile), führen qualifizierte Partnerbetriebe im Auftrag von Masar aus. Keine Eintragung in die Handwerksrolle. Details: https://masar-werbeagentur.de/impressum.html#leistungserbringung
-- Einsatzgebiet: Berlin, Potsdam und Brandenburg (betreut aus Berlin); Werbetechnik, Druck und Design auch in Nordrhein-Westfalen und Hamburg über eigene Teams vor Ort (ohne Niederlassung). Messebau und Expressdruck nur in Berlin; Foto und Video in Berlin; in NRW nur Content und Video in Essen nach Absprache, nicht in Hamburg. Übersicht: https://masar-werbeagentur.de/einsatzgebiete.html
+- Einsatzgebiet: Berlin, Potsdam, Brandenburg und Dresden (betreut aus Berlin); Werbetechnik, Druck und Design auch in Nordrhein-Westfalen und Hamburg über eigene Teams vor Ort (ohne Niederlassung). Messebau und Expressdruck nur in Berlin; Foto und Video in Berlin; in NRW nur Content und Video in Essen nach Absprache, nicht in Hamburg. Übersicht: https://masar-werbeagentur.de/einsatzgebiete.html
 - Sprachen: Deutsch, Englisch, Arabisch, Türkisch
 - Preise: alle genannten Preise netto zzgl. 19 % MwSt.; individuelle Projekte als Festpreis nach Fotos oder Aufmaß. In NRW gelten eigene, leicht höhere Preise; in Hamburg gelten dieselben Preise wie in NRW.
 - Maschinenlesbar: Preisliste als Text https://masar-werbeagentur.de/preise.md · alle Kerninhalte in einer Datei https://masar-werbeagentur.de/llms-full.txt
@@ -935,7 +936,7 @@ Brandenburg
 
 Betreut aus Berlin – Montage vor Ort.
 
-Potsdam Landeshauptstadt Brandenburg – Übersicht alle Regionen Brandenburg an der Havel kreisfreie Stadt im Westen Brandenburgs · ca. 70 km Frankfurt (Oder) kreisfreie Stadt an der polnischen Grenze · ca. 90 km Bernau bei Berlin Landkreis Barnim · ca. 25 km Königs Wusterhausen Landkreis Dahme-Spreewald · ca. 30 km Eberswalde Kreisstadt des Landkreises Barnim · ca. 50 km Falkensee Landkreis Havelland · ca. 20 km Teltow & Kleinmachnow Landkreis Potsdam-Mittelmark Fürstenwalde Landkreis Oder-Spree · ca. 60 km Hennigsdorf Landkreis Oberhavel Neuruppin Kreisstadt des Landkreises Ostprignitz-Ruppin · ca. 75 km Rathenow Kreisstadt des Landkreises Havelland · ca. 80 km Zossen Landkreis Teltow-Fläming · ca. 40 km Luckenwalde Kreisstadt des Landkreises Teltow-Fläming · ca. 55 km Jüterbog Landkreis Teltow-Fläming · ca. 70 km Beelitz Landkreis Potsdam-Mittelmark · ca. 45 km
+Potsdam Landeshauptstadt Brandenburg – Übersicht alle Regionen Brandenburg an der Havel kreisfreie Stadt im Westen Brandenburgs · ca. 70 km Frankfurt (Oder) kreisfreie Stadt an der polnischen Grenze · ca. 90 km Bernau bei Berlin Landkreis Barnim · ca. 25 km Königs Wusterhausen Landkreis Dahme-Spreewald · ca. 30 km Eberswalde Kreisstadt des Landkreises Barnim · ca. 50 km Falkensee Landkreis Havelland · ca. 20 km Teltow & Kleinmachnow Landkreis Potsdam-Mittelmark Fürstenwalde Landkreis Oder-Spree · ca. 60 km Hennigsdorf Landkreis Oberhavel Neuruppin Kreisstadt des Landkreises Ostprignitz-Ruppin · ca. 75 km Rathenow Kreisstadt des Landkreises Havelland · ca. 80 km Zossen Landkreis Teltow-Fläming · ca. 40 km Luckenwalde Kreisstadt des Landkreises Teltow-Fläming · ca. 55 km Jüterbog Landkreis Teltow-Fläming · ca. 70 km Beelitz Landkreis Potsdam-Mittelmark · ca. 45 km Dresden Sachsen · betreut aus Berlin
 
 Nordrhein-Westfalen
 
@@ -5934,9 +5935,7 @@ Vor Ort Termin nach Vereinbarung
 
 #### Werbeagentur im Ruhrgebiet
 
-Herne
-Mülheim an der Ruhr
-Bottrop
+Unser Montageteam in NRW ist auch in Herne, Mülheim an der Ruhr und Bottrop im Einsatz – Anfrage und Angebot laufen wie in den anderen Städten.
 
 Wer was ausführt: Wir planen, gestalten und koordinieren Ihr Projekt. Arbeiten, für die eine Eintragung in die Handwerksrolle oder eine besondere Qualifikation nötig ist – etwa Bau und Montage beleuchteter Anlagen, elektrische Anschlüsse oder Montagen mit Hubarbeitsbühne –, führen qualifizierte Partnerbetriebe in unserem Auftrag aus. Ihr Vertragspartner und Ansprechpartner bleiben wir. Mehr dazu
 

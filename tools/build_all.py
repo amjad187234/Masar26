@@ -26,7 +26,6 @@ SCHRITTE = [
     ('nrw_pages', 'gen', 'folien/nrw_pages.py', 'NRW-Leistungsseiten'),
     ('nrw_staedte', 'gen', 'folien/nrw_staedte.py', 'NRW-Städteseiten (Köln, Düsseldorf, Dortmund, Essen, Bochum)'),
     ('banner', 'gen', 'folien/banner_pages.py', 'PVC-Banner Berlin + NRW'),
-    ('umland', 'gen', 'folien/umland_pages.py', 'werbeagentur-<stadt>.html (Brandenburg, Herne, Mülheim, Bottrop)'),
     ('einsatz', 'gen', 'folien/einsatz_page.py', 'einsatzgebiete.html'),
     ('hamburg', 'gen', 'folien/hamburg_page.py', 'werbeagentur-hamburg.html (aus werbeagentur-nrw.html)'),
     ('ki_pages', 'gen', 'folien/ki_pages.py', 'KI für Arztpraxen / Pflegedienste'),

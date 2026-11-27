@@ -105,3 +105,13 @@ Stand auf der Website: alle genannten Crawler sind erlaubt (Wildcard), Trainings
 - Perplexity-Crawler (Sekundärquelle): https://mbsearch.co/blog/perplexity-crawlers/
 - llms.txt und Google (Sekundärquelle): https://llmstxt.studio/docs/what-google-says-about-llmstxt
 - WebMCP-Stand (Sekundärquellen): https://www.spronta.com/blog/state-of-webmcp-july-2026/ · https://mcpplaygroundonline.com/blog/what-is-webmcp
+
+## Nachtrag 27.11.2026 (Entscheidungen des Inhabers)
+
+- **Umland-Seiten zusammengeführt**: 18 Seiten entfernt, 301 auf `werbetechnik-brandenburg.html` (15 Brandenburg) und
+  `werbeagentur-nrw.html` (Herne, Mülheim, Bottrop). Sitemap 178 → 160 URLs; `seo_check.py`: 20 → 2 Hinweise „ähnlich“.
+- **Dresden bleibt** im Leistungsgebiet und steht jetzt auch im Firmen-Datensatz, in den Einsatzgebieten und in `llms.txt`.
+- **Google-Unternehmensprofil** in `hasMap` und `sameAs` eingetragen.
+
+Damit sind die Punkte 3 (Karten-Link), 6 und 7 der Liste „Offen“ erledigt.
+

@@ -317,7 +317,7 @@ STAEDTE += [
   quellen=[('Neuss – Ortsrecht', 'https://www.neuss.de/rathaus/ortsrecht'),
            ('Neuss – Stadtplanung und -entwicklung', 'https://www.neuss.de/infos/stadtplanung')]),
 
- dict(slug='muelheim', stadt='Mülheim an der Ruhr', region='nrw', seite='/werbeagentur-muelheim.html', bild='schaufenster',
+ dict(slug='muelheim', stadt='Mülheim an der Ruhr', region='nrw', seite=NRW_SEITE, bild='schaufenster',
   title='Werbeanlage in Mülheim an der Ruhr: Gestaltungssatzung Innenstadt (2026)',
   desc='In der Mülheimer Innenstadt brauchen Werbeanlagen über 1 m² eine Baugenehmigung, Schaufensterwerbung bleibt im Erdgeschoss. Die Regeln im Überblick.',
   h1='Werbeanlage in Mülheim:<br><em>Gestaltungssatzung</em><br>Innenstadt',
@@ -339,7 +339,7 @@ STAEDTE += [
            ('Mülheim – Bauen in Mülheim: Werbeanlagen (PDF)', 'https://cms.muelheim-ruhr.de/sites/default/files/2025-10/4%20Werbeanlagen_.pdf'),
            ('Mülheim – Sondernutzungssatzung', 'https://cms.muelheim-ruhr.de/ortsrecht/sondernutzungssatzung')]),
 
- dict(slug='herne', stadt='Herne', region='nrw', seite='/werbeagentur-herne.html', bild='leuchtreklamen',
+ dict(slug='herne', stadt='Herne', region='nrw', seite=NRW_SEITE, bild='leuchtreklamen',
   title='Werbeanlage in Herne: Gestaltungssatzungen Herne-Mitte & Wanne (2026)',
   desc='Herne hat Gestaltungssatzungen für die Innenstädte Herne-Mitte und Wanne. Blinkende und bewegte Werbung ist dort nicht zulässig.',
   h1='Werbeanlage in Herne:<br><em>Herne-Mitte</em><br>&amp; Wanne',
@@ -402,7 +402,7 @@ STAEDTE += [
   quellen=[('Stadt Oberhausen – Werbeanlagen (Bauordnung)', 'https://www.oberhausen.de/de/index/rathaus/verwaltung/stadtplanung-bauen-mobilitat-umwelt/bauordnung/werbeanlagen.php'),
            ('Stadt Oberhausen – Fassaden- und Hofprogramm Sterkrade', 'https://www.oberhausen.de/de/index/rathaus/aktuelle-pressemeldungen/meldungen-2018/fassaden_und_hofprogramm_fuer_sterkrade.php?pagePresse=8')]),
 
- dict(slug='bottrop', stadt='Bottrop', region='nrw', seite='/werbeagentur-bottrop.html', bild='schilder',
+ dict(slug='bottrop', stadt='Bottrop', region='nrw', seite=NRW_SEITE, bild='schilder',
   title='Werbeanlage in Bottrop: Genehmigung, Straßenbenutzung & Kosten (2026)',
   desc='In Bottrop dürfen Werbeanlagen am Geschäft bis 0,30 m in die Straße ragen, wenn 1,50 m Gehweg frei bleiben. Was sonst gilt.',
   h1='Werbeanlage in Bottrop:<br><em>Genehmigung</em><br>&amp; Gehweg',

@@ -18,6 +18,7 @@ import os, re, sys, json, glob
 ROOT = os.environ.get('MASAR_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 BASIS = 'https://masar-werbeagentur.de'
 IDENTITY, WEBSITE, INHABER = BASIS + '/#identity', BASIS + '/#website', BASIS + '/#inhaber'
+KARTE = 'https://maps.app.goo.gl/kZ53GHfQ9HxUvxHg8'   # Google-Unternehmensprofil (Link vom Inhaber, 27.11.2026)
 LD = re.compile(r'(<script type="application/ld\+json">)(.*?)(</script>)', re.S)
 BEHALTEN = ('@type', '@id', 'name', 'url', 'telephone', 'address')
 
@@ -78,6 +79,13 @@ def startseite(d, aend):
         if not isinstance(o, dict) or o.get('@id') != IDENTITY or 'hasOfferCatalog' not in o: continue
         if o.get('founder') != {'@id': INHABER} and o.get('founder') != PERSON:
             o['founder'] = PERSON; aend.append('Inhaber mit @id')
+        # Dresden wird bedient (Inhaber, 27.11.2026); Kartenprofil vom Inhaber genannt
+        if isinstance(o.get('areaServed'), list) and not any(x.get('name') == 'Dresden' for x in o['areaServed']):
+            o['areaServed'].append({'@type': 'City', 'name': 'Dresden'}); aend.append('Dresden im Gebiet')
+        if o.get('hasMap') != KARTE:
+            o['hasMap'] = KARTE; aend.append('Kartenprofil')
+        if isinstance(o.get('sameAs'), list) and KARTE not in o['sameAs']:
+            o['sameAs'].append(KARTE); aend.append('sameAs Kartenprofil')
         liste = o['hasOfferCatalog']['itemListElement']
         namen = {a['itemOffered']['name'] for a in liste}
         for e in LISTENPREISE:
